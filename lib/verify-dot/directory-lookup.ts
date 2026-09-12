@@ -10,10 +10,11 @@ import type { Company } from '@/types';
 function companyToPreview(company: Company): FmcsaPreview {
   return {
     legalName: company.name,
-    dbaName: company.shortDescription || undefined,
+    dbaName: undefined,
+    identifierIntegrity: company.identifierIntegrity,
     physicalAddress: company.headquarters || undefined,
     safetyRating: company.fmcsaSafetyRating,
-    allowedToOperate: company.isVerified ? 'Y' : undefined,
+    allowedToOperate: company.identifierIntegrity ? undefined : company.isVerified ? 'Y' : undefined,
     usdot: normalizeUsdot(company.usdotNumber) || undefined,
     mcNumber: normalizeMc(company.mcNumber) || undefined,
     source: 'directory',

@@ -1,0 +1,47 @@
+[
+  {
+    "requested": {
+      "kind": "USDOT",
+      "value": "1065394"
+    },
+    "retrievedAt": "2026-09-12T00:04:29.566Z",
+    "url": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1065394",
+    "status": 200,
+    "title": "SAFER Web - Company Snapshot JK MOVING & STORAGE INC",
+    "sourceAsOf": "09/10/2026",
+    "identityExcerpt": "USDOT INFORMATION\nEntity Type:\tCARRIER \u00c2\u00a0\nUSDOT Status:\tACTIVE \u00c2\u00a0\tOut of Service Date:\tNone\nUSDOT Number:\t1065394\u00c2\u00a0\tState Carrier ID Number:\t\u00c2\u00a0\nMCS-150 Form Date:\t03/26/2025\u00c2\u00a0\tMCS-150 Mileage (Year):\t5,618,485 (2024)\u00c2\u00a0\nOPERATING AUTHORITY INFORMATION\nOperating Authority Status:\tAUTHORIZED FOR:\nMotor Carrier of Property (Except Household Goods)\nMotor Carrier of Household Goods\n\nFor Licensing and Insurance details click here.\nMC/MX/FF Number(s):\tMC-196957\n\u00c2\u00a0\nCOMPANY INFORMATION\nLegal Name:\tJK MOVING & STORAGE INC\u00c2\u00a0\nDBA Name:\tJK MOVING SERVICES\u00c2\u00a0\n",
+    "bodySha256": "bc8dd55f5d470a12084fd132df2f48de41892d563541f7296532d10d1a77aa48"
+  },
+  {
+    "requested": {
+      "kind": "MC_MX",
+      "value": "225850"
+    },
+    "retrievedAt": "2026-09-12T00:04:29.790Z",
+    "url": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=MC_MX&query_string=225850",
+    "status": 200,
+    "title": "SAFER Web - Company Snapshot RECORD INACTIVE",
+    "identityExcerpt": "Record Inactive\n\n\n\nRecord Inactive\n\n\n\n\nThe record matching MC/MX Number = 225850 is INACTIVE in the SAFER database.\n\nIf you believe this to be in error, you can report it using FMCSA's DataQs system.\n\n\n\u00c2\u00a0\n\n\nSAFER Home | Feedback | Privacy Policy | USA.gov | Freedom of Information Act (FOIA) | Accessibility | OIG Hotline | Web Policies and Important Links | Plug-ins\n\n\nFederal Motor Carrier Safety Administration\n1200 New Jersey Avenue SE, Washington, DC 20590 \u00e2\u20ac\u00a2 1-800-832-5660 \u00e2\u20ac\u00a2 TTY: 1-800-877-8339 \u00e2\u20ac\u00a2 Field Office Contacts\n\n\u00c2\u00a0",
+    "bodySha256": "178a3cb7ba773d1a0c08c30698776c11e2e341cff07063ca09dae05ce01ddbb8"
+  },
+  {
+    "requested": {
+      "kind": "MC_MX",
+      "value": "196957"
+    },
+    "retrievedAt": "2026-09-12T00:04:29.996Z",
+    "url": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=MC_MX&query_string=196957",
+    "status": 200,
+    "title": "SAFER Web - Company Snapshot JK MOVING & STORAGE INC",
+    "sourceAsOf": "09/10/2026",
+    "identityExcerpt": "USDOT INFORMATION\nEntity Type:\tCARRIER \u00c2\u00a0\nUSDOT Status:\tACTIVE \u00c2\u00a0\tOut of Service Date:\tNone\nUSDOT Number:\t1065394\u00c2\u00a0\tState Carrier ID Number:\t\u00c2\u00a0\nMCS-150 Form Date:\t03/26/2025\u00c2\u00a0\tMCS-150 Mileage (Year):\t5,618,485 (2024)\u00c2\u00a0\nOPERATING AUTHORITY INFORMATION\nOperating Authority Status:\tAUTHORIZED FOR:\nMotor Carrier of Property (Except Household Goods)\nMotor Carrier of Household Goods\n\nFor Licensing and Insurance details click here.\nMC/MX/FF Number(s):\tMC-196957\n\u00c2\u00a0\nCOMPANY INFORMATION\nLegal Name:\tJK MOVING & STORAGE INC\u00c2\u00a0\nDBA Name:\tJK MOVING SERVICES\u00c2\u00a0\n",
+    "bodySha256": "bc8dd55f5d470a12084fd132df2f48de41892d563541f7296532d10d1a77aa48"
+  },
+  {
+    "surface": "MOTUS authority detail",
+    "retrievedAt": "2026-09-12T00:04:32.982Z",
+    "url": "https://motus.dot.gov/customer/1065394/account",
+    "title": "MOTUS",
+    "excerpt": "Public account: USDOT1065394, JK MOVING & STORAGE INC, DBA JK MOVING SERVICES; Operating Authority Registrations section available. No company officials/contact payload retained."
+  }
+]

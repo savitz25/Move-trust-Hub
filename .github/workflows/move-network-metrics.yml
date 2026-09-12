@@ -27,3 +27,6 @@ jobs:
 
       - name: Source-backed named-company behavior (TH-SEARCH-R1-005)
         run: npm run check:th-search-r1-005
+
+      - name: Source-association integrity (TH-SEARCH-R1-006)
+        run: npm run check:th-search-r1-006

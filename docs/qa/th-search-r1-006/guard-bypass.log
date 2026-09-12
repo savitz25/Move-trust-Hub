@@ -1,0 +1,217 @@
+
+> move-trust-hub@1.0.0 check:th-search-r1-006
+> tsx --require ./scripts/stub-server-only.cjs --test lib/move-ask/r1-association.test.ts
+
+✖ R1-006 known disputed MC is not projected as a trusted public identifier (6.4111ms)
+✖ disputed MC and pair are source conflicts; legacy consumers receive no confirmed JK association (19.225ms)
+✖ corroborated USDOT survives with conflict disclosure and never a disputed company-verification link (3.9224ms)
+✔ observed replacement is not invented into the effective exact index; unrelated matches remain (10.0515ms)
+✖ another permitted identity with the same MC is not suppressed by the JK review (3.8405ms)
+✖ name selection keeps separate JK identities and the original task (10.9932ms)
+move_research_source_unavailable { executor: 'records', mode: 'identifier' }
+✖ publication hold and source failure do not clear or replace the reviewed association (7029.6634ms)
+✖ changed source value/fingerprint requires review without mutating or substituting source values (4.3807ms)
+✖ source clocks remain separate; missing clocks never become today (1.238ms)
+✔ families and multiple/historical source observations are not concatenated or forced one-to-one (1.4423ms)
+✖ DB, seed, catalog, merged profile and directory DTO cannot restore the disputed MC (1.5055ms)
+✖ profile, search, Verify and API render the same integrity-aware meaning (80.3411ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 2
+ℹ fail 10
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9811.587
+
+✖ failing tests:
+
+test at lib\move-ask\r1-association.test.ts:2:2266
+✖ R1-006 known disputed MC is not projected as a trusted public identifier (6.4111ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '225850' !== ''
+  
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:5:47)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '225850',
+    expected: '',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-association.test.ts:2:4313
+✖ disputed MC and pair are source conflicts; legacy consumers receive no confirmed JK association (19.225ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'FOUND'
+  - 'SOURCE_CONFLICT'
+  
+      at <anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:34:116)
+      at async source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:31:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'FOUND',
+    expected: 'SOURCE_CONFLICT',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-association.test.ts:2:5353
+✖ corroborated USDOT survives with conflict disclosure and never a disputed company-verification link (3.9224ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '225850' !== null
+  
+      at <anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:37:150)
+      at async source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:31:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '225850',
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-association.test.ts:2:6860
+✖ another permitted identity with the same MC is not suppressed by the JK review (3.8405ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   'jk-moving',
+      'other-holder'
+    ]
+  
+      at source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:43:77)
+      at async source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:31:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'jk-moving', 'other-holder' ],
+    expected: [ 'other-holder' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-association.test.ts:2:7403
+✖ name selection keeps separate JK identities and the original task (10.9932ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '225850' !== null
+  
+      at <anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:46:370)
+      at async source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:31:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '225850',
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-association.test.ts:2:8128
+✖ publication hold and source failure do not clear or replace the reviewed association (7029.6634ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '225850' !== ''
+  
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:49:276)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '225850',
+    expected: '',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-association.test.ts:2:8747
+✖ changed source value/fingerprint requires review without mutating or substituting source values (4.3807ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '196957' !== ''
+  
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:52:133)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '196957',
+    expected: '',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-association.test.ts:2:9452
+✖ source clocks remain separate; missing clocks never become today (1.238ms)
+  TypeError: Cannot read properties of undefined (reading 'sourceAsOf')
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:55:93)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at lib\move-ask\r1-association.test.ts:2:10808
+✖ DB, seed, catalog, merged profile and directory DTO cannot restore the disputed MC (1.5055ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'MC-225850' !== ''
+  
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:62:125)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'MC-225850',
+    expected: '',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\move-ask\r1-association.test.ts:2:11751
+✖ profile, search, Verify and API render the same integrity-aware meaning (80.3411ms)
+  AssertionError [ERR_ASSERTION]: The input was expected to not match the regular expression />MC<|225850/. Input:
+  
+  '<div class="rounded-xl border bg-card text-card-foreground shadow-trust mb-6 border-primary/15"><div class="flex flex-col space-y-1.5 p-6 pb-2 px-4 sm:px-6"><h3 class="font-semibold tracking-tight text-base flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2 lucide-building-2 h-4 w-4 text-primary" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg>Company identity</h3><p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">Public research identity from directory records and FMCSA-oriented fields. Confirm every license number on official sources before you book.</p></div><div class="p-6 pt-0 space-y-4 px-4 sm:px-6"><div class="flex flex-wrap items-center gap-2"><span class="text-xs font-medium text-muted-foreground">Entity type:</span><div class="flex flex-wrap items-center gap-1" aria-label="Company type"><div class="inline-flex items-center rounded-full border px-2.5 py-0.5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs font-semibold border-violet-400/80 bg-violet-50 text-violet-950 dark:border-violet-700 dark:bg-violet-950/50 dark:text-violet-100" title="Household goods broker — arranges transportation with carriers; does not itself operate as the motor carrier hauling your goods. Confirm who holds the USDOT/MC on your estimate and who will physically transport the shipment.">Broker</div></div></div><dl class="grid gap-2 sm:grid-cols-2 text-sm"><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Legal name (FMCSA)</dt><dd class="font-medium text-foreground break-words leading-snug">Jk Moving &amp; Storage INC</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Display name</dt><dd class="font-medium text-foreground break-words leading-snug">JK Moving Services</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">USDOT</dt><dd class="font-medium text-foreground break-words leading-snug">1065394</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">MC</dt><dd class="font-medium text-foreground break-words leading-snug">225850</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">HQ locality</dt><dd class="font-medium text-foreground break-words leading-snug">AIRMONT, NY</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Physical address</dt><dd class="font-medium text-foreground break-words leading-snug">AIRMONT, NY</dd></div></dl><p class="text-xs sm:text-sm rounded-lg border border-primary/20 bg-primary/5 px-3 py-2.5 leading-relaxed">Already have a quote from this company? <a class="font-semibold text-primary underline-offset-2 hover:underline" href="/tools/move-quote-check">Run Move Quote Check</a> before you sign or pay a deposit — research only, no lead form.</p></div></div>'
+  
+      at <anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:65:128)
+      at source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:31:12)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:64:89)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<div class="rounded-xl border bg-card text-card-foreground shadow-trust mb-6 border-primary/15"><div class="flex flex-col space-y-1.5 p-6 pb-2 px-4 sm:px-6"><h3 class="font-semibold tracking-tight text-base flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2 lucide-building-2 h-4 w-4 text-primary" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg>Company identity</h3><p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">Public research identity from directory records and FMCSA-oriented fields. Confirm every license number on official sources before you book.</p></div><div class="p-6 pt-0 space-y-4 px-4 sm:px-6"><div class="flex flex-wrap items-center gap-2"><span class="text-xs font-medium text-muted-foreground">Entity type:</span><div class="flex flex-wrap items-center gap-1" aria-label="Company type"><div class="inline-flex items-center rounded-full border px-2.5 py-0.5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs font-semibold border-violet-400/80 bg-violet-50 text-violet-950 dark:border-violet-700 dark:bg-violet-950/50 dark:text-violet-100" title="Household goods broker — arranges transportation with carriers; does not itself operate as the motor carrier hauling your goods. Confirm who holds the USDOT/MC on your estimate and who will physically transport the shipment.">Broker</div></div></div><dl class="grid gap-2 sm:grid-cols-2 text-sm"><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Legal name (FMCSA)</dt><dd class="font-medium text-foreground break-words leading-snug">Jk Moving &amp; Storage INC</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Display name</dt><dd class="font-medium text-foreground break-words leading-snug">JK Moving Services</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">USDOT</dt><dd class="font-medium text-foreground break-words leading-snug">1065394</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">MC</dt><dd class="font-medium text-foreground break-words leading-snug">225850</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">HQ locality</dt><dd class="font-medium text-foreground break-words leading-snug">AIRMONT, NY</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Physical address</dt><dd class="font-medium text-foreground break-words leading-snug">AIRMONT, NY</dd></div></dl><p class="text-xs sm:text-sm rounded-lg border border-primary/20 bg-primary/5 px-3 py-2.5 leading-relaxed">Already have a quote from this company? <a class="font-semibold text-primary underline-offset-2 hover:underline" href="/tools/move-quote-check">Run Move Quote Check</a> before you sign or pay a deposit — research only, no lead form.</p></div></div>',
+    expected: />MC<|225850/,
+    operator: 'doesNotMatch',
+    diff: 'simple'
+  }

@@ -1,3 +1,4 @@
+import { AssociationDisclosure } from './association-disclosure';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { CopyIdentifierButton } from '@/components/company/copy-identifier-button';
@@ -67,6 +68,7 @@ export function CompanyResearchHero({
         MoveTrustHub is not recommending this mover. This page organizes public evidence. You decide.
       </p>
 
+      <AssociationDisclosure integrity={company.identifierIntegrity} />
       {duplicateNameCount > 1 ? (
         <div className="mt-3 rounded-lg border border-amber-200 bg-amber-50/70 px-3 py-2 text-sm leading-relaxed text-amber-950">
           <p>

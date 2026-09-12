@@ -94,6 +94,7 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
         tabIndex={canOpenProfile ? 0 : undefined}
         aria-label={canOpenProfile ? `Open profile for ${company.name}` : undefined}
       >
+        {company.identifierIntegrity ? <p className="mb-3 rounded-lg border p-2 text-sm">MC association under review. This is a company research record, not confirmation of the submitted MC. Open the profile for source details.</p> : null}
         <div className="space-y-1.5">
           <CompanyProfileLink
             slug={company.slug}

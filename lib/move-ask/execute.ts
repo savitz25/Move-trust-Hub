@@ -1,3 +1,4 @@
+import { associationIntegrity, associationAllowsMc, type AssociationIntegrity } from '../fmcsa/association-integrity';
 import { distinctiveTokens, matchSourceName, NAME_CANDIDATE_LIMIT, NAME_RETRIEVAL_LIMIT, type NameEvidence } from './name';
 import 'server-only';
 import { createClient } from '@supabase/supabase-js';
@@ -30,6 +31,8 @@ const INTERNAL_PUBLICATION_STATES = 'REVIEW_REQUIRED,INACTIVE,INGESTED,CLASSIFIE
 const VISIBLE_OR = `publication_state.is.null,publication_state.not.in.(${INTERNAL_PUBLICATION_STATES})`;
 
 export type AskCard = {
+  identifierIntegrity?: AssociationIntegrity;
+  submittedIdentifierUrl?: string;
   entityId: string;
   displayName: string;
   legalName: string | null;
@@ -61,7 +64,7 @@ export type MoveAskResult = {
   queryText: string;
   parsed: ParsedMoveAsk;
   resultType: string;
-  terminalState?: 'FOUND' | 'NO_MATCH' | 'NEEDS_CLARIFICATION' | 'INVALID_INPUT' | 'UNAVAILABLE' | 'UNSUPPORTED';
+  terminalState?: 'FOUND' | 'NO_MATCH' | 'NEEDS_CLARIFICATION' | 'INVALID_INPUT' | 'UNAVAILABLE' | 'UNSUPPORTED' | 'SOURCE_CONFLICT';
   results: AskCard[];
   counts: AskCountRow[];
   pagination: { page: number; pageSize: number; total: number; hasMore: boolean };
@@ -122,6 +125,7 @@ function db(): AdminDb {
 }
 
 type CompanyRow = {
+  data_hash?: string | null;
   id: string;
   name: string;
   slug: string | null;
@@ -141,7 +145,7 @@ type CompanyRow = {
 };
 
 const COMPANY_COLS =
-  'id, name, slug, usdot_number, mc_number, entity_type, headquarters, authority_active, fmcsa_last_checked, publication_state, fmcsa_legal_name';
+  'id, name, slug, usdot_number, mc_number, entity_type, headquarters, authority_active, fmcsa_last_checked, publication_state, fmcsa_legal_name, data_hash';
 
 function roleTypes(role?: string, includeDual = true): string[] {
   if (role === 'carrier_broker') return [...DIRECTORY_DUAL_ENTITY_TYPES];
@@ -173,6 +177,7 @@ function operatingAuthorityFromRow(row: CompanyRow): string | null {
 
 
 function cardFromCompany(row: CompanyRow, why: string, extra?: Partial<AskCard>): AskCard {
+  const integrity=associationIntegrity({id:row.id,usdot:row.usdot_number,mc:row.mc_number,checkedAt:row.fmcsa_last_checked,fingerprint:row.data_hash});
   const company = {
     entityType: row.entity_type ?? '',
     services: [] as import('@/types').ServiceType[],
@@ -204,6 +209,7 @@ function cardFromCompany(row: CompanyRow, why: string, extra?: Partial<AskCard>)
     sourceLastChecked: row.fmcsa_last_checked ?? null,
     officialAsOf: null,
     ...extra,
+    ...(integrity ? {mc:null,identifierIntegrity:integrity,officialVerificationUrl:integrity.officialUrl??undefined} : {}),
   };
 }
 
@@ -322,6 +328,9 @@ async function lookupIdentifier(parsed: ParsedMoveAsk, started: number): Promise
   const { data, count } = await query.order('name', { ascending: true }).order('id', { ascending: true }).range((parsed.query.page - 1) * MOVE_ASK_PAGE_SIZE, parsed.query.page * MOVE_ASK_PAGE_SIZE);
   const rows = [...new Map(((data ?? []) as CompanyRow[]).map((row) => [row.id, row])).values()];
   const results = rows.slice(0, MOVE_ASK_PAGE_SIZE).map((row) => {
+    const integrity=associationIntegrity({id:row.id,usdot:row.usdot_number,mc:row.mc_number,checkedAt:row.fmcsa_last_checked,fingerprint:row.data_hash});
+    const disputed=ids.find(id=>id.type==='mc'&&!associationAllowsMc(integrity));
+    if(disputed) return cardFromCompany(row, `Stored-field candidate only: the requested MC ${disputed.value} occurs in this record, but its association with this company is under review. This does not confirm the requested MC or USDOT/MC pair. Research the corroborated USDOT separately.`, {submittedIdentifierUrl:buildSaferLookupUrl({type:'MC',value:disputed.value,display:`MC ${disputed.value}`}),fmcsaStatus:null,operatingAuthority:null,complaintsNote:null});
     const fields = ids.map((id) => {
       const field = id.type === 'usdot' ? 'usdot_number' as const : 'mc_number' as const;
       const returned = normalizeStoredIdentifier(row[field], id.type);
@@ -339,14 +348,27 @@ async function lookupIdentifier(parsed: ParsedMoveAsk, started: number): Promise
     });
   });
   for (const constraint of parsed.query.constraints ?? []) {
+    if (constraint.field === 'mc' && results.some(card => card.identifierIntegrity)) {
+      constraint.outcome = 'NEEDS_CLARIFICATION';
+      constraint.detail = 'Stored-field equality was observed, but this MC-to-company association is under review and is not confirmed.';
+      continue;
+    }
     if (!['role', 'authority', 'recorded headquarters state'].includes(constraint.field) || !results.length) continue;
+    if (ids.some(id => id.type === 'mc') && results.some(card => card.identifierIntegrity)) {
+      constraint.outcome = 'NEEDS_CLARIFICATION';
+      constraint.detail = 'The requested MC association is under review; company evidence cannot satisfy this condition through that disputed relationship.';
+      continue;
+    }
     const satisfied = rows.every((row) => constraint.field === 'authority' ? row.authority_active === (constraint.value === 'current') : constraint.field === 'recorded headquarters state' ? extractStateCodeFromHeadquarters(row.headquarters ?? '') === constraint.value : roleTypes(constraint.value, true).includes(row.entity_type ?? ''));
     constraint.outcome = satisfied ? 'APPLIED' : 'CONFLICT';
     constraint.detail = satisfied ? 'The stored identity evidence satisfies this criterion.' : 'The exact identity was resolved, but its stored evidence does not establish this criterion.';
   }
   for (const c of parsed.query.constraints ?? []) { const line = parsed.interpretation.find((v) => v.label === c.field); if (line) line.value = `${c.value}: ${c.outcome.replaceAll('_', ' ').toLowerCase()}`; }
   const result = finish(parsed, results, parsed.query.page > 1 || (count ?? 0) > MOVE_ASK_PAGE_SIZE + 1 ? count ?? rows.length : rows.length, started, 'Exact published identity (additional context is not a service-area match)');
-  if (!results.length && ids.length === 2) {
+  if (ids.some(id=>id.type==='mc') && results.some(card=>card.identifierIntegrity)) {
+    result.provenance.grain = 'Stored candidate identities; requested MC association is not confirmed';
+    result.terminalState='SOURCE_CONFLICT';result.coverageState='PARTIAL';result.resultType='Stored identifier association requires review';result.counts=[];result.limitations=[...new Set(results.filter(c=>c.identifierIntegrity).map(c=>c.identifierIntegrity!.message)),...result.limitations];
+  } else if (!results.length && ids.length === 2) {
     result.terminalState = 'NEEDS_CLARIFICATION';
     result.limitations = ['No published identity confirms this USDOT/MC pair. Check each number; they were not merged.', ...result.limitations];
   } else result.terminalState = rows.length > 1 ? 'NEEDS_CLARIFICATION' : rows.length ? 'FOUND' : 'NO_MATCH';
@@ -618,6 +640,10 @@ function finish(
 }
 
 export function publicAskPayload(result: MoveAskResult) {
+  const conflict = result.terminalState === 'SOURCE_CONFLICT';
+  const disputed = conflict ? result.results.filter(row=>row.identifierIntegrity) : [];
+  const trusted = result.results.filter(row=>!disputed.includes(row));
+  const associationFailure = conflict && !trusted.length;
   return {
     contract: result.contract,
     terminalState: result.terminalState,
@@ -627,7 +653,7 @@ export function publicAskPayload(result: MoveAskResult) {
     interpretation: result.parsed.interpretation,
     query: {
       ...(result.parsed.query.directoryRequest ? { specialistContract: result.parsed.query.directoryRequest.contract } : {}),
-      mode: result.parsed.query.mode,
+      mode: associationFailure ? 'fail_closed' : result.parsed.query.mode,
       nameQuery: result.parsed.query.nameQuery,
       nameRequest: result.parsed.query.nameRequest,
       selectedCompany: result.parsed.query.selectedCompany,
@@ -638,13 +664,15 @@ export function publicAskPayload(result: MoveAskResult) {
       executor: result.parsed.query.executor,
       identifier: result.parsed.query.identifier,
       jurisdiction: result.parsed.query.jurisdiction,
-      failReason: result.parsed.query.failReason,
+      failReason: associationFailure ? 'The stored MC association is under review. No company association is confirmed for the submitted MC or pair. Continue on MoveTrustHub to inspect the stored candidate and corroborated USDOT.' : result.parsed.query.failReason,
       alternatives: result.parsed.query.alternatives,
       definitionId: result.parsed.query.definitionId,
       page: result.parsed.query.page,
     },
     resultType: result.resultType,
-    results: result.results.map((row) => ({
+    sourceConflictCandidates: disputed,
+    sourceIntegrity: conflict ? {status:'SOURCE_CONFLICT',trustedResultCount:trusted.length,countMeaning:'Trusted result rows only; not a count of movers or valid licenses'} : undefined,
+    results: trusted.map((row) => ({
       name: row.displayName,
       entityId: row.entityId,
       legalName: row.legalName,
@@ -653,6 +681,8 @@ export function publicAskPayload(result: MoveAskResult) {
       selectionHref: row.selectionHref,
       usdot: row.usdot,
       mc: row.mc,
+      identifierIntegrity: row.identifierIntegrity,
+      submittedIdentifierUrl: row.submittedIdentifierUrl,
       role: row.role,
       fmcsaStatus: row.fmcsaStatus,
       headquarters: row.headquarters,
@@ -668,7 +698,7 @@ export function publicAskPayload(result: MoveAskResult) {
       matchEvidence: row.matchEvidence,
     })),
     counts: result.counts,
-    pagination: result.pagination,
+    pagination: conflict ? {...result.pagination,total:trusted.length,hasMore:false} : result.pagination,
     provenance: result.provenance,
     limitations: result.limitations,
     elapsedMs: result.elapsedMs,

@@ -64,7 +64,7 @@ export function prepareCompaniesForDirectoryClient(companies: Company[]): Compan
   if (!Array.isArray(companies)) return [];
 
   return companies
-    .map((raw) => {
+    .map((raw): Company | null => {
       try {
         const c = normalizeCompanyForDisplay(raw);
         return {
@@ -78,6 +78,7 @@ export function prepareCompaniesForDirectoryClient(companies: Company[]): Compan
           website: '',
           usdotNumber: c.usdotNumber,
           mcNumber: c.mcNumber,
+          identifierIntegrity: c.identifierIntegrity,
           fmcsaSafetyRating: c.fmcsaSafetyRating,
           fmcsaComplaints: c.fmcsaComplaints,
           fmcsaShipments: c.fmcsaShipments,

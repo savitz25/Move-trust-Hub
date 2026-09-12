@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { AssociationDisclosure } from '@/components/company/association-disclosure';
 import {
   AlertTriangle,
   ArrowRight,
@@ -46,6 +47,7 @@ export function DotVerifierResults({
 }: Props) {
   if (!result.success) return null;
 
+  if(result.identifierIntegrity) return <div className="min-w-0"><h2 className="text-xl font-semibold">Identifier association needs review</h2><AssociationDisclosure integrity={result.identifierIntegrity}/>{result.submittedIdentifierUrl?<a className="inline-flex min-h-11 items-center underline" href={result.submittedIdentifierUrl} target="_blank" rel="noopener noreferrer">Inspect the submitted MC separately; company association unconfirmed</a>:null}{result.directorySlug?<Link className="my-3 block underline" href={`/companies/${result.directorySlug}`}>Research the USDOT company record</Link>:null}</div>;
   const preview = result.preview;
   const inDirectory = Boolean(result.directorySlug);
   const hasPreview = Boolean(preview?.legalName);

@@ -1,3 +1,4 @@
+import { projectCompanyAssociation } from '@/lib/fmcsa/association-integrity';
 import type { Company } from '@/types';
 import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website-url';
 import {
@@ -17,6 +18,7 @@ const EMPTY_RATING_BREAKDOWN: Company['ratingBreakdown'] = {
 
 /** Normalize company records for safe directory rendering (handles suggestion-approved rows). */
 export function normalizeCompanyForDisplay(company: Company): Company {
+  company = projectCompanyAssociation(company);
   const slug = (company.slug || company.id || '').trim() || 'unknown-company';
   const services = normalizeServiceTags(
     Array.isArray(company.services) ? (company.services as string[]) : []

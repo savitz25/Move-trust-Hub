@@ -314,7 +314,8 @@
     "analyze:browser": "cross-env ANALYZE=true BUNDLE_ANALYZE=browser npm run build",
     "qa:fl-audit-county-pre-001": "node scripts/validate-fl-audit-county-pre-001.mjs",
     "check:th-search-r1-001": "tsx --require ./scripts/stub-server-only.cjs --test lib/move-ask/r1-reproduction.test.ts lib/move-ask/r1-behavior.test.ts",
-    "check:th-search-r1-005": "tsx --require ./scripts/stub-server-only.cjs --test lib/move-ask/r1-name.test.ts"
+    "check:th-search-r1-005": "tsx --require ./scripts/stub-server-only.cjs --test lib/move-ask/r1-name.test.ts",
+    "check:th-search-r1-006": "tsx --require ./scripts/stub-server-only.cjs --test lib/move-ask/r1-association.test.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

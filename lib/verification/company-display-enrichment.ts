@@ -1,3 +1,4 @@
+import { projectCompanyAssociation } from '@/lib/fmcsa/association-integrity';
 /**
  * Single source of truth for attaching Google + BBB enrichment to Company
  * for profile, compare, and directory display.
@@ -77,6 +78,7 @@ export function synthesizeGoogleFromRatingColumns(
  * Always returns plain serializable fields (never throws).
  */
 export function finalizeCompanyEnrichmentForDisplay(company: Company): Company {
+  company = projectCompanyAssociation(company);
   try {
     let googleData = company.googleData ?? null;
 

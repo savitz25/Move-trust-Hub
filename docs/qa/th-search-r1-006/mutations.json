@@ -1,0 +1,18 @@
+[
+  {
+    "mutation": "guard-bypass",
+    "exit": 1,
+    "detected": true,
+    "at": "2026-09-12T00:24:45.717860+00:00"
+  },
+  {
+    "mutation": "disputed-company-link",
+    "exit": 1,
+    "detected": true,
+    "at": "2026-09-12T00:24:55.838299+00:00"
+  },
+  {
+    "restored": true,
+    "exit": 0
+  }
+]

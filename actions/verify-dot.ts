@@ -8,7 +8,7 @@ import {
   verifyNameStateSchema,
 } from '@/lib/verify-dot/schema';
 import { isValidUsStateCode } from '@/lib/verify-dot/us-states';
-import { resolveCarrierPreview, type FmcsaPreview } from '@/lib/verify-dot/fmcsa';
+import { buildSaferLookupUrl, resolveCarrierPreview, type FmcsaPreview } from '@/lib/verify-dot/fmcsa';
 import { findCompanyByCarrierNumber } from '@/lib/verify-dot/directory-lookup';
 import { lookupFmcsaForSuggestion } from '@/lib/suggestions/fmcsa-lookup';
 import { logDotVerification } from '@/lib/verify-dot/log';
@@ -25,6 +25,8 @@ export type VerifyDotNameCandidate = {
 };
 
 export type VerifyDotResult = {
+  identifierIntegrity?: import("@/lib/fmcsa/association-integrity").AssociationIntegrity;
+  submittedIdentifierUrl?: string;
   success: boolean;
   error?: string;
   saferUrl?: string;
@@ -135,6 +137,10 @@ export async function verifyCarrierNumber(
   });
 
   let directory = await findCompanyByCarrierNumber(carrier);
+  if (directory.preview?.identifierIntegrity && carrier.type==='MC') {
+    const integrity=directory.preview.identifierIntegrity;
+    return {success:true,displayNumber:carrier.display,numberType:carrier.type,preview:{legalName:directory.name,usdot:integrity.corroboratedUsdot??undefined,source:'directory',identifierIntegrity:integrity},directorySlug:directory.slug,directoryName:directory.name,identifierIntegrity:integrity,saferUrl:integrity.officialUrl??undefined,submittedIdentifierUrl:buildSaferLookupUrl(carrier),logged};
+  }
   const { saferUrl, preview: basePreview } = await resolveCarrierPreview(
     carrier,
     directory.preview
@@ -176,6 +182,8 @@ export async function verifyCarrierNumber(
     }
   }
 
+  const integrity=directory.preview?.identifierIntegrity;
+  if(integrity && preview) preview={...preview,mcNumber:undefined,identifierIntegrity:integrity};
   logger.info('dot.verification_completed', {
     numberType: carrier.type,
     logged,
@@ -185,7 +193,9 @@ export async function verifyCarrierNumber(
 
   return {
     success: true,
-    saferUrl,
+    saferUrl:integrity?.officialUrl??saferUrl,
+    identifierIntegrity:integrity,
+    submittedIdentifierUrl:integrity&&carrier.type==='MC'?buildSaferLookupUrl(carrier):undefined,
     displayNumber: carrier.display,
     numberType: carrier.type,
     preview,

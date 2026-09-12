@@ -1,0 +1,89 @@
+{
+  "ticket": "TH-SEARCH-R1-006",
+  "retrievedAt": "2026-09-12 00:20:58 UTC",
+  "operation": "bounded read-only canonical companies query; four identity controls and two disputed MC values",
+  "rows": [
+    {
+      "id": "allied",
+      "slug": "allied-van-lines",
+      "name": "Allied Van Lines",
+      "fmcsa_legal_name": "ALLIED VAN LINES INC",
+      "usdot_number": "76235",
+      "mc_number": "15735",
+      "publication_state": "PUBLISHABLE",
+      "fmcsa_last_checked": "2026-08-23 05:01:44.832+00",
+      "updated_at": "2026-08-23 05:01:44.911966+00",
+      "data_hash": "d92988ea53defec3891db49acd4e73e2f04711265af856affc3295505bf87800",
+      "raw_dot": "76235",
+      "raw_dba": null,
+      "raw_mc": null,
+      "raw_docket": null,
+      "raw_snapshot_date": null,
+      "supplemental_keys": [
+        "oos",
+        "authority",
+        "cargoCarried",
+        "operationClassification"
+      ]
+    },
+    {
+      "id": "jk-moving",
+      "slug": "jk-moving-services",
+      "name": "JK Moving Services",
+      "fmcsa_legal_name": "JK MOVING & STORAGE INC",
+      "usdot_number": "1065394",
+      "mc_number": "225850",
+      "publication_state": "PUBLISHABLE",
+      "fmcsa_last_checked": "2026-08-23 05:02:18.368+00",
+      "updated_at": "2026-08-23 05:02:18.422731+00",
+      "data_hash": "5d0585c2184935aa52df9b33545883eab15d7eecd7e366ec6bed038184969a01",
+      "raw_dot": "1065394",
+      "raw_dba": "JK MOVING SERVICES",
+      "raw_mc": null,
+      "raw_docket": null,
+      "raw_snapshot_date": null,
+      "supplemental_keys": [
+        "oos",
+        "authority",
+        "cargoCarried",
+        "operationClassification"
+      ]
+    },
+    {
+      "id": "usdot-1300300",
+      "slug": "jk-moving-services-usdot-1300300",
+      "name": "JK MOVING SERVICES",
+      "fmcsa_legal_name": "JK MOVING & STORAGE OF MARYLAND, INC.",
+      "usdot_number": "1300300",
+      "mc_number": "504611",
+      "publication_state": "PUBLISHABLE",
+      "fmcsa_last_checked": "2026-08-20 13:52:59.596+00",
+      "updated_at": "2026-08-20 15:30:32.241558+00",
+      "data_hash": null,
+      "raw_dot": null,
+      "raw_dba": null,
+      "raw_mc": null,
+      "raw_docket": null,
+      "raw_snapshot_date": null,
+      "supplemental_keys": null
+    },
+    {
+      "id": "usdot-3244649",
+      "slug": "shifl-inc",
+      "name": "SHIFL INC",
+      "fmcsa_legal_name": "SHIFL INC",
+      "usdot_number": "3244649",
+      "mc_number": "1019808",
+      "publication_state": "PUBLISHABLE",
+      "fmcsa_last_checked": "2026-08-20 13:52:59.596+00",
+      "updated_at": "2026-08-20 15:30:32.241558+00",
+      "data_hash": null,
+      "raw_dot": null,
+      "raw_dba": null,
+      "raw_mc": null,
+      "raw_docket": null,
+      "raw_snapshot_date": null,
+      "supplemental_keys": null
+    }
+  ]
+}
