@@ -119,7 +119,7 @@ export function CompanyResearchHero({
           </p>
         ) : (
           <p className="w-full rounded-lg border border-dashed px-3 py-2 text-sm text-muted-foreground sm:w-auto">
-            MC not recorded on this profile
+            {company.identifierIntegrity ? 'MC association under review; see source details above' : 'MC not recorded on this profile'}
           </p>
         )}
       </div>
