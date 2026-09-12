@@ -313,6 +313,11 @@ test("API/native transport, rendered guidance and actions share the same meaning
 });
 
 test('legal-name signals are not converted to locality requests',()=>{
+ for(const name of ['From Here To There Moving LLC','Moving from Florida to Texas LLC']) {
+  const p=planMoveRequest({q:`Research "${name}"`});assert.equal(p.query.nameQuery,name);assert.equal(p.query.journey,undefined);
+ }
+ const namedJourney=planMoveRequest({q:'Can "JK Moving" handle my move from Virginia to Florida?'});
+ assert.equal(namedJourney.query.nameQuery,'JK Moving');assert.equal(namedJourney.query.journey?.origin?.state,'VA');assert.equal(namedJourney.query.journey?.destination?.state,'FL');
  for(const q of ['Movers in Motion LLC','Research Movers in Motion LLC','Movers in Motion LLC licensed?']){const p=planMoveRequest({q});assert.equal(p.query.journey,undefined);}
  const quoted=planMoveRequest({q:'Research "Movers in Motion LLC"'});assert.equal(quoted.query.nameQuery,'Movers in Motion LLC');assert.equal(quoted.query.journey,undefined);
 });
