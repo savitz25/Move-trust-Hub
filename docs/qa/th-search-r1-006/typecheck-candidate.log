@@ -1,0 +1,728 @@
+
+> move-trust-hub@1.0.0 typecheck
+> tsc --noEmit
+
+app/lender/methodology/page.tsx(345,22): error TS2339: Property 'href' does not exist on type '{ readonly name: "NMLS Consumer Access"; readonly detail: "Primary public registry for company and individual mortgage licensing context. Always re-confirm IDs before applying."; readonly href: "https://www.nmlsconsumeraccess.org/"; } | ... 4 more ... | { ...; }'.
+  Property 'href' does not exist on type '{ readonly name: "State licensing context"; readonly detail: "State-level mortgage company / MLO requirements vary. Our summaries do not replace state regulator confirmation."; }'.
+app/lender/methodology/page.tsx(347,31): error TS2339: Property 'href' does not exist on type '{ readonly name: "NMLS Consumer Access"; readonly detail: "Primary public registry for company and individual mortgage licensing context. Always re-confirm IDs before applying."; readonly href: "https://www.nmlsconsumeraccess.org/"; } | ... 4 more ... | { ...; }'.
+  Property 'href' does not exist on type '{ readonly name: "State licensing context"; readonly detail: "State-level mortgage company / MLO requirements vary. Our summaries do not replace state regulator confirmation."; }'.
+components/fmcsa/fmcsa-verification-badge.tsx(74,46): error TS2367: This comparison appears to be unintentional because the types '"fmcsa" | "google" | "directory" | "fmcsa-warning" | "fmcsa-critical" | "bbb-verified"' and '"fmcsa-unknown"' have no overlap.
+components/fmcsa/fmcsa-verification-badge.tsx(74,76): error TS2339: Property 'description' does not exist on type 'never'.
+components/lender/cluster-page-view.tsx(39,21): error TS7052: Element implicitly has an 'any' type because type 'Map<string, StateMeta>' has no index signature. Did you mean to call 'STATE_BY_SLUG.get'?
+components/local-movers/local-mover-card.tsx(50,37): error TS2345: Argument of type 'LocalMover' is not assignable to parameter of type 'Pick<Company, "usdotNumber" | "mcNumber">'.
+  Types of property 'usdotNumber' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+components/network/network-handoff.tsx(22,8): error TS2552: Cannot find name 'NetworkHandoffLink'. Did you mean 'NetworkHandoffVariant'?
+components/performance/deferred-ui-styles.tsx(16,17): error TS2307: Cannot find module '@/app/ui-components.css' or its corresponding type declarations.
+components/save-my-move/my-move-dashboard.tsx(579,50): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'Json | undefined'.
+components/save-my-move/my-move-dashboard.tsx(651,23): error TS2322: Type 'Promise<string | number | void>' is not assignable to type 'Promise<void>'.
+  Type 'string | number | void' is not assignable to type 'void'.
+    Type 'string' is not assignable to type 'void'.
+components/save-my-move/my-move-dashboard.tsx(664,48): error TS2322: Type 'Promise<{ ok: true; error?: undefined; } | { ok: false; error: string; }>' is not assignable to type 'Promise<void>'.
+  Type '{ ok: true; error?: undefined; } | { ok: false; error: string; }' is not assignable to type 'void'.
+    Type '{ ok: true; error?: undefined; }' is not assignable to type 'void'.
+components/ui/dialog.tsx(49,6): error TS2322: Type '{ children: ReactNode; defaultChecked?: boolean | undefined; defaultValue?: string | number | readonly string[] | undefined; suppressContentEditableWarning?: boolean | undefined; ... 278 more ...; className: string; }' is not assignable to type 'Omit<HTMLMotionProps<"div">, "ref">'.
+  Types of property 'onDrag' are incompatible.
+    Type 'DragEventHandler<HTMLDivElement> | undefined' is not assignable to type '((event: MouseEvent | PointerEvent | TouchEvent, info: PanInfo) => void) | undefined'.
+      Type 'DragEventHandler<HTMLDivElement>' is not assignable to type '(event: MouseEvent | PointerEvent | TouchEvent, info: PanInfo) => void'.
+        Types of parameters 'event' and 'event' are incompatible.
+          Type 'MouseEvent | PointerEvent | TouchEvent' is not assignable to type 'DragEvent<HTMLDivElement>'.
+            Type 'MouseEvent' is missing the following properties from type 'DragEvent<HTMLDivElement>': dataTransfer, nativeEvent, isDefaultPrevented, isPropagationStopped, persist
+data/alabama-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/arkansas-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/delaware-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/district-of-columbia-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/illinois-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/indiana-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/kansas-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/kentucky-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/local-movers-seed.ts(5522,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(10187,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(10675,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(11166,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(74496,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(74535,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(74548,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(74587,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(74600,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89368,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89407,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89420,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89459,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89472,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89498,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89537,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89550,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89589,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89602,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89628,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89667,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89680,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89719,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89732,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89758,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89797,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89810,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89849,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89862,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89888,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89927,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89940,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89979,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(89992,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(150793,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(150832,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(150845,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(150884,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/local-movers-seed.ts(150897,3): error TS1117: An object literal cannot have multiple properties with the same name.
+data/louisiana-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/maryland-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/michigan-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/mississippi-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/missouri-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/ohio-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/oklahoma-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/pennsylvania-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/virginia-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+data/west-virginia-county-testimonials.ts(1,15): error TS2305: Module '"@/lib/local-movers/types"' has no exported member 'CountyTestimonialEntry'.
+lib/admin/my-move-users.ts(107,5): error TS2322: Type 'string | null | undefined' is not assignable to type 'string | null'.
+  Type 'undefined' is not assignable to type 'string | null'.
+lib/bbb/refresh/runner.ts(233,9): error TS2322: Type 'Record<string, unknown>' is not assignable to type 'Json | undefined'.
+  Type 'Record<string, unknown>' is missing the following properties from type 'Json[]': length, pop, push, concat, and 35 more.
+lib/data-quality/consistency-alarms.ts(183,11): error TS2367: This comparison appears to be unintentional because the types 'true | null | undefined' and 'false' have no overlap.
+lib/destinations/content/index.ts(895,3): error TS1117: An object literal cannot have multiple properties with the same name.
+lib/destinations/content/index.ts(897,3): error TS1117: An object literal cannot have multiple properties with the same name.
+lib/directory/auto-transport-evidence.test.ts(19,21): error TS2322: Type '"National"' is not assignable to type 'Region'.
+lib/directory/filter-companies.test.ts(28,5): error TS2322: Type '"Interstate household-goods authority — confirm origin and destination with this company"' is not assignable to type 'Region'.
+lib/directory/merge-directory.ts(102,13): error TS18047: 'google' is possibly 'null'.
+lib/directory/merge-directory.ts(107,30): error TS18047: 'google' is possibly 'null'.
+lib/directory/merge-directory.ts(108,13): error TS18047: 'google' is possibly 'null'.
+lib/directory/normalize-company.ts(60,5): error TS2322: Type 'string' is not assignable to type 'Region'.
+lib/federal-hhg/wave3-manifest.test.ts(68,42): error TS2554: Expected 1 arguments, but got 0.
+lib/federal-hhg/wave3-manifest.test.ts(159,42): error TS2554: Expected 1 arguments, but got 0.
+lib/fmcsa/refresh/batch-runner.ts(399,15): error TS2345: Argument of type 'Record<string, unknown>' is not assignable to parameter of type 'RejectExcessProperties<Partial<{ id: string; slug: string; name: string; logo: string | null; short_description: string | null; description: string | null; founded_year: number | null; headquarters: string | null; ... 43 more ...; updated_at: string; }>, Record<...>>'.
+  Type 'Record<string, unknown>' is not assignable to type '{ [x: string]: never; }'.
+    'string' index signatures are incompatible.
+      Type 'unknown' is not assignable to type 'never'.
+lib/fmcsa/refresh/fetch-company.ts(80,38): error TS2352: Conversion of type 'Record<string, unknown>' to type 'null' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+lib/geo/us-place-index.ts(133,3): error TS1117: An object literal cannot have multiple properties with the same name.
+lib/hooks/use-deferred-load.ts(49,20): error TS2339: Property 'setTimeout' does not exist on type 'never'.
+lib/hooks/use-deferred-load.ts(54,7): error TS2322: Type 'number' is not assignable to type 'Timeout'.
+lib/hooks/use-in-view.ts(36,20): error TS2339: Property 'setTimeout' does not exist on type 'never'.
+lib/hub/wrap-metadata.ts(16,5): error TS2353: Object literal may only specify known properties, and 'keywords' does not exist in type 'HubPageMetadataInput'.
+lib/insurance/enrichment/merge.ts(23,5): error TS2322: Type '{ is_enriched: false; google_review_snippets: never[]; id: string; slug: string; name: string; logo?: string | null; short_description?: string | null; description?: string | null; city: string; ... 25 more ...; updated_at?: string; }' is not assignable to type 'EnrichedProvider'.
+  Type '{ is_enriched: false; google_review_snippets: never[]; id: string; slug: string; name: string; logo?: string | null; short_description?: string | null; description?: string | null; city: string; ... 25 more ...; updated_at?: string; }' is not assignable to type '{ enrichment?: ProviderEnrichmentRecord | undefined; is_enriched: boolean; google_rating?: number | null | undefined; google_review_count?: number | null | undefined; ... 5 more ...; needs_manual_review?: boolean | undefined; }'.
+    Types of property 'enriched_at' are incompatible.
+      Type 'string | null | undefined' is not assignable to type 'string | undefined'.
+        Type 'null' is not assignable to type 'string | undefined'.
+lib/insurance/providers/queries.ts(117,5): error TS2322: Type '{ providers: Provider[]; total: number; }' is not assignable to type '{ providers: EnrichedProvider[]; total: number; }'.
+  Types of property 'providers' are incompatible.
+    Type 'Provider[]' is not assignable to type 'EnrichedProvider[]'.
+      Type 'Provider' is not assignable to type 'EnrichedProvider'.
+        Type 'Provider' is missing the following properties from type '{ enrichment?: ProviderEnrichmentRecord | undefined; is_enriched: boolean; google_rating?: number | null | undefined; google_review_count?: number | null | undefined; ... 5 more ...; needs_manual_review?: boolean | undefined; }': is_enriched, google_review_snippets
+lib/lender/enrichment/store.ts(9,22): error TS2352: Conversion of type '{ "metro-home-finance": { slug: string; google_rating: number; google_review_count: number; google_place_id: string; google_review_snippets: { text: string; rating: number; relative_time: string; author: string; }[]; ... 9 more ...; enrichment_json: { ...; }; }; ... 645 more ...; "local-shore-independent-mortgage": ...' to type 'LenderEnrichmentStore' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Property '"metro-home-finance"' is incompatible with index signature.
+    Type '{ slug: string; google_rating: number; google_review_count: number; google_place_id: string; google_review_snippets: { text: string; rating: number; relative_time: string; author: string; }[]; ... 9 more ...; enrichment_json: { ...; }; }' is not comparable to type 'LenderEnrichmentRecord'.
+      The types of 'enrichment_json.google' are incompatible between these types.
+        Property 'website_url' is missing in type '{ source: string; place_id: string; name: string; rating: number; review_count: number; formatted_address: string; review_snippets: { text: string; rating: number; relative_time: string; author: string; }[]; last_fetched: string; status: string; raw_response: { ...; }; }' but required in type 'GooglePlacesData'.
+lib/local-movers/approved-county-movers.ts(193,23): error TS2352: Conversion of type 'GenericStringError[]' to type 'CompanyMoverRow[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ error: true; } & String' is missing the following properties from type 'CompanyMoverRow': id, slug, name
+lib/local-movers/approved-county-movers.ts(194,23): error TS2352: Conversion of type 'GenericStringError[]' to type 'CompanyMoverRow[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ error: true; } & String' is missing the following properties from type 'CompanyMoverRow': id, slug, name
+lib/local-movers/approved-county-movers.ts(203,30): error TS2352: Conversion of type 'GenericStringError' to type 'CompanyMoverRow' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ error: true; } & String' is missing the following properties from type 'CompanyMoverRow': id, slug, name
+lib/local-movers/approved-county-movers.ts(356,25): error TS2352: Conversion of type 'SelectQueryError<"column 'entity_type' does not exist on 'companies'.">[]' to type 'CompanyMoverRow[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ error: true; } & String' is missing the following properties from type 'CompanyMoverRow': id, slug, name
+lib/local-movers/approved-county-movers.ts(450,18): error TS2352: Conversion of type 'SelectQueryError<"column 'entity_type' does not exist on 'companies'.">[]' to type 'CompanyMoverRow[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ error: true; } & String' is missing the following properties from type 'CompanyMoverRow': id, slug, name
+lib/local-movers/county-intelligence/new-jersey/atlantic-tier2.ts(231,3): error TS2741: Property 'intro' is missing in type '{ title: string; items: ({ label: string; href: string; external: true; } | { label: string; href: string; })[]; }' but required in type '{ title: string; intro: string; items: CountyIntelligenceResource[]; }'.
+lib/local-movers/county-intelligence/new-jersey/burlington-tier2.ts(228,3): error TS2741: Property 'intro' is missing in type '{ title: string; items: ({ label: string; href: string; external: true; } | { label: string; href: string; })[]; }' but required in type '{ title: string; intro: string; items: CountyIntelligenceResource[]; }'.
+lib/local-movers/county-intelligence/new-jersey/camden-tier2.ts(227,3): error TS2741: Property 'intro' is missing in type '{ title: string; items: ({ label: string; href: string; external: true; } | { label: string; href: string; })[]; }' but required in type '{ title: string; intro: string; items: CountyIntelligenceResource[]; }'.
+lib/local-movers/county-intelligence/new-jersey/cape-may-tier2.ts(228,3): error TS2741: Property 'intro' is missing in type '{ title: string; items: ({ label: string; href: string; external: true; } | { label: string; href: string; })[]; }' but required in type '{ title: string; intro: string; items: CountyIntelligenceResource[]; }'.
+lib/local-movers/county-intelligence/new-jersey/cumberland-tier2.ts(227,3): error TS2741: Property 'intro' is missing in type '{ title: string; items: ({ label: string; href: string; external: true; } | { label: string; href: string; })[]; }' but required in type '{ title: string; intro: string; items: CountyIntelligenceResource[]; }'.
+lib/local-movers/county-intelligence/new-jersey/gloucester-tier2.ts(227,3): error TS2741: Property 'intro' is missing in type '{ title: string; items: ({ label: string; href: string; external: true; } | { label: string; href: string; })[]; }' but required in type '{ title: string; intro: string; items: CountyIntelligenceResource[]; }'.
+lib/local-movers/county-intelligence/new-jersey/hunterdon-tier2.ts(227,3): error TS2741: Property 'intro' is missing in type '{ title: string; items: ({ label: string; href: string; external: true; } | { label: string; href: string; })[]; }' but required in type '{ title: string; intro: string; items: CountyIntelligenceResource[]; }'.
+lib/local-movers/county-intelligence/new-jersey/mercer-tier2.ts(225,3): error TS2741: Property 'intro' is missing in type '{ title: string; items: ({ label: string; href: string; external: true; } | { label: string; href: string; })[]; }' but required in type '{ title: string; intro: string; items: CountyIntelligenceResource[]; }'.
+lib/local-movers/county-intelligence/new-jersey/somerset-tier2.ts(218,3): error TS2741: Property 'intro' is missing in type '{ title: string; items: ({ label: string; href: string; external: true; } | { label: string; href: string; })[]; }' but required in type '{ title: string; intro: string; items: CountyIntelligenceResource[]; }'.
+lib/local-movers/county-intelligence/new-jersey/sussex-tier2.ts(227,3): error TS2741: Property 'intro' is missing in type '{ title: string; items: ({ label: string; href: string; external: true; } | { label: string; href: string; })[]; }' but required in type '{ title: string; intro: string; items: CountyIntelligenceResource[]; }'.
+lib/local-movers/county-intelligence/new-jersey/warren-tier2.ts(227,3): error TS2741: Property 'intro' is missing in type '{ title: string; items: ({ label: string; href: string; external: true; } | { label: string; href: string; })[]; }' but required in type '{ title: string; intro: string; items: CountyIntelligenceResource[]; }'.
+lib/local-movers/county-intelligence/new-york/broome-ny.ts(10,90): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/cayuga-ny.ts(10,90): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/chautauqua-ny.ts(10,94): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/chemung-ny.ts(10,91): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/clinton-ny.ts(10,91): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/columbia-ny.ts(10,92): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/dutchess-ny.ts(10,92): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/jefferson-ny.ts(10,93): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/niagara-ny.ts(10,91): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/oneida-ny.ts(10,90): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/ontario-ny.ts(10,91): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/orange-ny.ts(10,90): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/oswego-ny.ts(10,90): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/putnam-ny.ts(10,90): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/rensselaer-ny.ts(10,94): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/rockland-ny.ts(12,92): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/saratoga-ny.ts(10,92): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/schenectady-ny.ts(10,95): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/st-lawrence-ny.ts(10,94): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/steuben-ny.ts(10,91): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/sullivan-ny.ts(10,92): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/tompkins-ny.ts(10,92): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/ulster-ny.ts(10,90): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/new-york/warren-ny.ts(10,92): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'NyTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/pennsylvania/beaver-pa.ts(10,90): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'PaTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/pennsylvania/berks-pa.ts(10,89): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'PaTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/pennsylvania/butler-pa.ts(10,90): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'PaTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/pennsylvania/centre-pa.ts(10,90): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'PaTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/pennsylvania/cumberland-pa.ts(10,96): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'PaTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/pennsylvania/franklin-pa.ts(10,92): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'PaTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/pennsylvania/lackawanna-pa.ts(10,94): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'PaTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/pennsylvania/luzerne-pa.ts(10,91): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'PaTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/pennsylvania/monroe-pa.ts(10,90): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'PaTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/pennsylvania/schuylkill-pa.ts(10,94): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'PaTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/pennsylvania/washington-pa.ts(10,94): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'PaTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/county-intelligence/pennsylvania/westmoreland-pa.ts(10,96): error TS2345: Argument of type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' is not assignable to parameter of type 'PaTier2PackInput'.
+  Property 'lastReviewed' is missing in type '{ countySlug: string; hubTitle: string; eyebrow: string; h1: string; heroOpener: string; heroCredibility: string; majorCorridors: string; parentCompare: { parentLabel: string; parentHref: string; title: string; intro: string; bullets: { ...; }[]; }; ... 8 more ...; resources: { ...; }; }' but required in type 'Omit<CountyIntelligencePack, "stateSlug" | "collapsibleDeepContent" | "sectionOrder" | "contentTier">'.
+lib/local-movers/geography/virginia-overrides.ts(8,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(9,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(15,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(16,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(34,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(35,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(36,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(37,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(38,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(39,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(40,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(41,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(42,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(43,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(45,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(46,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(47,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(48,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(49,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(50,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(51,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(52,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(53,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(54,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(55,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(56,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(57,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(59,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(60,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(61,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(62,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(63,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(64,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(65,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(66,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(67,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(68,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(69,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(70,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(71,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(72,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(73,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(74,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(75,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(76,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(77,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(78,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(79,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(80,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(81,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(82,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(83,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(84,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(85,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(86,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(87,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(88,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(89,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(90,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(91,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(92,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(93,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(94,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(95,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(96,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(97,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(98,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(99,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(100,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(101,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(102,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(103,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(104,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(105,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(106,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(107,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(108,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(109,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(110,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(111,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(112,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(113,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(114,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(115,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(116,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(117,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(118,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(119,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(120,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(121,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(122,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(125,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(126,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(127,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(128,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(129,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(130,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(131,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(132,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(133,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(134,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(135,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(136,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(137,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(138,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(139,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(140,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(141,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(142,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(143,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(144,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(145,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(146,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(147,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(148,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(149,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(150,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(151,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(152,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(153,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(154,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/geography/virginia-overrides.ts(155,3): error TS2741: Property 'name' is missing in type '{ seat: string; metro: string; }' but required in type 'Pick<LocalCounty, "name" | "seat" | "metro">'.
+lib/local-movers/kentucky-nearby.ts(142,3): error TS2322: Type '({ slug: string; name: string; stateSlug: "kentucky"; } | null)[]' is not assignable to type 'NearbyCountyLink[]'.
+  Type '{ slug: string; name: string; stateSlug: "kentucky"; } | null' is not assignable to type 'NearbyCountyLink'.
+    Type 'null' is not assignable to type 'NearbyCountyLink'.
+lib/local-movers/kentucky-nearby.ts(148,29): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Property 'stateSlug' is missing in type 'NearbyCountyLink' but required in type '{ slug: string; name: string; stateSlug: "kentucky"; }'.
+lib/metrics/compute-move-network-metrics.ts(616,7): error TS2322: Type '"ny_dot_weekly_bulletin_hhg_application_observation"' is not assignable to type 'MetricGrain'.
+lib/move-quote-check/extract-upload.ts(123,7): error TS2307: Cannot find module 'https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.esm.min.js' or its corresponding type declarations.
+lib/moving-calculator/move-presets.ts(186,3): error TS2322: Type '({ id: string; name: string; volume: number; quantity: number; room: string; } | null)[]' is not assignable to type 'InventoryItem[]'.
+  Type '{ id: string; name: string; volume: number; quantity: number; room: string; } | null' is not assignable to type 'InventoryItem'.
+    Type 'null' is not assignable to type 'InventoryItem'.
+lib/moving-calculator/move-presets.ts(198,29): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'InventoryItem' is not assignable to type '{ id: string; name: string; volume: number; quantity: number; room: string; }'.
+    Types of property 'room' are incompatible.
+      Type 'string | undefined' is not assignable to type 'string'.
+        Type 'undefined' is not assignable to type 'string'.
+lib/moving-calculator/normalize-inventory.ts(7,3): error TS2322: Type '({ id: string; name: string; volume: number; quantity: number; room: string | undefined; } | null)[]' is not assignable to type 'InventoryItem[]'.
+  Type '{ id: string; name: string; volume: number; quantity: number; room: string | undefined; } | null' is not assignable to type 'InventoryItem'.
+    Type 'null' is not assignable to type 'InventoryItem'.
+lib/moving-calculator/normalize-inventory.ts(25,29): error TS2677: A type predicate's type must be assignable to its parameter's type.
+  Type 'InventoryItem' is not assignable to type '{ id: string; name: string; volume: number; quantity: number; room: string | undefined; }'.
+    Property 'room' is optional in type 'InventoryItem' but required in type '{ id: string; name: string; volume: number; quantity: number; room: string | undefined; }'.
+lib/portal/ownership.ts(61,3): error TS2322: Type '{ company_name: {}; id: string; company_id: string; company_slug: string; user_id: string; claim_id: string | null; role: OwnerRole; status: OwnerStatus; verified_at: string; }[]' is not assignable to type 'CompanyOwner[]'.
+  Type '{ company_name: {}; id: string; company_id: string; company_slug: string; user_id: string; claim_id: string | null; role: OwnerRole; status: OwnerStatus; verified_at: string; }' is not assignable to type 'CompanyOwner'.
+    Types of property 'company_name' are incompatible.
+      Type '{}' is not assignable to type 'string'.
+lib/quotes/notify.ts(80,7): error TS2322: Type 'number | undefined' is not assignable to type 'string | null | undefined'.
+  Type 'number' is not assignable to type 'string'.
+lib/quotes/notify.ts(144,5): error TS2322: Type 'number | undefined' is not assignable to type 'string | null | undefined'.
+  Type 'number' is not assignable to type 'string'.
+lib/quotes/persist.ts(78,15): error TS2345: Argument of type 'Record<string, unknown>' is not assignable to parameter of type 'RejectExcessProperties<{ name: string; email: string; phone?: string | null | undefined; from_zip: string; to_zip: string; move_date?: string | null | undefined; home_size?: string | null | undefined; estimated_volume?: number | ... 1 more ... | undefined; ... 8 more ...; status?: QuoteStatus | undefined; }, { ...; ...'.
+  Type 'Record<string, unknown>' is missing the following properties from type 'RejectExcessProperties<{ name: string; email: string; phone?: string | null | undefined; from_zip: string; to_zip: string; move_date?: string | null | undefined; home_size?: string | null | undefined; estimated_volume?: number | ... 1 more ... | undefined; ... 8 more ...; status?: QuoteStatus | undefined; }, { ...; ...': length, pop, push, concat, and 35 more.
+lib/quotes/persist.ts(85,61): error TS2345: Argument of type 'Record<string, unknown>' is not assignable to parameter of type 'RejectExcessProperties<{ name: string; email: string; phone?: string | null | undefined; from_zip: string; to_zip: string; move_date?: string | null | undefined; home_size?: string | null | undefined; estimated_volume?: number | ... 1 more ... | undefined; ... 8 more ...; status?: QuoteStatus | undefined; }, { ...; ...'.
+  Type 'Record<string, unknown>' is missing the following properties from type 'RejectExcessProperties<{ name: string; email: string; phone?: string | null | undefined; from_zip: string; to_zip: string; move_date?: string | null | undefined; home_size?: string | null | undefined; estimated_volume?: number | ... 1 more ... | undefined; ... 8 more ...; status?: QuoteStatus | undefined; }, { ...; ...': length, pop, push, concat, and 35 more.
+lib/reviews/bridge.ts(76,10): error TS2339: Property 'catch' does not exist on type 'PromiseLike<undefined>'.
+lib/reviews/companies.ts(118,55): error TS2339: Property 'source' does not exist on type 'MovingCompanyRecord'.
+lib/reviews/queries.ts(176,53): error TS2352: Conversion of type 'GenericStringError' to type 'Record<string, unknown>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Index signature for type 'string' is missing in type '{ error: true; } & String'.
+lib/search/query.ts(98,39): error TS2352: Conversion of type 'GenericStringError' to type 'Record<string, unknown>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Index signature for type 'string' is missing in type '{ error: true; } & String'.
+lib/state-hhg/canonicalization/apply.ts(35,9): error TS2322: Type '{ companyId: string; legalName: string; dbaName: null; publicName: string; usdot: string | null; phone: string | null; address: string | null; city: string | null; state: string | null; publicationState: string | null; indexable: boolean; }[]' is not assignable to type 'CanonicalProviderIdentity[]'.
+  Property 'postalCode' is missing in type '{ companyId: string; legalName: string; dbaName: null; publicName: string; usdot: string | null; phone: string | null; address: string | null; city: string | null; state: string | null; publicationState: string | null; indexable: boolean; }' but required in type 'CanonicalProviderIdentity'.
+lib/state-hhg/canonicalization/apply.ts(227,5): error TS2322: Type '"new_state_authority_identity"' is not assignable to type '"none" | "exact_usdot" | "exact_prior_state_authority" | "exact_legal_name_and_address" | "exact_legal_name_and_phone" | "exact_legal_name_and_email" | "exact_dba_and_corroboration"'.
+lib/state-hhg/canonicalization/apply.ts(283,26): error TS2345: Argument of type '{ companyId: string; legalName: string; dbaName: string | null; publicName: string; usdot: string | null; phone: string | null; address: string | null; city: string | null; state: "FL" | "WA"; publicationState: string; indexable: false; }' is not assignable to parameter of type 'CanonicalProviderIdentity'.
+  Property 'postalCode' is missing in type '{ companyId: string; legalName: string; dbaName: string | null; publicName: string; usdot: string | null; phone: string | null; address: string | null; city: string | null; state: "FL" | "WA"; publicationState: string; indexable: false; }' but required in type 'CanonicalProviderIdentity'.
+lib/state-hhg/fl/wave-011f.ts(281,5): error TS2322: Type '200 | 404' is not assignable to type '404'.
+  Type '200' is not assignable to type '404'.
+lib/state-hhg/fl/wave-011h.ts(430,8): error TS1354: 'readonly' type modifier is only permitted on array and tuple literal types.
+lib/state-hhg/fl/wave-011h.ts(445,7): error TS2367: This comparison appears to be unintentional because the types '"REUSE_AS_IS"' and '"MODEL_NOT_SAFE"' have no overlap.
+lib/state-hhg/fl/wave-011i.test.ts(217,5): error TS2740: Type '{ op: "LINK"; mb: string; companyId: string; slug: string; intendedPublicationState: string; intendedIndexable: false; }' is missing the following properties from type 'FinalBrokerOp': legalName, role, sourceStatus, sourceFreshness, and 9 more.
+lib/state-hhg/fl/wave-011i.test.ts(225,5): error TS2740: Type '{ op: "INSERT"; mb: string; companyId: string; slug: string; intendedPublicationState: string; intendedIndexable: false; }' is missing the following properties from type 'FinalBrokerOp': legalName, role, sourceStatus, sourceFreshness, and 9 more.
+lib/state-hhg/fl/wave-011i.ts(136,8): error TS1354: 'readonly' type modifier is only permitted on array and tuple literal types.
+lib/state-hhg/fl/wave-2-readiness.test.ts(75,18): error TS2339: Property 'wave2State' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+lib/state-hhg/fl/wave-2-readiness.test.ts(87,18): error TS2339: Property 'wave2State' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+lib/state-hhg/fl/wave-2-readiness.test.ts(101,18): error TS2339: Property 'wave2State' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+lib/state-hhg/fl/wave-2-readiness.test.ts(112,18): error TS2339: Property 'wave2State' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+lib/state-hhg/fl/wave-2-readiness.test.ts(113,18): error TS2339: Property 'indexableAuthorized' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+lib/state-hhg/fl/wave-2-readiness.test.ts(114,18): error TS2339: Property 'publicationMutation' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+lib/state-hhg/fl/wave-2-readiness.test.ts(125,18): error TS2339: Property 'wave2State' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+lib/state-hhg/fl/wave-2-readiness.test.ts(135,42): error TS2345: Argument of type '3' is not assignable to parameter of type '50'.
+lib/state-hhg/fl/wave-2-readiness.ts(88,5): error TS2322: Type '"NOT_ELIGIBLE"' is not assignable to type 'never'.
+lib/state-hhg/fl/wave-2-readiness.ts(89,5): error TS2322: Type '"FL_STATE_WAVE_2_READINESS_V1"' is not assignable to type 'never'.
+lib/state-hhg/fl/wave-2-readiness.ts(94,7): error TS2698: Spread types may only be created from object types.
+lib/state-hhg/fl/wave-2-readiness.ts(103,7): error TS2698: Spread types may only be created from object types.
+lib/state-hhg/fl/wave-2-readiness.ts(112,7): error TS2698: Spread types may only be created from object types.
+lib/state-hhg/fl/wave-2-readiness.ts(121,7): error TS2698: Spread types may only be created from object types.
+lib/state-hhg/fl/wave-2-readiness.ts(137,5): error TS2698: Spread types may only be created from object types.
+lib/state-hhg/fl/wave-2-readiness.ts(138,29): error TS2339: Property 'state' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+lib/suggestions/apply-published-enrichment.ts(233,15): error TS2345: Argument of type 'Record<string, unknown>' is not assignable to parameter of type 'RejectExcessProperties<Partial<{ id: string; slug: string; name: string; logo: string | null; short_description: string | null; description: string | null; founded_year: number | null; headquarters: string | null; ... 43 more ...; updated_at: string; }>, Record<...>>'.
+  Type 'Record<string, unknown>' is not assignable to type '{ [x: string]: never; }'.
+    'string' index signatures are incompatible.
+      Type 'unknown' is not assignable to type 'never'.
+lib/suggestions/enrichment-snapshot.ts(38,7): error TS2322: Type 'objectOutputType<{ confidence: ZodLiteral<"public">; bbb_rating: ZodOptional<ZodNullable<ZodString>>; bbb_review_count: ZodOptional<ZodNullable<ZodNumber>>; ... 6 more ...; sources: ZodOptional<...>; }, ZodTypeAny, "passthrough"> | null' is not assignable to type 'PublicScrapeData | null'.
+  Type 'objectOutputType<{ confidence: ZodLiteral<"public">; bbb_rating: ZodOptional<ZodNullable<ZodString>>; bbb_review_count: ZodOptional<ZodNullable<ZodNumber>>; ... 6 more ...; sources: ZodOptional<...>; }, ZodTypeAny, "passthrough">' is not assignable to type 'PublicScrapeData | null'.
+    Type 'objectOutputType<{ confidence: ZodLiteral<"public">; bbb_rating: ZodOptional<ZodNullable<ZodString>>; bbb_review_count: ZodOptional<ZodNullable<ZodNumber>>; ... 6 more ...; sources: ZodOptional<...>; }, ZodTypeAny, "passthrough">' is not assignable to type 'PublicScrapeData'.
+      Types of property 'bbb_rating' are incompatible.
+        Type 'string | null | undefined' is not assignable to type 'string | null'.
+          Type 'undefined' is not assignable to type 'string | null'.
+lib/suggestions/publish-company-rpc.ts(18,43): error TS2345: Argument of type '"mth_get_directory_company"' is not assignable to parameter of type '"admin_list_my_move_users"'.
+lib/suggestions/publish-company-rpc.ts(26,10): error TS2352: Conversion of type '{ user_id: string; email: string; account_created_at: string; last_active_at: string; inventory_count: number; mover_count: number; comparison_count: number; emails_sent: number; total_count: number; }[]' to type 'Record<string, unknown>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Index signature for type 'string' is missing in type '{ user_id: string; email: string; account_created_at: string; last_active_at: string; inventory_count: number; mover_count: number; comparison_count: number; emails_sent: number; total_count: number; }[]'.
+lib/suggestions/publish-company-rpc.ts(46,43): error TS2345: Argument of type '"mth_directory_health"' is not assignable to parameter of type '"admin_list_my_move_users"'.
+lib/suggestions/publish-company-rpc.ts(63,43): error TS2345: Argument of type '"mth_publish_directory_company"' is not assignable to parameter of type '"admin_list_my_move_users"'.
+lib/supabase/queries/companies.ts(620,23): error TS2352: Conversion of type 'SelectQueryError<"column 'publication_state' does not exist on 'companies'.">[]' to type '{ slug: string; last_updated: string | null; publication_state: string | null; indexable: boolean | null; }[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ error: true; } & String' is missing the following properties from type '{ slug: string; last_updated: string | null; publication_state: string | null; indexable: boolean | null; }': slug, last_updated, publication_state, indexable
+lib/supabase/queries/companies.ts(798,20): error TS2352: Conversion of type 'GenericStringError[]' to type 'Record<string, unknown>[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'GenericStringError' is not comparable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type '{ error: true; } & String'.
+lib/trust/profile-metrics.ts(62,30): error TS2339: Property 'googleData' does not exist on type 'Pick<Company, "id" | "overallRating" | "reviewCount">'.
+lib/trust/profile-metrics.ts(63,16): error TS2339: Property 'googleData' does not exist on type 'Pick<Company, "id" | "overallRating" | "reviewCount">'.
+lib/trust/profile-metrics.ts(63,58): error TS7006: Parameter 's' implicitly has an 'any' type.
+lib/verify-dot/us-states.ts(58,24): error TS2345: Argument of type 'string' is not assignable to parameter of type '"AL" | "AK" | "AZ" | "AR" | "CA" | "CO" | "CT" | "DE" | "FL" | "GA" | "HI" | "ID" | "IL" | "IN" | "IA" | "KS" | "KY" | "LA" | "ME" | "MD" | "MA" | "MI" | "MN" | "MS" | "MO" | "MT" | "NE" | ... 23 more ... | "DC"'.
+lib/virginia-intelligence/snapshot.ts(58,7): error TS2367: This comparison appears to be unintentional because the types '"distinct_non_null_authority_number"' and '"authorized_listing_row"' have no overlap.
+scripts/audit-company-enrichment.ts(118,27): error TS2352: Conversion of type 'GenericStringError' to type 'Record<string, unknown>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Index signature for type 'string' is missing in type '{ error: true; } & String'.
+scripts/audit-company-enrichment.ts(131,12): error TS2352: Conversion of type 'GenericStringError[]' to type 'Record<string, unknown>[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'GenericStringError' is not comparable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type '{ error: true; } & String'.
+scripts/audit-county-local-visibility.ts(69,19): error TS2352: Conversion of type 'GenericStringError[]' to type 'Record<string, unknown>[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'GenericStringError' is not comparable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type '{ error: true; } & String'.
+scripts/audit-phase1-compliance.ts(83,7): error TS7034: Variable 'liveResults' implicitly has type 'any[]' in some locations where its type cannot be determined.
+scripts/audit-phase1-compliance.ts(91,56): error TS7005: Variable 'liveResults' implicitly has an 'any[]' type.
+scripts/audit-rendered-metadata.ts(47,58): error TS2339: Property 'index' does not exist on type 'string | Robots'.
+  Property 'index' does not exist on type 'string'.
+scripts/audit-rendered-metadata.ts(50,60): error TS2339: Property 'index' does not exist on type 'string | Robots'.
+  Property 'index' does not exist on type 'string'.
+scripts/audit-seo-pass.ts(70,61): error TS18048: 'm' is possibly 'undefined'.
+scripts/backfill-company-contact-core.ts(111,17): error TS2740: Type 'PostgrestBuilder<any, GenericStringError[] | null, false>' is missing the following properties from type 'PostgrestFilterBuilder<any, any, any, GenericStringError[], "companies", unknown, "GET", false>': eq, neq, gt, gte, and 39 more.
+scripts/backfill-company-type-badges.ts(105,16): error TS2352: Conversion of type 'GenericStringError[]' to type 'Record<string, unknown>[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'GenericStringError' is not comparable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type '{ error: true; } & String'.
+scripts/backfill-local-mover-counties.ts(85,19): error TS2352: Conversion of type 'GenericStringError[]' to type 'Record<string, unknown>[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'GenericStringError' is not comparable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type '{ error: true; } & String'.
+scripts/check-directory-filters.ts(40,3): error TS2322: Type '"Local / in-state"' is not assignable to type 'Region'.
+scripts/check-directory-place-query.ts(10,62): error TS2345: Argument of type 'string | null' is not assignable to parameter of type 'string'.
+  Type 'null' is not assignable to type 'string'.
+scripts/check-directory-place-query.ts(21,54): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+scripts/check-jega-fmcsa.ts(22,24): error TS2339: Property 'usdot_number' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/count-unified-directory.ts(50,39): error TS2345: Argument of type '{ id: string; slug: string; name: string; usdotNumber: string; mcNumber: string; headquarters: string; services: ServiceType[]; isVerified: boolean; overallRating: number; reviewCount: number; ... 15 more ...; lastUpdated: string; }' is not assignable to parameter of type 'Company'.
+  Property 'ratingBreakdown' is missing in type '{ id: string; slug: string; name: string; usdotNumber: string; mcNumber: string; headquarters: string; services: ServiceType[]; isVerified: boolean; overallRating: number; reviewCount: number; ... 15 more ...; lastUpdated: string; }' but required in type 'Company'.
+scripts/diagnose-stanford-enrichment.ts(41,13): error TS2339: Property 'verification_sources' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/diagnose-stanford-enrichment.ts(42,22): error TS2339: Property 'verification_sources' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/directory-corrections.ts(130,60): error TS2345: Argument of type '{ usdot_number: string; mc_number: string | null; fmcsa_safety_rating: "Satisfactory" | "Conditional" | "Unsatisfactory" | "Not Rated"; fmcsa_complaints: number; fmcsa_shipments: number; ... 13 more ...; updated_at: string; }' is not assignable to parameter of type 'RejectExcessProperties<Partial<{ id: string; slug: string; name: string; logo: string | null; short_description: string | null; description: string | null; founded_year: number | null; headquarters: string | null; ... 43 more ...; updated_at: string; }>, Partial<...>>'.
+  Type '{ usdot_number: string; mc_number: string | null; fmcsa_safety_rating: "Satisfactory" | "Conditional" | "Unsatisfactory" | "Not Rated"; fmcsa_complaints: number; fmcsa_shipments: number; ... 13 more ...; updated_at: string; }' is not assignable to type 'Partial<{ id: string; slug: string; name: string; logo: string | null; short_description: string | null; description: string | null; founded_year: number | null; headquarters: string | null; ... 43 more ...; updated_at: string; }>'.
+    Types of property 'fmcsa_raw' are incompatible.
+      Type 'Record<string, unknown>' is not assignable to type 'Json | undefined'.
+        Type 'Record<string, unknown>' is missing the following properties from type 'Json[]': length, pop, push, concat, and 35 more.
+scripts/directory-corrections.ts(254,43): error TS2339: Property 'usdot_number' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/directory-corrections.ts(256,54): error TS2352: Conversion of type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">' to type 'CompanyRefreshRow' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ error: true; } & String' is missing the following properties from type 'CompanyRefreshRow': id, slug, name, usdot_number, and 17 more.
+scripts/directory-corrections.ts(291,32): error TS2339: Property 'usdot_number' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/directory-corrections.ts(292,29): error TS2339: Property 'mc_number' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/directory-corrections.ts(293,36): error TS2339: Property 'authority_active' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/directory-corrections.ts(294,39): error TS2339: Property 'fmcsa_safety_rating' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/directory-corrections.ts(300,5): error TS2353: Object literal may only specify known properties, and 'revalidation' does not exist in type 'ChangeLog'.
+scripts/enrich-auto-transport.ts(471,16): error TS2352: Conversion of type 'GenericStringError[]' to type 'DbCompanyRow[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ error: true; } & String' is missing the following properties from type 'DbCompanyRow': id, slug, name, headquarters, and 10 more.
+scripts/enrich-auto-transport.ts(691,29): error TS2345: Argument of type 'string' is not assignable to parameter of type '"montway-auto-transport" | "sherpa-auto-transport" | "sgt-auto-transport" | "reliable-carriers" | "intercity-lines"'.
+scripts/enrich-auto-transport.ts(694,29): error TS2345: Argument of type 'string' is not assignable to parameter of type '"montway-auto-transport" | "sherpa-auto-transport" | "sgt-auto-transport" | "reliable-carriers" | "intercity-lines"'.
+scripts/enrich-auto-transport.ts(937,11): error TS2741: Property 'confidence' is missing in type '{ bbb_rating: string | null; bbb_review_count: number | null; bbb_accredited: boolean | null; bbb_details: BbbScrapeDetails | null; bbb_accreditation_status: string | null; ... 9 more ...; sources: { ...; }; }' but required in type 'PublicScrapeData'.
+scripts/enrich-auto-transport.ts(955,32): error TS18047: 'scrape' is possibly 'null'.
+scripts/enrich-auto-transport.ts(955,71): error TS18047: 'scrape' is possibly 'null'.
+scripts/enrich-auto-transport.ts(964,15): error TS18047: 'scrape' is possibly 'null'.
+scripts/enrich-auto-transport.ts(964,53): error TS18047: 'scrape' is possibly 'null'.
+scripts/enrich-auto-transport.ts(965,15): error TS18047: 'scrape' is possibly 'null'.
+scripts/enrich-auto-transport.ts(965,69): error TS18047: 'scrape' is possibly 'null'.
+scripts/enrich-container-and-auto-transport.ts(438,15): error TS2322: Type '{ bbb_rating: string | null; bbb_review_count: number | null; bbb_accredited: boolean | null; bbb_details: BbbScrapeDetails | null; bbb_accreditation_status: string | null; ... 9 more ...; sources: { ...; }; } | null' is not assignable to type 'PublicScrapeData | null'.
+  Property 'confidence' is missing in type '{ bbb_rating: string | null; bbb_review_count: number | null; bbb_accredited: boolean | null; bbb_details: BbbScrapeDetails | null; bbb_accreditation_status: string | null; ... 9 more ...; sources: { ...; }; }' but required in type 'PublicScrapeData'.
+scripts/enrich-google-batch.ts(141,36): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-batch.ts(142,36): error TS2339: Property 'name' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-batch.ts(143,36): error TS2339: Property 'headquarters' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-batch.ts(146,26): error TS2339: Property 'name' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-batch.ts(147,29): error TS2339: Property 'headquarters' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-batch.ts(157,23): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-batch.ts(158,23): error TS2339: Property 'name' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-batch.ts(170,62): error TS2339: Property 'verification_sources' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-batch.ts(179,48): error TS2339: Property 'overall_rating' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-batch.ts(180,52): error TS2339: Property 'review_count' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-batch.ts(186,75): error TS2345: Argument of type 'Record<string, unknown>' is not assignable to parameter of type 'RejectExcessProperties<Partial<{ id: string; slug: string; name: string; logo: string | null; short_description: string | null; description: string | null; founded_year: number | null; headquarters: string | null; ... 43 more ...; updated_at: string; }>, Record<...>>'.
+  Type 'Record<string, unknown>' is not assignable to type '{ [x: string]: never; }'.
+    'string' index signatures are incompatible.
+      Type 'unknown' is not assignable to type 'never'.
+scripts/enrich-google-batch.ts(186,101): error TS2339: Property 'id' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-batch.ts(192,25): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-batch.ts(193,25): error TS2339: Property 'name' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-batch.ts(203,21): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-batch.ts(204,21): error TS2339: Property 'name' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-three.ts(100,23): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-three.ts(111,62): error TS2339: Property 'verification_sources' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-three.ts(117,48): error TS2339: Property 'overall_rating' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-three.ts(118,52): error TS2339: Property 'review_count' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-three.ts(124,75): error TS2345: Argument of type 'Record<string, unknown>' is not assignable to parameter of type 'RejectExcessProperties<Partial<{ id: string; slug: string; name: string; logo: string | null; short_description: string | null; description: string | null; founded_year: number | null; headquarters: string | null; ... 43 more ...; updated_at: string; }>, Record<...>>'.
+  Type 'Record<string, unknown>' is not assignable to type '{ [x: string]: never; }'.
+    'string' index signatures are incompatible.
+      Type 'unknown' is not assignable to type 'never'.
+scripts/enrich-google-three.ts(124,101): error TS2339: Property 'id' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-three.ts(130,25): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-google-three.ts(140,21): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/enrich-local-movers-missing-ratings.ts(180,23): error TS2352: Conversion of type 'GenericStringError[]' to type 'LocalRow[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ error: true; } & String' is missing the following properties from type 'LocalRow': id, slug, name, headquarters, and 9 more.
+scripts/enrich-local-movers-missing-ratings.ts(190,24): error TS2352: Conversion of type 'GenericStringError' to type 'LocalRow' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ error: true; } & String' is missing the following properties from type 'LocalRow': id, slug, name, headquarters, and 9 more.
+scripts/enrich-local-movers-missing-ratings.ts(435,13): error TS2741: Property 'confidence' is missing in type '{ bbb_rating: string | null; bbb_review_count: number | null; bbb_accredited: boolean | null; bbb_details: BbbScrapeDetails | null; bbb_accreditation_status: string | null; ... 9 more ...; sources: { ...; }; }' but required in type 'PublicScrapeData'.
+scripts/enrich-local-movers-missing-ratings.ts(454,34): error TS18047: 'scrape' is possibly 'null'.
+scripts/enrich-local-movers-missing-ratings.ts(454,73): error TS18047: 'scrape' is possibly 'null'.
+scripts/gen-ks-batch7.ts(310,13): error TS2554: Expected 6-8 arguments, but got 5.
+scripts/generate-iowa-county-data.ts(153,3): error TS1117: An object literal cannot have multiple properties with the same name.
+scripts/generate-us-map-geo.ts(12,1): error TS2578: Unused '@ts-expect-error' directive.
+scripts/generate-us-map-geo.ts(14,1): error TS2578: Unused '@ts-expect-error' directive.
+scripts/generate-us-map-geo.ts(193,24): error TS2352: Conversion of type 'Feature<Point, GeoJsonProperties>' to type 'FeatureCollection<Geometry, { name: string; }>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Property 'features' is missing in type 'Feature<Point, GeoJsonProperties>' but required in type 'FeatureCollection<Geometry, { name: string; }>'.
+scripts/generate-us-map-geo.ts(195,3): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'string | GeometryObject<{ name: string; }>'.
+scripts/generate-us-map-geo.ts(248,5): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'GeometryObject | undefined'.
+scripts/generate-us-map-geo.ts(252,28): error TS2352: Conversion of type 'Feature<Point, GeoJsonProperties>' to type 'FeatureCollection<Geometry, { name: string; }>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Property 'features' is missing in type 'Feature<Point, GeoJsonProperties>' but required in type 'FeatureCollection<Geometry, { name: string; }>'.
+scripts/generate-us-map-geo.ts(254,5): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type 'unknown' is not assignable to parameter of type 'string | GeometryObject<{ name: string; }>'.
+scripts/lib/rendered-metadata-probe-audit.ts(63,60): error TS2339: Property 'index' does not exist on type 'string | Robots'.
+  Property 'index' does not exist on type 'string'.
+scripts/lib/rendered-metadata-probe-audit.ts(66,62): error TS2339: Property 'index' does not exist on type 'string | Robots'.
+  Property 'index' does not exist on type 'string'.
+scripts/lib/seeded-county-sample.ts(55,5): error TS2322: Type '{ stateSlug: string; countySlug: string; label: string; path: string; }[]' is not assignable to type 'LiveCountyProbe[]'.
+  Property 'probeGroup' is missing in type '{ stateSlug: string; countySlug: string; label: string; path: string; }' but required in type 'LiveCountyProbe'.
+scripts/list-authority-alerts.ts(26,53): error TS2367: This comparison appears to be unintentional because the types 'true | null' and 'false' have no overlap.
+scripts/list-unverified-companies.ts(21,45): error TS2339: Property 'is_verified' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(24,26): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(24,38): error TS2339: Property 'name' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(24,50): error TS2339: Property 'headquarters' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(28,42): error TS2339: Property 'verification_sources' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(33,42): error TS2339: Property 'verification_sources' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(35,16): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(35,28): error TS2339: Property 'name' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(35,75): error TS2339: Property 'overall_rating' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(35,103): error TS2339: Property 'review_count' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(39,36): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(42,42): error TS2339: Property 'verification_sources' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(44,16): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(44,28): error TS2339: Property 'name' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(44,49): error TS2339: Property 'is_verified' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/list-unverified-companies.ts(44,107): error TS2339: Property 'usdot_number' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/migrate-supabase-uvq-to-are-remaining.ts(374,33): error TS2352: Conversion of type 'GenericStringError' to type 'Record<string, unknown>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Index signature for type 'string' is missing in type '{ error: true; } & String'.
+scripts/probe-production-build.ts(2,16): error TS2393: Duplicate function implementation.
+scripts/probe-trek-counties.ts(4,16): error TS2393: Duplicate function implementation.
+scripts/qa-ak-hi-mt-tier1.ts(96,28): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-az-tier2-wave1.ts(17,71): error TS2345: Argument of type '"pima"' is not assignable to parameter of type '"apache" | "cochise" | "coconino" | "gila" | "graham" | "mohave" | "navajo" | "pinal" | "santa-cruz" | "yavapai" | "yuma"'.
+scripts/qa-ca-tier2-wave1.ts(73,34): error TS18048: 'pack.parentCompare.bullets.length' is possibly 'undefined'.
+scripts/qa-ca-tier2-wave2.ts(89,34): error TS18048: 'pack.parentCompare.bullets.length' is possibly 'undefined'.
+scripts/qa-co-tier1.ts(83,28): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-co-tier1.ts(124,44): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-fl-tier2-wave1.ts(77,34): error TS18048: 'pack.parentCompare.bullets.length' is possibly 'undefined'.
+scripts/qa-fl-tier2-wave2.ts(55,34): error TS18048: 'pack.parentCompare.bullets.length' is possibly 'undefined'.
+scripts/qa-il-tier1.ts(83,28): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-il-tier1.ts(125,44): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-ks-ms-tier1.ts(92,28): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-ks-ms-tier1.ts(162,44): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-ky-nv-tier1.ts(92,28): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-ky-nv-tier1.ts(145,44): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-ma-tier1.ts(84,28): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-ma-tier1.ts(127,44): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-mn-tier1.ts(84,28): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-mn-tier1.ts(145,44): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-mo-sc-tier1.ts(92,28): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-mo-sc-tier1.ts(150,44): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-nh-me-tier1.ts(94,28): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-ok-ia-tier1.ts(93,28): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-ok-ia-tier1.ts(157,44): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-provider-foundation-pages.ts(4,7): error TS2451: Cannot redeclare block-scoped variable 'BASE'.
+scripts/qa-provider-foundation-pages.ts(6,6): error TS2300: Duplicate identifier 'Check'.
+scripts/qa-provider-foundation-pages.ts(82,16): error TS2393: Duplicate function implementation.
+scripts/qa-share-004a-metadata.ts(1,7): error TS2451: Cannot redeclare block-scoped variable 'origin'.
+scripts/qa-share-004a-metadata.ts(11,16): error TS2393: Duplicate function implementation.
+scripts/qa-task-002-profiles.ts(1,7): error TS2451: Cannot redeclare block-scoped variable 'BASE'.
+scripts/qa-task-002-profiles.ts(15,16): error TS2393: Duplicate function implementation.
+scripts/qa-task-fl-008-publication-readiness.ts(434,40): error TS2322: Type 'string' is not assignable to type '"INGESTED" | "CLASSIFIED" | "VERIFIED" | "REVIEW_REQUIRED" | "INACTIVE" | "PUBLISHABLE" | "INDEXABLE" | null | undefined'.
+scripts/qa-task-fl-011-browser.ts(29,51): error TS2307: Cannot find module 'playwright' or its corresponding type declarations.
+scripts/qa-task-fl-011-browser.ts(43,51): error TS2307: Cannot find module 'playwright' or its corresponding type declarations.
+scripts/qa-task-fl-011-browser.ts(60,27): error TS7006: Parameter 'err' implicitly has an 'any' type.
+scripts/qa-task-fl-011-browser.ts(61,25): error TS7006: Parameter 'msg' implicitly has an 'any' type.
+scripts/qa-tier1-global-polish.ts(14,3): error TS2724: '"../lib/local-movers/county-intelligence/registry"' has no exported member named 'SC_TIER1_CORE12'. Did you mean 'CA_TIER1_CORE12'?
+scripts/qa-tier1-global-polish.ts(55,27): error TS7006: Parameter 'c' implicitly has an 'any' type.
+scripts/qa-tx-tier2-wave1.ts(77,34): error TS18048: 'pack.parentCompare.bullets.length' is possibly 'undefined'.
+scripts/qa-tx-tier2-wave2.ts(93,34): error TS18048: 'pack.parentCompare.bullets.length' is possibly 'undefined'.
+scripts/qa-va-tier1.ts(83,28): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-va-tier1.ts(123,44): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-va-tn-live-render.ts(6,7): error TS2451: Cannot redeclare block-scoped variable 'BASE'.
+scripts/qa-va-tn-live-render.ts(8,6): error TS2300: Duplicate identifier 'Check'.
+scripts/qa-va-tn-live-render.ts(58,7): error TS2353: Object literal may only specify known properties, and 'url' does not exist in type 'Check'.
+scripts/qa-va-tn-live-render.ts(111,5): error TS2353: Object literal may only specify known properties, and 'url' does not exist in type 'Check'.
+scripts/qa-va-tn-live-render.ts(123,16): error TS2393: Duplicate function implementation.
+scripts/qa-va-tn-live-render.ts(132,37): error TS2339: Property 'pass' does not exist on type 'Check'.
+scripts/qa-va-tn-live-render.ts(133,38): error TS2339: Property 'pass' does not exist on type 'Check'.
+scripts/qa-wa-tier1.ts(83,28): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-wa-tier1.ts(126,44): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-wi-tier1.ts(84,28): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-wi-tier1.ts(125,44): error TS18047: 'snapshot' is possibly 'null'.
+scripts/qa-wv-ri-tier1.ts(92,28): error TS18047: 'snapshot' is possibly 'null'.
+scripts/reenrich-active-companies-full.ts(203,28): error TS2352: Conversion of type 'GenericStringError' to type 'CompanyRow' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ error: true; } & String' is missing the following properties from type 'CompanyRow': id, slug, name, headquarters, and 16 more.
+scripts/reenrich-active-companies-full.ts(222,22): error TS2352: Conversion of type 'GenericStringError[]' to type 'CompanyRow[]' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type '{ error: true; } & String' is missing the following properties from type 'CompanyRow': id, slug, name, headquarters, and 16 more.
+scripts/refresh-dot-3475743.ts(144,13): error TS2345: Argument of type 'Record<string, unknown>' is not assignable to parameter of type 'RejectExcessProperties<Partial<{ id: string; slug: string; name: string; logo: string | null; short_description: string | null; description: string | null; founded_year: number | null; headquarters: string | null; ... 43 more ...; updated_at: string; }>, Record<...>>'.
+  Type 'Record<string, unknown>' is not assignable to type '{ [x: string]: never; }'.
+    'string' index signatures are incompatible.
+      Type 'unknown' is not assignable to type 'never'.
+scripts/remove-all-my-sons-parent.ts(58,53): error TS2339: Property 'id' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/remove-all-my-sons-parent.ts(61,34): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/remove-all-my-sons-parent.ts(62,34): error TS2339: Property 'name' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/remove-all-my-sons-parent.ts(63,34): error TS2339: Property 'headquarters' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/remove-all-my-sons-parent.ts(64,34): error TS2339: Property 'usdot_number' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/remove-all-my-sons-parent.ts(82,90): error TS2339: Property 'id' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/remove-all-my-sons-parent.ts(95,27): error TS2339: Property 'verification_sources' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/remove-all-my-sons-parent.ts(105,25): error TS2339: Property 'verification_sources' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/remove-all-my-sons-parent.ts(106,28): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/remove-all-my-sons-parent.ts(106,42): error TS2339: Property 'name' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/remove-unverified-fmcsa-companies.ts(53,12): error TS2345: Argument of type '(value: string | null | undefined) => string' is not assignable to parameter of type '(value: string | boolean | null, index: number, array: (string | boolean | null)[]) => string'.
+  Types of parameters 'value' and 'value' are incompatible.
+    Type 'string | boolean | null' is not assignable to type 'string | null | undefined'.
+      Type 'boolean' is not assignable to type 'string'.
+scripts/repair-approved-suggestions.ts(8,24): error TS2307: Cannot find module 'dotenv' or its corresponding type declarations.
+scripts/repair-company-enrichment.ts(52,7): error TS2345: Argument of type '{ id: string; name: string; usdot: string | null; mc_number: string | null; details: string | null; status: "pending" | "approved" | "rejected"; suggested_by_name: string | null; ... 21 more ...; updated_at: string; } | { ...; }' is not assignable to parameter of type '{ google_data?: Json | undefined; public_scrape_data?: Json | undefined; fmcsa_preview?: Json | undefined; legal_name?: string | null | undefined; name?: string | null | undefined; headquarters?: string | ... 1 more ... | undefined; phone?: string | ... 1 more ... | undefined; usdot?: string | ... 1 more ... | undef...'.
+  Object literal may only specify known properties, and 'fmcsa_raw' does not exist in type '{ google_data?: Json | undefined; public_scrape_data?: Json | undefined; fmcsa_preview?: Json | undefined; legal_name?: string | null | undefined; name?: string | null | undefined; headquarters?: string | ... 1 more ... | undefined; phone?: string | ... 1 more ... | undefined; usdot?: string | ... 1 more ... | undef...'.
+scripts/research-task-002-federal-identity.ts(121,20): error TS2339: Property 'kind' does not exist on type 'DotLookupResult & { carrier: FmcsaApiCarrier | null; }'.
+scripts/research-task-002-federal-identity.ts(166,20): error TS2339: Property 'kind' does not exist on type 'DotLookupResult & { carrier: FmcsaApiCarrier | null; }'.
+scripts/revalidate-local-movers.ts(5,7): error TS2451: Cannot redeclare block-scoped variable 'origin'.
+scripts/revalidate-local-movers.ts(15,18): error TS1375: 'await' expressions are only allowed at the top level of a file when that file is a module, but this file has no imports or exports. Consider adding an empty 'export {}' to make this file a module.
+scripts/revalidate-local-movers.ts(16,14): error TS1375: 'await' expressions are only allowed at the top level of a file when that file is a module, but this file has no imports or exports. Consider adding an empty 'export {}' to make this file a module.
+scripts/run-bbb-refresh.ts(5,24): error TS2307: Cannot find module 'dotenv' or its corresponding type declarations.
+scripts/run-fmcsa-refresh.ts(5,24): error TS2307: Cannot find module 'dotenv' or its corresponding type declarations.
+scripts/run-task-011d2b-canary-preparation.ts(185,5): error TS2783: 'waveId' is specified more than once, so this usage will be overwritten.
+scripts/run-task-011d2b-canary-preparation.ts(197,5): error TS2783: 'waveId' is specified more than once, so this usage will be overwritten.
+scripts/run-task-fl-011b-wave2-readiness.ts(262,5): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type 'Record<"REVIEW_REQUIRED" | "HOLD_PROFILE_THIN" | "NOT_ELIGIBLE" | "DEFERRED" | "READY_FOR_WAVE_2" | "EXCLUDED_WAVE_1" | "EXCLUDED_KEEP_80" | "EXCLUDED_HOLD" | "STATE_RECORD_ONLY", number>'.
+scripts/run-task-fl-011b-wave2-readiness.ts(262,19): error TS2339: Property 'wave2State' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011b-wave2-readiness.ts(270,27): error TS2339: Property 'wave2State' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011b-wave2-readiness.ts(271,27): error TS2339: Property 'state' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011b-wave2-readiness.ts(272,23): error TS2339: Property 'reasons' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011b-wave2-readiness.ts(273,23): error TS2339: Property 'missingRequirements' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011b-wave2-readiness.ts(274,25): error TS2339: Property 'statusFreshness' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011b-wave2-readiness.ts(275,30): error TS2339: Property 'consumerValue' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011b-wave2-readiness.ts(281,16): error TS2339: Property 'wave2State' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011b-wave2-readiness.ts(294,27): error TS2339: Property 'statusFreshness' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011b-wave2-readiness.ts(299,14): error TS2339: Property 'wave2State' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011b-wave2-readiness.ts(300,14): error TS2339: Property 'wave2State' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011b-wave2-readiness.ts(305,32): error TS2339: Property 'wave2State' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011b-wave2-readiness.ts(306,34): error TS2339: Property 'missingRequirements' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011b-wave2-readiness.ts(307,33): error TS2339: Property 'reasons' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011b-wave2-readiness.ts(307,54): error TS2339: Property 'wave2State' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011c-canonicalization-readiness.ts(134,5): error TS2783: 'fdacsIm' is specified more than once, so this usage will be overwritten.
+scripts/run-task-fl-011d-state-canonicalization.ts(378,7): error TS2322: Type 'boolean | null | undefined' is not assignable to type 'boolean | null'.
+  Type 'undefined' is not assignable to type 'boolean | null'.
+scripts/run-task-fl-011d-state-canonicalization.ts(402,65): error TS2345: Argument of type 'CompanyDb' is not assignable to parameter of type '{ publicationState?: "INGESTED" | "CLASSIFIED" | "VERIFIED" | "REVIEW_REQUIRED" | "INACTIVE" | "PUBLISHABLE" | "INDEXABLE" | null | undefined; }'.
+  Types of property 'publicationState' are incompatible.
+    Type 'string | null | undefined' is not assignable to type '"INGESTED" | "CLASSIFIED" | "VERIFIED" | "REVIEW_REQUIRED" | "INACTIVE" | "PUBLISHABLE" | "INDEXABLE" | null | undefined'.
+      Type 'string' is not assignable to type '"INGESTED" | "CLASSIFIED" | "VERIFIED" | "REVIEW_REQUIRED" | "INACTIVE" | "PUBLISHABLE" | "INDEXABLE" | null | undefined'.
+scripts/run-task-fl-011e-qa-coverage-recompute.ts(420,11): error TS2339: Property 'wave2State' does not exist on type 'never'.
+  The intersection 'Wave2ReadinessResult' was reduced to 'never' because property 'rulesetVersion' has conflicting types in some constituents.
+scripts/run-task-fl-011h-broker-model-staging.ts(380,7): error TS2783: 'mb' is specified more than once, so this usage will be overwritten.
+scripts/smoke-network-production.ts(131,16): error TS2393: Duplicate function implementation.
+scripts/task-009a2-production-qa.ts(100,29): error TS2322: Type 'string' is not assignable to type 'ServiceType'.
+scripts/verify-google-enrichment.ts(25,44): error TS2339: Property 'verification_sources' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/verify-google-enrichment.ts(27,11): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/verify-google-enrichment.ts(29,11): error TS2339: Property 'overall_rating' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/verify-google-enrichment.ts(31,11): error TS2339: Property 'review_count' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/verify-google-three.ts(25,18): error TS2339: Property 'verification_sources' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/verify-google-three.ts(28,17): error TS2339: Property 'slug' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/verify-google-three.ts(29,17): error TS2339: Property 'name' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/verify-google-three.ts(30,27): error TS2339: Property 'overall_rating' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+scripts/verify-google-three.ts(31,25): error TS2339: Property 'review_count' does not exist on type 'SelectQueryError<"column 'verification_sources' does not exist on 'companies'.">'.
+store/compare-store.ts(280,39): error TS2345: Argument of type '{ slug: string; id: string; name: string; overallRating: number; reviewCount: number; reputationScore: number; avgPricePerMove: number; priceRange: string; yearsInBusiness: number; foundedYear: number; ... 18 more ...; ratingBreakdown: Company["ratingBreakdown"]; }' is not assignable to parameter of type 'Partial<Company> & { slug: string; }'.
+  Type '{ slug: string; id: string; name: string; overallRating: number; reviewCount: number; reputationScore: number; avgPricePerMove: number; priceRange: string; yearsInBusiness: number; foundedYear: number; ... 18 more ...; ratingBreakdown: Company["ratingBreakdown"]; }' is not assignable to type 'Partial<Company>'.
+    Types of property 'coverage' are incompatible.
+      Type 'string' is not assignable to type 'Region | undefined'.
+store/compare-store.ts(379,64): error TS2345: Argument of type 'CompareSnapshot' is not assignable to parameter of type 'Partial<Company>'.
+  Types of property 'coverage' are incompatible.
+    Type 'string' is not assignable to type 'Region | undefined'.
+supabase/functions/process-quote/index.ts(12,23): error TS2307: Cannot find module 'https://deno.land/std@0.177.0/http/server.ts' or its corresponding type declarations.
+supabase/functions/process-quote/index.ts(19,14): error TS7006: Parameter 'req' implicitly has an 'any' type.

@@ -7,7 +7,7 @@ import { parseCarrierNumber } from '@/lib/verify-dot/schema';
 export function fmcsaPreviewFromVerifyResult(
   result: VerifyDotResult
 ): FmcsaSuggestionPreview | null {
-  if (!result.success || !result.displayNumber) return null;
+  if (!result.success || !result.displayNumber || result.identifierIntegrity) return null;
 
   const parsed = parseCarrierNumber(result.displayNumber);
   if (!parsed) return null;

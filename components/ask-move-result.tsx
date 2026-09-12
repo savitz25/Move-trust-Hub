@@ -1,3 +1,4 @@
+import { AssociationDisclosure } from '@/components/company/association-disclosure';
 import Link from 'next/link';
 import { ASK_DEFINITIONS, MOVE_ASK_PAGE_SIZE } from '@/lib/move-ask/contract';
 import type { MoveAskResult } from '@/lib/move-ask/execute';
@@ -48,7 +49,8 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
         </form>
       </section>
 
-      {result.terminalState === 'UNAVAILABLE' ? <section role="status" className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Research is temporarily unavailable</h2><p className="mt-3">The source could not be checked. Try again; this is not a zero-result search.</p></section> : null}
+      {result.terminalState === 'SOURCE_CONFLICT' ? <section role="status" className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Identifier association needs review</h2><p className="mt-3">A stored record contains the requested number, but the company relationship is not confirmed. This is not a finding of an invalid identifier or zero movers.</p></section> : null}
+      {result.terminalState === 'UNAVAILABLE'  ? <section role="status" className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Research is temporarily unavailable</h2><p className="mt-3">The source could not be checked. Try again; this is not a zero-result search.</p></section> : null}
       {result.terminalState === 'NEEDS_CLARIFICATION' && q.mode !== 'fail_closed' ? <section className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Confirm the identity</h2><p className="mt-3">{q.nameQuery ? (result.nameSearch?.truncated ? 'The candidate search reached its bound. Refine the name or select a sourced identity to continue the original question.' : result.results.length ? 'These source-backed names belong to distinct identities. Select the intended company to continue this question.' : 'The selected record does not establish this name match. Edit the name and try again.') : result.results.length ? 'Multiple published identities remain. Review the records and select the intended profile; they were not merged.' : 'No published identity confirms both identifiers. Check each number and research them separately.'}</p></section> : null}
       {q.constraints?.length ? <section className="rounded-2xl border p-5"><h2 className="text-xl font-semibold">Requested conditions</h2><ul className="mt-3 space-y-3">{q.constraints.map((c, i) => <li key={i}><strong>{c.field}: {c.value}</strong><p>{c.outcome === 'APPLIED' ? 'Applied' : c.outcome === 'CONFLICT' ? 'Does not agree with the evidence' : c.outcome === 'UNSUPPORTED' ? 'Not available' : 'Not established'}: {c.detail}</p></li>)}</ul></section> : null}
       {q.mode === 'fail_closed' ? (
@@ -152,9 +154,11 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
                   </div>
                 ) : null}
               </dl>
+              <AssociationDisclosure integrity={row.identifierIntegrity} />
+              {row.submittedIdentifierUrl ? <a className="my-2 inline-flex min-h-11 items-center underline" href={row.submittedIdentifierUrl} target="_blank" rel="noopener noreferrer">Inspect the submitted MC separately; company association unconfirmed</a> : null}
               {row.sourceLastChecked !== undefined ? <p className="mt-3 text-sm">Stored source checked-at: {row.sourceLastChecked ?? 'Not available'}. Official effective time: {row.officialAsOf ?? 'Not supplied by this extract'}. These records were not checked live today.</p> : null}
               {row.nameMatchEvidence && !row.officialVerificationUrl ? <p className="mt-3 text-sm">No stored USDOT/MC identifier is available for federal verification. Refine the company identity or supply a labeled number; this name match does not establish federal or state authorization.</p> : null}
-              {row.officialVerificationUrl ? <a href={row.officialVerificationUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex min-h-11 items-center font-semibold text-[#C2410C] underline">Verify this identifier with FMCSA</a> : null}
+              {row.officialVerificationUrl ? <a href={row.officialVerificationUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex min-h-11 items-center font-semibold text-[#C2410C] underline">{row.identifierIntegrity ? 'Verify the corroborated USDOT with FMCSA' : 'Verify this identifier with FMCSA'}</a> : null}
               <p className="mt-3 text-sm leading-relaxed text-[#1E293B]">
                 <span className="font-semibold">Why this matched. </span>
                 {row.whyMatched}
@@ -174,6 +178,7 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
                 <summary className="scroll-mt-24 flex min-h-11 cursor-pointer items-center font-semibold text-[#0A2540]">Trace this result</summary>
                 <dl className="grid gap-2 pt-2 text-sm sm:grid-cols-2">
                   {row.nameMatchEvidence ? <div><dt className="text-xs uppercase">Name match evidence</dt><dd>{row.nameMatchEvidence.field}: {row.nameMatchEvidence.returned}. {row.nameMatchEvidence.matchType.replaceAll('_', ' ')}. {row.nameMatchEvidence.normalization.join('; ')}</dd></div> : null}
+                  {row.identifierIntegrity ? <div><dt className="text-xs uppercase">Association integrity</dt><dd>{row.identifierIntegrity.issueId}: {row.identifierIntegrity.status.replaceAll('_', ' ')}. Stored MC {row.identifierIntegrity.observedMc ?? 'unavailable'} is excluded from trusted fields.</dd></div> : null}
                   <div><dt className="text-xs uppercase text-[#475569]">Why matched</dt><dd>{row.whyMatched}</dd></div>
                   <div><dt className="text-xs uppercase text-[#475569]">Identifiers</dt><dd>{[row.usdot && `USDOT ${row.usdot}`, row.mc && `MC ${row.mc}`].filter(Boolean).join(' · ') || (row.floridaIm ? 'State registration row' : 'No stored USDOT/MC identifier')}</dd></div>
                   <div><dt className="text-xs uppercase text-[#475569]">Geography rule</dt><dd>Recorded headquarters is not service territory.</dd></div>

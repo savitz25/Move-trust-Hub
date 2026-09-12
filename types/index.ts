@@ -36,6 +36,7 @@ export type DirectoryCoverageFilter = {
 };
 
 export interface Company {
+  identifierIntegrity?: import("@/lib/fmcsa/association-integrity").AssociationIntegrity;
   id: string;
   slug: string;
   name: string;

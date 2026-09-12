@@ -1,0 +1,28 @@
+
+> move-trust-hub@1.0.0 check:th-search-r1-005
+> tsx --require ./scripts/stub-server-only.cjs --test lib/move-ask/r1-name.test.ts
+
+move_research_source_unavailable { executor: 'records', mode: 'entity' }
+✔ R1-005 original named licensing question retains its subject rather than a carrier directory (4.3453ms)
+✔ bare/find/check/research/licensed and role questions retrieve actual named positives (47.7484ms)
+✔ legal, documented DBA and display-only provenance stay separate (5.6316ms)
+✔ generic overlap, punctuation safety, normalization, meaningful words and numbers (10.1717ms)
+✔ JK ambiguity is not auto-selected and selection revalidates the original name/task (8.8759ms)
+✔ bounds disclose incomplete candidates; positive beyond old alphabetic page remains discoverable (3.0999ms)
+✔ name conditions and overrides preserve identity; IDs cannot be replaced by name matching (11.1737ms)
+✔ definitions/discovery/guidance/journey and missing identity are not company-name research (9.2642ms)
+✔ invalid input and source errors never become a name miss or broad directory (2.0035ms)
+✔ duplicate identity observation deduplication and unrelated source records cannot assert a match (1.4239ms)
+✔ homepage/native/API share candidate meaning; miss and selected panels finish truthfully (50.9803ms)
+✔ source normalization preserves apostrophes, Unicode letters, names with role words and safe punctuation (1.8779ms)
+✔ source dual-role casing and spaced slash preserve supported role overrides (11.346ms)
+✔ unknown source role remains unestablished and malformed name syntax cannot become a directory (1.7632ms)
+✔ permitted directory-only names do not invent a federal identity or registration grain (4.4869ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 927.5847

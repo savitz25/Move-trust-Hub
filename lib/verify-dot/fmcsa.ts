@@ -3,6 +3,7 @@ import type { CarrierNumberType, ParsedCarrierNumber } from '@/lib/verify-dot/sc
 import type { FmcsaEnrichedFields } from '@/lib/fmcsa/preview-types';
 
 export type FmcsaPreview = FmcsaEnrichedFields & {
+  identifierIntegrity?: import("@/lib/fmcsa/association-integrity").AssociationIntegrity;
   legalName?: string;
   dbaName?: string;
   physicalAddress?: string;

@@ -1,3 +1,4 @@
+import { projectCompanyAssociation } from '@/lib/fmcsa/association-integrity';
 import { Company } from '@/types';
 import { portableContainerCompanies } from '@/data/portable-container-companies';
 import { seedAutoTransportCompanies } from '@/data/seed-auto-transport';
@@ -130,7 +131,7 @@ const coreSeedCompanies: Company[] = [
     foundedYear: 1983,
     headquarters: 'Sterling, VA',
     website: 'https://www.jkmoving.com',
-    usdotNumber: '146576',
+    usdotNumber: '1065394',
     mcNumber: 'MC-225850',
     fmcsaSafetyRating: 'Satisfactory',
     fmcsaComplaints: 42,
@@ -715,7 +716,7 @@ export const seedCompanies: Company[] = [
   ),
   ...portableContainerCompanies,
   ...seedAutoTransportCompanies,
-];
+].map(projectCompanyAssociation);
 
 // Helper to get company by slug
 export const getCompanyBySlug = (slug: string) => seedCompanies.find(c => c.slug === slug);

@@ -1,0 +1,46 @@
+
+> move-trust-hub@1.0.0 check:th-search-r1-006
+> tsx --require ./scripts/stub-server-only.cjs --test lib/move-ask/r1-association.test.ts
+
+✔ R1-006 known disputed MC is not projected as a trusted public identifier (3.9274ms)
+✔ disputed MC and pair are source conflicts; legacy consumers receive no confirmed JK association (25.4759ms)
+✖ corroborated USDOT survives with conflict disclosure and never a disputed company-verification link (6.6024ms)
+✔ observed replacement is not invented into the effective exact index; unrelated matches remain (9.4906ms)
+✔ another permitted identity with the same MC is not suppressed by the JK review (5.1645ms)
+✔ name selection keeps separate JK identities and the original task (14.333ms)
+move_research_source_unavailable { executor: 'records', mode: 'identifier' }
+✔ publication hold and source failure do not clear or replace the reviewed association (7029.6105ms)
+✔ changed source value/fingerprint requires review without mutating or substituting source values (3.7629ms)
+✔ source clocks remain separate; missing clocks never become today (0.6245ms)
+✔ families and multiple/historical source observations are not concatenated or forced one-to-one (0.911ms)
+✔ DB, seed, catalog, merged profile and directory DTO cannot restore the disputed MC (5.9204ms)
+✔ profile, search, Verify and API render the same integrity-aware meaning (77.0439ms)
+✔ real Verify action contains the stored MC before any external authority lookup (fixture-only dependencies) (8.4928ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 12
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9878.2181
+
+✖ failing tests:
+
+test at lib\move-ask\r1-association.test.ts:2:5593
+✖ corroborated USDOT survives with conflict disclosure and never a disputed company-verification link (6.6024ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'MC_MX' !== 'USDOT'
+  
+      at <anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:37:279)
+      at async source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:31:6)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'MC_MX',
+    expected: 'USDOT',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

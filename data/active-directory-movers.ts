@@ -1,3 +1,4 @@
+import { projectCompanyAssociation, reviewedAssociationRecordIds } from '@/lib/fmcsa/association-integrity';
 import type { LocalMover } from '@/lib/local-movers/types';
 
 /**
@@ -6684,6 +6685,11 @@ export const activeDirectoryMovers: Record<string, LocalMover> = {
   },
 };
 
+// Apply the same reviewed field projection to the repository-owned catalog.
+for (const id of reviewedAssociationRecordIds) {
+  const record = activeDirectoryMovers[id];
+  if (record) activeDirectoryMovers[id] = projectCompanyAssociation({...record,usdotNumber:record.usdotNumber??'',mcNumber:record.mcNumber??''});
+}
 export const activeCompanySlugToMoverId: Record<string, string> = {
   '1-800-pack-rat': 'directory-1-800-pack-rat',
   '1st-choice-movers-llc': 'directory-1st-choice-movers-llc',

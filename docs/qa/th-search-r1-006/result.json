@@ -1,0 +1,49 @@
+{
+  "ticket": "TH-SEARCH-R1-006",
+  "status": "CANDIDATE_VERIFIED_RELEASE_PENDING",
+  "model": {
+    "requested": "GPT-6 Astra / High",
+    "confirmation": "USER-CONFIRMED"
+  },
+  "baseline": "2ef25a62d2b0dee52172d8bda1981d5d3bef5016",
+  "recordedAt": "2026-09-12T00:29:15.808556+00:00",
+  "sourceOracleSha256": "95165c9157ff765fc4e1ffc08efccee742e56f76d41ab90d3f49996202a62330",
+  "classification": "unsupported current stored association; history unresolved",
+  "canonicalDataWrite": false,
+  "release": null,
+  "tests": {
+    "focused": 13,
+    "r1_001": 17,
+    "r1_005": 15,
+    "related": 85,
+    "npmTest": "PASS",
+    "productionBuild": "PASS",
+    "typecheck": {
+      "base": 535,
+      "candidate": 533,
+      "new": 0
+    },
+    "lint": "unconfigured on exact base and candidate",
+    "mutationGuardsDetected": 2
+  },
+  "remaining": [
+    "Canonical production deployment/browser verification pending",
+    "Canonical data correction requires separate explicit approval",
+    "MC225850 history unresolved"
+  ],
+  "testedRuntimeHead": "1c516d55799c608b39386272af76308799dd431c",
+  "pr": "https://github.com/savitz25/Move-trust-Hub/pull/128",
+  "previewDeployment": "dpl_4k3j6TWZQKgUSiHgfAwp3oc4TZiN",
+  "previewBrowser": "protected; not bypassed",
+  "localBrowser": {
+    "cases": 24,
+    "pageErrors": 0,
+    "widths": [
+      1280,
+      390,
+      320
+    ],
+    "file": "local-browser.json",
+    "verifyPost": "local-verify.json; all Supabase mutations denied by local harness"
+  }
+}

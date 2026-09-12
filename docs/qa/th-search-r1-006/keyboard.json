@@ -1,0 +1,13 @@
+{
+  "at": "2026-09-12T00:43:38.330Z",
+  "candidate": "1c516d55799c608b39386272af76308799dd431c",
+  "pass": true,
+  "focused": {
+    "text": "Inspect the submitted MC separately; company association unconfirmed",
+    "tag": "A",
+    "outline": "solid",
+    "outlineWidth": "2px",
+    "shadow": "none"
+  },
+  "detailsEnter": true
+}

@@ -1,0 +1,9 @@
+{
+  "id": "TH-SEARCH-R1-006-jk-mc",
+  "recordIds": ["jk-moving", "directory-jk-moving-services"],
+  "expected": {"usdot": "1065394", "mc": "225850", "checkedAt": "2026-08-23T05:02:18.368Z", "fingerprint": "5d0585c2184935aa52df9b33545883eab15d7eecd7e366ec6bed038184969a01"},
+  "classification": "unsupported-current-association; historical relationship unresolved",
+  "official": {"usdot": "1065394", "mc": "196957", "asOf": "2026-09-10", "retrievedAt": "2026-09-12T00:04:29.566Z", "url": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1065394", "fingerprint": "bc8dd55f5d470a12084fd132df2f48de41892d563541f7296532d10d1a77aa48"},
+  "disputedLookup": {"family":"MC", "value":"225850", "outcome":"SAFER Record Inactive; holder/history not disclosed", "retrievedAt":"2026-09-12T00:04:29.790Z", "officialAsOf":null},
+  "review": {"ticket":"TH-SEARCH-R1-006", "method":"read-only official browser plus stored source and code history", "removal":"Explicit reviewed source reconciliation and regression tests; changed values/fingerprint require review, never automatic expiry", "dataWriteApproved":false}
+}

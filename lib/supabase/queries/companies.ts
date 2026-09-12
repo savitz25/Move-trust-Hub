@@ -1,3 +1,4 @@
+import { associationIntegrity } from '@/lib/fmcsa/association-integrity';
 import 'server-only';
 
 import { cache } from 'react';
@@ -377,6 +378,7 @@ export function mapCompanyRow(row: Record<string, unknown>): Company {
       : [],
     usdotNumber: (row.usdot_number as string) || '',
     mcNumber: (row.mc_number as string) || '',
+    identifierIntegrity: associationIntegrity({id:String(row.id),usdot:row.usdot_number as string,mc:row.mc_number as string,checkedAt:row.fmcsa_last_checked as string,fingerprint:row.data_hash as string}),
     fmcsaLegalName: publicNames.legalName,
     fmcsaSafetyRating,
     fmcsaComplaints: (row.fmcsa_complaints as number) || 0,
