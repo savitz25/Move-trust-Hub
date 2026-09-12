@@ -1,0 +1,107 @@
+{
+  "ticket": "TH-SEARCH-R1-014",
+  "status": "RELEASED_AND_VERIFIED",
+  "model": "GPT-6 Astra / High - USER-CONFIRMED; no independent session metadata",
+  "baseline": "f17650ed5c9a695cb97c0b7a111e38ef93f2e3dc",
+  "firstImplementation": "ee751a8bace96e5c8b3b7afa1b79a168d8d982d2",
+  "testedRuntimeHead": "bbcb61434efdbc3ae5ace42d891c0d567e88c149",
+  "runtimeMerge": "4596b98a8a8f09bbe10ac4bf9e2e9033aa37023d",
+  "runtimePr": "https://github.com/savitz25/Move-trust-Hub/pull/133",
+  "deployment": {
+    "id": "dpl_GU36WgXWVcjsrB1KSDXRrEQ1fvcK",
+    "url": "move-trust-8ge83siyq-savitz25-s-projects.vercel.app",
+    "readyState": "READY",
+    "alias": [
+      "www.movetrusthub.com",
+      "movetrusthub.com",
+      "move-trust-hub.vercel.app",
+      "move-trust-hub-savitz25-s-projects.vercel.app",
+      "move-trust-hub-git-main-savitz25-s-projects.vercel.app"
+    ],
+    "sha": "4596b98a8a8f09bbe10ac4bf9e2e9033aa37023d",
+    "observedAt": {
+      "current_time": "2026-09-12 23:09:08 UTC"
+    }
+  },
+  "observedAt": "2026-09-12T23:10:46.234047+00:00",
+  "evidenceFollowup": "Documentation-only branch th-search-r1-014-evidence; no future merge or deployment SHA asserted in this pre-merge receipt",
+  "sourceFingerprint": "3c0247528c8bce91cfc2f2525aeec4c734445e4bd58b4df47aa2dde4e418fd06",
+  "sourceOracle": "source-oracle.json; bounded public JK/SHIFL source rows and accepted capability-level source files/clocks; no live counts frozen",
+  "tests": {
+    "r1_001": 17,
+    "r1_005": 15,
+    "r1_006": 14,
+    "r1_014": 12,
+    "related": 44,
+    "mutationGuards": 4,
+    "npmTest": "PASS",
+    "metricsR2": "PASS",
+    "typecheckBase": 532,
+    "typecheckCandidate": 532,
+    "lint": "unconfigured on base and candidate",
+    "countySeo": "same baseline failure: 1695 > 400"
+  },
+  "mutations": [
+    {
+      "mutation": "drop-destination",
+      "exit": 1,
+      "detected": true
+    },
+    {
+      "mutation": "hq-is-service",
+      "exit": 1,
+      "detected": true
+    },
+    {
+      "mutation": "federal-for-intrastate",
+      "exit": 1,
+      "detected": true
+    },
+    {
+      "mutation": "booking-name-fallback",
+      "exit": 1,
+      "detected": true
+    }
+  ],
+  "browser": {
+    "source": "production-browser.json",
+    "at": "2026-09-12T23:09:17.690Z",
+    "checks": 18,
+    "pageErrors": [],
+    "widths": [
+      320,
+      390,
+      768,
+      1280
+    ],
+    "maxSettledMs": 965,
+    "maxApiMs": 1046,
+    "maxCombinedCheckMs": 2099,
+    "flows": [
+      "Homepage Enter",
+      "explicit endpoint choice",
+      "keyboard broadening with real TX records",
+      "company selection retains VA/FL and one identity",
+      "edit clears old company",
+      "refresh/back/forward",
+      "Trace"
+    ],
+    "screenshots": "production-*.png; readable viewport/guidance/record captures"
+  },
+  "preview": "Deployment READY; interactive preview reached Vercel login, no bypass. Local production-build and canonical Production browser evidence are separate.",
+  "review": "Separate self-review and Vercel Agent Review SUCCESS on tested runtime; no independent human review claimed",
+  "ci": "PR checks and post-merge Move network metrics PASS. Main County SEO Compliance failed at the same baseline 1695 > 400; unchanged.",
+  "boundaries": [
+    "Guidance FOUND is a completed research plan, not a finding of route-eligible movers. No provider cohort runs for a journey or booking request.",
+    "City-only locality remains unsupported/needs refinement; recorded-state results require query-bound user consent.",
+    "Headquarters is not service territory. Federal authority is not intrastate authority. HHG state rosters are not vehicle transport evidence.",
+    "JK MC225850 remains SOURCE_CONFLICT. No canonical correction or source/schema writes."
+  ],
+  "remaining": [
+    "All route service, availability and booking conclusions remain unsupported.",
+    "Unquoted Movers in Motion LLC limitation reproduced on base; quoted source-name research remains protected.",
+    "Pending JK canonical correction/history requires separate approval.",
+    "No closure of all Move search, other hubs or Search Reliability R1."
+  ],
+  "rollback": "Normal reviewed revert/deployment of R1-014 only; retain R1-001/005/006 safe projections. No database rollback."
+}

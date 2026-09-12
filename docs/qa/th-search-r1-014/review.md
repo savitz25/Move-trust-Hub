@@ -19,3 +19,7 @@ Rollback: normal reviewed revert of this ticket only. No database rollback. Pres
 Final filter review also preserved natural-language current-authority conditions across consent, rejected conflicting typed authority, and retained unsupported route-count/ranking/price requests explicitly. An unavailable broader combination cannot claim that a cohort executed.
 
 The structured V2 cohort adapter also had a directly connected city-to-state substitution. Its new pre-retrieval guard returns UNSUPPORTED_CAPABILITY with unchanged class/location, empty applied filters, and a native refinement destination. The original unsupported city was never a supported state cohort; no response shape or parent repository changed.
+
+Final auto-transport review excludes household-goods state roster/registration capabilities from vehicle-transport evidence. Their maintained state pages are explicitly contextual, not auto-transport permission. Booking paraphrases preserve supplied local places, including scheduled moves. Focused coverage is 12 groups.
+
+The strengthened browser assertion initially assumed a recorded address ends with the state abbreviation. Publication-safe source rows also contain street addresses ending TX plus ZIP. The assertion now accepts the documented address shape while still requiring TX and actual rendered identity equality. No product query or expected geography changed.

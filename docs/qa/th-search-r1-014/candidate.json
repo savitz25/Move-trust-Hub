@@ -1,16 +1,16 @@
 {
   "ticket": "TH-SEARCH-R1-014",
-  "status": "VALIDATING_RELEASE_CANDIDATE",
-  "model": "GPT-6 Astra / High ? USER-CONFIRMED",
+  "status": "TESTED_RELEASE_CANDIDATE",
+  "model": "GPT-6 Astra / High - USER-CONFIRMED",
   "base": "f17650ed5c9a695cb97c0b7a111e38ef93f2e3dc",
   "implementation": "ee751a8bace96e5c8b3b7afa1b79a168d8d982d2",
-  "candidate": "beff6e40c95360cf430003bb1fc87487924af570",
-  "at": "2026-09-12T22:44:11.511301+00:00",
+  "candidate": "bbcb61434efdbc3ae5ace42d891c0d567e88c149",
+  "at": "2026-09-12T23:04:13.978955+00:00",
   "tests": {
     "r1_001": 17,
     "r1_005": 15,
     "r1_006": 14,
-    "r1_014": 11,
+    "r1_014": 12,
     "related": 44,
     "mutationGuards": 4,
     "npmTest": "PASS",
@@ -20,6 +20,7 @@
     "lint": "unconfigured on base and candidate",
     "countySeo": "same baseline failure: 1695 > 400"
   },
-  "browser": "local-browser.json; 18 checks; latest core run maximum 1779 ms; final adapter guarded by executable test; release build and Production proof pending",
-  "databaseWrites": false
+  "browser": "candidate-browser.json; 18 checks; maximum core check 2267 ms including API/screenshot; no page errors or overflow; preview browser blocked by Vercel authentication, protection unchanged",
+  "databaseWrites": false,
+  "review": "Separate self-review plus Vercel Agent Review SUCCESS; no independent human review"
 }

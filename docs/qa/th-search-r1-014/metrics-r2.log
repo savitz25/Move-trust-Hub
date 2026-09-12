@@ -1,0 +1,19 @@
+
+> move-trust-hub@1.0.0 check:metrics-r2
+> node --import tsx scripts/build_network_metrics_v1.mjs --check && tsx --test scripts/test_metrics_r2.ts scripts/test_metrics_homepage_r2.tsx
+
+{"check":true,"generatedAt":"2026-09-12T21:36:55.191Z","fingerprint":"c219dd772556d4097cd90d2762f979b3d40d5c0c7c84643557aa9657547e100c","federal":{"publishableProfiles":5022,"indexableProfiles":4905,"authorityActive":4715,"authorityNotCurrent":13,"authorityUnknown":294,"carriers":4227,"brokers":278,"dual":94,"unknownEntityClass":423,"withMcNumber":4383,"cohortRule":"companies.publication_state = PUBLISHABLE (consumer-visible research directory, not the FMCSA census)","indexableRule":"PUBLISHABLE and companies.indexable = true"},"illinois":{"currentHhgRosterCoverage":"OPEN_SEARCH_ONLY","bulkCount":null,"specialistComplete":false,"completion":"PENDING","sourceAsOf":null,"retrievedAt":"2026-09-12","snapshotAsOf":"2026-09-12"}}
+✔ Rendered homepage preserves generated values and search-only unknowns (67.9288ms)
+✔ State and federal identity systems remain separate (1.2621ms)
+✔ Illinois remains search-only with no bulk count and no completed specialist claim (0.1738ms)
+✔ All accepted expansion capabilities feed the homepage contract (1.0076ms)
+✔ Clocks preserve retrieval versus source-effective time (0.1081ms)
+✔ Missing exact source count cannot be converted to zero (0.4161ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 600.5297
