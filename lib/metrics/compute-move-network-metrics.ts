@@ -1,3 +1,4 @@
+import {count} from './accepted-contract';
 import { createHash } from 'node:crypto';
 import type { MoveNetworkMetric, MoveNetworkMetricsV1 } from './move-network-metrics-v1';
 import { MOVE_NETWORK_METRICS_VERSION } from './move-network-metrics-v1';
@@ -61,6 +62,8 @@ export type MoveNetworkMetricsInput = {
 function metric(
   partial: Omit<MoveNetworkMetric, 'unit'> & { generatedAt: string }
 ): MoveNetworkMetric {
+  if(partial.valueState === 'KNOWN') count(partial.value, partial.key);
+  else if(partial.value !== null) count(partial.value, partial.key);
   return { unit: 'count', ...partial };
 }
 

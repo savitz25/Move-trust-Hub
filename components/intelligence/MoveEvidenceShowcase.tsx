@@ -14,7 +14,8 @@ function MeasureTrace({ measure }: { measure: MoveHomepageMeasure }) {
       <div><dt className="font-semibold text-foreground">Evidence class</dt><dd>{measure.entityClass}</dd></div>
       <div><dt className="font-semibold text-foreground">Geography</dt><dd>{measure.trace.geographicCoverage}</dd></div>
       <div><dt className="font-semibold text-foreground">Agency / source</dt><dd>{measure.contributingSourceSystems.join(' · ')}</dd></div>
-      {measure.sourceAsOf ? <div><dt className="font-semibold text-foreground">Source / snapshot clock</dt><dd>{measure.sourceAsOf}</dd></div> : null}
+      {measure.sourceAsOf ? <div><dt className="font-semibold text-foreground">Official source clock</dt><dd>{measure.sourceAsOf}</dd></div> : null}
+      {measure.retrievedAt && <div><dt className="font-semibold text-foreground">Retrieved</dt><dd>{measure.retrievedAt}</dd></div>}{measure.snapshotAsOf && <div><dt className="font-semibold text-foreground">Snapshot</dt><dd>{measure.snapshotAsOf}</dd></div>}
       <div><dt className="font-semibold text-foreground">Network generated</dt><dd>{measure.generatedAt.slice(0, 10)}</dd></div>
       <div><dt className="font-semibold text-foreground">Publication context</dt><dd>{measure.publicationStatus.replaceAll('_', ' ')}</dd></div>
       <div><dt className="font-semibold text-foreground">Accepted artifact</dt><dd>{measure.acceptedArtifact}</dd></div>
@@ -42,7 +43,7 @@ export function MoveEvidenceShowcase() {
     </div></section>
 
     <section id="state-intelligence" className="move-section border-y border-border/60 bg-muted/20" aria-labelledby="state-intel-heading"><div className="move-section-inner">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">Five specialist state surfaces</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">{MOVE_HOMEPAGE_STATE_CARDS.length} specialist state surfaces</p>
       <h2 id="state-intel-heading" className="mt-2 text-3xl font-semibold tracking-tight text-[#0A2540] sm:text-4xl">State authority changes the research question.</h2>
       <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">These cards explain research coverage, not mover quality. State permits, registrations, and certificates remain separate from FMCSA interstate operating authority.</p>
       <ul className="mt-7 grid gap-4 lg:grid-cols-2">{MOVE_HOMEPAGE_STATE_CARDS.map((card) => <li key={card.href} className="rounded-2xl border border-border bg-card p-5"><p className="text-xs font-semibold uppercase tracking-wide text-primary">{card.regulator}</p><h3 className="mt-1 text-xl font-semibold text-[#0A2540]">{card.state}</h3><p className="mt-3 text-sm"><strong>State authority:</strong> {card.authority}</p><p className="mt-2 text-sm"><strong>Roster coverage:</strong> {card.roster}</p><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{card.evidence}</p><p className="mt-3 text-xs text-muted-foreground">{card.sourceClock}</p><Link href={card.href} data-intel-event="move_intel_state_click" className="mt-4 inline-flex min-h-10 items-center font-semibold text-primary hover:underline">Explore {card.state} intelligence →</Link></li>)}</ul>

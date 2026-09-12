@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "accepted-network-census-v1",
+  "snapshotAsOf": "2026-09-12T21:07:55.427Z",
+  "sourceAsOf": null,
+  "input": {
+    "generatedAt": "2026-09-12T21:07:55.427Z",
+    "publishableProfiles": 5022,
+    "indexableProfiles": 4905,
+    "authorityActive": 4715,
+    "authorityNotCurrent": 13,
+    "authorityUnknown": 294,
+    "carriers": 4227,
+    "brokers": 278,
+    "dual": 94,
+    "withMcNumber": 4383,
+    "withRefreshDate": 4640,
+    "withoutRefreshDate": 382,
+    "latestObservedRefresh": "2026-08-23T05:02:52.712+00:00",
+    "oldestObservedRefresh": "2026-08-20T13:52:59.596+00:00",
+    "freshnessBuckets": [
+      {
+        "id": "0-30",
+        "label": "0–30 days since last recorded refresh",
+        "count": 4640
+      },
+      {
+        "id": "31-60",
+        "label": "31–60 days",
+        "count": 0
+      },
+      {
+        "id": "61-90",
+        "label": "61–90 days",
+        "count": 0
+      },
+      {
+        "id": "91-365",
+        "label": "91–365 days",
+        "count": 0
+      },
+      {
+        "id": ">365",
+        "label": "More than 365 days",
+        "count": 0
+      },
+      {
+        "id": "unknown",
+        "label": "No refresh date recorded",
+        "count": 382
+      }
+    ],
+    "flImRegistrations": 1314,
+    "flImActive": 1099,
+    "flMbActive": 26,
+    "flImVerifiedLinks": 941,
+    "flHqPublishable": 483,
+    "flContactObservations": 3875,
+    "flSourceAsOf": "2026-08-21T03:29:40.443+00:00",
+    "njRosterCoverage": "SOURCE_AVAILABLE_BY_REQUEST",
+    "njOsmNovsAcquired": 34,
+    "njHqPublishable": 269,
+    "njSourceAsOf": "2026-09-03",
+    "caCalTRosterCoverage": "OPEN_SEARCH_ONLY / SOURCE_NOT_ACQUIRED",
+    "caCitationRows19237": 132,
+    "caUnlicensedCitationRows": 120,
+    "caExactCalTCitationRows": 12,
+    "caHqPublishable": 403,
+    "caSourceAsOf": "2026-09-03",
+    "caTariffEffective": "2026-01-01",
+    "txRosterCoverage": "OPEN_SEARCH_ONLY / SOURCE_NOT_ACQUIRED",
+    "txSourceAsOf": "2026-09-03",
+    "txComplaintBulkCoverage": "SOURCE_NOT_ACQUIRED",
+    "txCrosswalkCoverage": "SOURCE_NOT_ACQUIRED",
+    "waActiveDirectoryResults": 284,
+    "waDirectoryRetrievedAt": "2026-09-04T16:52:37.571398+00:00",
+    "waBulkRosterCoverage": "SOURCE_NOT_ACQUIRED",
+    "waSourceAsOf": "2026-09-04",
+    "coActiveHhgPermitListings": 203,
+    "coRevokedHhgListings": 207,
+    "coSuspendedHhgListings": 5,
+    "coSourceAsOf": "2025-06-27",
+    "vaHhgListingRows": 192,
+    "vaPropertyListingRows": 4916,
+    "vaSourceRetrievedAt": "2026-09-10T15:05:33.623358+00:00",
+    "nyHhgBulletinObservations": 108,
+    "nyBulletinIssues": 36,
+    "publishedStateIntelligencePaths": [
+      "/florida",
+      "/new-jersey",
+      "/california",
+      "/texas",
+      "/washington",
+      "/colorado",
+      "/virginia",
+      "/new-york",
+      "/illinois"
+    ],
+    "floridaResearchCountyLandings": 4,
+    "localMoverStateLandings": 51
+  }
+}
