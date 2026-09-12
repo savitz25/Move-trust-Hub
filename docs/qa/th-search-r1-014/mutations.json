@@ -1,0 +1,22 @@
+[
+  {
+    "mutation": "drop-destination",
+    "exit": 1,
+    "detected": true
+  },
+  {
+    "mutation": "hq-is-service",
+    "exit": 1,
+    "detected": true
+  },
+  {
+    "mutation": "federal-for-intrastate",
+    "exit": 1,
+    "detected": true
+  },
+  {
+    "mutation": "booking-name-fallback",
+    "exit": 1,
+    "detected": true
+  }
+]
