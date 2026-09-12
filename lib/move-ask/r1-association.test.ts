@@ -81,3 +81,12 @@ test('real Verify action contains the stored MC before any external authority lo
  };
  try{delete require.cache[require.resolve('../../actions/verify-dot')];const {verifyCarrierNumber}=require('../../actions/verify-dot');const r=await verifyCarrierNumber({query:'MC 225850'});assert.equal(r.success,true);assert.equal(r.identifierIntegrity?.status,'under_review');assert.equal(r.preview?.mcNumber,undefined);assert.equal(r.preview?.authorityStatus,undefined);assert.equal(new URL(r.saferUrl!).searchParams.get('query_string'),'1065394');assert.equal(externalCalls,0);assert.equal(fmcsaPreviewFromVerifyResult(r),null);}finally{loader._load=original;}
 });
+
+
+test('pre-release cached company objects are re-projected at the public cache boundary',async()=>{
+ const loader=Module as unknown as {_load:(request:string,parent:unknown,isMain:boolean)=>unknown};const original=loader._load;
+ const legacy={...mapCompanyRow(jk),mcNumber:'225850',identifierIntegrity:undefined,fmcsaDataHash:'changed-cached-fingerprint'};
+ loader._load=function(request,parent,isMain){if(request==='next/cache'||/next[\\/]cache/.test(request))return {unstable_cache:(fn:unknown,keys:string[])=>keys[0]==='companies-directory-v20-wave3'?async()=>[legacy]:fn};return original.call(this,request,parent,isMain)};
+ const resolved=require.resolve('../supabase/queries/companies'),cached=require.cache[resolved];
+ try{delete require.cache[resolved];const {getCompaniesCached}=require('../supabase/queries/companies');const rows=await getCompaniesCached();assert.equal(rows.length,1);assert.equal(rows[0].mcNumber,'');assert.equal(rows[0].identifierIntegrity.observedMc,'225850');assert.equal(rows[0].identifierIntegrity.status,'source_changed_review_required');assert.equal(legacy.mcNumber,'225850');}finally{loader._load=original;if(cached)require.cache[resolved]=cached;else delete require.cache[resolved];}
+});

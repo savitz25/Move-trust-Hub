@@ -63,10 +63,11 @@ export function associationIntegrity(input: {
 export function projectCompanyAssociation<T extends Pick<Company, 'id' | 'usdotNumber' | 'mcNumber'> & {
   identifierIntegrity?: AssociationIntegrity;
   fmcsaLastChecked?: string | null;
+  fmcsaDataHash?: string | null;
 }>(company: T): T {
   const integrity = associationIntegrity({
     id: company.id, usdot: company.usdotNumber, mc: company.mcNumber,
-    checkedAt: company.fmcsaLastChecked, previous: company.identifierIntegrity,
+    checkedAt: company.fmcsaLastChecked, fingerprint: company.fmcsaDataHash, previous: company.identifierIntegrity,
   });
   return integrity ? { ...company, mcNumber: '', identifierIntegrity: integrity } : company;
 }
