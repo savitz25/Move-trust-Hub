@@ -1,0 +1,1731 @@
+{
+  "base": "f17650ed5c9a695cb97c0b7a111e38ef93f2e3dc",
+  "observations": [
+    {
+      "q": "movers from Miami Florida to New York City",
+      "at": "2026-09-12T22:05:23.380001+00:00",
+      "ms": 328,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "NEEDS_CLARIFICATION",
+        "coverageState": "UNSUPPORTED",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Mode",
+            "value": "entity"
+          },
+          {
+            "label": "Regulatory system",
+            "value": "FMCSA"
+          },
+          {
+            "label": "Geography",
+            "value": "Recorded company address / headquarters state"
+          },
+          {
+            "label": "Sort",
+            "value": "Company name, then USDOT"
+          },
+          {
+            "label": "Does not mean",
+            "value": "Serves only this state. Interstate carriers may operate in many states."
+          },
+          {
+            "label": "geography",
+            "value": "FL, NY \u2014 conflict"
+          },
+          {
+            "label": "recorded headquarters state",
+            "value": "FL \u2014 applied"
+          }
+        ],
+        "query": {
+          "mode": "fail_closed",
+          "authorityCurrent": "any",
+          "constraints": [
+            {
+              "field": "geography",
+              "value": "FL, NY",
+              "outcome": "CONFLICT",
+              "detail": "Multiple geographic restrictions need clarification. No single state was chosen on your behalf."
+            },
+            {
+              "field": "recorded headquarters state",
+              "value": "FL",
+              "outcome": "APPLIED",
+              "detail": "Recorded address only; does not establish service territory or NJ state licensing."
+            }
+          ],
+          "executor": "records",
+          "jurisdiction": {
+            "state": "FL",
+            "meaning": "recorded_headquarters_state"
+          },
+          "failReason": "Multiple geographic restrictions need clarification. No single state was chosen on your behalf.",
+          "alternatives": [
+            "Find USDOT 3244649.",
+            "Show movers headquartered in Florida."
+          ],
+          "page": 1
+        },
+        "resultType": "fail_closed",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "FMCSA directory + FDACS IM where used",
+          "geographyMeaning": "recorded_headquarters_state = FL",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "fail_closed",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 19
+      },
+      "classification": "BAD",
+      "finding": "Task/name/endpoint or recovery loss observed"
+    },
+    {
+      "q": "moving from Boca Raton Florida to Austin Texas",
+      "at": "2026-09-12T22:05:23.565817+00:00",
+      "ms": 188,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "NEEDS_CLARIFICATION",
+        "coverageState": "UNSUPPORTED",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Capability",
+            "value": "Service territory \u2014 unsupported"
+          }
+        ],
+        "query": {
+          "mode": "fail_closed",
+          "constraints": [],
+          "executor": "records",
+          "failReason": "Origin and destination do not establish which mover serves a route. Research a company identifier or the authority relevant to an interstate move; recorded headquarters is not service territory.",
+          "alternatives": [
+            "What is interstate operating authority?",
+            "I want to verify the company that gave me a quote."
+          ],
+          "page": 1
+        },
+        "resultType": "fail_closed",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "FMCSA directory + FDACS IM where used",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "fail_closed",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 1
+      },
+      "classification": "BAD",
+      "finding": "Task/name/endpoint or recovery loss observed"
+    },
+    {
+      "q": "movers near me",
+      "at": "2026-09-12T22:05:24.754647+00:00",
+      "ms": 1187,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "UNSUPPORTED",
+        "coverageState": "UNSUPPORTED",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Mode",
+            "value": "entity"
+          },
+          {
+            "label": "Regulatory system",
+            "value": "FMCSA"
+          },
+          {
+            "label": "Sort",
+            "value": "Company name, then USDOT"
+          },
+          {
+            "label": "Discovery",
+            "value": "Published identities by recorded headquarters/address. Includes available directory and regulatory identities; not an NJ licensing roster."
+          }
+        ],
+        "query": {
+          "specialistContract": "trusthub-specialist-execution-v2",
+          "mode": "fail_closed",
+          "authorityCurrent": "any",
+          "constraints": [],
+          "executor": "directory",
+          "failReason": "MoveTrustHub does not currently have source-backed route, pickup, delivery, or live availability evidence.",
+          "page": 1
+        },
+        "resultType": "fail_closed",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities with available source-specific evidence",
+          "geographyMeaning": "ROUTE_AVAILABILITY",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "public mover identity cohort",
+          "exclusions": [
+            "MoveTrustHub does not currently have source-backed route, pickup, delivery, or live availability evidence.",
+            "Only identities already eligible for the public MoveTrustHub directory are returned.",
+            "Recorded headquarters is not service territory, route availability, pickup availability, or delivery availability.",
+            "A broker may arrange transportation without physically hauling the shipment.",
+            "Authority state is regulatory evidence, not approval, safety, quality, or a recommendation.",
+            "Results use neutral source order. Ratings, reputation, paid, claimed, and subscription status do not affect ordering."
+          ],
+          "sourceContract": "trusthub-specialist-execution-v2"
+        },
+        "limitations": [
+          "MoveTrustHub does not currently have source-backed route, pickup, delivery, or live availability evidence.",
+          "Only identities already eligible for the public MoveTrustHub directory are returned.",
+          "Recorded headquarters is not service territory, route availability, pickup availability, or delivery availability.",
+          "A broker may arrange transportation without physically hauling the shipment.",
+          "Authority state is regulatory evidence, not approval, safety, quality, or a recommendation.",
+          "Results use neutral source order. Ratings, reputation, paid, claimed, and subscription status do not affect ordering."
+        ],
+        "elapsedMs": 0
+      },
+      "classification": "BAD",
+      "finding": "Task/name/endpoint or recovery loss observed"
+    },
+    {
+      "q": "movers in Broward County",
+      "at": "2026-09-12T22:05:24.964836+00:00",
+      "ms": 203,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "UNSUPPORTED",
+        "coverageState": "UNSUPPORTED",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Mode",
+            "value": "entity"
+          },
+          {
+            "label": "Regulatory system",
+            "value": "FMCSA"
+          },
+          {
+            "label": "Sort",
+            "value": "Company name, then USDOT"
+          },
+          {
+            "label": "geography",
+            "value": "Broward County \u2014 unsupported"
+          },
+          {
+            "label": "role",
+            "value": "carrier \u2014 applied"
+          }
+        ],
+        "query": {
+          "mode": "fail_closed",
+          "role": "carrier",
+          "authorityCurrent": "any",
+          "constraints": [
+            {
+              "field": "geography",
+              "value": "Broward County",
+              "outcome": "UNSUPPORTED",
+              "detail": "The requested local geography (Broward County) cannot be applied by this search. Choose an explicit recorded-headquarters state search instead; this request was not broadened."
+            },
+            {
+              "field": "role",
+              "value": "carrier",
+              "outcome": "APPLIED",
+              "detail": "Applied to source role classes; dual-role treatment is explicit."
+            }
+          ],
+          "executor": "records",
+          "failReason": "The requested local geography (Broward County) cannot be applied by this search. Choose an explicit recorded-headquarters state search instead; this request was not broadened.",
+          "alternatives": [
+            "Find USDOT 3244649."
+          ],
+          "page": 1
+        },
+        "resultType": "fail_closed",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "FMCSA directory + FDACS IM where used",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "carrier",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 2
+      },
+      "classification": "EXPECTED_SAFE_LIMITATION",
+      "finding": "Locality blocked; typed recovery incomplete"
+    },
+    {
+      "q": "movers in Austin Texas",
+      "at": "2026-09-12T22:05:25.123350+00:00",
+      "ms": 172,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "UNSUPPORTED",
+        "coverageState": "UNSUPPORTED",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Mode",
+            "value": "entity"
+          },
+          {
+            "label": "Regulatory system",
+            "value": "FMCSA"
+          },
+          {
+            "label": "Geography",
+            "value": "Recorded company address / headquarters state"
+          },
+          {
+            "label": "Sort",
+            "value": "Company name, then USDOT"
+          },
+          {
+            "label": "Does not mean",
+            "value": "Serves only this state. Interstate carriers may operate in many states."
+          },
+          {
+            "label": "geography",
+            "value": "Austin Texas \u2014 unsupported"
+          },
+          {
+            "label": "recorded headquarters state",
+            "value": "TX \u2014 applied"
+          }
+        ],
+        "query": {
+          "mode": "fail_closed",
+          "authorityCurrent": "any",
+          "constraints": [
+            {
+              "field": "geography",
+              "value": "Austin Texas",
+              "outcome": "UNSUPPORTED",
+              "detail": "The requested local geography (Austin Texas) cannot be applied by this search. Choose an explicit recorded-headquarters state search instead; this request was not broadened."
+            },
+            {
+              "field": "recorded headquarters state",
+              "value": "TX",
+              "outcome": "APPLIED",
+              "detail": "Recorded address only; does not establish service territory or NJ state licensing."
+            }
+          ],
+          "executor": "records",
+          "jurisdiction": {
+            "state": "TX",
+            "meaning": "recorded_headquarters_state"
+          },
+          "failReason": "The requested local geography (Austin Texas) cannot be applied by this search. Choose an explicit recorded-headquarters state search instead; this request was not broadened.",
+          "alternatives": [
+            "Find USDOT 3244649.",
+            "Show movers headquartered in Texas."
+          ],
+          "page": 1
+        },
+        "resultType": "fail_closed",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "FMCSA directory + FDACS IM where used",
+          "geographyMeaning": "recorded_headquarters_state = TX",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "fail_closed",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 2
+      },
+      "classification": "EXPECTED_SAFE_LIMITATION",
+      "finding": "Locality blocked; typed recovery incomplete"
+    },
+    {
+      "q": "interstate mover from Florida to New Jersey",
+      "at": "2026-09-12T22:05:25.284267+00:00",
+      "ms": 156,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "NEEDS_CLARIFICATION",
+        "coverageState": "UNSUPPORTED",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Capability",
+            "value": "Service territory \u2014 unsupported"
+          },
+          {
+            "label": "geography",
+            "value": "FL, NJ \u2014 conflict"
+          }
+        ],
+        "query": {
+          "mode": "fail_closed",
+          "constraints": [
+            {
+              "field": "geography",
+              "value": "FL, NJ",
+              "outcome": "CONFLICT",
+              "detail": "Multiple geographic restrictions need clarification. No single state was chosen on your behalf."
+            }
+          ],
+          "executor": "records",
+          "failReason": "Multiple geographic restrictions need clarification. No single state was chosen on your behalf.",
+          "alternatives": [
+            "Find USDOT 3244649."
+          ],
+          "page": 1
+        },
+        "resultType": "fail_closed",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "FMCSA directory + FDACS IM where used",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "fail_closed",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 2
+      },
+      "classification": "BAD",
+      "finding": "Task/name/endpoint or recovery loss observed"
+    },
+    {
+      "q": "local mover in New Jersey",
+      "at": "2026-09-12T22:05:26.052108+00:00",
+      "ms": 766,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "NEEDS_CLARIFICATION",
+        "nameSearch": {
+          "requested": "local mover",
+          "candidateLimit": 10,
+          "retrievalLimit": 200,
+          "truncated": false,
+          "selected": false,
+          "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+        },
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Company name",
+            "value": "local mover"
+          },
+          {
+            "label": "Research task",
+            "value": "research"
+          },
+          {
+            "label": "Match policy",
+            "value": "Source-backed name candidate match; confirm the intended public identity"
+          },
+          {
+            "label": "additional condition",
+            "value": "in New Jersey - needs clarification"
+          }
+        ],
+        "query": {
+          "mode": "entity",
+          "nameQuery": "local mover",
+          "nameRequest": {
+            "name": "local mover",
+            "task": "research",
+            "condition": "in New Jersey"
+          },
+          "constraints": [
+            {
+              "field": "additional condition",
+              "value": "in New Jersey",
+              "outcome": "NEEDS_CLARIFICATION",
+              "detail": "The name identity is researched independently. This location, licensing or other condition is not established by the name match."
+            }
+          ],
+          "executor": "records",
+          "page": 1
+        },
+        "resultType": "entity",
+        "sourceConflictCandidates": [],
+        "results": [
+          {
+            "name": "Local N Long Distance Movers",
+            "entityId": "fl-im-3064",
+            "legalName": "LOCAL AND LONG DISTANCE MOVERS FLORIDA, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "local mover",
+              "field": "fmcsa_legal_name",
+              "returned": "LOCAL AND LONG DISTANCE MOVERS FLORIDA, INC.",
+              "entityId": "fl-im-3064",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=local+mover+in+New+Jersey&company=fl-im-3064",
+            "usdot": null,
+            "mc": null,
+            "role": "Unknown",
+            "fmcsaStatus": "Federal authority not established by this identity",
+            "headquarters": "MIAMI, FL",
+            "floridaIm": null,
+            "operatingAuthority": null,
+            "href": "/companies/local-n-long-distance-movers",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"LOCAL AND LONG DISTANCE MOVERS FLORIDA, INC.\" for this identity. Requested name: \"local mover\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": null,
+            "officialAsOf": null
+          },
+          {
+            "name": "Hall's Local Movers",
+            "entityId": "hall-s-local-movers-llc",
+            "legalName": null,
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "local mover",
+              "field": "name",
+              "returned": "Hall's Local Movers",
+              "entityId": "hall-s-local-movers-llc",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory display name",
+              "rank": 12
+            },
+            "selectionHref": "/ask?q=local+mover+in+New+Jersey&company=hall-s-local-movers-llc",
+            "usdot": null,
+            "mc": null,
+            "role": "Unknown",
+            "fmcsaStatus": "Federal authority not established by this identity",
+            "headquarters": "4401 Village Blvd, West Palm Beach, FL 33407",
+            "floridaIm": null,
+            "operatingAuthority": null,
+            "href": "/companies/hall-s-local-movers-llc",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: directory display name records \"Hall's Local Movers\" for this identity. Requested name: \"local mover\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": null,
+            "officialAsOf": null
+          },
+          {
+            "name": "LOCAL MOVING LLC",
+            "entityId": "usdot-2498325",
+            "legalName": "JOSEPH JUANDA",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "local mover",
+              "field": "name",
+              "returned": "LOCAL MOVING LLC",
+              "entityId": "usdot-2498325",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory display name",
+              "rank": 12
+            },
+            "selectionHref": "/ask?q=local+mover+in+New+Jersey&company=usdot-2498325",
+            "usdot": "2498325",
+            "mc": "991182",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "DENVER, CO",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/local-moving-llc",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: directory display name records \"LOCAL MOVING LLC\" for this identity. Requested name: \"local mover\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=2498325"
+          },
+          {
+            "name": "UNITED LOCAL MOVERS",
+            "entityId": "usdot-3516414",
+            "legalName": "UNITED PRIME VAN LINES CORP",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "local mover",
+              "field": "name",
+              "returned": "UNITED LOCAL MOVERS",
+              "entityId": "usdot-3516414",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory display name",
+              "rank": 12
+            },
+            "selectionHref": "/ask?q=local+mover+in+New+Jersey&company=usdot-3516414",
+            "usdot": "3516414",
+            "mc": "1336618",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "HALLANDALE BEACH, FL",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/united-local-movers",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: directory display name records \"UNITED LOCAL MOVERS\" for this identity. Requested name: \"local mover\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=3516414"
+          }
+        ],
+        "counts": [
+          {
+            "label": "Displayed name candidates",
+            "value": 4,
+            "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+          }
+        ],
+        "pagination": {
+          "page": 1,
+          "pageSize": 10,
+          "total": 4,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+          "geographyMeaning": "Name identity research; requested location conditions are evaluated separately, never service territory.",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "Search uses the existing published legal/display-name index. A stored FMCSA DBA can corroborate a retrieved candidate; an alias absent from those searchable names may not be discoverable. No independent alias directory is claimed.",
+          "Case, whitespace, punctuation and ampersand presentation may normalize. Distinctive-token matches are relaxed candidates; legal suffixes and names are not identity merges.",
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 574
+      },
+      "classification": "BAD",
+      "finding": "Task/name/endpoint or recovery loss observed"
+    },
+    {
+      "q": "auto transport from Florida to Texas",
+      "at": "2026-09-12T22:05:26.231077+00:00",
+      "ms": 187,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "NEEDS_CLARIFICATION",
+        "coverageState": "UNSUPPORTED",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Mode",
+            "value": "entity"
+          },
+          {
+            "label": "Regulatory system",
+            "value": "FMCSA"
+          },
+          {
+            "label": "Geography",
+            "value": "Recorded company address / headquarters state"
+          },
+          {
+            "label": "Sort",
+            "value": "Company name, then USDOT"
+          },
+          {
+            "label": "Does not mean",
+            "value": "Serves only this state. Interstate carriers may operate in many states."
+          },
+          {
+            "label": "geography",
+            "value": "FL, TX \u2014 conflict"
+          },
+          {
+            "label": "recorded headquarters state",
+            "value": "FL \u2014 applied"
+          }
+        ],
+        "query": {
+          "mode": "fail_closed",
+          "authorityCurrent": "any",
+          "constraints": [
+            {
+              "field": "geography",
+              "value": "FL, TX",
+              "outcome": "CONFLICT",
+              "detail": "Multiple geographic restrictions need clarification. No single state was chosen on your behalf."
+            },
+            {
+              "field": "recorded headquarters state",
+              "value": "FL",
+              "outcome": "APPLIED",
+              "detail": "Recorded address only; does not establish service territory or NJ state licensing."
+            }
+          ],
+          "executor": "records",
+          "jurisdiction": {
+            "state": "FL",
+            "meaning": "recorded_headquarters_state"
+          },
+          "failReason": "Multiple geographic restrictions need clarification. No single state was chosen on your behalf.",
+          "alternatives": [
+            "Find USDOT 3244649.",
+            "Show movers headquartered in Florida."
+          ],
+          "page": 1
+        },
+        "resultType": "fail_closed",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "FMCSA directory + FDACS IM where used",
+          "geographyMeaning": "recorded_headquarters_state = FL",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "fail_closed",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 1
+      },
+      "classification": "BAD",
+      "finding": "Task/name/endpoint or recovery loss observed"
+    },
+    {
+      "q": "moving my mother's belongings into assisted living",
+      "at": "2026-09-12T22:05:26.974606+00:00",
+      "ms": 735,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "NO_MATCH",
+        "nameSearch": {
+          "requested": "moving my mother's belongings into assisted living",
+          "candidateLimit": 10,
+          "retrievalLimit": 200,
+          "truncated": false,
+          "selected": false,
+          "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+        },
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Company name",
+            "value": "moving my mother's belongings into assisted living"
+          },
+          {
+            "label": "Research task",
+            "value": "research"
+          },
+          {
+            "label": "Match policy",
+            "value": "Source-backed name candidate match; confirm the intended public identity"
+          }
+        ],
+        "query": {
+          "mode": "entity",
+          "nameQuery": "moving my mother's belongings into assisted living",
+          "nameRequest": {
+            "name": "moving my mother's belongings into assisted living",
+            "task": "research"
+          },
+          "constraints": [],
+          "executor": "records",
+          "page": 1
+        },
+        "resultType": "entity",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 10,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+          "geographyMeaning": "Name identity research; requested location conditions are evaluated separately, never service territory.",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "Search uses the existing published legal/display-name index. A stored FMCSA DBA can corroborate a retrieved candidate; an alias absent from those searchable names may not be discoverable. No independent alias directory is claimed.",
+          "Case, whitespace, punctuation and ampersand presentation may normalize. Distinctive-token matches are relaxed candidates; legal suffixes and names are not identity merges.",
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 546
+      },
+      "classification": "BAD",
+      "finding": "Task/name/endpoint or recovery loss observed"
+    },
+    {
+      "q": "JK Moving Services licensed?",
+      "at": "2026-09-12T22:05:27.718098+00:00",
+      "ms": 750,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "NEEDS_CLARIFICATION",
+        "nameSearch": {
+          "requested": "JK Moving Services",
+          "candidateLimit": 10,
+          "retrievalLimit": 200,
+          "truncated": false,
+          "selected": false,
+          "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+        },
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Company name",
+            "value": "JK Moving Services"
+          },
+          {
+            "label": "Research task",
+            "value": "authority"
+          },
+          {
+            "label": "Match policy",
+            "value": "Source-backed name candidate match; confirm the intended public identity"
+          },
+          {
+            "label": "licensing / authority question",
+            "value": "stored evidence - needs clarification"
+          }
+        ],
+        "query": {
+          "mode": "entity",
+          "nameQuery": "JK Moving Services",
+          "nameRequest": {
+            "name": "JK Moving Services",
+            "task": "authority"
+          },
+          "constraints": [
+            {
+              "field": "licensing / authority question",
+              "value": "stored evidence",
+              "outcome": "NEEDS_CLARIFICATION",
+              "detail": "Stored federal role and authority evidence is shown for each identity. It does not establish current license approval or state intrastate authorization; verify the sourced identifier with the regulator."
+            }
+          ],
+          "executor": "records",
+          "page": 1
+        },
+        "resultType": "entity",
+        "sourceConflictCandidates": [],
+        "results": [
+          {
+            "name": "JK Moving Services",
+            "entityId": "jk-moving",
+            "legalName": "JK MOVING & STORAGE INC",
+            "dba": "JK MOVING SERVICES",
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving Services",
+              "field": "fmcsa_raw.dbaName",
+              "returned": "JK MOVING SERVICES",
+              "entityId": "jk-moving",
+              "matchType": "exact_source_name",
+              "normalization": [
+                "case and outer whitespace"
+              ],
+              "source": "Stored FMCSA DBA field",
+              "rank": 1
+            },
+            "selectionHref": "/ask?q=JK+Moving+Services+licensed%3F&company=jk-moving",
+            "usdot": "1065394",
+            "mc": null,
+            "identifierIntegrity": {
+              "status": "under_review",
+              "issueId": "TH-SEARCH-R1-006-jk-mc",
+              "recordId": "jk-moving",
+              "observedMc": "225850",
+              "observedAt": "2026-08-23T05:02:18.368+00:00",
+              "observedFingerprint": "5d0585c2184935aa52df9b33545883eab15d7eecd7e366ec6bed038184969a01",
+              "disputedMc": "225850",
+              "officialObservedUsdot": "1065394",
+              "sourceAsOf": "2026-09-10",
+              "officialObservedMc": "196957",
+              "officialObservedAt": "2026-09-12T00:04:29.566Z",
+              "corroboratedUsdot": "1065394",
+              "officialUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1065394",
+              "message": "The stored MC association is under review. It is not a confirmed MC relationship or a finding about the business authorization. The corroborated USDOT identity remains available for research."
+            },
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "Sterling, VA",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-moving-services",
+            "publicationNote": null,
+            "whyMatched": "Source-name match: stored FMCSA DBA records \"JK MOVING SERVICES\" for this identity. Requested name: \"JK Moving Services\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-23T05:02:18.368+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1065394"
+          },
+          {
+            "name": "JK MOVING SERVICES",
+            "entityId": "usdot-1300300",
+            "legalName": "JK MOVING & STORAGE OF MARYLAND, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving Services",
+              "field": "name",
+              "returned": "JK MOVING SERVICES",
+              "entityId": "usdot-1300300",
+              "matchType": "exact_source_name",
+              "normalization": [
+                "case and outer whitespace"
+              ],
+              "source": "Published directory display name",
+              "rank": 2
+            },
+            "selectionHref": "/ask?q=JK+Moving+Services+licensed%3F&company=usdot-1300300",
+            "usdot": "1300300",
+            "mc": "504611",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "GAITHERSBURG, MD",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-moving-services-usdot-1300300",
+            "publicationNote": null,
+            "whyMatched": "Source-name match: directory display name records \"JK MOVING SERVICES\" for this identity. Requested name: \"JK Moving Services\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1300300"
+          },
+          {
+            "name": "JK BROKERAGE SERVICES",
+            "entityId": "usdot-2222803",
+            "legalName": "JK MOVING & STORAGE, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving Services",
+              "field": "fmcsa_legal_name",
+              "returned": "JK MOVING & STORAGE, INC.",
+              "entityId": "usdot-2222803",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=JK+Moving+Services+licensed%3F&company=usdot-2222803",
+            "usdot": "2222803",
+            "mc": "312255",
+            "role": "Broker",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "STERLING, VA",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-brokerage-services",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE, INC.\" for this identity. Requested name: \"JK Moving Services\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=2222803"
+          },
+          {
+            "name": "JK FORWARDERS, INC.",
+            "entityId": "usdot-2972877",
+            "legalName": "JK FORWARDERS, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving Services",
+              "field": "fmcsa_legal_name",
+              "returned": "JK FORWARDERS, INC.",
+              "entityId": "usdot-2972877",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=JK+Moving+Services+licensed%3F&company=usdot-2972877",
+            "usdot": "2972877",
+            "mc": null,
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "STERLING, VA",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-forwarders-inc",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK FORWARDERS, INC.\" for this identity. Requested name: \"JK Moving Services\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=2972877"
+          },
+          {
+            "name": "JK VAN LINES, INC.",
+            "entityId": "usdot-486366",
+            "legalName": "JK VAN LINES, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving Services",
+              "field": "fmcsa_legal_name",
+              "returned": "JK VAN LINES, INC.",
+              "entityId": "usdot-486366",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=JK+Moving+Services+licensed%3F&company=usdot-486366",
+            "usdot": "486366",
+            "mc": "279412",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "STERLING, VA",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-van-lines-inc",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK VAN LINES, INC.\" for this identity. Requested name: \"JK Moving Services\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=486366"
+          }
+        ],
+        "counts": [
+          {
+            "label": "Displayed name candidates",
+            "value": 5,
+            "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+          }
+        ],
+        "pagination": {
+          "page": 1,
+          "pageSize": 10,
+          "total": 5,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+          "geographyMeaning": "Name identity research; requested location conditions are evaluated separately, never service territory.",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "Search uses the existing published legal/display-name index. A stored FMCSA DBA can corroborate a retrieved candidate; an alias absent from those searchable names may not be discoverable. No independent alias directory is claimed.",
+          "Case, whitespace, punctuation and ampersand presentation may normalize. Distinctive-token matches are relaxed candidates; legal suffixes and names are not identity merges.",
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 572
+      },
+      "classification": "GOOD",
+      "finding": "Protected identity/containment control"
+    },
+    {
+      "q": "USDOT 3244649",
+      "at": "2026-09-12T22:05:28.038958+00:00",
+      "ms": 312,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "FOUND",
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Mode",
+            "value": "identifier"
+          },
+          {
+            "label": "Identifier",
+            "value": "USDOT 3244649 (labeled)"
+          },
+          {
+            "label": "usdot",
+            "value": "3244649: applied"
+          }
+        ],
+        "query": {
+          "mode": "identifier",
+          "constraints": [
+            {
+              "field": "usdot",
+              "value": "3244649",
+              "outcome": "APPLIED",
+              "detail": "Exact stored identifier equality; no prefix or approximate fallback."
+            }
+          ],
+          "identifiers": [
+            {
+              "type": "usdot",
+              "value": "3244649",
+              "rawSpan": "USDOT 3244649",
+              "start": 0,
+              "end": 13,
+              "normalization": []
+            }
+          ],
+          "executor": "records",
+          "identifier": {
+            "type": "usdot",
+            "value": "3244649"
+          },
+          "page": 1
+        },
+        "resultType": "identifier",
+        "sourceConflictCandidates": [],
+        "results": [
+          {
+            "name": "SHIFL INC",
+            "entityId": "usdot-3244649",
+            "legalName": "SHIFL INC",
+            "dba": null,
+            "usdot": "3244649",
+            "mc": "1019808",
+            "role": "Broker",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "AIRMONT, NY",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/shifl-inc",
+            "publicationNote": null,
+            "whyMatched": "Exact identifier match: the published directory identity records USDOT 3244649. Identifier equality does not establish service territory, authority eligibility or a recommendation.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=3244649",
+            "matchEvidence": {
+              "method": "exact_identifier",
+              "fields": [
+                {
+                  "field": "usdot_number",
+                  "requested": "3244649",
+                  "returned": "3244649"
+                }
+              ],
+              "normalization": []
+            }
+          }
+        ],
+        "counts": [
+          {
+            "label": "Matching research identities",
+            "value": 1,
+            "grain": "Exact published identity (additional context is not a service-area match)"
+          }
+        ],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 1,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "Exact published identity (additional context is not a service-area match)",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 132
+      },
+      "classification": "GOOD",
+      "finding": "Protected identity/containment control"
+    },
+    {
+      "q": "MC 225850",
+      "at": "2026-09-12T22:05:28.332986+00:00",
+      "ms": 297,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "SOURCE_CONFLICT",
+        "coverageState": "PARTIAL",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Mode",
+            "value": "identifier"
+          },
+          {
+            "label": "Identifier",
+            "value": "MC 225850 (labeled)"
+          },
+          {
+            "label": "mc",
+            "value": "225850: needs clarification"
+          }
+        ],
+        "query": {
+          "mode": "fail_closed",
+          "constraints": [
+            {
+              "field": "mc",
+              "value": "225850",
+              "outcome": "NEEDS_CLARIFICATION",
+              "detail": "Stored-field equality was observed, but this MC-to-company association is under review and is not confirmed."
+            }
+          ],
+          "identifiers": [
+            {
+              "type": "mc",
+              "value": "225850",
+              "rawSpan": "MC 225850",
+              "start": 0,
+              "end": 9,
+              "normalization": []
+            }
+          ],
+          "executor": "records",
+          "identifier": {
+            "type": "mc",
+            "value": "225850"
+          },
+          "failReason": "The stored MC association is under review. No company association is confirmed for the submitted MC or pair. Continue on MoveTrustHub to inspect the stored candidate and corroborated USDOT.",
+          "page": 1
+        },
+        "resultType": "Stored identifier association requires review",
+        "sourceConflictCandidates": [
+          {
+            "entityId": "jk-moving",
+            "displayName": "JK Moving Services",
+            "legalName": "JK MOVING & STORAGE INC",
+            "dba": null,
+            "usdot": "1065394",
+            "mc": null,
+            "role": "Carrier",
+            "fmcsaStatus": null,
+            "headquarters": "Sterling, VA",
+            "floridaIm": null,
+            "operatingAuthority": null,
+            "href": "/companies/jk-moving-services",
+            "publicationNote": null,
+            "whyMatched": "Stored-field candidate only: the requested MC 225850 occurs in this record, but its association with this company is under review. This does not confirm the requested MC or USDOT/MC pair. Research the corroborated USDOT separately.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-23T05:02:18.368+00:00",
+            "officialAsOf": null,
+            "submittedIdentifierUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=MC_MX&query_string=225850",
+            "identifierIntegrity": {
+              "status": "under_review",
+              "issueId": "TH-SEARCH-R1-006-jk-mc",
+              "recordId": "jk-moving",
+              "observedMc": "225850",
+              "observedAt": "2026-08-23T05:02:18.368+00:00",
+              "observedFingerprint": "5d0585c2184935aa52df9b33545883eab15d7eecd7e366ec6bed038184969a01",
+              "disputedMc": "225850",
+              "officialObservedUsdot": "1065394",
+              "sourceAsOf": "2026-09-10",
+              "officialObservedMc": "196957",
+              "officialObservedAt": "2026-09-12T00:04:29.566Z",
+              "corroboratedUsdot": "1065394",
+              "officialUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1065394",
+              "message": "The stored MC association is under review. It is not a confirmed MC relationship or a finding about the business authorization. The corroborated USDOT identity remains available for research."
+            },
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1065394"
+          }
+        ],
+        "sourceIntegrity": {
+          "status": "SOURCE_CONFLICT",
+          "trustedResultCount": 0,
+          "countMeaning": "Trusted result rows only; not a count of movers or valid licenses"
+        },
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "Stored candidate identities; requested MC association is not confirmed",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "The stored MC association is under review. It is not a confirmed MC relationship or a finding about the business authorization. The corroborated USDOT identity remains available for research.",
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 124
+      },
+      "classification": "GOOD",
+      "finding": "Protected identity/containment control"
+    },
+    {
+      "q": "mover serving Miami",
+      "at": "2026-09-12T22:05:28.528783+00:00",
+      "ms": 203,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "NEEDS_CLARIFICATION",
+        "coverageState": "UNSUPPORTED",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Mode",
+            "value": "fail_closed"
+          }
+        ],
+        "query": {
+          "mode": "fail_closed",
+          "constraints": [],
+          "executor": "records",
+          "failReason": "Headquarters or Florida registration is not service territory. Ask does not infer \u201cserves Palm Beach County\u201d from a Florida address.",
+          "alternatives": [
+            "Show current interstate household-goods carriers headquartered in Florida."
+          ],
+          "page": 1
+        },
+        "resultType": "fail_closed",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "FMCSA directory + FDACS IM where used",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "fail_closed",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 1
+      },
+      "classification": "BAD",
+      "finding": "Task/name/endpoint or recovery loss observed"
+    },
+    {
+      "q": "broker for a move from Florida to New York",
+      "at": "2026-09-12T22:05:28.693321+00:00",
+      "ms": 157,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "NEEDS_CLARIFICATION",
+        "coverageState": "UNSUPPORTED",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Capability",
+            "value": "Service territory \u2014 unsupported"
+          }
+        ],
+        "query": {
+          "mode": "fail_closed",
+          "constraints": [],
+          "executor": "records",
+          "failReason": "Origin and destination do not establish which mover serves a route. Research a company identifier or the authority relevant to an interstate move; recorded headquarters is not service territory.",
+          "alternatives": [
+            "What is interstate operating authority?",
+            "I want to verify the company that gave me a quote."
+          ],
+          "page": 1
+        },
+        "resultType": "fail_closed",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 20,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "FMCSA directory + FDACS IM where used",
+          "geographyMeaning": "Not geography-filtered",
+          "officialAsOf": "Official effective time is not supplied by this extract.",
+          "grain": "fail_closed",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 0
+      },
+      "classification": "BAD",
+      "finding": "Task/name/endpoint or recovery loss observed"
+    },
+    {
+      "q": "book a mover for tomorrow",
+      "at": "2026-09-12T22:05:29.430979+00:00",
+      "ms": 734,
+      "response": {
+        "contract": "move-ask-v1",
+        "terminalState": "NO_MATCH",
+        "nameSearch": {
+          "requested": "book a mover for tomorrow",
+          "candidateLimit": 10,
+          "retrievalLimit": 200,
+          "truncated": false,
+          "selected": false,
+          "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+        },
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Company name",
+            "value": "book a mover for tomorrow"
+          },
+          {
+            "label": "Research task",
+            "value": "research"
+          },
+          {
+            "label": "Match policy",
+            "value": "Source-backed name candidate match; confirm the intended public identity"
+          }
+        ],
+        "query": {
+          "mode": "entity",
+          "nameQuery": "book a mover for tomorrow",
+          "nameRequest": {
+            "name": "book a mover for tomorrow",
+            "task": "research"
+          },
+          "constraints": [],
+          "executor": "records",
+          "page": 1
+        },
+        "resultType": "entity",
+        "sourceConflictCandidates": [],
+        "results": [],
+        "counts": [],
+        "pagination": {
+          "page": 1,
+          "pageSize": 10,
+          "total": 0,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+          "geographyMeaning": "Name identity research; requested location conditions are evaluated separately, never service territory.",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "Search uses the existing published legal/display-name index. A stored FMCSA DBA can corroborate a retrieved candidate; an alias absent from those searchable names may not be discoverable. No independent alias directory is claimed.",
+          "Case, whitespace, punctuation and ampersand presentation may normalize. Distinctive-token matches are relaxed candidates; legal suffixes and names are not identity merges.",
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 532
+      },
+      "classification": "BAD",
+      "finding": "Task/name/endpoint or recovery loss observed"
+    }
+  ]
+}

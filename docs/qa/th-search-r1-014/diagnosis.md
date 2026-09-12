@@ -1,0 +1,10 @@
+# R1-014 diagnosis before implementation
+
+Model: GPT-6 Astra / High — USER-CONFIRMED. Baseline: f17650ed5c9a695cb97c0b7a111e38ef93f2e3dc.
+Remote verified savitz25/Move-trust-Hub. No applicable AGENTS.md found at workspace ancestors or in fresh main. Worktree/branch inventory, open PRs and bounded Move-related process inspection found no visible overlapping R1-014 assignment. Old drafts 1–3 and all existing worktrees are untouched.
+
+The 15 actual Production observations are in baseline-api.json. Booking and care-relocation sentences become name searches; local mover in NJ retrieves unrelated name candidates. Journey endpoints are absent from the contract. Multiple states become conflicting headquarters restrictions, sometimes labelled APPLIED despite execution being blocked. Local Austin and Broward requests already stop safely, but recovery loses the original task and lacks explicit typed consent. USDOT 3244649, JK name candidates and MC225850 containment are protected positives.
+
+The common boundary is planMoveRequest / executeMoveRequest. Name search remains bounded and server-revalidated. The directory supports recorded-state cohorts, not exact-route service/availability. The accepted data/home/move-network-metrics-v1.json exposes capability-level grains: FL FDACS registration; NJ HHG roster REQUEST_ONLY; CA/TX/NY HHG roster SEARCH_ONLY; VA acquired HHG authority. State-level overall status must not be mistaken for roster availability. No source operations or canonical data correction are needed.
+
+Implementation plan: additive journey metadata inside the existing plan; independent endpoints, conservative explicit-state resolution, targeted endpoint clarification; existing identity paths plus unresolved route conditions; completed research checklist with state-capability actions; query-bound explicit recorded-state broadening. No automatic cohort retrieval for journeys or bookings. Existing public definition/fail_closed modes remain compatible with Ask's read-only inspected move-ask-v1 adapter.

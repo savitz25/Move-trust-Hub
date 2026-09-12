@@ -1,0 +1,243 @@
+{
+  "checkedAt": "2026-09-12T22:19:33.443251+00:00",
+  "file": "data\\home\\move-network-metrics-v1.json",
+  "sha256": "3c0247528c8bce91cfc2f2525aeec4c734445e4bd58b4df47aa2dde4e418fd06",
+  "acceptedSources": [
+    {
+      "path": "data/metrics/accepted-network-census-v1.json",
+      "sha256": "9d78ed88ce4975d48e91094fc474bc970cd0254610ea100d353899f5c003463c",
+      "sourceAsOf": null,
+      "retrievedAt": null,
+      "snapshotAsOf": "2026-09-12T21:07:55.427Z"
+    },
+    {
+      "path": "data/reports/nj-move-002-public-snapshot.json",
+      "sha256": "31edaa05eaf60069f3d01421ce2fbba9daabe6cd35964eade4e653dcac59e8f9",
+      "sourceAsOf": null,
+      "retrievedAt": null,
+      "snapshotAsOf": null
+    },
+    {
+      "path": "lib/california-intelligence/accepted-snapshot.json",
+      "sha256": "2372b11521d1b03857da87cc1ccf1a0c00c3117adb04f9be44c7c6d74e5ceed2",
+      "sourceAsOf": null,
+      "retrievedAt": null,
+      "snapshotAsOf": "2026-09-03"
+    },
+    {
+      "path": "lib/colorado-intelligence/accepted-snapshot.json",
+      "sha256": "60286dfb564ce2efdb31a69a3e19ab4d922bd5427f603740e991a6d360a1e465",
+      "sourceAsOf": null,
+      "retrievedAt": "2026-09-09T15:42:05+00:00",
+      "snapshotAsOf": "2026-09-09"
+    },
+    {
+      "path": "lib/illinois-intelligence/accepted-snapshot.json",
+      "sha256": "f9f118a26cef0549a38671e5e8bb13336a56640785738356205c4b3de25cb200",
+      "sourceAsOf": null,
+      "retrievedAt": "2026-09-12",
+      "snapshotAsOf": "2026-09-12"
+    },
+    {
+      "path": "lib/new-york-intelligence/accepted-snapshot.json",
+      "sha256": "41385ec9d7b688d164a8f69d5fd7417b4529ab105565aebf46c4c6f627269c70",
+      "sourceAsOf": null,
+      "retrievedAt": "2026-09-11",
+      "snapshotAsOf": "2026-09-11"
+    },
+    {
+      "path": "lib/texas-intelligence/accepted-snapshot.json",
+      "sha256": "a6f36592d2d3b5e6b9850c2ef1d9fb375169bcc505e53c9a4b9ef7c6a3fda507",
+      "sourceAsOf": null,
+      "retrievedAt": null,
+      "snapshotAsOf": "2026-09-03"
+    },
+    {
+      "path": "lib/virginia-intelligence/accepted-snapshot.json",
+      "sha256": "f0a2a3520834ffc9256c3095bfb8feebed4680c2204db91f27022716a3ca8f08",
+      "sourceAsOf": null,
+      "retrievedAt": "2026-09-10T15:05:33.623358+00:00",
+      "snapshotAsOf": null
+    },
+    {
+      "path": "lib/washington-intelligence/accepted-snapshot.json",
+      "sha256": "d22eae053fa43eec85a7e6ecbce3bef1a451001e99d2de422cba664ba23dfc54",
+      "sourceAsOf": null,
+      "retrievedAt": null,
+      "snapshotAsOf": "2026-09-04"
+    }
+  ],
+  "capabilities": [
+    {
+      "state": "FL",
+      "route": "/florida",
+      "status": "STATE_SOURCE_LIVE",
+      "specialistComplete": false,
+      "completion": "NOT_ASSERTED",
+      "capabilities": [
+        {
+          "id": "hhg-registration",
+          "status": "STATE_SOURCE_LIVE",
+          "metricKeys": [
+            "florida_fdacs_im_registrations"
+          ],
+          "bulkCount": 1314
+        }
+      ]
+    },
+    {
+      "state": "NJ",
+      "route": "/new-jersey",
+      "status": "STATE_SOURCE_LIVE",
+      "specialistComplete": false,
+      "completion": "NOT_ASSERTED",
+      "capabilities": [
+        {
+          "id": "hhg-roster",
+          "status": "REQUEST_ONLY",
+          "metricKeys": [
+            "nj_pmw_authority_roster"
+          ],
+          "bulkCount": null
+        },
+        {
+          "id": "regulatory-evidence",
+          "status": "STATE_SOURCE_LIVE",
+          "metricKeys": [
+            "nj_operation_safe_move_novs_acquired"
+          ],
+          "bulkCount": 34
+        }
+      ]
+    },
+    {
+      "state": "CA",
+      "route": "/california",
+      "status": "STATE_SOURCE_LIVE",
+      "specialistComplete": false,
+      "completion": "NOT_ASSERTED",
+      "capabilities": [
+        {
+          "id": "hhg-roster",
+          "status": "SEARCH_ONLY",
+          "metricKeys": [
+            "ca_cal_t_household_mover_universe"
+          ],
+          "bulkCount": null
+        },
+        {
+          "id": "citations",
+          "status": "STATE_SOURCE_LIVE",
+          "metricKeys": [
+            "ca_bhgs_19237_citation_rows"
+          ],
+          "bulkCount": 132
+        }
+      ]
+    },
+    {
+      "state": "TX",
+      "route": "/texas",
+      "status": "SEARCH_ONLY",
+      "specialistComplete": false,
+      "completion": "NOT_ASSERTED",
+      "capabilities": [
+        {
+          "id": "hhg-roster",
+          "status": "SEARCH_ONLY",
+          "metricKeys": [
+            "tx_txdmv_household_goods_mover_universe"
+          ],
+          "bulkCount": null
+        }
+      ]
+    },
+    {
+      "state": "VA",
+      "route": "/virginia",
+      "status": "STATE_SOURCE_LIVE",
+      "specialistComplete": false,
+      "completion": "NOT_ASSERTED",
+      "capabilities": [
+        {
+          "id": "hhg-authority",
+          "status": "STATE_SOURCE_LIVE",
+          "metricKeys": [
+            "va_hhg_authority_identities"
+          ],
+          "bulkCount": 192
+        },
+        {
+          "id": "property-authority",
+          "status": "STATE_SOURCE_LIVE",
+          "metricKeys": [
+            "va_property_authority_identities"
+          ],
+          "bulkCount": 4914
+        }
+      ]
+    },
+    {
+      "state": "NY",
+      "route": "/new-york",
+      "status": "STATE_SOURCE_LIVE",
+      "specialistComplete": false,
+      "completion": "NOT_ASSERTED",
+      "capabilities": [
+        {
+          "id": "hhg-roster",
+          "status": "SEARCH_ONLY",
+          "metricKeys": [
+            "ny_current_hhg_roster"
+          ],
+          "bulkCount": null
+        },
+        {
+          "id": "applications",
+          "status": "STATE_SOURCE_LIVE",
+          "metricKeys": [
+            "ny_dot_2026_hhg_bulletin_observations"
+          ],
+          "bulkCount": 108
+        }
+      ]
+    }
+  ],
+  "meaning": "Capability-level state grains; no provider/route eligibility inferred",
+  "officialReference": {
+    "agency": "FMCSA",
+    "url": "https://www.fmcsa.dot.gov/protect-your-move",
+    "purpose": "Interstate household-goods preparation, carrier/broker distinction",
+    "check": "Opened successfully with web tool; not a provider verification",
+    "deepLink": false
+  },
+  "independentReadOnlyCompanyCheck": {
+    "at": "2026-09-12T22:28:50.510705+00:00",
+    "project": "arepfylnilkjmyduhwbz",
+    "predicate": "id = 'jk-moving' OR usdot_number = '3244649'; LIMIT 3",
+    "rows": [
+      {
+        "id": "jk-moving",
+        "name": "JK Moving Services",
+        "usdot": "1065394",
+        "storedMc": "225850",
+        "role": "Carrier",
+        "headquarters": "Sterling, VA",
+        "publication": "PUBLISHABLE",
+        "storedCheck": "2026-08-23T05:02:18.368Z",
+        "dataHash": "5d0585c2184935aa52df9b33545883eab15d7eecd7e366ec6bed038184969a01",
+        "effectiveMc": "withheld by R1-006; no DB correction authorized"
+      },
+      {
+        "id": "usdot-3244649",
+        "name": "SHIFL INC",
+        "usdot": "3244649",
+        "mc": "1019808",
+        "role": "Broker",
+        "headquarters": "AIRMONT, NY",
+        "publication": "PUBLISHABLE",
+        "storedCheck": "2026-08-20T13:52:59.596Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+
+> move-trust-hub@1.0.0 check:th-search-r1-014
+> tsx --require ./scripts/stub-server-only.cjs --test lib/move-ask/r1-journey.test.ts
+
+move_research_source_unavailable { executor: 'directory', mode: 'entity' }
+✔ structured city/ZIP requests cannot bypass the locality consent boundary (3.2267ms)
+✔ R1-014 endpoints survive the production planner (4.5083ms)
+✔ independent endpoints, abbreviations, multiple states and city ambiguity (2.2116ms)
+✔ journeys and bookings never dispatch unrelated cohorts or names (1.1804ms)
+✔ capability grains are source-native, never FMCSA-as-intrastate authority (0.3995ms)
+✔ locality and near me retain conditions and require explicit query-bound broadening (10.0067ms)
+✔ role, auto transport, filters and pagination cannot lose scope (4.3129ms)
+✔ name plus journey and server selection retain the protected exact identity path (20.7892ms)
+✔ API/native transport, rendered guidance and actions share the same meaning (26.7033ms)
+✔ legal-name signals are not converted to locality requests (2.3509ms)
+✔ natural-language authority and unsupported route counts stay visible through broadening (1.2594ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2686.1442

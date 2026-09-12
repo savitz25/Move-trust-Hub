@@ -288,6 +288,7 @@ async function lookupName(parsed: ParsedMoveAsk, started: number): Promise<MoveA
   const truncated = capped || ordered.length > NAME_CANDIDATE_LIMIT;
   const cards = ordered.slice(0,NAME_CANDIDATE_LIMIT).map(({row,evidence}) => {
     const params = new URLSearchParams({q: parsed.raw, company: row.id});
+    for (const [key,value] of Object.entries(q.journeyChoices ?? {})) if (value) params.set(key,value);
     for (const [key,value] of Object.entries(q.overrides ?? {})) if (value) params.set(key,value);
     const fieldLabel = evidence.field === 'name' ? 'directory display name' : evidence.field === 'fmcsa_legal_name' ? 'published legal-name field' : 'stored FMCSA DBA';
     const why = `${evidence.matchType === 'distinctive_token_candidate' ? 'Distinctive name-token candidate' : evidence.matchType === 'normalized_exact_name' ? 'Normalized source-name match' : 'Source-name match'}: ${fieldLabel} records "${evidence.returned}" for this identity. Requested name: "${name}". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.`;
@@ -578,14 +579,14 @@ function emptyBase(parsed: ParsedMoveAsk, started: number): MoveAskResult {
     queryText: parsed.raw,
     parsed,
     resultType: parsed.query.mode,
-    terminalState: parsed.query.mode === 'fail_closed'
+    terminalState: parsed.query.journey && parsed.query.mode === 'definition' ? parsed.query.journey.outcome === 'NEEDS_CLARIFICATION' ? 'NEEDS_CLARIFICATION' : parsed.query.journey.outcome === 'UNSUPPORTED' ? 'UNSUPPORTED' : 'FOUND' : parsed.query.mode === 'fail_closed'
       ? parsed.query.constraints?.some((c) => c.outcome === 'UNSUPPORTED') ? 'UNSUPPORTED' : 'NEEDS_CLARIFICATION'
       : parsed.query.mode === 'definition' ? 'FOUND' : 'NO_MATCH',
     results: [],
     counts: [],
     pagination: { page: parsed.query.page, pageSize: MOVE_ASK_PAGE_SIZE, total: 0, hasMore: false },
     provenance: {
-      sourceFamily: 'FMCSA directory + FDACS IM where used',
+      sourceFamily: parsed.query.journey ? 'Accepted state-capability registry; research guidance only, no provider query executed' : 'FMCSA directory + FDACS IM where used',
       geographyMeaning: parsed.query.jurisdiction
         ? `${parsed.query.jurisdiction.meaning} = ${parsed.query.jurisdiction.state}`
         : 'Not geography-filtered',
@@ -652,6 +653,7 @@ export function publicAskPayload(result: MoveAskResult) {
     capability: { federatedExecution: 'execute', askStatus: 'live' },
     interpretation: result.parsed.interpretation,
     query: {
+      journey: result.parsed.query.journey,
       ...(result.parsed.query.directoryRequest ? { specialistContract: result.parsed.query.directoryRequest.contract } : {}),
       mode: associationFailure ? 'fail_closed' : result.parsed.query.mode,
       nameQuery: result.parsed.query.nameQuery,
@@ -702,6 +704,6 @@ export function publicAskPayload(result: MoveAskResult) {
     provenance: result.provenance,
     limitations: result.limitations,
     elapsedMs: result.elapsedMs,
-    definition: result.parsed.query.definitionId ? ASK_DEFINITIONS[result.parsed.query.definitionId] : undefined,
+    definition: result.parsed.query.journey && result.parsed.query.mode === 'definition' ? {title:'Research your move',body:result.parsed.query.journey.summary + ' ' + result.parsed.query.journey.checklist.join(' ')} : result.parsed.query.definitionId ? ASK_DEFINITIONS[result.parsed.query.definitionId] : undefined,
   };
 }

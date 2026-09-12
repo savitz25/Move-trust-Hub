@@ -360,6 +360,18 @@ export async function executeMoveSpecialist(raw: MoveSpecialistExecutionRequest)
   if (request.geography && request.geography.intent !== 'RECORDED_HQ') {
     return unsupportedResponse(request, started);
   }
+  if (request.geography?.city || request.geography?.zip) {
+    const place = [request.geography.city ?? request.geography.zip, request.geography.stateCode].filter(Boolean).join(', ');
+    const params = new URLSearchParams({ q: `${request.entityClass === 'auto_transport' ? 'auto transport' : 'movers'} in ${place}` });
+    if (request.role) params.set('role', request.role === 'Carrier/Broker' ? 'carrier_broker' : request.role.toLowerCase());
+    const response = baseResponse(request, started, 'UNSUPPORTED_CAPABILITY', {
+      limitations: [`The requested locality (${place}) cannot be applied by this contract. No state cohort was executed. Choose recorded-state research explicitly on MoveTrustHub.`, ...COMMON_LIMITATIONS],
+      destinations: {research:`https://www.movetrusthub.com/ask?${params}`,verifyDot:'https://www.movetrusthub.com/verify-dot',profiles:[]},
+    });
+    response.queryInterpretation.appliedFilters = [];
+    response.provenance.geographyMeaning = `Requested locality ${place}; no geography predicate executed.`;
+    return response;
+  }
   if (!isSupabaseConfigured()) {
     throw new MoveSpecialistExecutionError('BACKEND_UNAVAILABLE', 'public directory research is temporarily unavailable', 503, true);
   }
@@ -400,9 +412,6 @@ export async function executeMoveSpecialist(raw: MoveSpecialistExecutionRequest)
   const diagnostic = getLastDbDirectoryDiagnostics();
   const latestClock = rows.map((row) => row.sourceLastChecked).filter((value): value is string => Boolean(value)).sort().at(-1) ?? null;
   const researchPhrase = `${request.entityClass === 'auto_transport' ? 'auto transport companies' : 'movers'}${stateCode ? ` in ${stateName(stateCode)}` : ''}`;
-  const cityLimitation = request.geography?.city
-    ? `${request.geography.city} was interpreted as context, but this contract applied only the supported ${stateCode} recorded-headquarters state filter.`
-    : null;
   const zeroLimitation = rows.length === 0
     ? result.total > 0
       ? `The requested page is outside the ${result.total}-identity cohort; no rows were returned for this page.`
@@ -427,7 +436,7 @@ export async function executeMoveSpecialist(raw: MoveSpecialistExecutionRequest)
       generatedAt: new Date().toISOString(),
       publicationSemantics: 'Only identities eligible for the accepted public MoveTrustHub directory are returned.',
     },
-    limitations: [cityLimitation, zeroLimitation, ...COMMON_LIMITATIONS].filter((value): value is string => Boolean(value)),
+    limitations: [zeroLimitation, ...COMMON_LIMITATIONS].filter((value): value is string => Boolean(value)),
     destinations: {
       research: `https://www.movetrusthub.com/companies?search=${encodeURIComponent(researchPhrase)}`,
       verifyDot: 'https://www.movetrusthub.com/verify-dot',
