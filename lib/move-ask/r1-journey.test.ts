@@ -321,6 +321,7 @@ test('natural-language authority and unsupported route counts stay visible throu
 });
 
 test('booking paraphrases retain supplied local places and both endpoints',()=>{
+ const scheduled=planMoveRequest({q:'schedule a move in Austin Texas'});assert.equal(scheduled.query.journey?.locality?.city,'Austin');
  const local=planMoveRequest({q:'book a mover in Austin Texas for tomorrow'});assert.equal(local.query.journey?.booking,true);assert.equal(local.query.journey?.locality?.city,'Austin');assert.equal(local.query.journey?.locality?.state,'TX');
  const route=planMoveRequest({q:'hire movers from Florida to New Jersey for tomorrow'});assert.equal(route.query.journey?.origin?.state,'FL');assert.equal(route.query.journey?.destination?.state,'NJ');assert.match(route.query.journey?.summary??'',/does not book/);
 });

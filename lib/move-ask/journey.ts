@@ -157,7 +157,8 @@ export function parseJourney(raw: string): Journey | null {
   const explicitStateLocal = /\b(?:local|intrastate)\s+(?:move|mover)\b/i.test(
     text,
   );
-  const locality = generic ? resolveMovePlace(generic[1]!.replace(/\s+(?:for\s+)?(?:tomorrow|today|this weekend)$/i, "")) : undefined;
+  const localSpan = generic?.[1] ?? (booking ? text.match(/\b(?:in|near|within)\s+(.+)$/i)?.[1] : undefined);
+  const locality = localSpan ? resolveMovePlace(localSpan.replace(/\s+(?:for\s+)?(?:tomorrow|today|this weekend)$/i, "")) : undefined;
   if (!route && !booking && !personal && !generic) return null;
   if (
     generic &&
