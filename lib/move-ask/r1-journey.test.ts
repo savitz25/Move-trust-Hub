@@ -7,10 +7,20 @@ import { journeyConsent, journeyHref, resolveMovePlace } from "./journey";
 import { fixtureFetch, publishedIdentity } from "./r1-fixtures";
 import { CANONICAL_SUPABASE_URL } from "../supabase/canonical-project";
 import { GET } from "../../app/api/ask/route";
+import { executeMoveSpecialist } from '../specialist-execution/execute';
+import { MOVE_SPECIALIST_EXECUTION_CONTRACT } from '../specialist-execution/contract';
 import { AskMoveResultView } from "../../components/ask-move-result";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 Object.assign(globalThis, { React });
+
+test('structured city/ZIP requests cannot bypass the locality consent boundary', async()=>{
+  for(const geography of [{intent:'RECORDED_HQ' as const,city:'Austin',stateCode:'TX'},{intent:'RECORDED_HQ' as const,zip:'33441',stateCode:'FL'}]){
+    const r=await executeMoveSpecialist({contract:MOVE_SPECIALIST_EXECUTION_CONTRACT,queryType:'cohort',entityClass:'mover',role:'Broker',geography});
+    assert.equal(r.resultType,'UNSUPPORTED_CAPABILITY');assert.equal(r.rows.length,0);assert.deepEqual(r.queryInterpretation.appliedFilters,[]);assert.deepEqual(r.queryInterpretation.geography?.stateCode,geography.stateCode);assert.match(r.limitations[0]!,/No state cohort was executed/);
+    const next=new URL(r.destinations.research);assert.equal(next.pathname,'/ask');assert.equal(next.searchParams.get('role'),'broker');assert.ok(next.searchParams.get('q')?.includes(geography.city??geography.zip!));
+  }
+});
 
 test("R1-014 endpoints survive the production planner", () => {
   const p = planMoveRequest({
