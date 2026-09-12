@@ -70,6 +70,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'NYSDOT household-goods authority & 2026 Weekly Bulletin',
       },
       {
+        label: 'Illinois research',
+        href: '/illinois',
+        description: 'ICC household-goods licenses & interstate overlay',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',

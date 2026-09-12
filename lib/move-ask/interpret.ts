@@ -11,6 +11,7 @@ const STATE_NAMES: Record<string, string> = {
   colorado: 'CO',
   virginia: 'VA',
   'new york': 'NY',
+  illinois: 'IL',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -19,6 +20,7 @@ const STATE_NAMES: Record<string, string> = {
   wa: 'WA',
   co: 'CO',
   va: 'VA',
+  il: 'IL',
 };
 
 function detectState(q: string): string | undefined {
@@ -64,6 +66,35 @@ function mentionsNewYork(q: string): boolean {
   return /\bnew york\b|\bnysdot\b|\bnydot\b/i.test(q) || detectState(q) === 'NY';
 }
 
+function mentionsIllinois(q: string): boolean {
+  return /\billinois\b|\bicc\b|\bilcc\b/i.test(q) || detectState(q) === 'IL';
+}
+
+function mentionsChicago(q: string): boolean {
+  return /\bchicago\b|\bcook county\b/i.test(q);
+}
+
+function isIccComplaintAsk(q: string): boolean {
+  return /\bcomplaint/i.test(q) && (/\b(icc|illinois commerce)\b/i.test(q) || (mentionsIllinois(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)));
+}
+
+function isIlIntrastateAuthorityAsk(q: string): boolean {
+  if (!mentionsIllinois(q)) return false;
+  if (/\bheadquarter/i.test(q) && /\binterstate\b/i.test(q)) return false;
+  if (/\binterstate mover\b/i.test(q) && !/\blicen|\bintrastate|\bhousehold[- ]?goods|\bicc\b|\bilcc\b/i.test(q)) {
+    return false;
+  }
+  return (
+    /\bintrastate\b/i.test(q) ||
+    /\bicc\b|\bilcc\b|\billinois commerce\b/i.test(q) ||
+    (/\blicensed movers?\b|\blicensed household[- ]?goods|\bhousehold[- ]?goods movers?\b/i.test(q) && !/\binterstate\b/i.test(q)) ||
+    /\bis this mover licensed in illinois\b/i.test(q) ||
+    /\blicensed in illinois\b/i.test(q) ||
+    /\bhow many movers are licensed in illinois\b/i.test(q) ||
+    /\bmoving companies in illinois\b/i.test(q)
+  );
+}
+
 function isNysdotComplaintAsk(q: string): boolean {
   return /\bcomplaint/i.test(q) && /\b(nysdot|nysd?ot|new york (state )?dot)\b/i.test(q);
 }
@@ -102,14 +133,62 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
-  const named = !isRanking(q) && !isQuote(q) && !isScam(q) && !/\b(?:complaints?|usdot|dot|mc)\b/i.test(q) ? parseNameRequest(q) : null;
+  if (isRanking(q) && mentionsChicago(q)) {
+    const query = fail(
+      'MoveTrustHub does not rank movers and does not publish a Chicago or Cook County mover route. Illinois household-goods authority is statewide ICC research.',
+      ['Open Illinois household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Mode', 'fail_closed');
+    push('Coverage', 'No Chicago intelligence page');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isRanking(q) || /\bwhich state has better movers\b/i.test(q)) {
+    const query = fail(
+      'MoveTrustHub does not rank movers and does not publish a TrustHub mover score. Research identity, authority, and registration instead.',
+      [
+        'Show current interstate household-goods carriers headquartered in Florida.',
+        'Find USDOT 3244649.',
+      ],
+    );
+    push('Mode', 'fail_closed');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isIccComplaintAsk(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) {
+    const query = fail(
+      'Illinois Commerce Commission household-goods complaints are official search / filing, not an acquired bulk table. Federal complaint observations are not a substitute for ICC complaints. Missing bulk complaints is not zero complaints.',
+      ['Open Illinois household-goods research.', 'Show complaint observations for USDOT 3244649.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'ICC complaints — OPEN_SEARCH_ONLY');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isIlIntrastateAuthorityAsk(q)) {
+    const query = fail(
+      'Illinois intrastate household-goods authority is an Illinois Commerce Commission Household Goods License, verified in Motor Carrier Information System Entity Search. No complete current roster was acquired. Search-only is not zero. A USDOT or MC number is not ICC authority, and a Public Carrier Certificate is not a household-goods license.',
+      ['Open Illinois household-goods research.', 'Show current interstate household-goods carriers headquartered in Illinois.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'ICC current HHG roster — OPEN_SEARCH_ONLY');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\bverify (the )?(company|mover).*(quote|estimate)\b/i.test(q)) {
+    const query = fail('A quote does not establish regulatory identity. Find the USDOT and MC numbers on the estimate, then research those labeled identifiers.', ['Find USDOT 3244649.', 'What is a USDOT number?']);
+    push('Research path', 'Use the quote to locate a labeled USDOT or MC identifier');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  const named = !isRanking(q) && !isQuote(q) && !isScam(q) && !/\b(?:complaints?|usdot|dot|mc)\b/i.test(q) && !/\bserv(e|es|ing)\b|\bservice (area|territory|coverage)\b/i.test(q) ? parseNameRequest(q) : null;
   if (named) {
     if (!named.name || !distinctiveTokens(named.name).length || named.name.length > 80 || /[\x00-\x1f\x7f]/.test(raw)) {
       const query = fail('Enter a distinctive company name (up to 80 characters), or a labeled USDOT/MC identifier. Generic industry words alone do not identify a company.', ['USDOT lookup', 'MC lookup']);
       return { raw: q, query, interpretation: [{ label: 'Name research', value: 'Identity required' }] };
     }
     return { raw: q, query: { mode: 'entity', includeDualRole: true, page: safePage, nameQuery: named.name, nameRequest: named, evidenceFamily: named.task === 'authority' ? 'authority' : undefined },
-      interpretation: [{ label: 'Company name', value: named.name }, { label: 'Research task', value: named.task }, { label: 'Match policy', value: 'Source-backed name candidates; confirm the intended public identity' }] };
+      interpretation: [{ label: 'Company name', value: named.name }, { label: 'Research task', value: named.task }, { label: 'Match policy', value: 'Source-backed name candidate match; confirm the intended public identity' }] };
   }
   if (/^who owns (?:this|that|the) (?:moving )?company|^how (?:do|can) i check whether (?:a|the) mover is licensed/i.test(q)) {
     return { raw: q, query: fail('Provide the company name or a labeled USDOT/MC identifier to research its stored public evidence. Ownership and license approval are not inferred.', ['USDOT lookup', 'MC lookup']), interpretation: [{label:'Identity',value:'Required'}] };
@@ -310,6 +389,24 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     push('Identifier', 'Clarification required');
     return { raw: q, query, interpretation: lines };
   }
+  if (identity.identifiers.length && isIccComplaintAsk(q)) {
+    const query = fail(
+      'Illinois Commerce Commission household-goods complaint records are not acquired as a bulk corpus. A labeled USDOT does not substitute ICC complaint evidence with federal complaint observations.',
+      ['Open Illinois household-goods research.', 'Show complaint observations for USDOT 3244649.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'ICC complaints — NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+  if (identity.identifiers.length && isIlIntrastateAuthorityAsk(q)) {
+    const query = fail(
+      'A USDOT or MC number does not prove Illinois Commerce Commission household-goods authority. Current ICC Motor Carrier Information System search is the official verification path. Federal authority is a different grain.',
+      ['Open Illinois household-goods research.', 'Find USDOT 3244649.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'ICC current authority — OPEN_SEARCH_ONLY');
+    return { raw: q, query, interpretation: lines };
+  }
   if (identity.identifiers.length && isNysdotComplaintAsk(q)) {
     const query = fail(
       'NYSDOT household-mover complaint records are not acquired as a bulk corpus. A labeled USDOT does not substitute NYSDOT complaint evidence with federal complaint observations.',
@@ -348,7 +445,17 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
 
   const state = detectState(q);
   const role = detectRole(q);
-  const floridaIm = /\b(fdacs|intrastate movers?|im registrations?)\b/i.test(q) && !mentionsNewYork(q);
+  const floridaIm = /\b(fdacs|intrastate movers?|im registrations?)\b/i.test(q) && !mentionsNewYork(q) && !mentionsIllinois(q);
+
+  if (isIlIntrastateAuthorityAsk(q) || (mentionsIllinois(q) && /\bintrastate movers?\b/i.test(q) && !/\binterstate\b/i.test(q))) {
+    const query = fail(
+      "Illinois intrastate household-goods authority is ICC. Current Motor Carrier Information System search is official. Search-only is not zero, and another state's registration grain is not a substitute.",
+      ['Open Illinois household-goods research.', 'Show current interstate household-goods carriers headquartered in Illinois.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'ICC current roster — OPEN_SEARCH_ONLY');
+    return { raw: q, query, interpretation: lines };
+  }
 
   if (isNyIntrastateAuthorityAsk(q) || (mentionsNewYork(q) && /\bintrastate movers?\b/i.test(q))) {
     const query = fail(

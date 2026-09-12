@@ -116,6 +116,7 @@ export function assertGrainSafety(input: MoveNetworkMetricsInput): void {
   if (!input.publishedStateIntelligencePaths.includes('/colorado')) throw new Error('Colorado state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/virginia')) throw new Error('Virginia state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/new-york')) throw new Error('New York state intelligence path missing');
+  if (!input.publishedStateIntelligencePaths.includes('/illinois')) throw new Error('Illinois state intelligence path missing');
   if (input.nyHhgBulletinObservations <= 0) throw new Error('New York HHG bulletin observation count missing');
   if (input.publishedStateIntelligencePaths.includes('/arizona')) throw new Error('Arizona state intelligence path must not be published');
   if (input.waActiveDirectoryResults <= 0) throw new Error('Washington active directory result count missing');

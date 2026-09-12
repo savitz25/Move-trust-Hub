@@ -70,7 +70,7 @@ function baseInput(over: Partial<MoveNetworkMetricsInput> = {}): MoveNetworkMetr
     vaSourceRetrievedAt: '2026-09-10T15:05:33.623358+00:00',
     nyHhgBulletinObservations: 108,
     nyBulletinIssues: 36,
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/colorado', '/virginia', '/new-york'],
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/colorado', '/virginia', '/new-york', '/illinois'],
     floridaResearchCountyLandings: 4,
     localMoverStateLandings: 51,
     ...over,

@@ -1,0 +1,34 @@
+import assert from 'node:assert/strict';
+import { existsSync, readFileSync } from 'node:fs';
+import { MOVE_HOMEPAGE_STATE_CARDS } from '../lib/intelligence/move-home-evidence-inventory';
+
+const page = readFileSync('app/(move)/illinois/page.tsx', 'utf8');
+const ui = readFileSync('components/intelligence/IllinoisMoveIntelligence.tsx', 'utf8');
+const sitemap = readFileSync('app/sitemap.ts', 'utf8');
+const nav = readFileSync('lib/nav/move-nav-config.ts', 'utf8');
+const snap = JSON.parse(readFileSync('lib/illinois-intelligence/accepted-snapshot.json', 'utf8'));
+const claim = readFileSync('lib/customer-integration/eligibility.ts', 'utf8');
+const interpret = readFileSync('lib/move-ask/interpret.ts', 'utf8');
+
+assert.match(page, /ILLINOIS_INTELLIGENCE_GATE.path|path: '\/illinois'/);
+assert.match(page, /getIllinoisMoveIntelligence/);
+assert.equal((ui.match(/<h1\b/g) ?? []).length, 1);
+assert.match(ui, /Illinois Moving Company Research/);
+assert.match(ui, /Search only/);
+assert.match(ui, /Public Carrier Certificate is not a household-goods license/);
+assert.match(ui, /USDOT number alone is not active/);
+assert.doesNotMatch(ui, /best mover|safest mover|Trust Score ranking/);
+assert.doesNotMatch(ui, /AggregateRating/);
+assert.match(sitemap, /['"]\/illinois['"]/);
+assert.ok(MOVE_HOMEPAGE_STATE_CARDS.some((state) => state.href === '/illinois'));
+assert.match(nav, /href: '\/illinois'/);
+assert.equal(existsSync('app/(move)/illinois/chicago'), false);
+assert.equal(existsSync('app/(move)/illinois/cook'), false);
+assert.equal(snap.current_hhg_roster.rows, null);
+assert.equal(snap.expansion_ledger.NET_NEW_CANONICAL_ORGANIZATIONS, 0);
+assert.equal(snap.expansion_ledger.NET_NEW_PUBLIC_MOVE_PROFILES, 0);
+assert.equal(snap.federal.name_only, 'UNSAFE');
+assert.equal(snap.fingerprint, 'b484ba81488f813b43698ccb8a034afc645809be03662f101a951020839c388d');
+assert.match(claim, /usdotNumber/);
+assert.match(interpret, /illinois commerce commission|icc household-goods|licensed in illinois/i);
+console.log('IL-MOVE-001 publication assert: PASS');

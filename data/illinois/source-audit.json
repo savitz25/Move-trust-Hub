@@ -1,0 +1,14 @@
+{
+  "ticket": "IL-MOVE-001",
+  "audited_at": "2026-09-12",
+  "regulator": "Illinois Commerce Commission Transportation Division",
+  "hhg_page": "https://icc.illinois.gov/authority/household-goods-movers",
+  "mcis_search": "https://icc.illinois.gov/emdb/mcis/search",
+  "mcis_captcha": true,
+  "bulk_hhg_roster": "NOT_PUBLISHED",
+  "native_id": "ILCC",
+  "complaints": "OPEN_SEARCH_ONLY",
+  "insurance": "OPEN_SEARCH_ONLY",
+  "trf_fy2025": "Financial/staff report only; not a mover roster",
+  "no_national_fmcsa_redownload": true
+}
