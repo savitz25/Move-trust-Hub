@@ -138,7 +138,7 @@ export function parseJourney(raw: string): Journey | null {
       text,
     );
   const generic =
-    /^(?:(?:find|show|research|i need|a|an|the|local|intrastate|interstate|current|active|household[- ]goods)\s+)*(?:movers?|moving companies|carriers?|brokers?|auto transport)\s+(?:in|near|within|serving|that serve)\s+(.+)$/i.exec(
+    /^(?:(?:find|show|research|book|hire|schedule|i need|a|an|the|local|intrastate|interstate|current|active|household[- ]goods)\s+)*(?:movers?|moving companies|carriers?|brokers?|auto transport)\s+(?:in|near|within|serving|that serve)\s+(.+)$/i.exec(
       text,
     );
   const personal =
@@ -157,13 +157,15 @@ export function parseJourney(raw: string): Journey | null {
   const explicitStateLocal = /\b(?:local|intrastate)\s+(?:move|mover)\b/i.test(
     text,
   );
+  const locality = generic ? resolveMovePlace(generic[1]!.replace(/\s+(?:for\s+)?(?:tomorrow|today|this weekend)$/i, "")) : undefined;
   if (!route && !booking && !personal && !generic) return null;
   if (
     generic &&
+    !booking &&
     !explicitStateLocal &&
-    resolveMovePlace(generic[1]!).state &&
-    !resolveMovePlace(generic[1]!).city &&
-    !resolveMovePlace(generic[1]!).county &&
+    locality?.state &&
+    !locality?.city &&
+    !locality?.county &&
     !/serving|serve|near|within/i.test(text)
   )
     return null;
@@ -181,10 +183,9 @@ export function parseJourney(raw: string): Journey | null {
   const origin = route ? resolveMovePlace(route[1]!) : undefined;
   const destination = route
     ? resolveMovePlace(
-        route[2]!.replace(/\s+(?:tomorrow|today|this weekend)$/i, ""),
+        route[2]!.replace(/\s+(?:for\s+)?(?:tomorrow|today|this weekend)$/i, ""),
       )
     : undefined;
-  const locality = generic ? resolveMovePlace(generic[1]!) : undefined;
   return {
     task: booking
       ? "TRANSACTION_OR_BOOKING"

@@ -319,3 +319,8 @@ test('natural-language authority and unsupported route counts stay visible throu
  assert.throws(()=>planMoveRequest({q,authority:'not_current'}));
  const count=planMoveRequest({q:'how many movers from Florida to Texas'});assert.ok(count.query.constraints?.some(c=>c.field==='Requested route count, ranking or price'&&c.outcome==='UNSUPPORTED'));
 });
+
+test('booking paraphrases retain supplied local places and both endpoints',()=>{
+ const local=planMoveRequest({q:'book a mover in Austin Texas for tomorrow'});assert.equal(local.query.journey?.booking,true);assert.equal(local.query.journey?.locality?.city,'Austin');assert.equal(local.query.journey?.locality?.state,'TX');
+ const route=planMoveRequest({q:'hire movers from Florida to New Jersey for tomorrow'});assert.equal(route.query.journey?.origin?.state,'FL');assert.equal(route.query.journey?.destination?.state,'NJ');assert.match(route.query.journey?.summary??'',/does not book/);
+});
