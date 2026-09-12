@@ -106,14 +106,16 @@ export function MoveJourneyResearch({ result }: { result: MoveAskResult }) {
       {j.capabilities.map((c) => (
         <div key={c.state} className="rounded-xl bg-slate-50 p-3">
           <h3 className="font-semibold">
-            {directoryStateName(c.state)} intrastate research
+            {directoryStateName(c.state)} {j.moveType === "auto_transport" ? "state research context" : "intrastate research"}
           </h3>
           <p>
             {c.authority.length
               ? c.authority
                   .map((a) => `${a.id}: ${a.status.replaceAll("_", " ")}`)
                   .join("; ")
-              : "No acquired state intrastate authority capability is established by this registry."}
+              : j.moveType === "auto_transport"
+                ? "This household-goods state registry does not establish vehicle-transport authority. State research links are context, not auto-transport permission."
+                : "No acquired state intrastate authority capability is established by this registry."}
           </p>
           <p className="text-sm">
             Separate from FMCSA interstate records. Source availability does not

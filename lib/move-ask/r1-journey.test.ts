@@ -99,6 +99,9 @@ test("journeys and bookings never dispatch unrelated cohorts or names", async ()
 });
 
 test("capability grains are source-native, never FMCSA-as-intrastate authority", () => {
+  const auto = planMoveRequest({q:'auto transport Florida to Texas'}).query.journey!;
+  assert.equal(auto.moveType, 'auto_transport');
+  assert.ok(auto.capabilities.every(c=>c.authority.length===0), 'HHG rosters cannot establish auto-transport authority');
   for (const [q, state, status] of [
     ["local mover in New Jersey", "NJ", "REQUEST_ONLY"],
     ["local mover in California", "CA", "SEARCH_ONLY"],

@@ -242,7 +242,7 @@ export function completeJourney(j: Journey): Journey {
       state,
       route: c?.route ?? null,
       authority: (c?.capabilities ?? [])
-        .filter((c) => /hhg-(?:roster|registration|authority)/.test(c.id))
+        .filter((c) => j.moveType === "household_goods" && /hhg-(?:roster|registration|authority)/.test(c.id))
         .map(({ id, status, metricKeys }) => ({ id, status, metricKeys })),
       source: "data/home/move-network-metrics-v1.json",
     };
