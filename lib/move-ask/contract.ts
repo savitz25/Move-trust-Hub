@@ -5,7 +5,7 @@ export const MOVE_ASK_ROUTE = 'https://www.movetrusthub.com/ask';
 export const MOVE_ASK_API = 'https://www.movetrusthub.com/api/ask';
 export const MOVE_ASK_PAGE_SIZE = 20;
 export const MOVE_ASK_MAX_QUERY = 180;
-export type MoveConstraint = { field: string; value: string; outcome: 'APPLIED' | 'NEEDS_CLARIFICATION' | 'UNSUPPORTED' | 'CONFLICT'; detail: string };
+export type MoveConstraint = { field: string; value: string; outcome: 'APPLIED' | 'NEEDS_CLARIFICATION' | 'UNSUPPORTED' | 'CONFLICT' | 'USER_APPROVED_RELAXATION'; detail: string };
 
 export const MOVE_ASK_CAPABILITY = {
   contract: MOVE_ASK_CONTRACT,
@@ -58,6 +58,8 @@ export type MoveGeographyMeaning =
   | 'service_territory_unsupported';
 
 export type MoveResearchQuery = {
+  journey?: import('./journey').Journey;
+  journeyChoices?: Record<string, string | undefined>;
   mode: MoveAskMode;
   role?: MoveRegulatoryRole;
   includeDualRole: boolean;
@@ -93,6 +95,7 @@ export type ParsedMoveAsk = {
 };
 
 export const ASK_DEFINITIONS: Record<string, { title: string; body: string }> = {
+  journey_research: { title: 'Research your move', body: 'Research identity, carrier versus broker role, and the appropriate federal or state authority. Recorded headquarters does not establish service territory, exact-route service or availability. MoveTrustHub does not book or dispatch movers.' },
   usdot: {
     title: 'USDOT number',
     body: 'A USDOT number is a federal identity assigned by FMCSA. It identifies a company in federal motor-carrier records. It is not an endorsement, a safety rating, or proof of household-goods authority by itself.',

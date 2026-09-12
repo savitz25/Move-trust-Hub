@@ -31,5 +31,8 @@ jobs:
       - name: Source-association integrity (TH-SEARCH-R1-006)
         run: npm run check:th-search-r1-006
 
+      - name: Journey and locality integrity (TH-SEARCH-R1-014)
+        run: npm run check:th-search-r1-014
+
       - name: Reproduce accepted metrics and validate reconciliation
         run: npm run check:metrics-r2

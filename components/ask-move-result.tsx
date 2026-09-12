@@ -1,9 +1,10 @@
 import { AssociationDisclosure } from '@/components/company/association-disclosure';
+import { MoveJourneyResearch } from './move-journey-research';
 import Link from 'next/link';
 import { ASK_DEFINITIONS, MOVE_ASK_PAGE_SIZE } from '@/lib/move-ask/contract';
 import type { MoveAskResult } from '@/lib/move-ask/execute';
 
-function href(q: string, page?: number, overrides?: {role?: string; state?: string; authority?: string}) {
+function href(q: string, page?: number, overrides?: Record<string, string | undefined>) {
   const params = new URLSearchParams({ q });
   for (const [key, value] of Object.entries(overrides ?? {})) if (value) params.set(key, value);
   if (page && page > 1) params.set('page', String(page));
@@ -51,9 +52,9 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
 
       {result.terminalState === 'SOURCE_CONFLICT' ? <section role="status" className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Identifier association needs review</h2><p className="mt-3">A stored record contains the requested number, but the company relationship is not confirmed. This is not a finding of an invalid identifier or zero movers.</p></section> : null}
       {result.terminalState === 'UNAVAILABLE'  ? <section role="status" className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Research is temporarily unavailable</h2><p className="mt-3">The source could not be checked. Try again; this is not a zero-result search.</p></section> : null}
-      {result.terminalState === 'NEEDS_CLARIFICATION' && q.mode !== 'fail_closed' ? <section className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Confirm the identity</h2><p className="mt-3">{q.nameQuery ? (result.nameSearch?.truncated ? 'The candidate search reached its bound. Refine the name or select a sourced identity to continue the original question.' : result.results.length ? 'These source-backed names belong to distinct identities. Select the intended company to continue this question.' : 'The selected record does not establish this name match. Edit the name and try again.') : result.results.length ? 'Multiple published identities remain. Review the records and select the intended profile; they were not merged.' : 'No published identity confirms both identifiers. Check each number and research them separately.'}</p></section> : null}
+      {result.terminalState === 'NEEDS_CLARIFICATION' && q.mode !== 'fail_closed' && (!q.journey || Boolean(q.nameQuery || q.identifier)) ? <section className="rounded-2xl border p-5"><h2 className="text-2xl font-semibold">Confirm the identity</h2><p className="mt-3">{q.nameQuery ? (result.nameSearch?.truncated ? 'The candidate search reached its bound. Refine the name or select a sourced identity to continue the original question.' : result.results.length ? 'These source-backed names belong to distinct identities. Select the intended company to continue this question.' : 'The selected record does not establish this name match. Edit the name and try again.') : result.results.length ? 'Multiple published identities remain. Review the records and select the intended profile; they were not merged.' : 'No published identity confirms both identifiers. Check each number and research them separately.'}</p></section> : null}
       {q.constraints?.length ? <section className="rounded-2xl border p-5"><h2 className="text-xl font-semibold">Requested conditions</h2><ul className="mt-3 space-y-3">{q.constraints.map((c, i) => <li key={i}><strong>{c.field}: {c.value}</strong><p>{c.outcome === 'APPLIED' ? 'Applied' : c.outcome === 'CONFLICT' ? 'Does not agree with the evidence' : c.outcome === 'UNSUPPORTED' ? 'Not available' : 'Not established'}: {c.detail}</p></li>)}</ul></section> : null}
-      {q.mode === 'fail_closed' ? (
+      {q.mode === 'fail_closed' && !q.journey ? (
         <section className="rounded-2xl border border-[#E2E8F0] bg-[#FFF7F3] p-5">
           <h2 className="text-2xl font-semibold text-[#0A2540]">{result.terminalState === 'INVALID_INPUT' ? 'Check your request' : 'This question needs clarification'}</h2>
           <p className="mt-3 text-sm leading-relaxed text-[#1E293B]">{q.failReason}</p>
@@ -71,7 +72,8 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
         </section>
       ) : null}
 
-      {def ? (
+      {q.journey ? <MoveJourneyResearch result={result}/> : null}
+      {def && !q.journey ? (
         <section className="rounded-2xl border border-[#E2E8F0] bg-white p-5">
           <h2 className="text-2xl font-semibold text-[#0A2540]">{def.title}</h2>
           <p className="mt-3 text-sm leading-relaxed text-[#1E293B]">{def.body}</p>
@@ -194,12 +196,12 @@ export function AskMoveResultView({ result }: { result: MoveAskResult }) {
       {result.results.length > 0 && result.pagination.total > MOVE_ASK_PAGE_SIZE ? (
         <nav className="flex gap-3" aria-label="Pagination">
           {result.pagination.page > 1 ? (
-            <Link href={href(result.queryText, result.pagination.page - 1, q.overrides)} className="inline-flex min-h-11 items-center rounded-xl border px-4">
+            <Link href={href(result.queryText, result.pagination.page - 1, {...q.overrides,...q.journeyChoices})} className="inline-flex min-h-11 items-center rounded-xl border px-4">
               Previous
             </Link>
           ) : null}
           {result.pagination.hasMore ? (
-            <Link href={href(result.queryText, result.pagination.page + 1, q.overrides)} className="inline-flex min-h-11 items-center rounded-xl bg-[#0A2540] px-4 text-white">
+            <Link href={href(result.queryText, result.pagination.page + 1, {...q.overrides,...q.journeyChoices})} className="inline-flex min-h-11 items-center rounded-xl bg-[#0A2540] px-4 text-white">
               Next
             </Link>
           ) : null}

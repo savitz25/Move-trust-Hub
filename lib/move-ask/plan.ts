@@ -2,8 +2,10 @@ import { MOVE_ASK_MAX_QUERY, MOVE_ASK_PAGE_SIZE, type MoveConstraint, type Parse
 import { interpretMoveAskQuery } from './interpret';
 import { directoryStateName, parseDirectoryResearchQuery } from '../directory/parse-directory-research-query';
 import { MOVE_SPECIALIST_EXECUTION_CONTRACT } from '../specialist-execution/contract';
+import { completeJourney, journeyConsent, parseJourney, resolveMovePlace } from './journey';
+import { parseMoveIdentifiers } from './identifier';
 
-export type MoveRequestInput = { q?: unknown; page?: unknown; role?: unknown; state?: unknown; authority?: unknown; company?: unknown };
+export type MoveRequestInput = { q?: unknown; page?: unknown; role?: unknown; state?: unknown; authority?: unknown; company?: unknown; originState?: unknown; destinationState?: unknown; location?: unknown; mover?: unknown; research?: unknown; consent?: unknown };
 export class MoveRequestError extends Error {}
 
 export function validateMoveRequest(input: MoveRequestInput) {
@@ -24,7 +26,7 @@ export function validateMoveRequest(input: MoveRequestInput) {
 
 export function inputFromSearchParams(params: URLSearchParams): MoveRequestInput {
   const input: MoveRequestInput = {};
-  for (const key of ['q', 'page', 'role', 'state', 'authority', 'company'] as const) {
+  for (const key of ['q', 'page', 'role', 'state', 'authority', 'company', 'originState', 'destinationState', 'location', 'mover', 'research', 'consent'] as const) {
     const values = params.getAll(key);
     input[key] = values.length > 1 ? values : values[0];
   }
@@ -33,6 +35,99 @@ export function inputFromSearchParams(params: URLSearchParams): MoveRequestInput
 
 /** The only selection policy for homepage submissions, native /ask and /api/ask. */
 export function planMoveRequest(raw: MoveRequestInput): ParsedMoveAsk {
+  const input = validateMoveRequest(raw);
+  const j = parseJourney(input.q);
+  const choices: Record<string, string | undefined> = {};
+  for (const key of ['originState', 'destinationState', 'location', 'mover', 'research', 'consent'] as const) {
+    const value = raw[key];
+    if (value === undefined || value === '') continue;
+    if (typeof value !== 'string' || value.length > 80 || /[\x00-\x1f\x7f<>]/.test(value)) throw new MoveRequestError('Choose a valid, bounded journey refinement.');
+    choices[key] = value.trim();
+  }
+  if (!j) {
+    if (Object.keys(choices).length) throw new MoveRequestError('Journey choices do not apply to this question. Submit the edited question again.');
+    return planLegacyMoveRequest(raw);
+  }
+  const statedAuthority = /\b(?:not current|inactive)\s+(?:operating\s+)?authority\b/i.test(input.q) ? 'not_current'
+    : /\b(?:current|active)\s+(?:(?:operating\s+)?authority|(?:interstate\s+)?(?:household[- ]goods\s+)?(?:carriers?|brokers?|movers?))\b/i.test(input.q) ? 'current' : undefined;
+  if (statedAuthority && input.authority && statedAuthority !== input.authority) throw new MoveRequestError('The authority filter conflicts with the original research condition.');
+  input.authority = input.authority || statedAuthority;
+  for (const key of ['origin', 'destination'] as const) {
+    const state = choices[`${key}State`];
+    if (!state) continue;
+    if (!/^[A-Z]{2}$/.test(state) || !directoryStateName(state) || !j[key] || j[key]!.state && j[key]!.state !== state) throw new MoveRequestError(`The ${key} state choice conflicts with this request.`);
+    if (!j[key]!.state) j[key] = resolveMovePlace(`${j[key]!.raw} ${state}`);
+    if (j[key]!.resolution !== 'EXACT') throw new MoveRequestError(`Edit the ${key} place; this state choice does not resolve the complete endpoint.`);
+  }
+  if (choices.location) {
+    if (j.origin || j.destination || j.locality?.state) throw new MoveRequestError('Edit the existing place rather than replacing it with a location choice.');
+    j.locality = resolveMovePlace(choices.location);
+  }
+  if (input.role) {
+    if (j.role && j.role !== input.role) throw new MoveRequestError('The role filter conflicts with the requested journey role.');
+    j.role = input.role as typeof j.role;
+  }
+  completeJourney(j);
+  const constraints: MoveConstraint[] = [];
+  if (/\b(?:how many|count|best|cheapest|quote|price)\b/i.test(input.q)) {
+    constraints.push({field:'Requested route count, ranking or price',value:'Not established',outcome:'UNSUPPORTED',detail:'This research plan does not establish route-specific populations, rankings, prices or availability.'});
+    j.summary += ' A route-specific count, ranking or price cannot be established from these records.';
+  }
+  for (const [key, place] of Object.entries({ origin: j.origin, destination: j.destination, locality: j.locality })) if (place) constraints.push({ field: key, value: place.raw, outcome: place.resolution !== 'EXACT' ? 'NEEDS_CLARIFICATION' : key === 'locality' ? 'UNSUPPORTED' : 'APPLIED', detail: 'Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.' });
+  constraints.push({ field: 'route service / availability', value: 'Not established', outcome: 'UNSUPPORTED', detail: 'Company identity, headquarters and authority do not prove this route is served or available.' });
+  if (j.role) constraints.push({ field: 'requested role', value: j.role, outcome: 'APPLIED', detail: 'Preserved for identity/authority research; a broker is not the transporting carrier.' });
+  if (input.state || input.authority) constraints.push({ field: 'additional filters', value: [input.state, input.authority].filter(Boolean).join(', '), outcome: 'NEEDS_CLARIFICATION', detail: 'Recorded-state/current-authority filters do not establish journey availability. They are applied only to an explicitly selected identity or recorded-state cohort.' });
+  const ids = parseMoveIdentifiers(input.q);
+  const name = choices.mover || j.companyName;
+  let parsed: ParsedMoveAsk;
+  if (ids.identifiers.length || ids.error || /\b(?:USDOT|MC)\b/i.test(input.q)) {
+    // Original full text is retained for exact parser validation, including malformed IDs.
+    parsed = planLegacyMoveRequest(ids.error ? raw : { ...raw, role: input.role ?? j.role, q: ids.identifiers.map(id=>`${id.type.toUpperCase()} ${id.value}`).join(' ') || input.q });
+    if (!input.state) {
+      delete parsed.query.jurisdiction; // Endpoints must not become HQ filters.
+      parsed.query.constraints = parsed.query.constraints?.filter(c => c.field !== 'recorded headquarters state');
+    }
+    constraints.push({field:'Original research context',value:input.q,outcome:'NEEDS_CLARIFICATION',detail:'Exact identifiers establish identity only. Additional name, route and service conditions are not independently confirmed.'});
+  } else if (name) {
+    if (/["\u201c\u201d]/.test(name)) throw new MoveRequestError('Enter the company name without enclosing quotes.');
+    parsed = planLegacyMoveRequest({ ...input, role: input.role ?? j.role, q: `Research "${name}"` });
+    if (!parsed.query.nameQuery) throw new MoveRequestError('Enter a distinctive company name or labeled identifier.');
+    parsed.query.nameRequest!.condition = 'Requested route service and availability remain unestablished.';
+  } else {
+    if (input.company) throw new MoveRequestError('Company selection requires a name candidate from this request.');
+    parsed = { raw: input.q, query: { mode: j.task === 'UNSUPPORTED_LOCALITY' ? 'fail_closed' : 'definition', failReason: j.task === 'UNSUPPORTED_LOCALITY' ? j.summary : undefined, definitionId: 'journey_research', includeDualRole: true, page: 1, executor: 'records' }, interpretation: [] };
+  }
+  if (choices.research || choices.consent) {
+    if (choices.research !== 'recorded_state' || choices.consent !== journeyConsent(input.q) || j.task !== 'UNSUPPORTED_LOCALITY' || !j.locality?.state || ids.identifiers.length || name || input.state && input.state !== j.locality.state) throw new MoveRequestError('This broadening choice does not match the current locality request.');
+    j.outcome = 'USER_APPROVED_RELAXATION';
+    j.executionGeography = { state: j.locality.state, meaning: 'recorded_headquarters_state' };
+    j.summary = 'You selected broader recorded-state identity research. The original locality is retained; these records do not establish local service or availability.';
+    parsed = planLegacyMoveRequest({ ...input, q: `Show ${j.moveType === 'auto_transport' ? 'auto transport companies' : j.role === 'broker' ? 'brokers' : j.role === 'carrier' ? 'carriers' : 'movers'} headquartered in ${directoryStateName(j.locality.state)}`, company: undefined });
+    if (parsed.query.mode === 'fail_closed') {
+      j.outcome = 'UNSUPPORTED'; j.executionGeography = undefined;
+      j.summary = parsed.query.failReason ?? 'The broader operation cannot apply all requested filters. No cohort was executed.';
+    }
+    constraints.push({ field: 'execution geography', value: j.locality.state, outcome: 'USER_APPROVED_RELAXATION', detail: 'User selected broader recorded-headquarters state research. No local service predicate was applied.' });
+  }
+  parsed.raw = input.q;
+  parsed.query.journey = j;
+  parsed.query.journeyChoices = choices;
+  parsed.query.role = j.role ?? parsed.query.role;
+  parsed.query.constraints = [...(parsed.query.constraints ?? []), ...constraints];
+  parsed.query.overrides = { role: input.role, state: input.state, authority: input.authority };
+  parsed.interpretation = [
+    ...(parsed.query.nameQuery ? [{ label: 'Company name', value: parsed.query.nameQuery }] : []),
+    { label: 'Task', value: j.task.replaceAll('_', ' ') },
+    ...Object.entries({ Origin: j.origin, Destination: j.destination, 'Requested locality': j.locality }).filter(([, p]) => p).map(([label, p]) => ({ label, value: `${p!.raw} (${p!.resolution.replaceAll('_', ' ').toLowerCase()})` })),
+    { label: 'Move type', value: j.moveType.replaceAll('_', ' ') },
+    { label: 'Role', value: j.role ?? 'Not specified; carrier and broker remain distinct' },
+    { label: 'Research scope', value: j.authorityGrain.replaceAll('_', ' ') },
+    { label: 'Availability', value: 'Not established' },
+  ];
+  return parsed;
+}
+
+function planLegacyMoveRequest(raw: MoveRequestInput): ParsedMoveAsk {
   const input = validateMoveRequest(raw);
   const parsed = interpretMoveAskQuery(input.q, input.page);
   const q = parsed.query;
