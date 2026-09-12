@@ -1,0 +1,722 @@
+{
+  "base": "http://localhost:3214",
+  "at": "2026-09-12T23:26:10.783Z",
+  "rows": [
+    {
+      "q": "Research \"From Here To There Moving LLC\"",
+      "at": "2026-09-12T23:26:09.005Z",
+      "ms": 1682,
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "FOUND",
+        "nameSearch": {
+          "requested": "From Here To There Moving LLC",
+          "candidateLimit": 10,
+          "retrievalLimit": 200,
+          "truncated": false,
+          "selected": false,
+          "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+        },
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Company name",
+            "value": "From Here To There Moving LLC"
+          },
+          {
+            "label": "Research task",
+            "value": "research"
+          },
+          {
+            "label": "Match policy",
+            "value": "Source-backed name candidate match; confirm the intended public identity"
+          }
+        ],
+        "query": {
+          "mode": "entity",
+          "nameQuery": "From Here To There Moving LLC",
+          "nameRequest": {
+            "name": "From Here To There Moving LLC",
+            "task": "research"
+          },
+          "constraints": [],
+          "executor": "records",
+          "page": 1
+        },
+        "resultType": "entity",
+        "sourceConflictCandidates": [],
+        "results": [
+          {
+            "name": "FROM HERE TO THERE LLC",
+            "entityId": "usdot-3481118",
+            "legalName": "FROM HERE TO THERE LLC",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "From Here To There Moving LLC",
+              "field": "fmcsa_legal_name",
+              "returned": "FROM HERE TO THERE LLC",
+              "entityId": "usdot-3481118",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=Research+%22From+Here+To+There+Moving+LLC%22&company=usdot-3481118",
+            "usdot": "3481118",
+            "mc": "1254688",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "LEXINGTON, KY",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/from-here-to-there-llc",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"FROM HERE TO THERE LLC\" for this identity. Requested name: \"From Here To There Moving LLC\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=3481118"
+          }
+        ],
+        "counts": [
+          {
+            "label": "Displayed name candidates",
+            "value": 1,
+            "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+          }
+        ],
+        "pagination": {
+          "page": 1,
+          "pageSize": 10,
+          "total": 1,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+          "geographyMeaning": "Name identity research; requested location conditions are evaluated separately, never service territory.",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "Search uses the existing published legal/display-name index. A stored FMCSA DBA can corroborate a retrieved candidate; an alias absent from those searchable names may not be discoverable. No independent alias directory is claimed.",
+          "Case, whitespace, punctuation and ampersand presentation may normalize. Distinctive-token matches are relaxed candidates; legal suffixes and names are not identity merges.",
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 553
+      },
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nCOMPANY NAME\nFrom Here To There Moving LLC\nEdit request\nRESEARCH TASK\nresearch\nEdit request\nMATCH POLICY\nSource-backed name candidate match; confirm the intended public identity\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nCount\nDisplayed name candidates\n1\n\nSource-backed name candidate identities; distinct public record keys, not a national directory count\n\nFROM HERE TO THERE LLC\nCarrier\n\nStored legal name: FROM HERE TO THERE LLC\n\nSelect this company and continue\nUSDOT\n3481118\nMC\n1254688\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nLEXINGTON, KY\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Distinctive name-token candidate: published legal-name field records \"FROM HERE TO THERE LLC\" for this identity. Requested name: \"From Here To There Moving LLC\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nTrace this query"
+    },
+    {
+      "q": "Can \"JK Moving\" handle my move from Virginia to Florida?",
+      "at": "2026-09-12T23:26:10.186Z",
+      "ms": 1179,
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "NEEDS_CLARIFICATION",
+        "nameSearch": {
+          "requested": "JK Moving",
+          "candidateLimit": 10,
+          "retrievalLimit": 200,
+          "truncated": false,
+          "selected": false,
+          "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+        },
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Company name",
+            "value": "JK Moving"
+          },
+          {
+            "label": "Task",
+            "value": "MOVE JOURNEY"
+          },
+          {
+            "label": "Origin",
+            "value": "Virginia (exact)"
+          },
+          {
+            "label": "Destination",
+            "value": "Florida (exact)"
+          },
+          {
+            "label": "Move type",
+            "value": "household goods"
+          },
+          {
+            "label": "Role",
+            "value": "Not specified; carrier and broker remain distinct"
+          },
+          {
+            "label": "Research scope",
+            "value": "federal interstate research"
+          },
+          {
+            "label": "Availability",
+            "value": "Not established"
+          }
+        ],
+        "query": {
+          "journey": {
+            "task": "MOVE_JOURNEY",
+            "origin": {
+              "raw": "Virginia",
+              "state": "VA",
+              "resolution": "EXACT"
+            },
+            "destination": {
+              "raw": "Florida",
+              "state": "FL",
+              "resolution": "EXACT"
+            },
+            "moveType": "household_goods",
+            "moveScope": "interstate",
+            "companyName": "JK Moving",
+            "outcome": "APPLIED",
+            "availability": "NOT_ESTABLISHED",
+            "authorityGrain": "federal_interstate_research",
+            "booking": false,
+            "summary": "Research federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.",
+            "checklist": [
+              "Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.",
+              "For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.",
+              "Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.",
+              "Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+            ],
+            "capabilities": [
+              {
+                "state": "VA",
+                "route": "/virginia",
+                "authority": [
+                  {
+                    "id": "hhg-authority",
+                    "status": "STATE_SOURCE_LIVE",
+                    "metricKeys": [
+                      "va_hhg_authority_identities"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              },
+              {
+                "state": "FL",
+                "route": "/florida",
+                "authority": [
+                  {
+                    "id": "hhg-registration",
+                    "status": "STATE_SOURCE_LIVE",
+                    "metricKeys": [
+                      "florida_fdacs_im_registrations"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              }
+            ]
+          },
+          "mode": "entity",
+          "nameQuery": "JK Moving",
+          "nameRequest": {
+            "name": "JK Moving",
+            "task": "research",
+            "condition": "Requested route service and availability remain unestablished."
+          },
+          "constraints": [
+            {
+              "field": "origin",
+              "value": "Virginia",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "destination",
+              "value": "Florida",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "route service / availability",
+              "value": "Not established",
+              "outcome": "UNSUPPORTED",
+              "detail": "Company identity, headquarters and authority do not prove this route is served or available."
+            }
+          ],
+          "executor": "records",
+          "page": 1
+        },
+        "resultType": "entity",
+        "sourceConflictCandidates": [],
+        "results": [
+          {
+            "name": "JK BROKERAGE SERVICES",
+            "entityId": "usdot-2222803",
+            "legalName": "JK MOVING & STORAGE, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving",
+              "field": "fmcsa_legal_name",
+              "returned": "JK MOVING & STORAGE, INC.",
+              "entityId": "usdot-2222803",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=Can+%22JK+Moving%22+handle+my+move+from+Virginia+to+Florida%3F&company=usdot-2222803",
+            "usdot": "2222803",
+            "mc": "312255",
+            "role": "Broker",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "STERLING, VA",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-brokerage-services",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=2222803"
+          },
+          {
+            "name": "JK FORWARDERS, INC.",
+            "entityId": "usdot-2972877",
+            "legalName": "JK FORWARDERS, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving",
+              "field": "fmcsa_legal_name",
+              "returned": "JK FORWARDERS, INC.",
+              "entityId": "usdot-2972877",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=Can+%22JK+Moving%22+handle+my+move+from+Virginia+to+Florida%3F&company=usdot-2972877",
+            "usdot": "2972877",
+            "mc": null,
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "STERLING, VA",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-forwarders-inc",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK FORWARDERS, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=2972877"
+          },
+          {
+            "name": "JK Moving Services",
+            "entityId": "jk-moving",
+            "legalName": "JK MOVING & STORAGE INC",
+            "dba": "JK MOVING SERVICES",
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving",
+              "field": "fmcsa_legal_name",
+              "returned": "JK MOVING & STORAGE INC",
+              "entityId": "jk-moving",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=Can+%22JK+Moving%22+handle+my+move+from+Virginia+to+Florida%3F&company=jk-moving",
+            "usdot": "1065394",
+            "mc": null,
+            "identifierIntegrity": {
+              "status": "under_review",
+              "issueId": "TH-SEARCH-R1-006-jk-mc",
+              "recordId": "jk-moving",
+              "observedMc": "225850",
+              "observedAt": "2026-08-23T05:02:18.368+00:00",
+              "observedFingerprint": "5d0585c2184935aa52df9b33545883eab15d7eecd7e366ec6bed038184969a01",
+              "disputedMc": "225850",
+              "officialObservedUsdot": "1065394",
+              "sourceAsOf": "2026-09-10",
+              "officialObservedMc": "196957",
+              "officialObservedAt": "2026-09-12T00:04:29.566Z",
+              "corroboratedUsdot": "1065394",
+              "officialUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1065394",
+              "message": "The stored MC association is under review. It is not a confirmed MC relationship or a finding about the business authorization. The corroborated USDOT identity remains available for research."
+            },
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "Sterling, VA",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-moving-services",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE INC\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-23T05:02:18.368+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1065394"
+          },
+          {
+            "name": "JK MOVING SERVICES",
+            "entityId": "usdot-1300300",
+            "legalName": "JK MOVING & STORAGE OF MARYLAND, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving",
+              "field": "fmcsa_legal_name",
+              "returned": "JK MOVING & STORAGE OF MARYLAND, INC.",
+              "entityId": "usdot-1300300",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=Can+%22JK+Moving%22+handle+my+move+from+Virginia+to+Florida%3F&company=usdot-1300300",
+            "usdot": "1300300",
+            "mc": "504611",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "GAITHERSBURG, MD",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-moving-services-usdot-1300300",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE OF MARYLAND, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=1300300"
+          },
+          {
+            "name": "JK VAN LINES, INC.",
+            "entityId": "usdot-486366",
+            "legalName": "JK VAN LINES, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving",
+              "field": "fmcsa_legal_name",
+              "returned": "JK VAN LINES, INC.",
+              "entityId": "usdot-486366",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "selectionHref": "/ask?q=Can+%22JK+Moving%22+handle+my+move+from+Virginia+to+Florida%3F&company=usdot-486366",
+            "usdot": "486366",
+            "mc": "279412",
+            "role": "Carrier",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "STERLING, VA",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-van-lines-inc",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK VAN LINES, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=486366"
+          }
+        ],
+        "counts": [
+          {
+            "label": "Displayed name candidates",
+            "value": 5,
+            "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+          }
+        ],
+        "pagination": {
+          "page": 1,
+          "pageSize": 10,
+          "total": 5,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+          "geographyMeaning": "Name identity research; requested location conditions are evaluated separately, never service territory.",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "Search uses the existing published legal/display-name index. A stored FMCSA DBA can corroborate a retrieved candidate; an alias absent from those searchable names may not be discoverable. No independent alias directory is claimed.",
+          "Case, whitespace, punctuation and ampersand presentation may normalize. Distinctive-token matches are relaxed candidates; legal suffixes and names are not identity merges.",
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 591
+      },
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nCOMPANY NAME\nJK Moving\nEdit request\nTASK\nMOVE JOURNEY\nEdit request\nORIGIN\nVirginia (exact)\nEdit request\nDESTINATION\nFlorida (exact)\nEdit request\nMOVE TYPE\nhousehold goods\nEdit request\nROLE\nNot specified; carrier and broker remain distinct\nEdit request\nRESEARCH SCOPE\nfederal interstate research\nEdit request\nAVAILABILITY\nNot established\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nConfirm the identity\n\nThese source-backed names belong to distinct identities. Select the intended company to continue this question.\n\nRequested conditions\norigin: Virginia\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\ndestination: Florida\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\nroute service / availability: Not established\n\nNot available: Company identity, headquarters and authority do not prove this route is served or available.\n\nResearch your move\n\nResearch federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.\n\nObtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.\nFor interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.\nConfirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.\nReview evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made.\nVirginia intrastate research\n\nhhg-authority: STATE SOURCE LIVE\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Virginia state research\nFlorida intrastate research\n\nhhg-registration: STATE SOURCE LIVE\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Florida state research\nTrace this journey\nCount\nDisplayed name candidates\n5\n\nSource-backed name candidate identities; distinct public record keys, not a national directory count\n\nJK BROKERAGE SERVICES\nBroker\n\nStored legal name: JK MOVING & STORAGE, INC.\n\nSelect this company and continue\nUSDOT\n2222803\nMC\n312255\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nSTERLING, VA\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nJK FORWARDERS, INC.\nCarrier\n\nStored legal name: JK FORWARDERS, INC.\n\nSelect this company and continue\nUSDOT\n2972877\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nSTERLING, VA\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Distinctive name-token candidate: published legal-name field records \"JK FORWARDERS, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nJK Moving Services\nCarrier\n\nStored legal name: JK MOVING & STORAGE INC\n\nStored FMCSA DBA: JK MOVING SERVICES\n\nSelect this company and continue\nUSDOT\n1065394\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nSterling, VA\nMC association under review\n\nThe stored MC association is under review. It is not a confirmed MC relationship or a finding about the business authorization. The corroborated USDOT identity remains available for research.\n\nStored observation: MC 225850, checked 2026-08-23T05:02:18.368+00:00. This value is excluded from confirmed identifier fields.\n\nThe official USDOT 1065394 snapshot dated 2026-09-10 lists MC 196957. Retrieved 2026-09-12T00:04:29.566Z; this is a separate source observation, not an automatic replacement in this research index.\n\nCheck the corroborated USDOT with FMCSA\n\nStored source checked-at: 2026-08-23T05:02:18.368+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify the corroborated USDOT with FMCSA\n\nWhy this matched. Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE INC\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nJK MOVING SERVICES\nCarrier\n\nStored legal name: JK MOVING & STORAGE OF MARYLAND, INC.\n\nSelect this company and continue\nUSDOT\n1300300\nMC\n504611\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nGAITHERSBURG, MD\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE OF MARYLAND, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nJK VAN LINES, INC.\nCarrier\n\nStored legal name: JK VAN LINES, INC.\n\nSelect this company and continue\nUSDOT\n486366\nMC\n279412\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nSTERLING, VA\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Distinctive name-token candidate: published legal-name field records \"JK VAN LINES, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nTrace this query"
+    },
+    {
+      "flow": "quoted company selection",
+      "api": {
+        "contract": "move-ask-v1",
+        "terminalState": "FOUND",
+        "nameSearch": {
+          "requested": "JK Moving",
+          "candidateLimit": 10,
+          "retrievalLimit": 200,
+          "truncated": false,
+          "selected": true,
+          "countMeaning": "Displayed source-backed candidate identities; not an exhaustive population estimate"
+        },
+        "coverageState": "KNOWN",
+        "capability": {
+          "federatedExecution": "execute",
+          "askStatus": "live"
+        },
+        "interpretation": [
+          {
+            "label": "Company name",
+            "value": "JK Moving"
+          },
+          {
+            "label": "Task",
+            "value": "MOVE JOURNEY"
+          },
+          {
+            "label": "Origin",
+            "value": "Virginia (exact)"
+          },
+          {
+            "label": "Destination",
+            "value": "Florida (exact)"
+          },
+          {
+            "label": "Move type",
+            "value": "household goods"
+          },
+          {
+            "label": "Role",
+            "value": "Not specified; carrier and broker remain distinct"
+          },
+          {
+            "label": "Research scope",
+            "value": "federal interstate research"
+          },
+          {
+            "label": "Availability",
+            "value": "Not established"
+          }
+        ],
+        "query": {
+          "journey": {
+            "task": "MOVE_JOURNEY",
+            "origin": {
+              "raw": "Virginia",
+              "state": "VA",
+              "resolution": "EXACT"
+            },
+            "destination": {
+              "raw": "Florida",
+              "state": "FL",
+              "resolution": "EXACT"
+            },
+            "moveType": "household_goods",
+            "moveScope": "interstate",
+            "companyName": "JK Moving",
+            "outcome": "APPLIED",
+            "availability": "NOT_ESTABLISHED",
+            "authorityGrain": "federal_interstate_research",
+            "booking": false,
+            "summary": "Research federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.",
+            "checklist": [
+              "Obtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.",
+              "For interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.",
+              "Confirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.",
+              "Review evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made."
+            ],
+            "capabilities": [
+              {
+                "state": "VA",
+                "route": "/virginia",
+                "authority": [
+                  {
+                    "id": "hhg-authority",
+                    "status": "STATE_SOURCE_LIVE",
+                    "metricKeys": [
+                      "va_hhg_authority_identities"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              },
+              {
+                "state": "FL",
+                "route": "/florida",
+                "authority": [
+                  {
+                    "id": "hhg-registration",
+                    "status": "STATE_SOURCE_LIVE",
+                    "metricKeys": [
+                      "florida_fdacs_im_registrations"
+                    ]
+                  }
+                ],
+                "source": "data/home/move-network-metrics-v1.json"
+              }
+            ]
+          },
+          "mode": "entity",
+          "nameQuery": "JK Moving",
+          "nameRequest": {
+            "name": "JK Moving",
+            "task": "research",
+            "condition": "Requested route service and availability remain unestablished."
+          },
+          "selectedCompany": "usdot-2222803",
+          "constraints": [
+            {
+              "field": "origin",
+              "value": "Virginia",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "destination",
+              "value": "Florida",
+              "outcome": "APPLIED",
+              "detail": "Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service."
+            },
+            {
+              "field": "route service / availability",
+              "value": "Not established",
+              "outcome": "UNSUPPORTED",
+              "detail": "Company identity, headquarters and authority do not prove this route is served or available."
+            }
+          ],
+          "executor": "records",
+          "page": 1
+        },
+        "resultType": "entity",
+        "sourceConflictCandidates": [],
+        "results": [
+          {
+            "name": "JK BROKERAGE SERVICES",
+            "entityId": "usdot-2222803",
+            "legalName": "JK MOVING & STORAGE, INC.",
+            "dba": null,
+            "nameMatchEvidence": {
+              "method": "source_name",
+              "requested": "JK Moving",
+              "field": "fmcsa_legal_name",
+              "returned": "JK MOVING & STORAGE, INC.",
+              "entityId": "usdot-2222803",
+              "matchType": "distinctive_token_candidate",
+              "normalization": [
+                "case, repeated whitespace, punctuation and ampersand presentation; no location, role, number or legal suffix removed"
+              ],
+              "source": "Published directory legal-name field; original source depends on the record",
+              "rank": 10
+            },
+            "usdot": "2222803",
+            "mc": "312255",
+            "role": "Broker",
+            "fmcsaStatus": "Current authority recorded",
+            "headquarters": "STERLING, VA",
+            "floridaIm": null,
+            "operatingAuthority": "Current authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)",
+            "href": "/companies/jk-brokerage-services",
+            "publicationNote": null,
+            "whyMatched": "Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.",
+            "complaintsNote": null,
+            "sourceLastChecked": "2026-08-20T13:52:59.596+00:00",
+            "officialAsOf": null,
+            "officialVerificationUrl": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string=2222803"
+          }
+        ],
+        "counts": [
+          {
+            "label": "Displayed name candidates",
+            "value": 1,
+            "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count"
+          }
+        ],
+        "pagination": {
+          "page": 1,
+          "pageSize": 10,
+          "total": 1,
+          "hasMore": false
+        },
+        "provenance": {
+          "sourceFamily": "Published MoveTrustHub directory identities and stored FMCSA evidence",
+          "geographyMeaning": "Name identity research; requested location conditions are evaluated separately, never service territory.",
+          "officialAsOf": "Official effective time is not supplied by this extract. Stored source check times are shown separately.",
+          "grain": "Source-backed name candidate identities; distinct public record keys, not a national directory count",
+          "exclusions": [
+            "A broker is not the carrier that necessarily transports household goods.",
+            "Florida IM registration is not federal interstate household-goods authority.",
+            "Headquarters is not service territory.",
+            "Current authority is not a recommendation.",
+            "Complaint observations are not confirmed wrongdoing.",
+            "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+          ]
+        },
+        "limitations": [
+          "Search uses the existing published legal/display-name index. A stored FMCSA DBA can corroborate a retrieved candidate; an alias absent from those searchable names may not be discoverable. No independent alias directory is claimed.",
+          "Case, whitespace, punctuation and ampersand presentation may normalize. Distinctive-token matches are relaxed candidates; legal suffixes and names are not identity merges.",
+          "A broker is not the carrier that necessarily transports household goods.",
+          "Florida IM registration is not federal interstate household-goods authority.",
+          "Headquarters is not service territory.",
+          "Current authority is not a recommendation.",
+          "Complaint observations are not confirmed wrongdoing.",
+          "Missing evidence is not inactive, unauthorized, fraudulent, or clean."
+        ],
+        "elapsedMs": 149
+      },
+      "text": "MoveTrustHub specialist research\n\nAsk interprets the question. Published FMCSA and supported state records answer it. A carrier is not a broker. Florida registration is not interstate authority. Headquarters is not service territory.\n\nRESEARCH MOVERS\n\nWhat do you want to find out?\nMover research question, company, USDOT or MC number\nResearch\n\nMaximum 180 characters. Longer requests are rejected without shortening the identifier.\n\ncurrent interstate movers headquartered in Florida\nmoving brokers in Florida\nUSDOT 3244649\nFlorida intrastate movers\ncarrier vs broker\nAdvanced filters\n\nNatural language helps interpret the request. Published regulatory data establishes the facts. Results are relevance-ordered, never quality-ranked.\n\nWE INTERPRETED YOUR QUESTION AS\n\nCOMPANY NAME\nJK Moving\nEdit request\nTASK\nMOVE JOURNEY\nEdit request\nORIGIN\nVirginia (exact)\nEdit request\nDESTINATION\nFlorida (exact)\nEdit request\nMOVE TYPE\nhousehold goods\nEdit request\nROLE\nNot specified; carrier and broker remain distinct\nEdit request\nRESEARCH SCOPE\nfederal interstate research\nEdit request\nAVAILABILITY\nNot established\nEdit request\n\nParsing and regulatory execution stay separate. Headquarters is not service territory.\n\nChange interpretation\nChange interpretation\nRequested conditions\norigin: Virginia\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\ndestination: Florida\n\nApplied: Preserved as a journey endpoint or requested locality, not a headquarters predicate or proof of service.\n\nroute service / availability: Not established\n\nNot available: Company identity, headquarters and authority do not prove this route is served or available.\n\nResearch your move\n\nResearch federal interstate identity and authority for the requested move. These records do not establish exact-route service or availability.\n\nObtain the exact company name and labeled USDOT/MC identifiers; distinguish the transporting carrier from a broker.\nFor interstate household goods, review source-native federal carrier/broker authority separately from the USDOT identity.\nConfirm pickup, delivery, route service and availability directly. Headquarters or recorded address does not establish service territory.\nReview evidence dates and limitations. Missing complaint or enforcement observations are not a clean-history finding; no mover ranking or endorsement is made.\nVirginia intrastate research\n\nhhg-authority: STATE SOURCE LIVE\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Virginia state research\nFlorida intrastate research\n\nhhg-registration: STATE SOURCE LIVE\n\nSeparate from FMCSA interstate records. Source availability does not establish a mover’s permission or route availability.\n\nOpen Florida state research\nTrace this journey\nCount\nDisplayed name candidates\n1\n\nSource-backed name candidate identities; distinct public record keys, not a national directory count\n\nJK BROKERAGE SERVICES\nBroker\n\nStored legal name: JK MOVING & STORAGE, INC.\n\nUSDOT\n2222803\nMC\n312255\nAUTHORITY STATUS (STORED)\nCurrent authority recorded\nOPERATING AUTHORITY\nCurrent authority recorded (boolean flag only; Common/Contract/Broker text not stored on this row)\nRECORDED LOCATION\nSTERLING, VA\n\nStored source checked-at: 2026-08-20T13:52:59.596+00:00. Official effective time: Not supplied by this extract. These records were not checked live today.\n\nVerify this identifier with FMCSA\n\nWhy this matched. Distinctive name-token candidate: published legal-name field records \"JK MOVING & STORAGE, INC.\" for this identity. Requested name: \"JK Moving\". Name relevance is not identifier equality, proof of affiliation, license approval or a live regulator check.\n\nResearch this mover\n\nEVIDENCE AVAILABLE\n\nPublished identity and stored role evidence.\n\nTrace this result\nTrace this query"
+    }
+  ]
+}

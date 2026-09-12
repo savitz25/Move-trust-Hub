@@ -1,16 +1,16 @@
 move_research_source_unavailable { executor: 'directory', mode: 'entity' }
-✔ structured city/ZIP requests cannot bypass the locality consent boundary (3.1288ms)
-✔ R1-014 endpoints survive the production planner (5.8604ms)
-✔ independent endpoints, abbreviations, multiple states and city ambiguity (3.4402ms)
-✔ journeys and bookings never dispatch unrelated cohorts or names (1.3242ms)
-✖ capability grains are source-native, never FMCSA-as-intrastate authority (2.8501ms)
-✔ locality and near me retain conditions and require explicit query-bound broadening (9.4661ms)
-✔ role, auto transport, filters and pagination cannot lose scope (4.0988ms)
-✔ name plus journey and server selection retain the protected exact identity path (20.0484ms)
-✔ API/native transport, rendered guidance and actions share the same meaning (26.9743ms)
-✔ legal-name signals are not converted to locality requests (1.9407ms)
-✔ natural-language authority and unsupported route counts stay visible through broadening (0.7529ms)
-✔ booking paraphrases retain supplied local places and both endpoints (0.2539ms)
+✔ structured city/ZIP requests cannot bypass the locality consent boundary (4.4012ms)
+✔ R1-014 endpoints survive the production planner (5.328ms)
+✔ independent endpoints, abbreviations, multiple states and city ambiguity (2.3134ms)
+✔ journeys and bookings never dispatch unrelated cohorts or names (1.2199ms)
+✖ capability grains are source-native, never FMCSA-as-intrastate authority (2.9594ms)
+✔ locality and near me retain conditions and require explicit query-bound broadening (10.0184ms)
+✔ role, auto transport, filters and pagination cannot lose scope (3.8181ms)
+✔ name plus journey and server selection retain the protected exact identity path (22.1449ms)
+✔ API/native transport, rendered guidance and actions share the same meaning (27.0653ms)
+✔ legal-name signals are not converted to locality requests (2.7508ms)
+✔ natural-language authority and unsupported route counts stay visible through broadening (1.5483ms)
+✔ booking paraphrases retain supplied local places and both endpoints (0.2671ms)
 ℹ tests 12
 ℹ suites 0
 ℹ pass 11
@@ -18,12 +18,12 @@ move_research_source_unavailable { executor: 'directory', mode: 'entity' }
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 3071.5434
+ℹ duration_ms 2744.6584
 
 ✖ failing tests:
 
 test at lib\move-ask\r1-journey.test.ts:2:5630
-✖ capability grains are source-native, never FMCSA-as-intrastate authority (2.8501ms)
+✖ capability grains are source-native, never FMCSA-as-intrastate authority (2.9594ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
   + actual - expected
 
