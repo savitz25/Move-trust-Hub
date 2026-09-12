@@ -1,15 +1,21 @@
-# TH-SEARCH-R1-014 release receipt
+# TH-SEARCH-R1-014 final runtime receipt
 
-Released runtime merge 4596b98a8a8f09bbe10ac4bf9e2e9033aa37023d through PR #133, from tested head bbcb61434efdbc3ae5ace42d891c0d567e88c149. The READY deployment dpl_GU36WgXWVcjsrB1KSDXRrEQ1fvcK owns www.movetrusthub.com and movetrusthub.com. Exact identities and timestamps are in release.json and runtime-deployment.json.
+Status: RELEASED_AND_VERIFIED for the certified cases. GPT-6 Astra / High - USER-CONFIRMED; no independent model metadata.
 
-The 15-case baseline matrix preserved actual failures and already-safe outcomes. Journey and booking sentences previously became name searches or lost endpoints. The repair carries independent endpoints, explicit role/move type, source capability and unresolved availability through planMoveRequest/executeMoveRequest. Explicit state broadening is query-bound user consent. The structured cohort adapter rejects unsupported city/ZIP before retrieval.
+Baseline f17650ed5c9a695cb97c0b7a111e38ef93f2e3dc. Initial runtime PR133 merged at 4596b98a8a8f09bbe10ac4bf9e2e9033aa37023d; initial evidence PR134 merged at 5909fafabefd8dc7f550ba3aa8a596c38a46eae1. A final name contrast found an introduced quoted-name/route-word regression. PR135 corrected it and merged at 924f9d38c1ef144b68cf9994d1718851c2757e62 from tested head 1c02d5f5db2906cf5df4296615f1aecc525fea49.
 
-Production browser/API verification passed 18 checks at 2026-09-12T23:09:17.690Z. Maximum core settled-page time was 965 ms; maximum API time 1046 ms; maximum combined check including screenshot 2099 ms. The suite proved actual identities and selected scope, keyboard Enter/broadening, clarification, selected company, refresh/history, edits without stale cards, Trace, and no overflow at 320/390/768/1280. Additional readable viewport and source-record screenshots are included.
+Final runtime deployment dpl_JCNbx21D2VTmBk5pxs7xXcpyjRAU is READY and owns www.movetrusthub.com and movetrusthub.com. Exact alias observation, source fingerprint and clocks are in final-runtime-deployment.json, release.json and source-oracle.json.
 
-R1-001 17, R1-005 15, R1-006 14, R1-014 12 grouped tests passed. Related 44 tests, repository test command, metrics R2 and optimized build passed. Four deliberate mutations failed and were restored before the clean run. Source outage, unsupported locality and no-match remain different outcomes.
+Final Production browser/API verification passed 18 core checks at 2026-09-12T23:32:57.445Z, plus 3 quoted-name/selection checks. Maximum settled core page: 1999 ms; maximum API: 1089 ms; maximum combined core check including screenshot: 3284 ms. Actual rendered identities, independent endpoint expectations, explicit keyboard broadening, endpoint choice, selected company, edits, refresh/back/forward, Trace and no overflow at 320/390/768/1280 were checked. API-only checks are not presented as browser proof.
 
-Baseline limitations remain explicit: 532 TypeScript diagnostics with no new normalized diagnostics; lint is unconfigured and prompts for setup; county SEO fails identically at 1695 > 400, including post-merge main CI. No build-ignore setting, cap, security control or publication rule was changed. Preview browser authentication was not bypassed.
+The 15-case baseline matrix preserves already-safe outcomes. Journey/booking sentences previously became names or lost endpoints. Source-backed identity research remains on the existing executor; journey guidance never pretends a mover cohort ran. Broadening is query-bound explicit consent. Headquarters is not service territory. FMCSA is not intrastate authority. Household-goods state rosters do not establish auto-transport authority. Unsupported locality, unavailable source and no match stay distinct.
 
-Review was separate self-review plus successful Vercel automated review, not independent human review. No source/database/schema writes or other-repository edits occurred. JK canonical MC correction is still pending separate approval.
+R1-001 17, R1-005 15, R1-006 14 and R1-014 12 grouped tests pass. Related 44 tests, repository test command, metrics R2 and optimized build pass. Four mutations were detected, restored, and followed by a clean focused run on the final runtime. The added quoted-name contrasts now agree with untouched base. The compiled final candidate passed 18 core and 3 quoted-name browser checks before release.
 
-Close only the demonstrated R1-014 journey/locality/booking research paths. Route service and availability are not acquired; federal versus state authority remains separate. A reviewed Move-only revert is the rollback, preserving prior identity/source-conflict protections. The documentation follow-up records these observed runtime facts without inventing its own future merge SHA.
+Baseline limitations: 532 TypeScript diagnostics, no new normalized diagnostics; unconfigured lint; county SEO 1695 > unchanged cap 400, also reproduced on post-merge CI. Build-ignore settings, security, caps and publication rules were untouched. Preview browser required Vercel login and was not bypassed. Local production-build and canonical Production evidence are separate.
+
+Review: separate self-review plus successful Vercel automated review; no independent human review. No source/database/schema writes, other-repository edits or JK canonical correction occurred.
+
+Close only demonstrated R1-014 journey/locality/booking research. Route service/availability, all Move search, other hubs and Search Reliability R1 remain outside closure. The unquoted Movers in Motion LLC parser limitation is pre-existing. JK canonical correction/history still requires separate approval. Rollback is a reviewed revert of the full ticket runtime change set preserving R1-001/005/006; no database rollback.
+
+This documentation follow-up does not invent its future merge SHA. Its final deployment identity is recorded after normal merge in the PR receipt.

@@ -4,12 +4,12 @@
   "model": "GPT-6 Astra / High - USER-CONFIRMED; no independent session metadata",
   "baseline": "f17650ed5c9a695cb97c0b7a111e38ef93f2e3dc",
   "firstImplementation": "ee751a8bace96e5c8b3b7afa1b79a168d8d982d2",
-  "testedRuntimeHead": "bbcb61434efdbc3ae5ace42d891c0d567e88c149",
-  "runtimeMerge": "4596b98a8a8f09bbe10ac4bf9e2e9033aa37023d",
-  "runtimePr": "https://github.com/savitz25/Move-trust-Hub/pull/133",
+  "testedRuntimeHead": "1c02d5f5db2906cf5df4296615f1aecc525fea49",
+  "runtimeMerge": "924f9d38c1ef144b68cf9994d1718851c2757e62",
+  "runtimePr": "https://github.com/savitz25/Move-trust-Hub/pull/135",
   "deployment": {
-    "id": "dpl_GU36WgXWVcjsrB1KSDXRrEQ1fvcK",
-    "url": "move-trust-8ge83siyq-savitz25-s-projects.vercel.app",
+    "id": "dpl_JCNbx21D2VTmBk5pxs7xXcpyjRAU",
+    "url": "move-trust-96ejohtev-savitz25-s-projects.vercel.app",
     "readyState": "READY",
     "alias": [
       "www.movetrusthub.com",
@@ -18,13 +18,11 @@
       "move-trust-hub-savitz25-s-projects.vercel.app",
       "move-trust-hub-git-main-savitz25-s-projects.vercel.app"
     ],
-    "sha": "4596b98a8a8f09bbe10ac4bf9e2e9033aa37023d",
-    "observedAt": {
-      "current_time": "2026-09-12 23:09:08 UTC"
-    }
+    "sha": "924f9d38c1ef144b68cf9994d1718851c2757e62",
+    "observedAt": "2026-09-12 23:32:45 UTC"
   },
-  "observedAt": "2026-09-12T23:10:46.234047+00:00",
-  "evidenceFollowup": "Documentation-only branch th-search-r1-014-evidence; no future merge or deployment SHA asserted in this pre-merge receipt",
+  "observedAt": "2026-09-12T23:34:26.751792+00:00",
+  "evidenceFollowup": "Documentation-only branch th-search-r1-014-final-receipt; its future merge/deployment SHA is not asserted here. Final alias check is recorded in the follow-up PR receipt.",
   "sourceFingerprint": "3c0247528c8bce91cfc2f2525aeec4c734445e4bd58b4df47aa2dde4e418fd06",
   "sourceOracle": "source-oracle.json; bounded public JK/SHIFL source rows and accepted capability-level source files/clocks; no live counts frozen",
   "tests": {
@@ -64,8 +62,8 @@
     }
   ],
   "browser": {
-    "source": "production-browser.json",
-    "at": "2026-09-12T23:09:17.690Z",
+    "source": "final-runtime-browser.json",
+    "at": "2026-09-12T23:32:57.445Z",
     "checks": 18,
     "pageErrors": [],
     "widths": [
@@ -74,9 +72,9 @@
       768,
       1280
     ],
-    "maxSettledMs": 965,
-    "maxApiMs": 1046,
-    "maxCombinedCheckMs": 2099,
+    "maxSettledMs": 1999,
+    "maxApiMs": 1089,
+    "maxCombinedCheckMs": 3284,
     "flows": [
       "Homepage Enter",
       "explicit endpoint choice",
@@ -86,10 +84,16 @@
       "refresh/back/forward",
       "Trace"
     ],
-    "screenshots": "production-*.png; readable viewport/guidance/record captures"
+    "screenshots": "production-*.png; readable viewport/guidance/record captures",
+    "quotedNameChecks": {
+      "source": "quoted-production.json",
+      "at": "2026-09-12T23:33:04.063Z",
+      "checks": 3,
+      "pass": true
+    }
   },
   "preview": "Deployment READY; interactive preview reached Vercel login, no bypass. Local production-build and canonical Production browser evidence are separate.",
-  "review": "Separate self-review and Vercel Agent Review SUCCESS on tested runtime; no independent human review claimed",
+  "review": "Separate self-review and Vercel Agent Review SUCCESS on PRs 133 and 135. No independent human review.",
   "ci": "PR checks and post-merge Move network metrics PASS. Main County SEO Compliance failed at the same baseline 1695 > 400; unchanged.",
   "boundaries": [
     "Guidance FOUND is a completed research plan, not a finding of route-eligible movers. No provider cohort runs for a journey or booking request.",
@@ -103,5 +107,9 @@
     "Pending JK canonical correction/history requires separate approval.",
     "No closure of all Move search, other hubs or Search Reliability R1."
   ],
-  "rollback": "Normal reviewed revert/deployment of R1-014 only; retain R1-001/005/006 safe projections. No database rollback."
+  "rollback": "Normal reviewed Move-only revert of the complete R1-014 runtime change set (PRs 133 and 135), preserving R1-001/005/006. Do not revert only the quoted-name guard into the known regression. No database rollback.",
+  "initialRuntimeMerge": "4596b98a8a8f09bbe10ac4bf9e2e9033aa37023d",
+  "initialRuntimePr": "https://github.com/savitz25/Move-trust-Hub/pull/133",
+  "initialEvidenceMerge": "5909fafabefd8dc7f550ba3aa8a596c38a46eae1",
+  "quotedNameCorrection": "A final contrast exposed an introduced quoted-name/route-word regression against the untouched base. PR135 restores quoted identity precedence, preserves quoted locality, and retains real routes outside a quoted company name. Baseline/current observations and green browser evidence are retained."
 }

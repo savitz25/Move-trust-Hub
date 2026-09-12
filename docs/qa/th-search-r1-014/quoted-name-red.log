@@ -1,0 +1,26 @@
+{"q":"Research \"From Here To There Moving LLC\"","label":"base","mode":"entity","name":"From Here To There Moving LLC","journey":false}
+{"q":"Research \"From Here To There Moving LLC\"","label":"current","mode":"definition","journey":true}
+{"q":"Find \"Moving from Florida to Texas LLC\"","label":"base","mode":"entity","name":"Moving from Florida to Texas LLC","journey":false}
+node.exe : C:\Users\makei\th-search-r1-014-work\lib\move-ask\plan.ts:92
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\makei\...-ask\plan.ts:92:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+    if (/["\u201c\u201d]/.test(name)) throw new MoveRequestError('Enter the company name without enclosing quotes.');
+                                            ^
+
+MoveRequestError: Enter the company name without enclosing quotes.
+    at planMoveRequest (C:\Users\makei\th-search-r1-014-work\lib\move-ask\plan.ts:92:45)
+    at current (C:\Users\makei\th-search-r1-014-work\docs\qa\th-search-r1-014\name-structure-audit.ts:4:87)
+    at Object.<anonymous> (C:\Users\makei\th-search-r1-014-work\docs\qa\th-search-r1-014\name-structure-audit.ts:5:1)
+    at Module._compile (node:internal/modules/cjs/loader:1872:14)
+    at Object.transformer (C:\Users\makei\th-search-r1-014-work\node_modules\tsx\dist\register-BOkp8V6j.cjs:9:3176)
+    at Module.load (node:internal/modules/cjs/loader:1594:32)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1396:12)
+    at Module.stubServerOnly [as _load] (C:\Users\makei\th-search-r1-014-work\scripts\stub-server-only.cjs:9:23)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at loadCJSModuleWithModuleLoad (node:internal/modules/esm/translators:372:15)
+
+Node.js v24.19.0
