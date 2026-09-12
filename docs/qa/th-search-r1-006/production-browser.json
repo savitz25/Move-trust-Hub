@@ -1,13 +1,13 @@
 {
-  "base": "http://localhost:3106",
-  "codeIdentity": "aec77f3198815f0152a7eb5c2a8590d323eaf2a8",
-  "deploymentId": null,
-  "at": "2026-09-12T00:58:14.280Z",
+  "base": "https://www.movetrusthub.com",
+  "codeIdentity": "8ac3dc872a242dec48948d44db3c5cdb4a3502ad",
+  "deploymentId": "dpl_ENwVFLjNSj3SULSU8dJmV5KvnT5W",
+  "at": "2026-09-12T01:10:16.357Z",
   "cases": [
     {
       "q": "JK Moving Services licensed?",
-      "at": "2026-09-12T00:57:36.479Z",
-      "ms": 1985,
+      "at": "2026-09-12T01:09:39.522Z",
+      "ms": 2937,
       "surface": "homepage Enter -> native /ask + API",
       "width": 1280,
       "terminal": "NEEDS_CLARIFICATION",
@@ -79,8 +79,8 @@
     },
     {
       "q": "USDOT 1065394",
-      "at": "2026-09-12T00:57:37.050Z",
-      "ms": 568,
+      "at": "2026-09-12T01:09:39.905Z",
+      "ms": 381,
       "surface": "native /ask + API",
       "width": 1280,
       "terminal": "FOUND",
@@ -133,8 +133,8 @@
     },
     {
       "q": "MC 225850",
-      "at": "2026-09-12T00:57:37.587Z",
-      "ms": 536,
+      "at": "2026-09-12T01:09:40.284Z",
+      "ms": 379,
       "surface": "native /ask + API",
       "width": 1280,
       "terminal": "SOURCE_CONFLICT",
@@ -182,8 +182,8 @@
     },
     {
       "q": "MC 196957",
-      "at": "2026-09-12T00:57:41.104Z",
-      "ms": 3517,
+      "at": "2026-09-12T01:09:43.674Z",
+      "ms": 3390,
       "surface": "native /ask + API",
       "width": 1280,
       "terminal": "NO_MATCH",
@@ -221,8 +221,8 @@
     },
     {
       "q": "USDOT 1065394 MC 225850",
-      "at": "2026-09-12T00:57:41.791Z",
-      "ms": 687,
+      "at": "2026-09-12T01:09:44.519Z",
+      "ms": 845,
       "surface": "native /ask + API",
       "width": 1280,
       "terminal": "SOURCE_CONFLICT",
@@ -284,8 +284,8 @@
     },
     {
       "q": "USDOT 1065394 MC 196957",
-      "at": "2026-09-12T00:57:45.302Z",
-      "ms": 3511,
+      "at": "2026-09-12T01:09:48.191Z",
+      "ms": 3672,
       "surface": "native /ask + API",
       "width": 1280,
       "terminal": "NEEDS_CLARIFICATION",
@@ -337,8 +337,8 @@
     },
     {
       "q": "USDOT 3244 649",
-      "at": "2026-09-12T00:57:45.807Z",
-      "ms": 505,
+      "at": "2026-09-12T01:09:48.905Z",
+      "ms": 714,
       "surface": "native /ask + API",
       "width": 1280,
       "terminal": "FOUND",
@@ -392,8 +392,8 @@
     },
     {
       "q": "MC 1019808",
-      "at": "2026-09-12T00:57:46.471Z",
-      "ms": 663,
+      "at": "2026-09-12T01:09:49.582Z",
+      "ms": 677,
       "surface": "native /ask + API",
       "width": 1280,
       "terminal": "FOUND",
@@ -445,8 +445,8 @@
     },
     {
       "q": "MC 15735",
-      "at": "2026-09-12T00:57:46.970Z",
-      "ms": 499,
+      "at": "2026-09-12T01:09:50.336Z",
+      "ms": 754,
       "surface": "native /ask + API",
       "width": 1280,
       "terminal": "FOUND",
@@ -498,8 +498,8 @@
     },
     {
       "q": "USDOT 3244",
-      "at": "2026-09-12T00:57:50.479Z",
-      "ms": 3509,
+      "at": "2026-09-12T01:09:53.963Z",
+      "ms": 3627,
       "surface": "native /ask + API",
       "width": 1280,
       "terminal": "NO_MATCH",
@@ -537,8 +537,8 @@
     },
     {
       "q": "movers in New Jersey",
-      "at": "2026-09-12T00:57:51.372Z",
-      "ms": 893,
+      "at": "2026-09-12T01:09:55.078Z",
+      "ms": 1115,
       "surface": "native /ask + API",
       "width": 1280,
       "terminal": "FOUND",
@@ -695,8 +695,8 @@
     },
     {
       "q": "How many current household-goods carriers are headquartered in New Jersey?",
-      "at": "2026-09-12T00:57:55.527Z",
-      "ms": 4154,
+      "at": "2026-09-12T01:09:59.697Z",
+      "ms": 4619,
       "surface": "native /ask + API",
       "width": 1280,
       "terminal": "FOUND",
@@ -755,8 +755,8 @@
     },
     {
       "q": "carrier vs broker",
-      "at": "2026-09-12T00:57:58.745Z",
-      "ms": 3219,
+      "at": "2026-09-12T01:10:03.123Z",
+      "ms": 3425,
       "surface": "native /ask + API",
       "width": 1280,
       "terminal": "FOUND",
@@ -774,8 +774,8 @@
     },
     {
       "q": "NY intrastate movers",
-      "at": "2026-09-12T00:57:59.422Z",
-      "ms": 677,
+      "at": "2026-09-12T01:10:04.141Z",
+      "ms": 1018,
       "surface": "native /ask + API",
       "width": 1280,
       "terminal": "FOUND",
@@ -930,8 +930,8 @@
     },
     {
       "q": "JK Moving Services licensed?",
-      "at": "2026-09-12T00:58:00.689Z",
-      "ms": 1266,
+      "at": "2026-09-12T01:10:05.201Z",
+      "ms": 1060,
       "surface": "native /ask + API",
       "width": 1280,
       "terminal": "NEEDS_CLARIFICATION",
@@ -1007,8 +1007,8 @@
     },
     {
       "q": "MC 225850",
-      "at": "2026-09-12T00:58:04.265Z",
-      "ms": 504,
+      "at": "2026-09-12T01:10:10.064Z",
+      "ms": 407,
       "surface": "native /ask + API",
       "width": 390,
       "terminal": "SOURCE_CONFLICT",
@@ -1056,8 +1056,8 @@
     },
     {
       "q": "JK Moving Services licensed?",
-      "at": "2026-09-12T00:58:06.226Z",
-      "ms": 1631,
+      "at": "2026-09-12T01:10:11.259Z",
+      "ms": 878,
       "surface": "homepage Enter -> native /ask + API",
       "width": 390,
       "terminal": "NEEDS_CLARIFICATION",
@@ -1129,8 +1129,8 @@
     },
     {
       "q": "MC 225850",
-      "at": "2026-09-12T00:58:06.735Z",
-      "ms": 503,
+      "at": "2026-09-12T01:10:11.587Z",
+      "ms": 325,
       "surface": "native /ask + API",
       "width": 320,
       "terminal": "SOURCE_CONFLICT",
@@ -1178,8 +1178,8 @@
     },
     {
       "q": "JK Moving Services licensed?",
-      "at": "2026-09-12T00:58:08.175Z",
-      "ms": 1192,
+      "at": "2026-09-12T01:10:12.158Z",
+      "ms": 324,
       "surface": "native /ask + API",
       "width": 320,
       "terminal": "NEEDS_CLARIFICATION",
@@ -1252,7 +1252,7 @@
     {
       "surface": "public profile",
       "width": 1280,
-      "ms": 1792,
+      "ms": 1727,
       "links": [
         {
           "text": "Check the corroborated USDOT with FMCSA",
@@ -1268,7 +1268,7 @@
     {
       "surface": "public profile",
       "width": 390,
-      "ms": 1689,
+      "ms": 393,
       "links": [
         {
           "text": "Check the corroborated USDOT with FMCSA",
@@ -1284,7 +1284,7 @@
     {
       "surface": "public profile",
       "width": 320,
-      "ms": 1558,
+      "ms": 401,
       "links": [
         {
           "text": "Check the corroborated USDOT with FMCSA",
@@ -1299,12 +1299,10 @@
     },
     {
       "surface": "Verify route GET",
-      "url": "http://localhost:3106/verify-dot?q=MC+225850",
-      "prefill": "MC 225850",
+      "url": "https://www.movetrusthub.com/verify-dot?q=MC+225850",
+      "prefill": "",
       "note": "Production POST omitted: existing action writes a verification analytics row. Action behavior certified with fixture-only dependencies."
     }
   ],
-  "pageErrors": [
-    "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
-  ]
+  "pageErrors": []
 }
