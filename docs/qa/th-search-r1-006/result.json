@@ -1,0 +1,26 @@
+{
+  "ticket": "TH-SEARCH-R1-006",
+  "status": "IMPLEMENTATION_UNDER_VALIDATION",
+  "model": {
+    "requested": "GPT-6 Astra / High",
+    "confirmation": "USER-CONFIRMED"
+  },
+  "baseline": "2ef25a62d2b0dee52172d8bda1981d5d3bef5016",
+  "recordedAt": "2026-09-12T00:29:15.808556+00:00",
+  "sourceOracleSha256": "95165c9157ff765fc4e1ffc08efccee742e56f76d41ab90d3f49996202a62330",
+  "classification": "unsupported current stored association; history unresolved",
+  "canonicalDataWrite": false,
+  "release": null,
+  "tests": {
+    "focused": 12,
+    "r1_001": 17,
+    "r1_005": 15,
+    "related": 85,
+    "mutationGuardsDetected": 2
+  },
+  "remaining": [
+    "Production browser certification and release pending",
+    "Canonical correction requires separate explicit approval",
+    "MC225850 historical holder/relationship unresolved"
+  ]
+}

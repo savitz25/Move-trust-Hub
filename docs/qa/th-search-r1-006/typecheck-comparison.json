@@ -1,0 +1,6 @@
+{
+  "base": 535,
+  "candidate": 533,
+  "new": [],
+  "resolved": "Two existing directory DTO inference diagnostics corrected with explicit Company/null map return type."
+}
