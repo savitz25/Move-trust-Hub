@@ -1,0 +1,16 @@
+[
+  {
+    "at": "2026-09-12T01:10:33.812Z",
+    "surface": "https://www.movetrusthub.com/api/companies?limit=50&fields=full",
+    "status": 200,
+    "returnedRows": 50,
+    "affectedRecord": null
+  },
+  {
+    "at": "2026-09-12T01:10:37.688Z",
+    "surface": "https://www.movetrusthub.com/api/companies?limit=50&fields=directory",
+    "status": 200,
+    "returnedRows": 50,
+    "affectedRecord": null
+  }
+]

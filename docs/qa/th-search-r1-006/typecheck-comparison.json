@@ -2,5 +2,6 @@
   "base": 535,
   "candidate": 533,
   "new": [],
-  "resolved": "Two existing directory DTO inference diagnostics corrected with explicit Company/null map return type."
+  "method": "Compare file/error/message, ignoring source line offsets and ordering of identical quoted union members. Three original message differences were union permutations, verified against base.",
+  "resolved": "Two directory DTO inference diagnostics corrected by explicit Company/null return annotation."
 }

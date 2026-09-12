@@ -2,37 +2,38 @@
 > move-trust-hub@1.0.0 check:th-search-r1-006
 > tsx --require ./scripts/stub-server-only.cjs --test lib/move-ask/r1-association.test.ts
 
-✖ R1-006 known disputed MC is not projected as a trusted public identifier (6.5499ms)
-✖ disputed MC and pair are source conflicts; legacy consumers receive no confirmed JK association (17.729ms)
-✖ corroborated USDOT survives with conflict disclosure and never a disputed company-verification link (3.39ms)
-✔ observed replacement is not invented into the effective exact index; unrelated matches remain (13.3612ms)
-✖ another permitted identity with the same MC is not suppressed by the JK review (2.4484ms)
-✖ name selection keeps separate JK identities and the original task (11.5659ms)
+✖ R1-006 known disputed MC is not projected as a trusted public identifier (5.4616ms)
+✖ disputed MC and pair are source conflicts; legacy consumers receive no confirmed JK association (18.0278ms)
+✖ corroborated USDOT survives with conflict disclosure and never a disputed company-verification link (4.4292ms)
+✔ observed replacement is not invented into the effective exact index; unrelated matches remain (8.4769ms)
+✖ another permitted identity with the same MC is not suppressed by the JK review (3.7573ms)
+✖ name selection keeps separate JK identities and the original task (11.1083ms)
 move_research_source_unavailable { executor: 'records', mode: 'identifier' }
-✖ publication hold and source failure do not clear or replace the reviewed association (7029.0156ms)
-✖ changed source value/fingerprint requires review without mutating or substituting source values (2.7348ms)
-✖ source clocks remain separate; missing clocks never become today (0.6798ms)
-✔ families and multiple/historical source observations are not concatenated or forced one-to-one (0.6461ms)
-✖ DB, seed, catalog, merged profile and directory DTO cannot restore the disputed MC (1.2137ms)
-✖ profile, search, Verify and API render the same integrity-aware meaning (26.7698ms)
-✖ real Verify action contains the stored MC before any external authority lookup (fixture-only dependencies) (4.3642ms)
-ℹ tests 13
+✖ publication hold and source failure do not clear or replace the reviewed association (7031.746ms)
+✖ changed source value/fingerprint requires review without mutating or substituting source values (3.1788ms)
+✖ source clocks remain separate; missing clocks never become today (0.7662ms)
+✔ families and multiple/historical source observations are not concatenated or forced one-to-one (1.3405ms)
+✖ DB, seed, catalog, merged profile and directory DTO cannot restore the disputed MC (0.9694ms)
+✖ profile, search, Verify and API render the same integrity-aware meaning (49.6549ms)
+✖ real Verify action contains the stored MC before any external authority lookup (fixture-only dependencies) (5.2938ms)
+✖ pre-release cached company objects are re-projected at the public cache boundary (3.9663ms)
+ℹ tests 14
 ℹ suites 0
 ℹ pass 2
-ℹ fail 11
+ℹ fail 12
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 9585.4697
+ℹ duration_ms 9497.8366
 
 ✖ failing tests:
 
-test at lib\move-ask\r1-association.test.ts:2:2382
-✖ R1-006 known disputed MC is not projected as a trusted public identifier (6.5499ms)
+test at lib\move-ask\r1-association.test.ts:2:2473
+✖ R1-006 known disputed MC is not projected as a trusted public identifier (5.4616ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
+
   '225850' !== ''
-  
+
       at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:5:47)
       at Test.runInAsyncScope (node:async_hooks:227:14)
       at Test.run (node:internal/test_runner/test:1382:25)
@@ -46,16 +47,16 @@ test at lib\move-ask\r1-association.test.ts:2:2382
     diff: 'simple'
   }
 
-test at lib\move-ask\r1-association.test.ts:2:4429
-✖ disputed MC and pair are source conflicts; legacy consumers receive no confirmed JK association (17.729ms)
+test at lib\move-ask\r1-association.test.ts:2:4520
+✖ disputed MC and pair are source conflicts; legacy consumers receive no confirmed JK association (18.0278ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
   + actual - expected
-  
+
   + 'FOUND'
   - 'SOURCE_CONFLICT'
-  
-      at <anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:34:116)
-      at async source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:31:6)
+
+      at <anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:35:116)
+      at async source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:32:6)
       at async Test.run (node:internal/test_runner/test:1389:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
     generatedMessage: true,
@@ -66,14 +67,14 @@ test at lib\move-ask\r1-association.test.ts:2:4429
     diff: 'simple'
   }
 
-test at lib\move-ask\r1-association.test.ts:2:5593
-✖ corroborated USDOT survives with conflict disclosure and never a disputed company-verification link (3.39ms)
+test at lib\move-ask\r1-association.test.ts:2:5684
+✖ corroborated USDOT survives with conflict disclosure and never a disputed company-verification link (4.4292ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
+
   '225850' !== null
-  
-      at <anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:37:150)
-      at async source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:31:6)
+
+      at <anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:38:150)
+      at async source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:32:6)
       at async Test.run (node:internal/test_runner/test:1389:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
     generatedMessage: true,
@@ -84,18 +85,18 @@ test at lib\move-ask\r1-association.test.ts:2:5593
     diff: 'simple'
   }
 
-test at lib\move-ask\r1-association.test.ts:2:7100
-✖ another permitted identity with the same MC is not suppressed by the JK review (2.4484ms)
+test at lib\move-ask\r1-association.test.ts:2:7191
+✖ another permitted identity with the same MC is not suppressed by the JK review (3.7573ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
-  
+
     [
   +   'jk-moving',
       'other-holder'
     ]
-  
-      at source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:43:77)
-      at async source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:31:6)
+
+      at source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:44:77)
+      at async source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:32:6)
       at async Test.run (node:internal/test_runner/test:1389:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
     generatedMessage: true,
@@ -106,14 +107,14 @@ test at lib\move-ask\r1-association.test.ts:2:7100
     diff: 'simple'
   }
 
-test at lib\move-ask\r1-association.test.ts:2:7643
-✖ name selection keeps separate JK identities and the original task (11.5659ms)
+test at lib\move-ask\r1-association.test.ts:2:7734
+✖ name selection keeps separate JK identities and the original task (11.1083ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
+
   '225850' !== null
-  
-      at <anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:46:370)
-      at async source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:31:6)
+
+      at <anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:47:370)
+      at async source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:32:6)
       at async Test.run (node:internal/test_runner/test:1389:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
     generatedMessage: true,
@@ -124,13 +125,13 @@ test at lib\move-ask\r1-association.test.ts:2:7643
     diff: 'simple'
   }
 
-test at lib\move-ask\r1-association.test.ts:2:8368
-✖ publication hold and source failure do not clear or replace the reviewed association (7029.0156ms)
+test at lib\move-ask\r1-association.test.ts:2:8459
+✖ publication hold and source failure do not clear or replace the reviewed association (7031.746ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
+
   '225850' !== ''
-  
-      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:49:276)
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:50:276)
       at async Test.run (node:internal/test_runner/test:1389:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
     generatedMessage: true,
@@ -141,13 +142,13 @@ test at lib\move-ask\r1-association.test.ts:2:8368
     diff: 'simple'
   }
 
-test at lib\move-ask\r1-association.test.ts:2:8987
-✖ changed source value/fingerprint requires review without mutating or substituting source values (2.7348ms)
+test at lib\move-ask\r1-association.test.ts:2:9078
+✖ changed source value/fingerprint requires review without mutating or substituting source values (3.1788ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
+
   '196957' !== ''
-  
-      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:52:133)
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:53:133)
       at Test.runInAsyncScope (node:async_hooks:227:14)
       at Test.run (node:internal/test_runner/test:1382:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
@@ -162,10 +163,10 @@ test at lib\move-ask\r1-association.test.ts:2:8987
     diff: 'simple'
   }
 
-test at lib\move-ask\r1-association.test.ts:2:9692
-✖ source clocks remain separate; missing clocks never become today (0.6798ms)
+test at lib\move-ask\r1-association.test.ts:2:9783
+✖ source clocks remain separate; missing clocks never become today (0.7662ms)
   TypeError: Cannot read properties of undefined (reading 'sourceAsOf')
-      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:55:93)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:56:93)
       at Test.runInAsyncScope (node:async_hooks:227:14)
       at Test.run (node:internal/test_runner/test:1382:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
@@ -173,13 +174,13 @@ test at lib\move-ask\r1-association.test.ts:2:9692
       at Test.run (node:internal/test_runner/test:1447:12)
       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
 
-test at lib\move-ask\r1-association.test.ts:2:11048
-✖ DB, seed, catalog, merged profile and directory DTO cannot restore the disputed MC (1.2137ms)
+test at lib\move-ask\r1-association.test.ts:2:11139
+✖ DB, seed, catalog, merged profile and directory DTO cannot restore the disputed MC (0.9694ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
+
   'MC-225850' !== ''
-  
-      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:62:125)
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:63:125)
       at Test.runInAsyncScope (node:async_hooks:227:14)
       at Test.run (node:internal/test_runner/test:1382:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
@@ -194,15 +195,15 @@ test at lib\move-ask\r1-association.test.ts:2:11048
     diff: 'simple'
   }
 
-test at lib\move-ask\r1-association.test.ts:2:11991
-✖ profile, search, Verify and API render the same integrity-aware meaning (26.7698ms)
-  AssertionError [ERR_ASSERTION]: The input was expected to not match the regular expression />MC<|225850/. Input:
-  
-  '<div class="rounded-xl border bg-card text-card-foreground shadow-trust mb-6 border-primary/15"><div class="flex flex-col space-y-1.5 p-6 pb-2 px-4 sm:px-6"><h3 class="font-semibold tracking-tight text-base flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2 lucide-building-2 h-4 w-4 text-primary" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg>Company identity</h3><p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">Public research identity from directory records and FMCSA-oriented fields. Confirm every license number on official sources before you book.</p></div><div class="p-6 pt-0 space-y-4 px-4 sm:px-6"><div class="flex flex-wrap items-center gap-2"><span class="text-xs font-medium text-muted-foreground">Entity type:</span><div class="flex flex-wrap items-center gap-1" aria-label="Company type"><div class="inline-flex items-center rounded-full border px-2.5 py-0.5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs font-semibold border-violet-400/80 bg-violet-50 text-violet-950 dark:border-violet-700 dark:bg-violet-950/50 dark:text-violet-100" title="Household goods broker — arranges transportation with carriers; does not itself operate as the motor carrier hauling your goods. Confirm who holds the USDOT/MC on your estimate and who will physically transport the shipment.">Broker</div></div></div><dl class="grid gap-2 sm:grid-cols-2 text-sm"><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Legal name (FMCSA)</dt><dd class="font-medium text-foreground break-words leading-snug">Jk Moving &amp; Storage INC</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Display name</dt><dd class="font-medium text-foreground break-words leading-snug">JK Moving Services</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">USDOT</dt><dd class="font-medium text-foreground break-words leading-snug">1065394</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">MC</dt><dd class="font-medium text-foreground break-words leading-snug">225850</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">HQ locality</dt><dd class="font-medium text-foreground break-words leading-snug">AIRMONT, NY</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Physical address</dt><dd class="font-medium text-foreground break-words leading-snug">AIRMONT, NY</dd></div></dl><p class="text-xs sm:text-sm rounded-lg border border-primary/20 bg-primary/5 px-3 py-2.5 leading-relaxed">Already have a quote from this company? <a class="font-semibold text-primary underline-offset-2 hover:underline" href="/tools/move-quote-check">Run Move Quote Check</a> before you sign or pay a deposit — research only, no lead form.</p></div></div>'
-  
-      at <anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:65:128)
-      at source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:31:12)
-      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:64:89)
+test at lib\move-ask\r1-association.test.ts:2:12082
+✖ profile, search, Verify and API render the same integrity-aware meaning (49.6549ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /MC association under review; see source details above/. Input:
+
+  '<header data-research-hero="true" class="mb-8 min-w-0 overflow-x-clip rounded-2xl border border-border/80 bg-card px-4 py-5 shadow-sm sm:px-6 sm:py-6"><p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-primary">Company research record</p><h1 class="mt-2 break-words text-2xl font-semibold tracking-tight text-[#0A2540] sm:text-3xl md:text-4xl">JK Moving Services</h1><p class="mt-2 break-words text-base leading-relaxed text-[#1E293B]"><span class="text-sm font-medium text-muted-foreground">FMCSA legal entity: </span>Jk Moving &amp; Storage INC</p><p class="mt-3 max-w-3xl text-sm leading-relaxed text-[#1E293B]">Brand / display name is not the FMCSA legal entity. Use the USDOT or MC number on your estimate, contract or paperwork to confirm you are researching the correct operator.</p><p class="mt-3 text-sm leading-relaxed text-[#1E293B]">MoveTrustHub is not recommending this mover. This page organizes public evidence. You decide.</p><p class="mt-3 text-sm text-[#1E293B]"><span class="font-medium">Headquarters / address evidence: </span><span class="break-words">AIRMONT, NY</span><span class="mt-1 block text-xs text-muted-foreground">Headquarters is not service territory.</span></p><div class="mt-4 flex min-w-0 flex-col gap-2 sm:flex-row sm:flex-wrap"><p class="min-w-0 w-full break-all rounded-lg border bg-muted/30 px-3 py-2 font-semibold tabular-nums text-[#0A2540] sm:w-auto" aria-label="USDOT number 1065394"><span class="sr-only">USDOT number </span>USDOT 1065394</p><p class="min-w-0 w-full break-all rounded-lg border bg-muted/30 px-3 py-2 font-semibold tabular-nums text-[#0A2540] sm:w-auto" aria-label="MC number 225850"><span class="sr-only">MC number </span>MC 225850</p></div><div class="mt-4 flex min-w-0 flex-col gap-2 sm:flex-row sm:flex-wrap"><a class="inline-flex min-h-11 w-full items-center justify-center rounded-lg px-4 text-sm font-medium sm:w-auto bg-[#0A2540] font-semibold text-white" data-profile-event="profile_verify_dot_clicked" href="/verify-dot?q=DOT+1065394">Verify DOT</a><div class="grid grid-cols-2 gap-2 sm:contents"><button type="button" class="inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-border bg-white px-3 text-sm font-medium text-[#0A2540] hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:w-auto">Copy USDOT</button><button type="button" class="inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-border bg-white px-3 text-sm font-medium text-[#0A2540] hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:w-auto">Copy MC</button></div><a data-profile-event="profile_compare_clicked" class="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 min-h-11 w-full sm:w-auto" href="/compare?add=jk-moving-services">Compare</a><button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 min-h-11 w-full sm:w-auto" disabled="" aria-pressed="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart h-3.5 w-3.5 mr-1" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>Save mover</button><a class="inline-flex min-h-11 w-full items-center justify-center rounded-lg px-4 text-sm font-medium sm:w-auto border" href="/#plan-your-move">Plan your move</a></div><p class="mt-2 text-xs text-muted-foreground">Regulatory records change. Confirm identifiers and authority with FMCSA before booking. MoveTrustHub does not replace the official record.</p><div class="mt-4 grid gap-2 sm:grid-cols-2 sm:gap-3"><section class="rounded-lg border px-3 py-2 sm:py-2.5" aria-labelledby="research-role-heading"><h2 id="research-role-heading" class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Regulatory role</h2><p class="mt-1 font-semibold text-[#0A2540]">Broker</p><p class="mt-1 text-sm leading-relaxed text-[#1E293B]">A broker arranges transportation but does not itself transport under carrier authority. Broker is not worse than carrier.</p></section><section class="rounded-lg border px-3 py-2 sm:py-2.5" aria-labelledby="research-authority-heading"><h2 id="research-authority-heading" class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">FMCSA authority</h2><p class="mt-1 font-semibold text-[#0A2540]"><span class="sr-only">Stored FMCSA authority evidence: </span>Current authority recorded</p><p class="mt-1 text-sm leading-relaxed text-[#1E293B]">FMCSA authority status is a regulatory record. It is not a MoveTrustHub endorsement, safety finding or recommendation.</p></section></div><p class="mt-3 text-sm text-[#1E293B]"><span class="font-medium">Latest FMCSA refresh observed: </span>Aug 23, 2026<span class="mt-1 block text-xs text-muted-foreground">A recent refresh does not mean safer or recommended. An older or missing refresh does not mean inactive or unsafe.</span></p><details class="mt-5 min-w-0 rounded-lg border px-3 py-1" data-profile-event="profile_legal_name_opened"><summary class="flex min-h-11 cursor-pointer items-center text-sm font-semibold text-[#0A2540]">Why this profile?</summary><dl class="mt-3 space-y-2 text-sm"><div><dt class="text-xs uppercase tracking-wide text-muted-foreground">Public name</dt><dd class="break-words">JK Moving Services</dd></div><div><dt class="text-xs uppercase tracking-wide text-muted-foreground">Legal name</dt><dd class="break-words">Jk Moving &amp; Storage INC</dd></div><div><dt class="text-xs uppercase tracking-wide text-muted-foreground">USDOT</dt><dd class="break-all">1065394</dd></div><div><dt class="text-xs uppercase tracking-wide text-muted-foreground">MC</dt><dd class="break-all">225850</dd></div><div><dt class="text-xs uppercase tracking-wide text-muted-foreground">Regulatory role</dt><dd>Broker</dd></div><div><dt class="text-xs uppercase tracking-wide text-muted-foreground">Record sources</dt><dd>FMCSA / IARD-oriented directory fields stored on this published profile. Not a score.</dd></div></dl></details><details class="mt-3 min-w-0 rounded-lg border px-3 py-1" data-profile-event="profile_trace_opened"><summary class="flex min-h-11 cursor-pointer items-center text-sm font-semibold text-[#0A2540]">Trace this record</summary><div class="-mx-1 mt-3 overflow-x-auto text-sm"><table class="w-full min-w-[16rem] text-left"><caption class="sr-only">Provenance for core identity facts</caption><thead><tr class="text-xs uppercase tracking-wide text-muted-foreground"><th scope="col" class="py-1 pr-3">Fact</th><th scope="col" class="py-1 pr-3">Source</th><th scope="col" class="py-1">Limitation</th></tr></thead><tbody><tr><th scope="row" class="py-1 pr-3 font-medium">Public name</th><td class="py-1 pr-3">Directory display name</td><td class="py-1">May differ from the FMCSA legal entity.</td></tr><tr><th scope="row" class="py-1 pr-3 font-medium">USDOT / MC</th><td class="py-1 pr-3">FMCSA identifier fields</td><td class="py-1">Confirm on FMCSA SAFER. Numbers can change after the latest refresh.</td></tr><tr><th scope="row" class="py-1 pr-3 font-medium">Authority</th><td class="py-1 pr-3">Stored authority_active flag</td><td class="py-1">Regulatory record only — not endorsement.</td></tr><tr><th scope="row" class="py-1 pr-3 font-medium">Latest refresh</th><td class="py-1 pr-3">fmcsa_last_checked</td><td class="py-1">Latest observed refresh for this profile, not a quality date.</td></tr></tbody></table></div></details><section class="mt-6 grid gap-4 md:grid-cols-2" aria-label="Evidence summary"><div><h2 class="text-sm font-semibold text-[#0A2540]">What we know</h2><ul class="mt-2 space-y-1 text-sm"><li><span class="font-medium">FMCSA identity: </span>Available</li><li><span class="font-medium">Regulatory role: </span>Available</li><li><span class="font-medium">Authority flag: </span>Available</li><li><span class="font-medium">Headquarters evidence: </span>Available</li><li><span class="font-medium">Review evidence: </span>Not currently available</li></ul></div><div><h2 class="text-sm font-semibold text-[#0A2540]">What we don&#x27;t know</h2><ul class="mt-2 list-disc space-y-1 pl-4 text-sm leading-relaxed text-[#1E293B]"><li>FMCSA authority status is a regulatory record. It is not a MoveTrustHub endorsement, safety finding or recommendation.</li><li>Headquarters is address evidence, not service territory. A company is not shown as serving a city merely because it is headquartered there.</li><li>No complaint evidence on this page does not mean no complaints exist.</li><li>No inspection evidence does not mean no inspections exist, and does not mean the company is safe.</li><li>Consumer reviews are not regulator evidence.</li><li>Listed services may be company-supplied categories, not regulatory claims.</li></ul></div></section></header>'
+
+      at <anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:66:165)
+      at source (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:32:12)
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:65:89)
       at Test.runInAsyncScope (node:async_hooks:227:14)
       at Test.run (node:internal/test_runner/test:1382:25)
       at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
@@ -211,17 +212,34 @@ test at lib\move-ask\r1-association.test.ts:2:11991
       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
     generatedMessage: true,
     code: 'ERR_ASSERTION',
-    actual: '<div class="rounded-xl border bg-card text-card-foreground shadow-trust mb-6 border-primary/15"><div class="flex flex-col space-y-1.5 p-6 pb-2 px-4 sm:px-6"><h3 class="font-semibold tracking-tight text-base flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2 lucide-building-2 h-4 w-4 text-primary" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg>Company identity</h3><p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">Public research identity from directory records and FMCSA-oriented fields. Confirm every license number on official sources before you book.</p></div><div class="p-6 pt-0 space-y-4 px-4 sm:px-6"><div class="flex flex-wrap items-center gap-2"><span class="text-xs font-medium text-muted-foreground">Entity type:</span><div class="flex flex-wrap items-center gap-1" aria-label="Company type"><div class="inline-flex items-center rounded-full border px-2.5 py-0.5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs font-semibold border-violet-400/80 bg-violet-50 text-violet-950 dark:border-violet-700 dark:bg-violet-950/50 dark:text-violet-100" title="Household goods broker — arranges transportation with carriers; does not itself operate as the motor carrier hauling your goods. Confirm who holds the USDOT/MC on your estimate and who will physically transport the shipment.">Broker</div></div></div><dl class="grid gap-2 sm:grid-cols-2 text-sm"><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Legal name (FMCSA)</dt><dd class="font-medium text-foreground break-words leading-snug">Jk Moving &amp; Storage INC</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Display name</dt><dd class="font-medium text-foreground break-words leading-snug">JK Moving Services</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">USDOT</dt><dd class="font-medium text-foreground break-words leading-snug">1065394</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">MC</dt><dd class="font-medium text-foreground break-words leading-snug">225850</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">HQ locality</dt><dd class="font-medium text-foreground break-words leading-snug">AIRMONT, NY</dd></div><div class="rounded-lg border bg-muted/20 px-3 py-2.5 flex flex-col gap-0.5 min-w-0"><dt class="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Physical address</dt><dd class="font-medium text-foreground break-words leading-snug">AIRMONT, NY</dd></div></dl><p class="text-xs sm:text-sm rounded-lg border border-primary/20 bg-primary/5 px-3 py-2.5 leading-relaxed">Already have a quote from this company? <a class="font-semibold text-primary underline-offset-2 hover:underline" href="/tools/move-quote-check">Run Move Quote Check</a> before you sign or pay a deposit — research only, no lead form.</p></div></div>',
-    expected: />MC<|225850/,
-    operator: 'doesNotMatch',
+    actual: '<header data-research-hero="true" class="mb-8 min-w-0 overflow-x-clip rounded-2xl border border-border/80 bg-card px-4 py-5 shadow-sm sm:px-6 sm:py-6"><p class="text-[11px] font-semibold uppercase tracking-[0.14em] text-primary">Company research record</p><h1 class="mt-2 break-words text-2xl font-semibold tracking-tight text-[#0A2540] sm:text-3xl md:text-4xl">JK Moving Services</h1><p class="mt-2 break-words text-base leading-relaxed text-[#1E293B]"><span class="text-sm font-medium text-muted-foreground">FMCSA legal entity: </span>Jk Moving &amp; Storage INC</p><p class="mt-3 max-w-3xl text-sm leading-relaxed text-[#1E293B]">Brand / display name is not the FMCSA legal entity. Use the USDOT or MC number on your estimate, contract or paperwork to confirm you are researching the correct operator.</p><p class="mt-3 text-sm leading-relaxed text-[#1E293B]">MoveTrustHub is not recommending this mover. This page organizes public evidence. You decide.</p><p class="mt-3 text-sm text-[#1E293B]"><span class="font-medium">Headquarters / address evidence: </span><span class="break-words">AIRMONT, NY</span><span class="mt-1 block text-xs text-muted-foreground">Headquarters is not service territory.</span></p><div class="mt-4 flex min-w-0 flex-col gap-2 sm:flex-row sm:flex-wrap"><p class="min-w-0 w-full break-all rounded-lg border bg-muted/30 px-3 py-2 font-semibold tabular-nums text-[#0A2540] sm:w-auto" aria-label="USDOT number 1065394"><span class="sr-only">USDOT number </span>USDOT 1065394</p><p class="min-w-0 w-full break-all rounded-lg border bg-muted/30 px-3 py-2 font-semibold tabular-nums text-[#0A2540] sm:w-auto" aria-label="MC number 225850"><span class="sr-only">MC number </span>MC 225850</p></div><div class="mt-4 flex min-w-0 flex-col gap-2 sm:flex-row sm:flex-wrap"><a class="inline-flex min-h-11 w-full items-center justify-center rounded-lg px-4 text-sm font-medium sm:w-auto bg-[#0A2540] font-semibold text-white" data-profile-event="profile_verify_dot_clicked" href="/verify-dot?q=DOT+1065394">Verify DOT</a><div class="grid grid-cols-2 gap-2 sm:contents"><button type="button" class="inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-border bg-white px-3 text-sm font-medium text-[#0A2540] hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:w-auto">Copy USDOT</button><button type="button" class="inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-border bg-white px-3 text-sm font-medium text-[#0A2540] hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary sm:w-auto">Copy MC</button></div><a data-profile-event="profile_compare_clicked" class="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 min-h-11 w-full sm:w-auto" href="/compare?add=jk-moving-services">Compare</a><button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 min-h-11 w-full sm:w-auto" disabled="" aria-pressed="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart h-3.5 w-3.5 mr-1" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>Save mover</button><a class="inline-flex min-h-11 w-full items-center justify-center rounded-lg px-4 text-sm font-medium sm:w-auto border" href="/#plan-your-move">Plan your move</a></div><p class="mt-2 text-xs text-muted-foreground">Regulatory records change. Confirm identifiers and authority with FMCSA before booking. MoveTrustHub does not replace the official record.</p><div class="mt-4 grid gap-2 sm:grid-cols-2 sm:gap-3"><section class="rounded-lg border px-3 py-2 sm:py-2.5" aria-labelledby="research-role-heading"><h2 id="research-role-heading" class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Regulatory role</h2><p class="mt-1 font-semibold text-[#0A2540]">Broker</p><p class="mt-1 text-sm leading-relaxed text-[#1E293B]">A broker arranges transportation but does not itself transport under carrier authority. Broker is not worse than carrier.</p></section><section class="rounded-lg border px-3 py-2 sm:py-2.5" aria-labelledby="research-authority-heading"><h2 id="research-authority-heading" class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">FMCSA authority</h2><p class="mt-1 font-semibold text-[#0A2540]"><span class="sr-only">Stored FMCSA authority evidence: </span>Current authority recorded</p><p class="mt-1 text-sm leading-relaxed text-[#1E293B]">FMCSA authority status is a regulatory record. It is not a MoveTrustHub endorsement, safety finding or recommendation.</p></section></div><p class="mt-3 text-sm text-[#1E293B]"><span class="font-medium">Latest FMCSA refresh observed: </span>Aug 23, 2026<span class="mt-1 block text-xs text-muted-foreground">A recent refresh does not mean safer or recommended. An older or missing refresh does not mean inactive or unsafe.</span></p><details class="mt-5 min-w-0 rounded-lg border px-3 py-1" data-profile-event="profile_legal_name_opened"><summary class="flex min-h-11 cursor-pointer items-center text-sm font-semibold text-[#0A2540]">Why this profile?</summary><dl class="mt-3 space-y-2 text-sm"><div><dt class="text-xs uppercase tracking-wide text-muted-foreground">Public name</dt><dd class="break-words">JK Moving Services</dd></div><div><dt class="text-xs uppercase tracking-wide text-muted-foreground">Legal name</dt><dd class="break-words">Jk Moving &amp; Storage INC</dd></div><div><dt class="text-xs uppercase tracking-wide text-muted-foreground">USDOT</dt><dd class="break-all">1065394</dd></div><div><dt class="text-xs uppercase tracking-wide text-muted-foreground">MC</dt><dd class="break-all">225850</dd></div><div><dt class="text-xs uppercase tracking-wide text-muted-foreground">Regulatory role</dt><dd>Broker</dd></div><div><dt class="text-xs uppercase tracking-wide text-muted-foreground">Record sources</dt><dd>FMCSA / IARD-oriented directory fields stored on this published profile. Not a score.</dd></div></dl></details><details class="mt-3 min-w-0 rounded-lg border px-3 py-1" data-profile-event="profile_trace_opened"><summary class="flex min-h-11 cursor-pointer items-center text-sm font-semibold text-[#0A2540]">Trace this record</summary><div class="-mx-1 mt-3 overflow-x-auto text-sm"><table class="w-full min-w-[16rem] text-left"><caption class="sr-only">Provenance for core identity facts</caption><thead><tr class="text-xs uppercase tracking-wide text-muted-foreground"><th scope="col" class="py-1 pr-3">Fact</th><th scope="col" class="py-1 pr-3">Source</th><th scope="col" class="py-1">Limitation</th></tr></thead><tbody><tr><th scope="row" class="py-1 pr-3 font-medium">Public name</th><td class="py-1 pr-3">Directory display name</td><td class="py-1">May differ from the FMCSA legal entity.</td></tr><tr><th scope="row" class="py-1 pr-3 font-medium">USDOT / MC</th><td class="py-1 pr-3">FMCSA identifier fields</td><td class="py-1">Confirm on FMCSA SAFER. Numbers can change after the latest refresh.</td></tr><tr><th scope="row" class="py-1 pr-3 font-medium">Authority</th><td class="py-1 pr-3">Stored authority_active flag</td><td class="py-1">Regulatory record only — not endorsement.</td></tr><tr><th scope="row" class="py-1 pr-3 font-medium">Latest refresh</th><td class="py-1 pr-3">fmcsa_last_checked</td><td class="py-1">Latest observed refresh for this profile, not a quality date.</td></tr></tbody></table></div></details><section class="mt-6 grid gap-4 md:grid-cols-2" aria-label="Evidence summary"><div><h2 class="text-sm font-semibold text-[#0A2540]">What we know</h2><ul class="mt-2 space-y-1 text-sm"><li><span class="font-medium">FMCSA identity: </span>Available</li><li><span class="font-medium">Regulatory role: </span>Available</li><li><span class="font-medium">Authority flag: </span>Available</li><li><span class="font-medium">Headquarters evidence: </span>Available</li><li><span class="font-medium">Review evidence: </span>Not currently available</li></ul></div><div><h2 class="text-sm font-semibold text-[#0A2540]">What we don&#x27;t know</h2><ul class="mt-2 list-disc space-y-1 pl-4 text-sm leading-relaxed text-[#1E293B]"><li>FMCSA authority status is a regulatory record. It is not a MoveTrustHub endorsement, safety finding or recommendation.</li><li>Headquarters is address evidence, not service territory. A company is not shown as serving a city merely because it is headquartered there.</li><li>No complaint evidence on this page does not mean no complaints exist.</li><li>No inspection evidence does not mean no inspections exist, and does not mean the company is safe.</li><li>Consumer reviews are not regulator evidence.</li><li>Listed services may be company-supplied categories, not regulatory claims.</li></ul></div></section></header>',
+    expected: /MC association under review; see source details above/,
+    operator: 'match',
     diff: 'simple'
   }
 
-test at lib\move-ask\r1-association.test.ts:2:13813
-✖ real Verify action contains the stored MC before any external authority lookup (fixture-only dependencies) (4.3642ms)
+test at lib\move-ask\r1-association.test.ts:2:14201
+✖ real Verify action contains the stored MC before any external authority lookup (fixture-only dependencies) (5.2938ms)
   Error: Disputed MC must not drive an authority lookup
-      at resolveCarrierPreview (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:78:125)
+      at resolveCarrierPreview (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:79:125)
       at verifyCarrierNumber (C:\Users\makei\th-search-r1-006-work\actions\verify-dot.ts:144:52)
-      at async TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:81:144)
+      at async TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:82:144)
       at async Test.run (node:internal/test_runner/test:1389:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at lib\move-ask\r1-association.test.ts:2:15977
+✖ pre-release cached company objects are re-projected at the public cache boundary (3.9663ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  '225850' !== ''
+
+      at TestContext.<anonymous> (C:\Users\makei\th-search-r1-006-work\lib\move-ask\r1-association.test.ts:91:178)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '225850',
+    expected: '',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

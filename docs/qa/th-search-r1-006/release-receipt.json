@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-09-12T01:14:55.688Z",
+  "runtimeMerge": "8ac3dc872a242dec48948d44db3c5cdb4a3502ad",
+  "deployment": {
+    "id": "dpl_ENwVFLjNSj3SULSU8dJmV5KvnT5W",
+    "state": "READY",
+    "url": "move-trust-5hxv2u20r-savitz25-s-projects.vercel.app",
+    "aliases": [
+      "www.movetrusthub.com",
+      "movetrusthub.com"
+    ],
+    "readyAt": "2026-09-12T01:05:02.458Z"
+  },
+  "canonicalData": {
+    "retrievedAt": "2026-09-12 01:06:42 UTC",
+    "rows": [
+      {
+        "id": "jk-moving",
+        "usdot_number": "1065394",
+        "mc_number": "225850",
+        "fmcsa_last_checked": "2026-08-23 05:02:18.368+00",
+        "updated_at": "2026-08-23 05:02:18.422731+00",
+        "data_hash": "5d0585c2184935aa52df9b33545883eab15d7eecd7e366ec6bed038184969a01"
+      }
+    ]
+  }
+}

@@ -1,18 +1,35 @@
 {
   "ticket": "TH-SEARCH-R1-006",
-  "status": "CANDIDATE_VERIFIED_RELEASE_PENDING",
+  "status": "CONTAINED_AND_RELEASED_WITH_DATA_CORRECTION_PENDING",
   "model": {
     "requested": "GPT-6 Astra / High",
     "confirmation": "USER-CONFIRMED"
   },
   "baseline": "2ef25a62d2b0dee52172d8bda1981d5d3bef5016",
-  "recordedAt": "2026-09-12T00:29:15.808556+00:00",
+  "recordedAt": "2026-09-12T01:15:54.947336+00:00",
   "sourceOracleSha256": "95165c9157ff765fc4e1ffc08efccee742e56f76d41ab90d3f49996202a62330",
   "classification": "unsupported current stored association; history unresolved",
   "canonicalDataWrite": false,
-  "release": null,
+  "release": {
+    "implementationHead": "1c516d55799c608b39386272af76308799dd431c",
+    "profileLabelHead": "aec77f3198815f0152a7eb5c2a8590d323eaf2a8",
+    "initialMerge": "e1b97892362658ec20f929c25f16466a95654a5a",
+    "cacheGuardHead": "7a45c469f5528ff48f6dca9a22819df276f6c5db",
+    "runtimeMerge": "8ac3dc872a242dec48948d44db3c5cdb4a3502ad",
+    "deployment": "dpl_ENwVFLjNSj3SULSU8dJmV5KvnT5W",
+    "aliases": [
+      "www.movetrusthub.com",
+      "movetrusthub.com"
+    ],
+    "prs": [
+      128,
+      129
+    ],
+    "receipt": "release-receipt.json",
+    "documentationFollowup": "This receipt is committed after runtime deployment on th-search-r1-006-final-proof; its future merge identity is intentionally not asserted here."
+  },
   "tests": {
-    "focused": 13,
+    "focused": 14,
     "r1_001": 17,
     "r1_005": 15,
     "related": 85,
@@ -24,26 +41,52 @@
       "new": 0
     },
     "lint": "unconfigured on exact base and candidate",
-    "mutationGuardsDetected": 2
+    "mutationGuardsDetected": 2,
+    "countySeo": "FAIL on exact base and candidate: 1695 Tier1 exceeds unchanged cap 400"
   },
   "remaining": [
-    "Canonical production deployment/browser verification pending",
-    "Canonical data correction requires separate explicit approval",
-    "MC225850 history unresolved"
+    "Canonical data correction requires separate explicit approval; no production data write executed",
+    "MC225850 holder/history unresolved; complete historical docket set not established",
+    "Existing unrelated TypeScript/lint/county SEO limitations; one local recoverable React hydration warning not reproduced in final production suite"
   ],
-  "testedRuntimeHead": "1c516d55799c608b39386272af76308799dd431c",
+  "testedRuntimeHead": "8ac3dc872a242dec48948d44db3c5cdb4a3502ad",
   "pr": "https://github.com/savitz25/Move-trust-Hub/pull/128",
   "previewDeployment": "dpl_4k3j6TWZQKgUSiHgfAwp3oc4TZiN",
   "previewBrowser": "protected; not bypassed",
   "localBrowser": {
     "cases": 24,
-    "pageErrors": 0,
+    "pageErrors": [
+      "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
     "widths": [
       1280,
       390,
       320
     ],
     "file": "local-browser.json",
-    "verifyPost": "local-verify.json; all Supabase mutations denied by local harness"
+    "verifyPost": "local-verify.json; all Supabase mutations denied by local harness",
+    "navigationRetry": "local-browser-navigation-retry.json; early navigation wait corrected to settled hydration plus SPA commit; no navigation runtime change"
+  },
+  "productionBrowser": {
+    "cases": 24,
+    "pageErrors": [],
+    "file": "production-browser.json",
+    "at": "2026-09-12T01:10:16.357Z",
+    "widths": [
+      1280,
+      390,
+      320
+    ],
+    "minCaseMs": 324,
+    "maxCaseMs": 4619,
+    "timingMeaning": "Per-case browser plus API parity; includes bounded wait for optional result explanation. Not pure server latency.",
+    "interruption": "production-browser-interruption.json; first browser CDP session stalled, rerun in fresh owned session",
+    "verifyPost": "Not sent in production because existing action writes analytics; actual compiled action/UI exercised locally with all database writes blocked."
+  },
+  "review": {
+    "method": "Separate self-review plus automated Vercel Agent and repository CI; no independent human reviewer",
+    "pr128AgentReview": "8be41bd6b6ef6bca62bbe6339de851de",
+    "pr129AgentReview": "d892b2017831b4734d919fc0a9b505d8",
+    "suggestions": 0
   }
 }
