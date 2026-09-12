@@ -8,4 +8,6 @@ Findings fixed during review: legacy Ask consumer ignores additive integrity fla
 
 React checklist: no new client fetches, subscriptions, async waterfalls or third-party dependencies; small serializable public integrity object; type-only component import; semantic disclosure/heading and real anchors; explicit conditional rendering; bounded text, keyboard-native links/details, and responsive checks recorded separately. No color-only risk classification.
 
-Pending: final build, browser proof, normal PR checks and deployed receipt. This review note is not a release certificate.
+Final candidate build passed. Local browser proof: 24 completed cases, no page errors, 1280/390/320; Verify POST passed locally with Supabase mutations blocked. Preview build/CI passed; interactive preview requires login and was not bypassed. Canonical deployment receipt remains pending. This is a candidate review, not a production release certificate.
+
+The last browser review corrected the MC criterion from applied to association-not-confirmed and made the USDOT verification label explicit. The suggestion adapter cannot reconstruct the disputed MC from user input. Keyboard Tab/focus and Enter on Trace passed (`keyboard.json`). Both mutations were rerun against the final runtime source; restoration returned 13/13 green.
