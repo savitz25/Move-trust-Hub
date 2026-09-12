@@ -1,5 +1,13 @@
-import network from '@/data/home/move-network-metrics-v1.json';
-import type { MoveNetworkMetric,MoveNetworkMetricsV1,PublicationStatus } from '@/lib/metrics/move-network-metrics-v1';
+import caSnapshot from '@/lib/california-intelligence/accepted-snapshot.json';
+import coSnapshot from '@/lib/colorado-intelligence/accepted-snapshot.json';
+import vaSnapshot from '@/lib/virginia-intelligence/accepted-snapshot.json';
+import nySnapshot from '@/lib/new-york-intelligence/accepted-snapshot.json';
+import ilSnapshot from '@/lib/illinois-intelligence/accepted-snapshot.json';
+import txSnapshot from '@/lib/texas-intelligence/accepted-snapshot.json';
+import waSnapshot from '@/lib/washington-intelligence/accepted-snapshot.json';
+import njSnapshot from '@/data/reports/nj-move-002-public-snapshot.json';
+import type { MoveNetworkMetric, MoveNetworkMetricsV1, PublicationStatus } from '@/lib/metrics/move-network-metrics-v1';
+
 export const MOVE_EVIDENCE_FAMILY_LABELS = {
   MOVER_IDENTITY: 'Mover & transport identity',
   FEDERAL_AUTHORITY: 'Federal registration & authority',
@@ -61,12 +69,26 @@ const meta: Record<string, Pick<MoveHomepageMeasure, 'family' | 'entityClass' | 
 export function buildMoveHomepageEvidenceInventory(metrics: MoveNetworkMetricsV1): MoveHomepageMeasure[] {
   return metrics.metrics.map((measure) => {
     if (!allowed.has(measure.publicationStatus)) throw new Error(`Homepage metric ${measure.key} is not publication eligible`);
-    const projection = measure.presentation ?? meta[measure.key];
+    const projection = meta[measure.key];
     if (!projection) throw new Error(`Homepage metric ${measure.key} lacks inventory metadata`);
     return { ...measure, ...projection };
   });
 }
 
+export const MOVE_HOMEPAGE_STATE_CARDS = [
+  { state: 'Florida', href: '/florida', regulator: 'FDACS', authority: 'Intrastate Mover registration / Moving Broker registration', roster: 'Acquired registration evidence', evidence: 'Registrations, verified identity links, business contacts, and federal HQ overlay', sourceClock: 'State authority retrieval clock is shown per measure.' },
+  { state: 'New Jersey', href: '/new-jersey', regulator: 'DCA / Division of Consumer Affairs', authority: 'Public Movers and Warehousemen authority', roster: njSnapshot.authority.rosterCoverage.replaceAll('_', ' '), evidence: `Authority framework and ${njSnapshot.osm.rows.length} acquired Operation Safe Move NOV rows`, sourceClock: `Accepted snapshot as of ${njSnapshot.asOf}` },
+  { state: 'California', href: '/california', regulator: 'BHGS', authority: 'CAL-T household-mover permit', roster: caSnapshot.authority.roster_coverage.replaceAll('_', ' '), evidence: `${caSnapshot.enforcement.rows} BPC 19237 citation rows; exact CAL-T identity retained where printed`, sourceClock: `Accepted snapshot as of ${caSnapshot.as_of}` },
+  { state: 'Texas', href: txSnapshot.publication.route, regulator: 'TxDMV', authority: 'Household-goods certificate of registration', roster: txSnapshot.authority.roster_coverage.replaceAll('_', ' '), evidence: 'Authority verification, complaint and insurance-filing paths, contracts, claims, mediation, and tariff rules', sourceClock: `Accepted snapshot as of ${txSnapshot.as_of}` },
+  { state: 'Washington', href: waSnapshot.publication.route, regulator: 'Washington UTC', authority: 'Household-goods permit', roster: waSnapshot.bulk.utc_hhg_bulk_roster.replaceAll('_', ' '), evidence: `${waSnapshot.directory.active_result_count} active directory results plus permit, tariff, complaint, and federal-verification paths`, sourceClock: `Directory retrieved ${waSnapshot.directory.retrieved_at.slice(0, 10)}; accepted snapshot as of ${waSnapshot.as_of}` },
+  { state: 'Colorado', href: coSnapshot.publication.route, regulator: 'Colorado PUC', authority: 'Household-goods permit', roster: `${coSnapshot.active_universe.official_total_permits} Active OPR listings`, evidence: 'Official Active HHG permit listings plus revoked/suspended status evidence, kept separate from FMCSA', sourceClock: `OPR list ${coSnapshot.source.source_publication_date}; accepted snapshot as of ${coSnapshot.as_of}` },
+  { state: 'Virginia', href: vaSnapshot.publication.route, regulator: 'Virginia DMV', authority: 'Household Goods Carrier certificate / Property Carrier permit', roster: `${vaSnapshot.hhg_roster.rows} HHG listings; ${vaSnapshot.property_roster.rows} Property Carrier listings (not movers)`, evidence: 'Distance-sensitive DMV authority; applicants kept separate; FMCSA interstate kept separate', sourceClock: `retrieved ${vaSnapshot.clocks.authorized_carriers_retrievedAt}; sourceAsOf UNKNOWN` },
+  { state: 'New York', href: nySnapshot.publication.route, regulator: 'NYSDOT', authority: 'Intrastate household-goods authority', roster: 'Current roster OPEN_SEARCH_ONLY; 2026 Weekly Bulletin HHG applications acquired', evidence: `${nySnapshot.bulletin_2026.hhgApplicationObservations} 2026 HHG bulletin observations across ${nySnapshot.bulletin_2026.issues} issues`, sourceClock: `Bulletin window ${nySnapshot.bulletin_2026.windowStart}–${nySnapshot.bulletin_2026.windowEnd}` },
+  { state: 'Illinois', href: ilSnapshot.publication.route, regulator: 'Illinois Commerce Commission', authority: 'Household Goods License', roster: 'Current roster OPEN_SEARCH_ONLY', evidence: 'ICC MCIS verification, ILCC identifier, PCC class split, and FMCSA interstate overlay', sourceClock: `Retrieved ${ilSnapshot.retrievedAt}; sourceAsOf not invented for search-only roster` },
+] as const;
 
-export const MOVE_HOMEPAGE_STATE_CARDS = network.homepageStateCards;
-export const MOVE_CONSUMER_RULES = network.consumerRules;
+export const MOVE_CONSUMER_RULES = {
+  Texas: txSnapshot.consumer_rules.rules.slice(0, 4),
+  Washington: waSnapshot.consumer_rules.rules.slice(0, 4),
+  Colorado: coSnapshot.consumer_rules.rules.slice(0, 4),
+};

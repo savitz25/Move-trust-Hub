@@ -1,230 +1,501 @@
-/**
- * Build move-network-metrics-v1 from production + specialist publication snapshots.
- * Does not invent statewide NJ or CAL-T universes. Does not mutate production data.
- */
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
-import { fileURLToPath, pathToFileURL } from "node:url";
+import { fileURLToPath } from "node:url";
+import { createRequire } from "node:module";
 import { publicationMetricInputs } from "./publication_metric_inputs.mjs";
-
-const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-
-function loadEnv(p) {
-  if (!existsSync(p)) return;
-  for (const line of readFileSync(p, "utf8").split(/\r?\n/)) {
-    const t = line.trim();
-    if (!t || t.startsWith("#") || !t.includes("=")) continue;
-    const i = t.indexOf("=");
-    const k = t.slice(0, i).trim();
-    let v = t.slice(i + 1).trim();
-    if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) v = v.slice(1, -1);
-    if (!process.env[k]) process.env[k] = v;
-  }
-}
-loadEnv(join(root, ".env.local"));
-loadEnv("C:\\Users\\makei\\move-trust-hub\\.env.local");
-
-async function restCount(base, key, table, query = "") {
-  const url = `${base}/rest/v1/${table}?select=*${query ? `&${query}` : ""}`;
-  const res = await fetch(url, {
-    headers: {
-      apikey: key,
-      Authorization: `Bearer ${key}`,
-      Prefer: "count=exact",
-      Range: "0-0",
-      "Range-Unit": "items",
+import { stateInputs } from "./network_state_inputs.mjs";
+const require = createRequire(import.meta.url);
+const {
+  computeMoveNetworkMetrics,
+} = require("../lib/metrics/compute-move-network-metrics.ts");
+const { count, fingerprint } = require("../lib/metrics/accepted-contract.ts");
+const {
+  MOVE_HOMEPAGE_STATE_CARDS,
+  MOVE_CONSUMER_RULES,
+} = require("../lib/metrics/accepted-homepage-evidence.ts");
+const { localStates } = require("../lib/local-movers/states.ts");
+const root = join(dirname(fileURLToPath(import.meta.url)), ".."),
+  read = (p) => JSON.parse(readFileSync(join(root, p), "utf8"));
+const out = "data/home/move-network-metrics-v1.json",
+  check = process.argv.includes("--check"),
+  generatedAt = check ? read(out).generatedAt : new Date().toISOString();
+const census = read("data/metrics/accepted-network-census-v1.json"),
+  pub = publicationMetricInputs();
+const input = {
+  ...census.input,
+  ...stateInputs(pub, localStates),
+  generatedAt,
+};
+for (const [key, value] of Object.entries(input))
+  if (typeof value === "number") count(value, key);
+if (
+  input.withRefreshDate + input.withoutRefreshDate !==
+  input.publishableProfiles
+)
+  throw Error("Refresh denominator mismatch");
+if (
+  input.freshnessBuckets.reduce(
+    (n, r) => n + count(r.count, "refresh bucket"),
+    0,
+  ) !== input.publishableProfiles
+)
+  throw Error("Freshness partition mismatch");
+const m = computeMoveNetworkMetrics(input);
+m.contractRevision = "ATH-METRICS-R2-02";
+m.acceptedStateDatasets = {};
+const files = [
+  "data/metrics/accepted-network-census-v1.json",
+  "data/reports/nj-move-002-public-snapshot.json",
+  ...readdirSync(join(root, "lib"))
+    .sort()
+    .filter((n) => n.endsWith("-intelligence"))
+    .map((n) => "lib/" + n + "/accepted-snapshot.json"),
+];
+m.acceptedSources = files.map((path) => {
+  const d = read(path);
+  m.acceptedStateDatasets[path] = { path, snapshot: d };
+  return {
+    path,
+    sha256: fingerprint(d),
+    sourceAsOf: d.sourceAsOf ?? d.clocks?.sourceAsOf ?? null,
+    retrievedAt:
+      d.retrievedAt ??
+      d.source?.retrieved_at ??
+      d.clocks?.authorized_carriers_retrievedAt ??
+      null,
+    snapshotAsOf: d.snapshotAsOf ?? d.as_of ?? null,
+  };
+});
+const va = pub.vaSnapshot,
+  ny = pub.nySnapshot,
+  il = read("lib/illinois-intelligence/accepted-snapshot.json");
+if (
+  il.current_hhg_roster.coverage !== "OPEN_SEARCH_ONLY" ||
+  il.current_hhg_roster.rows !== null
+)
+  throw Error(
+    "Illinois acceptance changed: inspect formal closure before updating contract",
+  );
+m.illinois = {
+  currentHhgRosterCoverage: il.current_hhg_roster.coverage,
+  bulkCount: null,
+  specialistComplete: false,
+  completion: "PENDING",
+  sourceAsOf: il.sourceAsOf ?? null,
+  retrievedAt: il.retrievedAt,
+  snapshotAsOf: il.snapshotAsOf,
+};
+m.virginia.hhgAuthorityIdentities = count(
+  va.hhg_roster.distinct_non_null_authority_numbers,
+  "VA HHG IDs",
+);
+m.virginia.propertyAuthorityIdentities = count(
+  va.property_roster.distinct_non_null_authority_numbers,
+  "VA Property IDs",
+);
+m.newYork.distinctCaseNumbers = count(
+  ny.bulletin_2026.distinctCaseNumbers,
+  "NY cases",
+);
+m.newYork.currentHhgRosterCount = null;
+const additions = [
+  [
+    "va_hhg_authority_identities",
+    "Virginia HHG authority identities",
+    m.virginia.hhgAuthorityIdentities,
+    "va_hhg_authority_id",
+    "Virginia",
+    "/virginia",
+    "STATE_AUTHORITY",
+    null,
+    va.clocks.authorized_carriers_retrievedAt,
+  ],
+  [
+    "va_property_authority_identities",
+    "Virginia Property Carrier authority identities",
+    m.virginia.propertyAuthorityIdentities,
+    "va_property_authority_id",
+    "Virginia",
+    "/virginia",
+    "BUSINESS_EVIDENCE",
+    null,
+    va.clocks.authorized_carriers_retrievedAt,
+  ],
+  [
+    "ny_bulletin_issues",
+    "New York bulletin issues",
+    ny.bulletin_2026.issues,
+    "bulletin_issue",
+    "New York",
+    "/new-york",
+    "REGULATORY",
+    ny.bulletin_2026.sourceAsOf,
+    ny.bulletin_2026.retrievedAt,
+  ],
+  [
+    "ny_bulletin_case_numbers",
+    "New York bulletin case numbers",
+    ny.bulletin_2026.distinctCaseNumbers,
+    "application_case_number",
+    "New York",
+    "/new-york",
+    "REGULATORY",
+    ny.bulletin_2026.sourceAsOf,
+    ny.bulletin_2026.retrievedAt,
+  ],
+  [
+    "ny_current_hhg_roster",
+    "New York current HHG roster",
+    null,
+    "ny_hhg_authority_roster",
+    "New York",
+    "/new-york",
+    "STATE_AUTHORITY",
+    null,
+    ny.bulletin_2026.retrievedAt,
+  ],
+  [
+    "il_current_hhg_roster",
+    "Illinois current HHG roster (search-only; closure pending)",
+    null,
+    "il_hhg_authority_roster",
+    "Illinois",
+    "/illinois",
+    "STATE_AUTHORITY",
+    null,
+    il.retrievedAt,
+  ],
+];
+for (const [
+  key,
+  label,
+  value,
+  grain,
+  coverage,
+  destination,
+  family,
+  sourceAsOf,
+  retrievedAt,
+] of additions) {
+  if (value !== null) count(value, key);
+  const path =
+    "lib/" + destination.slice(1) + "-intelligence/accepted-snapshot.json";
+  m.metrics.push({
+    key,
+    label,
+    value,
+    valueState: value === null ? "UNKNOWN" : "KNOWN",
+    unit: "count",
+    grain,
+    coverage,
+    denominator: "Accepted " + grain + " only",
+    description:
+      "Separate state source grain. Not federal profiles or a combined mover denominator.",
+    contributingSourceSystems: [path],
+    sourceAsOf,
+    retrievedAt,
+    snapshotAsOf: read(path).snapshotAsOf ?? read(path).as_of ?? null,
+    generatedAt,
+    publicationStatus: value === null ? "PUBLIC_UNKNOWN" : "PUBLIC",
+    trace: {
+      counts: grain,
+      doesNotCount:
+        "Federal identities, other authority classes, or unique companies.",
+      contributingSourceSystems: [path],
+      geographicCoverage: coverage,
+      sourceDates: sourceAsOf ?? "Official effective date unknown",
+      generationDate: generatedAt.slice(0, 10),
+      ...(value === null
+        ? { whyUnknown: "Search-only capability; no accepted bulk roster." }
+        : {}),
+    },
+    presentation: {
+      family,
+      entityClass: grain,
+      destination,
+      acceptedArtifact: path,
     },
   });
-  const t = await res.text();
-  if (!res.ok && res.status !== 206 && res.status !== 416) {
-    throw new Error(`${table} ${query} ${res.status} ${t.slice(0, 180)}`);
+}
+for (const metric of m.metrics) {
+  metric.snapshotAsOf ??= census.snapshotAsOf;
+  if (
+    metric.key.startsWith("federal_") ||
+    metric.key.includes("_hq_publishable")
+  ) {
+    metric.sourceAsOf = null;
+    metric.retrievedAt = input.latestObservedRefresh;
   }
-  const tail = (res.headers.get("content-range") || "").split("/")[1];
-  return tail && tail !== "*" ? Number(tail) : 0;
+  if (metric.key.startsWith("florida_")) {
+    metric.sourceAsOf = null;
+    metric.retrievedAt = input.flSourceAsOf;
+  }
+  if (metric.key.startsWith("co_"))
+    metric.retrievedAt =
+      pub.coSnapshot.source.retrieved_at ?? pub.coSnapshot.as_of;
+  if (metric.key.startsWith("va_")) {
+    metric.sourceAsOf = null;
+    metric.retrievedAt = va.clocks.authorized_carriers_retrievedAt;
+  }
+  if (metric.key === "ny_dot_2026_hhg_bulletin_observations") {
+    metric.sourceAsOf = ny.bulletin_2026.sourceAsOf;
+    metric.retrievedAt = ny.bulletin_2026.retrievedAt;
+    metric.presentation = {
+      family: "REGULATORY",
+      entityClass: "HHG application observation",
+      destination: "/new-york",
+      acceptedArtifact: "lib/new-york-intelligence/accepted-snapshot.json",
+    };
+  }
+  if (metric.key === "federal_mc_identities_in_directory") {
+    metric.label = "Directory profiles with an MC number";
+    metric.grain = "directory_profile_with_mc_number";
+    metric.denominator =
+      "PUBLISHABLE companies rows with non-null mc_number; no distinct MC aggregation";
+    metric.description =
+      "Profile rows carrying an MC field; not distinct MC identities.";
+    metric.trace.counts = metric.description;
+    metric.trace.doesNotCount =
+      "Distinct MC identities, state permits or a complete FMCSA universe.";
+    metric.presentation = {
+      family: "FEDERAL_AUTHORITY",
+      entityClass: "Profile with an MC field",
+      destination: "/verify-dot",
+      acceptedArtifact: "data/metrics/accepted-network-census-v1.json",
+    };
+  }
 }
-
-async function restOne(base, key, table, query) {
-  const res = await fetch(`${base}/rest/v1/${table}?${query}`, {
-    headers: { apikey: key, Authorization: `Bearer ${key}` },
-  });
-  if (!res.ok) return null;
-  const rows = await res.json();
-  return Array.isArray(rows) ? rows[0] ?? null : rows;
-}
-
-async function main() {
-  const { computeMoveNetworkMetrics } = await import(
-    pathToFileURL(join(root, "lib/metrics/compute-move-network-metrics.ts")).href
-  );
-  const pub = publicationMetricInputs();
-  const base = (process.env.NEXT_PUBLIC_SUPABASE_URL || "").replace(/\/$/, "");
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!base || !key) throw new Error("Supabase URL/key missing — cannot generate from production");
-
-  const c = (table, q = "") => restCount(base, key, table, q);
-  const nowMs = Date.now();
-  const daysAgo = (d) => new Date(nowMs - d * 86400000).toISOString();
-  const d30 = daysAgo(30);
-  const d60 = daysAgo(60);
-  const d90 = daysAgo(90);
-  const d365 = daysAgo(365);
-  const pubState = "publication_state=eq.PUBLISHABLE";
-
-  const publishableProfiles = await c("companies", pubState);
-  const indexableProfiles = await c("companies", `${pubState}&indexable=eq.true`);
-  const authorityActive = await c("companies", `${pubState}&authority_active=eq.true`);
-  const authorityNotCurrent = await c("companies", `${pubState}&authority_active=eq.false`);
-  const authorityUnknown = await c("companies", `${pubState}&authority_active=is.null`);
-  const carriers = await c("companies", `${pubState}&entity_type=in.(CARRIER,Carrier,carrier)`);
-  const brokers = await c("companies", `${pubState}&entity_type=in.(BROKER,Broker,broker)`);
-  const dual = await c(
-    "companies",
-    `${pubState}&entity_type=in.(CARRIER/BROKER,BROKER/CARRIER,Carrier/Broker,Broker/Carrier,Carrier / Broker)`
-  );
-  const withMcNumber = await c("companies", `${pubState}&mc_number=not.is.null`);
-  const withRefreshDate = await c("companies", `${pubState}&fmcsa_last_checked=not.is.null`);
-  const withoutRefreshDate = await c("companies", `${pubState}&fmcsa_last_checked=is.null`);
-  const b0_30 = await c("companies", `${pubState}&fmcsa_last_checked=gte.${d30}`);
-  const b31_60 = await c("companies", `${pubState}&fmcsa_last_checked=gte.${d60}&fmcsa_last_checked=lt.${d30}`);
-  const b61_90 = await c("companies", `${pubState}&fmcsa_last_checked=gte.${d90}&fmcsa_last_checked=lt.${d60}`);
-  const b91_365 = await c("companies", `${pubState}&fmcsa_last_checked=gte.${d365}&fmcsa_last_checked=lt.${d90}`);
-  const b365plus = await c("companies", `${pubState}&fmcsa_last_checked=lt.${d365}`);
-  const latest = await restOne(
-    base,
-    key,
-    "companies",
-    `select=fmcsa_last_checked&${pubState}&fmcsa_last_checked=not.is.null&order=fmcsa_last_checked.desc&limit=1`
-  );
-  const oldest = await restOne(
-    base,
-    key,
-    "companies",
-    `select=fmcsa_last_checked&${pubState}&fmcsa_last_checked=not.is.null&order=fmcsa_last_checked.asc&limit=1`
-  );
-  const flImRegistrations = await c(
-    "provider_state_authority",
-    "state_code=eq.FL&authority_type=eq.intrastate_mover_registration"
-  );
-  const flImActive = await c(
-    "provider_state_authority",
-    "state_code=eq.FL&authority_type=eq.intrastate_mover_registration&status=eq.active"
-  );
-  const flMbActive = await c(
-    "provider_state_authority",
-    "state_code=eq.FL&authority_type=eq.intrastate_hhg_broker&status=eq.active"
-  );
-  const flImVerifiedLinks = await c(
-    "provider_state_authority",
-    "state_code=eq.FL&authority_type=eq.intrastate_mover_registration&verification_state=eq.VERIFIED"
-  );
-  const flHqPublishable = await c("companies", `${pubState}&headquarters=ilike.* FL*`);
-  const flContactObservations = await c("provider_contact_observation", "state_code=eq.FL");
-  const flAsOfRow = await restOne(
-    base,
-    key,
-    "provider_state_authority",
-    "select=retrieved_at&state_code=eq.FL&order=retrieved_at.desc&limit=1"
-  );
-  const njHqPublishable = await c("companies", `${pubState}&headquarters=ilike.* NJ*`);
-  const caHqPublishable = await c("companies", `${pubState}&headquarters=ilike.* CA*`);
-
-  const { localStates } = await import(pathToFileURL(join(root, "lib/local-movers/states.ts")).href);
-
-  const input = {
-    generatedAt: new Date().toISOString(),
-    publishableProfiles,
-    indexableProfiles,
-    authorityActive,
-    authorityNotCurrent,
-    authorityUnknown,
-    carriers,
-    brokers,
-    dual,
-    withMcNumber,
-    withRefreshDate,
-    withoutRefreshDate,
-    latestObservedRefresh: latest?.fmcsa_last_checked,
-    oldestObservedRefresh: oldest?.fmcsa_last_checked,
-    freshnessBuckets: [
-      { id: "0-30", label: "0–30 days since last recorded refresh", count: b0_30 },
-      { id: "31-60", label: "31–60 days", count: b31_60 },
-      { id: "61-90", label: "61–90 days", count: b61_90 },
-      { id: "91-365", label: "91–365 days", count: b91_365 },
-      { id: ">365", label: "More than 365 days", count: b365plus },
-      { id: "unknown", label: "No refresh date recorded", count: withoutRefreshDate },
+const spec = [
+  [
+    "FL",
+    "/florida",
+    "STATE_SOURCE_LIVE",
+    [
+      [
+        "hhg-registration",
+        "STATE_SOURCE_LIVE",
+        "florida_fdacs_im_registrations",
+        input.flImRegistrations,
+      ],
     ],
-    flImRegistrations,
-    flImActive,
-    flMbActive,
-    flImVerifiedLinks,
-    flHqPublishable,
-    flContactObservations,
-    flSourceAsOf: flAsOfRow?.retrieved_at,
-    njRosterCoverage: pub.njRosterCoverage,
-    njOsmNovsAcquired: pub.njOsmAcquiredRows,
-    njHqPublishable,
-    njSourceAsOf: "2026-09-03",
-    caCalTRosterCoverage: pub.caCalTRosterCoverage,
-    caCitationRows19237: pub.caCitationRows19237,
-    caUnlicensedCitationRows: pub.caUnlicensedCitationRows,
-    caExactCalTCitationRows: pub.caExactCalTCitationRows,
-    caHqPublishable,
-    caSourceAsOf: "2026-09-03",
-    caTariffEffective: "2026-01-01",
-    txRosterCoverage: pub.txSnapshot.authority.roster_coverage,
-    txSourceAsOf: pub.txSnapshot.as_of,
-    txComplaintBulkCoverage: pub.txSnapshot.complaints.bulk_report,
-    txCrosswalkCoverage: pub.txSnapshot.crosswalk.coverage,
-    waActiveDirectoryResults: pub.waSnapshot.directory.active_result_count,
-    waDirectoryRetrievedAt: pub.waSnapshot.directory.retrieved_at,
-    waBulkRosterCoverage: pub.waSnapshot.bulk.utc_hhg_bulk_roster,
-    waSourceAsOf: pub.waSnapshot.as_of,
-    coActiveHhgPermitListings: pub.coSnapshot.active_universe.official_total_permits,
-    coRevokedHhgListings: pub.coSnapshot.status_classes.classes.REVOKED.official_total,
-    coSuspendedHhgListings: pub.coSnapshot.status_classes.classes.SUSPENDED.official_total,
-    coSourceAsOf: pub.coSnapshot.source.source_publication_date,
-    vaHhgListingRows: pub.vaSnapshot.hhg_roster.rows,
-    vaPropertyListingRows: pub.vaSnapshot.property_roster.rows,
-    vaSourceRetrievedAt: pub.vaSnapshot.clocks.authorized_carriers_retrievedAt,
-    nyHhgBulletinObservations: pub.nySnapshot.bulletin_2026.hhgApplicationObservations,
-    nyBulletinIssues: pub.nySnapshot.bulletin_2026.issues,
-    publishedStateIntelligencePaths: pub.publishedStateIntelligencePaths,
-    floridaResearchCountyLandings: pub.floridaResearchCountyLandings.length,
-    localMoverStateLandings: localStates.length,
-  };
-
-  if (!input.latestObservedRefresh || !input.oldestObservedRefresh || !input.flSourceAsOf) {
-    throw new Error("missing required source clocks");
+  ],
+  [
+    "NJ",
+    "/new-jersey",
+    "STATE_SOURCE_LIVE",
+    [
+      ["hhg-roster", "REQUEST_ONLY", "nj_pmw_authority_roster", null],
+      [
+        "regulatory-evidence",
+        "STATE_SOURCE_LIVE",
+        "nj_operation_safe_move_novs_acquired",
+        input.njOsmNovsAcquired,
+      ],
+    ],
+  ],
+  [
+    "CA",
+    "/california",
+    "STATE_SOURCE_LIVE",
+    [
+      ["hhg-roster", "SEARCH_ONLY", "ca_cal_t_household_mover_universe", null],
+      [
+        "citations",
+        "STATE_SOURCE_LIVE",
+        "ca_bhgs_19237_citation_rows",
+        input.caCitationRows19237,
+      ],
+    ],
+  ],
+  [
+    "TX",
+    "/texas",
+    "SEARCH_ONLY",
+    [
+      [
+        "hhg-roster",
+        "SEARCH_ONLY",
+        "tx_txdmv_household_goods_mover_universe",
+        null,
+      ],
+    ],
+  ],
+  [
+    "WA",
+    "/washington",
+    "STATE_SOURCE_LIVE",
+    [
+      [
+        "directory-results",
+        "STATE_SOURCE_LIVE",
+        "wa_utc_active_household_goods_directory_results",
+        input.waActiveDirectoryResults,
+      ],
+      [
+        "bulk-roster",
+        "NOT_ACQUIRED",
+        "wa_utc_household_goods_bulk_roster",
+        null,
+      ],
+    ],
+  ],
+  [
+    "CO",
+    "/colorado",
+    "STATE_SOURCE_LIVE",
+    [
+      [
+        "hhg-permits",
+        "STATE_SOURCE_LIVE",
+        "co_puc_active_household_goods_permit_listings",
+        input.coActiveHhgPermitListings,
+      ],
+    ],
+  ],
+  [
+    "VA",
+    "/virginia",
+    "STATE_SOURCE_LIVE",
+    [
+      [
+        "hhg-authority",
+        "STATE_SOURCE_LIVE",
+        "va_hhg_authority_identities",
+        m.virginia.hhgAuthorityIdentities,
+      ],
+      [
+        "property-authority",
+        "STATE_SOURCE_LIVE",
+        "va_property_authority_identities",
+        m.virginia.propertyAuthorityIdentities,
+      ],
+    ],
+  ],
+  [
+    "NY",
+    "/new-york",
+    "STATE_SOURCE_LIVE",
+    [
+      ["hhg-roster", "SEARCH_ONLY", "ny_current_hhg_roster", null],
+      [
+        "applications",
+        "STATE_SOURCE_LIVE",
+        "ny_dot_2026_hhg_bulletin_observations",
+        input.nyHhgBulletinObservations,
+      ],
+    ],
+  ],
+  [
+    "IL",
+    "/illinois",
+    "SEARCH_ONLY",
+    [["hhg-roster", "SEARCH_ONLY", "il_current_hhg_roster", null]],
+  ],
+];
+m.stateCapabilities = spec.map(([state, route, status, rows]) => ({
+  state,
+  route,
+  status,
+  specialistComplete: false,
+  completion: state === "IL" ? "PENDING" : "NOT_ASSERTED",
+  capabilities: rows.map(([id, status, key, bulkCount]) => ({
+    id,
+    status,
+    metricKeys: [key],
+    bulkCount,
+  })),
+}));
+for (const metric of m.metrics) {
+  if (
+    /^(nj_|ca_|tx_|wa_)/.test(metric.key) &&
+    !metric.key.includes("_hq_publishable")
+  ) {
+    const code = metric.key.slice(0, 2),
+      d =
+        code === "nj"
+          ? read("data/reports/nj-move-002-public-snapshot.json")
+          : (pub[
+              { ca: "caSnapshot", tx: "txSnapshot", wa: "waSnapshot" }[code]
+            ] ?? read("lib/california-intelligence/accepted-snapshot.json"));
+    metric.snapshotAsOf = d.snapshotAsOf ?? d.as_of ?? d.asOf ?? null;
+    metric.sourceAsOf = null;
+    metric.retrievedAt =
+      code === "wa" ? pub.waSnapshot.directory.retrieved_at : null;
   }
-
-  const manifest = computeMoveNetworkMetrics(input);
-  writeFileSync(
-    join(root, "data/home/move-network-metrics-v1.json"),
-    `${JSON.stringify(manifest, null, 2)}\n`,
-    "utf8"
-  );
-  console.log(
-    JSON.stringify(
-      {
-        wrote: "data/home/move-network-metrics-v1.json",
-        fingerprint: manifest.sourceFingerprint,
-        generatedAt: manifest.generatedAt,
-        newestDocumentedSourceAsOf: manifest.newestDocumentedSourceAsOf,
-        federal: manifest.federalDirectory,
-        florida: manifest.florida,
-        newJersey: manifest.newJersey,
-        california: manifest.california,
-        texas: manifest.texas,
-        washington: manifest.washington,
-        network: manifest.network,
-      },
-      null,
-      2
-    )
-  );
+  if (metric.key.startsWith("co_")) metric.snapshotAsOf = pub.coSnapshot.as_of;
+  if (metric.key.startsWith("va_"))
+    metric.snapshotAsOf = va.clocks.snapshotAsOf;
+  if (metric.key.startsWith("ny_"))
+    metric.snapshotAsOf = ny.snapshotAsOf ?? ny.as_of;
+  if (metric.key.startsWith("published_")) {
+    metric.sourceAsOf = null;
+    metric.snapshotAsOf = null;
+    metric.retrievedAt = null;
+  }
 }
-
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
+m.coverageDefinition =
+  "STATE_SOURCE_LIVE counts acquired evidence capabilities, not route existence, complete rosters, or specialist completion. National federal baseline is separate.";
+m.federalBaseline = {
+  status: "FEDERAL_BASELINE",
+  geography: "United States",
+  count: null,
+  scope:
+    "Selected publishable profiles; no asserted full state or federal census",
+};
+for (const state of localStates.filter(
+  (s) => !m.stateCapabilities.some((c) => c.state === s.code),
+))
+  m.stateCapabilities.push({
+    state: state.code,
+    route: null,
+    status: "FEDERAL_BASELINE",
+    specialistComplete: false,
+    completion: "NOT_ASSERTED",
+    capabilities: [
+      {
+        id: "state-source",
+        status: "NOT_ACQUIRED",
+        metricKeys: [],
+        bulkCount: null,
+      },
+    ],
+  });
+m.homepageStateCards = MOVE_HOMEPAGE_STATE_CARDS;
+m.consumerRules = MOVE_CONSUMER_RULES;
+m.homeProjection.fmcsaClock.ageReferenceAt = census.snapshotAsOf;
+m.newestDocumentedSourceAsOf =
+  m.metrics
+    .map((r) => r.sourceAsOf)
+    .filter(Boolean)
+    .sort()
+    .at(-1) ?? null;
+m.sourceFingerprint = fingerprint({
+  sources: m.acceptedSources,
+  input: { ...input, generatedAt: null },
+  capabilities: m.stateCapabilities,
+  metrics: m.metrics.map(({ generatedAt, trace, ...r }) => r),
+  cards: m.homepageStateCards,
 });
+m.sourceFingerprint = fingerprint({
+  inputFingerprint: m.sourceFingerprint,
+  generator: [
+    "scripts/build_network_metrics_v1.mjs",
+    "scripts/network_state_inputs.mjs",
+    "lib/metrics/compute-move-network-metrics.ts",
+    "lib/metrics/accepted-homepage-evidence.ts",
+  ].map((p) => readFileSync(join(root, p), "utf8").replaceAll("\r\n", "\n")),
+});
+const bytes = JSON.stringify(m, null, 2) + "\n";
+if (check) {
+  if (readFileSync(join(root, out), "utf8") !== bytes)
+    throw Error("Stale Move metrics");
+} else writeFileSync(join(root, out), bytes);
+console.log(
+  JSON.stringify({
+    check,
+    generatedAt,
+    fingerprint: m.sourceFingerprint,
+    federal: m.federalDirectory,
+    illinois: m.illinois,
+  }),
+);

@@ -1,3 +1,4 @@
+import type { AcceptedSource,StateCapability } from './accepted-contract';
 /**
  * move-network-metrics-v1
  * Specialist-owned public metric contract. Grains never mix.
@@ -14,6 +15,7 @@ export type MetricValueState =
   | 'REQUEST_ONLY';
 
 export type MetricGrain =
+  | (string & {})
   | 'directory_profile'
   | 'indexable_directory_profile'
   | 'directory_profile_authority_active'
@@ -70,6 +72,9 @@ export type MetricTrace = {
 };
 
 export type MoveNetworkMetric = {
+  presentation?: {family: import('../intelligence/move-home-evidence-inventory').MoveEvidenceFamily;entityClass:string;destination:string;acceptedArtifact:string};
+  retrievedAt?: string|null;
+  snapshotAsOf?:string|null;
   key: string;
   label: string;
   value: number | null;
@@ -87,6 +92,9 @@ export type MoveNetworkMetric = {
 };
 
 export type MoveNetworkMetricsV1 = {
+  contractRevision?: 'ATH-METRICS-R2-02';
+  acceptedSources?: AcceptedSource[];
+  stateCapabilities?: StateCapability[];
   schemaVersion: typeof MOVE_NETWORK_METRICS_VERSION;
   generatedAt: string;
   newestDocumentedSourceAsOf: string | null;

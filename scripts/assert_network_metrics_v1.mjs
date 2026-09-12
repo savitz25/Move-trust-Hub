@@ -55,7 +55,7 @@ assert(byKey.co_puc_active_household_goods_permit_listings.value === 203, "Color
 assert(byKey.co_puc_active_household_goods_permit_listings.value !== byKey.federal_publishable_directory_profiles.value, "CO permits != federal directory");
 assert(byKey.co_puc_revoked_household_goods_permit_listings.value === 207, "Colorado revoked listings");
 assert(byKey.co_puc_suspended_household_goods_permit_listings.value === 5, "Colorado suspended listings");
-assert(byKey.federal_publishable_directory_profiles.sourceAsOf !== null, "federal sourceAsOf");
+assert(byKey.federal_publishable_directory_profiles.sourceAsOf === null && Boolean(byKey.federal_publishable_directory_profiles.retrievedAt), "federal refresh is retrieval, not sourceAsOf");
 assert(byKey.florida_fdacs_im_active_registrations.sourceAsOf !== v1.generatedAt.slice(0, 10), "FL sourceAsOf != generatedAt");
 assert(snap.includes("projectHomeIntelFromNetworkMetrics"), "homepage consumes v1");
 assert(snap.includes("loadMoveNetworkMetrics"), "homepage loads v1");
