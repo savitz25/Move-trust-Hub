@@ -126,7 +126,7 @@ export function parseJourney(raw: string): Journey | null {
   // Route words inside an explicitly quoted source name are identity content.
   // A real route or booking outside that name still uses the journey boundary.
   const outsideNames = text.replace(/"[^"]+"|\u201c[^\u201d]+\u201d/g, "");
-  if (outsideNames !== text && !/\bfrom\b.+\bto\b|\b(?:book|hire|schedule|dispatch)\b/i.test(outsideNames)) return null;
+  if (/^(?:(?:research|find|check|verify|is|can|does)\s+)?["\u201c]/i.test(text) && outsideNames !== text && !/\bfrom\b.+\bto\b|\b(?:book|hire|schedule|dispatch)\b/i.test(outsideNames)) return null;
   // A source-name signal such as "Movers in Motion LLC" is not local discovery.
   // Explicit journey/booking structure can still carry a company with a legal suffix.
   if (/\b(?:llc|inc\.?|ltd\.?|corporation)\s*(?:licensed|registered|authorized)?$/i.test(text) && !/\bfrom\b.+\bto\b|\b(?:book|hire|schedule)\b/i.test(text)) return null;
