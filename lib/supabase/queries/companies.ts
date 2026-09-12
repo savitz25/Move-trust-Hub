@@ -1,4 +1,4 @@
-import { associationIntegrity } from '@/lib/fmcsa/association-integrity';
+import { associationIntegrity, projectCompanyAssociation } from '@/lib/fmcsa/association-integrity';
 import 'server-only';
 
 import { cache } from 'react';
@@ -587,7 +587,8 @@ const getCompaniesDataCached = unstable_cache(
 
 /** Cached server-side company fetch — use in Server Components and generateMetadata. */
 export const getCompaniesCached = cache(async (): Promise<Company[]> => {
-  return getCompaniesDataCached();
+  // Re-project cache hits too: a pre-release cached Company must not restore a reviewed MC.
+  return (await getCompaniesDataCached()).map(projectCompanyAssociation);
 });
 
 export type CompanySitemapEntry = {
