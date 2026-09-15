@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { TrustHubLogoImage } from '@/components/hub/trust-hub-logo-image';
 
 import { SITE_EMAIL as MOVE_SITE_EMAIL } from '@/lib/contact';
-import { SITE_EMAIL as INSURANCE_SITE_EMAIL } from '@/lib/insurance/constants';
 import { AfterYourMoveModule } from '@/components/hub/after-your-move-module';
 import { AskNetworkSeal } from '@/components/network/ask-network-seal';
 import { getHubConfig } from '@/lib/hub/config';
@@ -26,11 +25,9 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
     : 'move') as NetworkHubId;
   // Every Hub uses the canonical Ask Trust Hub network contact address.
   const contactEmail =
-    hub.id === 'insurance'
-      ? INSURANCE_SITE_EMAIL
-      : hub.id === 'lender'
-        ? networkHubById('lender').email
-        : MOVE_SITE_EMAIL;
+    hub.id === 'lender' || hub.id === 'insurance'
+      ? networkHubById(hub.id).email
+      : MOVE_SITE_EMAIL;
 
   const isMove = hub.id === 'move';
   /** Move redesign: 4 columns (brand+dir | tools | destinations | network & legal) */

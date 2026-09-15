@@ -1,7 +1,6 @@
 import { AskNetworkBar } from '@/components/network/ask-network-bar';
 import { HubFooter } from '@/components/hub/hub-footer';
 import { HubNavbar } from '@/components/hub/hub-navbar';
-import { InsurancePwaProvider } from '@/components/insurance/pwa/insurance-pwa-provider';
 import {
   DeferredJourneyTracker,
   DeferredLegacyWelcomeBanner,
@@ -24,7 +23,6 @@ export async function HubChrome({
   children: React.ReactNode;
 }) {
   const isMove = hubId === 'move';
-  const isInsurance = hubId === 'insurance';
   const networkHubId = hubId === 'move' || hubId === 'insurance' || hubId === 'lender' ? hubId : 'move';
 
   return (
@@ -44,7 +42,6 @@ export async function HubChrome({
       <main id="main-content" className="flex-1 pb-[env(safe-area-inset-bottom)] sm:pb-0">{children}</main>
       <HubFooter hubId={hubId} />
       {isMove ? <DeferredMoveTipsOptIn /> : null}
-      {isInsurance ? <InsurancePwaProvider /> : null}
     </div>
   );
 }

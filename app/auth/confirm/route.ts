@@ -6,32 +6,28 @@ import { productionAuthRedirect } from '@/lib/save-my-move/auth-redirect';
 import { ensureUserProfile } from '@/lib/save-my-move/ensure-user-profile';
 import { isEmailOtpType } from '@/lib/auth/otp-types';
 import { pathAfterAuth } from '@/lib/auth/path-after-auth';
-import {
-  AUTH_CONFIRM_PATH,
-  PRODUCTION_SITE_ORIGIN as INSURANCE_ORIGIN,
-} from '@/lib/insurance/my-insurance/constants';
-import { isInsuranceStandaloneHost } from '@/lib/hub/domains';
+import { INSURANCE_SITE_URL } from '@/lib/hub/domains';
+
+/** InsuranceTrustHub's own confirm route — a stale pre-separation magic-link may still point here. */
+const INSURANCE_AUTH_CONFIRM_PATH = '/auth/confirm';
 
 /**
  * Completes magic-link / email OTP sign-in for links we send via Resend
  * (token_hash flow). Supabase Auth mailer links may still use /auth/callback?code=.
  *
- * Host isolation: InsuranceTrustHub apex (or next=/my-insurance) must NEVER
- * run My Move confirm — that forces www.movetrusthub.com redirects.
+ * Host isolation: a stale pre-domain-separation magic-link (next=/my-insurance,
+ * /providers/*, etc.) must NEVER run My Move confirm — bounce it to
+ * InsuranceTrustHub's own confirm endpoint instead.
  */
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const { searchParams } = url;
-  const host =
-    request.headers.get('x-forwarded-host')?.split(',')[0]?.trim() ||
-    request.headers.get('host') ||
-    url.host;
   const nextRaw = searchParams.get('next') || '';
 
-  if (shouldDelegateToInsuranceAuth(host, nextRaw)) {
+  if (shouldDelegateToInsuranceAuth(nextRaw)) {
     const insuranceConfirm = new URL(
-      `${AUTH_CONFIRM_PATH}${url.search}`,
-      INSURANCE_ORIGIN
+      `${INSURANCE_AUTH_CONFIRM_PATH}${url.search}`,
+      INSURANCE_SITE_URL
     );
     return NextResponse.redirect(insuranceConfirm);
   }
@@ -77,11 +73,7 @@ export async function GET(request: Request) {
   return NextResponse.redirect(productionAuthRedirect(destination, request));
 }
 
-function shouldDelegateToInsuranceAuth(
-  host: string,
-  nextRaw: string
-): boolean {
-  if (isInsuranceStandaloneHost(host)) return true;
+function shouldDelegateToInsuranceAuth(nextRaw: string): boolean {
   const next = nextRaw.trim().toLowerCase();
   if (!next) return false;
   return (

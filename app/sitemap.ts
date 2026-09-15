@@ -1,5 +1,4 @@
 import { MetadataRoute } from 'next';
-import { headers } from 'next/headers';
 import { getAllAutoTransportCompanies, getIndexableCompanySitemapEntries } from '@/lib/data-server';
 import { getPublishedCityHubSlugs } from '@/lib/destinations/content';
 import {
@@ -21,8 +20,6 @@ import {
   getCityHubSitemapPriority,
   getRouteGuideSitemapPriority,
 } from '@/lib/seo/sitemap-priority';
-import { isInsuranceStandaloneHost } from '@/lib/hub/domains';
-import { generateInsuranceSitemap } from '@/lib/insurance/seo/generate-insurance-sitemap';
 import { isSeoIndexableCompany } from '@/lib/provider/publication';
 
 const SITE = 'https://www.movetrusthub.com';
@@ -50,16 +47,6 @@ const PRIORITY_ROUTE_SLUGS = new Set([
 ]);
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Belt-and-suspenders: if middleware rewrite is skipped, never emit Move URLs on ITH host.
-  try {
-    const host = (await headers()).get('host');
-    if (isInsuranceStandaloneHost(host)) {
-      return generateInsuranceSitemap();
-    }
-  } catch {
-    // Static generation without request headers — Move sitemap only.
-  }
-
   const extendedRouteSlugs = new Set(getExtendedRouteSlugs());
   // Never fail the whole sitemap (or CI prerender) on a bad local Supabase URL.
   let companySitemap: Awaited<ReturnType<typeof getIndexableCompanySitemapEntries>> = [];

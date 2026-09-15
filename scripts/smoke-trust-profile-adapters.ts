@@ -1,18 +1,17 @@
 /**
- * Smoke-test Trust Profile adapters (Step 5).
+ * Smoke-test the Move Trust Profile adapter (Step 5).
  * Run: npx tsx scripts/smoke-trust-profile-adapters.ts
  *
  * Uses real seed/mock fixtures — never invents licenses.
+ *
+ * The Insurance/Lender adapters this once also smoke-tested were removed
+ * under TH-LEGACY-CONTAIN-001 — they had zero real callers in Move and only
+ * duplicated the standalone InsuranceTrustHub/LenderTrustHub products.
  */
 import { toMoveTrustProfile } from '../lib/network/adapters/to-move-trust-profile';
-import { toInsuranceTrustProfile } from '../lib/network/adapters/to-insurance-trust-profile';
-import { toLenderTrustProfile } from '../lib/network/adapters/to-lender-trust-profile';
 import { visibleTrustSources, hasDisplayableScore } from '../lib/network/trust-profile';
 import { entityRef } from '../lib/network/entity-ref';
 import type { Company } from '../types';
-import type { Provider } from '../types/insurance/provider';
-import { lenders } from '../lib/lender/lenders';
-import { FALLBACK_PROVIDERS } from '../lib/insurance/providers/fallback-data';
 
 function assert(cond: unknown, msg: string): asserts cond {
   if (!cond) throw new Error(`FAIL: ${msg}`);
@@ -96,94 +95,8 @@ function smokeMove() {
   });
 }
 
-function smokeInsurance() {
-  const provider: Provider =
-    FALLBACK_PROVIDERS[0] ??
-    ({
-      id: 'smoke-ins-1',
-      slug: 'smoke-agency-fl',
-      name: 'Smoke Insurance Agency',
-      city: 'Miami',
-      state: 'FL',
-      phone: '(305) 555-0200',
-      website: 'https://example-insurance.com',
-      insurance_types: ['auto', 'homeowners'],
-      specialties: ['Personal Lines'],
-      rating: 4.5,
-      review_count: 20,
-      is_verified: true,
-      license_number: 'A123456',
-      trust_score: 78,
-      updated_at: '2026-06-15T00:00:00.000Z',
-    } as Provider);
-
-  const shell = toInsuranceTrustProfile(provider);
-  assert(shell.hub === 'insurance', 'insurance hub');
-  assert(shell.entityId, 'insurance entityId');
-  assert(shell.profileUrl.includes('/providers/'), 'insurance profileUrl');
-  assert(shell.methodologyUrl.includes('insurancetrusthub.com/methodology'), 'insurance methodology');
-  assert(shell.standardUrl.includes('asktrusthub.com/methodology'), 'insurance standard');
-  // Never invent a license number
-  if (shell.extensions?.insurance?.licenseNumber) {
-    assert(
-      Boolean(provider.license_number),
-      'insurance license only when present on record'
-    );
-  }
-  const chips = visibleTrustSources(shell.verification.sources);
-  assert(
-    chips.every((c) => c.status !== 'unverified' && c.status !== 'not_applicable'),
-    'insurance chips prefer hide'
-  );
-  console.log('OK insurance', {
-    displayName: shell.displayName,
-    entityId: shell.entityId,
-    chips: chips.map((c) => c.id),
-    isVerified: shell.verification.isVerified,
-    emptyByDesign: chips.length === 0 ? ['source chips until verified pathway'] : [],
-  });
-}
-
-function smokeLender() {
-  const lender = lenders[0];
-  assert(lender, 'lender fixture from mock data');
-  const shell = toLenderTrustProfile(lender);
-  assert(shell.hub === 'lender', 'lender hub');
-  // Phase 0: entityId prefers numeric NMLS when available
-  assert(
-    shell.entityId === (lender.nmlsId || lender.slug || lender.id),
-    'lender entityId (NMLS or slug)'
-  );
-  assert(shell.profileUrl.includes('/lenders/'), 'lender profileUrl');
-  assert(shell.methodologyUrl.includes('lendertrusthub.com/methodology'), 'lender methodology');
-  if (lender.nmlsVerified && lender.nmlsId) {
-    assert(
-      visibleTrustSources(shell.verification.sources).some((c) => c.id === 'nmls'),
-      'lender nmls chip when verified'
-    );
-  }
-  // Phase 0: seed close metrics must not appear on the shell
-  assert(
-    shell.extensions?.lender?.avgCloseDaysEstimate == null,
-    'lender close days suppressed without provenance'
-  );
-  assert(
-    !JSON.stringify(shell.reputation).includes('NMLS field'),
-    'lender reputation is not claiming NMLS close fields'
-  );
-  console.log('OK lender', {
-    displayName: shell.displayName,
-    entityId: shell.entityId,
-    nmls: shell.extensions?.lender?.nmlsId,
-    score: shell.reputation?.score,
-    emptyByDesign: ['close days not displayed without observed provenance'],
-  });
-}
-
 function main() {
   smokeMove();
-  smokeInsurance();
-  smokeLender();
   console.log('\nAll Trust Profile adapter smokes passed.');
 }
 

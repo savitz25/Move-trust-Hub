@@ -30,7 +30,7 @@ export function AskStandardBanner({
         {verticalLabel} inherits{' '}
         <strong className="font-semibold text-foreground">The {NETWORK_VOCAB.standardName}</strong>
         {' — '}
-        SOURCE → VERIFY → DISCLOSE → SCORE → UPDATE → YOU DECIDE. Framework is shared; data and
+        SOURCE → VERIFY → EXPLAIN → DISCLOSE → UPDATE → YOU DECIDE. Framework is shared; data and
         checks below are industry-specific. {NETWORK_VOCAB.ownershipShort}.
       </p>
       <p className="mt-2">

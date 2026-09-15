@@ -16,7 +16,7 @@
     "guard:supabase-project": "tsx scripts/guard-supabase-project.ts",
     "guard:local-movers-diversity": "tsx scripts/guard-local-movers-diversity.ts",
     "start": "next start",
-    "test": "node scripts/assert-share-002.mjs && tsx scripts/assert-share-003.ts && tsx scripts/assert-share-004a.ts && node scripts/assert-visual-006.mjs && npm run assert:network-metrics && npm run assert:nj-move-001 && npm run assert:nj-move-002 && npm run assert:ca-move-001 && npm run assert:tx-move-001 && npm run assert:wa-move-001 && npm run assert:co-move-001 && npm run assert:va-move-001 && npm run assert:ny-move-001 && npm run assert:il-move-001 && npm run check:th-p0-move-01",
+    "test": "node scripts/assert-share-002.mjs && tsx scripts/assert-share-003.ts && tsx scripts/assert-share-004a.ts && node scripts/assert-visual-006.mjs && npm run assert:network-metrics && npm run assert:nj-move-001 && npm run assert:nj-move-002 && npm run assert:ca-move-001 && npm run assert:tx-move-001 && npm run assert:wa-move-001 && npm run assert:co-move-001 && npm run assert:va-move-001 && npm run assert:ny-move-001 && npm run assert:il-move-001 && npm run check:th-p0-move-01 && npm run check:vertical-separation",
     "check:share-004a": "tsx scripts/assert-share-004a.ts && node scripts/assert-share-002.mjs && tsx scripts/assert-share-003.ts",
     "assert:nj-move-001": "python scripts/nj-move-001-tests.py && tsx scripts/assert-nj-move-001.mts && tsx lib/state-hhg/nj/adapter.test.ts",
     "assert:nj-move-002": "tsx lib/state-hhg/nj/publication.test.ts && tsx scripts/assert-nj-move-002.mts",
@@ -223,7 +223,6 @@
     "audit:phase4": "tsx scripts/audit-phase4-crawl-assertion.ts",
     "audit:phase4:production": "tsx scripts/audit-phase4-crawl-assertion.ts --base=https://www.movetrusthub.com",
     "audit:phase4:full-crawl": "tsx scripts/audit-phase4-crawl-assertion.ts --base=https://www.movetrusthub.com --full-crawl",
-    "audit:hub-404s": "tsx scripts/audit-hub-404s.ts",
     "guard:gsc-soft-404": "tsx scripts/guard-gsc-soft-404.ts",
     "guard:gsc-soft-404:prod": "tsx scripts/guard-gsc-soft-404.ts --base=https://www.movetrusthub.com",
     "verify:hub": "tsx scripts/verify-hub-production.ts",
@@ -286,11 +285,8 @@
     "sync:hubs:dry": "tsx scripts/sync-trust-hub-subapps.ts --dry-run",
     "sync:hubs:prefix-links": "tsx scripts/prefix-hub-links.ts",
     "audit:hub-seo": "tsx scripts/audit-hub-seo.ts",
-    "audit:sitemap-hygiene": "tsx scripts/audit-sitemap-hygiene.ts",
     "fix:lender-paths": "tsx scripts/fix-lender-path-prefixes.ts",
     "fix:insurance-paths": "tsx scripts/fix-insurance-path-prefixes.ts",
-    "fix:all-hub-links": "tsx scripts/fix-all-hub-links.ts",
-    "sync:hub-redirects": "tsx scripts/export-vercel-hub-redirects.ts --write",
     "fix:route-links": "tsx scripts/fix-destination-route-links.ts",
     "migrate:key": "tsx scripts/run-key-migrations.ts",
     "migrate:uvq-to-are": "tsx --require ./scripts/stub-server-only.cjs scripts/migrate-supabase-uvq-to-are.ts",
@@ -320,7 +316,8 @@
     "check:metrics-r2": "node --import tsx scripts/build_network_metrics_v1.mjs --check && tsx --test scripts/test_metrics_r2.ts scripts/test_metrics_homepage_r2.tsx",
     "check:th-search-r1-014": "tsx --require ./scripts/stub-server-only.cjs --test lib/move-ask/r1-journey.test.ts",
     "check:th-search-r1-018": "tsx --require ./scripts/stub-server-only.cjs --test lib/search/r1-018-move-01.test.ts lib/search/match.test.ts lib/search/network-resolver.test.ts lib/search/classify-intent.test.ts lib/directory/filter-companies.test.ts lib/move-ask/r1-name.test.ts lib/move-ask/r1-association.test.ts lib/move-ask/r1-reproduction.test.ts lib/move-ask/r1-behavior.test.ts lib/move-ask/r1-journey.test.ts",
-    "check:th-p0-move-01": "tsx --test lib/trust/th-p0-move-01.test.ts"
+    "check:th-p0-move-01": "tsx --test lib/trust/th-p0-move-01.test.ts",
+    "check:vertical-separation": "tsx scripts/check-vertical-separation.ts && tsx --test lib/migration/hub-redirects.test.ts app/sitemap.test.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
