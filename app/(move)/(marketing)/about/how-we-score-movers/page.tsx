@@ -19,7 +19,6 @@ import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 import {
   REPUTATION_SCORE_FACTORS,
-  REPUTATION_SCORE_THRESHOLD,
   REPUTATION_SCORE_SUMMARY,
 } from '@/lib/trust/reputation-score-factors';
 import {
@@ -46,8 +45,8 @@ import { TrustMark } from '@/components/network/trust-mark';
 
 export const metadata = buildResourceMetadata(
   METHODOLOGY_PAGE_PATH,
-  'Methodology — How We Score, Vet & Source Mover Data',
-  'Move Trust Hub methodology under The Ask Trust Hub Standard: reputation score, FMCSA data use, review policy, independence, data sources, limitations, and corrections.'
+  'Methodology — How We Vet & Source Mover Data',
+  'Move Trust Hub methodology under The Ask Trust Hub Standard: the research evidence we show, FMCSA data use, review policy, independence, data sources, limitations, and corrections. No Trust Score.'
 );
 
 export default async function HowWeScoreMoversPage() {
@@ -101,7 +100,7 @@ export default async function HowWeScoreMoversPage() {
               { href: '#how-we-vet', label: 'How we vet' },
               { href: '#entity-matching', label: 'Entity matching' },
               { href: '#interstate-intrastate', label: 'Interstate vs local' },
-              { href: '#reputation-score', label: 'Reputation Score' },
+              { href: '#reputation-score', label: 'Research evidence' },
               { href: '#review-attribution', label: 'Review policy' },
               { href: '#data-sources', label: 'Data sources' },
               { href: '#updates', label: 'Updates' },
@@ -236,14 +235,14 @@ export default async function HowWeScoreMoversPage() {
           </div>
         </section>
 
-        {/* Reputation Score */}
+        {/* Research evidence */}
         <section id="reputation-score" className="scroll-mt-24">
           <div className="flex items-start gap-3 mb-6">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
               <BarChart3 className="h-5 w-5 text-primary" aria-hidden="true" />
             </div>
             <div>
-              <h2 className="text-2xl font-semibold tracking-tight">Reputation Score (0–100)</h2>
+              <h2 className="text-2xl font-semibold tracking-tight">Research evidence, not a score</h2>
               <p className="text-muted-foreground mt-2 leading-relaxed">{REPUTATION_SCORE_SUMMARY}</p>
             </div>
           </div>
@@ -254,9 +253,6 @@ export default async function HowWeScoreMoversPage() {
                 key={factor.id}
                 className="flex items-start gap-3 rounded-xl border bg-card px-4 py-3 text-sm"
               >
-                <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary tabular-nums">
-                  {factor.weight}
-                </span>
                 <div>
                   <div className="font-medium">{factor.label}</div>
                   <p className="text-muted-foreground leading-relaxed mt-0.5">{factor.detail}</p>
@@ -266,13 +262,13 @@ export default async function HowWeScoreMoversPage() {
           </ul>
 
           <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
-            Scores at or above <strong className="text-foreground">{REPUTATION_SCORE_THRESHOLD}</strong>{' '}
-            generally indicate safer interstate choices for research prioritization. We recalculate
-            when FMCSA data refreshes or new attributable reviews are published. Scores are editorial
-            composites — not star averages and not an FMCSA endorsement.
+            No TrustHub score, grade, or ranking is calculated from this evidence — not a single
+            total and not broken into per-factor points. Evidence refreshes when FMCSA data updates
+            or new attributable reviews are published. Nothing here is a star average or an FMCSA
+            endorsement.
           </p>
           <div className="mt-4 rounded-xl border border-amber-200/80 bg-amber-50/40 p-4 text-sm leading-relaxed text-muted-foreground">
-            <p className="font-semibold text-foreground">Not included in the score</p>
+            <p className="font-semibold text-foreground">What this evidence never includes</p>
             <ul className="mt-2 list-disc pl-5 space-y-1">
               <li>Paid advertising, sponsorship, or lead-fee relationships (none buy rank)</li>
               <li>Unattributed or fabricated reviews</li>
@@ -360,7 +356,7 @@ export default async function HowWeScoreMoversPage() {
               Google Places and BBB snapshots can lag or mismatch; always re-check official sources before booking.
             </li>
             <li>
-              Reputation Score is an editorial composite, not a substitute for multiple written estimates and in-person diligence.
+              This evidence is not a score and not a substitute for multiple written estimates and in-person diligence.
             </li>
           </ul>
         </section>

@@ -22,13 +22,13 @@ import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 import { buildAboutPageSchemaGraph } from '@/lib/seo/schemas';
 import {
   REPUTATION_SCORE_FACTORS,
-  REPUTATION_SCORE_THRESHOLD,
+  REPUTATION_SCORE_SUMMARY,
 } from '@/lib/trust/reputation-score-factors';
 
 export const metadata = buildResourceMetadata(
   '/about',
   'About Move Trust Hub & Trust Center (2026)',
-  'Our mission, how we calculate reputation scores, FMCSA data sources, free moving tools, and important disclaimers. Independent directory — no paid placements or commissions.'
+  'Our mission, the research evidence we show for movers, FMCSA data sources, free moving tools, and important disclaimers. Independent directory — no paid placements or commissions. No Trust Score.'
 );
 
 const FACTOR_ICONS: Record<(typeof REPUTATION_SCORE_FACTORS)[number]['id'], LucideIcon> = {
@@ -119,14 +119,13 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Reputation Score Breakdown */}
+        {/* Mover research evidence */}
         <section>
           <div className="text-center mb-12">
-            <div className="uppercase tracking-[2px] text-xs text-primary font-semibold mb-3">The Trust Engine</div>
-            <h2 className="text-4xl font-semibold tracking-tight mb-3">How We Calculate Reputation Scores</h2>
+            <div className="uppercase tracking-[2px] text-xs text-primary font-semibold mb-3">Research evidence, not a score</div>
+            <h2 className="text-4xl font-semibold tracking-tight mb-3">What We Show — And What We Don&apos;t</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A transparent, weighted formula that rewards real performance over marketing. Scores above{' '}
-              <strong className="text-foreground">{REPUTATION_SCORE_THRESHOLD}</strong> generally indicate safer interstate choices.
+              {REPUTATION_SCORE_SUMMARY}
             </p>
           </div>
 
@@ -140,7 +139,6 @@ export default function AboutPage() {
                       <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary/15 transition-colors">
                         <Icon className="h-5 w-5" />
                       </div>
-                      <Badge variant="secondary" className="font-mono text-xs">{factor.weight}</Badge>
                     </div>
                     <CardTitle className="text-xl mt-4">{factor.label}</CardTitle>
                   </CardHeader>
@@ -153,9 +151,9 @@ export default function AboutPage() {
           </div>
 
           <p className="text-center text-sm text-muted-foreground mt-6 max-w-md mx-auto">
-            Scores are recalculated regularly. We never fabricate reviews or inflate ratings.{' '}
+            Evidence is refreshed regularly. We never fabricate reviews or inflate ratings.{' '}
             <Link href="/about/how-we-score-movers" className="text-primary hover:underline">
-              Trust Center methodology
+              Full research evidence explainer
             </Link>
             {' · '}
             <Link href="/about/editorial-team" className="text-primary hover:underline">

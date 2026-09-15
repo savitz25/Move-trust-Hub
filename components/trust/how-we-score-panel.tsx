@@ -3,7 +3,7 @@ import { BarChart3, ShieldCheck, Star, Scale } from 'lucide-react';
 import { HowWeScoreAccordion } from '@/components/trust/how-we-score-accordion';
 import {
   REPUTATION_SCORE_FACTORS,
-  REPUTATION_SCORE_THRESHOLD,
+  REPUTATION_SCORE_SUMMARY,
 } from '@/lib/trust/reputation-score-factors';
 import { methodologyHref } from '@/lib/trust/methodology-paths';
 import { HOW_WE_VET_HREF, HOW_WE_VET_LABEL } from '@/lib/trust/vetting-criteria';
@@ -18,12 +18,7 @@ type Props = {
 function HowWeScoreBody({ compact = false }: { compact?: boolean }) {
   return (
     <>
-      <p className="text-sm text-muted-foreground leading-relaxed">
-        Our Reputation Score is an editorial composite (0–100) — not a simple star average.
-        Scores above{' '}
-        <strong className="text-foreground">{REPUTATION_SCORE_THRESHOLD}</strong> generally
-        indicate safer interstate choices. We never fabricate reviews or inflate ratings.
-      </p>
+      <p className="text-sm text-muted-foreground leading-relaxed">{REPUTATION_SCORE_SUMMARY}</p>
 
       {!compact && (
         <ul className="space-y-3 mt-4 mb-4" role="list">
@@ -32,9 +27,6 @@ function HowWeScoreBody({ compact = false }: { compact?: boolean }) {
               key={factor.label}
               className="flex items-start gap-3 rounded-xl border bg-muted/20 px-4 py-3 text-sm"
             >
-              <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary tabular-nums">
-                {factor.weight}
-              </span>
               <div>
                 <div className="font-medium">{factor.label}</div>
                 <p className="text-muted-foreground leading-relaxed mt-0.5">{factor.detail}</p>
@@ -79,7 +71,7 @@ function HowWeScoreBody({ compact = false }: { compact?: boolean }) {
 }
 
 /**
- * Visible E-E-A-T explainer for the 0–100 Reputation Score methodology.
+ * Visible E-E-A-T explainer for mover research evidence — no TrustHub score.
  */
 export function HowWeScorePanel({
   className = '',
@@ -105,13 +97,10 @@ export function HowWeScorePanel({
         </div>
         <div>
           <h2 id="how-we-score-heading" className="text-lg font-semibold tracking-tight">
-            How We Score Movers (0–100)
+            Mover research evidence
           </h2>
           <p className="text-sm text-muted-foreground leading-relaxed mt-1">
-            Our Reputation Score is an editorial composite (0–100) — not a simple star average.
-            Scores above{' '}
-            <strong className="text-foreground">{REPUTATION_SCORE_THRESHOLD}</strong> generally
-            indicate safer interstate choices. We never fabricate reviews or inflate ratings.
+            {REPUTATION_SCORE_SUMMARY}
           </p>
         </div>
       </div>
@@ -123,9 +112,6 @@ export function HowWeScorePanel({
               key={factor.label}
               className="flex items-start gap-3 rounded-xl border bg-muted/20 px-4 py-3 text-sm"
             >
-              <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary tabular-nums">
-                {factor.weight}
-              </span>
               <div>
                 <div className="font-medium">{factor.label}</div>
                 <p className="text-muted-foreground leading-relaxed mt-0.5">{factor.detail}</p>

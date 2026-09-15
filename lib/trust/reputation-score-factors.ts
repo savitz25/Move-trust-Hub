@@ -1,44 +1,37 @@
-/** Single source of truth for Reputation Score methodology (E-E-A-T). */
+/** Single source of truth for the mover evidence explainer (E-E-A-T). */
 
 export const REPUTATION_SCORE_FACTORS = [
   {
     id: 'reviews',
     label: 'Review volume & recency',
-    weight: '30%',
     detail:
-      'Named, attributable reviews with enough volume to be meaningful. We prioritize recent feedback from the last 24 months.',
+      'Named, attributable reviews with enough volume to be meaningful. We prioritize recent feedback from the last 24 months. Shown as an attributed snapshot, never converted into a TrustHub point value.',
   },
   {
     id: 'fmcsa',
     label: 'FMCSA safety & complaints',
-    weight: '25%',
     detail:
-      'USDOT authority status, safety rating, and complaint-to-shipment ratio from public FMCSA records.',
+      'USDOT authority status, safety rating, and complaint-to-shipment ratio from public FMCSA records. Presented as source evidence — not a pass/fail grade.',
   },
   {
     id: 'longevity',
     label: 'Years in business',
-    weight: '15%',
     detail:
-      'Operating history and stability for interstate household goods moves.',
+      'Operating history for interstate household goods moves, when on file.',
   },
   {
     id: 'bbb',
     label: 'BBB accreditation',
-    weight: '15%',
     detail:
       'Accreditation status and letter grade only when a confirmed public BBB listing exists. We do not invent BBB grades or show accreditation for companies that are not listed.',
   },
   {
     id: 'trend',
     label: 'Customer trend signals',
-    weight: '15%',
     detail:
-      'Recent rating trajectory and consistency across review sources.',
+      'Recent rating trajectory and consistency across review sources, shown as context — not a score input.',
   },
 ] as const;
 
-export const REPUTATION_SCORE_THRESHOLD = 85;
-
 export const REPUTATION_SCORE_SUMMARY =
-  'Our Reputation Score is an editorial composite (0–100) — not a simple star average. Scores above 85 generally indicate safer interstate choices. We never fabricate reviews or inflate ratings.';
+  'We do not calculate a TrustHub score, grade, or "safer choice" ranking for movers. What you see here is the underlying evidence itself — FMCSA authority and safety records, attributed reviews, BBB status when confirmed, and business tenure — each labeled with its source. We never fabricate reviews or inflate ratings.';
