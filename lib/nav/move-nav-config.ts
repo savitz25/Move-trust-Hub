@@ -123,9 +123,9 @@ export const GUIDES_NAV: NavMegaColumn[] = [
         description: 'Room-by-room prep timeline',
       },
       {
-        label: 'How We Score Movers',
+        label: 'Mover Research Evidence',
         href: '/about/how-we-score-movers',
-        description: 'Reputation scores & review policy',
+        description: 'Evidence sources & review policy',
       },
     ],
   },

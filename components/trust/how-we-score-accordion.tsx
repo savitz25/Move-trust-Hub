@@ -32,7 +32,7 @@ export function HowWeScoreAccordion({ className = '', children }: HowWeScoreAcco
               <BarChart3 className="h-5 w-5 text-primary" aria-hidden="true" />
             </span>
             <span className="text-lg font-semibold tracking-tight text-foreground">
-              How We Score Movers (0–100)
+              Mover research evidence
             </span>
           </span>
           <ChevronDown
@@ -48,7 +48,7 @@ export function HowWeScoreAccordion({ className = '', children }: HowWeScoreAcco
       <div
         id={panelId}
         role="region"
-        aria-label="How We Score Movers details"
+        aria-label="Mover research evidence details"
         className={cn(
           'grid transition-[grid-template-rows] duration-200 ease-out',
           open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
