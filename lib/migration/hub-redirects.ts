@@ -1,5 +1,5 @@
 import type { Redirect } from 'next/dist/lib/load-custom-routes';
-import { INSURANCE_RESOURCE_SLUG_ALIASES } from '../insurance/resources/slug-aliases';
+import { INSURANCE_RESOURCE_SLUG_ALIASES } from './insurance-resource-slug-aliases';
 import {
   INSURANCE_CALCULATOR_SLUGS,
   LENDER_CALCULATOR_SLUG_MAP,
