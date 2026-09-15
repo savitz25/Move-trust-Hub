@@ -14,11 +14,44 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 Object.assign(globalThis, { React });
 
-test('structured city/ZIP requests cannot bypass the locality consent boundary', async()=>{
-  for(const geography of [{intent:'RECORDED_HQ' as const,city:'Austin',stateCode:'TX'},{intent:'RECORDED_HQ' as const,zip:'33441',stateCode:'FL'}]){
+test('a structured ZIP request cannot bypass the locality consent boundary', async()=>{
+  // ZIP remains genuinely unsupported (no ZIP-grain data in this source) -- this must still dead-end
+  // with a real next step, never silently substitute a state cohort.
+  const geography={intent:'RECORDED_HQ' as const,zip:'33441',stateCode:'FL'};
+  const r=await executeMoveSpecialist({contract:MOVE_SPECIALIST_EXECUTION_CONTRACT,queryType:'cohort',entityClass:'mover',role:'Broker',geography});
+  assert.equal(r.resultType,'UNSUPPORTED_CAPABILITY');assert.equal(r.rows.length,0);assert.deepEqual(r.queryInterpretation.appliedFilters,[]);assert.deepEqual(r.queryInterpretation.geography?.stateCode,geography.stateCode);assert.match(r.limitations[0]!,/No state cohort was executed/);
+  const next=new URL(r.destinations.research);assert.equal(next.pathname,'/ask');assert.equal(next.searchParams.get('role'),'broker');assert.ok(next.searchParams.get('q')?.includes(geography.zip));
+});
+
+// TH-DISCOVERY-003: a structured city+state request now executes a real, narrowly-scoped
+// recorded-headquarters-CITY query (see lib/directory/coverage-filter.ts's extractCityFromHeadquarters
+// and query-db-directory-page.ts's recordedHqCity) instead of dead-ending -- this is not "bypassing
+// the locality consent boundary", it is fulfilling the exact narrower request precisely. This test
+// proves it stays precise: a same-state, different-city fixture row must never leak into the result,
+// and a mismatched row would fail loud (BACKEND_UNAVAILABLE), never be silently included.
+test('a structured city+state request executes a real, city-scoped cohort -- never leaks a same-state different-city row', async()=>{
+  const prev=globalThis.fetch,oldKey=process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,oldUrl=process.env.NEXT_PUBLIC_SUPABASE_URL;
+  process.env.NEXT_PUBLIC_SUPABASE_URL=CANONICAL_SUPABASE_URL;
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY='fixture-only';
+  const rows=[
+    {...publishedIdentity,id:'austin-broker',slug:'austin-broker',name:'Austin Broker Co',fmcsa_legal_name:'Austin Broker Co',headquarters:'AUSTIN, TX',entity_type:'BROKER',usdot_number:'5551001',mc_number:'660001'},
+    {...publishedIdentity,id:'dallas-broker',slug:'dallas-broker',name:'Dallas Broker Co',fmcsa_legal_name:'Dallas Broker Co',headquarters:'DALLAS, TX',entity_type:'BROKER',usdot_number:'5551002',mc_number:'660002'},
+  ];
+  const fixture=fixtureFetch(rows);
+  globalThis.fetch=fixture.fetcher;
+  try{
+    const geography={intent:'RECORDED_HQ' as const,city:'Austin',stateCode:'TX'};
     const r=await executeMoveSpecialist({contract:MOVE_SPECIALIST_EXECUTION_CONTRACT,queryType:'cohort',entityClass:'mover',role:'Broker',geography});
-    assert.equal(r.resultType,'UNSUPPORTED_CAPABILITY');assert.equal(r.rows.length,0);assert.deepEqual(r.queryInterpretation.appliedFilters,[]);assert.deepEqual(r.queryInterpretation.geography?.stateCode,geography.stateCode);assert.match(r.limitations[0]!,/No state cohort was executed/);
-    const next=new URL(r.destinations.research);assert.equal(next.pathname,'/ask');assert.equal(next.searchParams.get('role'),'broker');assert.ok(next.searchParams.get('q')?.includes(geography.city??geography.zip!));
+    assert.equal(r.resultType,'SUPPORTED_RESULTS');
+    assert.equal(r.rows.length,1);
+    assert.equal(r.rows[0]?.publicDisplayName,'Austin Broker Co');
+    assert.equal(r.rows[0]?.recordedHq.city,'AUSTIN');
+    assert.doesNotMatch(JSON.stringify(r.rows),/Dallas/i,'a different-city same-state row must never leak into a city-scoped result');
+    assert.match(r.rows[0]!.whyMatched,/not a confirmed service area/i);
+  } finally {
+    globalThis.fetch=prev;
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY=oldKey;
+    process.env.NEXT_PUBLIC_SUPABASE_URL=oldUrl;
   }
 });
 

@@ -5,6 +5,7 @@ import {
   normalizeCoverageFilter,
   companyMatchesCoverageFilter,
   extractStateCodeFromHeadquarters,
+  extractCityFromHeadquarters,
 } from '@/lib/directory/coverage-filter';
 import { prepareCompaniesForDirectoryClient } from '@/lib/directory/directory-client-payload';
 import type { DirectoryFilterInput } from '@/lib/directory/filter-companies';
@@ -270,8 +271,14 @@ async function queryRecordedHqPage(options: {
     logger.error('directory.recorded_hq.candidate_bound_exceeded', { state, count });
     throw new Error(`recorded-HQ candidate bound exceeded for ${state}`);
   }
+  // TH-DISCOVERY-003: recorded-headquarters CITY, same client-side-verified grain as the existing
+  // recorded-headquarters STATE filter above -- a plain identity/address fact, never a service-
+  // territory claim. Optional: when absent, city has no effect and this is unchanged.
+  const city = options.filters.recordedHqCity?.trim().toUpperCase() || null;
   const candidates = ((data ?? []) as Array<{ id: string; headquarters: string | null }>).filter(
-    (row) => extractStateCodeFromHeadquarters(row.headquarters ?? '') === state
+    (row) =>
+      extractStateCodeFromHeadquarters(row.headquarters ?? '') === state &&
+      (!city || extractCityFromHeadquarters(row.headquarters ?? '') === city)
   );
   const total = candidates.length;
   const ids = candidates
@@ -282,7 +289,8 @@ async function queryRecordedHqPage(options: {
   const companies = fetched.filter(
     (company) =>
       isConsumerVisibleCompany(company) &&
-      extractStateCodeFromHeadquarters(company.headquarters) === state
+      extractStateCodeFromHeadquarters(company.headquarters) === state &&
+      (!city || extractCityFromHeadquarters(company.headquarters) === city)
   );
   if (companies.length !== ids.length) {
     logger.error('directory.recorded_hq.semantic_mismatch', {

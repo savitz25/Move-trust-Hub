@@ -169,11 +169,13 @@ function publicRole(company: Company): MoveSpecialistPublicRow['role'] {
   return role === 'Carrier / Broker' ? 'Carrier/Broker' : role;
 }
 
-function rowFromCompany(company: Company, autoTransport: boolean, stateCode?: string): MoveSpecialistPublicRow {
+function rowFromCompany(company: Company, autoTransport: boolean, stateCode?: string, city?: string): MoveSpecialistPublicRow {
   const role = publicRole(company);
-  const geographyReason = stateCode
-    ? `The published directory identity records ${stateCode} as the company's headquarters/address state.`
-    : 'The identity is in the current public MoveTrustHub directory cohort.';
+  const geographyReason = city && stateCode
+    ? `The published directory identity records a headquarters/address of ${city}, ${stateCode}. This is a recorded address, not a confirmed service area.`
+    : stateCode
+      ? `The published directory identity records ${stateCode} as the company's headquarters/address state.`
+      : 'The identity is in the current public MoveTrustHub directory cohort.';
   return {
     publicDisplayName: company.name,
     legalName: company.fmcsaLegalName?.trim() || null,
@@ -360,7 +362,13 @@ export async function executeMoveSpecialist(raw: MoveSpecialistExecutionRequest)
   if (request.geography && request.geography.intent !== 'RECORDED_HQ') {
     return unsupportedResponse(request, started);
   }
-  if (request.geography?.city || request.geography?.zip) {
+  // TH-DISCOVERY-003: recorded-headquarters CITY is now a real, additive filter (see
+  // query-db-directory-page.ts's recordedHqCity) -- a plain identity/address fact, same grain as
+  // the existing recorded-headquarters STATE filter, never a service-territory claim. It only
+  // resolves precisely when paired with a state (queryRecordedHqPage requires one to run at all);
+  // a bare city with no state, or a ZIP (genuinely no ZIP-grain data in this source), still has no
+  // executable geography predicate.
+  if (request.geography?.zip || (request.geography?.city && !request.geography.stateCode)) {
     const place = [request.geography.city ?? request.geography.zip, request.geography.stateCode].filter(Boolean).join(', ');
     const params = new URLSearchParams({ q: `${request.entityClass === 'auto_transport' ? 'auto transport' : 'movers'} in ${place}` });
     if (request.role) params.set('role', request.role === 'Carrier/Broker' ? 'carrier_broker' : request.role.toLowerCase());
@@ -384,6 +392,7 @@ export async function executeMoveSpecialist(raw: MoveSpecialistExecutionRequest)
   if (request.role === 'Carrier/Broker') services.push('Carrier / Broker');
   else if (request.role) services.push(request.role);
   const stateCode = request.geography?.stateCode;
+  const city = request.geography?.city;
   let timer: ReturnType<typeof setTimeout> | undefined;
   const timeout = new Promise<never>((_, reject) => {
     timer = setTimeout(
@@ -397,6 +406,7 @@ export async function executeMoveSpecialist(raw: MoveSpecialistExecutionRequest)
       limit,
       filters: {
         recordedHqState: stateCode ?? null,
+        recordedHqCity: city ?? null,
         services,
         sort: 'relevance',
       },
@@ -405,17 +415,21 @@ export async function executeMoveSpecialist(raw: MoveSpecialistExecutionRequest)
   ]).finally(() => {
     if (timer) clearTimeout(timer);
   });
-  const rows = result.companies.map((company) => rowFromCompany(company, request.entityClass === 'auto_transport', stateCode));
+  const rows = result.companies.map((company) => rowFromCompany(company, request.entityClass === 'auto_transport', stateCode, city));
   if (stateCode && rows.some((row) => row.recordedHq.state !== stateCode)) {
     throw new MoveSpecialistExecutionError('BACKEND_UNAVAILABLE', 'recorded-headquarters filter returned an incompatible row', 503, true);
   }
+  if (city && rows.some((row) => row.recordedHq.city?.toUpperCase() !== city.toUpperCase())) {
+    throw new MoveSpecialistExecutionError('BACKEND_UNAVAILABLE', 'recorded-headquarters city filter returned an incompatible row', 503, true);
+  }
   const diagnostic = getLastDbDirectoryDiagnostics();
   const latestClock = rows.map((row) => row.sourceLastChecked).filter((value): value is string => Boolean(value)).sort().at(-1) ?? null;
-  const researchPhrase = `${request.entityClass === 'auto_transport' ? 'auto transport companies' : 'movers'}${stateCode ? ` in ${stateName(stateCode)}` : ''}`;
+  const place = city && stateCode ? `${city}, ${stateName(stateCode)}` : stateCode ? stateName(stateCode) : undefined;
+  const researchPhrase = `${request.entityClass === 'auto_transport' ? 'auto transport companies' : 'movers'}${place ? ` in ${place}` : ''}`;
   const zeroLimitation = rows.length === 0
     ? result.total > 0
       ? `The requested page is outside the ${result.total}-identity cohort; no rows were returned for this page.`
-      : `No public ${request.entityClass === 'auto_transport' ? 'Auto Transport identities' : 'mover identities'} in the current source-backed cohort match the requested${request.role ? ` ${request.role} role and` : ''}${stateCode ? ` recorded ${stateCode} headquarters` : ''} filters. This does not mean none serve that area.`
+      : `No public ${request.entityClass === 'auto_transport' ? 'Auto Transport identities' : 'mover identities'} in the current source-backed cohort match the requested${request.role ? ` ${request.role} role and` : ''}${place ? ` recorded ${place} headquarters` : ''} filters. This does not mean none serve that area.`
     : null;
   return baseResponse(request, started, rows.length ? 'SUPPORTED_RESULTS' : 'ZERO_MATCHING_ROWS', {
     rows,
@@ -429,9 +443,11 @@ export async function executeMoveSpecialist(raw: MoveSpecialistExecutionRequest)
       queryGrain: request.entityClass === 'auto_transport'
         ? 'source-backed Auto Transport public identity cohort'
         : 'public mover identity cohort',
-      geographyMeaning: stateCode
-        ? `Recorded headquarters/address state = ${stateCode}; headquarters is not service territory.`
-        : 'Not geography-filtered',
+      geographyMeaning: city && stateCode
+        ? `Recorded headquarters/address city = ${city}, ${stateCode}; a recorded address is not a confirmed service area.`
+        : stateCode
+          ? `Recorded headquarters/address state = ${stateCode}; headquarters is not service territory.`
+          : 'Not geography-filtered',
       officialAsOf: latestClock,
       generatedAt: new Date().toISOString(),
       publicationSemantics: 'Only identities eligible for the accepted public MoveTrustHub directory are returned.',
