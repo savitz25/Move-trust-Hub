@@ -38,8 +38,11 @@ test('reputation score data no longer carries weights or a numeric safer-choice 
 
 const SURFACES = [
   'components/trust/how-we-score-panel.tsx',
+  'components/trust/how-we-score-accordion.tsx',
   'app/(move)/(marketing)/about/page.tsx',
   'app/(move)/(marketing)/about/how-we-score-movers/page.tsx',
+  'app/(move)/(marketing)/resources/how-to-choose/page.tsx',
+  'lib/nav/move-nav-config.ts',
 ];
 
 for (const surface of SURFACES) {
@@ -48,6 +51,8 @@ for (const surface of SURFACES) {
     assert.doesNotMatch(src, /How We Score Movers/);
     assert.doesNotMatch(src, /safer interstate choice/i);
     assert.doesNotMatch(src, /Scores? (?:at or )?above\b/i);
+    assert.doesNotMatch(src, /score of 85|85\+/i);
+    assert.doesNotMatch(src, /Reputation Score \(0/i);
     assert.doesNotMatch(src, /REPUTATION_SCORE_THRESHOLD/);
     assert.doesNotMatch(src, /factor\.weight/);
     assert.doesNotMatch(src, /How We Calculate Reputation Scores/);

@@ -66,12 +66,12 @@ export default function HowToChoose() {
         Our <Link href="/companies">Mover Directory</Link> already pulls and displays this data so you don’t have to hunt through government websites.
       </p>
 
-      <h2 id="reputation-score">3. Use Reputation Scores, Not Just Star Ratings</h2>
+      <h2 id="reputation-score">3. Look at the Evidence, Not Just Star Ratings</h2>
       <p>
         A 4.9-star rating on Google from 12 reviews is less meaningful than a 4.3 average from 2,000 third-party reviews you can verify yourself.
       </p>
       <p>
-        At Move Trust Hub we calculate a <strong>Reputation Score (0–100)</strong> that combines:
+        Move Trust Hub does not calculate a score, grade, or ranking for movers. Instead, we show you the underlying evidence so you can judge it yourself:
       </p>
       <ul>
         <li>Volume and recency of reviews</li>
@@ -81,7 +81,7 @@ export default function HowToChoose() {
         <li>Overall customer feedback trends</li>
       </ul>
       <p>
-        <strong>Target:</strong> Companies with a score of 85+ are generally the safest choices for interstate moves.
+        <strong>Tip:</strong> Weigh the evidence together rather than relying on any single number — a real safety and reputation picture comes from FMCSA authority status, complaint history, and review volume in combination.
       </p>
 
       <h2>4. Always Get Written Estimates (Never Accept Phone Quotes)</h2>
