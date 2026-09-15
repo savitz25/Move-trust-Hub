@@ -159,7 +159,12 @@ function similarHit(name: string, query: string): boolean {
   const nTokens = searchTokens(name);
   let matched = 0;
   for (const token of qTokens) {
-    if (nTokens.some((word) => word.startsWith(token.slice(0, Math.max(3, token.length - 1))) || levenshteinAtMost(word, token, 2))) {
+    // A bounded edit-distance-2 comparison is only a meaningful fuzzy signal once the token is
+    // long enough that two edits can't turn it into an unrelated word (e.g. "jk" -> "ab" is
+    // already within distance 2 of *any* other two-letter token, which let unrelated short
+    // brand initials match one another -- TH-SEARCH-R1-018 BLOCKER-MOVE-01). Below that length,
+    // require an actual prefix match instead of a fuzzy edit-distance one.
+    if (nTokens.some((word) => word.startsWith(token.slice(0, Math.max(3, token.length - 1))) || (token.length >= 4 && levenshteinAtMost(word, token, 2)))) {
       matched += 1;
     }
   }

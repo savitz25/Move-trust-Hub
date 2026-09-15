@@ -1,0 +1,25 @@
+{
+  "methodology": "matchCompanyIdentity() probed directly against the exact candidate pool R1-017 observed specialist-execution/v2 returning for 'JK Moving Services', before and after the fix, plus a live re-run of the R1-017 reproduction queries against the fixed code via the same buildMoveNetworkResolverResponse() entry point network-resolver.ts exposes to specialist-execution/v2.",
+  "beforeFix": {
+    "query": "JK Moving Services",
+    "candidatesProbed": ["JK Moving Services", "Ab Moving Services", "Jp Moving Services", "Km Moving Services", "Kings Moving Services", "Bb&D Moving Services", "H&L Moving Services"],
+    "qualifiedCount": 6,
+    "qualifiedNames": ["JK Moving Services", "Ab Moving Services", "Jp Moving Services", "Km Moving Services", "Bb&D Moving Services", "H&L Moving Services"],
+    "note": "6 of 7 probed candidates incorrectly qualified as identity matches (only 'Kings Moving Services' was already correctly excluded, since its length difference from 'jk' defeats even the unfixed Levenshtein check)."
+  },
+  "afterFix": {
+    "query": "JK Moving Services",
+    "candidatesProbed": ["JK Moving Services", "Ab Moving Services", "Jp Moving Services", "Km Moving Services", "Kings Moving Services", "Bb&D Moving Services", "H&L Moving Services"],
+    "qualifiedCount": 1,
+    "qualifiedNames": ["JK Moving Services"],
+    "note": "Exactly the genuine JK identity qualifies; all 6 unrelated candidates correctly excluded."
+  },
+  "moveAskV1DirectContract": {
+    "query": "JK Moving Services",
+    "terminalState": "NEEDS_CLARIFICATION",
+    "candidateCount": 5,
+    "candidateNames": ["JK Moving Services", "JK MOVING SERVICES", "JK BROKERAGE SERVICES", "JK FORWARDERS, INC.", "JK VAN LINES, INC."],
+    "note": "Unaffected by this fix (lib/move-ask/ is a separate module). Recorded here as the reference standard the specialist-execution/v2 path now converges toward in spirit: every candidate genuinely shares the distinctive 'JK' token."
+  },
+  "conclusion": "After the fix, specialist-execution/v2's qualified identity count (1) is consistent with move-ask-v1's tight candidate set (5, which additionally includes JK-prefixed entities like 'JK Brokerage Services' and 'JK Forwarders Inc' that a stricter identity-only query correctly treats as distinct-but-related JK-branded entities, not unrelated companies). Both paths now agree that unrelated companies such as 'Kings Moving Services' or 'Ab Moving Services' do not belong in a search for 'JK Moving Services'."
+}

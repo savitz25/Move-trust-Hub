@@ -1,0 +1,118 @@
+=== RED (mutation restored: pre-fix code) ===
+✖ BLOCKER-MOVE-01: sparse two-letter brand initial does not fuzzy-match unrelated companies (12.7499ms)
+✖ BLOCKER-MOVE-01: same sparse-brand behavior holds for the company+journey phrasing (2.1521ms)
+✔ BLOCKER-MOVE-01 control: a higher-population multi-word name is unaffected (1.902ms)
+✔ BLOCKER-MOVE-01 control: exact USDOT identifier (SHIFL) is unaffected by name-matching changes (1.02ms)
+✔ BLOCKER-MOVE-01 control: a legitimate broad brand (Allied) still resolves on its own distinctive token (0.7259ms)
+✔ BLOCKER-MOVE-01 control: an impossible company name yields no confident match (2.9251ms)
+✔ BLOCKER-MOVE-01 control: a quoted company name containing a geographic word is still name-anchored, not geography-anchored (0.9093ms)
+✔ R1-006 protection: MC225850 conflict containment is not reopened by the name-matching fix (0.4147ms)
+✖ BLOCKER-MOVE-01 integration: totalMatchingIdentityCount reflects the qualified cohort, not the raw candidate pool (2.1503ms)
+✔ MUTATION A (must fail if restored): broad searchMovers results without identity relevance filtering (1.7806ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 7
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2665.2701
+
+✖ failing tests:
+
+test at lib\search\r1-018-move-01.test.ts:2:2648
+✖ BLOCKER-MOVE-01: sparse two-letter brand initial does not fuzzy-match unrelated companies (12.7499ms)
+  AssertionError [ERR_ASSERTION]: only the actual JK-branded company should qualify as an identity candidate
+  + actual - expected
+  
+    [
+      'JK Moving Services',
+  +   'Ab Moving Services',
+  +   'Jp Moving Services',
+  +   'Km Moving Services',
+  +   'Bb&D Moving Services',
+  +   'H&L Moving Services'
+    ]
+  
+      at TestContext.<anonymous> (C:\Users\makei\move-trust-hub-r1-018-worktree\lib\search\r1-018-move-01.test.ts:64:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 'JK Moving Services', 'Ab Moving Services', 'Jp Moving Services', 'Km Moving Services', 'Bb&D Moving Services', 'H&L Moving Services' ],
+    expected: [ 'JK Moving Services' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at lib\search\r1-018-move-01.test.ts:2:3073
+✖ BLOCKER-MOVE-01: same sparse-brand behavior holds for the company+journey phrasing (2.1521ms)
+  AssertionError [ERR_ASSERTION]: Ab Moving Services must not match on route/journey-adjacent queries either
+  + actual - expected
+  
+  + {
+  +   explanation: 'Similar company name',
+  +   score: 720,
+  +   textScore: 99,
+  +   tier: 9,
+  +   type: 'similar_name'
+  + }
+  - null
+  
+      at TestContext.<anonymous> (C:\Users\makei\move-trust-hub-r1-018-worktree\lib\search\r1-018-move-01.test.ts:72:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: { type: 'similar_name', tier: 9, explanation: 'Similar company name', score: 720, textScore: 99 },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at lib\search\r1-018-move-01.test.ts:2:6711
+✖ BLOCKER-MOVE-01 integration: totalMatchingIdentityCount reflects the qualified cohort, not the raw candidate pool (2.1503ms)
+  AssertionError [ERR_ASSERTION]: raw candidate pool of 7 must narrow to exactly the 1 genuine JK identity
+  
+  6 !== 1
+  
+      at TestContext.<anonymous> (C:\Users\makei\move-trust-hub-r1-018-worktree\lib\search\r1-018-move-01.test.ts:137:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 6,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+=== GREEN (fix restored) ===
+✔ BLOCKER-MOVE-01: sparse two-letter brand initial does not fuzzy-match unrelated companies (4.6369ms)
+✔ BLOCKER-MOVE-01: same sparse-brand behavior holds for the company+journey phrasing (0.9987ms)
+✔ BLOCKER-MOVE-01 control: a higher-population multi-word name is unaffected (0.842ms)
+✔ BLOCKER-MOVE-01 control: exact USDOT identifier (SHIFL) is unaffected by name-matching changes (0.3867ms)
+✔ BLOCKER-MOVE-01 control: a legitimate broad brand (Allied) still resolves on its own distinctive token (0.7205ms)
+✔ BLOCKER-MOVE-01 control: an impossible company name yields no confident match (1.3012ms)
+✔ BLOCKER-MOVE-01 control: a quoted company name containing a geographic word is still name-anchored, not geography-anchored (0.309ms)
+✔ R1-006 protection: MC225850 conflict containment is not reopened by the name-matching fix (0.1965ms)
+✔ BLOCKER-MOVE-01 integration: totalMatchingIdentityCount reflects the qualified cohort, not the raw candidate pool (2.2726ms)
+✔ MUTATION A (must fail if restored): broad searchMovers results without identity relevance filtering (1.0708ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2035.4979
