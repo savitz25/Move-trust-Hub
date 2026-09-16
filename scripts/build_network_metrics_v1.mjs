@@ -391,6 +391,12 @@ const spec = [
     "SEARCH_ONLY",
     [["hhg-roster", "SEARCH_ONLY", "il_current_hhg_roster", null]],
   ],
+  [
+    "OR",
+    "/oregon",
+    "STATE_SOURCE_LIVE",
+    [["hhg-roster", "STATE_SOURCE_LIVE", "or_odot_authorized_hhg_list_rows", 113]],
+  ],
 ];
 m.stateCapabilities = spec.map(([state, route, status, rows]) => ({
   state,
@@ -427,6 +433,12 @@ for (const metric of m.metrics) {
     metric.snapshotAsOf = va.clocks.snapshotAsOf;
   if (metric.key.startsWith("ny_"))
     metric.snapshotAsOf = ny.snapshotAsOf ?? ny.as_of;
+  if (metric.key.startsWith("or_")) {
+    const orSnap = read("lib/oregon-intelligence/accepted-snapshot.json");
+    metric.snapshotAsOf = orSnap.snapshotAsOf;
+    metric.sourceAsOf = orSnap.clocks.sourceAsOf;
+    metric.retrievedAt = orSnap.retrievedAt;
+  }
   if (metric.key.startsWith("published_")) {
     metric.sourceAsOf = null;
     metric.snapshotAsOf = null;

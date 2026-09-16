@@ -1,5 +1,6 @@
 import { parseNameRequest, distinctiveTokens } from './name';
 import { parseMoveIdentifiers } from './identifier';
+import { lookupOregonCertificate } from '../oregon-intelligence/lookup';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
 
 const STATE_NAMES: Record<string, string> = {
@@ -12,6 +13,7 @@ const STATE_NAMES: Record<string, string> = {
   virginia: 'VA',
   'new york': 'NY',
   illinois: 'IL',
+  oregon: 'OR',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -72,6 +74,48 @@ function mentionsIllinois(q: string): boolean {
 
 function mentionsChicago(q: string): boolean {
   return /\bchicago\b|\bcook county\b/i.test(q);
+}
+
+function mentionsOregon(q: string): boolean {
+  return /\boregon\b|\bodot\b/i.test(q) || detectState(q) === 'OR';
+}
+
+function mentionsPortland(q: string): boolean {
+  return /\bportland\b|\bmultnomah\b/i.test(q);
+}
+
+function parseOregonCertificateNumber(q: string): string | null {
+  if (/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) return null;
+  const labeled =
+    q.match(/\boregon(?:\s+household[- ]?goods)?(?:\s+mover)?\s+certificate(?:\s+(?:no\.?|number))?\s*#?\s*(\d{4,8})\b/i) ||
+    q.match(/\bcertificate(?:\s+(?:no\.?|number))?\s*#?\s*(\d{4,8})\b.*\boregon\b/i) ||
+    q.match(/\bodot\s+certificate(?:\s+(?:no\.?|number))?\s*#?\s*(\d{4,8})\b/i);
+  return labeled?.[1] ?? null;
+}
+
+function isOrComplaintAsk(q: string): boolean {
+  return /\bcomplaint/i.test(q) && (mentionsOregon(q) || /\bodot\b/i.test(q));
+}
+
+function isOrEnforcementAsk(q: string): boolean {
+  return /\b(enforcement|final order|civil (monetary )?penalt|unauthorized mover|unlicensed mover)\b/i.test(q) && mentionsOregon(q);
+}
+
+function isOrIntrastateAuthorityAsk(q: string): boolean {
+  if (!mentionsOregon(q)) return false;
+  if (/\bheadquarter/i.test(q) && /\binterstate\b/i.test(q)) return false;
+  if (/\binterstate mover\b/i.test(q) && !/\blicen|\bintrastate|\bhousehold[- ]?goods|\bodot\b|\bcertificate\b/i.test(q)) {
+    return false;
+  }
+  return (
+    /\bintrastate\b/i.test(q) ||
+    /\bodot\b|\bcommerce and compliance\b|\bhousehold[- ]?goods certificate\b/i.test(q) ||
+    (/\blicensed movers?\b|\blicensed household[- ]?goods|\bhousehold[- ]?goods movers?\b/i.test(q) && !/\binterstate\b/i.test(q)) ||
+    /\bis this mover licensed in oregon\b/i.test(q) ||
+    /\blicensed in oregon\b/i.test(q) ||
+    /\boregon movers\b/i.test(q) ||
+    /\boregon household goods mover\b/i.test(q)
+  );
 }
 
 function isIccComplaintAsk(q: string): boolean {
@@ -151,6 +195,16 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
+  if (isRanking(q) && mentionsPortland(q) && mentionsOregon(q)) {
+    const query = fail(
+      'MoveTrustHub does not rank movers and does not publish a Portland or Multnomah County mover route. Oregon household-goods authority is statewide ODOT CCD research.',
+      ['Open Oregon household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Mode', 'fail_closed');
+    push('Coverage', 'No Portland intelligence page');
+    return { raw: q, query, interpretation: lines };
+  }
+
   if ((isRanking(q) || /\bwhich state has better movers\b/i.test(q)) && !detectState(q)) {
     const query = fail(
       'MoveTrustHub does not rank movers and does not publish a TrustHub mover score. Research identity, authority, and registration instead.',
@@ -160,6 +214,67 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
       ],
     );
     push('Mode', 'fail_closed');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  const oregonCertificate = parseOregonCertificateNumber(q);
+  if (oregonCertificate) {
+    const found = lookupOregonCertificate(oregonCertificate);
+    if (isOrComplaintAsk(q)) {
+      const query = fail(
+        `Oregon intrastate household-goods complaints are filed on form 9976. No public mover-level complaint universe was acquired. Missing bulk complaints is not zero complaints. Federal complaints are not a substitute. Confirm certificate ${oregonCertificate} on the official ODOT authorized list.`,
+        ['Open Oregon household-goods research.', 'Show complaint observations for USDOT 3244649.'],
+      );
+      query.coverageState = 'NOT_ACQUIRED';
+      push('Coverage', 'ODOT CCD complaints — REQUEST_ONLY / NOT_ACQUIRED');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (found.hits.length) {
+      const hit = found.hits[0]!;
+      const query = fail(
+        `${hit.title} appears on the accepted ODOT CCD authorized household-goods list as certificate ${hit.certificateNumber}. An Oregon certificate is not a USDOT number and not an MC number. Authorized service may be local cartage, other-than-local, or restricted; it is not automatically statewide. Confirm on the official list.`,
+        ['Open Oregon household-goods research.', 'Find USDOT 3244649.'],
+      );
+      push('Oregon certificate', hit.certificateNumber);
+      push('Authorized-list identity', hit.title);
+      push('Limitation', 'Certificate is not FMCSA interstate authority');
+      return { raw: q, query, interpretation: lines };
+    }
+    const query = fail(
+      `Certificate ${oregonCertificate} is not on the accepted ODOT CCD authorized household-goods snapshot. Absence from this snapshot is not FMCSA interstate status and is not a Trust Score. Confirm on the official authorized-movers list.`,
+      ['Open Oregon household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Oregon certificate', oregonCertificate);
+    push('Coverage', 'Accepted authorized list — no match');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isOrComplaintAsk(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) {
+    const query = fail(
+      'Oregon ODOT CCD household-goods complaints are official filing (form 9976), not an acquired bulk table. Federal complaint observations are not a substitute. Missing bulk complaints is not zero complaints.',
+      ['Open Oregon household-goods research.', 'Show complaint observations for USDOT 3244649.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'ODOT CCD complaints — REQUEST_ONLY');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isOrEnforcementAsk(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) {
+    const query = fail(
+      'Oregon’s 2026 unauthorized-mover rules (SB 839 / OAR 740-300-0035) are an enforcement framework, not a disciplinary record. No bounded official Final Order table was acquired. Name-only press citations are not attached.',
+      ['Open Oregon household-goods research.', 'Find USDOT 3244649.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'ODOT CCD enforcement matters — NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isOrIntrastateAuthorityAsk(q)) {
+    const query = fail(
+      'Oregon intrastate household-goods authority is an ODOT CCD certificate of authority on the official authorized-movers list (113 current list rows / 113 distinct certificate numbers). Local cartage and other-than-local service overlap and are not extra movers. A USDOT or MC number is not an Oregon certificate. Search the official list or ask with an Oregon certificate number.',
+      ['Open Oregon household-goods research.', 'Show current interstate household-goods carriers headquartered in Oregon.'],
+    );
+    push('Coverage', 'ODOT CCD authorized HHG list — ACQUIRED_CURRENT_SNAPSHOT');
     return { raw: q, query, interpretation: lines };
   }
 
@@ -433,6 +548,28 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     push('Coverage', 'NYSDOT current authority — NOT_ACQUIRED');
     return { raw: q, query, interpretation: lines };
   }
+  if (identity.identifiers.length && isOrComplaintAsk(q)) {
+    const query = fail(
+      'Oregon ODOT CCD household-goods complaint records are not acquired as a bulk corpus. A labeled USDOT does not substitute Oregon complaint evidence with federal complaint observations.',
+      ['Open Oregon household-goods research.', 'Show complaint observations for USDOT 3244649.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'ODOT CCD complaints — NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+  if (
+    identity.identifiers.length &&
+    mentionsOregon(q) &&
+    !/\bheadquarter/i.test(q) &&
+    !(/\binterstate\b/i.test(q) && !/\blicen|\bcertificate|\bodot\b/i.test(q))
+  ) {
+    const query = fail(
+      'A USDOT or MC number is not an Oregon household-goods certificate and does not prove ODOT CCD intrastate authority. Confirm the Oregon certificate on the official authorized-movers list. Federal authority is a different grain.',
+      ['Open Oregon household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Coverage', 'ODOT CCD certificate is not USDOT/MC');
+    return { raw: q, query, interpretation: lines };
+  }
   if (identity.identifiers.length) {
     const id = identity.identifiers[0]!;
     const evidence = /\bcomplaint/i.test(q) ? 'complaint'
@@ -453,7 +590,7 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
 
   const state = detectState(q);
   const role = detectRole(q);
-  const floridaIm = /\b(fdacs|intrastate movers?|im registrations?)\b/i.test(q) && !mentionsNewYork(q) && !mentionsIllinois(q);
+  const floridaIm = /\b(fdacs|intrastate movers?|im registrations?)\b/i.test(q) && !mentionsNewYork(q) && !mentionsIllinois(q) && !mentionsOregon(q);
 
   if (isIlIntrastateAuthorityAsk(q) || (mentionsIllinois(q) && /\bintrastate movers?\b/i.test(q) && !/\binterstate\b/i.test(q))) {
     const query = fail(
@@ -472,6 +609,15 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     );
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'NYSDOT current roster — NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isOrIntrastateAuthorityAsk(q) || (mentionsOregon(q) && /\bintrastate movers?\b/i.test(q) && !/\binterstate\b/i.test(q))) {
+    const query = fail(
+      'Oregon intrastate household-goods authority is an ODOT CCD certificate of authority. The accepted authorized list has 113 current rows and 113 distinct certificate numbers. A USDOT or MC number is not that certificate, and local cartage is not other-than-local authority.',
+      ['Open Oregon household-goods research.', 'Show current interstate household-goods carriers headquartered in Oregon.'],
+    );
+    push('Coverage', 'ODOT CCD authorized HHG list — ACQUIRED_CURRENT_SNAPSHOT');
     return { raw: q, query, interpretation: lines };
   }
   const overlap = /\bboth\b/i.test(q) && /\b(fmcsa|interstate)\b/i.test(q) && /\b(fdacs|intrastate)\b/i.test(q);

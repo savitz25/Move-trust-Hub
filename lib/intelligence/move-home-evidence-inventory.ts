@@ -55,6 +55,7 @@ const meta: Record<string, Pick<MoveHomepageMeasure, 'family' | 'entityClass' | 
   va_dmv_household_goods_carrier_listings: { family: 'STATE_AUTHORITY', entityClass: 'Virginia DMV Household Goods Carrier certificate listing', destination: '/virginia', acceptedArtifact: 'move-va-state-intel-v1' },
   va_dmv_property_carrier_listings: { family: 'STATE_AUTHORITY', entityClass: 'Virginia DMV Property Carrier permit listing', destination: '/virginia', acceptedArtifact: 'move-va-state-intel-v1' },
   ny_dot_2026_hhg_bulletin_observations: { family: 'STATE_AUTHORITY', entityClass: 'NYSDOT Weekly Bulletin household-goods application observation', destination: '/new-york', acceptedArtifact: 'move-ny-state-intel-v1' },
+  or_odot_authorized_hhg_list_rows: { family: 'STATE_AUTHORITY', entityClass: 'ODOT CCD authorized household-goods list row', destination: '/oregon', acceptedArtifact: 'move-or-state-intel-v1' },
   published_state_intelligence_pages: { family: 'PUBLIC_SURFACES', entityClass: 'Published specialist state page', destination: '#state-intelligence', acceptedArtifact: 'canonical state publication model' },
 };
 
