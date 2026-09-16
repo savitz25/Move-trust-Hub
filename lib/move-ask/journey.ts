@@ -176,20 +176,27 @@ export function parseJourney(raw: string): Journey | null {
   const locality = localSpan ? resolveMovePlace(localSpan.replace(/\s+(?:for\s+)?(?:tomorrow|today|this weekend)$/i, "")) : undefined;
   if (!route && !booking && !personal && !generic) return null;
   // TH-DISCOVERY-RESET-001 (production certification fix): this used to require a bare state
-  // ("movers in Florida") to skip the journey/UNSUPPORTED_LOCALITY path -- a resolved city or
-  // county ("moving companies in Tampa Florida", "mover in Boca Raton") always continued into
-  // journey mode and was labeled UNSUPPORTED_LOCALITY, needing a second explicit "research
-  // recorded-state instead" click before showing any result, even though
-  // executeMoveSpecialist's recordedHqCity filter (PR #142) genuinely answers the city-scoped
-  // query directly. A city/county resolves the exact same way a bare state does (`resolution ===
-  // "EXACT"`), so it gets the same treatment; "serving/serve/near/within" phrasing still implies a
-  // real service-territory ambiguity and correctly stays in the more cautious journey flow.
+  // ("movers in Florida") to skip the journey/UNSUPPORTED_LOCALITY path -- a specifically
+  // recognized recorded-headquarters city ("moving companies in Tampa Florida", "mover in Boca
+  // Raton") always continued into journey mode and was labeled UNSUPPORTED_LOCALITY, needing a
+  // second explicit "research recorded-state instead" click before showing any result, even
+  // though executeMoveSpecialist's recordedHqCity filter (PR #142) genuinely answers the
+  // city-scoped query directly. Deliberately narrower than "any EXACT-resolved city" --
+  // resolveMovePlace resolves EXACT for literally any "<city>, <state>" text via generic
+  // state-suffix stripping (e.g. "Austin, Texas"), and an arbitrary unvetted city must keep going
+  // through the cautious journey/broadening flow exactly as before; only a city checked into
+  // KNOWN_CITY_STATE is confirmed to have this real capability. "serving/serve/near/within"
+  // phrasing still implies a real service-territory ambiguity and correctly stays in the journey
+  // flow even for a known city.
+  const knownLocalityCity =
+    locality?.city && KNOWN_CITY_STATE[locality.city.toLowerCase()]?.stateCode === locality.state;
   if (
     generic &&
     !booking &&
     !explicitStateLocal &&
     locality?.state &&
     locality.resolution === "EXACT" &&
+    (!locality.city || knownLocalityCity) &&
     !/serving|serve|near|within/i.test(text)
   )
     return null;
