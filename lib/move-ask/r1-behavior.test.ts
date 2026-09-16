@@ -128,9 +128,19 @@ test('NJ current carrier count preserves operation, role, source boolean and rec
   const licensed = planMoveRequest({q:'licensed New Jersey PM movers'}); assert.equal(licensed.query.mode, 'fail_closed'); assert.equal(licensed.query.coverageState, 'REQUEST_ONLY');
   assert.equal(planMoveRequest({q:'NJ intrastate movers'}).query.mode, 'fail_closed');
   assert.equal(planMoveRequest({q:'movers in New Jersey and Florida'}).query.mode, 'fail_closed');
-  for (const q of ['movers in Miami', 'movers in Broward County, Florida', 'movers in Dallas, Texas']) {
+  for (const q of ['movers in Miami', 'movers in Broward County, Florida']) {
     const p = planMoveRequest({q}); assert.equal(p.query.mode, 'fail_closed', q); assert.ok(p.query.constraints?.some((c) => c.outcome === 'UNSUPPORTED'), q);
   }
+  // TH-DISCOVERY-RESET-001 (production certification fix): "Dallas" is a recognized
+  // KNOWN_CITY_STATE city (parse-directory-research-query.ts), and executeMoveSpecialist's
+  // recordedHqCity filter (PR #142) genuinely supports any recognized city -- this is not
+  // Florida-specific. The two premature "city filtering is not supported" gates that used to
+  // block every recognized city unconditionally (including this pre-existing Dallas fixture) are
+  // gone; Miami and Broward above are unaffected because they are not in KNOWN_CITY_STATE.
+  const dallas = planMoveRequest({q: 'movers in Dallas, Texas'});
+  assert.equal(dallas.query.mode, 'entity');
+  assert.equal(dallas.query.directoryRequest?.geography?.stateCode, 'TX');
+  assert.equal(dallas.query.directoryRequest?.geography?.city, 'Dallas');
 }));
 
 test('constraint conflicts stay visible and no implicit relaxation is applied', async () => source(async () => {
