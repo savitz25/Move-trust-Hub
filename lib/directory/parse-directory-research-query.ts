@@ -46,8 +46,17 @@ const GENERIC_MOVER_PATTERNS = [
   /\b(?:movers?|moving\s+compan(?:y|ies)|household[-\s]+goods\s+carriers?)\b/i,
 ];
 
-const KNOWN_CITY_STATE: Record<string, { city: string; stateCode: string }> = {
+// TH-DISCOVERY-RESET-001 (production certification fix): the recorded-headquarters-CITY filter
+// (query-db-directory-page.ts's recordedHqCity, wired into executeMoveSpecialist by PR #142) has
+// been real and live since that PR, but this recognizer -- which decides whether the plan even
+// attempts a city-scoped query -- never grew past its single "dallas" test fixture. "moving
+// companies in Tampa Florida" and "mover in Boca Raton" therefore still dead-ended here even
+// though the backend they'd reach genuinely supports the city.
+export const KNOWN_CITY_STATE: Record<string, { city: string; stateCode: string }> = {
   dallas: { city: 'Dallas', stateCode: 'TX' },
+  tampa: { city: 'Tampa', stateCode: 'FL' },
+  'boca raton': { city: 'Boca Raton', stateCode: 'FL' },
+  boca: { city: 'Boca Raton', stateCode: 'FL' },
 };
 
 const LEGAL_SUFFIX = /\b(?:llc|inc\.?|corp\.?|corporation|ltd\.?)\s*$/i;
@@ -101,11 +110,19 @@ export function parseDirectoryResearchQuery(raw: string): DirectoryResearchQuery
   if (!autoPattern && !genericMoverPattern) return base;
 
   const statesInQuery = extractStates(originalQuery);
+  // TH-DISCOVERY-RESET-001 (production certification fix): a known city implies its state just as
+  // much as the state's own name would ("mover in Boca Raton" carries the same real geography
+  // signal as "mover in Florida"), so it must count alongside statesInQuery below -- otherwise a
+  // bare recognized city with no state text ("mover in Boca Raton") never even reached the
+  // structural-mover check and the whole query fell back to `base` (no geography at all).
+  const knownCityInQuery = Object.keys(KNOWN_CITY_STATE).some((token) =>
+    new RegExp(`\\b${escapeRegex(token)}\\b`, 'i').test(originalQuery),
+  );
   const structuralMover = Boolean(
     genericMoverPattern &&
     (/\b(?:movers|moving\s+companies|household[-\s]+goods\s+carriers)\b/i.test(originalQuery) ||
       /\b(?:in|serv(?:e|es|ing)|near\s+me|to|from)\b/i.test(originalQuery)) &&
-    (statesInQuery.length > 0 || /\b(?:serv(?:e|es|ing)|near\s+me|to|from)\b/i.test(originalQuery))
+    (statesInQuery.length > 0 || knownCityInQuery || /\b(?:serv(?:e|es|ing)|near\s+me|to|from)\b/i.test(originalQuery))
   );
   if (!autoPattern && !structuralMover) return base;
 
@@ -138,17 +155,27 @@ export function parseDirectoryResearchQuery(raw: string): DirectoryResearchQuery
     .replace(/\b(?:company|companies|provider|providers|research|find|show|me|that)\b/ig, ' ')
     .replace(/\s+/g, ' ').trim();
 
+  // TH-DISCOVERY-RESET-001 (production certification fix): a known city match with no explicit
+  // state (e.g. "Boca Raton" alone) implies its state exactly as a bare state name would -- it
+  // must not require an already-resolved state to even be considered (that made the lookup only
+  // ever confirm a state already found by other means, never establish one on its own).
+  const cityMatch = Object.entries(KNOWN_CITY_STATE).find(
+    ([token, value]) =>
+      (!states.length || states.at(-1)!.code === value.stateCode) &&
+      new RegExp(`\\b${escapeRegex(token)}\\b`, 'i').test(remainder),
+  )?.[1];
   const locationIntent: DirectoryLocationIntent = routeOrAvailability
     ? 'ROUTE_OR_AVAILABILITY'
     : serving
       ? 'SERVICE_TERRITORY'
-      : states.length || explicitHq
+      : states.length || explicitHq || cityMatch
         ? 'RECORDED_HQ'
         : 'UNSPECIFIED_GEOGRAPHY';
-  const hqState = locationIntent === 'RECORDED_HQ' ? states.at(-1) : undefined;
-  const city = Object.entries(KNOWN_CITY_STATE).find(([token, value]) =>
-    hqState?.code === value.stateCode && new RegExp(`\\b${escapeRegex(token)}\\b`, 'i').test(remainder)
-  )?.[1].city;
+  const hqState =
+    locationIntent === 'RECORDED_HQ'
+      ? (states.at(-1) ?? (cityMatch ? { code: cityMatch.stateCode, name: directoryStateName(cityMatch.stateCode) ?? cityMatch.stateCode } : undefined))
+      : undefined;
+  const city = hqState && cityMatch?.stateCode === hqState.code ? cityMatch.city : undefined;
   if (city) remainder = remainder.replace(new RegExp(`\\b${escapeRegex(city)}\\b`, 'i'), ' ');
 
   remainder = remainder

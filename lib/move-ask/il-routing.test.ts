@@ -48,9 +48,13 @@ test('labeled USDOT and MC lookups stay federal', () => {
 });
 
 test('ranking and Chicago routes fail closed', () => {
+  // TH-DISCOVERY-RESET-001 (production certification fix): "best mover in Illinois" now resolves
+  // the real recorded-headquarters-state cohort instead of hard-failing on the ranking word alone
+  // -- see ny-routing.test.ts's matching update for the full rationale. Chicago/Cook County stays
+  // its own genuine, unaffected capability gap (no published Chicago mover route exists at all).
   const best = interpretMoveAskQuery('best mover in Illinois');
-  assert.equal(best.query.mode, 'fail_closed');
-  assert.match(best.query.failReason ?? '', /does not rank/i);
+  assert.equal(best.query.mode, 'entity');
+  assert.ok(best.interpretation.some((l) => l.label === 'Ranking' && /does not rank/i.test(l.value)));
 
   const chicago = interpretMoveAskQuery('safest mover in Chicago');
   assert.equal(chicago.query.mode, 'fail_closed');

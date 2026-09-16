@@ -120,9 +120,15 @@ test('name-only New York complaint still requires a labeled identity', () => {
 });
 
 test('ranking, route, and malformed identifier safeguards still fail closed', () => {
+  // TH-DISCOVERY-RESET-001 (production certification fix): "best mover in New York" now resolves
+  // the real recorded-headquarters-state cohort instead of hard-failing on the ranking word alone
+  // -- exactly the "unsupported condition dead-ends before real evidence" pattern this ticket
+  // exists to remove (a ranking word with NO resolvable geography still correctly stays
+  // fail-closed; see the RANKING SAFEGUARD test below). The no-ranking disclosure is preserved as
+  // an interpretation line instead of a fail reason.
   const best = interpretMoveAskQuery('best mover in New York');
-  assert.equal(best.query.mode, 'fail_closed');
-  assert.match(best.query.failReason ?? '', /does not rank/i);
+  assert.equal(best.query.mode, 'entity');
+  assert.ok(best.interpretation.some((l) => l.label === 'Ranking' && /does not rank/i.test(l.value)));
 
   const route = interpretMoveAskQuery('I am moving from Miami to New York');
   assert.equal(route.query.mode, 'fail_closed');
@@ -133,4 +139,10 @@ test('ranking, route, and malformed identifier safeguards still fail closed', ()
 
   const conflicting = interpretMoveAskQuery('USDOT 3244649 USDOT 1019808');
   assert.equal(conflicting.query.mode, 'fail_closed');
+});
+
+test('RANKING SAFEGUARD: a ranking word with no resolvable geography still fails closed, never a fabricated score', () => {
+  const noGeography = interpretMoveAskQuery('best mover');
+  assert.equal(noGeography.query.mode, 'fail_closed');
+  assert.match(noGeography.query.failReason ?? '', /does not rank/i);
 });

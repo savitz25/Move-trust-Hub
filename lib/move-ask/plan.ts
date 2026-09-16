@@ -190,10 +190,14 @@ function planLegacyMoveRequest(raw: MoveRequestInput): ParsedMoveAsk {
   if (new Set(directory.routeStates).size > 1 && q.mode !== 'comparison' && !q.identifier) stop('Multiple geographic restrictions need clarification. No single state was chosen on your behalf.', 'geography', directory.routeStates.join(', '), 'CONFLICT');
   const local = input.q.match(/\b(?:in|near|within)\s+([^?.]+)[?.]?$/i)?.[1]?.trim();
   const stateOnly = local && (local.length === 2 ? directoryStateName(local) : Array.from({ length: 26 * 26 }, (_, n) => directoryStateName(String.fromCharCode(65 + Math.floor(n / 26), 65 + n % 26))).find((s) => s?.toLowerCase() === local.toLowerCase()));
-  if (local && !stateOnly && !q.floridaIm && !q.identifier && q.mode !== 'definition' && q.mode !== 'fail_closed') {
+  // TH-DISCOVERY-RESET-001 (production certification fix): a recognized recorded-headquarters
+  // city (directory.geography.city, from parse-directory-research-query.ts's KNOWN_CITY_STATE) is
+  // a real, supported query, not an unsupported local geography -- executeMoveSpecialist's
+  // recordedHqCity filter (PR #142) genuinely answers it. Both of the checks below used to reject
+  // any city unconditionally, before this contract existed.
+  if (local && !stateOnly && !directory.geography?.city && !q.floridaIm && !q.identifier && q.mode !== 'definition' && q.mode !== 'fail_closed') {
     stop(`The requested local geography (${local}) cannot be applied by this search. Choose an explicit recorded-headquarters state search instead; this request was not broadened.`, 'geography', local, 'UNSUPPORTED');
   }
-  if (directory.geography?.city && !q.identifier && q.mode !== 'fail_closed') stop('City filtering is not supported by this research path. Choose a state search explicitly.', 'city', directory.geography.city, 'UNSUPPORTED');
 
   if (q.identifier) {
     q.page = input.page;
@@ -215,7 +219,7 @@ function planLegacyMoveRequest(raw: MoveRequestInput): ParsedMoveAsk {
     q.executor = 'directory';
     q.directoryRequest = { contract: MOVE_SPECIALIST_EXECUTION_CONTRACT, queryType: 'cohort', entityClass: directory.entityClass ?? 'mover',
       role: q.role === 'carrier_broker' ? 'Carrier/Broker' : q.role === 'carrier' ? 'Carrier' : q.role === 'broker' ? 'Broker' : undefined,
-      geography: { intent: directory.locationIntent === 'SERVICE_TERRITORY' ? 'SERVICE_TERRITORY' : directory.locationIntent === 'ROUTE_OR_AVAILABILITY' ? 'ROUTE_AVAILABILITY' : 'RECORDED_HQ', stateCode: q.jurisdiction?.state }, page: input.page, limit: MOVE_ASK_PAGE_SIZE };
+      geography: { intent: directory.locationIntent === 'SERVICE_TERRITORY' ? 'SERVICE_TERRITORY' : directory.locationIntent === 'ROUTE_OR_AVAILABILITY' ? 'ROUTE_AVAILABILITY' : 'RECORDED_HQ', stateCode: q.jurisdiction?.state, city: directory.geography?.city }, page: input.page, limit: MOVE_ASK_PAGE_SIZE };
   }
   if (directory.entityClass === 'auto_transport' && (q.mode === 'count' || q.authorityCurrent === true || q.authorityCurrent === 'not_current')) stop('This auto-transport operation is not available with all requested filters. No household-goods cohort was substituted.', 'entity class', 'auto_transport', 'UNSUPPORTED');
   parsed.interpretation = parsed.interpretation.filter((line) => !['Entity', 'State', 'Status'].includes(line.label));
