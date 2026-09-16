@@ -49,6 +49,7 @@ export type MetricGrain =
   | 'co_puc_hhg_suspended_status_observation'
   | 'va_dmv_hhg_certificate_listing'
   | 'va_dmv_property_carrier_permit_listing'
+  | 'or_odot_hhg_authorized_list_row'
   | 'published_state_intelligence_page'
   | 'florida_research_county_landing'
   | 'local_movers_state_landing';
@@ -165,6 +166,12 @@ export type MoveNetworkMetricsV1 = {
     currentHhgRosterCoverage: 'OPEN_SEARCH_ONLY';
     bulletinIssues: number;
     hhgBulletinObservations: number;
+  };
+  oregon: {
+    authorizedHhgListRows: number;
+    distinctCertificateIds: number;
+    sourceUpdatedAt: string;
+    sourceAsOf: null;
   };
   network: {
     publishedStateIntelligencePages: number;

@@ -75,6 +75,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'ICC household-goods licenses & interstate overlay',
       },
       {
+        label: 'Oregon research',
+        href: '/oregon',
+        description: 'ODOT CCD household-goods certificates & interstate overlay',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',

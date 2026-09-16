@@ -35,6 +35,15 @@ test("State and federal identity systems remain separate", () => {
     m.federalDirectory.publishableProfiles,
   );
 });
+test("Oregon authorized HHG list is a live state source and not a federal count", () => {
+  const or = m.stateCapabilities.find((r: any) => r.state === "OR");
+  assert.equal(or.status, "STATE_SOURCE_LIVE");
+  assert.equal(or.capabilities[0].bulkCount, 113);
+  assert.equal(metric("or_odot_authorized_hhg_list_rows").value, 113);
+  assert.equal(m.oregon.authorizedHhgListRows, 113);
+  assert.equal(m.oregon.sourceAsOf, null);
+  assert.notEqual(metric("or_odot_authorized_hhg_list_rows").value, m.federalDirectory.publishableProfiles);
+});
 test("Illinois remains search-only with no bulk count and no completed specialist claim", () => {
   const il = m.stateCapabilities.find((r: any) => r.state === "IL");
   assert.equal(il.status, "SEARCH_ONLY");
@@ -46,7 +55,7 @@ test("Illinois remains search-only with no bulk count and no completed specialis
   assert.equal(m.illinois.sourceAsOf, null);
 });
 test("All accepted expansion capabilities feed the homepage contract", () => {
-  for (const state of ["CO", "VA", "NY", "IL"]) {
+  for (const state of ["CO", "VA", "NY", "IL", "OR"]) {
     const c = m.stateCapabilities.find((r: any) => r.state === state);
     assert.ok(c);
     for (const cap of c.capabilities)

@@ -54,6 +54,8 @@ export type MoveNetworkMetricsInput = {
   vaSourceRetrievedAt: string;
   nyHhgBulletinObservations: number;
   nyBulletinIssues: number;
+  orAuthorizedHhgListRows: number;
+  orDistinctCertificateIds: number;
   publishedStateIntelligencePaths: string[];
   floridaResearchCountyLandings: number;
   localMoverStateLandings: number;
@@ -120,7 +122,15 @@ export function assertGrainSafety(input: MoveNetworkMetricsInput): void {
   if (!input.publishedStateIntelligencePaths.includes('/virginia')) throw new Error('Virginia state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/new-york')) throw new Error('New York state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/illinois')) throw new Error('Illinois state intelligence path missing');
+  if (!input.publishedStateIntelligencePaths.includes('/oregon')) throw new Error('Oregon state intelligence path missing');
   if (input.nyHhgBulletinObservations <= 0) throw new Error('New York HHG bulletin observation count missing');
+  if (input.orAuthorizedHhgListRows <= 0) throw new Error('Oregon authorized HHG list row count missing');
+  if (input.orAuthorizedHhgListRows !== input.orDistinctCertificateIds) {
+    throw new Error('Oregon list rows and distinct certificate IDs must stay aligned on this snapshot');
+  }
+  if (input.orAuthorizedHhgListRows === input.publishableProfiles) {
+    throw new Error('Oregon HHG certificates must not equal federal directory profiles');
+  }
   if (input.publishedStateIntelligencePaths.includes('/arizona')) throw new Error('Arizona state intelligence path must not be published');
   if (input.waActiveDirectoryResults <= 0) throw new Error('Washington active directory result count missing');
   if (input.coActiveHhgPermitListings <= 0) throw new Error('Colorado active HHG permit listing count missing');
@@ -613,6 +623,28 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       ),
     }),
     metric({
+      key: 'or_odot_authorized_hhg_list_rows',
+      label: 'Oregon ODOT CCD authorized household-goods list rows',
+      value: input.orAuthorizedHhgListRows,
+      valueState: 'KNOWN',
+      grain: 'or_odot_hhg_authorized_list_row',
+      denominator: 'Official ODOT CCD Household Goods Movers List rows',
+      description:
+        'Current authorized Oregon household-goods list rows. Not unique companies, not statewide service territory, and not FMCSA interstate movers.',
+      coverage: 'Oregon',
+      contributingSourceSystems: ['odot_ccd_hhg_list'],
+      sourceAsOf: null,
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        `Count official authorized-list rows (${input.orAuthorizedHhgListRows}) and distinct certificate numbers (${input.orDistinctCertificateIds}).`,
+        'Not unique companies. Not local cartage plus other-than-local. Not USDOT/MC. Not a complaint or enforcement count.',
+        ['odot_ccd_hhg_list'],
+        'Oregon intrastate household-goods certificates',
+        'List LastItemModifiedDate 2026-09-09T19:21:37Z; sourceAsOf not published',
+      ),
+    }),
+    metric({
       key: 'ny_dot_2026_hhg_bulletin_observations',
       label: 'NYSDOT 2026 household-goods bulletin application observations',
       value: input.nyHhgBulletinObservations,
@@ -772,6 +804,12 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       currentHhgRosterCoverage: 'OPEN_SEARCH_ONLY',
       bulletinIssues: input.nyBulletinIssues,
       hhgBulletinObservations: input.nyHhgBulletinObservations,
+    },
+    oregon: {
+      authorizedHhgListRows: input.orAuthorizedHhgListRows,
+      distinctCertificateIds: input.orDistinctCertificateIds,
+      sourceUpdatedAt: '2026-09-09T19:21:37Z',
+      sourceAsOf: null,
     },
     network: {
       publishedStateIntelligencePages: input.publishedStateIntelligencePaths.length,

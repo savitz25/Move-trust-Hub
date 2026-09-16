@@ -32,6 +32,8 @@ export function stateInputs(pub, localStates) {
     nyHhgBulletinObservations:
       pub.nySnapshot.bulletin_2026.hhgApplicationObservations,
     nyBulletinIssues: pub.nySnapshot.bulletin_2026.issues,
+    orAuthorizedHhgListRows: pub.orSnapshot.current_hhg_roster.rows,
+    orDistinctCertificateIds: pub.orSnapshot.current_hhg_roster.distinctAuthorityIds,
     publishedStateIntelligencePaths: pub.publishedStateIntelligencePaths,
     floridaResearchCountyLandings: pub.floridaResearchCountyLandings.length,
     localMoverStateLandings: localStates.length,
