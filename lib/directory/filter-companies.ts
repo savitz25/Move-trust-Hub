@@ -5,6 +5,7 @@ import {
   normalizeCoverageFilter,
   shouldPrioritizeLocalMoversInCoverage,
   extractStateCodeFromHeadquarters,
+  extractCityFromHeadquarters,
 } from '@/lib/directory/coverage-filter';
 import { applyScopeToCompanies, type DirectorySearchScope } from '@/lib/directory/search-scope';
 import { scoreCompanySearch } from '@/lib/directory/search-scoring';
@@ -21,6 +22,8 @@ export type DirectoryFilterInput = Partial<DirectoryFilters> & {
   counties?: string[] | null;
   /** Exact recorded headquarters/address state. Never service territory. */
   recordedHqState?: string | null;
+  /** Exact recorded headquarters/address city. Never service territory. */
+  recordedHqCity?: string | null;
 };
 
 function hasObservedPrice(company: Company): boolean {
@@ -127,6 +130,11 @@ export function filterCompanies(
   if (filters.recordedHqState) {
     const state = filters.recordedHqState.trim().toUpperCase();
     result = result.filter((company) => extractStateCodeFromHeadquarters(company.headquarters) === state);
+  }
+
+  if (filters.recordedHqCity) {
+    const city = filters.recordedHqCity.trim().toUpperCase();
+    result = result.filter((company) => extractCityFromHeadquarters(company.headquarters) === city);
   }
 
   const coverageFilter = normalizeCoverageFilter({

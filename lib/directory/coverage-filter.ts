@@ -142,6 +142,18 @@ export function extractStateCodeFromHeadquarters(
   return null;
 }
 
+// TH-DISCOVERY-003: recorded-headquarters CITY (a plain identity/address fact, same grain as the
+// existing recorded-headquarters STATE filter above) -- never a service-territory claim. Parses
+// the leading "City" segment of the same "City, ST" headquarters format extractStateCodeFromHeadquarters
+// already relies on.
+export function extractCityFromHeadquarters(
+  headquarters: string | null | undefined
+): string | null {
+  if (!headquarters?.trim()) return null;
+  const city = headquarters.trim().split(',')[0]?.trim();
+  return city ? city.toUpperCase() : null;
+}
+
 function companyCoverageCounties(company: Company): Array<{ stateSlug: string; countySlug: string }> {
   const raw = company.coverageCounties;
   if (!Array.isArray(raw)) return [];
