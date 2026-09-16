@@ -133,6 +133,14 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
+  // TH-DISCOVERY-RESET-001 (production certification fix): disclose the no-ranking policy exactly
+  // once, up front, regardless of which path below the query ultimately takes. A ranking word
+  // with no resolvable geography still has nothing to fall back to and correctly stays fail-closed
+  // (see the two isRanking gates below); one with a resolvable state/city now falls through to
+  // real results instead of an unconditional dead end -- this line is what discloses that no
+  // ranking was computed for that real result.
+  if (isRanking(q)) push('Ranking', 'Not established; MoveTrustHub does not rank movers. Source order only.');
+
   if (isRanking(q) && mentionsChicago(q)) {
     const query = fail(
       'MoveTrustHub does not rank movers and does not publish a Chicago or Cook County mover route. Illinois household-goods authority is statewide ICC research.',
@@ -143,7 +151,7 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
-  if (isRanking(q) || /\bwhich state has better movers\b/i.test(q)) {
+  if ((isRanking(q) || /\bwhich state has better movers\b/i.test(q)) && !detectState(q)) {
     const query = fail(
       'MoveTrustHub does not rank movers and does not publish a TrustHub mover score. Research identity, authority, and registration instead.',
       [
@@ -247,7 +255,7 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
-  if (isRanking(q) || /\bwhich state has better movers\b/i.test(q)) {
+  if ((isRanking(q) || /\bwhich state has better movers\b/i.test(q)) && !detectState(q)) {
     const query = fail(
       'MoveTrustHub does not rank movers and does not publish a TrustHub mover score. Research identity, authority, and registration instead.',
       [

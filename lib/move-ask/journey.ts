@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import metrics from "../../data/home/move-network-metrics-v1.json";
-import { directoryStateName } from "../directory/parse-directory-research-query";
+import { directoryStateName, KNOWN_CITY_STATE } from "../directory/parse-directory-research-query";
 import type { MoveRegulatoryRole } from "./contract";
 
 export type MovePlace = {
@@ -98,6 +98,17 @@ export function resolveMovePlace(raw: string): MovePlace {
       };
     }
   }
+  // TH-DISCOVERY-RESET-001 (production certification fix): a bare recognized city ("Boca Raton",
+  // no state text) implies its state exactly as it does in parse-directory-research-query.ts's
+  // KNOWN_CITY_STATE below -- reuses that exact same checked-in map rather than a second list.
+  const knownCity = KNOWN_CITY_STATE[value.toLowerCase()];
+  if (knownCity)
+    return {
+      raw: value,
+      city: knownCity.city,
+      state: knownCity.stateCode,
+      resolution: "EXACT",
+    };
   return {
     raw: value,
     ...(/ county$/i.test(value)
@@ -164,13 +175,21 @@ export function parseJourney(raw: string): Journey | null {
   const localSpan = generic?.[1] ?? (booking ? text.match(/\b(?:in|near|within)\s+(.+)$/i)?.[1] : undefined);
   const locality = localSpan ? resolveMovePlace(localSpan.replace(/\s+(?:for\s+)?(?:tomorrow|today|this weekend)$/i, "")) : undefined;
   if (!route && !booking && !personal && !generic) return null;
+  // TH-DISCOVERY-RESET-001 (production certification fix): this used to require a bare state
+  // ("movers in Florida") to skip the journey/UNSUPPORTED_LOCALITY path -- a resolved city or
+  // county ("moving companies in Tampa Florida", "mover in Boca Raton") always continued into
+  // journey mode and was labeled UNSUPPORTED_LOCALITY, needing a second explicit "research
+  // recorded-state instead" click before showing any result, even though
+  // executeMoveSpecialist's recordedHqCity filter (PR #142) genuinely answers the city-scoped
+  // query directly. A city/county resolves the exact same way a bare state does (`resolution ===
+  // "EXACT"`), so it gets the same treatment; "serving/serve/near/within" phrasing still implies a
+  // real service-territory ambiguity and correctly stays in the more cautious journey flow.
   if (
     generic &&
     !booking &&
     !explicitStateLocal &&
     locality?.state &&
-    !locality?.city &&
-    !locality?.county &&
+    locality.resolution === "EXACT" &&
     !/serving|serve|near|within/i.test(text)
   )
     return null;
