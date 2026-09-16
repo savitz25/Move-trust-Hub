@@ -28,6 +28,26 @@ export function parseNameRequest(raw: string): NameRequest | null {
   text = text.trim();
   if (!text || /^(?:is |a |an |the )?(?:this|that|my|your)\b/i.test(text) && !explicit) return null;
   if (!explicit && /^(?:mover|movers|carrier|carriers|broker|brokers|moving compan(?:y|ies))$/i.test(text)) return null;
+  // TH-DISCOVERY-GEN-001: [PROVIDER CATEGORY] + [OPTIONAL QUALIFIER] must default to DISCOVERY,
+  // not identity -- "auto transport carrier" was treated as a literal company name because it is a
+  // three-word category phrase, and the category-recognition above only matched a fixed, exact
+  // single-word or qualifier+noun pattern. Generalizes that: if EVERY word in the phrase is either
+  // a known category noun (mover/carrier/broker/company, plural or singular) or a known descriptive
+  // qualifier (transport mode, service scope, or credential-status words -- never a specific brand
+  // token), the whole phrase is a category description, regardless of word count or order. A real
+  // company name almost always contains at least one word outside this vocabulary (e.g. "JK" in
+  // "JK Moving Services"), which is what keeps it correctly classified as an identity.
+  if (!explicit) {
+    const words = text.toLowerCase().split(/\s+/).filter(Boolean);
+    const categoryNouns = new Set(['mover', 'movers', 'carrier', 'carriers', 'broker', 'brokers', 'company', 'companies']);
+    const qualifiers = new Set([
+      'current', 'active', 'licensed', 'registered', 'interstate', 'intrastate',
+      'household', 'goods', 'auto', 'automobile', 'vehicle', 'vehicles', 'car', 'cars',
+      'long', 'distance', 'cross', 'country', 'local', 'residential', 'commercial',
+      'moving', 'move', 'shipping', 'ship', 'transport', 'transportation', 'freight',
+    ]);
+    if (words.length && words.some((w) => categoryNouns.has(w)) && words.every((w) => categoryNouns.has(w) || qualifiers.has(w))) return null;
+  }
   if (/^(?:(?:a|an|the|this|that|my)\s+)*(?:mover|moving company|company|carrier|broker)$/i.test(text)) return { name: '', task, condition };
   // Discovery uses plural/common category syntax. Names such as "Florida Active Carrier 7" survive.
   if (/^(?:(?:current|active|licensed|interstate|intrastate|household[- ]goods)\s+)*(?:movers?|carriers?|brokers?)$/i.test(text) || /\b(?:registered with FDACS|headquartered profiles|indexed)\b/i.test(text)) return null;

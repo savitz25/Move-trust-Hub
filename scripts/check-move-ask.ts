@@ -132,6 +132,17 @@ assert(JSON.stringify(name.interpretation).includes('candidate match'), 'name is
 const overlap = q('Show companies with both FMCSA interstate authority and Florida Intrastate Mover registration.');
 assert(overlap.query.overlapFmcsaFdacs === true, 'overlap VERIFIED only');
 
+// TH-DISCOVERY-GEN-001: [PROVIDER CATEGORY] + [OPTIONAL QUALIFIER] must default to DISCOVERY, not
+// identity. Multi-word category phrases (e.g. "auto transport carrier") used to be treated as a
+// literal company name because only exact single-word or fixed qualifier+noun patterns were
+// recognized as categories. A real company name must still survive.
+for (const category of ['auto transport carrier', 'auto transport carriers', 'household goods carrier', 'long distance movers']) {
+  const r = q(category);
+  assert(r.query.mode === 'entity' && !('nameQuery' in r.query && r.query.nameQuery), `"${category}" is discovery, not an identity lookup`);
+}
+const realName = q('Rocket Auto Transport LLC');
+assert(realName.query.mode === 'entity' && realName.query.nameQuery === 'Rocket Auto Transport LLC', 'a real distinctive brand name is still treated as identity, not swallowed by the category generalization');
+
 const root = join(__dirname, '..');
 const sitemap = readFileSync(join(root, 'app/sitemap.ts'), 'utf8');
 const askPage = readFileSync(join(root, 'app/(move)/ask/page.tsx'), 'utf8');
