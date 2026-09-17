@@ -5,7 +5,8 @@ import { sentryRelease, sentryTracesSampleRate, shouldDropSentryTransaction } fr
 test('ATH-REL-002A: production trace sample rate is not 100%', () => {
   assert.equal(sentryTracesSampleRate('production'), 0.1);
   assert.ok(sentryTracesSampleRate('production') < 1);
-  assert.equal(sentryTracesSampleRate('preview'), 0.25);
+  assert.equal(sentryTracesSampleRate('preview'), 0.05);
+  assert.ok(sentryTracesSampleRate('preview') < sentryTracesSampleRate('production'));
   assert.equal(sentryTracesSampleRate('development'), 1);
 });
 
