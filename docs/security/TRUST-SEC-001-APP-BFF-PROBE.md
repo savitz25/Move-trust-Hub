@@ -3,9 +3,9 @@
 **Hub:** MoveTrustHub (`savitz25/Move-trust-Hub`) only  
 **Date:** 2026-09-17  
 **Production:** HOLD — no `merge_branch`, no prod DDL, no production deploy  
-**M1 compatibility readiness:** **PARTIAL**
+**M1 compatibility readiness:** **VERIFIED** (live Wave 0 branch `tzzcogaricohtezsugjr`)
 
-Wave 0 DB remediations on ephemeral branches revoked `anon`/`authenticated` EXECUTE on privileged SECURITY DEFINER RPCs (`consume_network_auth_handoff`, `mth_publish_directory_company`) and related `network_auth_handoffs` grants. Role matrices passed. This document is the missing **app/BFF caller map** plus a runbook for live probes when a branch URL exists.
+Wave 0 DB remediations on ephemeral branches revoked `anon`/`authenticated` EXECUTE on privileged SECURITY DEFINER RPCs (`consume_network_auth_handoff`, `mth_publish_directory_company`) and related `network_auth_handoffs` grants. Role matrices passed. This document is the **app/BFF caller map** plus live probe evidence.
 
 **Do not** restore `anon`/`auth` EXECUTE or weaken RLS to make a probe pass.
 
@@ -14,12 +14,14 @@ Wave 0 DB remediations on ephemeral branches revoked `anon`/`authenticated` EXEC
 | Gate | Result |
 |------|--------|
 | Code-trace of production callers | **VERIFIED** — D1/D2 privileged RPCs already go through Next BFF + `service_role` |
-| Runtime BFF rewrite required | **No** — no browser or user-JWT path calls revoked RPCs |
-| Live probe vs Wave 0 branch | **UNKNOWN** — no branch URL/env in this run; not invented as pass |
-| Move M1 overall | **PARTIAL** until a live branch probe fills the matrix `actual` column |
+| Runtime BFF rewrite required | **No** — no browser or user-JWT path calls revoked RPCs; no grant restored |
+| Live probe vs Wave 0 branch | **PASS** 2026-09-17 against `https://tzzcogaricohtezsugjr.supabase.co` (`sec001-p2-probe`, parent `arepfylnilkjmyduhwbz`, migration `sec001_p2_m1_move_revoke_privileged_rpcs`) |
+| Move M1 overall | **VERIFIED** — critical D1/D2/D3 + handoff table probes passed; CoS may upgrade M1 PARTIAL → VERIFIED |
 | Production | **HOLD** |
 
-Wave 0 branch `ujdvzoycpygcinajhddu` was deleted after evidence capture. Recreate an ephemeral branch with the Wave 0 remediations, then run `npm run probe:trust-sec-001-app-bff`.
+Live method: PostgREST with the **branch anon** key (public API the Next server uses for D3). Privileged BFF paths exercised as PostgreSQL role `service_role` (the role the BFF `SUPABASE_SERVICE_ROLE_KEY` maps to) — insert/consume handoff, publish company, table SELECT. Branch `service_role` JWT was not present in this agent env, so PostgREST was not separately called with that JWT; SQL `SET ROLE service_role` is the same database role. Next preview was **not** retargeted at the branch (canonical-URL guard). Production `www.movetrusthub.com` was **not** used as branch proof.
+
+Ephemeral probe user / handoff / `sec001-probe-company` rows were deleted after the run.
 
 ## Founder contract (D1–D3)
 
@@ -83,25 +85,32 @@ No save-my-move, quote, directory, or portal feature reads this table.
 
 ## Probe matrix
 
-`actual` stays **UNKNOWN** until `npm run probe:trust-sec-001-app-bff` runs against a **non-production** Wave 0 branch. Do not treat production `www.movetrusthub.com` health as branch proof (prod has **not** been migrated).
+Live 2026-09-17 against branch `tzzcogaricohtezsugjr`. Production `www.movetrusthub.com` is **not** branch proof (prod has **not** been migrated).
 
 | route/action | expected | actual | HTTP/API | role used | branch/project | regression Y/N | security contract preserved Y/N |
 |--------------|----------|--------|----------|-----------|----------------|----------------|----------------------------------|
-| Browser `NetworkHandoffLink` click | POST BFF; never `rpc(consume_…)` | UNKNOWN (code-trace: BFF) | `POST /api/auth/network-handoff/start` | Browser: anon session only. RPC: service_role | n/a until preview+branch | N (code) | Y (code) |
-| Guest `GET /api/auth/network-handoff/start?to=lender` | 307, no `code=`, `x-network-handoff: skip:no_session` | UNKNOWN | App HTTP | none | set `MOVE_APP_BASE_URL` | UNKNOWN | Y if skip without code |
-| Consume `GET /auth/network-handoff?code=invalid` | fail redirect `consume_400`/`consume_500`; still service_role RPC | UNKNOWN | App HTTP + PostgREST RPC | service_role | branch + optional app | UNKNOWN | Y if anon cannot consume |
-| Anon `POST /rest/v1/rpc/consume_network_auth_handoff` | permission denied (D1) | UNKNOWN | PostgREST | anon | Wave 0 branch | UNKNOWN | Y if denied |
-| Service role same consume RPC (impossible hash) | 200 empty / no permission error | UNKNOWN | PostgREST | service_role | Wave 0 branch | UNKNOWN | Y if executable |
-| Anon `SELECT network_auth_handoffs` | denied or empty-fail-closed (no rows for attacker) | UNKNOWN | PostgREST | anon | Wave 0 branch | UNKNOWN | Y if no readable rows |
-| Service role table head | readable | UNKNOWN | PostgREST | service_role | Wave 0 branch | UNKNOWN | Y |
-| Anon `mth_publish_directory_company` | permission denied (D2) | UNKNOWN | PostgREST | anon | Wave 0 branch | UNKNOWN | Y if denied |
-| Service role `mth_publish_directory_company` invalid payload | validation error, **not** permission denied; **no insert** | UNKNOWN | PostgREST | service_role | Wave 0 branch | UNKNOWN | Y if executable |
-| Anon `mth_get_directory_company` | allowed PUBLIC_READ (D3) | UNKNOWN | PostgREST | anon | Wave 0 branch | UNKNOWN | Y if allowed |
-| Anon `local_canary_movers_for_county` | allowed PUBLIC_READ (D3) | UNKNOWN | PostgREST | anon | Wave 0 branch | UNKNOWN | Y if allowed |
-| `GET /api/directory/companies?limit=1` | 200 JSON (anon table SELECT, not revoked RPCs) | UNKNOWN | App HTTP | Next server anon | optional `MOVE_APP_BASE_URL` | UNKNOWN | n/a (not D1/D2) |
-| `GET /api/auth/network-handoff/health` | `rpc: true` via service_role | UNKNOWN | App HTTP | service_role | preview wired to branch | UNKNOWN | Y if `ok`/`rpc` without exposing keys |
+| Browser `NetworkHandoffLink` click | POST BFF; never `rpc(consume_…)` | PASS (code-trace: BFF only; static lock green) | `POST /api/auth/network-handoff/start` | Browser: anon session. RPC: service_role | tzzcogaricohtezsugjr | N | Y |
+| Guest start (Next preview) | 307, no `code=` | NOT RUN (no branch-wired preview; not production) | `GET /api/auth/network-handoff/start` | none | n/a | n/a | n/a |
+| BFF insert `network_auth_handoffs` | service_role insert succeeds | PASS (row inserted) | SQL `SET ROLE service_role` INSERT (BFF equivalent) | service_role | tzzcogaricohtezsugjr | N | Y |
+| BFF consume minted hash | returns user; replay empty | PASS (`out_user_id` match; replay 0 rows) | SQL `consume_network_auth_handoff` | service_role | tzzcogaricohtezsugjr | N | Y |
+| Anon consume real minted hash | permission denied (D1) | PASS `42501` | SQL `SET ROLE anon` | anon | tzzcogaricohtezsugjr | N | Y |
+| Auth consume | permission denied (D1) | PASS `42501` | SQL `SET ROLE authenticated` | authenticated | tzzcogaricohtezsugjr | N | Y |
+| Anon `POST /rest/v1/rpc/consume_network_auth_handoff` | permission denied (D1) | PASS HTTP 401 | PostgREST | anon | tzzcogaricohtezsugjr | N | Y |
+| Service role consume impossible hash | executable; empty | PASS `[]` | SQL `SET ROLE service_role` | service_role | tzzcogaricohtezsugjr | N | Y |
+| Anon `SELECT network_auth_handoffs` | denied | PASS `42501` SQL; HTTP 401 PostgREST | SQL + `GET /rest/v1/network_auth_handoffs` | anon | tzzcogaricohtezsugjr | N | Y |
+| Auth `SELECT/INSERT network_auth_handoffs` | denied | PASS `42501` | SQL `SET ROLE authenticated` | authenticated | tzzcogaricohtezsugjr | N | Y |
+| Anon `INSERT network_auth_handoffs` | denied | PASS `42501` | SQL `SET ROLE anon` | anon | tzzcogaricohtezsugjr | N | Y |
+| Service role table head | readable | PASS count=0 then probe row | SQL `SET ROLE service_role` | service_role | tzzcogaricohtezsugjr | N | Y |
+| Anon `mth_publish_directory_company` | permission denied (D2) | PASS `42501` SQL; HTTP 401 PostgREST | SQL + `POST /rest/v1/rpc/mth_publish_directory_company` | anon | tzzcogaricohtezsugjr | N | Y |
+| Auth publish | permission denied (D2) | PASS `42501` | SQL `SET ROLE authenticated` | authenticated | tzzcogaricohtezsugjr | N | Y |
+| Service role publish invalid `{}` | validation error, no insert | PASS `P0001 payload requires id, slug, and name` | SQL `SET ROLE service_role` | service_role | tzzcogaricohtezsugjr | N | Y |
+| Service role publish real payload | publisher path writes | PASS `{existing:false, slug:sec001-probe-company}` then deleted | SQL `mth_publish_directory_company` | service_role | tzzcogaricohtezsugjr | N | Y |
+| Anon `mth_get_directory_company` | PUBLIC_READ (D3) | PASS SQL slug + PostgREST HTTP 200 | SQL + `POST /rest/v1/rpc/mth_get_directory_company` | anon | tzzcogaricohtezsugjr | N | Y |
+| Anon `local_canary_movers_for_county` | PUBLIC_READ (D3) | PASS SQL count 0; PostgREST HTTP 200 `[]` | SQL + `POST /rest/v1/rpc/local_canary_movers_for_county` | anon | tzzcogaricohtezsugjr | N | Y |
+| `GET /api/directory/companies` | Next server anon SELECT | NOT RUN (no branch-wired preview) | App HTTP | Next server anon | n/a | n/a | n/a |
+| `GET /api/auth/network-handoff/health` | service_role health | NOT RUN (no branch-wired preview; not production) | App HTTP | service_role | n/a | n/a | n/a |
 
-Code-trace regression / contract columns for D1/D2 are **N / Y** because every revoked-RPC string lives behind `createAdminClient()` / `server-only`. Live columns remain UNKNOWN.
+EXECUTE grants on branch (SQL `has_function_privilege`): consume/publish/health **anon=false auth=false sro=true**; get_directory/canary **anon=true auth=true sro=true**. Table `network_auth_handoffs`: anon/auth SELECT+INSERT **false**; service_role SELECT+INSERT **true**.
 
 ## How to run live probes (when branch env exists)
 
@@ -173,14 +182,14 @@ Without branch env the live script prints `SKIPPED` and exits 0. That is **not**
 
 ### 4. Promoting M1 PARTIAL → VERIFIED
 
-All of the following, against the recreated Wave 0 branch (not production):
+Completed 2026-09-17 on `tzzcogaricohtezsugjr` (not production):
 
-1. Anon consume + anon publish = denied  
-2. Service role consume (fake hash) + service role publish validation = executable  
+1. Anon + authenticated consume/publish/table = denied  
+2. Service role consume (minted + fake hash) + publish (validation and real disposable row) = executable  
 3. Anon directory read RPCs = allowed  
-4. Optional: preview app health `rpc: true` and guest start has no `code=`  
-5. Fill this matrix `actual` column from script stdout  
-6. Still no production DDL
+4. Preview app HTTP still optional / not required for D1–D3 grant compatibility  
+5. Matrix `actual` filled above  
+6. Still no production DDL — **HOLD**
 
 ## Out of scope (this probe)
 
