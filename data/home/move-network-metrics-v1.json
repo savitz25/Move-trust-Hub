@@ -86,7 +86,7 @@
     "sourceAsOf": null
   },
   "network": {
-    "publishedStateIntelligencePages": 11,
+    "publishedStateIntelligencePages": 12,
     "publishedStateIntelligencePaths": [
       "/florida",
       "/new-jersey",
@@ -98,7 +98,8 @@
       "/new-york",
       "/illinois",
       "/oregon",
-      "/pennsylvania"
+      "/pennsylvania",
+      "/north-carolina"
     ],
     "floridaResearchCountyLandings": 4,
     "localMoverStateLandings": 51
@@ -138,22 +139,22 @@
       "buckets": [
         {
           "id": "0-30",
-          "label": "0–30 days since last recorded refresh",
+          "label": "0\u201330 days since last recorded refresh",
           "count": 4640
         },
         {
           "id": "31-60",
-          "label": "31–60 days",
+          "label": "31\u201360 days",
           "count": 0
         },
         {
           "id": "61-90",
-          "label": "61–90 days",
+          "label": "61\u201390 days",
           "count": 0
         },
         {
           "id": "91-365",
-          "label": "91–365 days",
+          "label": "91\u2013365 days",
           "count": 0
         },
         {
@@ -432,7 +433,7 @@
       "value": null,
       "valueState": "REQUEST_ONLY",
       "grain": "nj_pmw_authority_roster",
-      "denominator": "NJ DCA Public Movers and Warehousemen roster — SOURCE_AVAILABLE_BY_REQUEST",
+      "denominator": "NJ DCA Public Movers and Warehousemen roster \u2014 SOURCE_AVAILABLE_BY_REQUEST",
       "description": "The complete NJ PM/PW/PC roster was not bulk-acquired. Statewide mover count is UNKNOWN, not zero.",
       "coverage": "New Jersey",
       "contributingSourceSystems": [
@@ -464,7 +465,7 @@
       "grain": "nj_operation_safe_move_nov",
       "denominator": "Acquired official OSM respondent tables (2025=11 + 2024=23). Highlight-only years are excluded.",
       "description": "Acquired NOV rows. A Notice of Violation is not a final order. Not a statewide mover count.",
-      "coverage": "New Jersey — acquired OSM years only",
+      "coverage": "New Jersey \u2014 acquired OSM years only",
       "contributingSourceSystems": [
         "nj_oag_operation_safe_move"
       ],
@@ -491,7 +492,7 @@
       "value": null,
       "valueState": "NOT_ACQUIRED",
       "grain": "ca_cal_t_household_mover_permit",
-      "denominator": "BHGS Household Mover (CAL-T) roster — OPEN_SEARCH_ONLY / SOURCE_NOT_ACQUIRED",
+      "denominator": "BHGS Household Mover (CAL-T) roster \u2014 OPEN_SEARCH_ONLY / SOURCE_NOT_ACQUIRED",
       "description": "No bulk CAL-T roster was acquired. Complete licensed-mover count is UNKNOWN, not zero.",
       "coverage": "California",
       "contributingSourceSystems": [
@@ -608,7 +609,7 @@
       "value": null,
       "valueState": "NOT_ACQUIRED",
       "grain": "txdmv_household_goods_certificate_roster",
-      "denominator": "Complete current TxDMV household-goods certificate roster — OPEN_SEARCH_ONLY / SOURCE_NOT_ACQUIRED",
+      "denominator": "Complete current TxDMV household-goods certificate roster \u2014 OPEN_SEARCH_ONLY / SOURCE_NOT_ACQUIRED",
       "description": "The complete current Texas certificate denominator is unknown, not zero. TxDMV authority is separate from FMCSA authority.",
       "coverage": "Texas",
       "contributingSourceSystems": [
@@ -893,6 +894,35 @@
         "generationDate": "2026-09-17"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z"
+    },
+    {
+      "unit": "count",
+      "key": "nc_ncuc_hhg_c_number_identities",
+      "label": "North Carolina NCUC household-goods C-number identities",
+      "value": 362,
+      "valueState": "KNOWN",
+      "grain": "nc_ncuc_hhg_c_number_identity",
+      "denominator": "Distinct C-numbers on the accepted NCUC household-goods carrier-list snapshot",
+      "description": "Distinct NCUC Certificate of Exemption C-numbers on the monthly carrier-list snapshot. Not active movers, not T-numbers, and not FMCSA interstate movers.",
+      "coverage": "North Carolina",
+      "contributingSourceSystems": [
+        "ncuc_hhg_carrier_list"
+      ],
+      "sourceAsOf": "2026-09-08",
+      "generatedAt": "2026-09-17T15:30:05.132Z",
+      "publicationStatus": "PUBLIC",
+      "trace": {
+        "counts": "Count distinct C-numbers (362) on 362 list rows.",
+        "doesNotCount": "Not the announced header total. Not T-numbers. Not USDOT/MC. Not a live authority census.",
+        "contributingSourceSystems": [
+          "ncuc_hhg_carrier_list"
+        ],
+        "geographicCoverage": "North Carolina intrastate household-goods certificates",
+        "sourceDates": "Carrier-list revision September 8, 2026; monthly list is not real-time status",
+        "generationDate": "2026-09-17"
+      },
+      "snapshotAsOf": "2026-09-08",
+      "retrievedAt": "2026-09-17T19:40:54Z"
     },
     {
       "unit": "count",
@@ -1241,12 +1271,12 @@
       "unit": "count",
       "key": "published_state_intelligence_pages",
       "label": "Published state moving-intelligence pages",
-      "value": 11,
+      "value": 12,
       "valueState": "KNOWN",
       "grain": "published_state_intelligence_page",
       "denominator": "Indexable specialist state intelligence routes currently published",
       "description": "Published specialist state intelligence pages. Not a count of movers.",
-      "coverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania",
+      "coverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina",
       "contributingSourceSystems": [
         "move-state-intel"
       ],
@@ -1254,12 +1284,12 @@
       "generatedAt": "2026-09-17T15:30:05.132Z",
       "publicationStatus": "PUBLIC",
       "trace": {
-        "counts": "Published /florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania intelligence routes.",
+        "counts": "Published /florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina intelligence routes.",
         "doesNotCount": "Not local-mover landings and not federal directory rows.",
         "contributingSourceSystems": [
           "move-state-intel"
         ],
-        "geographicCoverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania",
+        "geographicCoverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina",
         "sourceDates": "Publication gates in specialist catalogs",
         "generationDate": "2026-09-17"
       },
@@ -1505,22 +1535,22 @@
           "freshnessBuckets": [
             {
               "id": "0-30",
-              "label": "0–30 days since last recorded refresh",
+              "label": "0\u201330 days since last recorded refresh",
               "count": 4640
             },
             {
               "id": "31-60",
-              "label": "31–60 days",
+              "label": "31\u201360 days",
               "count": 0
             },
             {
               "id": "61-90",
-              "label": "61–90 days",
+              "label": "61\u201390 days",
               "count": 0
             },
             {
               "id": "91-365",
-              "label": "91–365 days",
+              "label": "91\u2013365 days",
               "count": 0
             },
             {
@@ -1599,7 +1629,7 @@
           "trustScore": false
         },
         "authority": {
-          "regulator": "New Jersey Division of Consumer Affairs — Public Movers and Warehousemen / Regulated Business Section",
+          "regulator": "New Jersey Division of Consumer Affairs \u2014 Public Movers and Warehousemen / Regulated Business Section",
           "classes": {
             "PM": {
               "code": "PM",
@@ -1688,7 +1718,7 @@
               "year": "2025",
               "operation": "Operation Safe Move 2025",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/division-of-consumer-affairs-undercover-enforcement-operations-result-in-notices-of-violations-against-18-unregistered-home-improvement-contractor-businesses-and-11-unlicensed-moving-companies/",
               "profileIdentity": "not_confirmed",
@@ -1704,7 +1734,7 @@
               "year": "2025",
               "operation": "Operation Safe Move 2025",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/division-of-consumer-affairs-undercover-enforcement-operations-result-in-notices-of-violations-against-18-unregistered-home-improvement-contractor-businesses-and-11-unlicensed-moving-companies/",
               "profileIdentity": "not_confirmed",
@@ -1720,7 +1750,7 @@
               "year": "2025",
               "operation": "Operation Safe Move 2025",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/division-of-consumer-affairs-undercover-enforcement-operations-result-in-notices-of-violations-against-18-unregistered-home-improvement-contractor-businesses-and-11-unlicensed-moving-companies/",
               "profileIdentity": "not_confirmed",
@@ -1736,7 +1766,7 @@
               "year": "2025",
               "operation": "Operation Safe Move 2025",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/division-of-consumer-affairs-undercover-enforcement-operations-result-in-notices-of-violations-against-18-unregistered-home-improvement-contractor-businesses-and-11-unlicensed-moving-companies/",
               "profileIdentity": "not_confirmed",
@@ -1752,7 +1782,7 @@
               "year": "2025",
               "operation": "Operation Safe Move 2025",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/division-of-consumer-affairs-undercover-enforcement-operations-result-in-notices-of-violations-against-18-unregistered-home-improvement-contractor-businesses-and-11-unlicensed-moving-companies/",
               "profileIdentity": "not_confirmed",
@@ -1768,7 +1798,7 @@
               "year": "2025",
               "operation": "Operation Safe Move 2025",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/division-of-consumer-affairs-undercover-enforcement-operations-result-in-notices-of-violations-against-18-unregistered-home-improvement-contractor-businesses-and-11-unlicensed-moving-companies/",
               "profileIdentity": "not_confirmed",
@@ -1784,7 +1814,7 @@
               "year": "2025",
               "operation": "Operation Safe Move 2025",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/division-of-consumer-affairs-undercover-enforcement-operations-result-in-notices-of-violations-against-18-unregistered-home-improvement-contractor-businesses-and-11-unlicensed-moving-companies/",
               "profileIdentity": "not_confirmed",
@@ -1800,7 +1830,7 @@
               "year": "2025",
               "operation": "Operation Safe Move 2025",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/division-of-consumer-affairs-undercover-enforcement-operations-result-in-notices-of-violations-against-18-unregistered-home-improvement-contractor-businesses-and-11-unlicensed-moving-companies/",
               "profileIdentity": "not_confirmed",
@@ -1816,7 +1846,7 @@
               "year": "2025",
               "operation": "Operation Safe Move 2025",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/division-of-consumer-affairs-undercover-enforcement-operations-result-in-notices-of-violations-against-18-unregistered-home-improvement-contractor-businesses-and-11-unlicensed-moving-companies/",
               "profileIdentity": "not_confirmed",
@@ -1832,7 +1862,7 @@
               "year": "2025",
               "operation": "Operation Safe Move 2025",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/division-of-consumer-affairs-undercover-enforcement-operations-result-in-notices-of-violations-against-18-unregistered-home-improvement-contractor-businesses-and-11-unlicensed-moving-companies/",
               "profileIdentity": "not_confirmed",
@@ -1848,7 +1878,7 @@
               "year": "2025",
               "operation": "Operation Safe Move 2025",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/division-of-consumer-affairs-undercover-enforcement-operations-result-in-notices-of-violations-against-18-unregistered-home-improvement-contractor-businesses-and-11-unlicensed-moving-companies/",
               "profileIdentity": "not_confirmed",
@@ -1864,7 +1894,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -1880,7 +1910,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -1896,7 +1926,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -1912,7 +1942,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -1920,7 +1950,7 @@
               "wording": "Named in an NJ DCA Notice of Violation alleging unlicensed moving activity (Operation Safe Move 2024)."
             },
             {
-              "respondent": "Eric Rowell’s Moving and Haulting",
+              "respondent": "Eric Rowell\u2019s Moving and Haulting",
               "principal": "Eric Rowell",
               "city": "Ocean City",
               "county": "Cape May",
@@ -1928,7 +1958,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -1944,7 +1974,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -1960,7 +1990,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 10000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -1976,7 +2006,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -1992,7 +2022,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2008,7 +2038,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2016,7 +2046,7 @@
               "wording": "Named in an NJ DCA Notice of Violation alleging unlicensed moving activity (Operation Safe Move 2024)."
             },
             {
-              "respondent": "Tommy’s Moving",
+              "respondent": "Tommy\u2019s Moving",
               "principal": "Thomas Morrissey",
               "city": "Hoboken",
               "county": "Hudson",
@@ -2024,7 +2054,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2040,7 +2070,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2056,7 +2086,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2072,7 +2102,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2088,7 +2118,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2104,7 +2134,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2120,7 +2150,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2136,7 +2166,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2152,7 +2182,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2168,7 +2198,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2184,7 +2214,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2200,7 +2230,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 5000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2216,7 +2246,7 @@
               "year": "2024",
               "operation": "Operation Safe Move 2024",
               "actionType": "Notice of Violation",
-              "novStatus": "NOV announced in official release — not a final order",
+              "novStatus": "NOV announced in official release \u2014 not a final order",
               "proposedPenalty": 10000,
               "sourceUrl": "https://www.njoag.gov/ag-platkin-division-of-consumer-affairs-cites-23-unlicensed-movers-in-covert-civil-enforcement-action/",
               "profileIdentity": "not_confirmed",
@@ -2353,7 +2383,7 @@
           },
           {
             "id": "state-usdot-crosswalk",
-            "label": "State CAL-T ↔ USDOT exact crosswalk",
+            "label": "State CAL-T \u2194 USDOT exact crosswalk",
             "state": "SOURCE_NOT_ACQUIRED"
           }
         ],
@@ -2519,7 +2549,7 @@
             "family": "state enforcement",
             "grain": "BPC 19237 citation row",
             "identity": "CAL-T when present; name-only otherwise UNSAFE",
-            "limitations": "Mixed BHGS industries on the same page; only 19237 counted. Citation ≠ revocation.",
+            "limitations": "Mixed BHGS industries on the same page; only 19237 counted. Citation \u2260 revocation.",
             "rows": 132,
             "source": "https://bhgs.dca.ca.gov/enforcement/lookup.shtml"
           },
@@ -2530,7 +2560,7 @@
             "family": "tariff/rate source",
             "grain": "Maximum Rate Tariff 4",
             "identity": "n/a",
-            "limitations": "Tariff ≠ invoice. Tariff ≠ quality.",
+            "limitations": "Tariff \u2260 invoice. Tariff \u2260 quality.",
             "rows": null,
             "source": "https://bhgs.dca.ca.gov/forms_pubs/2026_max_rate_tariff.pdf"
           },
@@ -2552,7 +2582,7 @@
             "family": "complaint process",
             "grain": "consumer complaint intake",
             "identity": "n/a",
-            "limitations": "No bulk complaint report acquired. Complaint ≠ violation.",
+            "limitations": "No bulk complaint report acquired. Complaint \u2260 violation.",
             "rows": null,
             "source": "https://bhgs.dca.ca.gov/consumers/index.shtml"
           },
@@ -2704,7 +2734,7 @@
         "regulator": {
           "agency": "Colorado Public Utilities Commission",
           "short": "PUC",
-          "program": "Household-goods movers — intrastate transportation under title 40, article 10.1, C.R.S.",
+          "program": "Household-goods movers \u2014 intrastate transportation under title 40, article 10.1, C.R.S.",
           "credential_term": "permit",
           "permit_prefix": "HHG",
           "statute_rules": "C.R.S. title 40, article 10.1, part 5; 4 CCR 723-6 mover rules",
@@ -2773,7 +2803,7 @@
             "colorado_to_another_state": {
               "regulator": "FMCSA",
               "required_authority": "FMCSA interstate operating authority",
-              "identity": "USDOT plus operating authority (MC) — USDOT alone is not enough",
+              "identity": "USDOT plus operating authority (MC) \u2014 USDOT alone is not enough",
               "verification": "https://www.protectyourmove.gov/ and /verify-dot"
             },
             "another_state_to_colorado": {
@@ -2901,7 +2931,7 @@
           "usdot_printed_on_opr_list": false,
           "mc_printed_on_opr_list": false,
           "no_auto_attach_fmcsa_adverse_by_name": true,
-          "note": "ATH-CO-000: applications may collect USDOT, but the public OPR permit list does not print USDOT. Default Colorado HHG ↔ USDOT crosswalk is REVIEW."
+          "note": "ATH-CO-000: applications may collect USDOT, but the public OPR permit list does not print USDOT. Default Colorado HHG \u2194 USDOT crosswalk is REVIEW."
         },
         "federal": {
           "coverage": "LIVE_DIRECTORY_WHEN_AVAILABLE",
@@ -2927,7 +2957,7 @@
           "rules": [
             "Colorado law requires a PUC permit to operate or advertise as a household-goods mover in intrastate commerce (C.R.S. 40-10.1-502).",
             "Official consumer page: ensure that your selected in-state moving company is permitted by the PUC.",
-            "Get a written estimate and sign a contract — both required by all permitted household goods movers in Colorado.",
+            "Get a written estimate and sign a contract \u2014 both required by all permitted household goods movers in Colorado.",
             "Request an in-person inspection of your household goods to ensure the accuracy of your estimate.",
             "Each mover must have a Colorado Public Utilities Commission permit number that has the letters HHG.",
             "Per statute, refunds for household goods movers must go through binding arbitration 40-10.1-507, C.R.S.",
@@ -3010,7 +3040,7 @@
           },
           {
             "id": "no-name-crosswalk",
-            "text": "The public OPR list does not print USDOT. Default Colorado HHG ↔ USDOT crosswalk is REVIEW. Name-only joins are unsafe. FMCSA safety/adverse evidence is not auto-attached to a Colorado permit by name."
+            "text": "The public OPR list does not print USDOT. Default Colorado HHG \u2194 USDOT crosswalk is REVIEW. Name-only joins are unsafe. FMCSA safety/adverse evidence is not auto-attached to a Colorado permit by name."
           },
           {
             "id": "complaint-process-not-dataset",
@@ -3089,7 +3119,7 @@
           "otherCarrierClasses": "VISIBLE_SUPPORTING_CONTEXT"
         },
         "regulator": {
-          "agency": "Illinois Commerce Commission — Transportation Division",
+          "agency": "Illinois Commerce Commission \u2014 Transportation Division",
           "short": "ICC",
           "hhg_url": "https://icc.illinois.gov/authority/household-goods-movers",
           "mcis_search_url": "https://icc.illinois.gov/emdb/mcis/search",
@@ -3226,31 +3256,31 @@
         },
         "juiceSqueeze": [
           {
-            "decision": "GRABBED — HIGH YIELD",
+            "decision": "GRABBED \u2014 HIGH YIELD",
             "source": "ICC household-goods authority framework, ILCC identifier, MCIS entity search, statute/rules"
           },
           {
-            "decision": "GRABBED — HIGH YIELD",
+            "decision": "GRABBED \u2014 HIGH YIELD",
             "source": "Existing FMCSA federal overlay (not treated as ICC authority; no national redownload)"
           },
           {
-            "decision": "GRABBED — EASY SECONDARY",
+            "decision": "GRABBED \u2014 EASY SECONDARY",
             "source": "Complaint path, insurance-on-file verification path, PCC class split, 2026 consumer guide URL"
           },
           {
-            "decision": "LEFT — SEARCH ONLY",
+            "decision": "LEFT \u2014 SEARCH ONLY",
             "source": "Current ICC MCIS Household Goods roster (CAPTCHA entity search)"
           },
           {
-            "decision": "LEFT — SEARCH ONLY",
+            "decision": "LEFT \u2014 SEARCH ONLY",
             "source": "Current insurance-on-file / complaint-on-file flags on entity pages"
           },
           {
-            "decision": "LEFT — TOO MUCH WORK",
+            "decision": "LEFT \u2014 TOO MUCH WORK",
             "source": "Docket-by-docket HHG order archaeology; CAPTCHA MCIS scrape; FOIA"
           },
           {
-            "decision": "LEFT — FUTURE",
+            "decision": "LEFT \u2014 FUTURE",
             "source": "Chicago / Cook / local pages; Ask Illinois"
           }
         ],
@@ -3287,7 +3317,7 @@
           "insurance": "VISIBLE_SUPPORTING_CONTEXT"
         },
         "regulator": {
-          "agency": "New York State Department of Transportation — Office of Modal Safety and Security",
+          "agency": "New York State Department of Transportation \u2014 Office of Modal Safety and Security",
           "short": "NYSDOT",
           "notDfs": true,
           "hhg_url": "https://www.dot.ny.gov/divisions/operating/osss/truck/registration-licensing",
@@ -3395,39 +3425,39 @@
         "searchOnlyIsNotZero": true,
         "juiceSqueeze": [
           {
-            "decision": "GRABBED — HIGH YIELD",
+            "decision": "GRABBED \u2014 HIGH YIELD",
             "source": "NYSDOT Household Goods authority framework"
           },
           {
-            "decision": "GRABBED — HIGH YIELD",
+            "decision": "GRABBED \u2014 HIGH YIELD",
             "source": "2026 Weekly Bulletin of Motor Carrier Applications (36 issues; 108 HHG observations)"
           },
           {
-            "decision": "GRABBED — HIGH YIELD",
+            "decision": "GRABBED \u2014 HIGH YIELD",
             "source": "Existing FMCSA federal overlay (not treated as NYDOT authority)"
           },
           {
-            "decision": "GRABBED — EASY SECONDARY",
+            "decision": "GRABBED \u2014 EASY SECONDARY",
             "source": "Complaint path, fuel-surcharge/tariff context, bulletin Case Numbers"
           },
           {
-            "decision": "LEFT — SEARCH ONLY",
+            "decision": "LEFT \u2014 SEARCH ONLY",
             "source": "Current CarCert Household Goods roster (functionality under development)"
           },
           {
-            "decision": "LEFT — SEARCH ONLY",
+            "decision": "LEFT \u2014 SEARCH ONLY",
             "source": "Current insurance compliance"
           },
           {
-            "decision": "LEFT — TOO MUCH WORK FOR CURRENT YIELD",
+            "decision": "LEFT \u2014 TOO MUCH WORK FOR CURRENT YIELD",
             "source": "Tariff corpus, historical bulletins, complaint-by-complaint retrieval"
           },
           {
-            "decision": "LEFT — REQUEST ONLY",
+            "decision": "LEFT \u2014 REQUEST ONLY",
             "source": "FOIL"
           },
           {
-            "decision": "LEFT — LOCAL / FUTURE",
+            "decision": "LEFT \u2014 LOCAL / FUTURE",
             "source": "NYC / boroughs / counties"
           }
         ],
@@ -3461,7 +3491,7 @@
           "h1": "Oregon Household-Goods Mover Authority Research"
         },
         "regulator": {
-          "agency": "Oregon Department of Transportation — Commerce and Compliance Division",
+          "agency": "Oregon Department of Transportation \u2014 Commerce and Compliance Division",
           "short": "ODOT CCD",
           "credential_term": "certificate of authority",
           "statute": "ORS 825.100; ORS 825.202; ORS 825.240; ORS 825.950",
@@ -3636,31 +3666,31 @@
         },
         "juiceSqueeze": [
           {
-            "decision": "GRABBED — HIGH YIELD",
+            "decision": "GRABBED \u2014 HIGH YIELD",
             "source": "ODOT CCD Household Goods Movers List via SharePoint REST (113 authorized rows; certificate + territory HTML)"
           },
           {
-            "decision": "GRABBED — HIGH YIELD",
+            "decision": "GRABBED \u2014 HIGH YIELD",
             "source": "Existing FMCSA federal overlay (not treated as Oregon authority; no national redownload)"
           },
           {
-            "decision": "GRABBED — EASY SECONDARY",
+            "decision": "GRABBED \u2014 EASY SECONDARY",
             "source": "Consumer complaint path (form 9976), SB 839 / OAR 740-300-0035 framework, insurance/tariff requirement pages, piano/specialty naming, pack-and-loader exemption"
           },
           {
-            "decision": "LEFT — SEARCH ONLY",
+            "decision": "LEFT \u2014 SEARCH ONLY",
             "source": "Oregon Trucking Online insurance/account lookups (CAPTCHA)"
           },
           {
-            "decision": "LEFT — SEARCH ONLY",
+            "decision": "LEFT \u2014 SEARCH ONLY",
             "source": "Complaint intake without a public complaint-matter dataset"
           },
           {
-            "decision": "LEFT — TOO MUCH WORK",
+            "decision": "LEFT \u2014 TOO MUCH WORK",
             "source": "Final Order / NPP / CMP archaeology; FOIA to CCD; name-only press citation attachment"
           },
           {
-            "decision": "LEFT — FUTURE",
+            "decision": "LEFT \u2014 FUTURE",
             "source": "Portland / Multnomah / Oregon local intelligence pages"
           }
         ],
@@ -3987,7 +4017,7 @@
           },
           {
             "id": "state-usdot-crosswalk",
-            "label": "Statewide TxDMV certificate ↔ USDOT exact crosswalk",
+            "label": "Statewide TxDMV certificate \u2194 USDOT exact crosswalk",
             "state": "SOURCE_NOT_ACQUIRED"
           },
           {
@@ -4065,7 +4095,7 @@
             "as_of": "2026-06-19",
             "family": "state enforcement",
             "grain": "administrative sanction schedule",
-            "identity": "n/a — not a case roster",
+            "identity": "n/a \u2014 not a case roster",
             "limitations": "Disciplinary matrix is penalty ranges, not a list of orders. No license-ID bulk attach.",
             "rows": null,
             "source": "https://www.txdmv.gov/sites/default/files/body-files/Motor-Carrier-Disciplinary-Matrix.pdf"
@@ -4077,7 +4107,7 @@
             "family": "complaint process",
             "grain": "consumer complaint intake",
             "identity": "n/a",
-            "limitations": "No bulk complaint report acquired. Complaint ≠ violation. CES after 2008 only.",
+            "limitations": "No bulk complaint report acquired. Complaint \u2260 violation. CES after 2008 only.",
             "rows": null,
             "source": "https://apps.txdmv.gov/apps/mccs/cms"
           },
@@ -4088,7 +4118,7 @@
             "family": "consumer rules",
             "grain": "official household-goods consumer protections",
             "identity": "n/a",
-            "limitations": "Guidance, not a quote calculator. Tariff ≠ invoice.",
+            "limitations": "Guidance, not a quote calculator. Tariff \u2260 invoice.",
             "rows": null,
             "source": "https://www.txdmv.gov/motorists/consumer-protection/dont-make-a-move"
           },
@@ -4098,7 +4128,7 @@
             "as_of": "ATH-TX-001",
             "family": "TDLR tow data as separate adjacent family",
             "grain": "TDLR TowCompanies certificate row",
-            "identity": "TDLR tow company — not HHG",
+            "identity": "TDLR tow company \u2014 not HHG",
             "limitations": "3,797 tow rows are not household-goods movers. Not used in the HHG hero.",
             "rows": 3797,
             "source": "TDLR TowCompanies.csv (ATH-TX-001)"
@@ -4138,11 +4168,11 @@
         ],
         "generated_at": "2026-09-04T12:53:49.899725+00:00",
         "insurance": {
-          "cargo_form": "Form H & I — proof of cargo insurance, filed electronically by the insurer",
+          "cargo_form": "Form H & I \u2014 proof of cargo insurance, filed electronically by the insurer",
           "cargo_minimums": "Official Form 1899H / handbook: $5,000 loss of a single shipper's cargo on any one vehicle; $10,000 aggregate for multiple shippers on any one vehicle",
           "coverage": "LOOKUP_CAN_SHOW_CURRENT_FILING / BULK_UNIVERSE_NOT_ACQUIRED",
-          "form_k": "Form K — notice of cancellation for liability and cargo",
-          "liability_form": "Form E — proof of liability insurance, filed electronically by the insurer",
+          "form_k": "Form K \u2014 notice of cancellation for liability and cargo",
+          "liability_form": "Form E \u2014 proof of liability insurance, filed electronically by the insurer",
           "liability_minimums": "Official Form 1899H / handbook: $300,000 for household-goods vehicles under 26,000 lbs GVWR/registered/gross weight rating; $500,000 above 26,000 lbs",
           "license_is_not_confirmed_current_insurance": true,
           "lookup_can_establish_current_filing_for_that_record": true,
@@ -4160,7 +4190,7 @@
             "tariff on file (official consumer materials)"
           ],
           "not_scraped": true,
-          "one_record_can_establish": "For that looked-up carrier: whether a TxDMV certificate appears, whether status is presented as Active, and — when the lookup shows it — whether insurance filings are current and whether a USDOT number is associated. That is not a bulk denominator.",
+          "one_record_can_establish": "For that looked-up carrier: whether a TxDMV certificate appears, whether status is presented as Active, and \u2014 when the lookup shows it \u2014 whether insurance filings are current and whether a USDOT number is associated. That is not a bulk denominator.",
           "search_keys_official": [
             "Name",
             "TxDMV number",
@@ -4186,7 +4216,7 @@
           "home_url": "https://www.txdmv.gov/motor-carriers",
           "identifier": "TxDMV certificate number (TxDMV No.)",
           "not_the_current_regulator": "Texas Department of Transportation (historical TxDOT number; authority is now TxDMV)",
-          "program": "Intrastate motor carrier registration — household goods",
+          "program": "Intrastate motor carrier registration \u2014 household goods",
           "short": "TxDMV",
           "statute": "Texas Transportation Code Chapter 643; 43 TAC Chapter 218",
           "verification_coverage": "OPEN_SEARCH_ONLY",
@@ -4257,7 +4287,7 @@
           "do_not_translate_authorized_into_insurance_verified_today": true
         },
         "regulator": {
-          "agency": "Virginia Department of Motor Vehicles — Motor Carrier Services",
+          "agency": "Virginia Department of Motor Vehicles \u2014 Motor Carrier Services",
           "short": "DMV",
           "hhg_url": "https://www.dmv.virginia.gov/businesses/motor-carriers/intrastate/house-goods",
           "auth_url": "https://www.dmv.virginia.gov/businesses/motor-carriers/auth-mc/authorized-motor-carriers",
@@ -4658,7 +4688,7 @@
         "regulator": {
           "agency": "Washington Utilities and Transportation Commission",
           "short": "UTC",
-          "program": "Household goods carriers — intrastate transportation on public roads in Washington",
+          "program": "Household goods carriers \u2014 intrastate transportation on public roads in Washington",
           "credential_term": "permit",
           "not_called_license_unless_source_uses_it": true,
           "industry_label": "Household Goods Carriers",
@@ -4722,7 +4752,7 @@
             "washington_to_another_state": {
               "regulator": "FMCSA",
               "required_authority": "FMCSA interstate operating authority",
-              "identity": "USDOT plus operating authority (MC) — USDOT alone is not enough",
+              "identity": "USDOT plus operating authority (MC) \u2014 USDOT alone is not enough",
               "verification": "https://www.protectyourmove.gov/ and /verify-dot"
             },
             "another_state_to_washington": {
@@ -4747,7 +4777,7 @@
           "ath_wa_001_baseline": 285,
           "count_changed_from_ath_wa_001": true,
           "retrieved_at": "2026-09-04T16:52:37.571398+00:00",
-          "grain": "ACTIVE DIRECTORY RESULTS on the official HTML table — not all historically permitted movers, not all Washington moving businesses, not all interstate movers",
+          "grain": "ACTIVE DIRECTORY RESULTS on the official HTML table \u2014 not all historically permitted movers, not all Washington moving businesses, not all interstate movers",
           "public_fields": [
             "UTC ID",
             "Name",
@@ -4832,7 +4862,7 @@
         "crosswalk": {
           "coverage": "PARTIAL_RECORD_LEVEL",
           "exact_possible_on_individual_record": true,
-          "join": "A UTC directory/detail row that displays a source-native USDOT supports WA-UTC → USDOT for that record only",
+          "join": "A UTC directory/detail row that displays a source-native USDOT supports WA-UTC \u2192 USDOT for that record only",
           "no_statewide_name_match": true,
           "name_only": "UNSAFE",
           "note": "No complete UTC dataset was acquired, so no statewide crosswalk was built."
@@ -4952,7 +4982,7 @@
           },
           {
             "id": "statewide-usdot-crosswalk",
-            "label": "Full state UTC ↔ USDOT crosswalk",
+            "label": "Full state UTC \u2194 USDOT crosswalk",
             "state": "PARTIAL_RECORD_LEVEL"
           },
           {
@@ -5022,7 +5052,7 @@
             "as_of": "2026-09-04",
             "grain": "docket / PDF order",
             "count": null,
-            "identity": "company/docket when present — not attached here",
+            "identity": "company/docket when present \u2014 not attached here",
             "access": "SEARCH / PDF",
             "limitations": "No bulk case roster acquired. Name-only attach is UNSAFE."
           },
@@ -5101,7 +5131,7 @@
         },
         "next_backlog": [
           "WA-MOVE-002: acquire UTC HHG bulk only if a supported CSV/API appears",
-          "Statewide UTC↔USDOT crosswalk if bulk UTC IDs exist",
+          "Statewide UTC\u2194USDOT crosswalk if bulk UTC IDs exist",
           "UTC enforcement bulk if a stable table appears",
           "No Seattle/King/Tacoma/Pierce local pages in this program until state close"
         ],
@@ -6102,7 +6132,7 @@
       "authority": "Intrastate household-goods authority",
       "roster": "Current roster OPEN_SEARCH_ONLY; 2026 Weekly Bulletin HHG applications acquired",
       "evidence": "108 2026 HHG bulletin observations across 36 issues",
-      "sourceClock": "Bulletin window 2026-01-07–2026-09-09"
+      "sourceClock": "Bulletin window 2026-01-07\u20132026-09-09"
     },
     {
       "state": "Illinois",
@@ -6130,6 +6160,15 @@
       "roster": "269 operator list rows / 267 distinct Utility Codes",
       "evidence": "Active HHG carriers, insurance filings, and bounded dockets; brokers and FMCSA kept separate",
       "sourceClock": "Retrieved 2026-09-17T15:16:14Z; sourceAsOf not published"
+    },
+    {
+      "state": "North Carolina",
+      "href": "/north-carolina",
+      "regulator": "NCUC",
+      "authority": "Certificate of Exemption (C-number)",
+      "roster": "362 distinct C-numbers on the September 8, 2026 snapshot (header announces 361)",
+      "evidence": "Monthly HHG carrier list with C\u2194T crosswalks; tariff and insurance requirements kept separate from FMCSA",
+      "sourceClock": "Carrier-list revision 2026-09-08; retrieved 2026-09-17T19:40:54Z"
     }
   ],
   "consumerRules": {
@@ -6148,8 +6187,13 @@
     "Colorado": [
       "Colorado law requires a PUC permit to operate or advertise as a household-goods mover in intrastate commerce (C.R.S. 40-10.1-502).",
       "Official consumer page: ensure that your selected in-state moving company is permitted by the PUC.",
-      "Get a written estimate and sign a contract — both required by all permitted household goods movers in Colorado.",
+      "Get a written estimate and sign a contract \u2014 both required by all permitted household goods movers in Colorado.",
       "Request an in-person inspection of your household goods to ensure the accuracy of your estimate."
     ]
+  },
+  "northCarolina": {
+    "hhgListRows": 362,
+    "distinctCNumbers": 362,
+    "sourceAsOf": "2026-09-08"
   }
 }

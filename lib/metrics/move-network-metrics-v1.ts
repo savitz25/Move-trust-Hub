@@ -178,6 +178,11 @@ export type MoveNetworkMetricsV1 = {
     distinctUtilityCodes: number;
     sourceAsOf: null;
   };
+  northCarolina: {
+    hhgListRows: number;
+    distinctCNumbers: number;
+    sourceAsOf: '2026-09-08';
+  };
   network: {
     publishedStateIntelligencePages: number;
     publishedStateIntelligencePaths: string[];

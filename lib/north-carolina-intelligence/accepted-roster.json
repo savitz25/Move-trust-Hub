@@ -1,0 +1,2539 @@
+{
+  "version": "move-nc-state-intel-v1",
+  "rows": [
+    {
+      "cNumber": "C-3162",
+      "tNumber": "T-5077",
+      "name": "1 Stop Services, LLC, Jamestown, NC (Certified 09-03-26)",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3037",
+      "tNumber": "T-4916",
+      "name": "4AAAA\u2019s Exclusive Moving & Freight Services, LLC, Charlotte NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2980",
+      "tNumber": "T-4831",
+      "name": "485 Movers Charlotte, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3058",
+      "tNumber": "T-4949",
+      "name": "A+ Moving and More, A+ Labor Solutions, LLC, d/b/a Graham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2340",
+      "tNumber": "T-4247",
+      "name": "A+ Moving and Storage, A+ Relocation Services, Inc., d/b/a Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3118",
+      "tNumber": "T-5023",
+      "name": "A1 Moving Solutions, d/b/a, LX Enterprises, L.L.C., Fuquay Varina, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2481",
+      "tNumber": "T-4410",
+      "name": "A 1 Pack Load and Moving, A 1 Pack and Load, Inc., d/b/a, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2296",
+      "tNumber": "T-4204",
+      "name": "A & D Relocation, Inc., Goldsboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2969",
+      "tNumber": "T-4810",
+      "name": "A & M Friendly Movers, LLC, Calabash, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2909",
+      "tNumber": "T-4735",
+      "name": "AAA Moving & Storage Company, LLC, Hickory, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-715",
+      "tNumber": "T-913",
+      "name": "AAA Storage Company, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3017",
+      "tNumber": "T-4889",
+      "name": "A Cut Above Moving and Relocation Service, RJ Square, LLC, d/b/a, Navassa, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2432",
+      "tNumber": "T-4353",
+      "name": "Absolute Moving & Storage, Inc., Holly Ridge, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2919",
+      "tNumber": "T-4754",
+      "name": "Accelerated Deliveries, AJ Enterprises of the Piedmont, LLC, d/b/a, Cornelius, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2412",
+      "tNumber": "T-4324",
+      "name": "Ace Movers, ACE Group Corporation, Inc., d/b/a, Harmony, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3045",
+      "tNumber": "T-4936",
+      "name": "Ackley Enterprises, Inc., Trenton, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2343",
+      "tNumber": "T-4101",
+      "name": "Advance Moving & Storage, Inc., Winterville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3119",
+      "tNumber": "T-5025",
+      "name": "Advanced Moving, Paradise Moving & Storage, LLC, d/b/a",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3056",
+      "tNumber": "T-4934",
+      "name": "Advanced Relocation & Cleaning Services, LLC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2923",
+      "tNumber": "T-4734",
+      "name": "Affordable Moving and Storage, LLC, Newton, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2529",
+      "tNumber": "T-4481",
+      "name": "Ahlgren\u2019s Transport, LLC, Madison, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3050",
+      "tNumber": "T-4933",
+      "name": "Alamance Moving, LLC, Burlington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3100",
+      "tNumber": "T-4998",
+      "name": "Alextransportation, LLC, Indian Trail, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2354",
+      "tNumber": "T-4264",
+      "name": "All American Moving & Storage of Fayetteville, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-1590",
+      "tNumber": "T-4121",
+      "name": "All American Relocation, Inc., Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3112",
+      "tNumber": "T-5014",
+      "name": "Allen\u2019s Moving Service of Fayetteville, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2903",
+      "tNumber": "T-4728",
+      "name": "All In Movers, Inc., Winston-Salem, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2959",
+      "tNumber": "T-4812",
+      "name": "AllMoves, LLC, Brevard, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-601",
+      "tNumber": "T-4074",
+      "name": "All My Sons Moving and Storage, Bournias, LLC, d/b/a, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2261",
+      "tNumber": "T-4149",
+      "name": "All My Sons Moving and Storage of Raleigh, SG of Raleigh, LLC, d/b/a, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2653",
+      "tNumber": "T-4672",
+      "name": "All My Sons of Charlotte South, LLC, Pineville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3034",
+      "tNumber": "T-4898",
+      "name": "All My Sons of Chattanooga I, LLC, Chattanooga, TN",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2883",
+      "tNumber": "T-4710",
+      "name": "All My Sons of Greensboro, LLC, Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3033",
+      "tNumber": "T-4899",
+      "name": "All My Sons of Myrtle Beach, LLC, Myrtle Beach, SC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2644",
+      "tNumber": "T-4657",
+      "name": "All My Sons of South Raleigh, LLC, Garner, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2623",
+      "tNumber": "T-4919",
+      "name": "All Ways Moving, AWM EST 2009 Inc., d/b/a, Jacksonville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2365",
+      "tNumber": "T-4272",
+      "name": "Allstar Moving & Storage Co., Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2411",
+      "tNumber": "T-4323",
+      "name": "American Moving & Hauling, Inc., Winston-Salem, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-1588",
+      "tNumber": "T-4396",
+      "name": "American Van Lines, Inc., Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2042",
+      "tNumber": "T-3729",
+      "name": "Anderson, Andy, Moving Company, Craig M. Anderson, d/b/a, Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2652",
+      "tNumber": "T-4800",
+      "name": "Apartment Movers of the Carolinas, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2595",
+      "tNumber": "T-4570",
+      "name": "Apartment Movers Plus, Derric Pearce Fozard, d/b/a, Durham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2455",
+      "tNumber": "T-4901",
+      "name": "Apple Moving, Harrison\u2019s Moving & Storage Co., Inc., d/b/a, Chesapeake, VA",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2462",
+      "tNumber": "T-4383",
+      "name": "Appalachian Moving & Storage, LLC, Deep Gap, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2353",
+      "tNumber": "T-4258",
+      "name": "Armor Bearer Discount Movers, LLC, Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-641",
+      "tNumber": "T-4143",
+      "name": "Armstrong Relocation, Armstrong Relocation Co., Inc., d/b/a, Morrisville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-760",
+      "tNumber": "T-3206",
+      "name": "Armstrong Transfer & Storage Co., Inc./Armstrong Relocation Company, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2627",
+      "tNumber": "T-4615",
+      "name": "Ashe Van Lines, LLC, Hickory, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2655",
+      "tNumber": "T-4664",
+      "name": "Asheville Area Movers, LLC, Asheville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3138",
+      "tNumber": "T-5049",
+      "name": "Asheville Moving Pros, Asheville Moving Company, LLC, d/b/a, Swannanoa, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2657",
+      "tNumber": "T-4654",
+      "name": "Athens Moving Experts, Inc., Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2464",
+      "tNumber": "T-4389",
+      "name": "Atlantic Moving Systems, LLC, Wilmington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2582",
+      "tNumber": "T-4550",
+      "name": "Austin\u2019s Moving Company, LLC, Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3028",
+      "tNumber": "T-4881",
+      "name": "B&R Moving and Delivery, LLC, Concord, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2468",
+      "tNumber": "T-4564",
+      "name": "Ballantyne & Beyond Moving, Inc., Fort Mill, SC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2509",
+      "tNumber": "T-4435",
+      "name": "Barringer Moving & Storage, LLC, Newton, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2948",
+      "tNumber": "T-4794",
+      "name": "Beaty Brothers Moving, LLC, Hendersonville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2968",
+      "tNumber": "T-4802",
+      "name": "Bellhop Moving, BHH Services, LLC, d/b/a, Chattanooga, TN",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3101",
+      "tNumber": "T-5000",
+      "name": "Bells Moving Service, LLC, Middlesex, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2527",
+      "tNumber": "T-4130",
+      "name": "Beltmann Group Incorporated, Roseville, Minnesota",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3163",
+      "tNumber": "T-5074",
+      "name": "Bento Move, LLC, Charlotte, NC (Certified 09-08-26)",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3064",
+      "tNumber": "T-4928",
+      "name": "Best American Movers, United Pro Movers, LLC, d/b/a, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2951",
+      "tNumber": "T-4793",
+      "name": "Big Green Box Moving, Coastal Lugging of NC, LLC, d/b/a, Charlote, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3157",
+      "tNumber": "T-5059",
+      "name": "Big Moose Moving, Big Moose Moving, LLC, d/b/a, Wendell, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3150",
+      "tNumber": null,
+      "name": "Bird Dog Moving and Logistics, Bird Dog Property Services, LLC, d/b/a, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2449",
+      "tNumber": "T-4352",
+      "name": "BMS Moving & Storage, Gayla Lynch Black, d/b/a, Hendersonville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3053",
+      "tNumber": "T-4922",
+      "name": "Boundless Moving & Storage, LLC, Cleveland, TN",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2897",
+      "tNumber": "T-4718",
+      "name": "Box and Dolly, LLC, Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3049",
+      "tNumber": "T-4938",
+      "name": "Box Turtle Moving Co., LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3082",
+      "tNumber": "T-4968",
+      "name": "Boxt Moving, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2640",
+      "tNumber": "T-4631",
+      "name": "Branch Out Delivery, Inc., Clayton, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3159",
+      "tNumber": "T-5076",
+      "name": "Braylor, LLC, High Point, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3047",
+      "tNumber": "T-4930",
+      "name": "Bread\u2019s Moving & Hauling, LLC, Winston-Salem, NC (At carrier\u2019s request, certifcate was temporarily suspended until 10-01-24. Authority has not yet been reinstated. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)",
+      "status": "TEMPORARILY_SUSPENDED",
+      "statusRaw": "uling, LLC, Winston-Salem, NC (T-4930) (At carrier\u2019s request, certifcate was C-3047 temporarily suspended until 10-01-24. Authority has not yet been reinstated. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)"
+    },
+    {
+      "cNumber": "C-3019",
+      "tNumber": "T-4883",
+      "name": "Brightleaf Moving, LLC, Durham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2379",
+      "tNumber": "T-4292",
+      "name": "Brooks Coast to Coast Transport, Floyd Allen Brooks, Jr., d/b/a, Washington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3039",
+      "tNumber": "T-4921",
+      "name": "Buckeye Moving & Storage, LLC, Winston-Salem, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2424",
+      "tNumber": "T-4344",
+      "name": "Bulldog Moving, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3149",
+      "tNumber": "T-5052",
+      "name": "Burgundy Boys, LLC, Matthews, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2302",
+      "tNumber": "T-4030",
+      "name": "Byers, Sam, A. & Sons Moving Service, Inc., Troutman, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2578",
+      "tNumber": "T-4543",
+      "name": "C & L Movers, Lorreta Floyd Heimbach and Mary Catherine Lantz, d/b/a, Wilmington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3073",
+      "tNumber": "T-4965",
+      "name": "CJ Moving Services, LLC, Durham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2323",
+      "tNumber": "T-4237",
+      "name": "Cameron & Cameron, Assembly, Moving and Storage, Inc., Durham, NC (At carrier\u2019s request, certificate is temporarily suspended until 06-21-25. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)",
+      "status": "TEMPORARILY_SUSPENDED",
+      "statusRaw": "rage, Inc., Durham, NC (T-4237) C-2323 (At carrier\u2019s request, certificate is temporarily suspended until 06-21-25. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)"
+    },
+    {
+      "cNumber": "C-2952",
+      "tNumber": "T-4796",
+      "name": "Capital Moving & Storage, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3117",
+      "tNumber": "T-5019",
+      "name": "Capital Moving & Storage of the Triad, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2942",
+      "tNumber": "T-4786",
+      "name": "Capital Relocation Group, LLC, Garner, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3029",
+      "tNumber": "T-4888",
+      "name": "Captain Delivery, LLC, Lumberton, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2305",
+      "tNumber": "T-4211",
+      "name": "Caraway Moving, Inc., Monroe, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3156",
+      "tNumber": "T-5069",
+      "name": "Cardinal Carriers USA, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-64",
+      "tNumber": "T-9",
+      "name": "Carey Moving & Storage of Asheville, Inc., Arden, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2565",
+      "tNumber": "T-4521",
+      "name": "Carey Moving & Storage of Charlotte, Inc., Rock Hill, South Carolina",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3060",
+      "tNumber": "T-4947",
+      "name": "Carolina Moving & Storage Solutions, LLC, Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3141",
+      "tNumber": "T-5043",
+      "name": "Carolina Premier Moving & Hauling, OEH, LLC, d/b/a, Matthews, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2589",
+      "tNumber": "T-4563",
+      "name": "Cary Moving, 4 Sons, Inc., d/b/a, Cary, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2288",
+      "tNumber": "T-4191",
+      "name": "Chapel Hill Moving Company, Inc., Chapel Hill, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2591",
+      "tNumber": "T-4571",
+      "name": "Charlie Powell\u2019s Model Moves, Inc., Fuquay Varina, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3044",
+      "tNumber": "T-4926",
+      "name": "Chief Dale\u2019s Moving, LLC, Trent Woods, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-131",
+      "tNumber": "T-416",
+      "name": "City Transfer & Storage Co., High Point, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2235",
+      "tNumber": "T-4104",
+      "name": "Citywide Moving Systems, Inc., Matthews, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3097",
+      "tNumber": "T-4996",
+      "name": "Clark Transfer & Storage Co., Chesapeake, VA",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2547",
+      "tNumber": "T-4505",
+      "name": "Cli-Co Moving, RWW Enterprises, Inc., d/b/a, Washington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-634",
+      "tNumber": "T-1912",
+      "name": "Cliff Harvel\u2019s Moving Company, Inc., Winston-Salem, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3085",
+      "tNumber": "T-4980",
+      "name": "Clockwork Moving, LLC, Matthews, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2286",
+      "tNumber": "T-4174",
+      "name": "Coastal Carrier Moving & Storage Company, Coastal Carriers, Inc., d/b/a, Wilmington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3089",
+      "tNumber": "T-4981",
+      "name": "Coastal Carrier Moving & Storage of Greenville, LLC, Bath, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-617",
+      "tNumber": "T-1643",
+      "name": "Coastal Moving Company, Inc., Jacksonville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2480",
+      "tNumber": "T-4586",
+      "name": "Coastline Relocation, Bekins A-1 Movers, Inc., d/b/a, Goldsboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2355",
+      "tNumber": "T-4263",
+      "name": "Coleman American Moving Services, Inc., Midland City, AL",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3086",
+      "tNumber": null,
+      "name": "College Hunks Hauling Junk & Moving, Prosperity Reality Relocations Co., d/b/a",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3083",
+      "tNumber": "T-4984",
+      "name": "Fort Mill, SC College Hunks Hauling Junk and Moving, CHHJ NC Raleigh, LLC, d/b/a Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2956",
+      "tNumber": "T-4807",
+      "name": "College Hunks Hauling Junk & Moving of Asheville, Venture 2134, Inc., d/b/a Arden, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3124",
+      "tNumber": "T-5027",
+      "name": "College Hunks Hauling Junk and Moving, CHHJ NC Charlotte, LLC, d/b/a, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2896",
+      "tNumber": "T-4723",
+      "name": "College Hunks Hauling Junk & Moving, SeaDawgs Enterprises, Inc., d/b/a, Leland, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3000",
+      "tNumber": "T-4861",
+      "name": "College Hunks Hauling Junk & Moving, Inc., d/b/a Race City Hauling, Southport, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3022",
+      "tNumber": "T-4896",
+      "name": "College Hunks Hauling Junk & Moving, d/b/a Rudraksh Enterprise, LLC, Macclesfield, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2525",
+      "tNumber": "T-4466",
+      "name": "College Hunks Moving, Triad Expeditors, Inc., d/b/a, Asheboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3087",
+      "tNumber": "T-4983",
+      "name": "Compass Moving Solutions, Moving Forward Shipping Company, LLC, d/b/a Raleigh, NC (At carrier\u2019s request, certificate is temporarily suspended until 08-01-26. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)",
+      "status": "TEMPORARILY_SUSPENDED",
+      "statusRaw": "LLC, d/b/a Raleigh, NC C-3087 (T-4983) (At carrier\u2019s request, certificate is temporarily suspended until 08-01-26. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)"
+    },
+    {
+      "cNumber": "C-473",
+      "tNumber": "T-4085",
+      "name": "Covan World Wide Moving, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2533",
+      "tNumber": "T-4476",
+      "name": "Crabtree Family Moving, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-1011",
+      "tNumber": "T-1595",
+      "name": "Crown Moving & Storage, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-777",
+      "tNumber": "T-5013",
+      "name": "Custom Moving and Storage, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2779",
+      "tNumber": "T-4700",
+      "name": "CWTC Moving & Storage, LLC, Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3121",
+      "tNumber": "T-5020",
+      "name": "D3 Delivery, LLC, Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2336",
+      "tNumber": "T-4220",
+      "name": "DC Movers, LLC, Durham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2409",
+      "tNumber": "T-4325",
+      "name": "Dedmon Moving and Storage, Inc., Shelby, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-347",
+      "tNumber": "T-1276",
+      "name": "DeHaven\u2019s Transfer & Storage, Inc., Durham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2662",
+      "tNumber": "T-4680",
+      "name": "Dexteready Moving & Delivery, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2487",
+      "tNumber": "T-4424",
+      "name": "DK Love Movers, LLC, Linden, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2944",
+      "tNumber": "T-4789",
+      "name": "Dogwood Moving, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2490",
+      "tNumber": "T-5607",
+      "name": "Dry Ridge Moving and Transportation LLC, Jared Boone Willis, d/b/a Asheville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3078",
+      "tNumber": "T-4969",
+      "name": "Dukes Enterprises, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2774",
+      "tNumber": "T-4692",
+      "name": "E.E. Ward Moving & Storage Co., LLC, Grove City, OH",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3052",
+      "tNumber": "T-4941",
+      "name": "ENC Moving and Hauling, LLC, New Bern, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2332",
+      "tNumber": "T-4242",
+      "name": "East Coast Moving, East Coast Move Lady, Inc., d/b/a, Ocean Isle Beach, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2225",
+      "tNumber": "T-4087",
+      "name": "Easy Movers, Inc., Pineville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3158",
+      "tNumber": "T-5066",
+      "name": "Easy Moving NC, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2973",
+      "tNumber": "T-4799",
+      "name": "Elephant Movers, LLC, Franklinton, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3143",
+      "tNumber": "T-5051",
+      "name": "Elite Moving Co., LLC, Leland, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2915",
+      "tNumber": "T-4748",
+      "name": "Elizabeth City Delivery & Moving Services, Scott Allen Gurganus, d/b/a, Elizabeth City, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2537",
+      "tNumber": "T-4478",
+      "name": "Everyday Moving & Storage, LLC, Angier, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-731",
+      "tNumber": "T-4118",
+      "name": "Excel Moving and Storage, Inc., Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2311",
+      "tNumber": "T-4217",
+      "name": "Excel Moving & Storage of Greensboro, Inc., Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2458",
+      "tNumber": "T-4385",
+      "name": "Exodus Works, Exodus Outreach Foundation, Inc., d/b/a, Hickory, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3057",
+      "tNumber": "T-4948",
+      "name": "Faithful Moves, LLC, Hendersonville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3036",
+      "tNumber": "T-4913",
+      "name": "Fast Lane Moving and Logistics, LLC, Robersonville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-704",
+      "tNumber": "T-952",
+      "name": "Fayetteville Moving & Storage, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-869",
+      "tNumber": "T-1267",
+      "name": "Fidelity Moving & Storage Co., Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2911",
+      "tNumber": "T-4721",
+      "name": "Fire Logistics, Scott Andrew Carter, d/b/a, Mebane, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-200",
+      "tNumber": "T-4167",
+      "name": "First Choice Moving & Storage, Inc., Jacksonville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3076",
+      "tNumber": "T-4960",
+      "name": "Flash Moving Company, Inc., Cary, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3115",
+      "tNumber": "T-5017",
+      "name": "Flex Storage, Inc., Aventura, FL",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3142",
+      "tNumber": "T-5050",
+      "name": "Foothills Moving Company, LLC, Taylorsville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3155",
+      "tNumber": "T-5039",
+      "name": "Four Pillars Transportation and Logistics, LLC, Carthage, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2947",
+      "tNumber": "T-4790",
+      "name": "Fox Moving and Storage, Fox Moving and Storage of Charlotte, LLC, d/b/a",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-664",
+      "tNumber": "T-4090",
+      "name": "Gasperson Transfer, WNC Moving & Storage, Inc., d/b/a, Asheville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2338",
+      "tNumber": "T-4243",
+      "name": "Gene Ferguson Moving Co., Inc., Waynesville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2406",
+      "tNumber": "T-4321",
+      "name": "Gentle Giant Moving Company (NC), LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3088",
+      "tNumber": "T-4985",
+      "name": "Good Greek Van Lines, Agios Ioannis, LLC, d/b/a, Jupiter, FL",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3136",
+      "tNumber": "T-5034",
+      "name": "Grateful Moving, Inc., Apex, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3137",
+      "tNumber": "T-5048",
+      "name": "Guzman Moving and Storage, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3095",
+      "tNumber": "T-4987",
+      "name": "HappyWheelsMoving, LLC, Matthews, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2609",
+      "tNumber": "T-4602",
+      "name": "Hardin Furniture Company, Asheboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2256",
+      "tNumber": "T-4942",
+      "name": "Hardy Moving & Storage, MAAVS Transit, LLC, d/b/a, Harbinger, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3111",
+      "tNumber": "T-5018",
+      "name": "Haul All Lake Norman, SRT Services, LLC, d/b/a, Mooresville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2922",
+      "tNumber": "T-4764",
+      "name": "Hector and Sons, Hector Luis Sidlouski, d/b/a, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2611",
+      "tNumber": "T-4608",
+      "name": "Herren\u2019s Carolina Moving & Storage, Inc., Gastonia, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2988",
+      "tNumber": "T-4849",
+      "name": "Hernandez Moving 919, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-650",
+      "tNumber": "T-876",
+      "name": "Hill, I. H., Transfer and Storage, Inc., Durham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2210",
+      "tNumber": "T-4095",
+      "name": "Hilldrup Moving & Storage, Hilldrup Transfer & Storage, Inc., d/b/a, Stafford, VA",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2970",
+      "tNumber": "T-4829",
+      "name": "Hockaday Brothers Moving, Brennan McCall & Jackson Bennett, d/b/a, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2974",
+      "tNumber": "T-4826",
+      "name": "Home Bound Moving Co., LLC, Beech Mountain, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2287",
+      "tNumber": "T-4199",
+      "name": "Homeward Bound Moving, Inc., Fuquay Varina, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-252",
+      "tNumber": "T-1651",
+      "name": "Horne Moving Systems, Inc., Goldsboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2615",
+      "tNumber": "T-4613",
+      "name": "Hornet Moving, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2954",
+      "tNumber": null,
+      "name": "H.U.N.K.S. of Central Piedmont, Grimshaw, Grimshaw, Griffith & Stone, LLC, d/b/a",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-700",
+      "tNumber": "T-4804",
+      "name": "Winston-Salem, NC Humphrey, Troy, Moving & Storage, Inc., Jacksonville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2995",
+      "tNumber": "T-4851",
+      "name": "Illuminated Moving & Packing, LLC, Asheville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3114",
+      "tNumber": "T-5007",
+      "name": "Imperial Moving and Logistics, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2502",
+      "tNumber": "T-4437",
+      "name": "In & Out Moving and Delivery, LLC, Lenoir, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3062",
+      "tNumber": "T-4952",
+      "name": "Irongate Moving, LLC, Apex, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2561",
+      "tNumber": "T-4520",
+      "name": "JB Movers, Inc., Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3021",
+      "tNumber": "T-4878",
+      "name": "James Moving, LLC, Lexington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2895",
+      "tNumber": "T-4724",
+      "name": "Jenny To The Rescue, Inc., Mars Hill, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3122",
+      "tNumber": "T-5029",
+      "name": "John Frank Moving Company Charlotte, Inc., Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2248",
+      "tNumber": "T-4958",
+      "name": "John\u2019s Moving & Storage, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2642",
+      "tNumber": "T-4656",
+      "name": "Johnson Moving Service, Inc., Lincolnton, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2898",
+      "tNumber": "T-4725",
+      "name": "Junk Pros of NC, LLC, Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2650",
+      "tNumber": "T-4999",
+      "name": "Just Move It! McCorquodale Transfer, LLC, d/b/a, Birmingham, AL",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3140",
+      "tNumber": "T-5044",
+      "name": "Just Movers, Inc., Knightdale, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2469",
+      "tNumber": "T-4391",
+      "name": "Kelly Moving, Inc., Campobello, SC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2551",
+      "tNumber": "T-4498",
+      "name": "Ken\u2019s Pack & Move, Kendrick James Earl Sheppard, d/b/a, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-727",
+      "tNumber": "T-1006",
+      "name": "Kepley Moving and Storage, Inc., Lexington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3008",
+      "tNumber": "T-4869",
+      "name": "Kev\u2019s Moving and Delivery Service, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3081",
+      "tNumber": "T-4964",
+      "name": "King Moving, LLC, Wilmington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-628",
+      "tNumber": "T-4530",
+      "name": "Ladd, J. E. & Son Transfer, LLC, Durham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3110",
+      "tNumber": "T-5012",
+      "name": "Lafayette Moving & Storage, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3098",
+      "tNumber": "T-4990",
+      "name": "Last Second Moving, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2211",
+      "tNumber": "T-1765",
+      "name": "Lawrence Transportation Systems, Inc., Roanoke, VA",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2985",
+      "tNumber": "T-4840",
+      "name": "Let\u2019s Move, Cory LeGene Mitchell, d/b/a, Winston-Salem, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2505",
+      "tNumber": "T-4441",
+      "name": "Lentz Moving Services, Carolinas Office Relocation Experts, LLC, d/b/a, Clemmons, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2546",
+      "tNumber": "T-4500",
+      "name": "Little Guys Movers, Inc., Denton, Texas",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2548",
+      "tNumber": "T-4506",
+      "name": "Little Guys Movers of Greensboro, Beso Del Sol Holdings, LLC, d/b/a, Lubbock, TX",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2337",
+      "tNumber": "T-4232",
+      "name": "Little Lloyd Moving & Transit, Kenneth Frederick Lloyd, d/b/a, Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3154",
+      "tNumber": "T-5065",
+      "name": "Lloyd\u2019s Smooth Moving, LLC, Pinnacle, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3134",
+      "tNumber": "T-5038",
+      "name": "Local Movers Management, LLC, Hendersonville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3075",
+      "tNumber": "T-4971",
+      "name": "Local Moving Services of NC, LLC, Havelock, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3009",
+      "tNumber": "T-4877",
+      "name": "Local N Long Distance Movers, Tornado Movers, LLC, d/b/a, Huntersville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3099",
+      "tNumber": "T-4997",
+      "name": "Logan E Logistics, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-1237",
+      "tNumber": "T-2306",
+      "name": "Long Transfer, Inc., Highlands, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-697",
+      "tNumber": "T-4098",
+      "name": "Lytle\u2019s Transfer & Storage, Inc., Duncan, SC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3094",
+      "tNumber": "T-4994",
+      "name": "MSTS Enterprises, LLC, Rockwell, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3135",
+      "tNumber": "T-5046",
+      "name": "Maduro Moving and Junk Removal, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3106",
+      "tNumber": "T-5004",
+      "name": "Magnolia Movers, LLC, Wake Forest, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2930",
+      "tNumber": "T-4751",
+      "name": "Mainstream Movers, Morrisville Trucks Moving and Supplies, LLC, d/b/a, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3120",
+      "tNumber": "T-5026",
+      "name": "Majhor Moves, LLC, Durham, NC (At carrier\u2019s request, certificate is temporarily suspended until 02-06-27. Therefore, carrier is currently not authorized to perform North Carolina intrastate household goods moves.)",
+      "status": "TEMPORARILY_SUSPENDED",
+      "statusRaw": "Majhor Moves, LLC, Durham, NC (T-5026) (At carrier\u2019s request, certificate is temporarily C-3120 suspended until 02-06-27. Therefore, carrier is currently not authorized to perform North Carolina intrastate household goods moves.)"
+    },
+    {
+      "cNumber": "C-2573",
+      "tNumber": "T-4540",
+      "name": "Make A Move, Fletcher Anneheim Dedicated Services, LLC, d/b/a, Charlotte NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3152",
+      "tNumber": "T-5064",
+      "name": "Make A Move Raleigh, LLC, (Raleigh)",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3054",
+      "tNumber": "T-4944",
+      "name": "Making Moves, LLC, Clayton, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3113",
+      "tNumber": "T-5015",
+      "name": "Markethouse Moving and Storage, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2320",
+      "tNumber": "T-4227",
+      "name": "Mather Brothers Moving Company, LLC, Garner, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2577",
+      "tNumber": "T-4544",
+      "name": "Me and My Team, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3006",
+      "tNumber": "T-4866",
+      "name": "Men Moving Mountains, LLC, Boone, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2535",
+      "tNumber": "T-4230",
+      "name": "Men on the Move, Inc., Young Harris, Georgia",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-702",
+      "tNumber": "T-1423",
+      "name": "Merchant\u2019s Moving & Storage, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3126",
+      "tNumber": "T-5033",
+      "name": "Metrolina Relocation, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2608",
+      "tNumber": "T-4607",
+      "name": "Metropolitan Moving, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2966",
+      "tNumber": "T-4825",
+      "name": "Midwest Moving Company, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2562",
+      "tNumber": "T-4510",
+      "name": "Miracle Movers, Samantha Lynn Piner, d/b/a, Wilmington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2925",
+      "tNumber": "T-4766",
+      "name": "Miracle Movers of Concord, LLC, Mooresville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2894",
+      "tNumber": "T-4698",
+      "name": "Miracle Movers Raleigh, LLC, Durham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2457",
+      "tNumber": "T-4250",
+      "name": "Miscellaneous Plus, Inc., Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2348",
+      "tNumber": "T-4257",
+      "name": "Mitchell Movers LLC, New Bern NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-626",
+      "tNumber": "T-882",
+      "name": "Modern Moving and Storage, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3069",
+      "tNumber": "T-4951",
+      "name": "Monster Movers, LLC, Burlington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2614",
+      "tNumber": "T-4591",
+      "name": "Moultrie Home Services, LLC, Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3147",
+      "tNumber": "T-5060",
+      "name": "Move 4 Less of North Carolina, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3067",
+      "tNumber": "T-4957",
+      "name": "Move and Care, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2921",
+      "tNumber": "T-4760",
+      "name": "Movers Near Me, LLC, Candler, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3079",
+      "tNumber": "T-4973",
+      "name": "Moves for Less, Xpress Logistics, LLC, d/b/a, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-1990",
+      "tNumber": "T-4917",
+      "name": "Movin\u2019 On Movers, PBP Mom, LLC, d/b/a, Apex, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3108",
+      "tNumber": "T-5008",
+      "name": "Mudanza Brothers Moving Solutions, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-279",
+      "tNumber": "T-350",
+      "name": "Murray Transfer & Storage Company, Inc., Wilmington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3013",
+      "tNumber": "T-4876",
+      "name": "Mustang Moving, LLC, Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3139",
+      "tNumber": "T-5047",
+      "name": "My 3 Sons Moving, M3SNC, LLC, d/b/a, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2557",
+      "tNumber": "T-4519",
+      "name": "Naglee Moving & Storage, Inc., Elmira Heights, New York",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3038",
+      "tNumber": "T-4914",
+      "name": "Nationwide Logistics, LLC, Wendell, NC (At carrier\u2019s request, certificate is temporarily suspended until 5-15-24. Authority has not yet been reinstated. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)",
+      "status": "TEMPORARILY_SUSPENDED",
+      "statusRaw": "e Logistics, LLC, Wendell, NC (T-4914) (At carrier\u2019s request, certificate is temporarily C-3038 suspended until 5-15-24. Authority has not yet been reinstated. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)"
+    },
+    {
+      "cNumber": "C-2916",
+      "tNumber": "T-4753",
+      "name": "NetMove Logistics, LLC, d/b/a NetMove, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2378",
+      "tNumber": "T-4291",
+      "name": "New World Van Lines, Inc., Chicago, IL",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2983",
+      "tNumber": "T-4837",
+      "name": "Next Stop Movers, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-173",
+      "tNumber": "T-3498",
+      "name": "Nilson Van & Storage, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3051",
+      "tNumber": "T-4940",
+      "name": "No Sweat Services, Inc., Cary, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3093",
+      "tNumber": "T-4988",
+      "name": "NuWay Relocation, LLC Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2555",
+      "tNumber": "T-4512",
+      "name": "OBX Movers, Matthew Craig Hill, d/b/a, Harbinger, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-436",
+      "tNumber": "T-552",
+      "name": "Omni Moving and Storage, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2907",
+      "tNumber": "T-4691",
+      "name": "Orange County Moving and Storage, Micah Zunil Intrator, d/b/a, Chapel Hill, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3133",
+      "tNumber": "T-5045",
+      "name": "Overalls Moving, LLC, Cary, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-586",
+      "tNumber": "T-857",
+      "name": "Patterson Storage Warehouse Company, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-372",
+      "tNumber": "T-3814",
+      "name": "Paxton Van Lines of North Carolina, Inc., Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3024",
+      "tNumber": "T-4903",
+      "name": "Peak Moving and Storage, LLC, Wilmington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3091",
+      "tNumber": "T-4991",
+      "name": "Pepe\u2019s Hauling and Moving, LLC, Burgaw, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3125",
+      "tNumber": "T-5032",
+      "name": "Pickup & Delivery Moving Service, LLC, Oxford, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3151",
+      "tNumber": "T-5057",
+      "name": "Piece of Cake Moving + Storage, LLC, Long Island City, NY",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2528",
+      "tNumber": "T-4470",
+      "name": "Piedmont Moving, Michael Theodore Handshoe, d/b/a, Rural Hall, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-631",
+      "tNumber": "T-1483",
+      "name": "Piedmont Van and Storage Co., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2590",
+      "tNumber": "T-4561",
+      "name": "Pinehurst Moving & Storage Co., Inc., Southern Pines, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3102",
+      "tNumber": "T-5003",
+      "name": "Pink Zebra Moving, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3130",
+      "tNumber": "T-5006",
+      "name": "Pink Zebra Moving of Charlotte, Joyfull Faithfull Journey, LLC, d/b/a, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3027",
+      "tNumber": "T-4906",
+      "name": "Pink Zebra Moving of Wilmington, Pope Ventures, LLC, d/b/a, Wilmington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2493",
+      "tNumber": "T-4427",
+      "name": "Pinnacle Movers, LLC, Pinnacle, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3107",
+      "tNumber": "T-5009",
+      "name": "POC Carolina, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2344",
+      "tNumber": "T-4677",
+      "name": "Port City Movers, 126 Haney Drive Moving, LLC, d/b/a, Mooresville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2470",
+      "tNumber": "T-4395",
+      "name": "Professional Relocation Moving Packing and Storage, LLC, Mooresville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2434",
+      "tNumber": "T-4363",
+      "name": "Pro Movers, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3096",
+      "tNumber": "T-4995",
+      "name": "Pro Moving, Inc., Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3129",
+      "tNumber": "T-5037",
+      "name": "PUG Logistics, LLC, Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2937",
+      "tNumber": "T-4738",
+      "name": "Quality Transports and Relocation, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2939",
+      "tNumber": "T-4783",
+      "name": "Raleigh Moving Company, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3068",
+      "tNumber": "T-4918",
+      "name": "Rambling Man Logistics, L.L.C., Hildebran, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2453",
+      "tNumber": "T-4377",
+      "name": "Randy Owen Moving Service, LLC, Brevard, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2632",
+      "tNumber": "T-5041",
+      "name": "RDU Delivered, LLC, Jeffery L. Smith, d/b/a, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2908",
+      "tNumber": "T-4715",
+      "name": "Red Shoe Services, LLC, Joseph P. Potter, d/b/a, Asheville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3132",
+      "tNumber": "T-5031",
+      "name": "Red Wagon Moving, LLC, Zebulon, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3042",
+      "tNumber": "T-4925",
+      "name": "Reign Moving Solutions, LLC, Greer, SC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2638",
+      "tNumber": "T-4644",
+      "name": "Relocate & Decorate Moving Services, LLC, Wilson, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2906",
+      "tNumber": "T-4733",
+      "name": "Right Direction Moving & Transport, LLC, Franklin, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2570",
+      "tNumber": "T-4539",
+      "name": "Road Haugs, Inc., Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2941",
+      "tNumber": "T-4784",
+      "name": "Rocket Movers, LLC, Marion, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2890",
+      "tNumber": "T-4694",
+      "name": "Romero Movers, LLC, Apex, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2929",
+      "tNumber": "T-4774",
+      "name": "Royalty Moving Systems, LLC, Morrisville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3145",
+      "tNumber": "T-5010",
+      "name": "Rud, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2931",
+      "tNumber": "T-4776",
+      "name": "Rye Moving and Packing, LLC, Fletcher, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2901",
+      "tNumber": "T-4727",
+      "name": "Safe & Sound Moving Company, LLC, Cary, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-865",
+      "tNumber": "T-4562",
+      "name": "Sandhills Moving & Storage, Co., Southern Pines, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2552",
+      "tNumber": "T-4508",
+      "name": "Scooby Moving Company, David Holloway, d/b/a, Wake Forest, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3144",
+      "tNumber": "T-5053",
+      "name": "Shedrick Elite, LLC, Goldsboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3148",
+      "tNumber": "T-5058",
+      "name": "Skinny Boys Moving, LLC, Elizabeth City, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2885",
+      "tNumber": "T-4371",
+      "name": "Smart Move, LLC, Bailey, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-651",
+      "tNumber": "T-853",
+      "name": "Smith Dray Line & Storage Co., Inc., Asheville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2219",
+      "tNumber": "T-4111",
+      "name": "Smoky Mountain Moving Co., Inc., Franklin, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2637",
+      "tNumber": "T-4645",
+      "name": "Smooth Move, Carolina Movers, LLC, d/b/a, Rock Hill, SC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2635",
+      "tNumber": "T-4499",
+      "name": "Southeast Moving and Storage, Inc., Wilmington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3090",
+      "tNumber": "T-4982",
+      "name": "Southern Hospitality Moving, LLC, Asheboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2593",
+      "tNumber": "T-4577",
+      "name": "Southern Moving and Storage, LLC, Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3032",
+      "tNumber": "T-4908",
+      "name": "Spaces Premium Moving, Inc., Bolivia, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3128",
+      "tNumber": "T-5036",
+      "name": "Square Cow Moovers, Competitive Impact Moving, LLC, d/b/a, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-659",
+      "tNumber": "T-5016",
+      "name": "State Moving and Storage, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2517",
+      "tNumber": "T-4459",
+      "name": "States Van Lines of North Carolina, LLC, Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2331",
+      "tNumber": "T-4509",
+      "name": "Steele & Vaughn Moving & Storage, J Five Investments, Inc., d/b/a Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2567",
+      "tNumber": "T-4529",
+      "name": "Stewart Moving and Storage, The Wes Stewart Corporation, d/b/a, Midlothian, VA",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3084",
+      "tNumber": "T-4979",
+      "name": "Suddath Moving & Storage, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3092",
+      "tNumber": "T-4992",
+      "name": "Sunrise Moving Company, High Point, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2932",
+      "tNumber": "T-4777",
+      "name": "Superior Moving and Logistics, LLC, Greenville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2273",
+      "tNumber": "T-4146",
+      "name": "Superior Moving Systems, Inc., Durham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2596",
+      "tNumber": "T-4572",
+      "name": "Sustainable Alamance, Burlington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3077",
+      "tNumber": "T-4972",
+      "name": "TLC Moving, LLC, Castle Hayne, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2299",
+      "tNumber": "T-4201",
+      "name": "T-N-T Moving Systems, Inc., Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-726",
+      "tNumber": null,
+      "name": "TROSA Moving, Triangle Residential Options for Substance Abusers, Inc., d/b/a",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2295",
+      "tNumber": "T-4082",
+      "name": "Durham, NC Taylor\u2019s Moving Company, Orlandus Dungee Taylor, d/b/a, Durham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-595",
+      "tNumber": "T-1476",
+      "name": "Terminal Storage Company, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3109",
+      "tNumber": "T-5011",
+      "name": "Terrick\u2019s Moving Company, LLC, Durham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2904",
+      "tNumber": "T-4731",
+      "name": "The $20.00 Moving Truck, LLC, Raeford, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3104",
+      "tNumber": "T-5005",
+      "name": "The Best Movers, Seabret, LLC, d/b/a, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2399",
+      "tNumber": "T-4311",
+      "name": "Thomas, J. E., & Sons Moving, John E. Thomas, d/b/a, Jacksonville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2446",
+      "tNumber": "T-4327",
+      "name": "T & J Movers, Tyrone Lamont Levan, d/b/a, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2276",
+      "tNumber": "T-4180",
+      "name": "Todd\u2019s Easy Moves, Todd Bentley Cummings, d/b/a, Westfield, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2946",
+      "tNumber": "T-4787",
+      "name": "Totes On-Demand, LLC, Concord, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3063",
+      "tNumber": "T-4955",
+      "name": "Town and Country Movers, Inc., Gaithersburg, MD",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2478",
+      "tNumber": "T-4407",
+      "name": "Tri-City Movers, LLC, Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3131",
+      "tNumber": "T-5040",
+      "name": "Trinity Movers WNC, LLC, Mills River, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2605",
+      "tNumber": "T-4598",
+      "name": "Tropical Moves, LLC, Wilmington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2262",
+      "tNumber": "T-4154",
+      "name": "Truckin\u2019 Movers Corporation, Durham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3160",
+      "tNumber": "T-5071",
+      "name": "T.S. Van Lines, New Era Trucking & Logistics, LLC, d/b/a, Pine Brook, NJ",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2425",
+      "tNumber": "T-4338",
+      "name": "Two Men and A Truck of Asheville, AMS & Sons Moving Co., LLC, d/b/a, Fletcher, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3072",
+      "tNumber": "T-4966",
+      "name": "Two Men and A Truck of Charlotte, NBF Charlotte, LLC, d/b/a, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2369",
+      "tNumber": "T-4278",
+      "name": "Two Men and A Truck of Durham, NC, Oliver & Finley, LLC, d/b/a, Durham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2445",
+      "tNumber": null,
+      "name": "Two Men and A Truck of Fayetteville, Green Leaf Associates, Inc., d/b/a",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2998",
+      "tNumber": "T-4370",
+      "name": "Fayetteville, NC Two Men and A Truck Goldsboro, R3 Ventures, LLC, d/b/a, Goldsboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-126",
+      "tNumber": "T-4629",
+      "name": "Two Men and A Truck of Greensboro, Greensboro Movers, LLC, d/b/a, Winston-Salem, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3031",
+      "tNumber": "T-4911",
+      "name": "Two Men and A Truck Greenville NC, NBF Greenville NC, LLC, d/b/a, Greenville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2568",
+      "tNumber": "T-4533",
+      "name": "Two Men and A Truck of Mooresville, Lynnbrook, LLC, d/b/a, Winston-Salem, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2253",
+      "tNumber": "T-4497",
+      "name": "Two Men and A Truck of Raleigh, Simply The Best Movers, LLC, d/b/a, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3153",
+      "tNumber": "T-5055",
+      "name": "Two Men and A Truck Rock Hill, NBF Rock Hill, LLC, Rock Hill, SC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2912",
+      "tNumber": "T-4749",
+      "name": "Two Men and A Truck of Sanford, B10P, LLC, d/b/a, Sanford, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2066",
+      "tNumber": "T-5073",
+      "name": "Two Men and A Truck of Wilmington, NHB Wilmington, LLC, d/b/a, Wilmington, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2289",
+      "tNumber": "T-4474",
+      "name": "Two Men and A Truck of Winston-Salem, Kline, LLC, d/b/a, Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2456",
+      "tNumber": "T-4374",
+      "name": "Two Strong Dudes Moving Company, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3018",
+      "tNumber": "T-4891",
+      "name": "Two Twigs Moving, LLC, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2216",
+      "tNumber": "T-231",
+      "name": "Union Transfer and Storage Company, Inc., Arden, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3080",
+      "tNumber": "T-4967",
+      "name": "United Family Movers CNC, LLC, Raleigh, NC (Per carrier\u2019s request, certifcate 09-03-26)",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3026",
+      "tNumber": "T-4909",
+      "name": "Uwharrie Moving and Delivery, LLC, Albemarle, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3146",
+      "tNumber": "T-5054",
+      "name": "Via Transit Moving, Co., Via Transit Moving, LLC, d/b/a, Greensboro, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2905",
+      "tNumber": "T-4730",
+      "name": "Victory Run Moving Delivery Courier, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2933",
+      "tNumber": "T-4744",
+      "name": "Virtues Moving Company, Inc., Durham, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-1063",
+      "tNumber": "T-861",
+      "name": "Wainwright Transfer Co. of Fayetteville, Inc., Fayetteville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3071",
+      "tNumber": "T-4963",
+      "name": "Walden Logistics, LLC, Greenville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3123",
+      "tNumber": "T-5028",
+      "name": "Wayflowers Van Lines, L.L.C., Monroe, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2291",
+      "tNumber": "T-4186",
+      "name": "Webb Co., Inc., The Webb Company of North Carolina, d/b/a, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-712",
+      "tNumber": "T-949",
+      "name": "Willis Moving and Storage, Inc., Jacksonville, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3059",
+      "tNumber": "T-4945",
+      "name": "Wolf Moving You, LLC, Raleigh, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3161",
+      "tNumber": "T-5072",
+      "name": "Womble & Son Moving Company, LLC, Corneilus, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2982",
+      "tNumber": "T-4841",
+      "name": "X-Man Delivery/Moving Services, LLC, Winston-Salem, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-2572",
+      "tNumber": "T-4542",
+      "name": "You Move Me, TEC Ventures, LLC, d/b/a, Charlotte, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    },
+    {
+      "cNumber": "C-3103",
+      "tNumber": "T-5002",
+      "name": "Zippy Shell of NC, Forward Moving, LLC, d/b/a, Wake Forest, NC",
+      "status": "AUTHORIZED_AS_LISTED",
+      "statusRaw": null
+    }
+  ]
+}
