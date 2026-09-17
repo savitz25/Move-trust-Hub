@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { MOVE_ASK_MAX_QUERY } from '@/lib/move-ask/contract';
+import { captureSearchSubmitted } from '@/components/analytics/posthog-beacons';
 
 export const MOVE_SEARCH_EXAMPLES = [
   'current interstate movers headquartered in Florida',
@@ -16,7 +19,7 @@ export function SpecialistSearchShell({ query = '', compact = false, filters = {
       <h2 id={compact ? 'home-specialist-search' : 'specialist-search'} className={`${compact ? 'mt-1 text-xl' : 'mt-2 text-2xl sm:text-3xl'} font-semibold text-[#0A2540]`}>
         What do you want to find out?
       </h2>
-      <form action="/ask" method="get" role="search" aria-label="Research moving companies" className="mt-4">
+      <form action="/ask" method="get" role="search" aria-label="Research moving companies" className="mt-4" onSubmit={() => captureSearchSubmitted('ask_form')}>
         <label htmlFor={compact ? 'home-move-research' : 'move-research'} className="sr-only">Mover research question, company, USDOT or MC number</label>
         <div className="flex flex-col gap-2 sm:flex-row">
           <input id={compact ? 'home-move-research' : 'move-research'} name="q" defaultValue={query} aria-describedby="move-query-limit" required

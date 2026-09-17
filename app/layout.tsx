@@ -10,7 +10,9 @@ import {
   buildTrustHubNetworkSchema,
 } from '@/lib/hub/schemas';
 import { isInsuranceStandaloneHost } from '@/lib/hub/domains';
+import { Suspense } from 'react';
 import { GoogleAnalyticsRoot } from '@/components/analytics/google-analytics-root';
+import { PosthogRoot } from '@/components/analytics/posthog-root';
 import { DeferredUiStyles } from '@/components/performance/deferred-ui-styles';
 import { ThirdPartyOrchestrator } from '@/components/performance/third-party-orchestrator';
 import { ClientRuntimeGuard } from '@/components/reliability/client-runtime-guard';
@@ -68,6 +70,9 @@ export default async function RootLayout({
         <SchemaInjector data={rootSchema} />
         {/* ChunkLoadError recovery + client error reporting (ops visibility) */}
         <ClientRuntimeGuard />
+        <Suspense fallback={null}>
+          <PosthogRoot />
+        </Suspense>
         {children}
         {/* GA deferred (idle) — must not compete with hero LCP */}
         <GoogleAnalyticsRoot />

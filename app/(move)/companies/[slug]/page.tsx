@@ -82,6 +82,7 @@ import {
 } from '@/lib/directory/normalize-company';
 import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
 import { ProfileCustomerLayer } from '@/components/customer-integration/profile-customer-layer';
+import { ProfileViewed } from '@/components/analytics/posthog-beacons';
 import { claimCtaEnabledFor, moveClaimProfile } from '@/lib/customer-integration/eligibility';
 import { fetchBusinessProfile, fetchBusinessReplies } from '@/lib/customer-integration/public';
 import { SITE_URL } from '@/lib/seo/site-metadata';
@@ -274,6 +275,7 @@ export default async function CompanyProfilePage({ params }: Props) {
   return (
     <>
       <JsonLd data={jsonLd} />
+      <ProfileViewed profileType="moving_company" surface="profile" />
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       <AdminRefreshVerificationShell companyId={company.id} />
       <Suspense fallback={
