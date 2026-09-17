@@ -56,6 +56,8 @@ export type MoveNetworkMetricsInput = {
   nyBulletinIssues: number;
   orAuthorizedHhgListRows: number;
   orDistinctCertificateIds: number;
+  paHhgOperatorListRows: number;
+  paHhgDistinctUtilityCodes: number;
   publishedStateIntelligencePaths: string[];
   floridaResearchCountyLandings: number;
   localMoverStateLandings: number;
@@ -123,6 +125,11 @@ export function assertGrainSafety(input: MoveNetworkMetricsInput): void {
   if (!input.publishedStateIntelligencePaths.includes('/new-york')) throw new Error('New York state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/illinois')) throw new Error('Illinois state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/oregon')) throw new Error('Oregon state intelligence path missing');
+  if (!input.publishedStateIntelligencePaths.includes('/pennsylvania')) throw new Error('Pennsylvania state intelligence path missing');
+  if (input.paHhgOperatorListRows <= 0) throw new Error('Pennsylvania HHG operator list row count missing');
+  if (input.paHhgOperatorListRows === input.paHhgDistinctUtilityCodes) {
+    throw new Error('Pennsylvania list rows must not equal distinct Utility Codes on this snapshot');
+  }
   if (input.nyHhgBulletinObservations <= 0) throw new Error('New York HHG bulletin observation count missing');
   if (input.orAuthorizedHhgListRows <= 0) throw new Error('Oregon authorized HHG list row count missing');
   if (input.orAuthorizedHhgListRows !== input.orDistinctCertificateIds) {
@@ -645,6 +652,28 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       ),
     }),
     metric({
+      key: 'pa_puc_hhg_operator_list_rows',
+      label: 'Pennsylvania PUC active Household Goods operator list rows',
+      value: input.paHhgOperatorListRows,
+      valueState: 'KNOWN',
+      grain: 'pa_puc_hhg_operator_list_row',
+      denominator: 'Official PA PUC Household Goods Operators List rows',
+      description:
+        'Active Pennsylvania Household Goods Carrier list rows. Not unique companies, not brokers, and not FMCSA interstate movers.',
+      coverage: 'Pennsylvania',
+      contributingSourceSystems: ['pa_puc_hhg_operators_list'],
+      sourceAsOf: null,
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        `Count official operator-list rows (${input.paHhgOperatorListRows}) and distinct Utility Codes (${input.paHhgDistinctUtilityCodes}).`,
+        'Not unique companies. Not brokers. Not USDOT/MC. Not a complaint or enforcement count.',
+        ['pa_puc_hhg_operators_list'],
+        'Pennsylvania intrastate Household Goods carriers',
+        'sourceAsOf not published; retrieval is not certification date',
+      ),
+    }),
+    metric({
       key: 'ny_dot_2026_hhg_bulletin_observations',
       label: 'NYSDOT 2026 household-goods bulletin application observations',
       value: input.nyHhgBulletinObservations,
@@ -809,6 +838,11 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       authorizedHhgListRows: input.orAuthorizedHhgListRows,
       distinctCertificateIds: input.orDistinctCertificateIds,
       sourceUpdatedAt: '2026-09-09T19:21:37Z',
+      sourceAsOf: null,
+    },
+    pennsylvania: {
+      hhgOperatorListRows: input.paHhgOperatorListRows,
+      distinctUtilityCodes: input.paHhgDistinctUtilityCodes,
       sourceAsOf: null,
     },
     network: {

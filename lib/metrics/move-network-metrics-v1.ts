@@ -173,6 +173,11 @@ export type MoveNetworkMetricsV1 = {
     sourceUpdatedAt: string;
     sourceAsOf: null;
   };
+  pennsylvania: {
+    hhgOperatorListRows: number;
+    distinctUtilityCodes: number;
+    sourceAsOf: null;
+  };
   network: {
     publishedStateIntelligencePages: number;
     publishedStateIntelligencePaths: string[];
