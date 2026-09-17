@@ -12,13 +12,13 @@ Production deploy is **not** authorized by this packet. Stop at PR until a separ
 - Do **not** send Move events to leftover project `movetrusthub` (created during this ticket; archive later if unused)
 - Site: `https://www.movetrusthub.com`
 
-## Gates 1–5 (required)
+## Gates 1–5 (required — packet allowed-scope items 1–5)
 
-1. **Project** — dedicated Move Sentry project `movetrusthub-web`; Ask `javascript-nextjs` unchanged.
-2. **SDK** — current `@sentry/nextjs` on client, Node server, and edge.
-3. **DSN/env** — DSN/org/project from env only; `SENTRY_AUTH_TOKEN` is build-only (not in this agent environment — blocker for mapped prod stacks until set on Vercel).
-4. **Environment** — `lib/analytics/posthog/environment.ts` → `production` \| `preview` \| `development`; alerts production-only.
-5. **Release / source maps** — `release = VERCEL_GIT_COMMIT_SHA`; `withSentryConfig` uploads maps when auth token + org + project are present.
+1. **Sentry project** — `movetrusthub-web` in org `ask-trust-hub` (platform javascript-nextjs). Ask `javascript-nextjs` is not renamed.
+2. **SDK** — current `@sentry/nextjs` for Next 15.
+3. **Init surfaces** — client `instrumentation-client.ts`, server `sentry.server.config.ts`, edge `sentry.edge.config.ts`; merge into existing `instrumentation.ts` `register()` + `onRequestError`; App Router `global-error.tsx` / `error.tsx` capture.
+4. **`next.config.ts`** — `withSentryConfig` around the existing bundle-analyzer wrap. Redirects, headers, `outputFileTracingExcludes`, and `experimental.optimizePackageImports` unchanged.
+5. **Env names** — `NEXT_PUBLIC_SENTRY_DSN` / `SENTRY_DSN`, `SENTRY_ORG=ask-trust-hub`, `SENTRY_PROJECT=movetrusthub-web`, `SENTRY_AUTH_TOKEN` (build-only), `SENTRY_PROBE_ENABLED` default `false`, `SENTRY_PROBE_SECRET` (≥16 chars). Never commit values.
 
 ## Required Vercel env vars
 
@@ -63,7 +63,9 @@ Aligned with `lib/analytics/posthog/privacy.ts`:
 
 ## Tracing
 
-- Production `tracesSampleRate` 0.1, preview 0.25, development 1.0
+- Production `tracesSampleRate` 0.1 (packet band 5–10%; not 100%)
+- Preview 0.05 (lower than production)
+- Development 1.0
 - Tunnel, health, BBB/FMCSA refresh, and cron transactions are dropped (refresh **runners themselves are not edited**)
 
 ## Production closeout probe (after CoS deploy GO only)
@@ -77,30 +79,28 @@ Leave `SENTRY_PROBE_ENABLED` unset/`false` on production until CoS GO. Do not fi
 
 Unauthenticated GET/POST without the flag returns 404.
 
-## Alerts (clone of Ask ATH-REL-001B)
+## Alerts (ATH-REL-002A packet table — Ask thresholds as initial standard)
 
-Exact Ask rules live on project `javascript-nextjs` (do not change them). Recreate the same four classes on **Move project `movetrusthub-web`**, **environment = production only**. Thresholds match Ask ATH-REL-001B as the initial standard.
+Do **not** edit Ask alerts on `javascript-nextjs`. Recreate these on **`movetrusthub-web`**, environment **production** on all four. No preview/dev. No alert-per-event.
 
-Sentry MCP in this session can create projects but **cannot create issue-alert rules** (no `create_alert_rule` / workflow-write tool, and no `SENTRY_AUTH_TOKEN` in the agent environment). Create these in the UI after the project exists, or via `POST https://us.sentry.io/api/0/projects/ask-trust-hub/movetrusthub-web/rules/` with an org token that has `alerts:write`.
+Sentry MCP can create projects but **cannot** create issue-alert rules (no write tool; no org token in this environment). Create in the UI, or `POST https://us.sentry.io/api/0/projects/ask-trust-hub/movetrusthub-web/rules/` with `alerts:write`.
 
-Ask source-of-truth (verified 2026-09-17):
+| Rule name | Trigger | Frequency | Destination |
+| --- | --- | --- | --- |
+| `ATH-REL-002A New Production Issue` | New issue | 30m | Issue Owners / Suggested Assignees / team `ask-trust-hub` (**not** founder-only) |
+| `ATH-REL-002A Production Regression` | Resolved → unresolved | 30m | Same as above |
+| `ATH-REL-002A Production Error Spike` | Events in issue >10 / 1h | 60m | Team `ask-trust-hub` routing |
+| `ATH-REL-002A High-Impact Recurring` | High priority **OR** users >3 / 1h | 60m | Founder escalate only (`savitz25` / makeithappen1; Ask user id `4984460`) |
 
-| Move name | Ask source | Frequency | Environment | Trigger | Filter | Action / ownership |
-| --- | --- | --- | --- | --- | --- | --- |
-| ATH-REL-002A New Production Issue | ATH-REL-001B New Production Issue (`4717893`) | 30 min | production | First seen event | none | Email **issue owners**, fallthrough **ActiveMembers**. Reliability / owners. |
-| ATH-REL-002A Production Regression | ATH-REL-001B Production Regression (`4722227`) | 30 min | production | Regression event | none | Email **issue owners**, fallthrough **ActiveMembers**. Reliability / owners. |
-| ATH-REL-002A Production Error Spike | ATH-REL-001B Production Error Spike (`4731116`) | 60 min | production | Every event | Event frequency count **≥ 10 / 1 hour** | Email **team `ask-trust-hub`**. Reliability / owners. |
-| ATH-REL-002A High-Impact Recurring | ATH-REL-001B High-Impact Recurring (`4285295`) | 60 min | production | Existing high-priority issue **AND** every event | Unique users **≥ 3 / 1 hour** (filter logic any-short) | Email **founder** (Ask target user id `4984460`). High-Impact → founder escalate **only**. |
+### UI steps (project `movetrusthub-web`)
 
-### UI steps (Sentry Alerts → Issue Alerts → Create Alert, project `movetrusthub-web`)
+1. Open https://ask-trust-hub.sentry.io/alerts/rules/ → project `movetrusthub-web` → Create Alert.
+2. **New Production Issue:** Environment `production`. When `A new issue is created`. Email Issue Owners + Suggested Assignees, fallthrough team `ask-trust-hub`. Frequency 30 minutes. Not founder-only.
+3. **Production Regression:** Environment `production`. When a resolved issue becomes unresolved. Same destination as #2. Frequency 30 minutes.
+4. **Production Error Spike:** Environment `production`. When an event is seen **and** the issue is seen more than 10 times in 1 hour. Email team `ask-trust-hub`. Frequency 60 minutes.
+5. **High-Impact Recurring:** Environment `production`. When the issue is high priority **OR** it affects more than 3 unique users in 1 hour. Email founder `savitz25` only. Frequency 60 minutes. Do not route this class to the team.
 
-1. Open https://ask-trust-hub.sentry.io/alerts/rules/ and switch project to `movetrusthub-web`.
-2. **New Production Issue:** Environment `production`. When `A new issue is created`. Then `Send a notification via email` to Issue Owners (fallthrough Active Members). Frequency 30 minutes.
-3. **Production Regression:** Environment `production`. When `A resolved issue becomes unresolved` (regression). Email Issue Owners / Active Members. Frequency 30 minutes.
-4. **Production Error Spike:** Environment `production`. When `An event is seen`. Filter `The issue is seen more than 10 times in 1 hour`. Email team `ask-trust-hub`. Frequency 60 minutes.
-5. **High-Impact Recurring:** Environment `production`. When `An event is seen` **and** `The issue is high priority` (existing high-priority issue). Filter `The issue affects more than 3 unique users in 1 hour`. Email the founder member only (same person as Ask rule 4285295). Frequency 60 minutes. Do **not** route this class to the general team.
-
-Leave alerts enabled in Sentry; they only fire on `production`. They become operationally live after CoS deploy GO + verified probe.
+Leave the rules enabled in Sentry (production filter keeps preview quiet). They become operationally live after CoS deploy GO + verified probe.
 
 ## Hard exclusions (this packet)
 
@@ -109,4 +109,19 @@ Do not edit or invoke:
 - `/api/refresh/fmcsa` and FMCSA refresh runner/cron
 - stuck-run clear / regulatory ingestion / Supabase schema
 - Profile Save / My TrustHub / auth UX journeys
+- Journey QA remediation
+- Ask project rename or Ask alert edits
 - other hubs (Wave 2+)
+
+## Builder completion report (this PR)
+
+A. **STATUS:** PARTIAL — SDK + project + docs on PR; prod verify and live alerts require CoS deploy GO + Vercel secrets.
+B. **Project:** `movetrusthub-web` (org `ask-trust-hub`, US). DSN **present** in Sentry Client Keys. Value not committed. Ask `javascript-nextjs` unchanged. Leftover `movetrusthub` must not receive Move events.
+C. **Files:** `instrumentation.ts`, `instrumentation-client.ts`, `sentry.server.config.ts`, `sentry.edge.config.ts`, `next.config.ts`, `middleware.ts`, `app/error.tsx`, `app/global-error.tsx`, `app/api/internal/sentry-probe/route.ts`, `lib/sentry/*`, `.env.example`, `package.json`, `docs/analytics/sentry-move-reference.md`.
+D. **Privacy:** `sendDefaultPii: false`; no HTTP bodies; Authorization/cookies/API keys/notes/claim/Save My Move bodies stripped; Session Replay off.
+E. **Environment:** `analyticsEnvironment()` from `VERCEL_ENV` / `NEXT_PUBLIC_VERCEL_ENV`.
+F. **Releases/maps:** `VERCEL_GIT_COMMIT_SHA`; upload skipped when `SENTRY_AUTH_TOKEN` missing so CI still builds. **Blocker:** token not in agent or Vercel yet.
+G. **Test event:** not fired (probe disabled; production deploy not authorized).
+H. **Alerts:** exact names/destinations in the table above — documented; **not created in Sentry** (no alerts:write API in this session).
+I. **Gaps:** Vercel DSN + `SENTRY_AUTH_TOKEN`; four UI alerts; CoS GO; leftover `movetrusthub` archive.
+J. **Production identities:** PR only this turn. Merge SHA / deploy id after founder merge + CoS GO.

@@ -22,10 +22,10 @@ export function sentryEnvironment(): AnalyticsEnvironment {
   return analyticsEnvironment();
 }
 
-/** Production stays well below 100%. Preview is sampled; local/dev is full. */
+/** Prod 10% (packet 5–10%). Preview lower than prod. Local/dev is full. Never 100% production. */
 export function sentryTracesSampleRate(env: AnalyticsEnvironment = sentryEnvironment()): number {
   if (env === 'production') return 0.1;
-  if (env === 'preview') return 0.25;
+  if (env === 'preview') return 0.05;
   return 1;
 }
 
