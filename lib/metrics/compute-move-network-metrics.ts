@@ -58,6 +58,8 @@ export type MoveNetworkMetricsInput = {
   orDistinctCertificateIds: number;
   paHhgOperatorListRows: number;
   paHhgDistinctUtilityCodes: number;
+  ncHhgListRows: number;
+  ncHhgDistinctCNumbers: number;
   publishedStateIntelligencePaths: string[];
   floridaResearchCountyLandings: number;
   localMoverStateLandings: number;
@@ -126,7 +128,12 @@ export function assertGrainSafety(input: MoveNetworkMetricsInput): void {
   if (!input.publishedStateIntelligencePaths.includes('/illinois')) throw new Error('Illinois state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/oregon')) throw new Error('Oregon state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/pennsylvania')) throw new Error('Pennsylvania state intelligence path missing');
+  if (!input.publishedStateIntelligencePaths.includes('/north-carolina')) throw new Error('North Carolina state intelligence path missing');
   if (input.paHhgOperatorListRows <= 0) throw new Error('Pennsylvania HHG operator list row count missing');
+  if (input.ncHhgDistinctCNumbers <= 0) throw new Error('North Carolina HHG C-number count missing');
+  if (input.ncHhgListRows !== input.ncHhgDistinctCNumbers) {
+    throw new Error('North Carolina list rows and distinct C-numbers must stay aligned on this snapshot');
+  }
   if (input.paHhgOperatorListRows === input.paHhgDistinctUtilityCodes) {
     throw new Error('Pennsylvania list rows must not equal distinct Utility Codes on this snapshot');
   }
@@ -674,6 +681,28 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       ),
     }),
     metric({
+      key: 'nc_ncuc_hhg_c_number_identities',
+      label: 'North Carolina NCUC household-goods C-number identities',
+      value: input.ncHhgDistinctCNumbers,
+      valueState: 'KNOWN',
+      grain: 'nc_ncuc_hhg_c_number_identity',
+      denominator: 'Distinct C-numbers on the accepted NCUC household-goods carrier-list snapshot',
+      description:
+        'Distinct NCUC Certificate of Exemption C-numbers on the monthly carrier-list snapshot. Not active movers, not T-numbers, and not FMCSA interstate movers.',
+      coverage: 'North Carolina',
+      contributingSourceSystems: ['ncuc_hhg_carrier_list'],
+      sourceAsOf: '2026-09-08',
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        `Count distinct C-numbers (${input.ncHhgDistinctCNumbers}) on ${input.ncHhgListRows} list rows.`,
+        'Not the announced header total. Not T-numbers. Not USDOT/MC. Not a live authority census.',
+        ['ncuc_hhg_carrier_list'],
+        'North Carolina intrastate household-goods certificates',
+        'Carrier-list revision September 8, 2026; monthly list is not real-time status',
+      ),
+    }),
+    metric({
       key: 'ny_dot_2026_hhg_bulletin_observations',
       label: 'NYSDOT 2026 household-goods bulletin application observations',
       value: input.nyHhgBulletinObservations,
@@ -756,6 +785,7 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
     coActiveHhgPermitListings: input.coActiveHhgPermitListings,
     coRevokedHhgListings: input.coRevokedHhgListings,
     coSuspendedHhgListings: input.coSuspendedHhgListings,
+    ncHhgDistinctCNumbers: input.ncHhgDistinctCNumbers,
     statePages: input.publishedStateIntelligencePaths,
     flCounties: input.floridaResearchCountyLandings,
     landings: input.localMoverStateLandings,
@@ -844,6 +874,11 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       hhgOperatorListRows: input.paHhgOperatorListRows,
       distinctUtilityCodes: input.paHhgDistinctUtilityCodes,
       sourceAsOf: null,
+    },
+    northCarolina: {
+      hhgListRows: input.ncHhgListRows,
+      distinctCNumbers: input.ncHhgDistinctCNumbers,
+      sourceAsOf: '2026-09-08',
     },
     network: {
       publishedStateIntelligencePages: input.publishedStateIntelligencePaths.length,

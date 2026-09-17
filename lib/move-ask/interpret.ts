@@ -3,6 +3,8 @@ import { parseMoveIdentifiers } from './identifier';
 import { lookupOregonCertificate } from '../oregon-intelligence/lookup';
 import { lookupPaPucIdentity } from '../pennsylvania-intelligence/lookup';
 import { PENNSYLVANIA_MOVE_SNAPSHOT } from '../pennsylvania-intelligence/snapshot';
+import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
+import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
 
 const STATE_NAMES: Record<string, string> = {
@@ -17,6 +19,7 @@ const STATE_NAMES: Record<string, string> = {
   illinois: 'IL',
   oregon: 'OR',
   pennsylvania: 'PA',
+  'north carolina': 'NC',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -31,6 +34,7 @@ const STATE_NAMES: Record<string, string> = {
 function detectState(q: string): string | undefined {
   if (/\bnj\b/i.test(q)) return 'NJ';
   if (/\bpennsylvania\b/i.test(q)) return 'PA';
+  if (/\bnorth carolina\b/i.test(q) || /\bin nc\b/i.test(q)) return 'NC';
   for (const [name, code] of Object.entries(STATE_NAMES)) {
     if (name.length === 2) {
       if (new RegExp(`\\bin ${name}\\b`, 'i').test(q)) return code;
@@ -91,6 +95,17 @@ function mentionsPennsylvania(q: string): boolean {
   );
 }
 
+function mentionsNorthCarolina(q: string): boolean {
+  return (
+    /\bnorth carolina\b|\bncuc\b|\bin nc\b/i.test(q) ||
+    detectState(q) === 'NC'
+  );
+}
+
+function mentionsNcCity(q: string): boolean {
+  return /\bcharlotte\b|\braleigh\b|\bdurham\b|\bgreensboro\b|\basheville\b|\bwilmington\b|\bfayetteville\b/i.test(q);
+}
+
 function mentionsPhiladelphiaOrPittsburgh(q: string): boolean {
   return /\bphiladelphia\b|\bpittsburgh\b|\ballegheny\b|\bmontgomery\b/i.test(q);
 }
@@ -114,6 +129,53 @@ function isOrComplaintAsk(q: string): boolean {
 
 function isOrEnforcementAsk(q: string): boolean {
   return /\b(enforcement|final order|civil (monetary )?penalt|unauthorized mover|unlicensed mover)\b/i.test(q) && mentionsOregon(q);
+}
+
+function parseNcNcucIdentity(q: string): { kind: 'C' | 'T'; value: string } | null {
+  if (/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) return null;
+  const cLabeled =
+    q.match(/\b(?:ncuc\s+)?c(?:-|\s*#\s*|\s+number\s+)?(\d{3,5})\b/i) ||
+    q.match(/\bnorth carolina mover certificate\s*#?\s*(?:c-)?(\d{3,5})\b/i);
+  if (cLabeled && (mentionsNorthCarolina(q) || /\bc-\d{3,5}\b/i.test(q) || /\bncuc\b/i.test(q))) {
+    return { kind: 'C', value: `C-${cLabeled[1]}` };
+  }
+  const tLabeled =
+    q.match(/\b(?:ncuc\s+)?t(?:-|\s*#\s*|\s+number\s+)?(\d{3,5})\b/i);
+  if (tLabeled && (mentionsNorthCarolina(q) || /\bt-\d{3,5}\b/i.test(q) || /\bncuc\b/i.test(q))) {
+    return { kind: 'T', value: `T-${tLabeled[1]}` };
+  }
+  return null;
+}
+
+function isNcComplaintAsk(q: string): boolean {
+  return /\bcomplaint|\bsuspension\b/i.test(q) && (mentionsNorthCarolina(q) || mentionsNcCity(q));
+}
+
+function isNcInsuranceAsk(q: string): boolean {
+  return /\binsured\b|\binsurance\b/i.test(q) && (mentionsNorthCarolina(q) || mentionsNcCity(q));
+}
+
+function isNcRateAsk(q: string): boolean {
+  return (
+    (/\bmaximum (?:moving )?rates?\b|\bhow much can a mover charge\b|\bmoving rates?\b/i.test(q) ||
+      /\btariff\b/i.test(q)) &&
+    (mentionsNorthCarolina(q) || /\bncuc\b/i.test(q))
+  );
+}
+
+function isNcIntrastateAuthorityAsk(q: string): boolean {
+  if (/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) return false;
+  if (!(mentionsNorthCarolina(q) || mentionsNcCity(q))) return false;
+  if (/\bheadquarter/i.test(q) && /\binterstate\b/i.test(q)) return false;
+  if (/\binterstate mover\b/i.test(q) && !/\blicen|\bintrastate|\bhousehold[- ]?goods|\bncuc\b|\bc-number|\bcertificate\b/i.test(q)) {
+    return false;
+  }
+  return (
+    /\bintrastate\b|\bncuc\b|\bc-number|\bcertificate of exemption|\bhousehold[- ]?goods\b/i.test(q) ||
+    /\blicensed movers?\b|\bcertified movers?\b|\bnorth carolina movers?\b|\bmovers in north carolina\b|\bmoving companies\b/i.test(q) ||
+    /\bmovers charlotte\b|\bmovers raleigh\b|\bmovers durham\b|\bmovers greensboro\b|\bmovers asheville\b/i.test(q) ||
+    (/\bmovers?\b/i.test(q) && (mentionsNorthCarolina(q) || mentionsNcCity(q)))
+  );
 }
 
 function parsePaPucIdentity(q: string): string | null {
@@ -261,6 +323,16 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
+  if (isRanking(q) && (mentionsNorthCarolina(q) || mentionsNcCity(q))) {
+    const query = fail(
+      'MoveTrustHub does not rank movers and does not publish a Trust Score. North Carolina household-goods research uses NCUC C-number certificates on the monthly carrier-list snapshot, not a winner or cheapest ranking.',
+      ['Open North Carolina household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Mode', 'fail_closed');
+    push('Coverage', 'No North Carolina city intelligence page');
+    return { raw: q, query, interpretation: lines };
+  }
+
   if (isRanking(q) && mentionsPortland(q) && mentionsOregon(q)) {
     const query = fail(
       'MoveTrustHub does not rank movers and does not publish a Portland or Multnomah County mover route. Oregon household-goods authority is statewide ODOT CCD research.',
@@ -332,6 +404,74 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     );
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'ODOT CCD enforcement matters — NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  const ncIdentity = parseNcNcucIdentity(q);
+  if (ncIdentity) {
+    const found = lookupNcNcucIdentity(ncIdentity.value);
+    if (isNcComplaintAsk(q)) {
+      const query = fail(
+        `NCUC/Public Staff complaint intake is official help, not an acquired household-goods complaint census. A docket is not an adverse finding. Missing bulk complaints is not zero complaints. Confirm ${ncIdentity.value} on the official NCUC carrier list.`,
+        ['Open North Carolina household-goods research.', 'Show complaint observations for USDOT 3244649.'],
+      );
+      query.coverageState = 'NOT_ACQUIRED';
+      push('Coverage', 'NCUC HHG complaints — INTAKE_AVAILABLE / BULK_NOT_PUBLIC');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (found.hits.length) {
+      const hit = found.hits[0]!;
+      const query = fail(
+        `${hit.name || 'This carrier'} appears on the accepted September 8, 2026 NCUC household-goods carrier-list snapshot as C-number ${hit.cNumber}${hit.tNumber ? ` / T-number ${hit.tNumber}` : ''}. C-number is the Certificate of Exemption. T-number is the company/docket identity. They are not a USDOT number and not an MC number. Monthly list status is not a live census. Confirm on the official list.`,
+        ['Open North Carolina household-goods research.', 'Find USDOT 3244649.'],
+      );
+      push('NCUC C-number', hit.cNumber);
+      if (hit.tNumber) push('NCUC T-number', hit.tNumber);
+      push('Limitation', 'NCUC certificate is not FMCSA interstate authority');
+      return { raw: q, query, interpretation: lines };
+    }
+    const query = fail(
+      `NCUC identity ${ncIdentity.value} is not on the accepted September 8, 2026 household-goods carrier-list snapshot. Absence from this snapshot is not FMCSA interstate status and is not a Trust Score. Confirm on the official list.`,
+      ['Open North Carolina household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('NCUC identity', ncIdentity.value);
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isNcRateAsk(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) {
+    const query = fail(
+      `NCUC Maximum Rate Tariff ${NORTH_CAROLINA_MOVE_SNAPSHOT.tariff.NC_NCUC_MRT_VERSION} (issued ${NORTH_CAROLINA_MOVE_SNAPSHOT.tariff.NC_NCUC_MRT_ISSUED_DATE}, effective ${NORTH_CAROLINA_MOVE_SNAPSHOT.tariff.NC_NCUC_MRT_EFFECTIVE_DATE}) sets maximum rates and rules for regulated intrastate household-goods moves. The tariff is not a quote. Actual price depends on move facts. MoveTrustHub does not rank movers on price.`,
+      ['Open North Carolina household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Coverage', 'NCUC HHG NO. 2 — ACQUIRED_CURRENT_TARIFF');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isNcInsuranceAsk(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) {
+    const query = fail(
+      `NCUC requires applicable insurance (General Liability ${NORTH_CAROLINA_MOVE_SNAPSHOT.insurance.NC_NCUC_GENERAL_LIABILITY_REQUIREMENT}; Cargo ${NORTH_CAROLINA_MOVE_SNAPSHOT.insurance.NC_NCUC_CARGO_INSURANCE_REQUIREMENT}; Vehicle Liability as stated on the January 2026 annual-report form). Current carrier-specific bulk proof was not acquired. Requirement is not actual current coverage. Verify current official carrier status/evidence.`,
+      ['Open North Carolina household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Coverage', 'NCUC insurance — REQUIREMENT_KNOWN / CURRENT_BULK_NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isNcComplaintAsk(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) {
+    const query = fail(
+      'NCUC/Public Staff provides consumer complaint/help intake (919-733-7766). No public bulk household-goods complaint census was acquired. Complaint intake is not a complaint census. Missing bulk is not zero complaints. A docket or Consumer Statement is not automatically a complaint.',
+      ['Open North Carolina household-goods research.', 'Show complaint observations for USDOT 3244649.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'NCUC HHG complaints — INTAKE_AVAILABLE / BULK_NOT_PUBLIC');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isNcIntrastateAuthorityAsk(q)) {
+    const query = fail(
+      `North Carolina intrastate household-goods movers are NCUC-certificated carriers on the official monthly Certificate of Exemption list (${NORTH_CAROLINA_MOVE_SNAPSHOT.current_hhg_roster.NC_NCUC_DISTINCT_C_NUMBERS} distinct C-numbers on the September 8, 2026 snapshot; header announces ${NORTH_CAROLINA_MOVE_SNAPSHOT.current_hhg_roster.NC_NCUC_HHG_SOURCE_ANNOUNCED_TOTAL}). C-number is not T-number. NCUC authority is not FMCSA interstate authority. Charlotte and Raleigh names are not city intelligence pages. The monthly list is not a live authority census.`,
+      ['Open North Carolina household-goods research.', 'Show current interstate household-goods carriers headquartered in North Carolina.'],
+    );
+    push('Coverage', 'NCUC HHG carrier list — MONTHLY_LIST_SNAPSHOT');
     return { raw: q, query, interpretation: lines };
   }
 

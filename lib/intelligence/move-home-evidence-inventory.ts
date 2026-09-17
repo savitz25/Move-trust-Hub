@@ -57,6 +57,7 @@ const meta: Record<string, Pick<MoveHomepageMeasure, 'family' | 'entityClass' | 
   ny_dot_2026_hhg_bulletin_observations: { family: 'STATE_AUTHORITY', entityClass: 'NYSDOT Weekly Bulletin household-goods application observation', destination: '/new-york', acceptedArtifact: 'move-ny-state-intel-v1' },
   or_odot_authorized_hhg_list_rows: { family: 'STATE_AUTHORITY', entityClass: 'ODOT CCD authorized household-goods list row', destination: '/oregon', acceptedArtifact: 'move-or-state-intel-v1' },
   pa_puc_hhg_operator_list_rows: { family: 'STATE_AUTHORITY', entityClass: 'PA PUC active Household Goods Operators list row', destination: '/pennsylvania', acceptedArtifact: 'move-pa-state-intel-v1' },
+  nc_ncuc_hhg_c_number_identities: { family: 'STATE_AUTHORITY', entityClass: 'NCUC household-goods C-number identity', destination: '/north-carolina', acceptedArtifact: 'move-nc-state-intel-v1' },
   published_state_intelligence_pages: { family: 'PUBLIC_SURFACES', entityClass: 'Published specialist state page', destination: '#state-intelligence', acceptedArtifact: 'canonical state publication model' },
 };
 

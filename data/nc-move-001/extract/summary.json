@@ -1,0 +1,154 @@
+{
+  "retrievedAt": "2026-09-17T19:40:54Z",
+  "files": {
+    "carriers.pdf": {
+      "sha256": "806ee33d9ab8ab9879fb71a404889e8f29d320a1809a9e41613dd16244460d4a",
+      "bytes": 199707
+    },
+    "transcar.html": {
+      "sha256": "ade03f1e54d91f32be47260e187d283028ed72d65366536fa8ed6b6651ee2274",
+      "bytes": 265506
+    },
+    "maxrate.pdf": {
+      "sha256": "117fbb25718017711babe9b15f1a84f530766afc85c1fa6ea1a3f1e75dfd101f",
+      "bytes": 958566
+    },
+    "HHGannual.pdf": {
+      "sha256": "fe61d7d7c2ce4e86a92a981a1b4b0cc2e9b47ddc4845d993fb54366c96c5e088",
+      "bytes": 614572
+    },
+    "transportation.html": {
+      "sha256": "cbec0daf310e62e36b435f697d8e01b97a587858dca8aaf583a75b6ca787eb68",
+      "bytes": 25213
+    }
+  },
+  "carrier_list": {
+    "revision_date_text": "September 8, 2026",
+    "announced_total": 361,
+    "list_rows": 362,
+    "distinct_c": 362,
+    "distinct_t": 357,
+    "distinct_source_names": 362,
+    "rows_missing_c": 0,
+    "rows_missing_t": 5,
+    "exact_c_to_t": 357,
+    "c_with_t": 357,
+    "t_with_c": 357,
+    "status_counts": {
+      "AUTHORIZED_AS_LISTED": 357,
+      "TEMPORARILY_SUSPENDED": 5
+    }
+  },
+  "transcar": {
+    "html_rows": 0,
+    "distinct_t": 0,
+    "duplicate_t_rows": 0,
+    "distinct_names": 0,
+    "sample": []
+  },
+  "hhg_t_in_transcar": 351,
+  "hhg_t_not_in_transcar": 6,
+  "fixtures": {
+    "C-2655": {
+      "raw": "Asheville Area Movers, LLC, Asheville, NC (T-4664) C-2655",
+      "source_name": "Asheville Area Movers, LLC, Asheville, NC",
+      "c_number": "C-2655",
+      "t_number": "T-4664",
+      "status_normalized": "AUTHORIZED_AS_LISTED",
+      "status_raw": null
+    },
+    "T-4664": {
+      "raw": "Asheville Area Movers, LLC, Asheville, NC (T-4664) C-2655",
+      "source_name": "Asheville Area Movers, LLC, Asheville, NC",
+      "c_number": "C-2655",
+      "t_number": "T-4664",
+      "status_normalized": "AUTHORIZED_AS_LISTED",
+      "status_raw": null
+    }
+  },
+  "status_examples": [
+    {
+      "raw": "Bread\u2019s Moving & Hauling, LLC, Winston-Salem, NC (T-4930) (At carrier\u2019s request, certifcate was C-3047 temporarily suspended until 10-01-24. Authority has not yet been reinstated. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)",
+      "source_name": "Bread\u2019s Moving & Hauling, LLC, Winston-Salem, NC (At carrier\u2019s request, certifcate was temporarily suspended until 10-01-24. Authority has not yet been reinstated. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)",
+      "c_number": "C-3047",
+      "t_number": "T-4930",
+      "status_normalized": "TEMPORARILY_SUSPENDED",
+      "status_raw": "uling, LLC, Winston-Salem, NC (T-4930) (At carrier\u2019s request, certifcate was C-3047 temporarily suspended until 10-01-24. Authority has not yet been reinstated. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)"
+    },
+    {
+      "raw": "Cameron & Cameron, Assembly, Moving and Storage, Inc., Durham, NC (T-4237) C-2323 (At carrier\u2019s request, certificate is temporarily suspended until 06-21-25. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)",
+      "source_name": "Cameron & Cameron, Assembly, Moving and Storage, Inc., Durham, NC (At carrier\u2019s request, certificate is temporarily suspended until 06-21-25. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)",
+      "c_number": "C-2323",
+      "t_number": "T-4237",
+      "status_normalized": "TEMPORARILY_SUSPENDED",
+      "status_raw": "rage, Inc., Durham, NC (T-4237) C-2323 (At carrier\u2019s request, certificate is temporarily suspended until 06-21-25. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)"
+    },
+    {
+      "raw": "Compass Moving Solutions, Moving Forward Shipping Company, LLC, d/b/a Raleigh, NC C-3087 (T-4983) (At carrier\u2019s request, certificate is temporarily suspended until 08-01-26. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)",
+      "source_name": "Compass Moving Solutions, Moving Forward Shipping Company, LLC, d/b/a Raleigh, NC (At carrier\u2019s request, certificate is temporarily suspended until 08-01-26. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)",
+      "c_number": "C-3087",
+      "t_number": "T-4983",
+      "status_normalized": "TEMPORARILY_SUSPENDED",
+      "status_raw": "LLC, d/b/a Raleigh, NC C-3087 (T-4983) (At carrier\u2019s request, certificate is temporarily suspended until 08-01-26. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)"
+    },
+    {
+      "raw": "Majhor Moves, LLC, Durham, NC (T-5026) (At carrier\u2019s request, certificate is temporarily C-3120 suspended until 02-06-27. Therefore, carrier is currently not authorized to perform North Carolina intrastate household goods moves.)",
+      "source_name": "Majhor Moves, LLC, Durham, NC (At carrier\u2019s request, certificate is temporarily suspended until 02-06-27. Therefore, carrier is currently not authorized to perform North Carolina intrastate household goods moves.)",
+      "c_number": "C-3120",
+      "t_number": "T-5026",
+      "status_normalized": "TEMPORARILY_SUSPENDED",
+      "status_raw": "Majhor Moves, LLC, Durham, NC (T-5026) (At carrier\u2019s request, certificate is temporarily C-3120 suspended until 02-06-27. Therefore, carrier is currently not authorized to perform North Carolina intrastate household goods moves.)"
+    },
+    {
+      "raw": "Nationwide Logistics, LLC, Wendell, NC (T-4914) (At carrier\u2019s request, certificate is temporarily C-3038 suspended until 5-15-24. Authority has not yet been reinstated. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)",
+      "source_name": "Nationwide Logistics, LLC, Wendell, NC (At carrier\u2019s request, certificate is temporarily suspended until 5-15-24. Authority has not yet been reinstated. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)",
+      "c_number": "C-3038",
+      "t_number": "T-4914",
+      "status_normalized": "TEMPORARILY_SUSPENDED",
+      "status_raw": "e Logistics, LLC, Wendell, NC (T-4914) (At carrier\u2019s request, certificate is temporarily C-3038 suspended until 5-15-24. Authority has not yet been reinstated. Therefore, carrier currently is not authorized to perform North Carolina intrastate household goods moves.)"
+    }
+  ],
+  "missing_t_examples": [
+    {
+      "raw": "Bird Dog Moving and Logistics, Bird Dog Property Services, LLC, d/b/a, Raleigh, NC C-3150",
+      "source_name": "Bird Dog Moving and Logistics, Bird Dog Property Services, LLC, d/b/a, Raleigh, NC",
+      "c_number": "C-3150",
+      "t_number": null,
+      "status_normalized": "AUTHORIZED_AS_LISTED",
+      "status_raw": null
+    },
+    {
+      "raw": "College Hunks Hauling Junk & Moving, Prosperity Reality Relocations Co., d/b/a C-3086",
+      "source_name": "College Hunks Hauling Junk & Moving, Prosperity Reality Relocations Co., d/b/a",
+      "c_number": "C-3086",
+      "t_number": null,
+      "status_normalized": "AUTHORIZED_AS_LISTED",
+      "status_raw": null
+    },
+    {
+      "raw": "H.U.N.K.S. of Central Piedmont, Grimshaw, Grimshaw, Griffith & Stone, LLC, d/b/a C-2954",
+      "source_name": "H.U.N.K.S. of Central Piedmont, Grimshaw, Grimshaw, Griffith & Stone, LLC, d/b/a",
+      "c_number": "C-2954",
+      "t_number": null,
+      "status_normalized": "AUTHORIZED_AS_LISTED",
+      "status_raw": null
+    },
+    {
+      "raw": "TROSA Moving, Triangle Residential Options for Substance Abusers, Inc., d/b/a, C-726",
+      "source_name": "TROSA Moving, Triangle Residential Options for Substance Abusers, Inc., d/b/a",
+      "c_number": "C-726",
+      "t_number": null,
+      "status_normalized": "AUTHORIZED_AS_LISTED",
+      "status_raw": null
+    },
+    {
+      "raw": "Two Men and A Truck of Fayetteville, Green Leaf Associates, Inc., d/b/a, C-2445",
+      "source_name": "Two Men and A Truck of Fayetteville, Green Leaf Associates, Inc., d/b/a",
+      "c_number": "C-2445",
+      "t_number": null,
+      "status_normalized": "AUTHORIZED_AS_LISTED",
+      "status_raw": null
+    }
+  ],
+  "missing_c_examples": []
+}

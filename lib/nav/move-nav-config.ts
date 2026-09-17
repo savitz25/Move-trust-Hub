@@ -85,6 +85,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'PA PUC household-goods carriers & interstate overlay',
       },
       {
+        label: 'North Carolina research',
+        href: '/north-carolina',
+        description: 'NCUC household-goods certificates & interstate overlay',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',

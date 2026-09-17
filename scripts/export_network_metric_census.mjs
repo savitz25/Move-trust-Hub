@@ -268,6 +268,10 @@ async function main() {
     nyHhgBulletinObservations:
       pub.nySnapshot.bulletin_2026.hhgApplicationObservations,
     nyBulletinIssues: pub.nySnapshot.bulletin_2026.issues,
+    paHhgOperatorListRows: pub.paSnapshot.current_hhg_roster.PA_PUC_HHG_CARRIER_ROWS,
+    paHhgDistinctUtilityCodes: pub.paSnapshot.current_hhg_roster.PA_PUC_HHG_DISTINCT_UTILITY_CODES,
+    ncHhgListRows: pub.ncSnapshot.current_hhg_roster.NC_NCUC_HHG_LIST_ROWS,
+    ncHhgDistinctCNumbers: pub.ncSnapshot.current_hhg_roster.NC_NCUC_DISTINCT_C_NUMBERS,
     publishedStateIntelligencePaths: pub.publishedStateIntelligencePaths,
     floridaResearchCountyLandings: pub.floridaResearchCountyLandings.length,
     localMoverStateLandings: localStates.length,
