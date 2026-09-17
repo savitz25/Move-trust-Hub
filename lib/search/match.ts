@@ -131,6 +131,10 @@ export function explainMatch(type: SearchMatchType): string {
       return 'Headquarters identity hint';
     case 'local_research':
       return 'Local research match';
+    case 'recorded_hq_city':
+      return 'Recorded headquarters in this city';
+    case 'recorded_hq_state_broader':
+      return 'Broader match: recorded headquarters elsewhere in this state';
     default:
       return 'Identity match';
   }
@@ -288,6 +292,51 @@ export function compareIdentityCompanies(
   const usdotCmp = digitsOnly(a.usdotNumber ?? '').localeCompare(digitsOnly(b.usdotNumber ?? ''));
   if (usdotCmp !== 0) return usdotCmp;
   return String(a.id).localeCompare(String(b.id));
+}
+
+/**
+ * TH-DISCOVERY-PARITY-001A (DANGEROUS finding): applies the identity-name match's
+ * result against a requested place, deciding whether a text-based match should
+ * survive, be relabeled as a genuine local hit, or be dropped.
+ *
+ * The bug this fixes: "moving companies Denver" returned real Denver movers blended
+ * with an unrelated company literally NAMED "Denver Moving" but headquartered in
+ * Plano, TX -- the old logic kept ANY company matched on name text alone (tier > 5,
+ * i.e. not an exact identifier/name match) even when its recorded headquarters
+ * flatly disagreed with the requested place, with no distinguishing label at all.
+ *
+ * For a plain provider-CATEGORY query (categoryOnly), incidental company-name token
+ * collision with the place name must never outrank genuine geography -- such a
+ * company is dropped here. A genuine brand-name identity search (categoryOnly =
+ * false, e.g. "Two Men and a Truck Austin") keeps the previous lenient behavior,
+ * since the user is naming a specific company, not asking to browse a place-scoped
+ * category.
+ */
+export function applyLocationFilter(
+  company: Company,
+  match: IdentityMatch,
+  locationHint: { city: string | null; stateCode: string | null } | null,
+  categoryOnly: boolean
+): IdentityMatch | null {
+  if (!locationHint?.city) return match;
+  // An EXACT identity match (tier <= 5 -- exact USDOT/MC/display-name/legal-name/
+  // alias) is unambiguous: the user found the one real company they meant, and it
+  // must survive regardless of geography. Only tier > 5 (approximate NAME-TEXT)
+  // matches are geography-gated below.
+  if (match.tier <= 5) return match;
+  const hq = normalizeSearchText(company.headquarters ?? '');
+  const city = normalizeSearchText(locationHint.city);
+  const st = normalizeSearchText(locationHint.stateCode ?? '');
+  if (city && hq.includes(city)) {
+    return { ...match, explanation: `${match.explanation}; headquarters identity hint` };
+  }
+  if (st && hq.endsWith(st)) {
+    return match;
+  }
+  if (!categoryOnly && city && !hq.includes(city)) {
+    return match;
+  }
+  return null;
 }
 
 export function uniqueExactIdentity(matches: Array<{ company: Company; match: IdentityMatch }>): Company | null {
