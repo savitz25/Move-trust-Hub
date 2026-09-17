@@ -7,9 +7,18 @@ Production deploy is **not** authorized by this packet. Stop at PR until a separ
 ## Identities
 
 - Org: `ask-trust-hub` (US, `https://us.sentry.io`)
-- Move project slug: `movetrusthub` (created 2026-09-17; team `ask-trust-hub`; repo `savitz25/Move-trust-Hub` linked)
+- Move project slug: `movetrusthub-web` (founder-specified; team `ask-trust-hub`)
 - Ask project slug: `javascript-nextjs` — **do not rename**
+- Do **not** send Move events to leftover project `movetrusthub` (created during this ticket; archive later if unused)
 - Site: `https://www.movetrusthub.com`
+
+## Gates 1–5 (required)
+
+1. **Project** — dedicated Move Sentry project `movetrusthub-web`; Ask `javascript-nextjs` unchanged.
+2. **SDK** — current `@sentry/nextjs` on client, Node server, and edge.
+3. **DSN/env** — DSN/org/project from env only; `SENTRY_AUTH_TOKEN` is build-only (not in this agent environment — blocker for mapped prod stacks until set on Vercel).
+4. **Environment** — `lib/analytics/posthog/environment.ts` → `production` \| `preview` \| `development`; alerts production-only.
+5. **Release / source maps** — `release = VERCEL_GIT_COMMIT_SHA`; `withSentryConfig` uploads maps when auth token + org + project are present.
 
 ## Required Vercel env vars
 
@@ -17,10 +26,10 @@ Set on the Move Vercel project. Copy values from Sentry → Settings → Client 
 
 | Name | Vercel type | Environments | Purpose |
 | --- | --- | --- | --- |
-| `NEXT_PUBLIC_SENTRY_DSN` | Encrypted / non-sensitive config | Production + Preview | Browser ingest DSN from project `movetrusthub` |
+| `NEXT_PUBLIC_SENTRY_DSN` | Encrypted / non-sensitive config | Production + Preview | Browser ingest DSN from project `movetrusthub-web` |
 | `SENTRY_DSN` | Encrypted / non-sensitive config | Production + Preview | Server/edge ingest DSN (same value as the public DSN is fine) |
 | `SENTRY_ORG` | Config | Production + Preview | `ask-trust-hub` |
-| `SENTRY_PROJECT` | Config | Production + Preview | `movetrusthub` |
+| `SENTRY_PROJECT` | Config | Production + Preview | `movetrusthub-web` |
 | `SENTRY_AUTH_TOKEN` | Sensitive, **build-only** | Production (Preview optional) | Source map + release upload. Scopes: `project:releases`, `org:read`. Never `NEXT_PUBLIC_*`. |
 | `SENTRY_PROBE_ENABLED` | Config | Production only when closeout is authorized | Must stay unset/`false` until CoS deploy GO. Then one POST, then back to `false`. |
 | `SENTRY_PROBE_SECRET` | Sensitive | Production (after CoS GO) | Bearer for `/api/internal/sentry-probe`. ≥ 16 characters. Optional alias: `ATH_OPERATOR_SECRET`. |
@@ -63,16 +72,16 @@ Leave `SENTRY_PROBE_ENABLED` unset/`false` on production until CoS GO. Do not fi
 
 1. Set `SENTRY_PROBE_ENABLED=true` on Production only.
 2. `POST https://www.movetrusthub.com/api/internal/sentry-probe` with `Authorization: Bearer <SENTRY_PROBE_SECRET>`.
-3. Confirm the issue in org `ask-trust-hub` / project `movetrusthub`, environment `production`, release = deploy SHA, mapped stack, runtime/route tags.
+3. Confirm the issue in org `ask-trust-hub` / project `movetrusthub-web`, environment `production`, release = deploy SHA, mapped stack, runtime/route tags.
 4. Set `SENTRY_PROBE_ENABLED=false` immediately.
 
 Unauthenticated GET/POST without the flag returns 404.
 
 ## Alerts (clone of Ask ATH-REL-001B)
 
-Exact Ask rules live on project `javascript-nextjs` (do not change them). Recreate the same four classes on **Move project `movetrusthub`**, **environment = production only**.
+Exact Ask rules live on project `javascript-nextjs` (do not change them). Recreate the same four classes on **Move project `movetrusthub-web`**, **environment = production only**. Thresholds match Ask ATH-REL-001B as the initial standard.
 
-Sentry MCP in this session can create projects but **cannot create issue-alert rules** (no `create_alert_rule` / workflow-write tool, and no `SENTRY_AUTH_TOKEN` in the agent environment). Create these in the UI after the project exists, or via `POST https://us.sentry.io/api/0/projects/ask-trust-hub/movetrusthub/rules/` with an org token that has `alerts:write`.
+Sentry MCP in this session can create projects but **cannot create issue-alert rules** (no `create_alert_rule` / workflow-write tool, and no `SENTRY_AUTH_TOKEN` in the agent environment). Create these in the UI after the project exists, or via `POST https://us.sentry.io/api/0/projects/ask-trust-hub/movetrusthub-web/rules/` with an org token that has `alerts:write`.
 
 Ask source-of-truth (verified 2026-09-17):
 
@@ -83,9 +92,9 @@ Ask source-of-truth (verified 2026-09-17):
 | ATH-REL-002A Production Error Spike | ATH-REL-001B Production Error Spike (`4731116`) | 60 min | production | Every event | Event frequency count **≥ 10 / 1 hour** | Email **team `ask-trust-hub`**. Reliability / owners. |
 | ATH-REL-002A High-Impact Recurring | ATH-REL-001B High-Impact Recurring (`4285295`) | 60 min | production | Existing high-priority issue **AND** every event | Unique users **≥ 3 / 1 hour** (filter logic any-short) | Email **founder** (Ask target user id `4984460`). High-Impact → founder escalate **only**. |
 
-### UI steps (Sentry Alerts → Issue Alerts → Create Alert, project `movetrusthub`)
+### UI steps (Sentry Alerts → Issue Alerts → Create Alert, project `movetrusthub-web`)
 
-1. Open https://ask-trust-hub.sentry.io/alerts/rules/ and switch project to `movetrusthub`.
+1. Open https://ask-trust-hub.sentry.io/alerts/rules/ and switch project to `movetrusthub-web`.
 2. **New Production Issue:** Environment `production`. When `A new issue is created`. Then `Send a notification via email` to Issue Owners (fallthrough Active Members). Frequency 30 minutes.
 3. **Production Regression:** Environment `production`. When `A resolved issue becomes unresolved` (regression). Email Issue Owners / Active Members. Frequency 30 minutes.
 4. **Production Error Spike:** Environment `production`. When `An event is seen`. Filter `The issue is seen more than 10 times in 1 hour`. Email team `ask-trust-hub`. Frequency 60 minutes.
