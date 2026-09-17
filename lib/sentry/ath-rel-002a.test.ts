@@ -30,6 +30,7 @@ test('ATH-REL-002A: DSN/org/project come from env only', () => {
   assert.match(nextConfig, /process\.env\.SENTRY_AUTH_TOKEN/);
   assert.doesNotMatch(nextConfig, /ask-trust-hub/);
   assert.doesNotMatch(nextConfig, /javascript-nextjs/);
+  assert.doesNotMatch(nextConfig, /movetrusthub-web/);
   assert.doesNotMatch(nextConfig, /movetrusthub/);
 });
 
@@ -73,7 +74,7 @@ test('ATH-REL-002A: probe route is gated and three runtimes are registered', () 
 
 test('ATH-REL-002A: Ask Sentry project slug is not reused or renamed', () => {
   const docs = read('docs/analytics/sentry-move-reference.md');
-  assert.match(docs, /movetrusthub/);
+  assert.match(docs, /movetrusthub-web/);
   assert.match(docs, /do not rename/);
   assert.match(docs, /javascript-nextjs/);
   assert.match(docs, /SENTRY_PROBE_ENABLED/);
