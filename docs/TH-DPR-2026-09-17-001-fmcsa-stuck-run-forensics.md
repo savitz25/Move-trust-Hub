@@ -4,7 +4,52 @@
 **Classification:** READ-ONLY. No production mutation. Stuck run was **not** cleared. Refresh was **not** triggered.  
 **Overall status: PARTIAL**  
 **Vercel runtime logs: BLOCKED — TH-OBS-GAP-VERCEL**  
-**Date of this packet:** 2026-09-17
+**Date of this packet:** 2026-09-17 (founder-update pass 2 same day)
+
+---
+
+## Founder update — link MoveTrustHub Vercel (obs only)
+
+Correct project identity (from GitHub Vercel status on prod SHA `331699bd`, not from Vercel MCP):
+
+| Field | Value |
+|---|---|
+| Team slug | `savitz25-s-projects` |
+| Team id (MCP, first pass) | `team_1vxGqSSLGF4xmg7XRqpkLSKi` |
+| Project slug | **`move-trust-hub`** |
+| Dashboard | https://vercel.com/savitz25-s-projects/move-trust-hub |
+| Deployment live at stuck cron | https://vercel.com/savitz25-s-projects/move-trust-hub/6mLqDvj9L4a3x2XwUyByKGTFjjQB (`331699bd`, GitHub deploy `6043922000`, 2026-08-23T03:21:18Z) |
+
+This cloud environment **cannot** attach that project:
+
+| Probe (pass 2) | Result |
+|---|---|
+| Vercel MCP | `namespaceStatus=needsAuth`. `mcp_auth` fails: interactive MCP login is **Cursor desktop only**, not Cloud Agent. |
+| First pass (same run) | MCP was authed to the team; `list_projects` still returned **`[]`** — token/team visible, **project list empty**. `get_project('move-trust-hub')` 404. |
+| `npx vercel whoami` | `loggedIn: false`, `login_required`. No `VERCEL_TOKEN` / `VERCEL_*` in env. No `.vercel/project.json`. |
+| `request-environment-setup-actions` | Not used (this is not an `/env-setup` run). |
+
+**How to link (so the next forensic pass can read logs):**
+
+1. **Cursor Desktop MCP:** Settings → MCP → Vercel → Sign in as the founder account that owns `savitz25-s-projects` / `move-trust-hub`. Re-run `list_projects`; it must return `move-trust-hub`, not `[]`. Then `get_runtime_logs` with `teamId=team_1vxGqSSLGF4xmg7XRqpkLSKi`, `environment=production`, `query=/api/refresh/fmcsa`.
+2. **Cloud Agent secret (required for this VM):** on the personal environment [6438ba01…](https://cursor.com/dashboard/cloud-agents/environments/e/6438ba01-b2e2-11f1-b1a4-22e19564fdc0) add `VERCEL_TOKEN` with **read** scope for that team (plus optional `VERCEL_ORG_ID=team_1vxGqSSLGF4xmg7XRqpkLSKi` and `VERCEL_PROJECT_ID=prj_…` from Project Settings → General). Then `npx vercel logs <deployment-url> --since 2026-08-23T04:50:00Z` works without `vercel login`.
+3. Copy `prj_…` from the dashboard; do not guess slugs — MCP 404'd `move-trust-hub` even when the GitHub URL proves that slug.
+
+Until (1) or (2) lands, invocation-level timeout/crash and post-Aug-23 Vercel cron GET proof stay **BLOCKED**. Aug 23 lines may still be outside Pro log retention; **recent** `/api/refresh/fmcsa` skip invocations would still answer question 3 going forward.
+
+---
+
+## Expanded CoS questions (pass 2)
+
+| # | Question | Status | Answer |
+|---|---|---|---|
+| 1 | Execution for stuck run `0e5cd955-…` | **VERIFIED** | Vercel GET cron `mode=full` at 2026-08-23 05:00:58 UTC inserted the row, then sequentially fetched+wrote **222** live `companies` rows until 05:02:52 UTC. |
+| 2 | Timeout / crash / kill / lost completion write | **PARTIAL** | **Orphaned mid-loop.** Lost-completion-only **ruled out**. Kill reason **BLOCKED** (TH-OBS-GAP-VERCEL). |
+| 3 | Did Vercel cron keep invoking after Aug 23? | **BLOCKED** (Vercel) / **VERIFIED** (GitHub) | GitHub yes, 401. Vercel GET cron **not observable**. |
+| 4 | Blocked by stale running row? | **VERIFIED** | Code skip-if-running + zero later run rows. GitHub never reached the lock. |
+| 5 | Any invocation fetched FMCSA successfully? | **VERIFIED** | **Yes, this run:** 222/222 of the written companies have full `fmcsa_raw` (`legalName` present, ~1.5KB census snapshot). 0 name-search fallbacks. **After Aug 23: no.** |
+| 6 | Rows staged / normalized / published before failure? | **VERIFIED** | This pipeline writes **directly to live `companies` + `fmcsa_change_log`**, not `federal_hhg_staging`. Before death: **222 companies published** (161 `authority_active=true`, 61 false, 1 OOS); **76** with change-log diffs (51 critical). Staging/wave/`move_v2` were **not** written by this invocation. |
+| 7 | Defect layer? | **VERIFIED** | **Cron sizing + lock-without-TTL + completion bookkeeping.** Fetch/parse/company DB write **worked** until interrupt. Run-row counters/`finished_at` never flushed. |
 
 ---
 
@@ -244,6 +289,39 @@ Why the next full cron will re-orphan without a code change:
 7. Independent: GitHub fallback `CRON_SECRET` is empty → 401, so it cannot recover you.
 
 Clear-only is a **lock release**, not a **refresh repair**.
+
+---
+
+## Pass 2 addendum — fetch / publish / defect layer
+
+### Successful FMCSA fetches (this invocation only)
+
+All **222** companies with `fmcsa_last_checked` in `05:00:58`–`05:02:53` UTC have:
+
+- `fmcsa_raw` present (min 1423 / avg 1549 / max 1650 chars)
+- `legalName` on the snapshot (DOT census shape: `dotNumber`, `phyCity`, `commonAuthorityStatus`, `_supplemental`, …)
+- **0** `_lookupMeta` name-search recoveries — these were primary DOT lookups
+
+First writes: `san-juan-moving-company` DOT 4030647 at 05:00:59.305, then `hylan-moving`, `teamworx-moving-llc` at ~0.5s cadence.
+
+`fmcsa_change_log` for this `run_id`: 76 companies, 51 critical (`authority_active` 50 + `out_of_service` 1), 76 info (`fmcsa_legal_name`).
+
+No later invocation (Vercel or GitHub) produced another fetch: newest `fmcsa_last_checked` remains 05:02:52.712.
+
+### Staged vs published
+
+`runFmcsaRefresh` does **not** write `federal_hhg_staging` / wave / `move_v2`. It normalizes the QCMobile snapshot in-process and **publishes onto live `public.companies`**. Those 222 rows are live directory updates, not a rolled-back staging batch. HHG staging (52563) and wave (4473) last moved Aug 20–21, before this run.
+
+### Defect layer (not fetch/parse)
+
+| Layer | This incident |
+|---|---|
+| Fetching | Worked for 222 sequential DOT lookups |
+| Parsing | Worked (typed snapshot + raw jsonb) |
+| Company DB write | Worked (companies + change_log) |
+| Cron | **Defect:** weekly full, `fullBatchSize=0`, 300s GET |
+| Locking | **Defect:** skip-if-running, no TTL, no heartbeat |
+| Completion bookkeeping | **Defect:** no `try/finally`; counters/`finished_at` never written |
 
 ---
 
