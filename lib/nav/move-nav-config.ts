@@ -80,6 +80,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'ODOT CCD household-goods certificates & interstate overlay',
       },
       {
+        label: 'Pennsylvania research',
+        href: '/pennsylvania',
+        description: 'PA PUC household-goods carriers & interstate overlay',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',

@@ -1,6 +1,8 @@
 import { parseNameRequest, distinctiveTokens } from './name';
 import { parseMoveIdentifiers } from './identifier';
 import { lookupOregonCertificate } from '../oregon-intelligence/lookup';
+import { lookupPaPucIdentity } from '../pennsylvania-intelligence/lookup';
+import { PENNSYLVANIA_MOVE_SNAPSHOT } from '../pennsylvania-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
 
 const STATE_NAMES: Record<string, string> = {
@@ -14,6 +16,7 @@ const STATE_NAMES: Record<string, string> = {
   'new york': 'NY',
   illinois: 'IL',
   oregon: 'OR',
+  pennsylvania: 'PA',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -27,6 +30,7 @@ const STATE_NAMES: Record<string, string> = {
 
 function detectState(q: string): string | undefined {
   if (/\bnj\b/i.test(q)) return 'NJ';
+  if (/\bpennsylvania\b/i.test(q)) return 'PA';
   for (const [name, code] of Object.entries(STATE_NAMES)) {
     if (name.length === 2) {
       if (new RegExp(`\\bin ${name}\\b`, 'i').test(q)) return code;
@@ -80,6 +84,17 @@ function mentionsOregon(q: string): boolean {
   return /\boregon\b|\bodot\b/i.test(q) || detectState(q) === 'OR';
 }
 
+function mentionsPennsylvania(q: string): boolean {
+  return (
+    /\bpennsylvania\b|\bpuc\b|\bpa puc\b|\bhousehold goods operators list\b/i.test(q) ||
+    detectState(q) === 'PA'
+  );
+}
+
+function mentionsPhiladelphiaOrPittsburgh(q: string): boolean {
+  return /\bphiladelphia\b|\bpittsburgh\b|\ballegheny\b|\bmontgomery\b/i.test(q);
+}
+
 function mentionsPortland(q: string): boolean {
   return /\bportland\b|\bmultnomah\b/i.test(q);
 }
@@ -99,6 +114,47 @@ function isOrComplaintAsk(q: string): boolean {
 
 function isOrEnforcementAsk(q: string): boolean {
   return /\b(enforcement|final order|civil (monetary )?penalt|unauthorized mover|unlicensed mover)\b/i.test(q) && mentionsOregon(q);
+}
+
+function parsePaPucIdentity(q: string): string | null {
+  if (/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) return null;
+  const aNumber =
+    q.match(/\b(?:pa\s+)?(?:puc\s+)?(?:carrier(?:\s+id)?|a[- ]?number|application(?:\s+number)?)\s*#?\s*(A-?\d{6,9})\b/i) ||
+    q.match(/\b(A-\d{6,9})\b/) ||
+    q.match(/\bPA\s+carrier\s+(A-?\d{6,9})\b/i);
+  if (aNumber) return aNumber[1]!;
+  const utility =
+    q.match(/\b(?:pa\s+)?(?:puc\s+)?(?:utility(?:\s+code)?|puc(?:\s+mover)?)\s*#?\s*(\d{6,8})\b/i) ||
+    q.match(/\bPA\s+PUC\s+(\d{6,8})\b/i);
+  if (utility && (mentionsPennsylvania(q) || /\bpuc\b|\butility code\b/i.test(q))) return utility[1]!;
+  return null;
+}
+
+function isPaComplaintAsk(q: string): boolean {
+  return /\bcomplaint|\bdocket\b/i.test(q) && (mentionsPennsylvania(q) || mentionsPhiladelphiaOrPittsburgh(q));
+}
+
+function isPaInsuranceAsk(q: string): boolean {
+  return /\binsurance\b|\bform e\b|\bform h\b/i.test(q) && mentionsPennsylvania(q);
+}
+
+function isPaBrokerAsk(q: string): boolean {
+  return /\bbroker/i.test(q) && (mentionsPennsylvania(q) || /\bhousehold goods broker\b/i.test(q));
+}
+
+function isPaIntrastateAuthorityAsk(q: string): boolean {
+  if (/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) return false;
+  if (!(mentionsPennsylvania(q) || mentionsPhiladelphiaOrPittsburgh(q))) return false;
+  if (/\bheadquarter/i.test(q) && /\binterstate\b/i.test(q)) return false;
+  if (/\binterstate mover\b/i.test(q) && !/\blicen|\bintrastate|\bhousehold[- ]?goods|\bpuc\b|\butility code\b/i.test(q)) {
+    return false;
+  }
+  return (
+    /\bintrastate\b|\bpuc\b|\butility code\b|\bhousehold[- ]?goods\b/i.test(q) ||
+    /\blicensed movers?\b|\bmovers in pennsylvania\b|\bpennsylvania movers\b|\bpennsylvania puc moving/i.test(q) ||
+    /\bmovers philadelphia\b|\bmovers pittsburgh\b/i.test(q) ||
+    (/\bmovers?\b/i.test(q) && mentionsPennsylvania(q))
+  );
 }
 
 function isOrIntrastateAuthorityAsk(q: string): boolean {
@@ -195,6 +251,16 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
+  if (isRanking(q) && mentionsPhiladelphiaOrPittsburgh(q)) {
+    const query = fail(
+      'MoveTrustHub does not rank movers and does not publish a Philadelphia or Pittsburgh mover route. Pennsylvania household-goods authority is statewide PA PUC research.',
+      ['Open Pennsylvania household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Mode', 'fail_closed');
+    push('Coverage', 'No Pennsylvania city intelligence page');
+    return { raw: q, query, interpretation: lines };
+  }
+
   if (isRanking(q) && mentionsPortland(q) && mentionsOregon(q)) {
     const query = fail(
       'MoveTrustHub does not rank movers and does not publish a Portland or Multnomah County mover route. Oregon household-goods authority is statewide ODOT CCD research.',
@@ -269,6 +335,75 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
+  const paIdentity = parsePaPucIdentity(q);
+  if (paIdentity) {
+    const found = lookupPaPucIdentity(paIdentity);
+    if (isPaComplaintAsk(q)) {
+      const query = fail(
+        `PA PUC complaint intake is official filing/search, not an acquired household-goods complaint universe. A docket number is not an adverse finding. Missing bulk complaints is not zero complaints. Confirm Utility Code / Carrier ID ${paIdentity} on the official PUC utility detail.`,
+        ['Open Pennsylvania household-goods research.', 'Show complaint observations for USDOT 3244649.'],
+      );
+      query.coverageState = 'NOT_ACQUIRED';
+      push('Coverage', 'PA PUC complaints — OPEN_SEARCH_ONLY');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (found.hits.length) {
+      const hit = found.hits[0]!;
+      const query = fail(
+        `${hit.name || 'This utility'} appears on the accepted PA PUC active Household Goods Operators snapshot as Utility Code ${hit.utilityCode}${hit.carrierId ? ` / Carrier ID ${hit.carrierId}` : ''}. Utility Code is not automatically Carrier ID. PA PUC authority is not a USDOT number and not an MC number. Confirm on the official list.`,
+        ['Open Pennsylvania household-goods research.', 'Find USDOT 3244649.'],
+      );
+      push('PA PUC Utility Code', hit.utilityCode);
+      if (hit.carrierId) push('PA PUC Carrier ID', hit.carrierId);
+      push('Limitation', 'State PUC authority is not FMCSA interstate authority');
+      return { raw: q, query, interpretation: lines };
+    }
+    const query = fail(
+      `PA PUC identity ${paIdentity} is not on the accepted active Household Goods Operators snapshot. Absence from this snapshot is not FMCSA interstate status and is not a Trust Score. Confirm on the official PUC list.`,
+      ['Open Pennsylvania household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('PA PUC identity', paIdentity);
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isPaBrokerAsk(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) {
+    const query = fail(
+      'Pennsylvania Household Goods brokers are a separate PUC authority (Broker of Household Goods in Use). No official current broker universe was acquired. OPEN_SEARCH_ONLY is not zero brokers and is not the active carrier list.',
+      ['Open Pennsylvania household-goods research.', 'Find USDOT 3244649.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'PA PUC HHG brokers — OPEN_SEARCH_ONLY');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isPaInsuranceAsk(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) {
+    const query = fail(
+      `PA PUC utility-detail insurance tables in this snapshot: ${PENNSYLVANIA_MOVE_SNAPSHOT.insurance.PA_PUC_INSURANCE_ROWS} rows. Current cargo observations ${PENNSYLVANIA_MOVE_SNAPSHOT.insurance.PA_PUC_CURRENT_CARGO_OBSERVATIONS}; current liability observations ${PENNSYLVANIA_MOVE_SNAPSHOT.insurance.PA_PUC_CURRENT_LIABILITY_OBSERVATIONS}. Form E is liability; Form H is cargo; Form K is cancellation. Insurance is not authority.`,
+      ['Open Pennsylvania household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Coverage', 'PA PUC insurance — ACQUIRED_CURRENT_SNAPSHOT');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isPaComplaintAsk(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) {
+    const query = fail(
+      `PA PUC household-goods complaints are official filing/search, not a complete complaint census. Bounded docket metadata on active HHG utilities: ${PENNSYLVANIA_MOVE_SNAPSHOT.dockets.PA_PUC_DISTINCT_DOCKET_NUMBERS} distinct docket numbers. A docketed case is not an adverse finding. Missing bulk complaints is not zero complaints.`,
+      ['Open Pennsylvania household-goods research.', 'Show complaint observations for USDOT 3244649.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'PA PUC complaints — OPEN_SEARCH_ONLY; dockets bounded on HHG utilities');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isPaIntrastateAuthorityAsk(q)) {
+    const query = fail(
+      `Pennsylvania intrastate Household Goods carriers are listed on the official PA PUC active operators list (${PENNSYLVANIA_MOVE_SNAPSHOT.current_hhg_roster.PA_PUC_HHG_CARRIER_ROWS} list rows / ${PENNSYLVANIA_MOVE_SNAPSHOT.current_hhg_roster.PA_PUC_HHG_DISTINCT_UTILITY_CODES} distinct Utility Codes). Carriers are not brokers. Utility Code is not automatically Carrier ID. PA PUC authority is not FMCSA interstate authority. Philadelphia and Pittsburgh licensing are not statewide city pages.`,
+      ['Open Pennsylvania household-goods research.', 'Show current interstate household-goods carriers headquartered in Pennsylvania.'],
+    );
+    push('Coverage', 'PA PUC active HHG operators — ACQUIRED_CURRENT_SNAPSHOT');
+    return { raw: q, query, interpretation: lines };
+  }
+
   if (isOrIntrastateAuthorityAsk(q)) {
     const query = fail(
       'Oregon intrastate household-goods authority is an ODOT CCD certificate of authority on the official authorized-movers list (113 current list rows / 113 distinct certificate numbers). Local cartage and other-than-local service overlap and are not extra movers. A USDOT or MC number is not an Oregon certificate. Search the official list or ask with an Oregon certificate number.',
@@ -304,7 +439,7 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
-  const named = !isRanking(q) && !isQuote(q) && !isScam(q) && !/\b(?:complaints?|usdot|dot|mc)\b/i.test(q) && !/\bserv(e|es|ing)\b|\bservice (area|territory|coverage)\b/i.test(q) ? parseNameRequest(q) : null;
+  const named = !isRanking(q) && !isQuote(q) && !isScam(q) && !/\b(?:complaints?|usdot|dot|mc)\b/i.test(q) && !/\bserv(e|es|ing)\b|\bservice (area|territory|coverage)\b/i.test(q) && !/\binterstate movers?\b/i.test(q) ? parseNameRequest(q) : null;
   if (named) {
     if (!named.name || !distinctiveTokens(named.name).length || named.name.length > 80 || /[\x00-\x1f\x7f]/.test(raw)) {
       const query = fail('Enter a distinctive company name (up to 80 characters), or a labeled USDOT/MC identifier. Generic industry words alone do not identify a company.', ['USDOT lookup', 'MC lookup']);

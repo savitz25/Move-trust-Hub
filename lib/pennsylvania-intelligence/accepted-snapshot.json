@@ -1,0 +1,218 @@
+{
+  "version": "move-pa-state-intel-v1",
+  "ticket": "PA-MOVE-001",
+  "as_of": null,
+  "generated_at": "2026-09-17T15:19:55Z",
+  "snapshotAsOf": "2026-09-17",
+  "retrievedAt": "2026-09-17T15:16:14Z",
+  "retrievedAtPrecision": "datetime",
+  "no_trust_score": true,
+  "no_paid_ranking": true,
+  "no_pennsylvania_local_routes": true,
+  "no_philadelphia_page": true,
+  "no_pittsburgh_page": true,
+  "publication": {
+    "canonical": "https://www.movetrusthub.com/pennsylvania",
+    "indexable": true,
+    "robots": "index,follow",
+    "route": "/pennsylvania",
+    "rankings": false,
+    "trustScore": false,
+    "h1": "Pennsylvania Moving & Household Goods Intelligence"
+  },
+  "regulator": {
+    "agency": "Pennsylvania Public Utility Commission",
+    "short": "PA PUC",
+    "credential_term": "Household Goods Carrier authority",
+    "list_url": "https://www.puc.pa.gov/motor-carrier/limos-taxis-movers/",
+    "utility_detail_pattern": "https://www.puc.pa.gov/utility/{utilityCode}",
+    "insurance_url": "https://www.puc.pa.gov/motor-carrier/insurance/",
+    "complaint_url": "https://www.puc.pa.gov/complaints/",
+    "motor_carrier_url": "https://www.puc.pa.gov/motor-carrier/",
+    "puc_number_in_advertising": "PUC consumer guidance says movers must display their PUC number. Taxi marking uses PUC A-#. This snapshot preserves Utility Code and Carrier ID / Application Number separately and does not rename either as license number.",
+    "intrastate_only": true
+  },
+  "clocks": {
+    "generatedAt": "2026-09-17T15:19:55Z",
+    "snapshotAsOf": "2026-09-17",
+    "sourceAsOf": null,
+    "retrievedAt": "2026-09-17T15:16:14Z",
+    "do_not_use_retrieval_as_authority_effective_date": true,
+    "hhg_roster": {
+      "sourceAsOf": null,
+      "retrievedAt": "2026-09-17T15:16:14Z",
+      "note": "Active Household Goods Operators List has no published as-of date. Retrieval is not certification date."
+    }
+  },
+  "current_hhg_roster": {
+    "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+    "PA_PUC_HHG_CARRIER_ROSTER_STATUS": "ACQUIRED_CURRENT_SNAPSHOT",
+    "PA_PUC_HHG_CARRIER_ROWS": 269,
+    "PA_PUC_HHG_DISTINCT_UTILITY_CODES": 267,
+    "PA_PUC_HHG_DISTINCT_CARRIER_IDS": 266,
+    "grain": "Official active Household Goods Operators List row (Utility Code)",
+    "list_is_carriers_not_brokers": true,
+    "utility_row_ne_unique_company": true,
+    "office_address_ne_service_territory": true,
+    "announced_total": 269,
+    "list_duplicate_utility_code_rows": 2
+  },
+  "identity": {
+    "utility_namespace": "PA-PUC-UTILITY:{utilityCode}",
+    "authority_namespace": "PA-PUC-AUTHORITY:{applicationNumberOrCarrierId}",
+    "utility_code_identifies_puc_utility_entity": true,
+    "carrier_id_often_a_number": true,
+    "application_number_on_authority_row": true,
+    "utility_code_ne_automatically_carrier_id": true,
+    "utilities_where_carrier_id_differs": 111,
+    "distinct_application_numbers": 354,
+    "do_not_rename_as_license_number": true,
+    "puc_number_term_unmapped_exclusively": true
+  },
+  "authorities": {
+    "PA_PUC_HHG_ACTIVE_AUTHORITY_ROWS": 269,
+    "PA_PUC_HHG_SUSPENDED_AUTHORITY_ROWS": 0,
+    "PA_PUC_HHG_AUTHORITY_ROWS": 270,
+    "truck_authority_rows_on_hhg_utilities": 168,
+    "other_authority_rows_on_hhg_utilities": 0,
+    "broker_authority_rows_on_hhg_list_utilities": 1,
+    "hhg_ne_truck": true,
+    "hhg_ne_broker": true,
+    "authority_row_ne_unique_mover": true,
+    "utility_status_ne_authority_status": true
+  },
+  "brokers": {
+    "coverage": "OPEN_SEARCH_ONLY",
+    "PA_HHG_BROKER_ROSTER": "OPEN_SEARCH_ONLY",
+    "PA_PUC_HHG_BROKER_ROSTER_STATUS": "OPEN_SEARCH_ONLY",
+    "PA_PUC_HHG_BROKER_ROWS": null,
+    "PA_PUC_HHG_BROKER_DISTINCT_IDS": null,
+    "reason": "No official current active Broker of Household Goods universe was published as a bounded list. Broker of Household Goods in Use is a separate PUC authority type. Broker rows found on the HHG carrier list utilities are not a broker roster.",
+    "broker_ne_carrier": true
+  },
+  "territory": {
+    "coverage": "OPEN_SEARCH_ONLY",
+    "PA_PUC_SERVICE_TERRITORY_ROWS": null,
+    "reason": "The operators list states carriers may be certificated for specific areas and tells consumers to contact the carrier for approved territories. Structured territory text was not on the list or typical utility-detail tables.",
+    "office_address_ne_territory": true,
+    "territory_ne_statewide": true,
+    "territory_ne_interstate": true
+  },
+  "insurance": {
+    "coverage": "ACQUIRED_CURRENT_SNAPSHOT",
+    "PA_PUC_INSURANCE_ROWS": 537,
+    "PA_PUC_CURRENT_CARGO_OBSERVATIONS": 260,
+    "PA_PUC_CURRENT_LIABILITY_OBSERVATIONS": 261,
+    "current_rule": "Type Cargo/Liability AND status contains Form H Received / Form E Received AND (no lapse date OR lapse date on/after snapshotAsOf). Form K and Suspension Letter Created are not current coverage.",
+    "form_e_is_liability": true,
+    "form_h_is_cargo": true,
+    "form_k_is_cancellation": true,
+    "historical_form_k_ne_permanently_uninsured": true,
+    "lapse_row_ne_license_status": true,
+    "authority_active_ne_current_insurance": true,
+    "insurance_complaint_created_ne_consumer_complaint": true
+  },
+  "tariffs": {
+    "coverage": "OPEN_SEARCH_ONLY",
+    "reason": "PUC requires approved tariff/rate structures. No bounded structured tariff extract was acquired. Tariff rate is not a quote.",
+    "tariff_ne_quote": true,
+    "approved_tariff_ne_final_bill": true
+  },
+  "complaints": {
+    "coverage": "OPEN_SEARCH_ONLY",
+    "PA_HHG_COMPLAINTS": "OPEN_SEARCH_ONLY",
+    "PA_PUC_FORMAL_COMPLAINT_ROWS": null,
+    "c_prefix_docket_rows_on_hhg_utilities": 113,
+    "c_prefix_ne_complete_complaint_universe": true,
+    "complaint_instructions_ne_count": true,
+    "complaint_ne_violation": true,
+    "interstate_outside_puc_jurisdiction": true
+  },
+  "dockets": {
+    "coverage": "ACQUIRED_BOUNDED_ON_ACTIVE_HHG_UTILITIES",
+    "PA_PUC_DOCKET_ROWS": 1923,
+    "PA_PUC_DISTINCT_DOCKET_NUMBERS": 1922,
+    "docketed_case_ne_adverse_finding": true,
+    "application_docket_ne_complaint": true,
+    "active_case_ne_violation": true,
+    "formal_complaint_ne_substantiated": true,
+    "case_document_ne_unique_matter": true,
+    "prefix_classes": {
+      "A_PREFIX": 1099,
+      "C_PREFIX": 113,
+      "R_PREFIX": 682,
+      "P_PREFIX": 1,
+      "OTHER_PREFIX": 28
+    }
+  },
+  "enforcement": {
+    "coverage": "OPEN_SEARCH_ONLY",
+    "PA_HHG_ENFORCEMENT": "OPEN_SEARCH_ONLY",
+    "PA_PUC_ENFORCEMENT_ROWS": null,
+    "PA_PUC_UNIQUE_REGULATORY_MATTERS": null,
+    "reason": "No complete bounded household-goods enforcement/civil-penalty universe was established. Docket metadata is not an enforcement census.",
+    "suspension_status_on_authority_rows_ne_enforcement_census": true
+  },
+  "safety": {
+    "puc_safety_review_ne_fmcsa_safety_rating": true,
+    "structured_public_safety_fitness_observation": "NOT_ACQUIRED"
+  },
+  "consumer_rules": {
+    "written_estimate_required": true,
+    "tariff_basis": true,
+    "hourly_if_40_miles_or_less": true,
+    "weight_mileage_if_over_40_miles": true,
+    "bill_over_estimate_protection": "If actual bill exceeds estimate by more than 10%, pay estimate plus 10% or $25, whichever is greater; remainder within 15 days after delivery.",
+    "basic_cargo_protection": "60 cents per pound per article unless additional protection purchased",
+    "information_for_shippers_form": true,
+    "complaint_channel": "PUC district office in writing; PUC cannot order reimbursement for damaged goods or investigate interstate moves or storage over 90 days",
+    "rules_ne_mover_quality": true
+  },
+  "federal": {
+    "name_only": "UNSAFE",
+    "exact_state_to_usdot_crosswalks": 0,
+    "exact_state_to_mc_crosswalks": 0,
+    "EXACT_PA_PUC_TO_USDOT_CROSSWALKS": 0,
+    "EXACT_PA_PUC_TO_MC_CROSSWALKS": 0,
+    "review_required_crosswalks": 0,
+    "pa_puc_hhg_ne_usdot": true,
+    "pa_puc_carrier_id_ne_mc": true,
+    "pa_puc_authority_ne_fmcsa": true,
+    "pa_hq_ne_puc_authority": true,
+    "puc_roster_ne_fmcsa_pa_hq_roster": true,
+    "overlay_note": "Existing MoveTrustHub FMCSA spine is supporting context. Recorded Pennsylvania headquarters is not PA PUC authority. No USDOT/MC published on the operators list. No name-only bridges."
+  },
+  "expansion_ledger": {
+    "NET_NEW_STATE_RESEARCH_IDENTITIES": 267,
+    "NET_NEW_CANONICAL_ORGANIZATIONS": 0,
+    "NET_NEW_PUBLIC_MOVE_PROFILES": 0,
+    "EXISTING_ORGANIZATIONS_ENRICHED": 0,
+    "GRAPH_WRITES": 0,
+    "EXACT_PROFILE_ATTACHMENTS": 0,
+    "CLAIM_ELIGIBILITY_BROADENED": false
+  },
+  "adverse_publication": {
+    "ADVERSE_SOURCES_FOUND": 3,
+    "ADVERSE_SOURCES_ACQUIRED": 1,
+    "ADVERSE_ROWS_ACQUIRED": null,
+    "UNIQUE_REGULATORY_MATTERS": null,
+    "EXACT_PROFILE_ATTACHMENTS": 0,
+    "REVIEW_REQUIRED": 0,
+    "UNRESOLVED": null,
+    "INTERNAL_ONLY": 0,
+    "PUBLICATION_PENDING": 0,
+    "PUBLIC_READY_PROFILES": 0,
+    "PUBLICLY_RENDERED_PROFILES": 0,
+    "BUSINESS_RESPONSE_READY": false,
+    "dockets_acquired_not_classified_as_adverse_census": true
+  },
+  "withheld_reason_counts": {
+    "PUBLICATION_ADAPTER_NOT_READY": true,
+    "SOURCE_RESTRICTION": 2,
+    "MISSING_IDENTIFIER": 0,
+    "UNSAFE_NAME_MATCH": 0
+  },
+  "claimEligibilityBroadened": false,
+  "local_work_needed_now": "NO",
+  "fingerprint": "1f8b97db78233d0a89fcab02bb92c8ff51633ba69da993ecc6eea79c985d88b3"
+}
