@@ -135,6 +135,8 @@ export function explainMatch(type: SearchMatchType): string {
       return 'Recorded headquarters in this city';
     case 'recorded_hq_state_broader':
       return 'Broader match: recorded headquarters elsewhere in this state';
+    case 'source_backed_category':
+      return 'Source-backed provider in this category';
     default:
       return 'Identity match';
   }

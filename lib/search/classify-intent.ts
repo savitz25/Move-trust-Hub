@@ -35,6 +35,24 @@ function isGenericCategoryText(text: string): boolean {
   return tokens.every((token) => GENERIC_CATEGORY_TOKENS.has(token));
 }
 
+// TH-DISCOVERY-FINAL-REPAIR-A: structural (not exact-string) recognition of the
+// "auto transport / vehicle shipping" provider category -- one token naming the
+// thing being shipped plus one token naming the shipping/carrying action, in
+// either order, covers "auto transport carrier", "car transport carrier",
+// "vehicle shipping company", "auto shipping company", "car carrier" and other
+// real phrasings of the same category without listing exact query strings.
+const AUTO_TRANSPORT_SUBJECT_TOKENS = new Set(['auto', 'car', 'cars', 'vehicle', 'vehicles']);
+const AUTO_TRANSPORT_ACTION_TOKENS = new Set([
+  'transport', 'transportation', 'carrier', 'carriers', 'shipping', 'ship',
+]);
+
+function detectCategoryClass(text: string): ClassifiedSearchQuery['categoryClass'] {
+  const tokens = searchTokens(text);
+  const hasSubject = tokens.some((t) => AUTO_TRANSPORT_SUBJECT_TOKENS.has(t));
+  const hasAction = tokens.some((t) => AUTO_TRANSPORT_ACTION_TOKENS.has(t));
+  return hasSubject && hasAction ? 'Auto Transport' : null;
+}
+
 function parseIdentifier(raw: string): ClassifiedSearchQuery['identifier'] {
   const trimmed = raw.trim();
   if (!trimmed) return null;
@@ -166,6 +184,7 @@ export function classifySearchQuery(rawInput: string): ClassifiedSearchQuery {
       companyQuery: raw,
       locationHint: null,
       categoryOnly: false,
+      categoryClass: null,
     };
   }
 
@@ -178,6 +197,7 @@ export function classifySearchQuery(rawInput: string): ClassifiedSearchQuery {
       companyQuery: raw,
       locationHint: null,
       categoryOnly: false,
+      categoryClass: null,
     };
   }
 
@@ -191,6 +211,7 @@ export function classifySearchQuery(rawInput: string): ClassifiedSearchQuery {
       companyQuery: split.companyQuery,
       locationHint: split.locationHint,
       categoryOnly: split.categoryOnly,
+      categoryClass: split.categoryOnly ? detectCategoryClass(raw) : null,
     };
   }
 
@@ -214,6 +235,7 @@ export function classifySearchQuery(rawInput: string): ClassifiedSearchQuery {
           }
         : null,
       categoryOnly: false,
+      categoryClass: null,
     };
   }
 
@@ -231,11 +253,19 @@ export function classifySearchQuery(rawInput: string): ClassifiedSearchQuery {
         companyQuery: categoryPlace.companyQuery,
         locationHint: categoryPlace.locationHint,
         categoryOnly: true,
+        categoryClass: detectCategoryClass(raw),
       };
     }
   }
 
   if (/[a-z]/i.test(raw)) {
+    // TH-DISCOVERY-FINAL-REPAIR-A: a bare provider-category phrase with NO
+    // geography at all ("auto transport carrier") never matched
+    // splitCompanyLocation (no state found) so categoryOnly stayed false and
+    // the phrase fell through to a literal company-NAME lookup that a
+    // category phrase can never exactly match. Recognize pure category text
+    // here too, not just when a place was found alongside it.
+    const bareCategoryOnly = split.categoryOnly || (!split.locationHint && isGenericCategoryText(raw));
     return {
       raw,
       normalized,
@@ -243,7 +273,8 @@ export function classifySearchQuery(rawInput: string): ClassifiedSearchQuery {
       identifier: null,
       companyQuery: split.companyQuery || raw,
       locationHint: split.locationHint,
-      categoryOnly: split.categoryOnly,
+      categoryOnly: bareCategoryOnly,
+      categoryClass: bareCategoryOnly ? detectCategoryClass(raw) : null,
     };
   }
 
@@ -255,6 +286,7 @@ export function classifySearchQuery(rawInput: string): ClassifiedSearchQuery {
     companyQuery: raw,
     locationHint: null,
     categoryOnly: false,
+    categoryClass: null,
   };
 }
 

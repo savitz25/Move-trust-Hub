@@ -362,6 +362,25 @@ export async function searchMovers(rawQuery: string, options?: { limit?: number 
       }
     }
   }
+
+  // TH-DISCOVERY-FINAL-REPAIR-A: a bare provider-category query with NO
+  // geography at all ("auto transport carrier") has nothing for the identity
+  // lookup above to text-match against, and no place to broaden by -- but
+  // when the category names a real, source-backed provider class this hub
+  // already indexes (see fetchSourceBackedAutoTransportCompanies), browsing
+  // that class directly is the honest Results-First answer, not an empty
+  // "no matching identities" or a company-name search a category phrase can
+  // never exactly win.
+  if (!broadened.length && classified.categoryOnly && classified.categoryClass && !classified.locationHint && matched.length === 0) {
+    const { queryDbDirectoryPage } = await import('@/lib/directory/query-db-directory-page');
+    const categoryPage = await queryDbDirectoryPage({ limit, filters: { services: [classified.categoryClass] } }).catch(() => null);
+    if (categoryPage?.companies.length) {
+      broadened = categoryPage.companies.map((company) => ({
+        company,
+        match: { type: 'source_backed_category' as const, tier: 10 as const, explanation: explainMatch('source_backed_category'), score: 250, textScore: 0 },
+      }));
+    }
+  }
   const combined = matched.length ? matched : broadened;
 
   const exactNameGroupSize = exactNameCensus;
@@ -397,7 +416,11 @@ export async function searchMovers(rawQuery: string, options?: { limit?: number 
     latencyMs: Date.now() - started,
     dbMs,
     candidateCount: companies.length,
-    searchPath: broadened.length ? 'recorded-hq-broaden' : loaded.path,
+    searchPath: broadened.length
+      ? broadened[0]!.match.type === 'source_backed_category'
+        ? 'source-backed-category-browse'
+        : 'recorded-hq-broaden'
+      : loaded.path,
   };
 }
 

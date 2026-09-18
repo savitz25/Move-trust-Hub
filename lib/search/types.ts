@@ -27,7 +27,8 @@ export type SearchMatchType =
   | 'headquarters_hint'
   | 'local_research'
   | 'recorded_hq_city'
-  | 'recorded_hq_state_broader';
+  | 'recorded_hq_state_broader'
+  | 'source_backed_category';
 
 export type SearchMatchTier = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
@@ -58,6 +59,16 @@ export type ClassifiedSearchQuery = {
    * headquartered in Plano, TX) blend into a place-scoped result set.
    */
   categoryOnly: boolean;
+  /**
+   * TH-DISCOVERY-FINAL-REPAIR-A: set when categoryOnly text names a real,
+   * source-backed provider class this hub can browse directly (today, only
+   * "Auto Transport" -- see fetchSourceBackedAutoTransportCompanies) rather
+   * than a specific company. Lets a bare, geography-less category query
+   * ("auto transport carrier") browse that real class instead of running a
+   * literal company-name lookup that a category phrase can never exactly
+   * match.
+   */
+  categoryClass: 'Auto Transport' | null;
 };
 
 export type SearchCompanyHit = {
