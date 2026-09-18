@@ -19,6 +19,7 @@ import {
   shouldApplyMiddlewareHtmlCache,
 } from '@/lib/cache/control';
 import { DEFAULT_PERFORMANCE_FLAGS } from '@/lib/edge-config/types';
+import { normalizedPublishedStatePath } from '@/lib/seo/published-state-path';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
 
@@ -32,6 +33,12 @@ function applyPublicCacheHeaders(response: NextResponse, sMaxAge: number) {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const host = request.headers.get('host');
+  const statePath = normalizedPublishedStatePath(pathname);
+  if (statePath) {
+    const url = request.nextUrl.clone();
+    url.pathname = statePath;
+    return NextResponse.redirect(url, 308);
+  }
 
   try {
     // Force HTTPS when Vercel/edge reports plain HTTP (GSC: http://www.movetrusthub.com/)
