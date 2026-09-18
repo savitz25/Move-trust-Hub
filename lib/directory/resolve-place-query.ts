@@ -174,31 +174,57 @@ export function resolveDirectoryPlaceQuery(raw: string): DirectoryPlaceMatch | n
   }
 
   if (cityPart && !stateFromTail) {
-    for (const state of localStates) {
-      const county = matchCountyInState(state.slug, cityPart);
-      if (county) {
-        return toMatch({
-          kind: 'county',
-          queryLabel,
-          stateCode: state.code,
-          countySlug: county.slug,
-          countyName: county.name,
-        });
-      }
+    // TH-DISCOVERY-PARITY-001A-REVIEW: this used to return the FIRST state (in
+    // localStates' fixed iteration order) whose county list happened to contain a
+    // same-named county, with no population/prominence signal at all -- a bare
+    // "Miami" silently resolved to Miami County, IN (alphabetically/positionally
+    // first) instead of the world-famous Miami, FL. County name matching has no
+    // population data to disambiguate with, but the CITY-level place index below
+    // does (a real, scored, priority-ranked gazetteer already used for exactly this
+    // kind of query). So: only resolve directly here when the county name is
+    // GENUINELY unambiguous (matches in exactly one state); when it matches
+    // multiple states, don't guess -- fall through to the scored city-index lookup,
+    // which already picks the highest-population/highest-confidence match instead
+    // of an arbitrary iteration-order one.
+    const countyMatches = localStates
+      .map((state) => ({ state, county: matchCountyInState(state.slug, cityPart) }))
+      .filter((row): row is { state: (typeof localStates)[number]; county: { slug: string; name: string } } => Boolean(row.county));
+    if (countyMatches.length === 1) {
+      const { state, county } = countyMatches[0]!;
+      return toMatch({
+        kind: 'county',
+        queryLabel,
+        stateCode: state.code,
+        countySlug: county.slug,
+        countyName: county.name,
+      });
     }
   }
 
   const hits = searchUsPlaces(queryLabel, { limit: 5 });
   const top = hits[0];
-  if (!top || top.score < 70) return null;
-  if (!isHighConfidencePlaceMatch(hits) && top.score < 100) return null;
+  if (top && top.score >= 70 && (isHighConfidencePlaceMatch(hits) || top.score >= 100)) {
+    return toMatch({
+      kind: top.countySlug ? 'city' : 'state',
+      queryLabel,
+      stateCode: top.stateCode,
+      countySlug: top.countySlug,
+      countyName: top.countyName,
+      cityLabel: top.city,
+    });
+  }
 
-  return toMatch({
-    kind: top.countySlug ? 'city' : 'state',
-    queryLabel,
-    stateCode: top.stateCode,
-    countySlug: top.countySlug,
-    countyName: top.countyName,
-    cityLabel: top.city,
-  });
+  // TH-DISCOVERY-PARITY-001A-REVIEW: an explicit "CITY, STATE" query ("Aurora
+  // Colorado") where the STATE parses correctly but the city genuinely is not in
+  // this gazetteer (a real, separate data-completeness gap, not a code bug --
+  // Aurora, CO is a top-60 US city missing from the index entirely) must not
+  // dead-end into a bare `null` with no signal at all. Results-First: fall back to
+  // the real STATE-level result rather than discarding a state the consumer
+  // explicitly, unambiguously named. This never fabricates city-specific data --
+  // toMatch's own 'state'-kind headline/detail text is honest about the grain.
+  if (stateFromTail) {
+    return toMatch({ kind: 'state', queryLabel, stateCode: stateFromTail.code });
+  }
+
+  return null;
 }

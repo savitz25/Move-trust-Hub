@@ -6,8 +6,10 @@ import { buildVerifyDotHref } from '@/lib/directory/verify-dot-link';
 import { logger } from '@/lib/logging/logger';
 import { classifySearchQuery } from '@/lib/search/classify-intent';
 import {
+  applyLocationFilter,
   authorityStatusLabel,
   compareIdentityCompanies,
+  explainMatch,
   matchCompanyIdentity,
   roleLabel,
   uniqueExactIdentity,
@@ -322,29 +324,50 @@ export async function searchMovers(rawQuery: string, options?: { limit?: number 
         locationHint,
       });
       if (!match) return null;
-      if (classified.locationHint?.city) {
-        const hq = normalizeSearchText(company.headquarters ?? '');
-        const city = normalizeSearchText(classified.locationHint.city);
-        const st = normalizeSearchText(classified.locationHint.stateCode ?? '');
-        if (city && hq.includes(city)) {
-          return { company, match: { ...match, type: match.type, explanation: `${match.explanation}; headquarters identity hint` } };
-        }
-        if (st && hq.endsWith(st) && match.tier > 5) {
-          return { company, match };
-        }
-        if (match.tier > 5 && city && !hq.includes(city)) {
-          return { company, match };
-        }
-      }
-      return { company, match };
+      const filtered = applyLocationFilter(company, match, classified.locationHint, classified.categoryOnly);
+      return filtered ? { company, match: filtered } : null;
     })
     .filter((row): row is { company: Company; match: IdentityMatch } => Boolean(row))
     .sort((a, b) => compareIdentityCompanies(a.company, b.company, a.match, b.match, locationHint));
 
+  // TH-DISCOVERY-PARITY-001A doctrine item D: a category query with a resolved place
+  // ("piano moving service Austin") must not dead-end just because no company's NAME
+  // TEXT happens to contain a category word or the place name -- the identity-oriented
+  // SQL candidate loader above only matches on name text, so it can easily miss real
+  // local movers entirely. When a categoryOnly query with a locationHint comes back
+  // with no genuine local matches, fall back to the real, geography-indexed directory
+  // query (the same one county/state directory pages already use) and label the
+  // result honestly as a broader match, never as if it were name-text confirmed.
+  let broadened: Array<{ company: Company; match: IdentityMatch }> = [];
+  if (classified.categoryOnly && classified.locationHint && matched.length === 0) {
+    const { queryDbDirectoryPage } = await import('@/lib/directory/query-db-directory-page');
+    const city = classified.locationHint.city;
+    const state = classified.locationHint.stateCode;
+    if (city && state) {
+      const cityPage = await queryDbDirectoryPage({ limit, filters: { recordedHqCity: city, recordedHqState: state } }).catch(() => null);
+      if (cityPage?.companies.length) {
+        broadened = cityPage.companies.map((company) => ({
+          company,
+          match: { type: 'recorded_hq_city' as const, tier: 10 as const, explanation: explainMatch('recorded_hq_city'), score: 400, textScore: 0 },
+        }));
+      }
+    }
+    if (!broadened.length && state) {
+      const statePage = await queryDbDirectoryPage({ limit, filters: { recordedHqState: state } }).catch(() => null);
+      if (statePage?.companies.length) {
+        broadened = statePage.companies.map((company) => ({
+          company,
+          match: { type: 'recorded_hq_state_broader' as const, tier: 10 as const, explanation: explainMatch('recorded_hq_state_broader'), score: 300, textScore: 0 },
+        }));
+      }
+    }
+  }
+  const combined = matched.length ? matched : broadened;
+
   const exactNameGroupSize = exactNameCensus;
 
-  const unique = uniqueExactIdentity(matched);
-  const ambiguity = exactNameGroupSize > 1 || (Boolean(unique) === false && matched.filter((row) => row.match.tier <= 5).length > 1);
+  const unique = uniqueExactIdentity(combined);
+  const ambiguity = exactNameGroupSize > 1 || (Boolean(unique) === false && combined.filter((row) => row.match.tier <= 5).length > 1);
 
   let verificationAction: MoverSearchResponse['verificationAction'] = null;
   if (classified.identifier && matched.length === 0) {
@@ -359,7 +382,7 @@ export async function searchMovers(rawQuery: string, options?: { limit?: number 
     };
   }
 
-  const results = matched.slice(0, limit).map((row) => toHit(row.company, row.match));
+  const results = combined.slice(0, limit).map((row) => toHit(row.company, row.match));
 
   return {
     query: classified.raw,
@@ -370,11 +393,11 @@ export async function searchMovers(rawQuery: string, options?: { limit?: number 
     exactNameGroupSize,
     directJumpSlug: unique && !ambiguity ? unique.slug : null,
     ambiguity,
-    resultCount: matched.length,
+    resultCount: combined.length,
     latencyMs: Date.now() - started,
     dbMs,
     candidateCount: companies.length,
-    searchPath: loaded.path,
+    searchPath: broadened.length ? 'recorded-hq-broaden' : loaded.path,
   };
 }
 

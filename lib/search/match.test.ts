@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import {
+  applyLocationFilter,
   compareIdentityCompanies,
   matchCompanyIdentity,
   uniqueExactIdentity,
@@ -155,4 +156,69 @@ test('HQ hint is not a service-territory claim', () => {
   const match = matchCompanyIdentity(c, 'TWO MEN AND A TRUCK', { locationHint: 'Austin, TX' });
   assert.ok(match);
   assert.notEqual(match?.explanation.toLowerCase().includes('serves'), true);
+});
+
+// TH-DISCOVERY-PARITY-001A DANGEROUS finding: "moving companies Denver" returned real
+// Denver movers blended with a company literally NAMED "Denver Moving" but recorded
+// headquartered in Plano, TX -- with no distinguishing label. applyLocationFilter is
+// the extracted, directly-testable rule that must now reject this for a category query.
+test('DANGEROUS regression: a company NAMED after the place but headquartered elsewhere is excluded for a category query', () => {
+  const denverMoving = company({ id: 'dm', slug: 'denver-moving', name: 'Denver Moving', headquarters: 'Plano, TX' });
+  // "moving Denver" reproduces a real classifySearchQuery split that scores a
+  // NAME-TEXT match against this fixture (tier 8, not an exact identifier/name
+  // match) -- the exact scenario the DANGEROUS finding described.
+  const match = matchCompanyIdentity(denverMoving, 'moving Denver', { locationHint: 'Denver, CO' });
+  assert.ok(match, 'precondition: the company must actually name-match, or this test proves nothing');
+  assert.ok(match!.tier > 5, 'precondition: this must be a name-text match, not an exact identifier/name match');
+  const filtered = applyLocationFilter(denverMoving, match!, { city: 'Denver', stateCode: 'CO' }, true);
+  assert.equal(filtered, null, 'a Plano, TX company must not survive a Denver, CO category search');
+});
+
+test('a genuine local company with recorded HQ in the requested city survives and is labeled as a real match', () => {
+  const realDenverMover = company({ id: 'rd', slug: 'real-denver-movers', name: 'Denver Movers Inc', headquarters: 'Denver, CO' });
+  const match = matchCompanyIdentity(realDenverMover, 'moving Denver', { locationHint: 'Denver, CO' });
+  assert.ok(match);
+  const filtered = applyLocationFilter(realDenverMover, match!, { city: 'Denver', stateCode: 'CO' }, true);
+  assert.ok(filtered);
+  assert.match(filtered!.explanation, /headquarters identity hint/);
+});
+
+test('a genuine brand-name identity search (categoryOnly=false) keeps the previous lenient cross-city behavior', () => {
+  const brand = company({ id: 'b', slug: 'two-men-plano', name: 'Two Men and a Truck', headquarters: 'Plano, TX' });
+  const match = matchCompanyIdentity(brand, 'Two Men and a Truck', { locationHint: 'Denver, CO' });
+  assert.ok(match);
+  const filtered = applyLocationFilter(brand, match!, { city: 'Denver', stateCode: 'CO' }, false);
+  assert.ok(filtered, 'naming a specific brand should still find it even if HQ is elsewhere');
+});
+
+// TH-DISCOVERY-PARITY-001A-REVIEW: Vercel finding on PR #152 -- applyLocationFilter's
+// city-inclusion branch ignored the requested STATE, so a same-named city in a
+// DIFFERENT state (Portland, ME vs. Portland, OR) could survive as an authoritative
+// "headquarters identity hint" local match. A local match now requires BOTH city AND
+// state agreement.
+test('DANGEROUS-class regression: same-named city in the WRONG STATE is excluded from the local cohort for a category query', () => {
+  const portlandMaine = company({ id: 'pm', slug: 'portland-movers-me', name: 'Portland Movers', headquarters: 'Portland, ME' });
+  const match = matchCompanyIdentity(portlandMaine, 'movers Portland', { locationHint: 'Portland, OR' });
+  assert.ok(match, 'precondition: the company must actually name-match');
+  assert.ok(match!.tier > 5, 'precondition: this must be a name-text match, not an exact identifier/name match');
+  const filtered = applyLocationFilter(portlandMaine, match!, { city: 'Portland', stateCode: 'OR' }, true);
+  assert.equal(filtered, null, 'a Portland, ME company must not survive a Portland, OR category search');
+});
+
+test('same-named city in the right state is correctly labeled as the local match', () => {
+  const portlandOregon = company({ id: 'po', slug: 'portland-movers-or', name: 'Portland Movers', headquarters: 'Portland, OR' });
+  const match = matchCompanyIdentity(portlandOregon, 'movers Portland', { locationHint: 'Portland, OR' });
+  assert.ok(match);
+  const filtered = applyLocationFilter(portlandOregon, match!, { city: 'Portland', stateCode: 'OR' }, true);
+  assert.ok(filtered);
+  assert.match(filtered!.explanation, /headquarters identity hint/);
+});
+
+test('same-named city, wrong state, genuine brand-name search (categoryOnly=false): still findable, but never mislabeled as a local match', () => {
+  const brandInMaine = company({ id: 'bm', slug: 'brand-portland-me', name: 'Acme Movers Co', headquarters: 'Portland, ME' });
+  const match = matchCompanyIdentity(brandInMaine, 'Acme Movers Co', { locationHint: 'Portland, OR' });
+  assert.ok(match);
+  const filtered = applyLocationFilter(brandInMaine, match!, { city: 'Portland', stateCode: 'OR' }, false);
+  assert.ok(filtered, 'a genuine brand-name search should still surface the company even if HQ is in a same-named city elsewhere');
+  assert.doesNotMatch(filtered!.explanation, /headquarters identity hint/, 'must never be labeled as if it were the confirmed local match');
 });

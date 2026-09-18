@@ -25,7 +25,9 @@ export type SearchMatchType =
   | 'similar_name'
   | 'substring'
   | 'headquarters_hint'
-  | 'local_research';
+  | 'local_research'
+  | 'recorded_hq_city'
+  | 'recorded_hq_state_broader';
 
 export type SearchMatchTier = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
@@ -44,6 +46,18 @@ export type ClassifiedSearchQuery = {
     stateCode: string | null;
     label: string;
   } | null;
+  /**
+   * TH-DISCOVERY-PARITY-001A: true when companyQuery is PURELY generic
+   * mover-category vocabulary ("movers", "moving companies", "long distance
+   * mover", "relocation company", ...) with no distinguishing brand-like
+   * token left over -- a DISCOVERY request ("find movers near X"), not a
+   * search for one specific company that happens to have a category word in
+   * its name. Used to require genuine recorded-headquarters geography
+   * agreement instead of letting incidental company-NAME text collisions
+   * with the place name (e.g. a company literally named "Denver Moving"
+   * headquartered in Plano, TX) blend into a place-scoped result set.
+   */
+  categoryOnly: boolean;
 };
 
 export type SearchCompanyHit = {

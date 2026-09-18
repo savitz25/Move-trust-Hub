@@ -131,6 +131,10 @@ export function explainMatch(type: SearchMatchType): string {
       return 'Headquarters identity hint';
     case 'local_research':
       return 'Local research match';
+    case 'recorded_hq_city':
+      return 'Recorded headquarters in this city';
+    case 'recorded_hq_state_broader':
+      return 'Broader match: recorded headquarters elsewhere in this state';
     default:
       return 'Identity match';
   }
@@ -288,6 +292,78 @@ export function compareIdentityCompanies(
   const usdotCmp = digitsOnly(a.usdotNumber ?? '').localeCompare(digitsOnly(b.usdotNumber ?? ''));
   if (usdotCmp !== 0) return usdotCmp;
   return String(a.id).localeCompare(String(b.id));
+}
+
+/**
+ * TH-DISCOVERY-PARITY-001A (DANGEROUS finding): applies the identity-name match's
+ * result against a requested place, deciding whether a text-based match should
+ * survive, be relabeled as a genuine local hit, or be dropped.
+ *
+ * The bug this fixes: "moving companies Denver" returned real Denver movers blended
+ * with an unrelated company literally NAMED "Denver Moving" but headquartered in
+ * Plano, TX -- the old logic kept ANY company matched on name text alone (tier > 5,
+ * i.e. not an exact identifier/name match) even when its recorded headquarters
+ * flatly disagreed with the requested place, with no distinguishing label at all.
+ *
+ * For a plain provider-CATEGORY query (categoryOnly), incidental company-name token
+ * collision with the place name must never outrank genuine geography -- such a
+ * company is dropped here. A genuine brand-name identity search (categoryOnly =
+ * false, e.g. "Two Men and a Truck Austin") keeps the previous lenient behavior,
+ * since the user is naming a specific company, not asking to browse a place-scoped
+ * category.
+ */
+export function applyLocationFilter(
+  company: Company,
+  match: IdentityMatch,
+  locationHint: { city: string | null; stateCode: string | null } | null,
+  categoryOnly: boolean
+): IdentityMatch | null {
+  if (!locationHint?.city && !locationHint?.stateCode) return match;
+  // An EXACT identity match (tier <= 5 -- exact USDOT/MC/display-name/legal-name/
+  // alias) is unambiguous: the user found the one real company they meant, and it
+  // must survive regardless of geography. Only tier > 5 (approximate NAME-TEXT)
+  // matches are geography-gated below.
+  if (match.tier <= 5) return match;
+  const hq = normalizeSearchText(company.headquarters ?? '');
+  const city = normalizeSearchText(locationHint.city ?? '');
+  const st = normalizeSearchText(locationHint.stateCode ?? '');
+  // TH-DISCOVERY-PARITY-001A-REVIEW: a STATE-only location hint (city text unknown --
+  // the exact city was missing from the gazetteer, e.g. "movers in Aurora Colorado")
+  // must still enforce real STATE agreement, not fall through unfiltered. This is
+  // the Results-First broadening case: real in-state movers survive, unlabeled as a
+  // confirmed local match (the city itself was never confirmed); a company
+  // headquartered in a different state is excluded for a category query exactly
+  // like the city+state mismatch case below.
+  if (!city && st) {
+    if (hq.endsWith(st)) return match;
+    return categoryOnly ? null : match;
+  }
+  // TH-DISCOVERY-PARITY-001A-REVIEW: this used to label a company as a confirmed
+  // local "headquarters identity hint" match on CITY text alone -- a company
+  // headquartered in a same-named city in a DIFFERENT state (e.g. "Portland, ME"
+  // surviving a "Portland, Oregon" query) would pass, since `hq.includes(city)`
+  // says nothing about which state that city is in. A local/headquarters match now
+  // requires BOTH city AND state agreement (when a state was actually resolved);
+  // city-only agreement with a state MISMATCH is excluded entirely, never labeled
+  // as if it were the confirmed local result.
+  const cityMatches = Boolean(city) && hq.includes(city);
+  const stateMatches = !st || hq.endsWith(st);
+  if (cityMatches && stateMatches) {
+    return { ...match, explanation: `${match.explanation}; headquarters identity hint` };
+  }
+  if (cityMatches && !stateMatches) {
+    // Same city name, wrong state: never a local/exact match. Only a genuine
+    // brand-name identity search may still surface it (unlabeled as local), the
+    // same as any other cross-geography brand hit; a category query excludes it.
+    return categoryOnly ? null : match;
+  }
+  if (st && hq.endsWith(st)) {
+    return match;
+  }
+  if (!categoryOnly && city && !hq.includes(city)) {
+    return match;
+  }
+  return null;
 }
 
 export function uniqueExactIdentity(matches: Array<{ company: Company; match: IdentityMatch }>): Company | null {
