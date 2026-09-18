@@ -168,3 +168,32 @@ test('a genuine brand-name search is NOT flagged categoryOnly even with a place 
   const q = classifySearchQuery('Two Men and a Truck Austin TX');
   assert.equal(q.categoryOnly, false);
 });
+
+// TH-DISCOVERY-FINAL-REPAIR-A: a bare auto-transport-category phrase with NO
+// geography at all must be recognized as a browsable real provider class, not
+// treated as a specific (unmatchable) company name. Structural synonym
+// coverage, not exact-string matching.
+for (const query of [
+  'auto transport carrier',
+  'car transport carrier',
+  'vehicle shipping company',
+  'auto shipping company',
+  'car carrier',
+]) {
+  test(`bare auto-transport category "${query}" is recognized as a browsable category, not a company-name search`, () => {
+    const q = classifySearchQuery(query);
+    assert.equal(q.categoryOnly, true, `expected categoryOnly=true for "${query}"`);
+    assert.equal(q.categoryClass, 'Auto Transport', `expected categoryClass="Auto Transport" for "${query}"`);
+    assert.equal(q.locationHint, null);
+  });
+}
+
+test('a bare generic mover category with no geography is NOT tagged with an auto-transport categoryClass', () => {
+  const q = classifySearchQuery('moving companies');
+  assert.equal(q.categoryClass, null);
+});
+
+test('a genuine brand name containing "car" or "auto" tokens is not misclassified as the auto-transport category', () => {
+  const q = classifySearchQuery('Two Men and a Truck Austin TX');
+  assert.equal(q.categoryClass, null);
+});
