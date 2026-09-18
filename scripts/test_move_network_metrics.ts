@@ -76,7 +76,7 @@ function baseInput(over: Partial<MoveNetworkMetricsInput> = {}): MoveNetworkMetr
     paHhgDistinctUtilityCodes: 267,
     ncHhgListRows: 362,
     ncHhgDistinctCNumbers: 362,
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania', '/north-carolina'],
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania', '/north-carolina', '/ohio'],
     floridaResearchCountyLandings: 4,
     localMoverStateLandings: 51,
     ...over,
@@ -144,6 +144,18 @@ describe('move-network-metrics-v1 grain safety', () => {
     assert.equal(metricByKey(m, 'ca_cal_t_household_mover_universe').valueState, 'NOT_ACQUIRED');
     assert.match(metricByKey(m, 'nj_pmw_authority_roster').trace.whyUnknown ?? '', /never render as zero/i);
     assert.match(metricByKey(m, 'ca_cal_t_household_mover_universe').trace.whyUnknown ?? '', /search-only/i);
+  });
+
+  it('does not convert the Ohio PUCO household-goods roster to zero', () => {
+    const m = computeMoveNetworkMetrics(baseInput());
+    assert.equal(metricByKey(m, 'oh_puco_hhg_certificate_universe').value, null);
+    assert.equal(metricByKey(m, 'oh_puco_hhg_certificate_universe').valueState, 'NOT_ACQUIRED');
+    assert.equal(m.ohio.currentCertificateUniverse, null);
+    assert.match(metricByKey(m, 'oh_puco_hhg_certificate_universe').trace.whyUnknown ?? '', /search-only is not zero/i);
+    assert.throws(
+      () => computeMoveNetworkMetrics(baseInput({ publishedStateIntelligencePaths: baseInput().publishedStateIntelligencePaths.filter((p) => p !== '/ohio') })),
+      /Ohio state intelligence path missing/,
+    );
   });
 
   it('does not treat CA citation rows as CAL-T mover count or USDOT', () => {

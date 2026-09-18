@@ -183,6 +183,11 @@ export type MoveNetworkMetricsV1 = {
     distinctCNumbers: number;
     sourceAsOf: '2026-09-08';
   };
+  ohio: {
+    rosterCoverage: 'OPEN_SEARCH_ONLY';
+    currentCertificateUniverse: null;
+    sourceAsOf: null;
+  };
   network: {
     publishedStateIntelligencePages: number;
     publishedStateIntelligencePaths: string[];

@@ -129,6 +129,7 @@ export function assertGrainSafety(input: MoveNetworkMetricsInput): void {
   if (!input.publishedStateIntelligencePaths.includes('/oregon')) throw new Error('Oregon state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/pennsylvania')) throw new Error('Pennsylvania state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/north-carolina')) throw new Error('North Carolina state intelligence path missing');
+  if (!input.publishedStateIntelligencePaths.includes('/ohio')) throw new Error('Ohio state intelligence path missing');
   if (input.paHhgOperatorListRows <= 0) throw new Error('Pennsylvania HHG operator list row count missing');
   if (input.ncHhgDistinctCNumbers <= 0) throw new Error('North Carolina HHG C-number count missing');
   if (input.ncHhgListRows !== input.ncHhgDistinctCNumbers) {
@@ -703,6 +704,35 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       ),
     }),
     metric({
+      key: 'oh_puco_hhg_certificate_universe',
+      label: 'Ohio PUCO household-goods certificate universe',
+      value: null,
+      valueState: 'NOT_ACQUIRED',
+      grain: 'puco_household_goods_certificate_roster',
+      denominator: 'Complete current PUCO household-goods certificate roster — OPEN_SEARCH_ONLY',
+      description:
+        'The complete current Ohio PUCO household-goods certificate denominator is unknown, not zero. A PUCO certificate is not a USDOT or MC number. Carrier-specific tariffs are not a statewide Maximum Rate Tariff.',
+      coverage: 'Ohio',
+      contributingSourceSystems: ['puco'],
+      sourceAsOf: null,
+      generatedAt,
+      publicationStatus: 'PUBLIC_UNKNOWN',
+      presentation: {
+        family: 'STATE_AUTHORITY',
+        entityClass: 'PUCO household-goods certificate roster',
+        destination: '/ohio',
+        acceptedArtifact: 'move-oh-state-intel-v1',
+      },
+      trace: commonTrace(
+        'No statewide numeric PUCO household-goods certificate denominator is published.',
+        'Not Ohio-HQ federal profiles, not USDOT identities, not tariff documents, and not a count of complaints or dockets.',
+        ['puco'],
+        'Ohio intrastate household-goods certificates',
+        'Search-only; retrieval is not certificate effective date',
+        { whyUnknown: 'The official current household-goods roster is open-search only and was not bulk acquired. Search-only is not zero.' },
+      ),
+    }),
+    metric({
       key: 'ny_dot_2026_hhg_bulletin_observations',
       label: 'NYSDOT 2026 household-goods bulletin application observations',
       value: input.nyHhgBulletinObservations,
@@ -879,6 +909,11 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       hhgListRows: input.ncHhgListRows,
       distinctCNumbers: input.ncHhgDistinctCNumbers,
       sourceAsOf: '2026-09-08',
+    },
+    ohio: {
+      rosterCoverage: 'OPEN_SEARCH_ONLY',
+      currentCertificateUniverse: null,
+      sourceAsOf: null,
     },
     network: {
       publishedStateIntelligencePages: input.publishedStateIntelligencePaths.length,

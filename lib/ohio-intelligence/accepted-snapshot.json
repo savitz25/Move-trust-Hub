@@ -1,0 +1,284 @@
+{
+  "version": "move-oh-state-intel-v1",
+  "ticket": "OH-MOVE-001",
+  "as_of": null,
+  "generated_at": "2026-09-18T15:03:26Z",
+  "snapshotAsOf": "2026-09-18",
+  "retrievedAt": "2026-09-18T14:30:00Z",
+  "retrievedAtPrecision": "date",
+  "no_trust_score": true,
+  "no_paid_ranking": true,
+  "no_ohio_local_routes": true,
+  "no_columbus_page": true,
+  "no_cleveland_page": true,
+  "no_cincinnati_page": true,
+  "no_toledo_page": true,
+  "no_dayton_page": true,
+  "no_akron_page": true,
+  "publication": {
+    "canonical": "https://www.movetrusthub.com/ohio",
+    "indexable": true,
+    "robots": "index,follow",
+    "route": "/ohio",
+    "rankings": false,
+    "trustScore": false,
+    "h1": "Ohio Moving & Household Goods Intelligence"
+  },
+  "regulator": {
+    "agency": "Public Utilities Commission of Ohio",
+    "short": "PUCO",
+    "credential_term": "household-goods certificate / PUCO No.",
+    "statute_hhg": "ORC 4921.30–4921.38",
+    "rules": "OAC Chapter 4901:2-19",
+    "advertisement_format": "PUCO No. ______",
+    "certificate_suffix_observed": "-HG",
+    "home_url": "https://puco.ohio.gov/",
+    "dis_url": "https://dis.puc.state.oh.us/",
+    "complaint_phone": "1-800-686-7826",
+    "complaint_url": "https://puco.ohio.gov/",
+    "tariff_dam_folder": "https://dam.assets.ohio.gov/image/upload/puco.ohio.gov/empliibrary/files/docketing/tariffs/Household%20Goods%20Carriers/",
+    "motor_carrier_registration_note": "Login system; carriers search by USDOT. Not a public complete HHG roster.",
+    "intrastate_only": true
+  },
+  "clocks": {
+    "generatedAt": "2026-09-18T15:03:26Z",
+    "snapshotAsOf": "2026-09-18",
+    "retrievedAt": "2026-09-18T14:30:00Z",
+    "do_not_use_retrieval_as_certificate_effective_date": true,
+    "hhg_roster": {
+      "sourceAsOf": null,
+      "retrievedAt": "2026-09-18T14:30:00Z",
+      "note": "Search-only currentness. Do not fake sourceAsOf from retrieval time."
+    },
+    "tariff": {
+      "sourceAsOf": null,
+      "retrievedAt": "2026-09-18T14:30:00Z",
+      "issue_date": null,
+      "effective_date": null,
+      "replacement_date": null
+    },
+    "docket": {
+      "sourceAsOf": null,
+      "retrievedAt": "2026-09-18T14:30:00Z"
+    }
+  },
+  "current_hhg_roster": {
+    "coverage": "OPEN_SEARCH_ONLY",
+    "OH_PUCO_HHG_ROSTER_STATUS": "OPEN_SEARCH_ONLY",
+    "OH_PUCO_HHG_ROWS": null,
+    "OH_PUCO_DISTINCT_CERTIFICATE_NUMBERS": null,
+    "OH_PUCO_ACTIVE_ROWS": null,
+    "OH_PUCO_INACTIVE_ROWS": null,
+    "OH_PUCO_SUSPENDED_ROWS": null,
+    "OH_PUCO_CANCELLED_ROWS": null,
+    "OH_PUCO_STATUS_UNKNOWN_ROWS": null,
+    "OH_PUCO_DISTINCT_SOURCE_NAMES": null,
+    "OH_PUCO_DBA_ROWS": null,
+    "reason": "No public complete current household-goods certificate roster, CSV, Excel, or paging API was found. Motor Carrier Registration is a login system searched by USDOT. Do not brute-force certificate numbers. Search-only is not zero.",
+    "search_only_is_not_zero": true,
+    "oam_agent_tariff_is_not_complete_roster": true,
+    "household_goods_carrier_ne_generic_trucking": true,
+    "household_goods_carrier_ne_freight": true,
+    "household_goods_carrier_ne_interstate_automatically": true,
+    "household_goods_carrier_ne_broker": true
+  },
+  "identity": {
+    "display_format": "PUCO No. ______",
+    "source_native_suffix_observed": "-HG",
+    "examples_observed": [
+      "113554-HG",
+      "1288-HG",
+      "129005 H",
+      "512348"
+    ],
+    "do_not_strip_hg_blindly": true,
+    "namespace": null,
+    "namespace_note": "Do not mint OH-PUCO-HHG:{n} until a household-goods-only bulk roster is acquired. Observed displays include numeric IDs, -HG suffixes, and spaced H markers.",
+    "puco_certificate_ne_usdot": true,
+    "puco_certificate_ne_mc": true,
+    "puco_intrastate_ne_fmcsa_interstate": true,
+    "leading_zeroes_identity_relevant_until_roster_acquired": true
+  },
+  "status": {
+    "raw_and_normalized_separate": true,
+    "current_roster_status_ne_tariff_existence": true,
+    "historic_tariff_ne_current_authority": true,
+    "observed_in_tariff_documents_is_not_current_status": true
+  },
+  "company_dba": {
+    "legal_carrier_ne_dba": true,
+    "dba_ne_second_carrier_unless_source_says": true,
+    "address_ne_service_territory": true,
+    "ohio_address_ne_federal_hq": true,
+    "record_address_ne_verified_operating_location": true
+  },
+  "tariff": {
+    "model": "CARRIER_SPECIFIC",
+    "OH_PUCO_TARIFF_COVERAGE": "PUBLIC_DAM_FOLDER_KNOWN / COMPLETE_INDEX_NOT_ACQUIRED",
+    "OH_PUCO_TARIFF_DOCUMENT_ROWS": null,
+    "OH_PUCO_DISTINCT_TARIFF_NUMBERS": null,
+    "OH_PUCO_DISTINCT_CERTIFICATES_WITH_TARIFF": null,
+    "OH_PUCO_CURRENT_TARIFF_RELATIONSHIPS": null,
+    "OH_PUCO_HISTORIC_TARIFF_ROWS": null,
+    "not_nc_statewide_maximum_rate_tariff": true,
+    "each_carrier_files_own_tariff": true,
+    "carrier_tariff_ne_statewide_tariff": true,
+    "one_carrier_tariff_ne_another": true,
+    "tariff_rate_ne_quote": true,
+    "tariff_existence_ne_current_authority": true,
+    "historic_tariff_ne_current_rate": true,
+    "oam_agent_tariff_is_participating_carriers_not_census": true,
+    "interstate_hhg_carriers_not_required_to_file_ohio_tariff": true,
+    "rule": "OAC 4901:2-19-03"
+  },
+  "estimates": {
+    "types": [
+      "nonbinding",
+      "binding",
+      "guaranteed-not-to-exceed"
+    ],
+    "rule": "OAC 4901:2-19-08",
+    "statewide_context_not_carrier_compliance_evidence": true,
+    "do_not_label_carrier_offers_binding_without_carrier_source": true
+  },
+  "bill_of_lading": {
+    "rule": "OAC 4901:2-19-09",
+    "must_include_certificate_number": true,
+    "do_not_label_carrier_compliant_without_evidence": true
+  },
+  "liability": {
+    "rule": "OAC 4901:2-19-06",
+    "default": "replacement value unless consumer elects a disclosed limitation",
+    "minimal_option": "sixty cents per pound per article",
+    "full_replacement_minimum": "declared value or six dollars per pound times shipment weight, whichever is greater",
+    "required_framework_ne_active_insurance_proof": true,
+    "liability_rule_ne_insurance_policy": true,
+    "deductible_election_ne_quality": true
+  },
+  "claims": {
+    "minimum_consumer_claim_window_days": 60,
+    "carrier_ack_days": 15,
+    "carrier_respond_days": 30,
+    "consumer_damage_claim_ne_puco_complaint": true,
+    "damage_claim_ne_enforcement": true,
+    "complaint_ne_finding": true,
+    "source": "OAC 4901:2-19-08(D)(16) consumer-rights statement"
+  },
+  "insurance": {
+    "OH_PUCO_CURRENT_INSURANCE_ROWS": null,
+    "OH_PUCO_INSURANCE_COVERAGE": "REQUIREMENT_OR_VERIFICATION_PATH_KNOWN / CURRENT_BULK_NOT_ACQUIRED",
+    "form_e": "liability proof filed into Motor Carrier Registration (not public bulk)",
+    "form_h": "household-goods cargo proof (login/insurance-company path)",
+    "requirement_ne_all_carriers_insured": true
+  },
+  "dockets": {
+    "OH_PUCO_DOCKET_COVERAGE": "OPEN_SEARCH_ONLY",
+    "OH_PUCO_DOCKET_ROWS": null,
+    "OH_PUCO_DISTINCT_DOCKET_NUMBERS": null,
+    "OH_PUCO_ORDER_ROWS": null,
+    "OH_PUCO_APPLICATION_ROWS": null,
+    "OH_PUCO_CERTIFICATE_APPLICATION_ROWS": null,
+    "OH_PUCO_TARIFF_FILING_ROWS": null,
+    "OH_PUCO_ENFORCEMENT_ROWS": null,
+    "system": "DIS https://dis.puc.state.oh.us/",
+    "tr_transportation_cases_observed_label": 19099,
+    "tr_label_is_not_hhg_census": true,
+    "purpose_filtered_listing_waf_blocked": true,
+    "docket_ne_complaint": true,
+    "application_ne_violation": true,
+    "tariff_filing_ne_enforcement": true,
+    "certificate_transfer_ne_discipline": true,
+    "order_ne_automatically_adverse": true,
+    "complaint_filing_ne_final_finding": true,
+    "no_uncontrolled_document_crawl": true
+  },
+  "complaints": {
+    "OH_PUCO_HHG_COMPLAINT_ROWS": null,
+    "OH_PUCO_HHG_COMPLAINT_COVERAGE": "INTAKE_AVAILABLE / BULK_NOT_PUBLIC",
+    "intake": "PUCO 1-800-686-7826; puco.ohio.gov",
+    "complaint_intake_ne_census": true,
+    "complaint_ne_finding": true
+  },
+  "enforcement": {
+    "OH_PUCO_HHG_ENFORCEMENT_COVERAGE": "OPEN_SEARCH_ONLY",
+    "OH_PUCO_HHG_ENFORCEMENT_ROWS": null,
+    "search_only_is_not_zero": true
+  },
+  "unauthorized": {
+    "OH_UNAUTHORIZED_MOVER_ROWS": null,
+    "no_news_blacklist": true,
+    "no_bbb_blacklist": true
+  },
+  "federal": {
+    "name_only": "UNSAFE",
+    "EXACT_OH_PUCO_TO_USDOT_CROSSWALKS": 0,
+    "EXACT_OH_PUCO_TO_MC_CROSSWALKS": 0,
+    "EXACT_PUCO_TO_USDOT_CROSSWALKS": 0,
+    "EXACT_PUCO_TO_MC_CROSSWALKS": 0,
+    "puco_certificate_ne_usdot": true,
+    "puco_certificate_ne_mc": true,
+    "puco_ne_fmcsa": true,
+    "ohio_address_ne_federal_hq": true,
+    "reuse_existing_fmcsa_architecture": true,
+    "overlay_note": "Existing MoveTrustHub FMCSA spine is supporting context. No official PUCO bulk roster published USDOT/MC. Observed USDOT on an individual tariff PDF is not a roster-wide exact bridge. No name-only bridges."
+  },
+  "identity_ledger": {
+    "EXACT_PUCO_CERTIFICATE_IDENTITIES": 0,
+    "EXACT_PUCO_TO_USDOT_CROSSWALKS": 0,
+    "EXACT_PUCO_TO_MC_CROSSWALKS": 0,
+    "EXACT_PROFILE_ATTACHMENTS": 0,
+    "REVIEW_REQUIRED": 0,
+    "note": "Zero exact certificate identities because no complete current HHG roster was acquired. Zero is not a census of zero movers."
+  },
+  "adverse_publication": {
+    "ADVERSE_SOURCES_FOUND": 3,
+    "ADVERSE_SOURCES_ACQUIRED": 0,
+    "ADVERSE_ROWS_ACQUIRED": null,
+    "UNIQUE_REGULATORY_MATTERS": null,
+    "EXACT_PROFILE_ATTACHMENTS": 0,
+    "REVIEW_REQUIRED": 0,
+    "UNRESOLVED": null,
+    "INTERNAL_ONLY": 0,
+    "PUBLICATION_PENDING": 0,
+    "PUBLIC_READY_PROFILES": 0,
+    "PUBLICLY_RENDERED_PROFILES": 0,
+    "BUSINESS_RESPONSE_READY": false,
+    "SEARCH_SUPPORTED": true,
+    "REMAINING_ADVERSE_GAPS": [
+      "No bounded public HHG complaint census",
+      "No bounded HHG enforcement census",
+      "DIS transportation case list is not an HHG adverse universe"
+    ],
+    "do_not_add_dockets_complaints_orders_tariffs": true
+  },
+  "withheld_reason_counts": {
+    "OPEN_SEARCH_ONLY": 4,
+    "UNSAFE_NAME_MATCH": 0
+  },
+  "expansion_ledger": {
+    "NET_NEW_STATE_RESEARCH_IDENTITIES": 0,
+    "NET_NEW_CANONICAL_ORGANIZATIONS": 0,
+    "NET_NEW_PUBLIC_MOVE_PROFILES": 0,
+    "EXISTING_ORGANIZATIONS_ENRICHED": 0,
+    "GRAPH_WRITES": 0,
+    "EXACT_PROFILE_ATTACHMENTS": 0,
+    "CLAIM_ELIGIBILITY_BROADENED": false
+  },
+  "claimEligibilityBroadened": false,
+  "local_work_needed_now": "NO",
+  "semantic_guardrails": [
+    "PUCO certificate != USDOT",
+    "PUCO certificate != MC",
+    "PUCO intrastate HHG != FMCSA interstate HHG",
+    "carrier tariff != statewide Maximum Rate Tariff",
+    "tariff != quote",
+    "tariff existence != current authority",
+    "search-only != zero",
+    "docket != complaint",
+    "application != violation",
+    "insurance requirement != current proof",
+    "NO TRUST SCORE",
+    "NO COLUMBUS CLEVELAND CINCINNATI TOLEDO DAYTON AKRON INTEL ROUTES"
+  ],
+  "fingerprint": "24cfc71aacbec3837b7c06c5b291d8cde1548673712e91888c8378b99f7d7a44"
+}

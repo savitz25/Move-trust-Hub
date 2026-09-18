@@ -23,3 +23,20 @@ test('PA-REL-001 middleware and footer publish lowercase /pennsylvania', () => {
   assert.match(footer, /href: '\/pennsylvania'/);
   assert.doesNotMatch(footer, /href: '\/Pennsylvania'/);
 });
+
+test('OH-MOVE-001 mixed-case statewide paths normalize', () => {
+  assert.equal(normalizedPublishedStatePath('/Ohio'), '/ohio');
+  assert.equal(normalizedPublishedStatePath('/OHIO'), '/ohio');
+  assert.equal(normalizedPublishedStatePath('/oHiO'), '/ohio');
+  assert.equal(normalizedPublishedStatePath('/ohio'), null);
+  assert.equal(normalizedPublishedStatePath('/Ohio/columbus'), null);
+});
+
+test('OH-MOVE-001 middleware and footer publish lowercase /ohio', () => {
+  const mw = read('middleware.ts');
+  assert.match(mw, /normalizedPublishedStatePath/);
+  assert.match(mw, /308/);
+  const footer = read('lib/hub/config.ts');
+  assert.match(footer, /href: '\/ohio'/);
+  assert.doesNotMatch(footer, /href: '\/Ohio'/);
+});

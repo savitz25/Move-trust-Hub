@@ -20,6 +20,7 @@ const STATE_NAMES: Record<string, string> = {
   oregon: 'OR',
   pennsylvania: 'PA',
   'north carolina': 'NC',
+  ohio: 'OH',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -35,6 +36,7 @@ function detectState(q: string): string | undefined {
   if (/\bnj\b/i.test(q)) return 'NJ';
   if (/\bpennsylvania\b/i.test(q)) return 'PA';
   if (/\bnorth carolina\b/i.test(q) || /\bin nc\b/i.test(q)) return 'NC';
+  if (/\bohio\b/i.test(q) || /\bin oh\b/i.test(q) || /\bpuco\b/i.test(q)) return 'OH';
   for (const [name, code] of Object.entries(STATE_NAMES)) {
     if (name.length === 2) {
       if (new RegExp(`\\bin ${name}\\b`, 'i').test(q)) return code;
@@ -104,6 +106,53 @@ function mentionsNorthCarolina(q: string): boolean {
 
 function mentionsNcCity(q: string): boolean {
   return /\bcharlotte\b|\braleigh\b|\bdurham\b|\bgreensboro\b|\basheville\b|\bwilmington\b|\bfayetteville\b/i.test(q);
+}
+
+function mentionsOhio(q: string): boolean {
+  return /\bohio\b|\bpuco\b|\bin oh\b/i.test(q);
+}
+
+function mentionsOhioCity(q: string): boolean {
+  return /\bcolumbus\b|\bcleveland\b|\bcincinnati\b|\btoledo\b|\bdayton\b|\bakron\b/i.test(q);
+}
+
+function parseOhPucoIdentity(q: string): string | null {
+  if (/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) return null;
+  const labeled =
+    q.match(/\bpuco\s*(?:no\.?|number|#)?\s*([0-9]{3,7}(?:-HG)?)\b/i) ||
+    q.match(/\b([0-9]{3,7}-HG)\b/i);
+  if (!labeled?.[1]) return null;
+  if (!(mentionsOhio(q) || /\bpuco\b/i.test(q) || /-HG\b/i.test(labeled[1]))) return null;
+  return labeled[1].toUpperCase().replace(/-HG$/i, '-HG');
+}
+
+function isOhRateAsk(q: string): boolean {
+  return (
+    (/\bmoving rates?\b|\btariff\b|\bbinding estimate\b|\bhow much can a mover charge\b/i.test(q)) &&
+    (mentionsOhio(q) || /\bpuco\b/i.test(q))
+  );
+}
+
+function isOhInsuranceAsk(q: string): boolean {
+  return /\binsured\b|\binsurance\b/i.test(q) && (mentionsOhio(q) || mentionsOhioCity(q));
+}
+
+function isOhComplaintAsk(q: string): boolean {
+  return /\bcomplaint|\benforcement\b/i.test(q) && (mentionsOhio(q) || mentionsOhioCity(q) || /\bpuco\b/i.test(q));
+}
+
+function isOhIntrastateAuthorityAsk(q: string): boolean {
+  if (/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) return false;
+  if (!(mentionsOhio(q) || mentionsOhioCity(q))) return false;
+  if (/\bheadquarter/i.test(q) && /\binterstate\b/i.test(q)) return false;
+  if (/\binterstate mover\b/i.test(q) && !/\blicen|\bintrastate|\bhousehold[- ]?goods|\bpuco\b|\bcertificate\b/i.test(q)) {
+    return false;
+  }
+  return (
+    /\bintrastate\b|\bpuco\b|\bhousehold[- ]?goods\b|\blicensed movers?\b|\bcertified movers?\b/i.test(q) ||
+    /\bohio movers?\b|\bmovers in ohio\b|\bmoving companies\b/i.test(q) ||
+    (/\bmovers?\b/i.test(q) && (mentionsOhio(q) || mentionsOhioCity(q)))
+  );
 }
 
 function mentionsPhiladelphiaOrPittsburgh(q: string): boolean {
@@ -333,6 +382,16 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     return { raw: q, query, interpretation: lines };
   }
 
+  if (isRanking(q) && (mentionsOhio(q) || mentionsOhioCity(q))) {
+    const query = fail(
+      'MoveTrustHub does not rank movers and does not publish a Trust Score. Ohio household-goods research uses PUCO certificates on statewide /ohio, not a winner or cheapest ranking. Columbus and Cleveland are not city intelligence pages.',
+      ['Open Ohio household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Mode', 'fail_closed');
+    push('Coverage', 'No Ohio city intelligence page');
+    return { raw: q, query, interpretation: lines };
+  }
+
   if (isRanking(q) && mentionsPortland(q) && mentionsOregon(q)) {
     const query = fail(
       'MoveTrustHub does not rank movers and does not publish a Portland or Multnomah County mover route. Oregon household-goods authority is statewide ODOT CCD research.',
@@ -472,6 +531,55 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
       ['Open North Carolina household-goods research.', 'Show current interstate household-goods carriers headquartered in North Carolina.'],
     );
     push('Coverage', 'NCUC HHG carrier list — MONTHLY_LIST_SNAPSHOT');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  const ohIdentity = parseOhPucoIdentity(q);
+  if (ohIdentity) {
+    const query = fail(
+      `${ohIdentity} is a PUCO household-goods certificate display. Exact certificate outranks geography. A PUCO number is not a USDOT number and not an MC number. Current PUCO HHG roster coverage is OPEN_SEARCH_ONLY — search-only is not zero. Confirm on official PUCO search. Columbus and Cleveland are not city intelligence pages.`,
+      ['Open Ohio household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('PUCO certificate', ohIdentity);
+    push('Limitation', 'PUCO certificate is not FMCSA interstate authority');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isOhRateAsk(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) {
+    const query = fail(
+      'Ohio household-goods carriers each file their own tariff with PUCO. Ohio does not have one statewide Maximum Rate Tariff. A tariff is not a quote. Tariff existence is not current authority. Binding, nonbinding, and guaranteed-not-to-exceed estimates are statewide rules, not proof a named carrier offers a binding estimate.',
+      ['Open Ohio household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Coverage', 'PUCO carrier-specific tariffs — COMPLETE_INDEX_NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isOhInsuranceAsk(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) {
+    const query = fail(
+      'PUCO requires insurance filings (Form E liability / Form H household-goods cargo) into Motor Carrier Registration. Current carrier-specific bulk proof was not acquired. Requirement is not actual current coverage.',
+      ['Open Ohio household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Coverage', 'PUCO insurance — REQUIREMENT_OR_VERIFICATION_PATH_KNOWN / CURRENT_BULK_NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isOhComplaintAsk(q) && !/\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i.test(q)) {
+    const query = fail(
+      'PUCO provides consumer assistance at 1-800-686-7826. No public bulk household-goods complaint census was acquired. Complaint intake is not a complaint census. Missing bulk is not zero complaints. A docket is not a complaint and not an enforcement finding.',
+      ['Open Ohio household-goods research.', 'Show complaint observations for USDOT 3244649.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'PUCO HHG complaints — INTAKE_AVAILABLE / BULK_NOT_PUBLIC');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (isOhIntrastateAuthorityAsk(q)) {
+    const query = fail(
+      'Ohio intrastate household-goods movers are PUCO-certificated carriers. The current complete certificate roster is OPEN_SEARCH_ONLY — search-only is not zero. A PUCO certificate is not a USDOT or MC number. Columbus and Cleveland names are not city intelligence pages.',
+      ['Open Ohio household-goods research.', 'Show current interstate household-goods carriers headquartered in Ohio.'],
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'PUCO HHG certificate roster — OPEN_SEARCH_ONLY');
     return { raw: q, query, interpretation: lines };
   }
 

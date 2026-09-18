@@ -90,6 +90,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'NCUC household-goods certificates & interstate overlay',
       },
       {
+        label: 'Ohio research',
+        href: '/ohio',
+        description: 'PUCO household-goods certificates & interstate overlay',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',
