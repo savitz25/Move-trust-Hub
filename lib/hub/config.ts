@@ -106,6 +106,7 @@ export const HUBS: Record<HubId, HubConfig> = {
           { href: '/oregon', label: 'Oregon research' },
           { href: '/pennsylvania', label: 'Pennsylvania research' },
           { href: '/north-carolina', label: 'North Carolina research' },
+          { href: '/ohio', label: 'Ohio research' },
           { href: '/local-movers', label: 'Local Movers by State' },
           { href: '/auto-transport', label: 'Auto Transport' },
           { href: '/compare', label: 'Compare Movers' },

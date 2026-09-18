@@ -6,6 +6,7 @@ import ilSnapshot from '@/lib/illinois-intelligence/accepted-snapshot.json';
 import orSnapshot from '@/lib/oregon-intelligence/accepted-snapshot.json';
 import paSnapshot from '@/lib/pennsylvania-intelligence/accepted-snapshot.json';
 import ncSnapshot from '@/lib/north-carolina-intelligence/accepted-snapshot.json';
+import ohSnapshot from '@/lib/ohio-intelligence/accepted-snapshot.json';
 import txSnapshot from '@/lib/texas-intelligence/accepted-snapshot.json';
 import waSnapshot from '@/lib/washington-intelligence/accepted-snapshot.json';
 import njSnapshot from '@/data/reports/nj-move-002-public-snapshot.json';
@@ -69,6 +70,7 @@ const meta: Record<string, Pick<MoveHomepageMeasure, 'family' | 'entityClass' | 
   or_odot_authorized_hhg_list_rows: { family: 'STATE_AUTHORITY', entityClass: 'ODOT CCD authorized household-goods list row', destination: '/oregon', acceptedArtifact: 'move-or-state-intel-v1' },
   pa_puc_hhg_operator_list_rows: { family: 'STATE_AUTHORITY', entityClass: 'PA PUC active Household Goods Operators list row', destination: '/pennsylvania', acceptedArtifact: 'move-pa-state-intel-v1' },
   nc_ncuc_hhg_c_number_identities: { family: 'STATE_AUTHORITY', entityClass: 'NCUC household-goods C-number identity', destination: '/north-carolina', acceptedArtifact: 'move-nc-state-intel-v1' },
+  oh_puco_hhg_certificate_universe: { family: 'STATE_AUTHORITY', entityClass: 'PUCO household-goods certificate roster', destination: '/ohio', acceptedArtifact: 'move-oh-state-intel-v1' },
   published_state_intelligence_pages: { family: 'PUBLIC_SURFACES', entityClass: 'Published specialist state page', destination: '#state-intelligence', acceptedArtifact: 'canonical state publication model' },
 };
 
@@ -94,6 +96,7 @@ export const MOVE_HOMEPAGE_STATE_CARDS = [
   { state: 'Oregon', href: orSnapshot.publication.route, regulator: 'ODOT CCD', authority: 'Household-goods certificate of authority', roster: `${orSnapshot.current_hhg_roster.rows} authorized list rows / ${orSnapshot.current_hhg_roster.distinctAuthorityIds} distinct certificates`, evidence: 'Official authorized-movers list with local cartage vs other-than-local service text; FMCSA overlay kept separate', sourceClock: `List sourceUpdatedAt ${orSnapshot.clocks.hhg_roster.sourceUpdatedAt}; sourceAsOf not published` },
   { state: 'Pennsylvania', href: paSnapshot.publication.route, regulator: 'PA PUC', authority: 'Household Goods Carrier authority', roster: `${paSnapshot.current_hhg_roster.PA_PUC_HHG_CARRIER_ROWS} operator list rows / ${paSnapshot.current_hhg_roster.PA_PUC_HHG_DISTINCT_UTILITY_CODES} distinct Utility Codes`, evidence: 'Active HHG carriers, insurance filings, and bounded dockets; brokers and FMCSA kept separate', sourceClock: `Retrieved ${paSnapshot.retrievedAt}; sourceAsOf not published` },
   { state: 'North Carolina', href: ncSnapshot.publication.route, regulator: 'NCUC', authority: 'Certificate of Exemption (C-number)', roster: `${ncSnapshot.current_hhg_roster.NC_NCUC_DISTINCT_C_NUMBERS} distinct C-numbers on the September 8, 2026 snapshot (header announces ${ncSnapshot.current_hhg_roster.NC_NCUC_HHG_SOURCE_ANNOUNCED_TOTAL})`, evidence: 'Monthly HHG carrier list with C↔T crosswalks; tariff and insurance requirements kept separate from FMCSA', sourceClock: `Carrier-list revision ${ncSnapshot.clocks.hhg_roster.sourceAsOf}; retrieved ${ncSnapshot.retrievedAt}` },
+  { state: 'Ohio', href: ohSnapshot.publication.route, regulator: 'PUCO', authority: 'Household-goods certificate / PUCO No.', roster: 'Current roster OPEN_SEARCH_ONLY', evidence: 'Carrier-specific tariffs, consumer estimate and claim rules, and FMCSA overlay; search-only is not zero', sourceClock: `Retrieved ${ohSnapshot.retrievedAt}; sourceAsOf not invented for search-only roster` },
 ] as const;
 
 export const MOVE_CONSUMER_RULES = {

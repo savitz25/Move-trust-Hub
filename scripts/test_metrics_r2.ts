@@ -54,8 +54,19 @@ test("Illinois remains search-only with no bulk count and no completed specialis
   assert.equal(metric("ny_current_hhg_roster").value, null);
   assert.equal(m.illinois.sourceAsOf, null);
 });
+test("Ohio remains search-only with no bulk PUCO certificate count", () => {
+  const oh = m.stateCapabilities.find((r: any) => r.state === "OH");
+  assert.equal(oh.status, "SEARCH_ONLY");
+  assert.equal(oh.route, "/ohio");
+  assert.equal(oh.specialistComplete, false);
+  assert.equal(oh.capabilities[0].bulkCount, null);
+  assert.equal(metric("oh_puco_hhg_certificate_universe").value, null);
+  assert.equal(metric("oh_puco_hhg_certificate_universe").valueState, "NOT_ACQUIRED");
+  assert.equal(m.ohio.currentCertificateUniverse, null);
+  assert.equal(m.ohio.sourceAsOf, null);
+});
 test("All accepted expansion capabilities feed the homepage contract", () => {
-  for (const state of ["CO", "VA", "NY", "IL", "OR"]) {
+  for (const state of ["CO", "VA", "NY", "IL", "OR", "OH"]) {
     const c = m.stateCapabilities.find((r: any) => r.state === state);
     assert.ok(c);
     for (const cap of c.capabilities)

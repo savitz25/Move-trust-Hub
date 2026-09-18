@@ -85,6 +85,24 @@ m.illinois = {
   retrievedAt: il.retrievedAt,
   snapshotAsOf: il.snapshotAsOf,
 };
+const oh = read("lib/ohio-intelligence/accepted-snapshot.json");
+if (
+  oh.current_hhg_roster.OH_PUCO_HHG_ROSTER_STATUS !== "OPEN_SEARCH_ONLY" ||
+  oh.current_hhg_roster.OH_PUCO_HHG_ROWS !== null
+)
+  throw Error(
+    "Ohio acceptance changed: inspect formal closure before updating contract",
+  );
+m.ohio = {
+  ...m.ohio,
+  currentHhgRosterCoverage: oh.current_hhg_roster.OH_PUCO_HHG_ROSTER_STATUS,
+  bulkCount: null,
+  specialistComplete: false,
+  completion: "NOT_ASSERTED",
+  sourceAsOf: null,
+  retrievedAt: oh.retrievedAt,
+  snapshotAsOf: oh.snapshotAsOf,
+};
 m.virginia.hhgAuthorityIdentities = count(
   va.hhg_roster.distinct_non_null_authority_numbers,
   "VA HHG IDs",
@@ -397,6 +415,12 @@ const spec = [
     "STATE_SOURCE_LIVE",
     [["hhg-roster", "STATE_SOURCE_LIVE", "or_odot_authorized_hhg_list_rows", 113]],
   ],
+  [
+    "OH",
+    "/ohio",
+    "SEARCH_ONLY",
+    [["hhg-roster", "SEARCH_ONLY", "oh_puco_hhg_certificate_universe", null]],
+  ],
 ];
 m.stateCapabilities = spec.map(([state, route, status, rows]) => ({
   state,
@@ -438,6 +462,11 @@ for (const metric of m.metrics) {
     metric.snapshotAsOf = orSnap.snapshotAsOf;
     metric.sourceAsOf = orSnap.clocks.sourceAsOf;
     metric.retrievedAt = orSnap.retrievedAt;
+  }
+  if (metric.key.startsWith("oh_")) {
+    metric.snapshotAsOf = oh.snapshotAsOf;
+    metric.sourceAsOf = null;
+    metric.retrievedAt = oh.retrievedAt;
   }
   if (metric.key.startsWith("published_")) {
     metric.sourceAsOf = null;
