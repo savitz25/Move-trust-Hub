@@ -318,17 +318,44 @@ export function applyLocationFilter(
   locationHint: { city: string | null; stateCode: string | null } | null,
   categoryOnly: boolean
 ): IdentityMatch | null {
-  if (!locationHint?.city) return match;
+  if (!locationHint?.city && !locationHint?.stateCode) return match;
   // An EXACT identity match (tier <= 5 -- exact USDOT/MC/display-name/legal-name/
   // alias) is unambiguous: the user found the one real company they meant, and it
   // must survive regardless of geography. Only tier > 5 (approximate NAME-TEXT)
   // matches are geography-gated below.
   if (match.tier <= 5) return match;
   const hq = normalizeSearchText(company.headquarters ?? '');
-  const city = normalizeSearchText(locationHint.city);
+  const city = normalizeSearchText(locationHint.city ?? '');
   const st = normalizeSearchText(locationHint.stateCode ?? '');
-  if (city && hq.includes(city)) {
+  // TH-DISCOVERY-PARITY-001A-REVIEW: a STATE-only location hint (city text unknown --
+  // the exact city was missing from the gazetteer, e.g. "movers in Aurora Colorado")
+  // must still enforce real STATE agreement, not fall through unfiltered. This is
+  // the Results-First broadening case: real in-state movers survive, unlabeled as a
+  // confirmed local match (the city itself was never confirmed); a company
+  // headquartered in a different state is excluded for a category query exactly
+  // like the city+state mismatch case below.
+  if (!city && st) {
+    if (hq.endsWith(st)) return match;
+    return categoryOnly ? null : match;
+  }
+  // TH-DISCOVERY-PARITY-001A-REVIEW: this used to label a company as a confirmed
+  // local "headquarters identity hint" match on CITY text alone -- a company
+  // headquartered in a same-named city in a DIFFERENT state (e.g. "Portland, ME"
+  // surviving a "Portland, Oregon" query) would pass, since `hq.includes(city)`
+  // says nothing about which state that city is in. A local/headquarters match now
+  // requires BOTH city AND state agreement (when a state was actually resolved);
+  // city-only agreement with a state MISMATCH is excluded entirely, never labeled
+  // as if it were the confirmed local result.
+  const cityMatches = Boolean(city) && hq.includes(city);
+  const stateMatches = !st || hq.endsWith(st);
+  if (cityMatches && stateMatches) {
     return { ...match, explanation: `${match.explanation}; headquarters identity hint` };
+  }
+  if (cityMatches && !stateMatches) {
+    // Same city name, wrong state: never a local/exact match. Only a genuine
+    // brand-name identity search may still surface it (unlabeled as local), the
+    // same as any other cross-geography brand hit; a category query excludes it.
+    return categoryOnly ? null : match;
   }
   if (st && hq.endsWith(st)) {
     return match;

@@ -129,7 +129,17 @@ function resolveCategoryPlace(raw: string): {
   if (remainder.length < 3) return null;
 
   const place = resolveDirectoryPlaceQuery(remainder);
-  if (!place || place.kind === 'state') return null;
+  if (!place) return null;
+  // TH-DISCOVERY-PARITY-001A-REVIEW: a 'state'-kind result means the exact city was
+  // not in the gazetteer but the STATE the consumer explicitly named is real and
+  // resolveDirectoryPlaceQuery's own Results-First fallback applied (see that
+  // module's fix for "Aurora Colorado" / "Pasadena California" -- real, well-known
+  // cities missing from the index entirely). Surfacing it here (state known, no city
+  // text to match against headquarters) lets applyLocationFilter still narrow to
+  // real state-level results instead of discarding the state along with the city.
+  if (place.kind === 'state') {
+    return { companyQuery: raw, locationHint: { city: null, stateCode: place.stateCode, label: place.placeLabel } };
+  }
   // NOTE: `city` here is really "the place name to headquarters-text-match against" --
   // for a county-kind result (no separate city field on DirectoryPlaceMatch) that's the
   // bare county name (e.g. "Denver", "Orange"), not the "<name> County, ST" placeLabel,

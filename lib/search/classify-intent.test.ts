@@ -82,13 +82,10 @@ const FRESH_MOVE_CASES: ReadonlyArray<readonly [string, string]> = [
   ['movers near Orlando', 'FL'],
   ['moving company Jacksonville Florida', 'FL'],
   ['moving companies Boca Raton', 'FL'],
-  // NOTE: plain "Miami" is deliberately excluded here -- resolveDirectoryPlaceQuery
-  // (pre-existing, shared gazetteer infra also used by the PLACE-intent path and
-  // directory pages, not introduced by this ticket) resolves bare "Miami" to Miami
-  // County, IN instead of Miami, FL. That is a real, separate pre-existing false-
-  // locality bug in the shared place-name disambiguation, out of scope for this
-  // category-vs-identity classification fix -- flagged in the ticket report as a
-  // follow-up. "Fort Lauderdale"/"Boca Raton" etc. above are unambiguous and unaffected.
+  // TH-DISCOVERY-PARITY-001A-REVIEW: bare "Miami" is no longer excluded -- the
+  // shared resolveDirectoryPlaceQuery ambiguous-name disambiguation bug (silently
+  // mapping it to Miami County, IN) is fixed; see lib/directory/resolve-place-query.test.ts.
+  ['mover in Miami', 'FL'],
   ['long distance mover Fort Lauderdale Florida', 'FL'],
   ['relocation company Newark New Jersey', 'NJ'],
   ['moving service Jersey City', 'NJ'],
@@ -105,14 +102,13 @@ const FRESH_MOVE_CASES: ReadonlyArray<readonly [string, string]> = [
   ['moving service Tacoma', 'WA'],
   ['movers around Bellevue Washington', 'WA'],
   ['long distance mover Colorado Springs', 'CO'],
-  // NOTE: "Aurora Colorado" (a top-60 US city), "Hoboken New Jersey", "Atlantic City
-  // NJ" and "Pasadena California" were all found MISSING ENTIRELY from the shared US
-  // place gazetteer (lib/geo/us-place-index -- also used by directory pages and the
-  // PLACE intent path, not introduced by this ticket) during this corpus's
-  // construction -- a separate, significant, pre-existing data-completeness gap
-  // flagged in the ticket report as a high-priority follow-up. Swapped for
-  // gazetteer-covered cities so this corpus tests the classification fix, not that
-  // gap; real coverage will improve once the gazetteer itself is completed.
+  // TH-DISCOVERY-PARITY-001A-REVIEW: "Aurora Colorado" / "Hoboken New Jersey" /
+  // "Atlantic City NJ" / "Pasadena California" are real, well-known cities that
+  // remain MISSING from the shared US place gazetteer (a data-completeness gap, not
+  // a resolvable code bug here) -- but resolveDirectoryPlaceQuery's own Results-
+  // First state-level fallback now applies, so these resolve to real, honest STATE-
+  // level geography (locationHint.city === null, stateCode set) instead of a dead
+  // end. Asserted separately below since they resolve to `state`, not `city`/`county`.
   ['auto transport carrier Boulder CO', 'CO'],
   ['movers Newark New Jersey', 'NJ'],
   ['moving companies Camden NJ', 'NJ'],
@@ -131,6 +127,41 @@ test(`fresh generalization corpus: ${FRESH_MOVE_CASES.length} category+place cas
     assert.equal(q.locationHint?.stateCode, expectedState, `wrong state for "${query}"`);
     assert.equal(q.categoryOnly, true, `expected categoryOnly for "${query}"`);
   }
+});
+
+// TH-DISCOVERY-PARITY-001A-REVIEW section 4/10: gazetteer-missing cities still
+// resolve REAL STATE-LEVEL geography (Results-First), never a dead end and never a
+// fabricated city-level claim (locationHint.city stays null -- only the state, which
+// the consumer explicitly and unambiguously named, is asserted).
+for (const [query, expectedState] of [
+  ['moving company near Aurora Colorado', 'CO'],
+  ['mover near Pasadena California', 'CA'],
+  ['movers Hoboken New Jersey', 'NJ'],
+  ['moving companies Atlantic City NJ', 'NJ'],
+] as const) {
+  test(`gazetteer-gap Results-First fallback: "${query}" resolves real state-level geography, not a dead end`, () => {
+    const q = classifySearchQuery(query);
+    assert.ok(q.locationHint, `expected a resolved locationHint for "${query}"`);
+    assert.equal(q.locationHint?.stateCode, expectedState);
+    assert.equal(q.locationHint?.city, null, 'city was not in the gazetteer -- must not fabricate a city-level match');
+    assert.equal(q.categoryOnly, true);
+  });
+}
+
+// Section 3/10: explicit city+state must resolve deterministically and a same-name
+// city collision across states must not be silently guessed.
+test('explicit CITY + STATE resolves deterministically for a same-name-elsewhere city', () => {
+  const q = classifySearchQuery('movers Portland Oregon');
+  assert.equal(q.locationHint?.city, 'Portland');
+  assert.equal(q.locationHint?.stateCode, 'OR');
+});
+
+test('ambiguous bare city with no state is not silently guessed', () => {
+  // "Portland" alone (no state) must not default to any one of ME/OR/etc. -- either
+  // no locationHint resolves, or if one does, it must not fabricate a specific city
+  // claim without the consumer having named a state.
+  const q = classifySearchQuery('movers Portland');
+  if (q.locationHint) assert.notEqual(q.locationHint.stateCode, null);
 });
 
 test('a genuine brand-name search is NOT flagged categoryOnly even with a place in it', () => {

@@ -190,3 +190,35 @@ test('a genuine brand-name identity search (categoryOnly=false) keeps the previo
   const filtered = applyLocationFilter(brand, match!, { city: 'Denver', stateCode: 'CO' }, false);
   assert.ok(filtered, 'naming a specific brand should still find it even if HQ is elsewhere');
 });
+
+// TH-DISCOVERY-PARITY-001A-REVIEW: Vercel finding on PR #152 -- applyLocationFilter's
+// city-inclusion branch ignored the requested STATE, so a same-named city in a
+// DIFFERENT state (Portland, ME vs. Portland, OR) could survive as an authoritative
+// "headquarters identity hint" local match. A local match now requires BOTH city AND
+// state agreement.
+test('DANGEROUS-class regression: same-named city in the WRONG STATE is excluded from the local cohort for a category query', () => {
+  const portlandMaine = company({ id: 'pm', slug: 'portland-movers-me', name: 'Portland Movers', headquarters: 'Portland, ME' });
+  const match = matchCompanyIdentity(portlandMaine, 'movers Portland', { locationHint: 'Portland, OR' });
+  assert.ok(match, 'precondition: the company must actually name-match');
+  assert.ok(match!.tier > 5, 'precondition: this must be a name-text match, not an exact identifier/name match');
+  const filtered = applyLocationFilter(portlandMaine, match!, { city: 'Portland', stateCode: 'OR' }, true);
+  assert.equal(filtered, null, 'a Portland, ME company must not survive a Portland, OR category search');
+});
+
+test('same-named city in the right state is correctly labeled as the local match', () => {
+  const portlandOregon = company({ id: 'po', slug: 'portland-movers-or', name: 'Portland Movers', headquarters: 'Portland, OR' });
+  const match = matchCompanyIdentity(portlandOregon, 'movers Portland', { locationHint: 'Portland, OR' });
+  assert.ok(match);
+  const filtered = applyLocationFilter(portlandOregon, match!, { city: 'Portland', stateCode: 'OR' }, true);
+  assert.ok(filtered);
+  assert.match(filtered!.explanation, /headquarters identity hint/);
+});
+
+test('same-named city, wrong state, genuine brand-name search (categoryOnly=false): still findable, but never mislabeled as a local match', () => {
+  const brandInMaine = company({ id: 'bm', slug: 'brand-portland-me', name: 'Acme Movers Co', headquarters: 'Portland, ME' });
+  const match = matchCompanyIdentity(brandInMaine, 'Acme Movers Co', { locationHint: 'Portland, OR' });
+  assert.ok(match);
+  const filtered = applyLocationFilter(brandInMaine, match!, { city: 'Portland', stateCode: 'OR' }, false);
+  assert.ok(filtered, 'a genuine brand-name search should still surface the company even if HQ is in a same-named city elsewhere');
+  assert.doesNotMatch(filtered!.explanation, /headquarters identity hint/, 'must never be labeled as if it were the confirmed local match');
+});
