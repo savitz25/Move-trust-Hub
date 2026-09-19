@@ -11,7 +11,7 @@
 - PR: https://github.com/savitz25/Move-trust-Hub/pull/156.
 - Tested runtime commit: `de6f2181c68cc9ea7e4d1b9f8c693dc2dcdc9cef`.
 - Preview for that commit: https://move-trust-2gxhk6z5w-savitz25-s-projects.vercel.app (deployment `dpl_C3tB1Xr3ZyQ353MsSZTy8nVXU6we`, successful Vercel check, preview target).
-- This handoff's final documentation commit does not change runtime code. The final PR head/preview SHA pair is recorded in the PR validation receipt; use that pair for independent QA.
+- Follow-up commits record evidence and declare the already-locked `esbuild` 0.28.0 as a direct dev dependency for the test harness, addressing Vercel review. They do not change runtime code or dependency versions. The final PR head/preview SHA pair is recorded in the PR validation receipt; use that pair for independent QA.
 
 ## Confirmed defect and correction
 
