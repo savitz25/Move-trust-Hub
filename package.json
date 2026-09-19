@@ -11,6 +11,7 @@
   },
   "private": true,
   "scripts": {
+    "test:v2-3-move": "tsx --test lib/my-trusthub/profile-save-adapter.test.ts",
     "dev": "next dev --turbo",
     "build": "tsx scripts/guard-supabase-project.ts && next build",
     "guard:supabase-project": "tsx scripts/guard-supabase-project.ts",

@@ -8,6 +8,7 @@ import { useSaveMyMove } from './save-my-move-context';
 import { isLocalMoverSaved } from '@/lib/save-my-move/local-shortlist';
 import { trackSaveMyMoveMover } from '@/components/ga-events';
 import { cn } from '@/lib/utils';
+import { KeepInMyTrustHub } from './keep-in-my-trusthub';
 
 type SaveMoverButtonProps = {
   companySlug: string;
@@ -37,7 +38,7 @@ function ProfileSave({ companySlug, companyName, variant = 'icon', className }: 
   const saved = accountSaved || localSaved;
   const statusMessage = !saving && accountSaved
     ? `${companyName} saved to your Move account shortlist.`
-    : message || (localSaved ? `${companyName} saved on this device. My TrustHub account sync has not been confirmed.` : '');
+    : message || (localSaved ? `${companyName} saved on this device.${process.env.NEXT_PUBLIC_MOVE_PARENT_SAVE_ENABLED === '1' ? '' : ' My TrustHub account sync has not been confirmed.'}` : '');
 
   useEffect(() => {
     setLocalSaved(isLocalMoverSaved(companySlug));
@@ -124,5 +125,7 @@ function ProfileSave({ companySlug, companyName, variant = 'icon', className }: 
       className={cn('max-w-64 text-xs break-words', failed ? 'text-destructive' : 'text-muted-foreground')}>
       {statusMessage}
     </span>
+    {localSaved && process.env.NEXT_PUBLIC_MOVE_PARENT_SAVE_ENABLED === '1'
+      ? <KeepInMyTrustHub key={companySlug} companySlug={companySlug} /> : null}
   </span>;
 }

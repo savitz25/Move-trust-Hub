@@ -8,6 +8,7 @@ import { execFileSync } from 'node:child_process';
 import { resolve, basename } from 'node:path';
 
 const baseline = process.argv.includes('--baseline');
+const conversion = process.argv.includes('--conversion');
 const root = process.cwd();
 const entry = `
 import React from 'react';
@@ -32,6 +33,20 @@ window.b3 = {
     this.render();
   }
 };
+${conversion ? `
+window.b3.transferCalls=[];window.b3.parentState='unavailable';
+const originalFetch=window.fetch.bind(window);
+window.fetch=async (url,options)=>{
+  if(url!=='/api/my-trusthub/profile-save')return originalFetch(url,options);
+  const body=JSON.parse(options.body);window.b3.transferCalls.push(body);
+  if(body.action==='bootstrap')return Response.json({csrf:'c'.repeat(43)});
+  if(window.b3.delayTransfer)await new Promise(done=>window.b3.finishTransfer=done);
+  return Response.json(body.action==='prepare' && window.b3.parentState==='continue'
+    ? {state:'continue',ticket:'t'.repeat(43),target:'http://127.0.0.1:4322/fixture-only-confirm',fields:{continuationRef:'r'.repeat(43)},localCopy:'keep'}
+    : {state:window.b3.parentState,projectFailed:window.b3.projectFailed,localCopy:'keep'});
+};
+HTMLFormElement.prototype.submit=function(){window.b3.form={method:this.method,target:this.action,fields:Object.fromEntries(new FormData(this))};this.remove()};
+` : ''}
 const root = createRoot(document.getElementById('root'));
 window.b3.render();
 `;
@@ -60,7 +75,7 @@ const result = await build({
   stdin: { contents: entry, resolveDir: root, loader: 'tsx' },
   bundle: true, write: false, format: 'esm', splitting: true,
   outdir: resolve(root, '.b3-memory'), chunkNames: '[name]-[hash]',
-  jsx: 'automatic', define: { 'process.env.NODE_ENV': '"development"' },
+  jsx: 'automatic', define: { 'process.env.NODE_ENV': '"development"', 'process.env.NEXT_PUBLIC_MOVE_PARENT_SAVE_ENABLED': JSON.stringify(conversion?'1':'0') },
   plugins: [{ name: 'isolated-adapters', setup(builder) {
     builder.onResolve({ filter: /.*/ }, args => mocks[args.path] ? { path: args.path, namespace: 'b3' } : null);
     builder.onLoad({ filter: /.*/, namespace: 'b3' }, args => ({ contents: mocks[args.path], loader: 'js', resolveDir: root }));
@@ -91,4 +106,4 @@ const server = createServer(async (request, response) => {
   response.setHeader('Content-Type', 'text/html');
   response.end('<!doctype html><html lang="en"><meta name="viewport" content="width=device-width,initial-scale=1"><title>B3 isolated Save QA</title><style>body{font:16px sans-serif;margin:16px}button{padding:12px}svg{width:16px;height:16px}span[role=status]{display:block;max-width:256px;overflow-wrap:anywhere}button:focus-visible{outline:3px solid blue}</style><div id="root"></div><script type="module" src="/stdin.js"></script></html>');
 });
-server.listen(4311, '127.0.0.1', () => console.log(`B3 ${baseline ? 'BASELINE' : 'HEAD'} harness: http://127.0.0.1:4311; auth/cloud MOCKED; provider deliberately never resolves.`));
+server.listen(4311, '127.0.0.1', () => console.log(`B3 ${baseline ? 'BASELINE' : 'HEAD'} harness: http://127.0.0.1:4311; auth/cloud MOCKED; conversion BFF MOCKED=${conversion}; provider deliberately never resolves.`));
