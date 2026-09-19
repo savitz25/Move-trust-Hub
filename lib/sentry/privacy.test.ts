@@ -77,6 +77,28 @@ test('ATH-REL-002A: sensitive keys match privacy.ts plus secrets', () => {
   assert.match(redactSecretText('Authorization: Bearer abc.def'), /\[Filtered\]/);
 });
 
+test('ATH-REL-002A: exact reviewed URL header cases follow analytics query policy', () => {
+  const event = scrubSentryEvent({
+    request: {
+      headers: {
+        Referer: 'https://www.movetrusthub.com/ask?q=secret-search',
+        Referrer: 'https://www.movetrusthub.com/claim?token=fake-token',
+        'x-callback-url':
+          'https://www.movetrusthub.com/search?query=sensitive&utm_source=regression&view=directory',
+        'x-request-label': 'ordinary non-URL value',
+      },
+    },
+  });
+
+  assert.equal(event.request?.headers?.Referer, 'https://www.movetrusthub.com/ask');
+  assert.equal(event.request?.headers?.Referrer, 'https://www.movetrusthub.com/claim');
+  assert.equal(
+    event.request?.headers?.['x-callback-url'],
+    'https://www.movetrusthub.com/search?utm_source=regression&view=directory',
+  );
+  assert.equal(event.request?.headers?.['x-request-label'], 'ordinary non-URL value');
+});
+
 test('ATH-REL-002A: Referer/Referrer and URL-valued headers drop raw search params', () => {
   const event = scrubSentryEvent({
     request: {
