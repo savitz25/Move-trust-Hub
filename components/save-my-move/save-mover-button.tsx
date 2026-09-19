@@ -1,16 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
-import { saveMoverAction } from '@/actions/save-my-move';
-import {
-  addLocalSavedMover,
-  isLocalMoverSaved,
-} from '@/lib/save-my-move/local-shortlist';
+import { useSaveMyMove } from './save-my-move-context';
+import { isLocalMoverSaved } from '@/lib/save-my-move/local-shortlist';
 import { trackSaveMyMoveMover } from '@/components/ga-events';
-import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 
 type SaveMoverButtonProps = {
@@ -20,100 +16,106 @@ type SaveMoverButtonProps = {
   className?: string;
 };
 
-export function SaveMoverButton({
-  companySlug,
-  companyName,
-  variant = 'icon',
-  className,
-}: SaveMoverButtonProps) {
-  const { user, loading, isMoverSaved, markMoverSaved, openSaveModal } = useSaveMyMove();
+export function SaveMoverButton(props: SaveMoverButtonProps) {
+  // A new identity gets a fresh operation and state, even when React reuses the slot.
+  const pathname = usePathname();
+  return <ProfileSave key={`${pathname}:${props.companySlug}`} {...props} />;
+}
+
+function ProfileSave({ companySlug, companyName, variant = 'icon', className }: SaveMoverButtonProps) {
+  const { user, loading, isMoverSaved, markMoverSaved } = useSaveMyMove();
+  const operation = useRef<AbortController | null>(null);
+  const completed = useRef(false);
   const [saving, setSaving] = useState(false);
-  const [localSaved, setLocalSaved] = useState(() =>
-    typeof window !== 'undefined' ? isLocalMoverSaved(companySlug) : false
-  );
+  const [localSaved, setLocalSaved] = useState(false);
+  const [message, setMessage] = useState('');
+  const [failed, setFailed] = useState(false);
+  const statusId = useId();
   const saved = isMoverSaved(companySlug) || localSaved;
 
+  useEffect(() => {
+    setLocalSaved(isLocalMoverSaved(companySlug));
+    return () => { operation.current?.abort(); };
+  }, [companySlug]);
+
   const handleSave = async () => {
-    if (loading || saved) return;
+    // The ref closes the gap before React commits the disabled/pending state.
+    if (operation.current || completed.current || saved) return;
+    const controller = new AbortController();
+    operation.current = controller;
     setSaving(true);
-    try {
-      // Always persist on device first — never leave the user with only a red toast
-      addLocalSavedMover({ companySlug, companyName });
-      setLocalSaved(true);
-      markMoverSaved(companySlug);
-      trackSaveMyMoveMover({ company_slug: companySlug });
-
-      if (!user) {
-        toast.success(`${companyName} saved on this device`, {
-          description: 'Sign in anytime to sync your shortlist across devices.',
-          action: {
-            label: 'Sign in',
-            onClick: () => openSaveModal({ context: 'mover', redirectPath: `/companies/${companySlug}` }),
-          },
-        });
-        return;
-      }
-
-      const res = await saveMoverAction({ companySlug });
-      if (res.ok && res.cloud) {
-        toast.success(`${companyName} saved to your shortlist`);
-        return;
-      }
-
-      console.warn('[SaveMoverButton] cloud soft-fail', res);
-      toast.success(`${companyName} saved on this device`, {
-        description:
-          res.ok === false
-            ? 'Cloud sync unavailable — local shortlist kept.'
-            : 'Local shortlist updated.',
-      });
-    } catch (err) {
-      console.error('[SaveMoverButton]', err);
-      // Local already written above; still treat as soft success
-      toast.success(`${companyName} saved on this device`, {
-        description: 'Cloud sync failed — shortlist kept on this device.',
-      });
-    } finally {
+    setFailed(false);
+    setMessage(`Saving ${companyName}…`);
+    const timeout = window.setTimeout(() => {
+      if (operation.current !== controller) return;
+      controller.abort();
+      operation.current = null;
       setSaving(false);
+      setFailed(!completed.current);
+      setMessage(completed.current
+        ? `${companyName} saved on this device. Account sync could not be confirmed.`
+        : 'Save took too long. Please try again.');
+    }, 15_000);
+    controller.signal.addEventListener('abort', () => window.clearTimeout(timeout), { once: true });
+
+    try {
+      const { saveMoverOnDemand } = await import('@/lib/save-my-move/save-mover-runtime');
+      controller.signal.throwIfAborted();
+      const result = await saveMoverOnDemand(
+        { companySlug, companyName }, controller.signal,
+        loading ? undefined : user?.id ?? null,
+        () => {
+          completed.current = true;
+          setLocalSaved(true);
+          markMoverSaved(companySlug);
+          setMessage(`${companyName} saved on this device. Finishing Save…`);
+        },
+      );
+      if (controller.signal.aborted) return;
+      setMessage(result.destination === 'account'
+        ? `${companyName} saved to your shortlist.`
+        : `${companyName} saved on this device.${result.cloudFailed ? ' Account sync unavailable.' : ''}`);
+      trackSaveMyMoveMover({ company_slug: companySlug });
+    } catch {
+      if (controller.signal.aborted) return;
+      setFailed(true);
+      setMessage('Could not save. Check your connection and browser storage, then try again or reload this page.');
+    } finally {
+      window.clearTimeout(timeout);
+      if (operation.current === controller) {
+        operation.current = null;
+        setSaving(false);
+      }
     }
   };
 
-  if (variant === 'button') {
-    return (
-      <Button
-        variant={saved ? 'secondary' : 'outline'}
-        size="sm"
-        onClick={() => void handleSave()}
-        disabled={saving || saved || loading}
-        className={className}
-        aria-pressed={saved}
-      >
-        <Heart className={cn('h-3.5 w-3.5 mr-1', saved && 'fill-current text-primary')} />
-        {saved ? 'Saved' : saving ? 'Saving…' : 'Save mover'}
-      </Button>
-    );
-  }
-
-  return (
-    <button
+  const accessibility = {
+    'aria-pressed': saved,
+    'aria-busy': saving,
+    'aria-describedby': statusId,
+  };
+  return <span className="inline-flex min-w-0 flex-col items-start gap-1">
+    {variant === 'button' ? <Button
       type="button"
-      onClick={() => void handleSave()}
-      disabled={saving || saved || loading}
-      className={cn(
-        'inline-flex items-center justify-center rounded-full p-1.5 transition-colors',
-        saved
-          ? 'text-primary bg-primary/10'
-          : 'text-muted-foreground hover:text-primary hover:bg-primary/10',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40',
-        className
-      )}
-      aria-label={
-        saved ? `${companyName} saved to your shortlist` : `Save ${companyName} to your shortlist`
-      }
-      aria-pressed={saved}
-      title={saved ? 'Saved to My Move' : 'Save to My Move'}
+      variant={saved ? 'secondary' : 'outline'} size="sm"
+      onClick={() => void handleSave()} disabled={saving || saved}
+      className={className} {...accessibility}
     >
-      <Heart className={cn('h-4 w-4', saved && 'fill-current')} />
-    </button>
-  );
+      <Heart aria-hidden="true" className={cn('h-3.5 w-3.5 mr-1', saved && 'fill-current text-primary')} />
+      {saving ? 'Saving…' : saved ? 'Saved' : failed ? 'Try Save again' : 'Save mover'}
+    </Button> : <button
+      type="button" onClick={() => void handleSave()} disabled={saving || saved}
+      className={cn('inline-flex items-center justify-center rounded-full p-1.5 transition-colors',
+        saved ? 'text-primary bg-primary/10' : 'text-muted-foreground hover:text-primary hover:bg-primary/10',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40', className)}
+      aria-label={saved ? `${companyName} saved to your shortlist` : saving ? `Saving ${companyName}` : `Save ${companyName} to your shortlist`}
+      {...accessibility}
+    >
+      <Heart aria-hidden="true" className={cn('h-4 w-4', saved && 'fill-current')} />
+    </button>}
+    <span id={statusId} role="status" aria-live="polite" aria-atomic="true"
+      className={cn('max-w-64 text-xs break-words', failed ? 'text-destructive' : 'text-muted-foreground')}>
+      {message}
+    </span>
+  </span>;
 }

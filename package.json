@@ -40,6 +40,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "typecheck": "tsc --noEmit",
+    "test:v2-1": "tsx --test lib/save-my-move/local-shortlist.test.ts lib/save-my-move/save-mover-intent.test.ts lib/save-my-move/save-mover-action.test.mjs",
     "qa:provider-foundation-pages": "tsx scripts/qa-provider-foundation-pages.ts",
     "audit:provider-universe": "tsx --require ./scripts/stub-server-only.cjs scripts/audit-provider-universe.ts",
     "migrate:provider-foundation:dry": "tsx scripts/apply-provider-foundation-migration.ts --dry-run",
