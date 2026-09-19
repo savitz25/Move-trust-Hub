@@ -1,5 +1,5 @@
 import type { Breadcrumb, ErrorEvent } from '@sentry/nextjs';
-import type { TransactionEvent } from '@sentry/core';
+import type { HttpBodyCollectionTarget, TransactionEvent } from '@sentry/core';
 import { scrubSentryBreadcrumb, scrubSentryEvent, type SentryLikeBreadcrumb, type SentryLikeEvent } from './privacy';
 import {
   sentryEnvironment,
@@ -15,7 +15,7 @@ export const SENTRY_DATA_COLLECTION = {
   genAI: { inputs: false, outputs: false },
   databaseQueryData: false,
   queues: false,
-  httpBodies: [] as string[],
+  httpBodies: [] as HttpBodyCollectionTarget[],
   httpHeaders: { deny: ['authorization', 'cookie', 'set-cookie', 'forwarded', '-ip', 'remote-', 'via', '-user'] },
   cookies: { deny: ['forwarded', '-ip', 'remote-', 'via', '-user', 'sb-', 'auth'] },
   urlQueryParams: {
