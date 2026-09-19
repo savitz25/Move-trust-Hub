@@ -142,7 +142,13 @@ function sanitizeHeaders(
       cleaned[name] = '[Filtered]';
       continue;
     }
-    cleaned[name] = redactSecretText(String(value));
+    const raw = String(value);
+    const lower = name.toLowerCase();
+    if (lower === 'referer' || lower === 'referrer' || /^https?:\/\//i.test(raw)) {
+      cleaned[name] = sanitizeAnalyticsUrl(raw) || '[Filtered]';
+      continue;
+    }
+    cleaned[name] = redactSecretText(raw);
   }
   return cleaned;
 }
