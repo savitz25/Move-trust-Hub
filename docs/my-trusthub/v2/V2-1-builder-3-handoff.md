@@ -8,7 +8,10 @@
 - Base: `5018639dee0901bbc630cafdd633015421f86e00`.
 - No overlapping repair PR was open at preflight. PR #151 is separate Sentry work.
 - Existing worktrees and unrelated edits were preserved. No production merge/deploy is authorized.
-- PR/head/preview attestation will be recorded after the branch preview finishes.
+- PR: https://github.com/savitz25/Move-trust-Hub/pull/156.
+- Tested runtime commit: `de6f2181c68cc9ea7e4d1b9f8c693dc2dcdc9cef`.
+- Preview for that commit: https://move-trust-2gxhk6z5w-savitz25-s-projects.vercel.app (deployment `dpl_C3tB1Xr3ZyQ353MsSZTy8nVXU6we`, successful Vercel check, preview target).
+- This handoff's final documentation commit does not change runtime code. The final PR head/preview SHA pair is recorded in the PR validation receipt; use that pair for independent QA.
 
 ## Confirmed defect and correction
 
@@ -28,7 +31,7 @@ Environment: Windows, Node 22.18.0, npm 10.9.3, TypeScript 5.9.3; existing commi
 
 | ID | Evidence / outcome |
 |---|---|
-| B3-01 | Browser component: first Save enabled; keyboard Enter completed guest write while provider remained unresolved. Baseline button disabled, auth calls 0, storage empty. |
+| B3-01 | Browser component and real local Next profile: first Save enabled; keyboard Enter completed guest write while provider remained unresolved in the fixture. Baseline browser assertion fails: disabled button, auth calls 0, storage empty. |
 | B3-02 | Browser + unit: correct slug/key/shape, reload retains Saved and one entry, existing entries/notes preserved. |
 | B3-03 | Browser: three immediate activations while auth delayed result in one record and one analytics effect. |
 | B3-04 | Browser: unresolved provider does not block; 16-second essential import shows pending then timeout, late arrival writes nothing. |
@@ -36,20 +39,24 @@ Environment: Windows, Node 22.18.0, npm 10.9.3, TypeScript 5.9.3; existing commi
 | B3-06 | MOCKED: actual runtime and server action tested against isolated adapters; existing destination/owner/upsert contract preserved. Real authenticated preview test NOT RUN: no isolated authenticated backend has been established. |
 | B3-07 | Unit + browser: navigation cancels old intent; auth switch rejects; mocked server rejects changed owner before creating client/profile/activity/row. |
 | B3-08 | Unit + browser: storage errors, corrupt data, auth errors, module failure and timeout never display false success; storage recovery retries successfully; failed module fetch can require reload. |
-| B3-09 | Browser component: native keyboard activation/focus, accessible names, busy/pressed state and polite live status; no overflow at 1440/390/320. Full preview surface inspection pending. |
+| B3-09 | Browser component and real local Next profile: native Enter/Space activation/focus, accessible names, busy/pressed state and polite live status; visual inspection and no horizontal overflow at 1440/390/320, including device-success text at 320. Deployed preview inspection requires authorized Vercel browser access. |
 | B3-10 | Diff review + mocked server: no signup/account creation in guest path; no parent-account, Watch/Alert, schema, ranking or public-evidence changes. |
 
 Original storage regression run: 3 failures (swallowed write error, corrupt-data replacement, notes lost on repeat). Corrected focused suite: 13 passing tests. `npm test`: passed full existing suite including Ohio, metrics, privacy and vertical separation. `git diff --check`: passed.
 
-`npm run lint` cannot complete because this checkout has no ESLint configuration and Next prompts for setup. No unrelated lint configuration was added. `npm run build` stops at the existing guard because local `NEXT_PUBLIC_SUPABASE_URL` is absent; guard unchanged, no production secrets obtained. Typecheck on isolated base and branch: **532 diagnostics each; zero added, removed or changed**, comparing normalized file/code/full message across all files, excluding harmless line shifts. Both checks fail on the same existing debt. Configured preview build results are recorded below when available.
+`npm run lint` cannot complete because this checkout has no ESLint configuration and Next prompts for setup. No unrelated lint configuration was added. `npm run build` stops at the existing guard because local `NEXT_PUBLIC_SUPABASE_URL` is absent; guard unchanged, no production secrets obtained. Typecheck on isolated base and branch: **532 diagnostics each; zero added, removed or changed**, comparing normalized file/code/full message across all files, excluding harmless line shifts. Both checks fail on the same existing debt. The configured Vercel preview build and GitHub stale-manifest job (including the new focused suite) passed for the runtime commit.
 
-Performance evidence: initial component fixture keyboard-to-device-save measurement 256 ms with provider unresolved indefinitely. This is an isolated local measurement, not production latency or a claim of no performance regression. No dependencies were upgraded. Auth/Save code loads on explicit Save; no eager dashboard import was added. No representative production bundle-size or Core Web Vitals comparison has been performed.
+Real local application evidence: `npm run dev -- --hostname 127.0.0.1 --port 4312`, then `/companies/allied-van-lines`, using the existing credential-free seed fallback. Enter and Space produced exactly one `allied-van-lines` record and `Allied Van Lines saved on this device.`; a same-browser reload retained `aria-pressed=true` and the entry. Actual-page screenshots were inspected at all three widths. Local profile rendering logs an existing `buildUnifiedDirectory` cache payload over 2 MB warning; it still rendered and the Save journey passed. This warning was not changed.
+
+Preview guest journey: **NOT RUN**. The fresh browser is redirected to Vercel login. No sharing/bypass credential was generated and protection was not changed. Builder 4 needs existing authorized Vercel browser access to inspect the deployed revision. Real authenticated preview journey also remains **NOT RUN** until its backend is established as isolated. A successful build/HTTP response is not a Save journey pass.
+
+Performance evidence: component fixture keyboard-to-device-save measurements 256 ms initially and 270 ms on the committed runtime with provider unresolved indefinitely. This is an isolated local measurement, not production latency or a claim of no performance regression. No dependencies were upgraded. Auth/Save code loads on explicit Save; no eager dashboard import was added. No representative production bundle-size or Core Web Vitals comparison has been performed.
 
 ## Independent reproduction for Builder 4
 
 1. Check out the PR's exact head and run `npm ci`, then `npm run test:v2-1`.
 2. Start `node scripts/qa-v2-1-save.mjs`. In another terminal run `node scripts/test-v2-1-browser.mjs` with `AGENT_BROWSER_BIN` pointing to the existing agent-browser executable if not on PATH. All authenticated results are mocked. To reproduce the old disabled control, start the harness with `--baseline`; the first B3-01 assertion must fail.
-3. On the attested preview, use a fresh guest browser without auth cookies. Open an eligible `/companies/<slug>` profile, focus Save promptly after interactivity, activate with Enter, and verify device-only status plus the exact slug in `mth-local-saved-movers`.
+3. With existing authorized Vercel preview access, use a fresh application guest browser without Move auth cookies. Open `/companies/allied-van-lines` on the attested preview, focus Save promptly after interactivity, activate with Enter, and verify device-only status plus `allied-van-lines` in `mth-local-saved-movers`. Alternatively reproduce the actual local page using the credential-free dev command above; do not supply production secrets.
 4. Reload the same browser/origin; verify the entry and Saved state survive. Repeat at 1440, 390 and 320 CSS pixels; inspect focus, text wrapping, control name and live feedback.
 5. Use the local harness for delayed auth/module, duplicate, navigation and storage failure tests. Do not create accounts, send magic links or call authenticated preview mutation endpoints unless the backend is independently established as isolated and authorized.
 6. If runtime code or preview commit changes after QA, rerun the focused suite, browser matrix and preview guest journey against the new SHA. Documentation-only changes still require matching the final preview to the final PR head.
