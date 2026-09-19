@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { sentryProbeAuthorized, sentryProbeEnabled } from './probe.ts';
+import { sentryProbeAuthorized, sentryProbeEnabled } from './probe';
 
 test('ATH-REL-002A: probe stays off unless SENTRY_PROBE_ENABLED=true', () => {
   assert.equal(sentryProbeEnabled({}), false);

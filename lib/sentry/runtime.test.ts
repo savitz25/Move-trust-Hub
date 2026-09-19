@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { sentryRelease, sentryTracesSampleRate, shouldDropSentryTransaction } from './runtime.ts';
+import { sentryRelease, sentryTracesSampleRate, shouldDropSentryTransaction } from './runtime';
 
 test('ATH-REL-002A: production trace sample rate is not 100%', () => {
   assert.equal(sentryTracesSampleRate('production'), 0.1);

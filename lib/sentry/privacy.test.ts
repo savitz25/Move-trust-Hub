@@ -6,7 +6,7 @@ import {
   redactSecretText,
   scrubSentryBreadcrumb,
   scrubSentryEvent,
-} from './privacy.ts';
+} from './privacy';
 
 test('ATH-REL-002A: private My TrustHub and claim paths are identified', () => {
   assert.equal(isPrivateSentryPath('/my-move/notes'), true);
