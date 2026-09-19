@@ -76,3 +76,51 @@ test('ATH-REL-002A: sensitive keys match privacy.ts plus secrets', () => {
   assert.equal(isSensitiveSentryKey('hub'), false);
   assert.match(redactSecretText('Authorization: Bearer abc.def'), /\[Filtered\]/);
 });
+
+test('ATH-REL-002A: Referer/Referrer and URL-valued headers drop raw search params', () => {
+  const event = scrubSentryEvent({
+    request: {
+      url: 'https://www.movetrusthub.com/ohio',
+      headers: {
+        Referer: 'https://www.google.com/search?q=who+owns+this+house&utm_source=google',
+        Referrer: 'https://www.movetrusthub.com/ask?q=secret+question&email=person@example.com&utm_campaign=spring',
+        Origin: 'https://www.bing.com/search?q=usdot+123456&form=QBLH',
+        Location: 'https://www.movetrusthub.com/search?query=private+notes&utm_medium=email',
+        'x-forwarded-host': 'www.movetrusthub.com',
+        'content-type': 'application/json',
+      },
+    },
+  });
+
+  assert.equal(
+    event.request?.headers?.Referer,
+    'https://www.google.com/search?utm_source=google',
+  );
+  assert.equal(
+    event.request?.headers?.Referrer,
+    'https://www.movetrusthub.com/ask?utm_campaign=spring',
+  );
+  assert.equal(event.request?.headers?.Origin, 'https://www.bing.com/search?form=QBLH');
+  assert.equal(
+    event.request?.headers?.Location,
+    'https://www.movetrusthub.com/search?utm_medium=email',
+  );
+  assert.doesNotMatch(JSON.stringify(event.request?.headers), /who\+owns|secret\+question|person@example|usdot\+123456|private\+notes/);
+  assert.equal(event.request?.headers?.['x-forwarded-host'], 'www.movetrusthub.com');
+  assert.equal(event.request?.headers?.['content-type'], 'application/json');
+});
+
+test('ATH-REL-002A: unparseable URL-valued headers are filtered instead of leaked', () => {
+  const event = scrubSentryEvent({
+    request: {
+      headers: {
+        Referer: 'https://',
+        'x-original-url': 'https://www.movetrusthub.com/ask?q=also+secret',
+      },
+    },
+  });
+
+  assert.equal(event.request?.headers?.Referer, '[Filtered]');
+  assert.equal(event.request?.headers?.['x-original-url'], 'https://www.movetrusthub.com/ask');
+  assert.doesNotMatch(JSON.stringify(event.request?.headers), /also\+secret/);
+});

@@ -39,6 +39,8 @@ test('ATH-REL-002A: privacy and environment reuse analytics helpers', () => {
   const options = read('lib/sentry/options.ts');
   const runtime = read('lib/sentry/runtime.ts');
   assert.match(privacy, /from '\.\.\/analytics\/posthog\/privacy'/);
+  assert.match(privacy, /lower === 'referer' \|\| lower === 'referrer'/);
+  assert.match(privacy, /sanitizeAnalyticsUrl\(raw\)/);
   assert.match(runtime, /from '\.\.\/analytics\/posthog\/environment'/);
   assert.match(options, /sendDefaultPii:\s*false/);
   assert.match(options, /userInfo:\s*false/);
