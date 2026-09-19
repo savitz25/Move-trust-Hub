@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import * as Sentry from '@sentry/nextjs';
 
 /**
  * Root-level failure document — replaces the root layout when the app crashes.
@@ -20,6 +21,7 @@ export default function GlobalError({
       : 'Unexpected application error';
 
   useEffect(() => {
+    Sentry.captureException(error);
     try {
       console.error('[mth.global_error]', message, error?.digest);
       const body = JSON.stringify({
