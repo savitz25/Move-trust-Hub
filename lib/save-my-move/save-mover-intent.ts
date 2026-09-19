@@ -22,7 +22,7 @@ export async function saveMoverIntent(
   try {
     const result = await dependencies.saveCloud({ companySlug: input.companySlug, expectedUserId: user.id });
     return result.ok && result.cloud
-      ? { destination: 'account' as const, cloudFailed: false }
+      ? { destination: 'account' as const, cloudFailed: false, confirmedUserId: user.id }
       : { destination: 'device' as const, cloudFailed: true };
   } catch {
     // Success here is honest: the synchronous local write above succeeded.

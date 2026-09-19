@@ -61,7 +61,19 @@ try {
   browser('reload');
   await until(`document.querySelector('button')?.textContent === 'Saved'`);
   assert.equal(evaluate(state).rows.length, 1);
+  assert.match(evaluate(state).message, /saved on this device/i, 'QA-M9: reload must retain device disclosure');
+  assert.match(evaluate(state).message, /My TrustHub account sync has not been confirmed/i);
+  evaluate(`window.b3.render('b3-test-mover', 'icon')`);
+  await until(`document.querySelector('button')?.getAttribute('aria-label')?.includes('saved on this device')`);
+  evaluate(`window.b3.accountContext('owner-a', false)`);
+  await until(`document.querySelector('[role=status]')?.textContent.includes('saved on this device')`);
+  evaluate(`window.b3.accountContext('owner-a', true)`);
+  await until(`document.querySelector('[role=status]')?.textContent.includes('saved to your Move account shortlist')`);
+  assert.doesNotMatch(evaluate(state).message, /on this device|saved to My TrustHub/i);
+  evaluate(`window.b3.accountContext('owner-b', false)`);
+  await until(`document.querySelector('[role=status]')?.textContent.includes('saved on this device')`);
   results.push({ id: 'B3-02', result: 'PASS', note: 'Real browser localStorage survives reload' });
+  results.push({ id: 'QA-M9', result: 'PASS (BROWSER LOCAL; account context MOCKED)', note: 'Reload and icon retain device disclosure; merged/local state never proves account Save; confirmed legacy account and changed owner distinguished' });
 
   await reset();
   evaluate(`window.b3.delayAuth = true; document.querySelector('button').click(); document.querySelector('button').click(); document.querySelector('button').click();`);
@@ -79,7 +91,19 @@ try {
   evaluate('window.b3.resolveAuth()');
   await until(`document.querySelector('button')?.textContent === 'Saved'`);
   s = evaluate(state); assert.deepEqual(s.cloud, [{companySlug:'b3-test-mover',expectedUserId:'b3-isolated-owner'}]);
+  assert.match(s.message, /saved to your Move account shortlist/);
+  assert.doesNotMatch(s.message, /on this device|saved to My TrustHub/i);
   results.push({ id: 'B3-05 authenticated/B3-06', result: 'PASS (MOCKED auth/cloud)', note: 'Real component and runtime, exact existing slug destination plus owner check' });
+
+  await reset();
+  evaluate(`window.b3.user={id:'b3-isolated-owner'}; window.b3.cloudFailed=true`);
+  click();
+  await until(`document.querySelector('[role=status]')?.textContent.includes('Account sync unavailable')`);
+  assert.equal(evaluate(state).rows.length, 1);
+  browser('reload');
+  await until(`document.querySelector('[role=status]')?.textContent.includes('saved on this device')`);
+  assert.match(evaluate(state).message, /sync has not been confirmed/);
+  results.push({ id: 'QA-M9 cloud failure', result: 'PASS (MOCKED cloud)', note: 'Failed account write retains local copy; reload does not invent account confirmation' });
 
   await reset();
   evaluate(`window.b3.delayAuth=true; document.querySelector('button').click()`);
@@ -125,6 +149,11 @@ try {
     await reset(); browser('set','viewport',String(width),'900');
     browser('focus','button');
     assert.equal(evaluate(`document.activeElement === document.querySelector('button')`),true);
+    assert.equal(evaluate(`document.documentElement.scrollWidth <= innerWidth`),true);
+    click();
+    await until(`document.querySelector('button')?.textContent === 'Saved'`);
+    browser('reload');
+    await until(`document.querySelector('[role=status]')?.textContent.includes('saved on this device')`);
     assert.equal(evaluate(`document.documentElement.scrollWidth <= innerWidth`),true);
   }
   results.push({id:'B3-09',result:'PASS (component fixture)',note:'Keyboard focus and no overflow at 1440/390/320; preview page inspection separate'});

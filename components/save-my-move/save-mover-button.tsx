@@ -23,15 +23,21 @@ export function SaveMoverButton(props: SaveMoverButtonProps) {
 }
 
 function ProfileSave({ companySlug, companyName, variant = 'icon', className }: SaveMoverButtonProps) {
-  const { user, loading, isMoverSaved, markMoverSaved } = useSaveMyMove();
+  const { user, loading, isMoverAccountSaved, markMoverSaved } = useSaveMyMove();
   const operation = useRef<AbortController | null>(null);
   const completed = useRef(false);
   const [saving, setSaving] = useState(false);
   const [localSaved, setLocalSaved] = useState(false);
   const [message, setMessage] = useState('');
   const [failed, setFailed] = useState(false);
+  const [confirmedUserId, setConfirmedUserId] = useState<string | null>(null);
   const statusId = useId();
-  const saved = isMoverSaved(companySlug) || localSaved;
+  // Local storage and the provider's merged shortlist are not account receipts.
+  const accountSaved = isMoverAccountSaved(companySlug) || Boolean(confirmedUserId && (loading || user?.id === confirmedUserId));
+  const saved = accountSaved || localSaved;
+  const statusMessage = !saving && accountSaved
+    ? `${companyName} saved to your Move account shortlist.`
+    : message || (localSaved ? `${companyName} saved on this device. My TrustHub account sync has not been confirmed.` : '');
 
   useEffect(() => {
     setLocalSaved(isLocalMoverSaved(companySlug));
@@ -72,8 +78,9 @@ function ProfileSave({ companySlug, companyName, variant = 'icon', className }: 
         },
       );
       if (controller.signal.aborted) return;
+      if (result.destination === 'account') setConfirmedUserId(result.confirmedUserId);
       setMessage(result.destination === 'account'
-        ? `${companyName} saved to your shortlist.`
+        ? ''
         : `${companyName} saved on this device.${result.cloudFailed ? ' Account sync unavailable.' : ''}`);
       trackSaveMyMoveMover({ company_slug: companySlug });
     } catch {
@@ -108,14 +115,14 @@ function ProfileSave({ companySlug, companyName, variant = 'icon', className }: 
       className={cn('inline-flex items-center justify-center rounded-full p-1.5 transition-colors',
         saved ? 'text-primary bg-primary/10' : 'text-muted-foreground hover:text-primary hover:bg-primary/10',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40', className)}
-      aria-label={saved ? `${companyName} saved to your shortlist` : saving ? `Saving ${companyName}` : `Save ${companyName} to your shortlist`}
+      aria-label={saved ? statusMessage : saving ? `Saving ${companyName}` : `Save ${companyName} to your shortlist`}
       {...accessibility}
     >
       <Heart aria-hidden="true" className={cn('h-4 w-4', saved && 'fill-current')} />
     </button>}
     <span id={statusId} role="status" aria-live="polite" aria-atomic="true"
       className={cn('max-w-64 text-xs break-words', failed ? 'text-destructive' : 'text-muted-foreground')}>
-      {message}
+      {statusMessage}
     </span>
   </span>;
 }

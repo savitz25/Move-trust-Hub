@@ -14,6 +14,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { SaveMoverButton } from './components/save-my-move/save-mover-button';
 import { DeferredSaveMyMove } from './components/performance/deferred-save-my-move';
+import { Ctx, DEFERRED_FALLBACK } from './components/save-my-move/save-my-move-context';
 window.b3 = {
   cloud: [], analytics: [], authCalls: 0, user: null, authError: null,
   wait: null, listener: null, pathname: '/companies/b3-test-mover',
@@ -21,9 +22,14 @@ window.b3 = {
   authEvent(id) { this.listener?.('SIGNED_IN', id ? { user: { id } } : null); },
   render(slug = 'b3-test-mover', variant = 'button') {
     this.pathname = '/companies/' + slug;
-    root.render(<DeferredSaveMyMove><main><h1>B3 isolated component fixture</h1>
+    root.render(<DeferredSaveMyMove><Ctx.Provider value={this.context ?? DEFERRED_FALLBACK}><main><h1>B3 isolated component fixture</h1>
       <SaveMoverButton companySlug={slug} companyName={slug} variant={variant} />
-    </main></DeferredSaveMyMove>);
+    </main></Ctx.Provider></DeferredSaveMyMove>);
+  },
+  accountContext(id, confirmed) {
+    this.context = { ...DEFERRED_FALLBACK, loading: false, user: id ? {id} : null,
+      isMoverSaved: () => true, isMoverAccountSaved: () => Boolean(id && confirmed) };
+    this.render();
   }
 };
 const root = createRoot(document.getElementById('root'));
@@ -46,7 +52,7 @@ const mocks = {
     }
   } }; }`,
   '@/actions/save-my-move': `export async function saveMoverAction(input) {
-    window.b3.cloud.push(input); return { ok: true, cloud: true };
+    window.b3.cloud.push(input); return { ok: true, cloud: !window.b3.cloudFailed };
   }`,
   '@/components/ga-events': `export function trackSaveMyMoveMover(input) { window.b3.analytics.push(input); }`,
 };

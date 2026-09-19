@@ -36,7 +36,7 @@ test('B3-05/B3-06 mocked: loading-to-user preserves slug and binds cloud save to
   const pending = saveMoverIntent(profile, new AbortController().signal, env.dependencies);
   assert.equal(env.local.length, 0);
   auth.resolve({ id: 'isolated-test-owner' });
-  assert.deepEqual(await pending, { destination: 'account', cloudFailed: false });
+  assert.deepEqual(await pending, { destination: 'account', cloudFailed: false, confirmedUserId: 'isolated-test-owner' });
   assert.deepEqual(env.cloud, [{ companySlug: profile.companySlug, expectedUserId: 'isolated-test-owner' }]);
   assert.deepEqual(env.local, [profile]);
 });
