@@ -6,12 +6,13 @@ import { projection, type LocalSelection } from '@/lib/my-trusthub/selection';
 const endpoint='/api/my-trusthub/profile-save';
 /** Optional explicit conversion. Legacy Save and local research are untouched. */
 export function KeepInMyTrustHub({companySlug}:{companySlug:string}) {
-  const [busy,setBusy]=useState(false),[message,setMessage]=useState('');
+  const [busy,setBusy]=useState(false),[message,setMessage]=useState('Saved on this device');
+  const [detail,setDetail]=useState('');
   const [hasTicket,setHasTicket]=useState(false);
   const operation=useRef<AbortController|null>(null),statusId=useId();
   const storageKey='mth-profile-transfer:'+companySlug;
   useEffect(()=>{
-    const reset=()=>{operation.current?.abort();operation.current=null;setBusy(false);setMessage('');};
+    const reset=()=>{operation.current?.abort();operation.current=null;setBusy(false);setMessage('Saved on this device');setDetail('');};
     try{setHasTicket(Boolean(sessionStorage.getItem(storageKey)));}catch{/* no hidden success */}
     window.addEventListener('pagehide',reset);window.addEventListener('blur',reset);
     return ()=>{operation.current?.abort();window.removeEventListener('pagehide',reset);window.removeEventListener('blur',reset);};
@@ -25,7 +26,7 @@ export function KeepInMyTrustHub({companySlug}:{companySlug:string}) {
   }
   async function run(check:boolean) {
     if(operation.current)return;
-    const controller=new AbortController();operation.current=controller;setBusy(true);setMessage('Checking My TrustHub…');
+    const controller=new AbortController();operation.current=controller;setBusy(true);setDetail('');setMessage('Checking My TrustHub…');
     const timeout=window.setTimeout(()=>controller.abort(),15_000);
     try {
       const selected=await selection();
@@ -51,18 +52,18 @@ export function KeepInMyTrustHub({companySlug}:{companySlug:string}) {
         const input=document.createElement('input');input.type='hidden';input.name='continuationRef';input.value=result.fields.continuationRef;
         form.append(input);document.body.append(form);form.submit();return;
       }
-      setMessage(check && result.state==='parent_saved'
-        ? `Saved to My TrustHub.${result.projectFailed?' Project assignment failed; your Save is retained.':''} Device copy retained.`
-        : result.state==='local_only'?'Saved on this device. Account sync is not available for this profile.'
-          :'Saved on this device — My TrustHub sync unavailable. Retry when ready.');
-    }catch{if(!controller.signal.aborted)setMessage('Saved on this device — My TrustHub sync unavailable. Retry when ready.');}
+      setMessage(check && result.state==='parent_saved' ? 'Saved to My TrustHub'
+        : result.state==='local_only' ? 'Saved on this device' : 'Saved on this device — My TrustHub sync unavailable');
+      if(check && result.state==='parent_saved')setDetail(`${result.projectFailed?'Project assignment failed; your Save is retained. ':''}Device copy retained.`);
+    }catch{if(!controller.signal.aborted)setMessage('Saved on this device — My TrustHub sync unavailable');}
     finally{window.clearTimeout(timeout);if(operation.current===controller){operation.current=null;setBusy(false);
-      if(controller.signal.aborted)setMessage('Saved on this device — My TrustHub sync unavailable. Retry when ready.');}}
+      if(controller.signal.aborted)setMessage('Saved on this device — My TrustHub sync unavailable');}}
   }
   return <span className="inline-flex max-w-64 flex-col gap-1">
     <button type="button" className="rounded border px-3 py-2 text-sm focus-visible:outline focus-visible:outline-2" aria-disabled={busy}
       aria-busy={busy} aria-describedby={statusId} onClick={()=>void run(false)}>Keep this in My TrustHub</button>
     {hasTicket?<button type="button" className="rounded border px-3 py-2 text-sm" aria-disabled={busy} onClick={()=>void run(true)}>Check My TrustHub save</button>:null}
     <span id={statusId} role="status" aria-live="polite" className="text-xs">{message}</span>
+    {detail?<span className="text-xs">{detail}</span>:null}
   </span>;
 }

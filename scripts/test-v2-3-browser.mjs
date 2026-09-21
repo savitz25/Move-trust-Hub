@@ -15,7 +15,16 @@ async function reset(){browser('open','http://127.0.0.1:4311');evaluate('localSt
   click('Save mover');await until("document.body.textContent.includes('Keep this in My TrustHub')");
   evaluate("const rows=JSON.parse(localStorage.getItem('mth-local-saved-movers'));rows[0].notes='Private note retained';localStorage.setItem('mth-local-saved-movers',JSON.stringify(rows));window.b3.before=localStorage.getItem('mth-local-saved-movers')");}
 try{
+  await reset();browser('reload');await until("document.body.textContent.includes('Keep this in My TrustHub')");
+  assert.equal(evaluate("Array.from(document.querySelectorAll('[role=status]')).some(n=>n.textContent==='Saved on this device')"),true);
+  assert.equal(evaluate("document.body.textContent.includes('Saved to My TrustHub')"),false);
+  evaluate("window.b3.parentState='local_only'");click('Keep this');
+  await until("window.b3.transferCalls.some(c=>c.action==='prepare')");await sleep(100);
+  assert.equal(evaluate("Array.from(document.querySelectorAll('[role=status]')).some(n=>n.textContent==='Saved on this device')"),true);
+  assert.equal(evaluate("document.body.textContent.includes('Saved to My TrustHub')"),false);
+  console.log('PASS reload keeps accessible device-only disclosure; identity-not-ready remains local');
   await reset();click('Keep this');await until("document.body.textContent.includes('My TrustHub sync unavailable')");
+  assert.equal(evaluate("Array.from(document.querySelectorAll('[role=status]')).some(n=>n.textContent==='Saved on this device — My TrustHub sync unavailable')"),true);
   assert.equal(evaluate("localStorage.getItem('mth-local-saved-movers')===window.b3.before"),true);
   const posted=evaluate('window.b3.transferCalls.find(c=>c.action===\'prepare\')');
   assert.deepEqual(Object.keys(posted.selected[0]).sort(),['companySlug','digest','revision','savedAt']);
@@ -26,17 +35,17 @@ try{
   const form=evaluate('window.b3.form');assert.equal(form.method,'post');assert.equal(new URL(form.target).search,'');
   assert.deepEqual(Object.keys(form.fields),['continuationRef']);
   evaluate("window.b3.parentState='parent_saved';window.b3.projectFailed=true");click('Check My');
-  await until("document.body.textContent.includes('Saved to My TrustHub.')");
+  await until("Array.from(document.querySelectorAll('[role=status]')).some(n=>n.textContent==='Saved to My TrustHub')");
   assert.equal(evaluate("document.body.textContent.includes('Project assignment failed')"),true);
   assert.equal(evaluate("localStorage.getItem('mth-local-saved-movers')===window.b3.before"),true);
-  evaluate("window.dispatchEvent(new Event('blur'))");await until("!document.body.textContent.includes('Saved to My TrustHub.')");
+  evaluate("window.dispatchEvent(new Event('blur'))");await until("!document.body.textContent.includes('Saved to My TrustHub')");
   console.log('PASS MOCKED form POST + receipt UI + separate Project failure + retained copy + focus/session recheck');
   await reset();evaluate("window.b3.parentState='continue'");click('Keep this');await until('Boolean(window.b3.form)');
   evaluate("window.b3.parentState='parent_saved';window.b3.delayTransfer=true");click('Check My');
   await until('Boolean(window.b3.finishTransfer)');evaluate("(()=>{const rows=JSON.parse(localStorage.getItem('mth-local-saved-movers'));rows[0].savedAt='2026-09-20T00:00:00Z';localStorage.setItem('mth-local-saved-movers',JSON.stringify(rows));window.b3.finishTransfer()})()");
-  await sleep(100);assert.equal(evaluate("document.body.textContent.includes('Saved to My TrustHub.')"),false);
+  await sleep(100);assert.equal(evaluate("document.body.textContent.includes('Saved to My TrustHub')"),false);
   browser('open','http://127.0.0.1:4311/?saved=1');await until('Boolean(window.b3)');
-  assert.equal(evaluate("document.body.textContent.includes('Saved to My TrustHub.')"),false);
+  assert.equal(evaluate("document.body.textContent.includes('Saved to My TrustHub')"),false);
   console.log('PASS edited projection and forged completion URL cannot confirm parent state');
   for(const width of [1440,390,320]){await reset();browser('set','viewport',String(width),'900');
     evaluate("Array.from(document.querySelectorAll('button')).find(b=>b.textContent==='Keep this in My TrustHub').focus()");browser('press','Enter');

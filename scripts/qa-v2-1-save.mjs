@@ -42,7 +42,7 @@ window.fetch=async (url,options)=>{
   if(body.action==='bootstrap')return Response.json({csrf:'c'.repeat(43)});
   if(window.b3.delayTransfer)await new Promise(done=>window.b3.finishTransfer=done);
   return Response.json(body.action==='prepare' && window.b3.parentState==='continue'
-    ? {state:'continue',ticket:'t'.repeat(43),target:'http://127.0.0.1:4322/fixture-only-confirm',fields:{continuationRef:'r'.repeat(43)},localCopy:'keep'}
+    ? {state:'continue',ticket:'t'.repeat(43),target:'http://127.0.0.1:4322/my/profile-save',fields:{continuationRef:'r'.repeat(43)},localCopy:'keep'}
     : {state:window.b3.parentState,projectFailed:window.b3.projectFailed,localCopy:'keep'});
 };
 HTMLFormElement.prototype.submit=function(){window.b3.form={method:this.method,target:this.action,fields:Object.fromEntries(new FormData(this))};this.remove()};

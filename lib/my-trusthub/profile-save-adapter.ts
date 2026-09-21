@@ -34,12 +34,12 @@ export type TransferRecord = {
 export interface TransferStore {
   /** Production adapter MUST be durable with atomic uniqueness/locking, bounded TTL/rate limits. */
   putIfAbsent(ticketHash: string, record: TransferRecord): Promise<void>;
-  withRecord<T>(ticketHash: string, work: (record: TransferRecord | null) => Promise<T>): Promise<T>;
+  withRecord<T>(ticketHash: string, work: (record: TransferRecord | null, checkpoint?: () => Promise<void>) => Promise<T>): Promise<T>;
 }
 export type AdapterConfig = {
   enabled: boolean; environment: 'isolated' | 'production'; verifiedIsolatedPair: boolean;
   moveOrigin: string; parentOrigin: string;
-  // Frozen parent browser form route still needs its separate handoff; no guessed default.
+  // Isolated assembly supplies the reviewed fixed parent browser form route.
   parentFormPath: string | null;
 };
 export interface Dependencies {
@@ -98,7 +98,7 @@ export class MoveProfileSaveAdapter {
       const manifest:GuestStageInput={version:TRANSFER_VERSION,sourceHub:'move',audience:'ask',selected,
         returnTask:{kind:'profile',hub:'move',canonicalSlug:selection[0]!.companySlug,profile:selected[0]!.profile}};
       if(!isGuestStageInput(manifest))return failure('invalid');
-      // No browser route has been frozen yet: fail closed instead of guessing /my paths.
+      // Require the server-bound route; browser input cannot choose a destination.
       const path=d.config.parentFormPath;
       if(!path || !/^\/[a-z0-9/-]+$/.test(path) || path.startsWith('//') || path.includes('..'))return failure('unavailable');
       const stage=await d.parent('prepareGuestProfileTransfer',manifest,browser);
@@ -122,7 +122,7 @@ export class MoveProfileSaveAdapter {
     const d=this.dependencies;
     if(!enabled(d.config))return failure('unavailable');
     if(!allowedBrowser(browser,d.config) || !opaque(ticket) || !isSelection(selection))return failure('invalid');
-    try {return await d.store.withRecord(hash(ticket),async record=>{
+    try {return await d.store.withRecord(hash(ticket),async (record, checkpoint)=>{
       if(!record || record.browserHash!==hash(browser.binding))return failure('invalid');
       if(selection.length!==record.manifest.selected.length || selection.some((row,i)=>{
         const item=record.manifest.selected[i]!;
@@ -134,6 +134,9 @@ export class MoveProfileSaveAdapter {
       if(!record.accountContextRef && record.expiresAt<=d.now())return failure('expired');
       // withRecord must persist this binding atomically, including on lost responses.
       record.accountContextRef=grant.accountContextRef;record.projectRef=grant.projectRef;
+      // Persist ownership BEFORE any remote commit. A lost response or process
+      // crash must never roll this binding back and allow a different account.
+      await checkpoint?.();
       let projectFailed=false;
       for(const [index,item] of record.manifest.selected.entries()) {
         if(!sameGrant(await d.currentGrant(browser,hash(ticket)),grant))return failure('account_changed');

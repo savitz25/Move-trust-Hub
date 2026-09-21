@@ -159,3 +159,27 @@ test('missing class review is unresolved rather than guessed; saved UUID is allo
   [...f.receipts.values()][0]!.parent.savedRef='12345678-1234-4234-8234-123456789abc';
   assert.equal((await f.adapter.finish(r.ticket,selection(),browser)).state,'parent_saved');
 });
+
+test('source checkpoint precedes any parent receipt/commit; persistence failure cannot write parent',async()=>{
+  const f=fixture(),start=await f.start();let checkpointed=false;
+  f.deps.store.withRecord=async(k,work)=>work(f.records.get(k)??null,async()=>{checkpointed=true;});
+  const parent=f.deps.parent;
+  f.deps.parent=async(op,input,bound)=>{assert.equal(checkpointed,true);return parent(op,input,bound);};
+  assert.equal((await f.adapter.finish(start.ticket,selection(),browser)).state,'parent_saved');
+  const g=fixture(),other=await g.start();
+  g.deps.store.withRecord=async(k,work)=>work(g.records.get(k)??null,async()=>{throw Error('source checkpoint failed');});
+  assert.equal((await g.adapter.finish(other.ticket,selection(),browser)).state,'unavailable');
+  assert.equal(g.calls.includes('commitProfileSave'),false);
+});
+
+test('browser cannot submit parent consumer UUID, Saved reference, Project or return destination',async()=>{
+  const f=fixture();const deps={config:f.deps.config,adapter:f.adapter,allowRequest:async()=>true};
+  for(const extra of [{consumerUUID:'12345678-1234-4234-8234-123456789abc'},{savedRef:ref('s')},{projectRef:ref('p')},{returnUrl:'https://evil.test'}]){
+    const response=await handleMoveProfileSave(new Request(browser.origin+'/api/my-trusthub/profile-save',{
+      method:'POST',headers:{origin:browser.origin,'sec-fetch-site':'same-origin','content-type':'application/json',
+      cookie:'mth_move_profile_transfer='+browser.binding,'x-mth-csrf':browser.binding},
+      body:JSON.stringify({action:'prepare',selected:selection(),...extra})}),deps);
+    assert.equal(response.status,400);
+  }
+  assert.equal(f.calls.length,0);
+});
