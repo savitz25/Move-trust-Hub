@@ -11,6 +11,9 @@
   },
   "private": true,
   "scripts": {
+    "test:v2-3-move": "tsx --require ./scripts/stub-server-only.cjs --test lib/my-trusthub/profile-save-adapter.test.ts lib/my-trusthub/postgres-transfer-store.test.ts lib/my-trusthub/source-pool.test.ts",
+    "test:v2-3-parent": "tsx scripts/test-v2-3-parent-integration.mjs",
+    "test:v2-3-destinations": "tsx scripts/test-v2-3-destinations.mjs",
     "dev": "next dev --turbo",
     "build": "tsx scripts/guard-supabase-project.ts && next build",
     "guard:supabase-project": "tsx scripts/guard-supabase-project.ts",
