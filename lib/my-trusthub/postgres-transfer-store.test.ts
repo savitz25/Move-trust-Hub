@@ -6,6 +6,7 @@ import { PostgresTransferStore, validTransferRecord, type SourceConnection } fro
 import { createIsolatedMoveRuntime, isolatedConfig, PARENT_FORM_PATH, type IsolatedMovePorts } from './isolated-runtime';
 import { TRANSFER_VERSION, manifestDigest, type GuestStageInput } from './vendor/v2-3-profile-transfer';
 import type { TransferRecord } from './profile-save-adapter';
+import { handleSourceCallback, SOURCE_CALLBACK_PATH } from './source-callback-http';
 const ref=(c:string)=>c.repeat(43), hash=(s:string)=>createHash('sha256').update(s).digest('hex');
 const manifest:GuestStageInput={version:TRANSFER_VERSION,sourceHub:'move',audience:'ask',selected:[{
   localItemId:'hindman-isaacs-moving-storage-inc',revision:'a'.repeat(64),digest:'a'.repeat(64),
@@ -115,4 +116,63 @@ test('S08 acknowledgment binds once; rejects forged scope/browser/digest/replay 
   assert.equal(f.saved!.accountContextRef,ref('a'));
   await assert.rejects(bound.acknowledge(ref('c'),[{...receipt,accountContextRef:ref('z')}],{}),/source_account_changed/);
   assert.equal(f.saved!.accountContextRef,ref('a'));
+});
+
+test('S10 source callback preserves signed bytes and requires independent scoped authority (MOCKED verifier)',async()=>{
+  const f=sqlFixture(),p=ports();p.pool=f.pool;
+  const expiresAt=Date.now()+300000;
+  await new PostgresTransferStore(f.pool,'dedicated').putIfAbsent(hash(ref('x')),
+    {...record(),expiresAt,parentStage:{...record().parentStage,expiresAt}});
+  const bound=createIsolatedMoveRuntime(env,p)!;
+  const body=JSON.stringify({action:'source',continuationRef:ref('c')});
+  const request=()=>new Request(env.MTH_MOVE_PARENT_SAVE_MOVE_ORIGIN+SOURCE_CALLBACK_PATH,
+    {method:'POST',headers:{'content-type':'application/json'},body});
+  assert.equal((await handleSourceCallback(request(),bound)).status,403);
+  p.verifySourceCaller=async(proof,scope)=>{
+    assert.equal(scope,'source:read');assert.ok(proof instanceof Request);
+    assert.equal(await proof.text(),body);return {browserProof:ref('b')};
+  };
+  const response=await handleSourceCallback(request(),bound);assert.equal(response.status,200);
+  assert.equal(response.headers.get('cache-control'),'private, no-store, max-age=0');
+  assert.equal(response.headers.get('access-control-allow-origin'),null);
+  const result=await response.json();assert.equal(result.result.requestPrefix,ref('r'));
+  assert.equal(result.result.manifestDigest,manifestDigest(manifest));
+});
+
+test('S11 callback rejects extra identity/origin/query/oversize/method before source access',async()=>{
+  const p=ports();let calls=0;p.verifySourceCaller=async()=>{calls++;return null;};
+  const bound=createIsolatedMoveRuntime(env,p)!;
+  const url=env.MTH_MOVE_PARENT_SAVE_MOVE_ORIGIN+SOURCE_CALLBACK_PATH;
+  const request=(body:unknown,target=url)=>new Request(target,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)});
+  for(const key of ['consumerUUID','savedRef','projectRef','parentOrigin','returnUrl']) {
+    const response=await handleSourceCallback(request({action:'source',continuationRef:ref('c'),[key]:'untrusted'}),bound);
+    assert.equal(response.status,400);
+  }
+  assert.equal((await handleSourceCallback(request({action:'source',continuationRef:ref('c')},url+'?parentOrigin=https://evil.test'),bound)).status,400);
+  assert.equal((await handleSourceCallback(request({},'https://evil.test'+SOURCE_CALLBACK_PATH),bound)).status,400);
+  assert.equal((await handleSourceCallback(request({data:'x'.repeat(131073)}),bound)).status,413);
+  assert.equal((await handleSourceCallback(new Request(url),bound)).status,405);
+  assert.equal(calls,0);
+  assert.equal((await handleSourceCallback(request({}),null)).status,503);
+  assert.equal((await handleSourceCallback(request({}),createIsolatedMoveRuntime({...env,VERCEL_ENV:'production'},p))).status,503);
+});
+
+test('S12 callback acknowledgment never confirms browser Save; malformed/forged owner receipts refused',async()=>{
+  const f=sqlFixture(),p=ports();p.pool=f.pool;
+  const expiresAt=Date.now()+300000;
+  await new PostgresTransferStore(f.pool,'dedicated').putIfAbsent(hash(ref('x')),
+    {...record(),expiresAt,parentStage:{...record().parentStage,expiresAt}});
+  const bound=createIsolatedMoveRuntime(env,p)!;
+  const receipt={receiptRef:ref('q'),requestKey:ref('r')+':0',accountContextRef:ref('a'),manifestDigest:manifestDigest(manifest),
+    item:manifest.selected[0]!,parent:{outcome:'already_saved',savedRef:'fixture-saved'},project:{outcome:'failed',projectRef:ref('p')},localCopy:'keep'};
+  const request=(receipts:unknown[])=>new Request(env.MTH_MOVE_PARENT_SAVE_MOVE_ORIGIN+SOURCE_CALLBACK_PATH,
+    {method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action:'acknowledge',continuationRef:ref('c'),receipts})});
+  assert.equal((await handleSourceCallback(request([receipt]),bound)).status,403);
+  p.verifySourceCaller=async(_proof,scope)=>{assert.equal(scope,'source:ack');return {browserProof:ref('b')};};
+  assert.equal((await handleSourceCallback(request([{...receipt,consumerUUID:'not-allowed'}]),bound)).status,400);
+  assert.equal((await handleSourceCallback(request([{...receipt,manifestDigest:'0'.repeat(64)}]),bound)).status,403);
+  const response=await handleSourceCallback(request([receipt]),bound);
+  assert.equal(response.status,200);assert.deepEqual(await response.json(),{ok:true});
+  assert.equal(f.saved!.accountContextRef,ref('a'));assert.equal(f.saved!.projectRef,ref('p'));
+  assert.equal((await handleSourceCallback(request([{...receipt,accountContextRef:ref('z')}]),bound)).status,403);
 });

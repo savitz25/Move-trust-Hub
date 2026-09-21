@@ -16,7 +16,14 @@ import { projection } from '../lib/my-trusthub/selection.ts';
 const root=process.env.PARENT_REVIEW_ROOT;
 if(!root)throw Error('PARENT_REVIEW_ROOT required');
 const head=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
-assert.equal(head,'91ff29c5f01e62dd52536fac59d35e4508e56c07');
+assert.equal(head,'16252ef3a6d917bf3bbc0a73282780f750d88232');
+// The reviewed parent implementation may advance; the immutable wire may not.
+for(const file of ['lib/my-trusthub/profile-save/interface.ts','lib/my-trusthub/contracts/v2-3-profile-transfer.ts',
+  'lib/my-trusthub/contracts/v2-3-profile-save.ts']) {
+  const frozen=execFileSync('git',['show','26c4e9ed5c2d6ed8fbf3b3712516b7bbfdee3cd2:'+file],{cwd:root,encoding:'utf8'});
+  const current=execFileSync('git',['show',head+':'+file],{cwd:root,encoding:'utf8'});
+  assert.equal(current,frozen,'Immutable specialist contract drift: '+file);
+}
 const load=path=>import(pathToFileURL(resolve(root,path)).href);
 const {ParentProfileSaveRuntime}=await load('lib/my-trusthub/profile-save/runtime.ts');
 const {handleProfileSave}=await load('lib/my-trusthub/profile-save/http.ts');
