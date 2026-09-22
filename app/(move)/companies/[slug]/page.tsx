@@ -20,7 +20,7 @@ import {
 import { assessProfileQuality } from '@/lib/directory/profile-quality';
 import { getCompanyAttributableReviewCount } from '@/lib/trust/review-display-policy';
 import { countAttributedReviewsForCompany } from '@/lib/trust/attributed-review-count';
-import { LegacyCompanyUserReviews } from '@/components/reviews/legacy-company-user-reviews';
+import { MoveTrustHubCommunityReviews } from '@/components/reviews/move-trust-hub-community-reviews';
 import { CoverageAreaCard } from '@/components/map/coverage-area-card';
 import { CompanyLocalCountyLinks } from '@/components/company/company-local-county-links';
 import { InternalLinkHub } from '@/components/seo/internal-link-hub';
@@ -546,7 +546,7 @@ export default async function CompanyProfilePage({ params }: Props) {
           />
 
           {/* D. Move Trust Hub Community Reviews — completely separate from external snapshots above */}
-          <LegacyCompanyUserReviews
+          <MoveTrustHubCommunityReviews
             legacyId={company.id}
             companyName={company.name}
             usdotNumber={company.usdotNumber}
