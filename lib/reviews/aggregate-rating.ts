@@ -1,7 +1,16 @@
 import type { PublicReview } from '@/lib/reviews/queries';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 
-const MIN_REVIEWS_FOR_AGGREGATE = 1;
+// MOVE-PROFILE-V3-001E: schema.org AggregateRating is intentionally NEVER emitted
+// from this builder, regardless of review count (1, 2, 10, or more). The prior
+// `MIN_REVIEWS_FOR_AGGREGATE = 1` threshold produced false-precision aggregate
+// ratings (e.g. a public "5.0★" company-wide score) off a single community
+// review. Founder has not approved a statistical minimum-review methodology for
+// a company-level aggregate. Fail closed until one is explicitly documented —
+// do NOT reintroduce a threshold (2, 3, 5, 10, ...) without that approval.
+// Individual `Review` nodes (see buildNestedReviewNode / nestedReviews below)
+// are unaffected: those map 1:1 to real hosted reviews and remain legitimate
+// structured data on their own.
 
 export type AggregateRatingSchemaParams = {
   companyName: string;
@@ -129,8 +138,11 @@ export function buildAggregateRatingSchema(params: AggregateRatingSchemaParams) 
   const {
     companyName,
     slug,
-    avgRating,
-    reviewCount,
+    // avgRating / reviewCount are intentionally NOT used to compute a
+    // schema.org AggregateRating here — see the module-level comment. They
+    // stay in the params type for caller compatibility (and in case a future,
+    // Founder-approved aggregation methodology needs them), but this builder
+    // must never derive a company-wide rating from them.
     reviews = [],
     address,
     city,
@@ -182,19 +194,11 @@ export function buildAggregateRatingSchema(params: AggregateRatingSchemaParams) 
     .map((r) => buildNestedReviewNode(r, itemReviewedBase))
     .filter((n): n is Record<string, unknown> => n !== null);
 
-  const canEmitAggregate =
-    reviewCount >= MIN_REVIEWS_FOR_AGGREGATE &&
-    avgRating > 0 &&
-    nestedReviews.length > 0;
-
-  if (canEmitAggregate) {
-    business.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: Number(avgRating).toFixed(1),
-      bestRating: '5',
-      worstRating: '1',
-      ratingCount: reviewCount,
-    };
+  // MOVE-PROFILE-V3-001E: business.aggregateRating is permanently disabled — see
+  // the module-level comment above. We still attach the individual Review nodes
+  // (business.review) whenever real reviews exist; that's legitimate per-review
+  // structured data, decoupled from any company-wide aggregate claim.
+  if (nestedReviews.length > 0) {
     business.review = nestedReviews;
   }
 
