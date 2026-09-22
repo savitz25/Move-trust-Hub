@@ -19,12 +19,23 @@ type Props = {
   initialReviews: Review[];
 };
 
+/** Pure, exported so callers can decide section-level visibility without duplicating this filter. */
+export function hasAttributableReviews(reviews: Review[]): boolean {
+  return reviews.some(isAttributableReview);
+}
+
 /**
  * Third-party attributed references as short cards with outbound links.
  * Never republish full review body text; never emit schema.org Review for these.
+ *
+ * MOVE-EXTREP-001A: renders nothing when there are no real references — a
+ * large section whose only content was "No attributed external review
+ * references on file yet" told the consumer nothing worth the layout space.
+ * Founder decision: prefer omission over empty-state clutter.
  */
 export function AttributedReviewsPanel({ companyName, initialReviews }: Props) {
   const attributable = initialReviews.filter(isAttributableReview);
+  if (attributable.length === 0) return null;
   const headline = formatAttributableReviewCount(attributable.length);
   const googleSearch = buildGoogleAttributionSearchUrl(companyName);
 
@@ -45,14 +56,7 @@ export function AttributedReviewsPanel({ companyName, initialReviews }: Props) {
       </div>
 
       <div className="space-y-3">
-        {attributable.length === 0 ? (
-          <p className="text-muted-foreground py-6 text-sm leading-relaxed">
-            No attributed external review references on file. See the Google snapshot above, or
-            confirm ratings directly on Google Maps before booking. Move Trust Hub community
-            reviews (when available) are shown separately below.
-          </p>
-        ) : (
-          attributable.slice(0, 6).map((review) => (
+        {attributable.slice(0, 6).map((review) => (
             <Card key={review.id} className="review-card p-4">
               <div className="flex justify-between items-start gap-3">
                 <div>
@@ -90,8 +94,7 @@ export function AttributedReviewsPanel({ companyName, initialReviews }: Props) {
                 <ExternalLink className="h-3 w-3" aria-hidden />
               </Link>
             </Card>
-          ))
-        )}
+        ))}
       </div>
 
       <p className="text-[10px] text-muted-foreground mt-4 leading-relaxed">
