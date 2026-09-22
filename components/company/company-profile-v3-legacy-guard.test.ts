@@ -25,6 +25,10 @@ const PROFILE_CONTRACT_FILES = [
   'components/reviews/legacy-company-user-reviews.tsx',
   'app/(move)/companies/[slug]/page.tsx',
   'app/(move)/auto-transport/[slug]/page.tsx',
+  // Feeds a public <meta name="description"> on auto-transport/[slug]'s
+  // generateMetadata -- a metadata leak is just as public as a rendered
+  // card (found via independent audit, MOVE-PROFILE-V3-001B).
+  'lib/trust/review-display-policy.ts',
 ];
 
 // Case-sensitive: intentionally narrow so we do not false-positive on
@@ -42,6 +46,10 @@ const RETIRED_PUBLIC_LABELS = [
   'Industry volume',
   'Live snapshot from Google',
   'Live third-party snapshot',
+  // Runtime-interpolated form found in a public <meta name="description">
+  // (MOVE-PROFILE-V3-001B audit) -- the star-rating template literal, not
+  // just the title-case UI label above.
+  '★ editorial rating',
 ];
 
 test('retired legacy labels do not appear in the V3 profile contract files', () => {
