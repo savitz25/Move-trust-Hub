@@ -10,8 +10,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { AttributedReviewsPanel } from '@/components/reviews/attributed-reviews-panel';
-import { CompanyProfileStats, FmcsaSafetyMetric } from '@/components/company/company-profile-stats';
-import { CompanyProfileReviewSources } from '@/components/company/company-profile-review-sources';
+import { CompanyProfileStats } from '@/components/company/company-profile-stats';
+import { ExternalReputationHeader } from '@/components/company/external-reputation-header';
 import { CompanyProfileIdentity } from '@/components/company/company-profile-identity';
 import {
   ResearchNextSteps,
@@ -38,7 +38,6 @@ import { getCompanyVerificationStatus } from '@/lib/trust/verification-status';
 import { CompanyContactCard } from '@/components/company/company-contact-card';
 import { FmcsaDotCompliance } from '@/components/trust/fmcsa-dot-compliance';
 
-import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
 
 import { BbbPublicDetail } from '@/components/verification/bbb-public-detail';
@@ -185,11 +184,6 @@ export default async function CompanyProfilePage({ params }: Props) {
 
   const reviews = await getReviews(company.id, 8);
   const assignmentStateSlugs = await getCompanyAssignmentStateSlugs(company.slug);
-  const reviewMeta = companyProfileReviewMeta({
-    companyId: company.id,
-    editorialReviewCount: company.reviewCount,
-    editorialRating: company.overallRating,
-  });
   // Prefer Google snippets on the profile when present; else curated seed excerpts.
   const attributableOnSiteCount = Math.max(
     countAttributedReviewsForCompany(company),
@@ -431,32 +425,29 @@ export default async function CompanyProfilePage({ params }: Props) {
             assignmentStateSlugs={assignmentStateSlugs}
           />
 
-          {/* Licensing & Compliance — federal card omitted for Florida state-wave chrome */}
+          {/* Regulatory & Trust Evidence — federal card omitted for Florida state-wave chrome */}
           {waveChrome ? null : (
           <Card>
             <CardHeader>
-              <CardTitle>Licensing &amp; Compliance</CardTitle>
+              <CardTitle>Regulatory &amp; Trust Evidence</CardTitle>
             </CardHeader>
             <CardContent className="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-sm">
               <div className="sm:col-span-2">
                 <FmcsaDotCompliance company={company} />
               </div>
-              <div>
-                <FmcsaSafetyMetric rating={company.fmcsaSafetyRating} />
-                <div className="mt-2">
-                  <Badge variant={company.fmcsaSafetyRating === 'Satisfactory' ? 'success' : 'warning'}>
-                    {company.fmcsaSafetyRating}
-                  </Badge>
-                </div>
-              </div>
-              <div>
+              <div className="sm:col-span-2">
                 <MetricLabel
-                  label="FMCSA complaints (12 mo)"
-                  tooltip="Consumer complaints filed with FMCSA in the last 12 months, compared to total household-goods shipments."
+                  label="Federal authority status"
+                  tooltip="Interstate household-goods operating authority as reported by FMCSA. Separate from state/intrastate authority."
                 />
                 <div className="mt-1 text-sm">
-                  {(company.complaintsLast12m ?? company.fmcsaComplaints).toLocaleString()} complaints on{' '}
-                  {company.fmcsaShipments.toLocaleString()} shipments
+                  {company.authorityActive === false || company.outOfService
+                    ? company.outOfService
+                      ? 'Out-of-service order reported'
+                      : 'Inactive or revoked'
+                    : company.authorityActive === true
+                      ? 'Active'
+                      : 'Unknown — not confirmed on this profile'}
                 </div>
               </div>
               {company.authorityActive === false || company.outOfService ? (
@@ -499,6 +490,8 @@ export default async function CompanyProfilePage({ params }: Props) {
           </Card>
           )}
 
+          <CompanyProfileStats company={company} />
+
           {/* Services & Specialties */}
           <Card>
             <CardHeader><CardTitle>Services &amp; Specialties</CardTitle></CardHeader>
@@ -537,25 +530,13 @@ export default async function CompanyProfilePage({ params }: Props) {
             </CardContent>
           </Card>
 
-          <CompanyProfileReviewSources
-            company={company}
-            googleData={googlePlaces}
-            reputationScore={company.reputationScore}
-            fmcsaSafetyRating={company.fmcsaSafetyRating}
-          />
+          {/* C. External Reputation Snapshots — one coherent, clearly-labeled section */}
+          <ExternalReputationHeader />
 
           <GoogleReviewsSection
             data={googlePlaces}
             companyName={company.name}
             attributableOnSiteCount={attributableOnSiteCount}
-          />
-
-          {/* Community reviews (user-submitted, moderated) */}
-          <LegacyCompanyUserReviews
-            legacyId={company.id}
-            companyName={company.name}
-            usdotNumber={company.usdotNumber}
-            mcNumber={company.mcNumber}
           />
 
           <AttributedReviewsPanel
@@ -564,7 +545,13 @@ export default async function CompanyProfilePage({ params }: Props) {
             initialReviews={reviews}
           />
 
-          <CompanyProfileStats company={company} />
+          {/* D. Move Trust Hub Community Reviews — completely separate from external snapshots above */}
+          <LegacyCompanyUserReviews
+            legacyId={company.id}
+            companyName={company.name}
+            usdotNumber={company.usdotNumber}
+            mcNumber={company.mcNumber}
+          />
 
           <ResearchNextSteps
             title="Next research steps for this mover"
@@ -593,17 +580,6 @@ export default async function CompanyProfilePage({ params }: Props) {
                   <span>{company.foundedYear}</span>
                 </div>
               ) : null}
-              <div className="flex justify-between"><span className="text-muted-foreground">Price Tier</span><span>{company.priceRange}</span></div>
-              <div className="flex justify-between gap-4">
-                <span className="text-muted-foreground shrink-0">On-site reviews</span>
-                <span className="text-right text-xs">{reviewMeta.headline}</span>
-              </div>
-              <div className="flex justify-between gap-4">
-                <span className="text-muted-foreground shrink-0">Industry volume</span>
-                <span className="text-right text-xs">
-                  <EditorialReviewVolume count={company.reviewCount} showNote />
-                </span>
-              </div>
               {company.fmcsaLastChecked ? (
                 <div className="pt-2 border-t text-xs text-muted-foreground">
                   Regulatory data refreshed:{' '}
