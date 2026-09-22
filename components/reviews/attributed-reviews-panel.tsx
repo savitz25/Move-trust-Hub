@@ -47,9 +47,9 @@ export function AttributedReviewsPanel({ companyName, initialReviews }: Props) {
       <div className="space-y-3">
         {attributable.length === 0 ? (
           <p className="text-muted-foreground py-6 text-sm leading-relaxed">
-            No attributed external review references on file. Industry-reported ratings above come
-            from third-party platforms — confirm on Google Maps before booking. Moderated community
-            reviews (when available) are separate and may appear on the community review profile.
+            No attributed external review references on file. See the Google snapshot above, or
+            confirm ratings directly on Google Maps before booking. Move Trust Hub community
+            reviews (when available) are shown separately below.
           </p>
         ) : (
           attributable.slice(0, 6).map((review) => (

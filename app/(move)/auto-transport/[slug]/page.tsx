@@ -7,11 +7,10 @@ import { CompanyVerificationBadges } from '@/components/trust/company-verificati
 import { VerificationBadgeLegend } from '@/components/trust/verification-badge-legend';
 import { FmcsaDotCompliance } from '@/components/trust/fmcsa-dot-compliance';
 import { LicenseMetadataDescription } from '@/components/trust/license-display';
-import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { ReviewTransparencyNote } from '@/components/trust/review-transparency-note';
 import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
-import { CompanyProfileStats, FmcsaSafetyMetric } from '@/components/company/company-profile-stats';
-import { CompanyProfileReviewSources } from '@/components/company/company-profile-review-sources';
+import { CompanyProfileStats } from '@/components/company/company-profile-stats';
+import { ExternalReputationHeader } from '@/components/company/external-reputation-header';
 import { CompanyContactCard } from '@/components/company/company-contact-card';
 import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
 import { GoogleReviewsSection } from '@/components/verification/google-reviews-section';
@@ -89,11 +88,11 @@ export default async function AutoTransportProfilePage({ params }: Props) {
 
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
-        <div>
+        <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
-            <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
+            <h1 className="text-4xl font-semibold tracking-tight break-words">{company.name}</h1>
             <CompanyTypeBadges company={company} size="default" className="shrink-0" />
-            <CompanyVerificationBadges company={company} size="profile" className="justify-start shrink-0" />
+            <CompanyVerificationBadges company={company} size="profile" className="justify-start" />
             {company.googleData?.status === 'ok' ? (
               <GoogleRatingBadge data={company.googleData} />
             ) : null}
@@ -103,7 +102,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
           ) : null}
           <VerificationBadgeLegend className="mt-4" />
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <a href={company.website} target="_blank" rel="noopener" className="flex items-center gap-1 text-sm text-primary hover:underline">
             Visit official site <ExternalLink className="h-3.5 w-3.5" />
           </a>
@@ -114,7 +113,8 @@ export default async function AutoTransportProfilePage({ params }: Props) {
       </div>
 
       <CompanyProfileStats company={company} variant="auto-transport" />
-      <CompanyProfileReviewSources company={company} googleData={company.googleData} />
+
+      <ExternalReputationHeader />
       <GoogleReviewsSection data={company.googleData} companyName={company.name} />
 
       <div className="grid lg:grid-cols-3 gap-6">
@@ -152,14 +152,11 @@ export default async function AutoTransportProfilePage({ params }: Props) {
 
           <Card>
             <CardHeader>
-              <CardTitle>Licensing &amp; Compliance</CardTitle>
+              <CardTitle>Regulatory &amp; Trust Evidence</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 text-sm">
               <FmcsaDotCompliance company={company} />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <FmcsaSafetyMetric rating={company.fmcsaSafetyRating} />
-                </div>
                 <div>
                   <div className="text-muted-foreground text-xs">BBB Rating</div>
                   <div className="font-medium mt-0.5">
@@ -195,8 +192,8 @@ export default async function AutoTransportProfilePage({ params }: Props) {
                 rel="noopener"
                 className="block w-full"
               >
-                <Button className="w-full" variant="default">
-                  Visit Company Website <ExternalLink className="h-4 w-4 ml-2" />
+                <Button className="w-full whitespace-normal" variant="default">
+                  Visit Company Website <ExternalLink className="h-4 w-4 ml-2 shrink-0" />
                 </Button>
               </a>
               <Link href={`/compare?add=${company.slug}`} className="block w-full">
@@ -227,22 +224,15 @@ export default async function AutoTransportProfilePage({ params }: Props) {
         </div>
       </div>
 
-      {/* Reviews Teaser */}
+      {/* Review transparency note — external snapshots are shown above; avoid a duplicate rating card here */}
       <div className="mt-8">
         <Card>
-          <CardHeader>
-            <CardTitle>Recent Customer Feedback</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ReviewTransparencyNote compact className="mb-4" />
-            <p className="text-sm text-muted-foreground">
-              {company.overallRating}★ editorial rating based on industry-reported third-party feedback — not
-              verified on Move Trust Hub. Research reviews on Google, BBB, and Trustpilot before booking.
+          <CardContent className="pt-6">
+            <ReviewTransparencyNote compact />
+            <p className="mt-3 text-xs text-muted-foreground">
+              Google and BBB snapshots are shown above with their own source, check date, and outbound
+              link. Last profile update {company.lastUpdated}.
             </p>
-            <div className="mt-4 text-xs text-muted-foreground">
-              Industry-reported volume: <EditorialReviewVolume count={company.reviewCount} />. Last updated{' '}
-              {company.lastUpdated}.
-            </div>
           </CardContent>
         </Card>
       </div>

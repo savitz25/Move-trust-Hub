@@ -7,7 +7,6 @@ import { getApprovedReviews } from '@/lib/reviews/queries';
 import { buildAggregateRatingSchema } from '@/lib/reviews/aggregate-rating';
 import { PublicReviewList } from '@/components/reviews/public-review-list';
 import { UserReviewsCta } from '@/components/reviews/user-reviews-cta';
-import { StarRating } from '@/components/ui/star-rating';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -33,9 +32,13 @@ export async function generateMetadata({ params }: Props) {
     });
   }
 
+  // MOVE-PROFILE-V3-001E: no site-level aggregate star average in public SEO
+  // metadata — review-count-only language, honest and count-accurate.
   const ratingLabel =
-    company.approved_review_count > 0 && Number(company.avg_rating) > 0
-      ? `${Number(company.avg_rating).toFixed(1)}★ from ${company.approved_review_count} moderated reviews`
+    company.approved_review_count > 0
+      ? `${company.approved_review_count} Move Trust Hub community ${
+          company.approved_review_count === 1 ? 'review' : 'reviews'
+        }`
       : 'Moderated customer reviews';
 
   return buildMovePageMetadata({
@@ -139,13 +142,19 @@ export default async function CompanyReviewProfilePage({ params }: Props) {
 
         <div className="grid sm:grid-cols-3 gap-3 mb-8">
           <Card className="p-4">
-            <p className="text-xs text-muted-foreground uppercase tracking-wide">Average rating</p>
-            <div className="mt-1">
-              <StarRating
-                rating={Number(company.avg_rating)}
-                size="lg"
-              />
-            </div>
+            {/* MOVE-PROFILE-V3-001E: no site-level aggregate star average here —
+                honest review-count language only. Individual reviewer stars
+                still render per-review in PublicReviewList below. */}
+            <p className="text-xs text-muted-foreground uppercase tracking-wide">
+              Community reviews
+            </p>
+            <p className="mt-2 text-sm font-medium">
+              {company.approved_review_count > 0
+                ? `${company.approved_review_count} Move Trust Hub community ${
+                    company.approved_review_count === 1 ? 'review' : 'reviews'
+                  }`
+                : 'No Move Trust Hub community reviews yet'}
+            </p>
           </Card>
           <Card className="p-4">
             <p className="text-xs text-muted-foreground uppercase tracking-wide">Approved reviews</p>

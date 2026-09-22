@@ -73,6 +73,14 @@ export function buildGoogleAttributionSearchUrl(companyName: string): string {
   return `${GOOGLE_SEARCH_URL}${encodeURIComponent(`${companyName} moving company reviews`)}`;
 }
 
+/**
+ * MOVE-PROFILE-V3-001A: no unattributed blended star rating in this output
+ * — it has no single source, date, or link, so it cannot honestly be
+ * presented as an evidence snapshot (see the public-render removal in
+ * CompanyProfileStats / CompanyProfileReviewSources). This is also read
+ * directly into a public <meta name="description"> on
+ * app/(move)/auto-transport/[slug]/page.tsx, so the same rule applies here.
+ */
 export function companyProfileReviewMeta(params: {
   companyId: string;
   editorialReviewCount: number;
@@ -82,11 +90,11 @@ export function companyProfileReviewMeta(params: {
   if (attributable > 0) {
     return {
       headline: formatAttributableReviewCount(attributable),
-      detail: `${params.editorialRating}★ editorial rating · ${formatEditorialReviewVolume(params.editorialReviewCount)}`,
+      detail: formatEditorialReviewVolume(params.editorialReviewCount),
     };
   }
   return {
-    headline: `${params.editorialRating}★ editorial rating`,
-    detail: formatEditorialReviewVolume(params.editorialReviewCount),
+    headline: formatEditorialReviewVolume(params.editorialReviewCount),
+    detail: 'Confirm ratings on Google Maps before booking.',
   };
 }
