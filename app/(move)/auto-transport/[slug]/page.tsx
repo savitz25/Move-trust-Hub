@@ -14,6 +14,7 @@ import { ExternalReputationHeader } from '@/components/company/external-reputati
 import { CompanyContactCard } from '@/components/company/company-contact-card';
 import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
 import { GoogleReviewsSection } from '@/components/verification/google-reviews-section';
+import { isDisplayableGoogleForUi } from '@/lib/verification/display-enrichment';
 import { BbbPublicDetail } from '@/components/verification/bbb-public-detail';
 import { hasBbbPublicScrapeData } from '@/lib/verification/bbb-public-display';
 import { Badge } from '@/components/ui/badge';
@@ -114,8 +115,15 @@ export default async function AutoTransportProfilePage({ params }: Props) {
 
       <CompanyProfileStats company={company} variant="auto-transport" />
 
-      <ExternalReputationHeader />
-      <GoogleReviewsSection data={company.googleData} companyName={company.name} />
+      {/* MOVE-EXTREP-001A: omit the whole section when there's no real Google
+          snapshot -- auto-transport has no attributed-references panel, so
+          Google is the section's only possible content here. */}
+      {isDisplayableGoogleForUi(company.googleData) ? (
+        <>
+          <ExternalReputationHeader />
+          <GoogleReviewsSection data={company.googleData} />
+        </>
+      ) : null}
 
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Main Info */}

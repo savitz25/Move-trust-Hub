@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
-import { AttributedReviewsPanel } from '@/components/reviews/attributed-reviews-panel';
+import { AttributedReviewsPanel, hasAttributableReviews } from '@/components/reviews/attributed-reviews-panel';
 import { CompanyProfileStats } from '@/components/company/company-profile-stats';
 import { ExternalReputationHeader } from '@/components/company/external-reputation-header';
 import { CompanyProfileIdentity } from '@/components/company/company-profile-identity';
@@ -18,8 +18,6 @@ import {
   profileResearchLinks,
 } from '@/components/research/research-next-steps';
 import { assessProfileQuality } from '@/lib/directory/profile-quality';
-import { getCompanyAttributableReviewCount } from '@/lib/trust/review-display-policy';
-import { countAttributedReviewsForCompany } from '@/lib/trust/attributed-review-count';
 import { LegacyCompanyUserReviews } from '@/components/reviews/legacy-company-user-reviews';
 import { CoverageAreaCard } from '@/components/map/coverage-area-card';
 import { CompanyLocalCountyLinks } from '@/components/company/company-local-county-links';
@@ -86,6 +84,7 @@ import { claimCtaEnabledFor, moveClaimProfile } from '@/lib/customer-integration
 import { fetchBusinessProfile, fetchBusinessReplies } from '@/lib/customer-integration/public';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 import {
+  isDisplayableGoogleForUi,
   resolveConfirmedPublicScrapeForCompany,
   resolveGooglePlacesForCompany,
 } from '@/lib/verification/display-enrichment';
@@ -184,11 +183,6 @@ export default async function CompanyProfilePage({ params }: Props) {
 
   const reviews = await getReviews(company.id, 8);
   const assignmentStateSlugs = await getCompanyAssignmentStateSlugs(company.slug);
-  // Prefer Google snippets on the profile when present; else curated seed excerpts.
-  const attributableOnSiteCount = Math.max(
-    countAttributedReviewsForCompany(company),
-    getCompanyAttributableReviewCount(company.id)
-  );
 
   const displayCompany = finalizeCompanyEnrichmentForDisplay(company);
   const verification = getCompanyVerificationStatus(displayCompany);
@@ -530,20 +524,21 @@ export default async function CompanyProfilePage({ params }: Props) {
             </CardContent>
           </Card>
 
-          {/* C. External Reputation Snapshots — one coherent, clearly-labeled section */}
-          <ExternalReputationHeader />
-
-          <GoogleReviewsSection
-            data={googlePlaces}
-            companyName={company.name}
-            attributableOnSiteCount={attributableOnSiteCount}
-          />
-
-          <AttributedReviewsPanel
-            companyId={company.id}
-            companyName={company.name}
-            initialReviews={reviews}
-          />
+          {/* C. External Reputation Snapshots — MOVE-EXTREP-001A: the whole
+              section (header included) is omitted when there is no real
+              Google snapshot AND no real attributed reference. Prefer
+              omission over empty-state clutter. */}
+          {isDisplayableGoogleForUi(googlePlaces) || hasAttributableReviews(reviews) ? (
+            <>
+              <ExternalReputationHeader />
+              <GoogleReviewsSection data={googlePlaces} />
+              <AttributedReviewsPanel
+                companyId={company.id}
+                companyName={company.name}
+                initialReviews={reviews}
+              />
+            </>
+          ) : null}
 
           {/* D. Move Trust Hub Community Reviews — completely separate from external snapshots above */}
           <LegacyCompanyUserReviews
