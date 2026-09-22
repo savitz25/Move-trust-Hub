@@ -1,0 +1,33 @@
+name: Move V2-3 rebuild
+on:
+  pull_request:
+  push:
+    branches: [mth-v2-3-move-rebuild-b3]
+permissions:
+  contents: read
+jobs:
+  protocol-and-storage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.18.0'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Local Save, assertions, isolation and privacy
+        run: npm run test:v2-3-move
+      - name: Native disposable PostgreSQL (not hosted)
+        run: npm run test:v2-3-postgres
+      - uses: actions/checkout@v4
+        with:
+          repository: savitz25/Conumers-Trust-Hub
+          ref: 7184f53706f6ab8b94d6151794a3b54f090a6662
+          path: scripts/output/ask-contract
+      - name: Pinned real Ask transport; session fixtures explicitly mocked
+        run: npm run test:v2-3-parent
+        env:
+          ASK_CONTRACT_ROOT: scripts/output/ask-contract
+      - name: Preserve current profile cleanup and structured data
+        run: npm run test:v2-3-profile-compat

@@ -5,6 +5,7 @@ import type { PerformanceFlags } from '@/lib/edge-config/types';
 import { DEFAULT_PERFORMANCE_FLAGS } from '@/lib/edge-config/types';
 import { DeferredAnalytics } from '@/components/performance/deferred-analytics';
 import { DeferredWidgets } from '@/components/performance/deferred-widgets';
+import { legacyClientDisabled } from '@/lib/my-trusthub/preview-isolation';
 
 /**
  * Non-GA third parties (Vercel Analytics, chatbot) stay deferred for PSI.
@@ -19,7 +20,7 @@ export function ThirdPartyOrchestrator({
   const [flags, setFlags] = useState(initialFlags ?? DEFAULT_PERFORMANCE_FLAGS);
 
   useEffect(() => {
-    if (initialFlags) return;
+    if (initialFlags || legacyClientDisabled()) return;
     void fetch('/api/performance-flags')
       .then((response) => (response.ok ? response.json() : null))
       .then((data: PerformanceFlags | null) => {
@@ -29,6 +30,8 @@ export function ThirdPartyOrchestrator({
   }, [initialFlags]);
 
   const interactionOnly = flags.deferThirdPartyUntilInteraction;
+
+  if (legacyClientDisabled()) return null;
 
   return (
     <>

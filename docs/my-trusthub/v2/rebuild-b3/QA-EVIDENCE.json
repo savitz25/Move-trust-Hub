@@ -1,0 +1,935 @@
+{
+  "base": "01aa71fc32981eecdd4934397ef12b3b3665bb86",
+  "branch": "mth-v2-3-move-rebuild-b3",
+  "askContract": "7184f53706f6ab8b94d6151794a3b54f090a6662",
+  "runtime": "Node 22.18.0 / Next 15.5.19 development / Playwright Chromium / Windows",
+  "realParentAuth": false,
+  "hostedV23Activated": false,
+  "profileCases": [
+    {
+      "label": "baseline",
+      "width": 1440,
+      "localSave": true,
+      "localReload": true,
+      "conversionCount": 0,
+      "overflow": {
+        "viewport": 1440,
+        "width": 1440
+      },
+      "blockedExternalWrites": [],
+      "violations": [
+        {
+          "id": "color-contrast",
+          "nodes": 30,
+          "targets": [
+            [
+              ".th-logo-name"
+            ],
+            [
+              "a[aria-current=\"page\"]"
+            ],
+            [
+              ".tracking-\\[0\\.14em\\]"
+            ],
+            [
+              ".h-10"
+            ],
+            [
+              ".hover\\:underline.gap-1\\.5.underline-offset-2"
+            ],
+            [
+              "a[href$=\"move-quote-check\"]"
+            ],
+            [
+              ".border-transparent"
+            ],
+            [
+              ".hover\\:underline.text-primary[href=\"tel:7244822788\"]"
+            ],
+            [
+              ".hover\\:underline[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".px-8"
+            ],
+            [
+              ".text-slate-500.text-\\[11px\\]"
+            ],
+            [
+              ".max-w-3xl.text-center.mx-auto > .tracking-tight.text-foreground"
+            ],
+            [
+              ".hover\\:text-foreground\\/80"
+            ],
+            [
+              ".mt-1\\.5.leading-relaxed"
+            ],
+            [
+              ".max-w-3xl.text-center.mx-auto > .mt-1.leading-relaxed"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(1)"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(2)"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(3)"
+            ],
+            [
+              ".flex-wrap.mt-2.gap-2 > .border-border\\/70.bg-muted\\/40[aria-label=\"Ask Trust Hub Standard\"]"
+            ],
+            [
+              ".hover\\:underline.underline-offset-2[href$=\"www.asktrusthub.com\"]"
+            ],
+            [
+              "li:nth-child(1) > .ml-1.opacity-70"
+            ],
+            [
+              ".gap-1:nth-child(2) > span:nth-child(2)"
+            ],
+            [
+              "span:nth-child(2) > .ml-1.opacity-70"
+            ],
+            [
+              "a[data-network-to=\"insurance\"]"
+            ],
+            [
+              "a[data-network-to=\"lender\"]"
+            ],
+            [
+              ".gap-1:nth-child(5) > .hover\\:underline.underline-offset-2[rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".hover\\:underline.underline-offset-2[href$=\"www.seniortrusthub.com\"]"
+            ],
+            [
+              ".gap-1:nth-child(7) > .hover\\:underline.underline-offset-2[rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".text-\\[10px\\]"
+            ],
+            [
+              ".text-\\[10px\\] > .underline[href$=\"fmcsa.dot.gov/\"][target=\"_blank\"]"
+            ]
+          ]
+        }
+      ],
+      "errors": [
+        "Blocked analytics resource",
+        "React hydration text mismatch"
+      ]
+    },
+    {
+      "label": "baseline",
+      "width": 390,
+      "localSave": true,
+      "localReload": true,
+      "conversionCount": 0,
+      "overflow": {
+        "viewport": 390,
+        "width": 390
+      },
+      "blockedExternalWrites": [],
+      "violations": [
+        {
+          "id": "color-contrast",
+          "nodes": 29,
+          "targets": [
+            [
+              ".th-logo-name"
+            ],
+            [
+              ".tracking-\\[0\\.14em\\]"
+            ],
+            [
+              ".h-10"
+            ],
+            [
+              ".hover\\:underline.gap-1\\.5.underline-offset-2"
+            ],
+            [
+              "a[href$=\"move-quote-check\"]"
+            ],
+            [
+              ".border-transparent"
+            ],
+            [
+              ".hover\\:underline.text-primary[href=\"tel:7244822788\"]"
+            ],
+            [
+              ".hover\\:underline[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".px-8"
+            ],
+            [
+              ".text-slate-500.text-\\[11px\\]"
+            ],
+            [
+              ".max-w-3xl.text-center.mx-auto > .tracking-tight.text-foreground"
+            ],
+            [
+              ".hover\\:text-foreground\\/80"
+            ],
+            [
+              ".mt-1\\.5.leading-relaxed"
+            ],
+            [
+              ".max-w-3xl.text-center.mx-auto > .mt-1.leading-relaxed"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(1)"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(2)"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(3)"
+            ],
+            [
+              ".flex-wrap.mt-2.gap-2 > .border-border\\/70.bg-muted\\/40[aria-label=\"Ask Trust Hub Standard\"]"
+            ],
+            [
+              ".hover\\:underline.underline-offset-2[href$=\"www.asktrusthub.com\"]"
+            ],
+            [
+              "li:nth-child(1) > .ml-1.opacity-70"
+            ],
+            [
+              ".gap-1:nth-child(2) > span:nth-child(2)"
+            ],
+            [
+              "span:nth-child(2) > .ml-1.opacity-70"
+            ],
+            [
+              "a[data-network-to=\"insurance\"]"
+            ],
+            [
+              "a[data-network-to=\"lender\"]"
+            ],
+            [
+              ".gap-1:nth-child(5) > .hover\\:underline.underline-offset-2[rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".hover\\:underline.underline-offset-2[href$=\"www.seniortrusthub.com\"]"
+            ],
+            [
+              ".gap-1:nth-child(7) > .hover\\:underline.underline-offset-2[rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".text-\\[10px\\]"
+            ],
+            [
+              ".text-\\[10px\\] > .underline[href$=\"fmcsa.dot.gov/\"][target=\"_blank\"]"
+            ]
+          ]
+        }
+      ],
+      "errors": [
+        "Blocked analytics resource",
+        "React hydration text mismatch"
+      ]
+    },
+    {
+      "label": "baseline",
+      "width": 320,
+      "localSave": true,
+      "localReload": true,
+      "conversionCount": 0,
+      "overflow": {
+        "viewport": 320,
+        "width": 320
+      },
+      "blockedExternalWrites": [],
+      "violations": [
+        {
+          "id": "color-contrast",
+          "nodes": 29,
+          "targets": [
+            [
+              ".th-logo-name"
+            ],
+            [
+              ".tracking-\\[0\\.14em\\]"
+            ],
+            [
+              ".h-10"
+            ],
+            [
+              ".hover\\:underline.gap-1\\.5.underline-offset-2"
+            ],
+            [
+              "a[href$=\"move-quote-check\"]"
+            ],
+            [
+              ".border-transparent"
+            ],
+            [
+              ".hover\\:underline.text-primary[href=\"tel:7244822788\"]"
+            ],
+            [
+              ".hover\\:underline[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".px-8"
+            ],
+            [
+              ".text-slate-500.text-\\[11px\\]"
+            ],
+            [
+              ".max-w-3xl.text-center.mx-auto > .tracking-tight.text-foreground"
+            ],
+            [
+              ".hover\\:text-foreground\\/80"
+            ],
+            [
+              ".mt-1\\.5.leading-relaxed"
+            ],
+            [
+              ".max-w-3xl.text-center.mx-auto > .mt-1.leading-relaxed"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(1)"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(2)"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(3)"
+            ],
+            [
+              ".flex-wrap.mt-2.gap-2 > .border-border\\/70.bg-muted\\/40[aria-label=\"Ask Trust Hub Standard\"]"
+            ],
+            [
+              ".hover\\:underline.underline-offset-2[href$=\"www.asktrusthub.com\"]"
+            ],
+            [
+              "li:nth-child(1) > .ml-1.opacity-70"
+            ],
+            [
+              ".gap-1:nth-child(2) > span:nth-child(2)"
+            ],
+            [
+              "span:nth-child(2) > .ml-1.opacity-70"
+            ],
+            [
+              "a[data-network-to=\"insurance\"]"
+            ],
+            [
+              "a[data-network-to=\"lender\"]"
+            ],
+            [
+              ".gap-1:nth-child(5) > .hover\\:underline.underline-offset-2[rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".hover\\:underline.underline-offset-2[href$=\"www.seniortrusthub.com\"]"
+            ],
+            [
+              ".gap-1:nth-child(7) > .hover\\:underline.underline-offset-2[rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".text-\\[10px\\]"
+            ],
+            [
+              ".text-\\[10px\\] > .underline[href$=\"fmcsa.dot.gov/\"][target=\"_blank\"]"
+            ]
+          ]
+        }
+      ],
+      "errors": [
+        "Blocked analytics resource",
+        "React hydration text mismatch"
+      ]
+    },
+    {
+      "label": "candidate",
+      "width": 1440,
+      "localSave": true,
+      "localReload": true,
+      "conversionCount": 1,
+      "overflow": {
+        "viewport": 1440,
+        "width": 1440
+      },
+      "blockedExternalWrites": [],
+      "violations": [
+        {
+          "id": "color-contrast",
+          "nodes": 30,
+          "targets": [
+            [
+              ".th-logo-name"
+            ],
+            [
+              "a[aria-current=\"page\"]"
+            ],
+            [
+              ".tracking-\\[0\\.14em\\]"
+            ],
+            [
+              ".h-10"
+            ],
+            [
+              ".hover\\:underline.gap-1\\.5.underline-offset-2"
+            ],
+            [
+              "a[href$=\"move-quote-check\"]"
+            ],
+            [
+              ".border-transparent"
+            ],
+            [
+              ".hover\\:underline.text-primary[href=\"tel:7244822788\"]"
+            ],
+            [
+              ".hover\\:underline[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".px-8"
+            ],
+            [
+              ".text-slate-500.text-\\[11px\\]"
+            ],
+            [
+              ".max-w-3xl.text-center.mx-auto > .tracking-tight.text-foreground"
+            ],
+            [
+              ".hover\\:text-foreground\\/80"
+            ],
+            [
+              ".mt-1\\.5.leading-relaxed"
+            ],
+            [
+              ".max-w-3xl.text-center.mx-auto > .mt-1.leading-relaxed"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(1)"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(2)"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(3)"
+            ],
+            [
+              ".flex-wrap.mt-2.gap-2 > .border-border\\/70.bg-muted\\/40[aria-label=\"Ask Trust Hub Standard\"]"
+            ],
+            [
+              ".hover\\:underline.underline-offset-2[href$=\"www.asktrusthub.com\"]"
+            ],
+            [
+              "li:nth-child(1) > .ml-1.opacity-70"
+            ],
+            [
+              ".gap-1:nth-child(2) > span:nth-child(2)"
+            ],
+            [
+              "span:nth-child(2) > .ml-1.opacity-70"
+            ],
+            [
+              "a[data-network-to=\"insurance\"]"
+            ],
+            [
+              "a[data-network-to=\"lender\"]"
+            ],
+            [
+              ".gap-1:nth-child(5) > .hover\\:underline.underline-offset-2[rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".hover\\:underline.underline-offset-2[href$=\"www.seniortrusthub.com\"]"
+            ],
+            [
+              ".gap-1:nth-child(7) > .hover\\:underline.underline-offset-2[rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".text-\\[10px\\]"
+            ],
+            [
+              ".text-\\[10px\\] > .underline[href$=\"fmcsa.dot.gov/\"][target=\"_blank\"]"
+            ]
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "label": "candidate",
+      "width": 390,
+      "localSave": true,
+      "localReload": true,
+      "conversionCount": 1,
+      "overflow": {
+        "viewport": 390,
+        "width": 390
+      },
+      "blockedExternalWrites": [],
+      "violations": [
+        {
+          "id": "color-contrast",
+          "nodes": 29,
+          "targets": [
+            [
+              ".th-logo-name"
+            ],
+            [
+              ".tracking-\\[0\\.14em\\]"
+            ],
+            [
+              ".h-10"
+            ],
+            [
+              ".hover\\:underline.gap-1\\.5.underline-offset-2"
+            ],
+            [
+              "a[href$=\"move-quote-check\"]"
+            ],
+            [
+              ".border-transparent"
+            ],
+            [
+              ".hover\\:underline.text-primary[href=\"tel:7244822788\"]"
+            ],
+            [
+              ".hover\\:underline[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".px-8"
+            ],
+            [
+              ".text-slate-500.text-\\[11px\\]"
+            ],
+            [
+              ".max-w-3xl.text-center.mx-auto > .tracking-tight.text-foreground"
+            ],
+            [
+              ".hover\\:text-foreground\\/80"
+            ],
+            [
+              ".mt-1\\.5.leading-relaxed"
+            ],
+            [
+              ".max-w-3xl.text-center.mx-auto > .mt-1.leading-relaxed"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(1)"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(2)"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(3)"
+            ],
+            [
+              ".flex-wrap.mt-2.gap-2 > .border-border\\/70.bg-muted\\/40[aria-label=\"Ask Trust Hub Standard\"]"
+            ],
+            [
+              ".hover\\:underline.underline-offset-2[href$=\"www.asktrusthub.com\"]"
+            ],
+            [
+              "li:nth-child(1) > .ml-1.opacity-70"
+            ],
+            [
+              ".gap-1:nth-child(2) > span:nth-child(2)"
+            ],
+            [
+              "span:nth-child(2) > .ml-1.opacity-70"
+            ],
+            [
+              "a[data-network-to=\"insurance\"]"
+            ],
+            [
+              "a[data-network-to=\"lender\"]"
+            ],
+            [
+              ".gap-1:nth-child(5) > .hover\\:underline.underline-offset-2[rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".hover\\:underline.underline-offset-2[href$=\"www.seniortrusthub.com\"]"
+            ],
+            [
+              ".gap-1:nth-child(7) > .hover\\:underline.underline-offset-2[rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".text-\\[10px\\]"
+            ],
+            [
+              ".text-\\[10px\\] > .underline[href$=\"fmcsa.dot.gov/\"][target=\"_blank\"]"
+            ]
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "label": "candidate",
+      "width": 320,
+      "localSave": true,
+      "localReload": true,
+      "conversionCount": 1,
+      "overflow": {
+        "viewport": 320,
+        "width": 320
+      },
+      "blockedExternalWrites": [],
+      "violations": [
+        {
+          "id": "color-contrast",
+          "nodes": 29,
+          "targets": [
+            [
+              ".th-logo-name"
+            ],
+            [
+              ".tracking-\\[0\\.14em\\]"
+            ],
+            [
+              ".h-10"
+            ],
+            [
+              ".hover\\:underline.gap-1\\.5.underline-offset-2"
+            ],
+            [
+              "a[href$=\"move-quote-check\"]"
+            ],
+            [
+              ".border-transparent"
+            ],
+            [
+              ".hover\\:underline.text-primary[href=\"tel:7244822788\"]"
+            ],
+            [
+              ".hover\\:underline[target=\"_blank\"][rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".px-8"
+            ],
+            [
+              ".text-slate-500.text-\\[11px\\]"
+            ],
+            [
+              ".max-w-3xl.text-center.mx-auto > .tracking-tight.text-foreground"
+            ],
+            [
+              ".hover\\:text-foreground\\/80"
+            ],
+            [
+              ".mt-1\\.5.leading-relaxed"
+            ],
+            [
+              ".max-w-3xl.text-center.mx-auto > .mt-1.leading-relaxed"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(1)"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(2)"
+            ],
+            [
+              ".hover\\:opacity-90.underline.underline-offset-2:nth-child(3)"
+            ],
+            [
+              ".flex-wrap.mt-2.gap-2 > .border-border\\/70.bg-muted\\/40[aria-label=\"Ask Trust Hub Standard\"]"
+            ],
+            [
+              ".hover\\:underline.underline-offset-2[href$=\"www.asktrusthub.com\"]"
+            ],
+            [
+              "li:nth-child(1) > .ml-1.opacity-70"
+            ],
+            [
+              ".gap-1:nth-child(2) > span:nth-child(2)"
+            ],
+            [
+              "span:nth-child(2) > .ml-1.opacity-70"
+            ],
+            [
+              "a[data-network-to=\"insurance\"]"
+            ],
+            [
+              "a[data-network-to=\"lender\"]"
+            ],
+            [
+              ".gap-1:nth-child(5) > .hover\\:underline.underline-offset-2[rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".hover\\:underline.underline-offset-2[href$=\"www.seniortrusthub.com\"]"
+            ],
+            [
+              ".gap-1:nth-child(7) > .hover\\:underline.underline-offset-2[rel=\"noopener noreferrer\"]"
+            ],
+            [
+              ".text-\\[10px\\]"
+            ],
+            [
+              ".text-\\[10px\\] > .underline[href$=\"fmcsa.dot.gov/\"][target=\"_blank\"]"
+            ]
+          ]
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "actionCases": [
+    {
+      "label": "baseline",
+      "width": 1440,
+      "localSave": true,
+      "localReload": true,
+      "compareAddRemove": true,
+      "myMoveGuestNavigation": true,
+      "backNavigation": true,
+      "ineligibleMountAbsent": true,
+      "scopedA11y": null,
+      "externalWrites": [],
+      "errors": [
+        "Blocked analytics resource",
+        "React hydration text mismatch",
+        "Next data cache over 2MB (10718153 bytes)"
+      ]
+    },
+    {
+      "label": "baseline",
+      "width": 390,
+      "localSave": true,
+      "localReload": true,
+      "compareAddRemove": true,
+      "myMoveGuestNavigation": true,
+      "backNavigation": true,
+      "ineligibleMountAbsent": true,
+      "scopedA11y": null,
+      "externalWrites": [],
+      "errors": [
+        "Blocked analytics resource",
+        "React hydration text mismatch",
+        "Next data cache over 2MB (10718153 bytes)"
+      ]
+    },
+    {
+      "label": "baseline",
+      "width": 320,
+      "localSave": true,
+      "localReload": true,
+      "compareAddRemove": true,
+      "myMoveGuestNavigation": true,
+      "backNavigation": true,
+      "ineligibleMountAbsent": true,
+      "scopedA11y": null,
+      "externalWrites": [],
+      "errors": [
+        "Blocked analytics resource",
+        "React hydration text mismatch",
+        "Next data cache over 2MB (10718153 bytes)"
+      ]
+    },
+    {
+      "label": "candidate",
+      "width": 1440,
+      "localSave": true,
+      "localReload": true,
+      "compareAddRemove": true,
+      "myMoveGuestNavigation": true,
+      "backNavigation": true,
+      "ineligibleMountAbsent": true,
+      "scopedA11y": {
+        "violations": 0,
+        "keyboardFocusVisible": true,
+        "errorAnnounced": true
+      },
+      "externalWrites": [],
+      "errors": [
+        "Expected unconfigured BFF 503",
+        "Next data cache over 2MB (10718153 bytes)"
+      ]
+    },
+    {
+      "label": "candidate",
+      "width": 390,
+      "localSave": true,
+      "localReload": true,
+      "compareAddRemove": true,
+      "myMoveGuestNavigation": true,
+      "backNavigation": true,
+      "ineligibleMountAbsent": true,
+      "scopedA11y": {
+        "violations": 0,
+        "keyboardFocusVisible": true,
+        "errorAnnounced": true
+      },
+      "externalWrites": [],
+      "errors": [
+        "Expected unconfigured BFF 503",
+        "Next data cache over 2MB (10718153 bytes)"
+      ]
+    },
+    {
+      "label": "candidate",
+      "width": 320,
+      "localSave": true,
+      "localReload": true,
+      "compareAddRemove": true,
+      "myMoveGuestNavigation": true,
+      "backNavigation": true,
+      "ineligibleMountAbsent": true,
+      "scopedA11y": {
+        "violations": 0,
+        "keyboardFocusVisible": true,
+        "errorAnnounced": true
+      },
+      "externalWrites": [],
+      "errors": [
+        "Expected unconfigured BFF 503",
+        "Next data cache over 2MB (10718153 bytes)"
+      ]
+    }
+  ],
+  "popupFixtures": {
+    "realParentAuth": false,
+    "results": [
+      {
+        "scenario": "success",
+        "pass": true,
+        "receiptCalls": 1,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "blocked",
+        "pass": true,
+        "receiptCalls": 0,
+        "challengeCalls": 0,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "closed",
+        "pass": true,
+        "receiptCalls": 0,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "wrong_origin",
+        "pass": true,
+        "receiptCalls": 1,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "wrong_source",
+        "pass": true,
+        "receiptCalls": 1,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "extra_field",
+        "pass": true,
+        "receiptCalls": 1,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "duplicate",
+        "pass": true,
+        "receiptCalls": 1,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "concurrent",
+        "pass": true,
+        "receiptCalls": 1,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "expired_proof",
+        "pass": true,
+        "receiptCalls": 1,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "copied_proof",
+        "pass": true,
+        "receiptCalls": 1,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "account_switch",
+        "pass": true,
+        "receiptCalls": 1,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "same_owner",
+        "pass": true,
+        "receiptCalls": 1,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "signout",
+        "pass": true,
+        "receiptCalls": 1,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "expired_challenge",
+        "pass": true,
+        "receiptCalls": 0,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "parent_unavailable",
+        "pass": true,
+        "receiptCalls": 0,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      },
+      {
+        "scenario": "project_failed",
+        "pass": true,
+        "receiptCalls": 1,
+        "challengeCalls": 1,
+        "localRetained": true,
+        "focusRestored": true,
+        "mockedParent": true
+      }
+    ]
+  }
+}

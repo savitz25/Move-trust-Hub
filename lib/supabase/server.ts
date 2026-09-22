@@ -4,6 +4,7 @@ import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 import type { Database } from '@/types/supabase';
 import { getSupabaseAnonKey, getSupabaseUrl } from '@/lib/supabase/config';
+import { legacyClientDisabled, previewReadOnlyFetch } from '@/lib/my-trusthub/preview-isolation';
 
 /**
  * Server-side Supabase client for Server Components, Server Actions, and Route Handlers.
@@ -16,11 +17,14 @@ export async function createClient() {
     getSupabaseUrl() ?? 'https://placeholder.supabase.co',
     getSupabaseAnonKey() ?? 'placeholder',
     {
+      global: { fetch: previewReadOnlyFetch },
       cookies: {
         getAll() {
+          if (legacyClientDisabled()) return [];
           return cookieStore.getAll();
         },
         setAll(cookiesToSet) {
+          if (legacyClientDisabled()) return;
           try {
             cookiesToSet.forEach(({ name, value, options }) => {
               cookieStore.set(name, value, options);

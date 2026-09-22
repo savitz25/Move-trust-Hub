@@ -1,4 +1,5 @@
 import { type NextRequest, NextResponse } from 'next/server';
+import { previewRequestAllowed } from '@/lib/my-trusthub/preview-isolation';
 import { updateSession } from '@/lib/supabase/middleware';
 import {
   INSURANCE_SITE_URL,
@@ -32,6 +33,12 @@ function applyPublicCacheHeaders(response: NextResponse, sMaxAge: number) {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  if (!previewRequestAllowed(request.method, pathname)) {
+    return new NextResponse('Unavailable in isolated preview', { status: 403, headers: { 'Cache-Control': 'private, no-store' } });
+  }
+  // General API routes were previously outside middleware. Preserve that behavior
+  // except for this isolated-preview write fence and the existing SSO matcher.
+  if (pathname.startsWith('/api/') && !pathname.startsWith('/api/auth/network-handoff/')) return NextResponse.next();
   const host = request.headers.get('host');
   const statePath = normalizedPublishedStatePath(pathname);
   if (statePath) {
@@ -270,6 +277,7 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
+    '/api/:path*',
     // Must run on insurance apex — not covered by the catch-all (which excludes *.xml / webmanifest)
     '/sitemap.xml',
     '/sitemap',
