@@ -2,9 +2,10 @@ import type { Company } from '@/types';
 import { Card } from '@/components/ui/card';
 import { MetricLabel } from '@/components/trust/metric-label';
 import {
-  formatComplaintDisplayLabel,
+  formatComplaintEvidenceLabel,
   formatFmcsaSafetyLabel,
-  getComplaintDisplay,
+  getComplaintEvidence,
+  NORMALIZED_COMPLAINT_RATE_UNAVAILABLE_NOTE,
   PROFILE_METRIC_TOOLTIPS,
 } from '@/lib/trust/profile-metrics';
 import { normalizeServiceTags } from '@/lib/data-quality/display-normalize';
@@ -24,7 +25,7 @@ type CompanyProfileStatsProps = {
  * this component simply stops rendering those fields.
  */
 export function CompanyProfileStats({ company }: CompanyProfileStatsProps) {
-  const complaintDisplay = getComplaintDisplay(company);
+  const complaintEvidence = getComplaintEvidence(company);
   const services = normalizeServiceTags(company.services as string[]);
 
   return (
@@ -42,27 +43,23 @@ export function CompanyProfileStats({ company }: CompanyProfileStatsProps) {
         </p>
       </Card>
 
-      {complaintDisplay.mode !== 'none' ? (
+      {complaintEvidence.status === 'recorded' ? (
         <Card className="p-4 flex flex-col gap-1">
           <MetricLabel
-            label="FMCSA complaint evidence"
-            tooltip={PROFILE_METRIC_TOOLTIPS.complaintRatio}
+            label="FMCSA complaints"
+            tooltip={PROFILE_METRIC_TOOLTIPS.complaintEvidence}
           />
-          {complaintDisplay.mode === 'rate' ? (
-            <>
-              <p className="text-2xl font-semibold mt-1 tabular-nums leading-none">
-                {complaintDisplay.ratioPer1000}
-              </p>
-              <p className="text-[11px] text-muted-foreground leading-snug">
-                complaints per 1,000 shipments ({complaintDisplay.complaints.toLocaleString()} on{' '}
-                {complaintDisplay.shipments.toLocaleString()} shipments)
-              </p>
-            </>
-          ) : (
-            <p className="text-xs text-muted-foreground leading-snug mt-1">
-              {formatComplaintDisplayLabel(complaintDisplay)}
-            </p>
-          )}
+          <p className="text-2xl font-semibold mt-1 tabular-nums leading-none">
+            {complaintEvidence.complaints.toLocaleString()}
+          </p>
+          <p className="text-[11px] text-muted-foreground leading-snug">
+            {formatComplaintEvidenceLabel(complaintEvidence)}
+          </p>
+          <p className="text-[11px] text-muted-foreground leading-snug mt-2 pt-2 border-t">
+            <span className="font-medium text-foreground">Normalized complaint rate</span>
+            <br />
+            {NORMALIZED_COMPLAINT_RATE_UNAVAILABLE_NOTE}
+          </p>
         </Card>
       ) : null}
 

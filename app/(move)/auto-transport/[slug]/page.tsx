@@ -88,11 +88,11 @@ export default async function AutoTransportProfilePage({ params }: Props) {
 
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
-        <div>
+        <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
-            <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
+            <h1 className="text-4xl font-semibold tracking-tight break-words">{company.name}</h1>
             <CompanyTypeBadges company={company} size="default" className="shrink-0" />
-            <CompanyVerificationBadges company={company} size="profile" className="justify-start shrink-0" />
+            <CompanyVerificationBadges company={company} size="profile" className="justify-start" />
             {company.googleData?.status === 'ok' ? (
               <GoogleRatingBadge data={company.googleData} />
             ) : null}
@@ -102,7 +102,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
           ) : null}
           <VerificationBadgeLegend className="mt-4" />
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <a href={company.website} target="_blank" rel="noopener" className="flex items-center gap-1 text-sm text-primary hover:underline">
             Visit official site <ExternalLink className="h-3.5 w-3.5" />
           </a>
@@ -192,8 +192,8 @@ export default async function AutoTransportProfilePage({ params }: Props) {
                 rel="noopener"
                 className="block w-full"
               >
-                <Button className="w-full" variant="default">
-                  Visit Company Website <ExternalLink className="h-4 w-4 ml-2" />
+                <Button className="w-full whitespace-normal" variant="default">
+                  Visit Company Website <ExternalLink className="h-4 w-4 ml-2 shrink-0" />
                 </Button>
               </a>
               <Link href={`/compare?add=${company.slug}`} className="block w-full">
