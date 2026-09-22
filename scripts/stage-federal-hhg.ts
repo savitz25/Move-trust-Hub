@@ -12,7 +12,11 @@ import {
   classifyFederalHhgDockets,
   type LiAuthorityRow,
 } from '../lib/federal-hhg/classify';
-import { matchStagedToCompanies } from '../lib/federal-hhg/match';
+import {
+  assertFederalHhgMatchCandidateSql,
+  FEDERAL_HHG_MATCH_CANDIDATE_SQL,
+  matchStagedToCompanies,
+} from '../lib/federal-hhg/match';
 import { normalizeMc, normalizeState, normalizeUsdot } from '../lib/federal-hhg/normalize';
 import {
   FORBIDDEN_COPIED_USDOT_ASSIGNMENTS,
@@ -160,21 +164,26 @@ async function main() {
   const client = new pg.Client({ connectionString: dbUrl, ssl: { rejectUnauthorized: false } });
   await client.connect();
 
-  const companies = await client.query(
-    `SELECT id, slug, name, usdot_number, mc_number FROM public.companies`
-  );
+  assertFederalHhgMatchCandidateSql(FEDERAL_HHG_MATCH_CANDIDATE_SQL);
+  const companies = await client.query(FEDERAL_HHG_MATCH_CANDIDATE_SQL);
   const companyRows = companies.rows as Array<{
     id: string;
     slug: string;
     name: string;
     usdot_number: string | null;
     mc_number: string | null;
+    legacy_directory_row: boolean | null;
+    publication_state: string | null;
+    entity_type: string | null;
   }>;
   const matchInput = companyRows.map((row) => ({
     id: row.id,
     usdotNumber: row.usdot_number,
     mcNumber: row.mc_number,
     name: row.name,
+    legacyDirectoryRow: row.legacy_directory_row,
+    publicationState: row.publication_state,
+    entityType: row.entity_type,
   }));
 
   const beforeCaps = await client.query(

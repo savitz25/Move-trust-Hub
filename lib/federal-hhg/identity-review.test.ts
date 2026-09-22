@@ -33,6 +33,22 @@ test('same name same city is high-risk duplicate review not a merge', () => {
   assert.equal(result.autoMerge, false);
 });
 
+test('USDOT/MC disagreement stays in review and does not auto-merge', () => {
+  const result = classifyIdentityReview({
+    matchReason: 'USDOT matches but MC differs',
+    legalName: 'SPINE CARRIER LLC',
+    dbaName: null,
+    phyCity: 'Boise',
+    phyState: 'ID',
+    existingName: 'Spine Carrier',
+    existingCity: 'Boise',
+    existingState: 'ID',
+  });
+  assert.equal(result.category, 'EXISTING_PUBLIC_PROFILE_CONFLICT');
+  assert.equal(result.risk, 'HIGH');
+  assert.equal(result.autoMerge, false);
+});
+
 test('Wave 3 candidate ID cannot be treated as a live publication wave', () => {
   assert.equal(WAVE_3_ID, 'FEDERAL_HHG_2026_08_WAVE_3_CANDIDATE');
   assert.notEqual(WAVE_3_ID, WAVE_ID);
