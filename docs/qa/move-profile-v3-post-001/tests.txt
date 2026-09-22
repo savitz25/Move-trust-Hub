@@ -1,0 +1,268 @@
+TAP version 13
+# Subtest: retired legacy labels do not appear in the V3 profile contract files
+ok 1 - retired legacy labels do not appear in the V3 profile contract files
+  ---
+  duration_ms: 3.5913
+  type: 'test'
+  ...
+# Subtest: the retired CompanyProfileReviewSources component is gone, not merely unused
+ok 2 - the retired CompanyProfileReviewSources component is gone, not merely unused
+  ---
+  duration_ms: 0.3755
+  type: 'test'
+  ...
+# Subtest: CompanyProfileStats no longer imports reputationScore/price display-quality gates
+ok 3 - CompanyProfileStats no longer imports reputationScore/price display-quality gates
+  ---
+  duration_ms: 0.6833
+  type: 'test'
+  ...
+# Subtest: the main company profile emits exactly one Google reputation card, not a duplicate
+ok 4 - the main company profile emits exactly one Google reputation card, not a duplicate
+  ---
+  duration_ms: 0.7774
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for null
+ok 5 - no Google card, search CTA, heading, or spacing markup for null
+  ---
+  duration_ms: 5.3912
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for undefined
+ok 6 - no Google card, search CTA, heading, or spacing markup for undefined
+  ---
+  duration_ms: 0.4492
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for empty object
+ok 7 - no Google card, search CTA, heading, or spacing markup for empty object
+  ---
+  duration_ms: 0.5235
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for error
+ok 8 - no Google card, search CTA, heading, or spacing markup for error
+  ---
+  duration_ms: 0.4153
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for not_found
+ok 9 - no Google card, search CTA, heading, or spacing markup for not_found
+  ---
+  duration_ms: 1.1101
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for skipped
+ok 10 - no Google card, search CTA, heading, or spacing markup for skipped
+  ---
+  duration_ms: 0.1974
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for rating missing
+ok 11 - no Google card, search CTA, heading, or spacing markup for rating missing
+  ---
+  duration_ms: 0.1476
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for rating zero
+ok 12 - no Google card, search CTA, heading, or spacing markup for rating zero
+  ---
+  duration_ms: 0.2253
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for rating out of range
+ok 13 - no Google card, search CTA, heading, or spacing markup for rating out of range
+  ---
+  duration_ms: 0.323
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for rating NaN
+ok 14 - no Google card, search CTA, heading, or spacing markup for rating NaN
+  ---
+  duration_ms: 0.461
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for count missing
+ok 15 - no Google card, search CTA, heading, or spacing markup for count missing
+  ---
+  duration_ms: 0.1667
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for count zero
+ok 16 - no Google card, search CTA, heading, or spacing markup for count zero
+  ---
+  duration_ms: 0.1349
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for count negative
+ok 17 - no Google card, search CTA, heading, or spacing markup for count negative
+  ---
+  duration_ms: 0.1254
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for count fractional
+ok 18 - no Google card, search CTA, heading, or spacing markup for count fractional
+  ---
+  duration_ms: 0.1268
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for count infinite
+ok 19 - no Google card, search CTA, heading, or spacing markup for count infinite
+  ---
+  duration_ms: 0.1216
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for source missing
+ok 20 - no Google card, search CTA, heading, or spacing markup for source missing
+  ---
+  duration_ms: 0.1192
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for date missing
+ok 21 - no Google card, search CTA, heading, or spacing markup for date missing
+  ---
+  duration_ms: 0.1325
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for date invalid
+ok 22 - no Google card, search CTA, heading, or spacing markup for date invalid
+  ---
+  duration_ms: 0.1287
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for listing missing
+ok 23 - no Google card, search CTA, heading, or spacing markup for listing missing
+  ---
+  duration_ms: 0.1263
+  type: 'test'
+  ...
+# Subtest: no Google card, search CTA, heading, or spacing markup for listing whitespace
+ok 24 - no Google card, search CTA, heading, or spacing markup for listing whitespace
+  ---
+  duration_ms: 0.1856
+  type: 'test'
+  ...
+# Subtest: real Google snapshot retains stored values, provenance, checked date and listing link
+ok 25 - real Google snapshot retains stored values, provenance, checked date and listing link
+  ---
+  duration_ms: 46.2987
+  type: 'test'
+  ...
+# Subtest: legacy snapshot can omit status but cannot omit evidence
+ok 26 - legacy snapshot can omit status but cannot omit evidence
+  ---
+  duration_ms: 6.2823
+  type: 'test'
+  ...
+# Subtest: empty or unattributable references render no section
+ok 27 - empty or unattributable references render no section
+  ---
+  duration_ms: 1.6577
+  type: 'test'
+  ...
+# Subtest: actual attributed references can render without a Google snapshot
+ok 28 - actual attributed references can render without a Google snapshot
+  ---
+  duration_ms: 6.1488
+  type: 'test'
+  ...
+# Subtest: confirmed BBB evidence remains visible independently of Google
+ok 29 - confirmed BBB evidence remains visible independently of Google
+  ---
+  duration_ms: 1.8515
+  type: 'test'
+  ...
+# Subtest: external evidence never becomes directory AggregateRating or Review schema
+ok 30 - external evidence never becomes directory AggregateRating or Review schema
+  ---
+  duration_ms: 5.2271
+  type: 'test'
+  ...
+# Subtest: both route families use the evidence-aware header and community remains separate
+ok 31 - both route families use the evidence-aware header and community remains separate
+  ---
+  duration_ms: 1.4786
+  type: 'test'
+  ...
+# Subtest: public profile code cannot describe stored external evidence as live
+ok 32 - public profile code cannot describe stored external evidence as live
+  ---
+  duration_ms: 38.3524
+  type: 'test'
+  ...
+# Subtest: display name differs from legal name
+ok 33 - display name differs from legal name
+  ---
+  duration_ms: 1.4191
+  type: 'test'
+  ...
+# Subtest: roles are factual and unknown is not broker
+ok 34 - roles are factual and unknown is not broker
+  ---
+  duration_ms: 0.9275
+  type: 'test'
+  ...
+# Subtest: authority labels are regulatory not endorsement
+ok 35 - authority labels are regulatory not endorsement
+  ---
+  duration_ms: 0.8335
+  type: 'test'
+  ...
+# Subtest: SEO title uses USDOT research language not ratings
+ok 36 - SEO title uses USDOT research language not ratings
+  ---
+  duration_ms: 0.4351
+  type: 'test'
+  ...
+# Subtest: SEO description is research not endorsement
+ok 37 - SEO description is research not endorsement
+  ---
+  duration_ms: 0.449
+  type: 'test'
+  ...
+# Subtest: getComplaintEvidence: no FMCSA identity -> no_record, never a fabricated 0
+ok 38 - getComplaintEvidence: no FMCSA identity -> no_record, never a fabricated 0
+  ---
+  duration_ms: 3.3976
+  type: 'test'
+  ...
+# Subtest: getComplaintEvidence: real USDOT identity -> shows the real complaint count, singular
+ok 39 - getComplaintEvidence: real USDOT identity -> shows the real complaint count, singular
+  ---
+  duration_ms: 34.3514
+  type: 'test'
+  ...
+# Subtest: getComplaintEvidence: the ticket's own example (187 complaints) renders correctly
+ok 40 - getComplaintEvidence: the ticket's own example (187 complaints) renders correctly
+  ---
+  duration_ms: 0.4446
+  type: 'test'
+  ...
+# Subtest: getComplaintEvidence: a genuine zero-complaint record (fmcsaLastChecked present, no usdot) still shows evidence
+ok 41 - getComplaintEvidence: a genuine zero-complaint record (fmcsaLastChecked present, no usdot) still shows evidence
+  ---
+  duration_ms: 0.2447
+  type: 'test'
+  ...
+# Subtest: MOVE-PROFILE-V3-001D: no code path derives a normalized rate from fmcsaShipments any more
+ok 42 - MOVE-PROFILE-V3-001D: no code path derives a normalized rate from fmcsaShipments any more
+  ---
+  duration_ms: 0.7585
+  type: 'test'
+  ...
+# Subtest: NORMALIZED_COMPLAINT_RATE_UNAVAILABLE_NOTE explicitly says the denominator is unverified
+ok 43 - NORMALIZED_COMPLAINT_RATE_UNAVAILABLE_NOTE explicitly says the denominator is unverified
+  ---
+  duration_ms: 0.4379
+  type: 'test'
+  ...
+1..43
+# tests 43
+# suites 0
+# pass 43
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5579.8248

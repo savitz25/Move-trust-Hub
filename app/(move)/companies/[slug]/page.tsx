@@ -531,7 +531,7 @@ export default async function CompanyProfilePage({ params }: Props) {
           </Card>
 
           {/* C. External Reputation Snapshots — one coherent, clearly-labeled section */}
-          <ExternalReputationHeader />
+          <ExternalReputationHeader googleData={googlePlaces} reviews={reviews} />
 
           <GoogleReviewsSection
             data={googlePlaces}

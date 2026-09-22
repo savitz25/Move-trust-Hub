@@ -1,3 +1,8 @@
+import { hasGoogleReputationSnapshot } from '@/lib/verification/google-reputation-snapshot';
+import { isAttributableReview } from '@/lib/trust/verified-reviews';
+import type { GooglePlacesData } from '@/lib/verification/types';
+import type { Review } from '@/types';
+
 /**
  * MOVE-PROFILE-V3-001A: section header for the "External Reputation
  * Snapshots" section. Replaces the retired CompanyProfileReviewSources
@@ -11,7 +16,18 @@
  * ratings are never presented as a Move Trust Hub rating and are never
  * mixed into schema.org AggregateRating.
  */
-export function ExternalReputationHeader() {
+export function ExternalReputationHeader({
+  googleData,
+  reviews = [],
+}: {
+  googleData: GooglePlacesData | null | undefined;
+  reviews?: Review[];
+}) {
+  // BBB remains in Regulatory & Trust Evidence; only count items rendered here.
+  if (!hasGoogleReputationSnapshot(googleData) && !reviews.some(isAttributableReview)) {
+    return null;
+  }
+
   return (
     <div className="mb-3">
       <h2 className="text-xl font-semibold tracking-tight">External Reputation Snapshots</h2>

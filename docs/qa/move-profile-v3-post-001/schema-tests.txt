@@ -1,0 +1,58 @@
+TAP version 13
+# Subtest: one community review does NOT produce AggregateRating
+ok 1 - one community review does NOT produce AggregateRating
+  ---
+  duration_ms: 2.5709
+  type: 'test'
+  ...
+# Subtest: multiple community reviews also do NOT produce AggregateRating
+ok 2 - multiple community reviews also do NOT produce AggregateRating
+  ---
+  duration_ms: 0.9841
+  type: 'test'
+  ...
+# Subtest: zero reviews still does not produce AggregateRating (fail-closed, no invented threshold)
+ok 3 - zero reviews still does not produce AggregateRating (fail-closed, no invented threshold)
+  ---
+  duration_ms: 0.2304
+  type: 'test'
+  ...
+# Subtest: individual reviewer ratings remain intact in nested Review nodes
+ok 4 - individual reviewer ratings remain intact in nested Review nodes
+  ---
+  duration_ms: 0.5042
+  type: 'test'
+  ...
+# Subtest: review counts in nested/standalone Review nodes match input review count (capped at 5)
+ok 5 - review counts in nested/standalone Review nodes match input review count (capped at 5)
+  ---
+  duration_ms: 0.5177
+  type: 'test'
+  ...
+# Subtest: no external rating source can leak into the schema — only local PublicReview fields are used
+ok 6 - no external rating source can leak into the schema — only local PublicReview fields are used
+  ---
+  duration_ms: 0.3824
+  type: 'test'
+  ...
+# Subtest: valid Organization/LocalBusiness/WebPage entity structured data remains present
+ok 7 - valid Organization/LocalBusiness/WebPage entity structured data remains present
+  ---
+  duration_ms: 0.3777
+  type: 'test'
+  ...
+# Subtest: no site-level aggregate star score renders — no ratingValue/bestRating/worstRating outside nested Review nodes
+ok 8 - no site-level aggregate star score renders — no ratingValue/bestRating/worstRating outside nested Review nodes
+  ---
+  duration_ms: 0.2144
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 617.1804

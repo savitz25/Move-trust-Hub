@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getAutoTransportBySlugAsync } from '@/lib/data-server';
 import { directoryVerifiedLabel } from '@/lib/trust/company-display-policy';
-import { getCompanyVerificationStatus } from '@/lib/trust/verification-status';
 import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { VerificationBadgeLegend } from '@/components/trust/verification-badge-legend';
@@ -14,6 +13,7 @@ import { ExternalReputationHeader } from '@/components/company/external-reputati
 import { CompanyContactCard } from '@/components/company/company-contact-card';
 import { GoogleRatingBadge } from '@/components/verification/google-rating-badge';
 import { GoogleReviewsSection } from '@/components/verification/google-reviews-section';
+import { hasGoogleReputationSnapshot } from '@/lib/verification/google-reputation-snapshot';
 import { BbbPublicDetail } from '@/components/verification/bbb-public-detail';
 import { hasBbbPublicScrapeData } from '@/lib/verification/bbb-public-display';
 import { Badge } from '@/components/ui/badge';
@@ -55,11 +55,10 @@ export default async function AutoTransportProfilePage({ params }: Props) {
 
   if (!company) notFound();
 
-  const verification = getCompanyVerificationStatus(company);
   const verifiedLabel = directoryVerifiedLabel(company);
   const scrapeBbb = company.publicScrapeData;
-  const showScrapeBbb =
-    verification.bbb === 'verified' || hasBbbPublicScrapeData(scrapeBbb);
+  const showScrapeBbb = hasBbbPublicScrapeData(scrapeBbb);
+  const hasGoogleSnapshot = hasGoogleReputationSnapshot(company.googleData);
   const bbbTrustSignal =
     showScrapeBbb && scrapeBbb?.bbb_rating
       ? `BBB ${scrapeBbb.bbb_rating}${scrapeBbb.bbb_accredited ? ' Accredited' : ''} (public)`
@@ -93,7 +92,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
             <h1 className="text-4xl font-semibold tracking-tight break-words">{company.name}</h1>
             <CompanyTypeBadges company={company} size="default" className="shrink-0" />
             <CompanyVerificationBadges company={company} size="profile" className="justify-start" />
-            {company.googleData?.status === 'ok' ? (
+            {hasGoogleReputationSnapshot(company.googleData) ? (
               <GoogleRatingBadge data={company.googleData} />
             ) : null}
           </div>
@@ -114,7 +113,7 @@ export default async function AutoTransportProfilePage({ params }: Props) {
 
       <CompanyProfileStats company={company} variant="auto-transport" />
 
-      <ExternalReputationHeader />
+      <ExternalReputationHeader googleData={company.googleData} />
       <GoogleReviewsSection data={company.googleData} companyName={company.name} />
 
       <div className="grid lg:grid-cols-3 gap-6">
@@ -156,15 +155,17 @@ export default async function AutoTransportProfilePage({ params }: Props) {
             </CardHeader>
             <CardContent className="space-y-4 text-sm">
               <FmcsaDotCompliance company={company} />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <div className="text-muted-foreground text-xs">BBB Rating</div>
-                  <div className="font-medium mt-0.5">
-                    {scrapeBbb?.bbb_rating || company.bbbRating}{' '}
-                    {(scrapeBbb?.bbb_accredited ?? company.bbbAccredited) ? '(Accredited)' : ''}
+              {showScrapeBbb && scrapeBbb?.bbb_rating ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <div className="text-muted-foreground text-xs">BBB Rating</div>
+                    <div className="font-medium mt-0.5">
+                      {scrapeBbb.bbb_rating}{' '}
+                      {scrapeBbb.bbb_accredited ? '(Accredited)' : ''}
+                    </div>
                   </div>
                 </div>
-              </div>
+              ) : null}
               {showScrapeBbb && scrapeBbb ? (
                 <div className="rounded-md border border-dashed p-3">
                   <div className="text-muted-foreground text-xs mb-2">BBB — Public / scraped</div>
@@ -230,8 +231,10 @@ export default async function AutoTransportProfilePage({ params }: Props) {
           <CardContent className="pt-6">
             <ReviewTransparencyNote compact />
             <p className="mt-3 text-xs text-muted-foreground">
-              Google and BBB snapshots are shown above with their own source, check date, and outbound
-              link. Last profile update {company.lastUpdated}.
+              {hasGoogleSnapshot || showScrapeBbb
+                ? 'Stored external evidence is labeled with its source above. '
+                : ''}
+              Last profile update {company.lastUpdated}.
             </p>
           </CardContent>
         </Card>
