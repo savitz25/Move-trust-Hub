@@ -1,0 +1,9 @@
+{
+  "baseCommit": "bec1dd2341acff30b1bb0ef2850f4ee54b886cc6",
+  "baseErrorCount": 532,
+  "headErrorCount": 532,
+  "newDiagnostics": [],
+  "removedDiagnostics": [],
+  "baseDiagnosticsSha256": "32b2c24dfe13b8e57029352696fe04d713075264b50399577d353f9eb080d9a8",
+  "headDiagnosticsSha256": "32b2c24dfe13b8e57029352696fe04d713075264b50399577d353f9eb080d9a8"
+}
