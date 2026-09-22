@@ -1,21 +1,13 @@
 import type { Company } from '@/types';
 import { Card } from '@/components/ui/card';
-import { StarRating } from '@/components/ui/star-rating';
 import { MetricLabel } from '@/components/trust/metric-label';
-import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import {
-  formatComplaintRatio,
+  formatComplaintDisplayLabel,
   formatFmcsaSafetyLabel,
+  getComplaintDisplay,
   PROFILE_METRIC_TOOLTIPS,
 } from '@/lib/trust/profile-metrics';
-import {
-  shouldShowAvgPrice,
-  shouldShowComplaintRatio,
-  shouldShowReputationScore,
-} from '@/lib/data-quality/metrics';
 import { normalizeServiceTags } from '@/lib/data-quality/display-normalize';
-import { shouldShowHouseholdMovePrice } from '@/lib/provider/copy';
-import { MethodologyLink } from '@/components/trust/methodology-link';
 import { ShieldCheck } from 'lucide-react';
 
 type CompanyProfileStatsProps = {
@@ -23,127 +15,58 @@ type CompanyProfileStatsProps = {
   variant?: 'move' | 'auto-transport';
 };
 
-export function CompanyProfileStats({ company, variant = 'move' }: CompanyProfileStatsProps) {
-  const showRating =
-    (company.overallRating ?? 0) > 0 && (company.reviewCount ?? 0) > 0;
-  const showReputation = shouldShowReputationScore({
-    reputationScore: company.reputationScore,
-    reviewCount: company.reviewCount,
-    overallRating: company.overallRating,
-  });
-  const showPrice =
-    variant === 'auto-transport'
-      ? false
-      : shouldShowAvgPrice(company.avgPricePerMove) && shouldShowHouseholdMovePrice(company);
-  const showComplaints = shouldShowComplaintRatio({
-    complaints: company.fmcsaComplaints,
-    shipments: company.fmcsaShipments,
-  });
-  const complaintRatio = showComplaints ? formatComplaintRatio(company) : null;
+/**
+ * MOVE-PROFILE-V3-001A: regulatory/evidence stats only. The unattributed
+ * blended star rating, the 0-100 directory composite score, and estimated
+ * price/price tier were removed from public render here (opaque composite
+ * scoring and unattributed pricing with no defensible current methodology
+ * — see docs/MOVE-PROFILE-V3-001A-*.md). Data is preserved in storage;
+ * this component simply stops rendering those fields.
+ */
+export function CompanyProfileStats({ company }: CompanyProfileStatsProps) {
+  const complaintDisplay = getComplaintDisplay(company);
   const services = normalizeServiceTags(company.services as string[]);
-  const priceLabel =
-    variant === 'auto-transport'
-      ? 'Est. avg. price (open carrier)'
-      : 'Est. avg. price (3BR, cross-country)';
-  const priceTooltip =
-    variant === 'auto-transport'
-      ? PROFILE_METRIC_TOOLTIPS.avgPriceAuto
-      : PROFILE_METRIC_TOOLTIPS.avgPriceMove;
-  const returnContext = {
-    returnPath:
-      variant === 'auto-transport'
-        ? `/auto-transport/${company.slug}`
-        : `/companies/${company.slug}`,
-    returnLabel: company.name,
-  };
 
   return (
     <section
-      aria-label="Company profile statistics"
-      className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8"
+      aria-label="Regulatory evidence stats"
+      className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8"
     >
       <Card className="p-4 flex flex-col gap-1">
         <MetricLabel
-          label="Editorial star rating"
-          tooltip={PROFILE_METRIC_TOOLTIPS.overallRating}
-          methodologyAnchor="reviewAttribution"
-          returnContext={returnContext}
+          label="FMCSA safety rating"
+          tooltip={PROFILE_METRIC_TOOLTIPS.fmcsaSafety}
         />
-        <div
-          className="mt-1 flex flex-col gap-1"
-          aria-label={
-            showRating
-              ? `Editorial star rating: ${company.overallRating.toFixed(1)} out of 5, based on ${company.reviewCount.toLocaleString()} industry-reported reviews`
-              : 'Editorial star rating not available yet'
-          }
-        >
-          {showRating ? (
+        <p className="text-2xl font-semibold mt-1 leading-none">
+          {formatFmcsaSafetyLabel(company.fmcsaSafetyRating)}
+        </p>
+      </Card>
+
+      {complaintDisplay.mode !== 'none' ? (
+        <Card className="p-4 flex flex-col gap-1">
+          <MetricLabel
+            label="FMCSA complaint evidence"
+            tooltip={PROFILE_METRIC_TOOLTIPS.complaintRatio}
+          />
+          {complaintDisplay.mode === 'rate' ? (
             <>
-              <StarRating rating={company.overallRating} size="lg" showNumber={false} />
-              <p className="text-3xl font-semibold tabular-nums leading-none">
-                {company.overallRating.toFixed(1)}
+              <p className="text-2xl font-semibold mt-1 tabular-nums leading-none">
+                {complaintDisplay.ratioPer1000}
               </p>
               <p className="text-[11px] text-muted-foreground leading-snug">
-                based on <EditorialReviewVolume count={company.reviewCount} />
+                complaints per 1,000 shipments ({complaintDisplay.complaints.toLocaleString()} on{' '}
+                {complaintDisplay.shipments.toLocaleString()} shipments)
               </p>
             </>
           ) : (
-            <p className="text-sm text-muted-foreground leading-snug mt-1">
-              Rating not available
+            <p className="text-xs text-muted-foreground leading-snug mt-1">
+              {formatComplaintDisplayLabel(complaintDisplay)}
             </p>
           )}
-        </div>
-      </Card>
-
-      {showReputation ? (
-        <Card className="p-4 flex flex-col gap-1">
-          <MetricLabel
-            label="Reputation score"
-            tooltip={PROFILE_METRIC_TOOLTIPS.reputationScore}
-            methodologyAnchor="reputationScore"
-            returnContext={returnContext}
-          />
-          <p className="text-3xl font-semibold mt-1 tabular-nums text-primary leading-none">
-            <MethodologyLink
-              anchor="reputationScore"
-              className="no-underline hover:text-primary"
-              returnContext={returnContext}
-            >
-              {company.reputationScore}
-            </MethodologyLink>
-            <span className="text-lg font-normal text-muted-foreground"> / 100</span>
-          </p>
-          <p className="text-[11px] text-muted-foreground leading-snug">Directory composite score</p>
         </Card>
       ) : null}
 
-      {showPrice ? (
-        <Card className="p-4 flex flex-col gap-1">
-          <MetricLabel label={priceLabel} tooltip={priceTooltip} />
-          <p className="text-3xl font-semibold mt-1 tabular-nums leading-none">
-            ${company.avgPricePerMove.toLocaleString()}
-          </p>
-          <p className="text-[11px] text-muted-foreground leading-snug">
-            Price tier: {company.priceRange || 'Not listed'}
-          </p>
-        </Card>
-      ) : null}
-
-      {showComplaints && complaintRatio ? (
-        <Card className="p-4 flex flex-col gap-1">
-          <MetricLabel
-            label="FMCSA complaint ratio"
-            tooltip={PROFILE_METRIC_TOOLTIPS.complaintRatio}
-          />
-          <p className="text-3xl font-semibold mt-1 tabular-nums leading-none">{complaintRatio}</p>
-          <p className="text-[11px] text-muted-foreground leading-snug">
-            complaints per 1,000 shipments ({company.fmcsaComplaints.toLocaleString()} on{' '}
-            {company.fmcsaShipments.toLocaleString()} shipments)
-          </p>
-        </Card>
-      ) : null}
-
-      <Card className="p-4 flex flex-col gap-1 md:col-span-1 col-span-2">
+      <Card className="p-4 flex flex-col gap-1">
         <MetricLabel label="Service coverage" tooltip={PROFILE_METRIC_TOOLTIPS.coverage} />
         <p className="font-semibold mt-1 leading-snug">{company.coverage}</p>
         {services.length > 0 ? (
