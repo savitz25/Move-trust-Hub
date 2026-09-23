@@ -111,3 +111,41 @@ This report is implementation and local evidence, not a production readiness or
 real parent Auth claim. Do not activate hosted V2-3 from the ordinary automatic
 branch preview. Follow the separately authorized packet only after both builders
 can compose.
+
+## Independent second pass (2026-09-23, same ticket)
+
+A second Builder 3 session re-audited `f7da3b3a` against the ticket, the Fable
+report and the Ask #185 `7184f53` handoff before changing anything, and re-ran
+every local suite from a clean state: `test:v2-3-move` 56/56, `test:v2-3-postgres`
+32/32 (native PostgreSQL 17, one winner of 20 concurrent nonce claims),
+`test:v2-3-parent` 15/15 against a fresh read-only clone pinned to `7184f53`,
+`test:v2-3-profile-compat` 55/55. All PASS.
+
+Code verification confirmed: local Save precedes Auth and never calls the legacy
+client under the fence; `KeepInMyTrustHub` mounts only from the server-rendered
+`CompanyResearchHero` on `/companies/[slug]` for the exact PUBLISHABLE profile after
+a local Save; `source`/`acknowledge`/`resolve` verify raw-body Ed25519 assertions
+with the exact claim set and scope/session/grant purpose rules; the nonce claim is
+one SQL insert; `finish` never calls `commitProfileSave`; the popup lifecycle is
+attempt-scoped with exact origin/window/message checks and no blur abort; vendored
+contracts are byte-equal to the pinned Ask head.
+
+One correction was made. The first pass added `'/api/:path*'` to the middleware
+matcher unconditionally, which would have routed every production `/api/*` request
+through middleware (previously excluded by design) even though the fence is inert
+there. The matcher entry is now host-scoped (`*.vercel.app`, `localhost`,
+`127.0.0.1`) so production hosts are byte-for-byte unaffected while preview and
+local QA hosts keep the method-aware fence. Verified on a fenced `next dev`:
+`POST /api/reviews`, `/api/send-quote-email`, `/api/save-my-move/inventory/*`,
+`GET /auth/callback` and page POSTs return 403; `GET /api/compare/companies` and
+the V2-3 BFF pass; the same requests with a production `Host` never enter the
+fence. A regression test asserts the matcher's host condition.
+
+Residual observations recorded for the activation gate, not fixed here: the BFF
+global quota (`global:bff`, 30/min) and per-request opportunistic cleanup are a
+deliberate isolated-QA ceiling and an anonymous denial lever, acceptable only for
+the QA window; the source login limit (4) versus pool max (2) per Vercel instance
+can fail closed under multi-instance load; `lib/my-trusthub/config.ts` still pins
+the historical Move alias, so this branch's own preview cannot compose until the
+coordinated alias-to-SHA decision updates both peers; the new workflow runs on
+every pull request in the repository.

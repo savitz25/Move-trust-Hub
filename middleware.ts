@@ -36,8 +36,8 @@ export async function middleware(request: NextRequest) {
   if (!previewRequestAllowed(request.method, pathname)) {
     return new NextResponse('Unavailable in isolated preview', { status: 403, headers: { 'Cache-Control': 'private, no-store' } });
   }
-  // General API routes were previously outside middleware. Preserve that behavior
-  // except for this isolated-preview write fence and the existing SSO matcher.
+  // General API routes stay outside middleware on production hosts (matcher is
+  // host-scoped). On preview/local hosts only the fence above applies to them.
   if (pathname.startsWith('/api/') && !pathname.startsWith('/api/auth/network-handoff/')) return NextResponse.next();
   const host = request.headers.get('host');
   const statePath = normalizedPublishedStatePath(pathname);
@@ -277,7 +277,13 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/api/:path*',
+    {
+      // Isolated V2-3 preview write fence (build-scoped, see lib/my-trusthub/preview-isolation.ts).
+      // Host-scoped to Vercel preview and local hosts so production API traffic
+      // keeps its long-standing exclusion from middleware.
+      source: '/api/:path*',
+      has: [{ type: 'host', value: '(.*\\.vercel\\.app|localhost|127\\.0\\.0\\.1)' }],
+    },
     // Must run on insurance apex — not covered by the catch-all (which excludes *.xml / webmanifest)
     '/sitemap.xml',
     '/sitemap',

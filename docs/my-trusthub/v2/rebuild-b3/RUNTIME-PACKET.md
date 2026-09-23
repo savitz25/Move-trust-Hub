@@ -109,6 +109,10 @@ relabeled as an isolated database. The narrow local-only fence disables legacy
 Auth and writes while retaining public research reads; it does not repoint general
 production functionality. Hosted preview activation stays BLOCKED until that
 fence is built, verified and the approved source/parent configuration is ready.
+Raw `@supabase/supabase-js` clients outside the fenced factories (quotes,
+suggestions, portal/password, OAuth kickoff, local-movers readers) are reached
+only through API routes or auth routes, which the method-aware middleware fence
+denies on preview hosts; the fence is the enforcement layer for those paths.
 
 | Client/surface used by profile/research path | Classification under fence | Enforcement |
 | --- | --- | --- |
@@ -118,7 +122,7 @@ fence is built, verified and the approved source/parent configuration is ready.
 | `attributed-review-count.ts` total reader | PRODUCTION READ-ONLY | Anonymous select only; per-profile count uses stored data, no database mutation |
 | Legacy browser client / Save SDK Auth | UNUSED | Browser factory returns null; local Save explicitly skips legacy Auth |
 | Admin client, map assignments and review identity bridge | UNUSED | Admin configuration unavailable, factory denies; in particular opportunistic legacy review identity backfill cannot run |
-| Legacy Auth middleware, login/callback, server actions | UNUSED | No Auth refresh; middleware denies auth routes and non-V2-3 POST writes |
+| Legacy Auth middleware, login/callback, server actions | UNUSED | No Auth refresh; middleware denies auth routes and non-V2-3 POST writes. The `/api/:path*` fence matcher is host-scoped (`*.vercel.app`, `localhost`, `127.0.0.1`), so production hosts keep their long-standing exclusion of general `/api/*` from middleware |
 | Compare API | PRODUCTION READ-ONLY | Only existing GET `/api/compare/companies` is allowed |
 | New source PostgreSQL pool | PREVIEW (prepared, inactive) | Approved isolated target, dedicated login, TLS and capability/platform checks |
 | Native PostgreSQL test runner | LOCAL | Loopback disposable PostgreSQL 17, ephemeral credentials, fixture public/parent ports |
