@@ -13,10 +13,11 @@ import { DatabaseSync } from 'node:sqlite';
 import { MoveProfileSaveAdapter } from '../lib/my-trusthub/profile-save-adapter.ts';
 import { parentFacade } from '../lib/my-trusthub/parent-facade.ts';
 import { projection } from '../lib/my-trusthub/selection.ts';
+import { PROFILE_SAVE_RUNTIME_VERSION } from '../lib/my-trusthub/vendor/interface.ts';
 const root=process.env.PARENT_REVIEW_ROOT;
 if(!root)throw Error('PARENT_REVIEW_ROOT required');
 const head=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
-assert.equal(head,'263a5de597ca237b03203ab166105186d4e692ee');
+assert.equal(head,'ada0c19337e07bdfae511fc2e3d62459b09efdcd');
 // The reviewed parent implementation may advance; the immutable wire may not.
 for(const file of ['lib/my-trusthub/profile-save/interface.ts','lib/my-trusthub/contracts/v2-3-profile-transfer.ts',
   'lib/my-trusthub/contracts/v2-3-profile-save.ts']) {
@@ -47,14 +48,20 @@ const caller=()=>({hub:'move',environment:'isolated',browserBinding:browser.bind
   ...(subject?{parent:{subject,sessionBinding:'fixture-session-'+subject,admitted:true},exchange,selectionConfirmed:true,confirmedTransferRef,confirmedAccountContextRef,receiptRecovery:recovery}:{})});
 const parentRuntime=new ParentProfileSaveRuntime({enabled:true,backend,registry:{environment:'isolated',isolatedBackendVerified:true,
   origins:{move:config.moveOrigin,insurance:'https://insurance.test',lender:'https://lender.test'}},authenticate:async()=>caller(),now:()=>clock});
+const seen=[];
 const parent=parentFacade(config,{async post(url,envelope,binding){
+  seen.push(envelope.operation);
   recovery = recovery ? {accountContextRef:envelope.input.accountContextRef,requestKey:envelope.input.requestKey,verifiedAt:clock} : undefined;
   assert.equal(binding,browser);assert.equal(url,config.parentOrigin+'/api/my-trusthub/profile-save');
-  const result=await handleProfileSave(new Request(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(envelope)}),
+  if(envelope.operation==='getProfileSaveReceipt' && loseResponse){loseResponse=false;throw Error('synthetic lost receipt lookup');}
+  return handleProfileSave(new Request(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(envelope)}),
     {enabled:true,runtimeForRequest:async()=>parentRuntime});
-  if(envelope.operation==='commitProfileSave' && loseResponse){loseResponse=false;throw Error('synthetic lost response after durable commit');}
-  return result;
 }});
+async function parentBrowser(operation,input){
+  const response=await handleProfileSave(new Request(config.parentOrigin+'/api/my-trusthub/profile-save',{method:'POST',headers:{'content-type':'application/json'},
+    body:JSON.stringify({version:PROFILE_SAVE_RUNTIME_VERSION,operation,input})}),{enabled:true,runtimeForRequest:async()=>parentRuntime});
+  return response.json();
+}
 const store={async putIfAbsent(key,record){source.prepare('INSERT INTO stages VALUES(?,?)').run(key,JSON.stringify(record));},
   async withRecord(key,work){source.exec('BEGIN IMMEDIATE');try{
     const row=source.prepare('SELECT value FROM stages WHERE key=?').get(key);const record=row?JSON.parse(row.value):null;
@@ -71,15 +78,22 @@ const before=JSON.stringify(local);
 try{
   const start=await adapter.prepare(selected,browser);assert.equal(start.state,'continue');
   assert.equal((await adapter.finish(start.ticket,selected,browser)).state,'unavailable','no fixture admission yet');
+  assert.equal(parentBackend.count('saves'),0);
   const stage=JSON.parse(source.prepare('SELECT value FROM stages').get().value);
   subject='fixture-consumer-a';confirmedTransferRef=stage.parentStage.transferRef;
   for(const patch of [{issuer:'lender'},{audience:'other'},{browserProof:'x'.repeat(43)}]){
-    assert.equal((await parent('consumeProfileSaveContinuation',{continuationRef:stage.continuationRef,issuer:'move',audience:'ask',browserProof:browser.binding,...patch},browser)).ok,false);
+    assert.equal((await parentBrowser('consumeProfileSaveContinuation',{continuationRef:stage.continuationRef,issuer:'move',audience:'ask',browserProof:browser.binding,...patch})).ok,false);
   }
-  const consumed=await parent('consumeProfileSaveContinuation',{continuationRef:stage.continuationRef,issuer:'move',audience:'ask',browserProof:browser.binding},browser);
+  assert.equal((await parent('consumeProfileSaveContinuation',{continuationRef:stage.continuationRef,issuer:'move',audience:'ask',browserProof:browser.binding},browser)).ok,false);
+  assert.equal((await parent('commitProfileSave',{requestKey:stage.requestPrefix+':0',accountContextRef:'a'.repeat(43),transferRef:stage.parentStage.transferRef,manifestDigest:stage.parentStage.manifestDigest,item:stage.manifest.selected[0]},browser)).ok,false);
+  assert.equal(parentBackend.count('saves'),0);
+  const consumed=await parentBrowser('consumeProfileSaveContinuation',{continuationRef:stage.continuationRef,issuer:'move',audience:'ask',browserProof:browser.binding});
   assert.equal(consumed.ok,true);grant={accountContextRef:consumed.result.accountContextRef,selectionConfirmed:true};
-  const replay=await parent('consumeProfileSaveContinuation',{continuationRef:stage.continuationRef,issuer:'move',audience:'ask',browserProof:browser.binding},browser);
+  confirmedAccountContextRef=grant.accountContextRef;
+  const replay=await parentBrowser('consumeProfileSaveContinuation',{continuationRef:stage.continuationRef,issuer:'move',audience:'ask',browserProof:browser.binding});
   assert.equal(replay.ok,false);
+  const committed=await parentBrowser('commitProfileSave',{requestKey:stage.requestPrefix+':0',accountContextRef:grant.accountContextRef,transferRef:stage.parentStage.transferRef,manifestDigest:stage.parentStage.manifestDigest,item:stage.manifest.selected[0]});
+  assert.equal(committed.ok,true);assert.equal(parentBackend.count('saves'),1);
   assert.equal((await adapter.finish(start.ticket,selected,browser)).state,'unavailable');assert.equal(parentBackend.count('saves'),1);
   assert.equal((await adapter.finish(start.ticket,selected,browser)).state,'parent_saved');assert.equal(parentBackend.count('saves'),1);
   assert.equal((await adapter.finish(start.ticket,selected,browser)).state,'parent_saved');
@@ -128,6 +142,7 @@ try{
   assert.equal((await adapter.finish(formStart.ticket,selected,browser)).state,'parent_saved','receipt-only recovery after grant expiry');
   subject='fixture-consumer-b';assert.notEqual((await adapter.finish(formStart.ticket,selected,browser)).state,'parent_saved');
   assert.equal(parentBackend.count('saves'),1);assert.equal(JSON.stringify(local),before);
+  assert.equal(seen.includes('commitProfileSave'),false);assert.equal(seen.includes('consumeProfileSaveContinuation'),false);
   console.log('PASS current /my/profile-save form -> sign-in gate -> explicit confirmation -> source request mapping -> receipt verify -> expired-grant deny -> fresh same-owner receipt recovery. Actual parent handlers; Auth/source channel MOCKED.');
   console.log('PASS cross-repository adapter -> actual parent HTTP/runtime -> durable SQLite receipt -> lost-response lookup -> duplicate retry -> owner-switch denial. Auth/P13/P12/binding MOCKED; NOT real provider or live parent sync. Parent '+head);
 }finally{source.close();parentBackend.close();}

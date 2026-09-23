@@ -2,6 +2,7 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { listLocalSavedMovers } from '@/lib/save-my-move/local-shortlist';
 import { projection, type LocalSelection } from '@/lib/my-trusthub/selection';
+import { acceptCurrentGrantMessage, exactGrantTarget, parentSavedAllowed } from '@/lib/my-trusthub/current-grant-browser';
 
 const endpoint='/api/my-trusthub/profile-save';
 /** Optional explicit conversion. Legacy Save and local research are untouched. */
@@ -38,7 +39,41 @@ export function KeepInMyTrustHub({companySlug}:{companySlug:string}) {
       const {csrf}=await post({action:'bootstrap'});
       if(typeof csrf!=='string')throw Error('unavailable');
       const ticket=check?sessionStorage.getItem(storageKey):null;
-      const result=await post(check?{action:'receipt',ticket,selected}:{action:'prepare',selected},csrf);
+      if(check){
+        if(!ticket)throw Error('unavailable');
+        const challenge=await post({action:'grant-challenge',ticket},csrf);
+        if(challenge.state!=='challenge'||typeof challenge.target!=='string'||typeof challenge.challengeRef!=='string')throw Error('unavailable');
+        const ask=new URL(challenge.target);
+        if(!exactGrantTarget(challenge.target,ask.origin))throw Error('unavailable');
+        const popup=window.open('about:blank','mth-v23-current-grant','popup,width=480,height=720');
+        if(!popup){setMessage('Saved on this device — My TrustHub sync unavailable');return;}
+        const proofRef=await new Promise<string|null>(resolve=>{
+          let settled=false,timer=0,poll=0;
+          const finish=(value:string|null)=>{
+            if(settled)return;settled=true;
+            window.clearTimeout(timer);window.clearInterval(poll);window.removeEventListener('message',onMessage);resolve(value);
+          };
+          timer=window.setTimeout(()=>finish(null),20_000);
+          poll=window.setInterval(()=>{if(popup.closed)finish(null);},300);
+          function onMessage(event:MessageEvent){
+            if(event.source!==popup)return;
+            const proof=acceptCurrentGrantMessage(event.origin,event.data,ask.origin,!popup.closed);
+            if(proof)finish(proof);
+          }
+          window.addEventListener('message',onMessage);
+          const form=document.createElement('form');form.method='POST';form.action=ask.href;form.target='mth-v23-current-grant';
+          const input=document.createElement('input');input.type='hidden';input.name='challengeRef';input.value=challenge.challengeRef;
+          form.append(input);document.body.append(form);form.submit();form.remove();
+        });
+        if(!proofRef){setMessage('Saved on this device — My TrustHub sync unavailable');return;}
+        const result=await post({action:'receipt',ticket,selected,proofRef},csrf);
+        if(controller.signal.aborted)return;
+        const saved=parentSavedAllowed('message',true,result.state);
+        setMessage(saved?'Saved to My TrustHub':result.state==='local_only'?'Saved on this device':'Saved on this device — My TrustHub sync unavailable');
+        if(saved)setDetail(`${result.projectFailed?'Project assignment failed; your Save is retained. ':''}Device copy retained.`);
+        return;
+      }
+      const result=await post({action:'prepare',selected},csrf);
       if(controller.signal.aborted || JSON.stringify(await selection())!==JSON.stringify(selected))return;
       if(!check && result.state==='continue' && typeof result.ticket==='string' && /^[A-Za-z0-9_-]{43}$/.test(result.ticket)){
         // Store opaque retry reference only, not research or auth. No query flags.

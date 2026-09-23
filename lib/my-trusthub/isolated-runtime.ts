@@ -4,6 +4,8 @@ import { parentFacade, type ScopedChannel } from './parent-facade';
 import { PostgresTransferStore, type SourcePool } from './postgres-transfer-store';
 import { COOKIE_NAME, type HttpDependencies } from './profile-save-http';
 import { itemKey, type ItemReceipt } from './vendor/v2-3-profile-transfer';
+import { containsForbiddenMoveTarget } from './reviewed-origins';
+import { resolveExactMovePublication, type ExactPublicationReader, type Publication } from './publication-resolver';
 
 /** Ask owns /my/profile-save. The wire version stays v2-3/selected-profiles/2. */
 export const PARENT_FORM_PATH = '/my/profile-save';
@@ -19,14 +21,15 @@ export type IsolatedMovePorts = {
   /** Independent verified P13/BFF authority, NEVER a browser claim. Parent calls
    * these ports server-to-server; no invented parent grant/receipt HTTP route. */
   verifySourceCaller(proof: unknown, scope: 'source:read' | 'source:ack'): Promise<{ browserProof: string } | null>;
+  /** Exact isolated publication reader. Absent means resolve stays unavailable. */
+  readCertifiedPublication?: ExactPublicationReader;
 };
 export function isolatedConfig(env: Record<string,string|undefined>, p: IsolatedMovePorts | null): AdapterConfig | null {
   if (!p || env.VERCEL_ENV === 'production' || env.NODE_ENV === 'production' && env.VERCEL_ENV !== 'preview' ||
       env.NEXT_PUBLIC_MOVE_PARENT_SAVE_ENABLED !== '1' || env.MTH_MOVE_PARENT_SAVE_MODE !== 'isolated' ||
       env.MTH_MOVE_PARENT_SAVE_ISOLATED_APPROVED !== 'true' || p.verifiedPair.isolated !== true ||
       p.sessionAffinity !== 'dedicated' || p.verifiedPair.sourceBackend !== env.MTH_MOVE_PARENT_SAVE_SOURCE_BACKEND ||
-      !p.verifiedPair.sourceBackend || p.verifiedPair.sourceBackend.includes('arepfylnilkjmyduhwbz') ||
-      p.verifiedPair.sourceBackend.includes('qvvxvbcdmbjzrgvwjatw') ||
+      !p.verifiedPair.sourceBackend || containsForbiddenMoveTarget(p.verifiedPair.sourceBackend) ||
       p.verifiedPair.moveOrigin !== env.MTH_MOVE_PARENT_SAVE_MOVE_ORIGIN ||
       p.verifiedPair.parentOrigin !== env.MTH_MOVE_PARENT_SAVE_PARENT_ORIGIN ||
       env.MTH_MOVE_PARENT_SAVE_FORM_PATH !== PARENT_FORM_PATH) return null;
@@ -49,10 +52,17 @@ export function createIsolatedMoveRuntime(env: Record<string,string|undefined>, 
     // exists; do not trust arbitrary forwarded IP headers or create raw IP logs.
     return store.allowRate(opaque(cookie) ? cookie : 'bootstrap');
   } };
-  return {http,store,
+  const authorize = async (proof: unknown, scope: 'source:read' | 'source:ack') => {
+    const caller = await p.verifySourceCaller(proof, scope);
+    return caller && opaque(caller.browserProof) ? caller : null;
+  };
+  return {http,store,authorize,
+    async resolvePublication(profile: unknown): Promise<Publication | null> {
+      return resolveExactMovePublication(env, p.readCertifiedPublication ?? null, profile);
+    },
     async source(continuationRef: string, proof: unknown) {
-      const caller = await p.verifySourceCaller(proof,'source:read');
-      if (!caller || !opaque(caller.browserProof)) return null;
+      const caller = await authorize(proof,'source:read');
+      if (!caller) return null;
       return store.withContinuation(continuationRef,async r => {
         if (!r || r.browserHash!==hash(caller.browserProof) || r.expiresAt<=Date.now()) return null;
         return { continuationRef:r.continuationRef,transferRef:r.parentStage.transferRef,manifest:r.manifest,
@@ -60,8 +70,8 @@ export function createIsolatedMoveRuntime(env: Record<string,string|undefined>, 
       });
     },
     async acknowledge(continuationRef: string, receipts: ItemReceipt[], proof: unknown) {
-      const caller = await p.verifySourceCaller(proof,'source:ack');
-      if (!caller || !opaque(caller.browserProof) || !receipts.length) throw Error('unauthorized_source_ack');
+      const caller = await authorize(proof,'source:ack');
+      if (!caller || !receipts.length) throw Error('unauthorized_source_ack');
       await store.withContinuation(continuationRef,async (r,checkpoint) => {
         if (!r || r.browserHash!==hash(caller.browserProof) || receipts.length!==r.manifest.selected.length) throw Error('invalid_source_ack');
         const context=receipts[0]!.accountContextRef, project=receipts[0]!.project.projectRef;

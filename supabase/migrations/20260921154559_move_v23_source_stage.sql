@@ -59,6 +59,47 @@ grant usage on schema mth_profile_transfer to mth_move_profile_transfer;
 grant select,insert,update,delete on mth_profile_transfer.stages,mth_profile_transfer.quota to mth_move_profile_transfer;
 create policy source_service_only on mth_profile_transfer.stages to mth_move_profile_transfer using(true) with check(true);
 create policy source_service_only on mth_profile_transfer.quota to mth_move_profile_transfer using(true) with check(true);
+-- Durable assertion replay. The stored value is SHA-256(iss:kid:jti), never the raw jti.
+create table mth_profile_transfer.assertion_nonces (
+  nonce_hash text primary key check(nonce_hash ~ '^[a-f0-9]{64}$'),
+  expires_at timestamptz not null
+);
+create index assertion_nonces_expiry on mth_profile_transfer.assertion_nonces(expires_at);
+alter table mth_profile_transfer.assertion_nonces enable row level security;
+alter table mth_profile_transfer.assertion_nonces force row level security;
+revoke all on mth_profile_transfer.assertion_nonces from public, anon, authenticated;
+grant select, insert, delete on mth_profile_transfer.assertion_nonces to mth_move_profile_transfer;
+create policy source_service_only on mth_profile_transfer.assertion_nonces to mth_move_profile_transfer using(true) with check(true);
+create function mth_profile_transfer.claim_assertion_nonce(p_nonce_hash text, p_expires_at timestamptz) returns boolean
+language plpgsql security invoker set search_path=pg_catalog as $$
+declare inserted integer;
+begin
+  if p_nonce_hash !~ '^[a-f0-9]{64}$' or p_expires_at is null or p_expires_at<=clock_timestamp() then
+    return false;
+  end if;
+  insert into mth_profile_transfer.assertion_nonces(nonce_hash, expires_at)
+  values (p_nonce_hash, p_expires_at)
+  on conflict (nonce_hash) do nothing;
+  get diagnostics inserted = row_count;
+  return inserted = 1;
+end $$;
+create function mth_profile_transfer.cleanup_assertion_nonces(batch_limit integer) returns integer
+language plpgsql security invoker set search_path=pg_catalog as $$
+declare removed integer;
+begin
+  if batch_limit is null or batch_limit < 1 or batch_limit > 500 then
+    raise exception 'invalid_cleanup_limit';
+  end if;
+  delete from mth_profile_transfer.assertion_nonces where nonce_hash in (
+    select nonce_hash from mth_profile_transfer.assertion_nonces
+    where expires_at<=clock_timestamp() order by expires_at limit batch_limit);
+  get diagnostics removed = row_count;
+  return removed;
+end $$;
+revoke all on function mth_profile_transfer.claim_assertion_nonce(text, timestamptz) from public, anon, authenticated;
+revoke all on function mth_profile_transfer.cleanup_assertion_nonces(integer) from public, anon, authenticated;
+grant execute on function mth_profile_transfer.claim_assertion_nonce(text, timestamptz) to mth_move_profile_transfer;
+grant execute on function mth_profile_transfer.cleanup_assertion_nonces(integer) to mth_move_profile_transfer;
 -- NO login, membership, password, service_role grant, scheduler or backend connection.
 -- A separately approved dedicated connection must use this one narrow capability.
 commit;

@@ -15,7 +15,7 @@ const browser:BrowserBinding={binding:ref('b'),csrfVerified:true,origin:'http://
 function fixture() {
   const records=new Map<string,TransferRecord>(),receipts=new Map<string,ItemReceipt>(),calls:Operation[]=[];
   let now=1000,grant:CurrentGrant|null={accountContextRef:ref('a'),selectionConfirmed:true};
-  let projectFail=false,loseCommit=false,forge=false,switchOnVerify=false,failSecond=false;
+  let forge=false,switchOnVerify=false;
   const deps:Dependencies={
     config:{enabled:true,environment:'isolated',verifiedIsolatedPair:true,moveOrigin:browser.origin,parentOrigin:'http://127.0.0.1:4322',parentFormPath:'/mock-parent-confirm'},
     store:{async putIfAbsent(k,r){assert.equal(records.has(k),false);records.set(k,structuredClone(r));},async withRecord(k,fn){return fn(records.get(k)??null);}},
@@ -27,14 +27,8 @@ function fixture() {
       if(operation==='prepareGuestProfileTransfer') result={transferRef:ref('t'),manifestDigest:manifestDigest(input as GuestStageInput),expiresAt:now+600_000};
       else if(operation==='prepareProfileSaveContinuation')result={continuationRef:ref('c'),expiresAt:now+600_000};
       else if(operation==='getProfileSaveReceipt')result=receipts.get((input as CommitInput).requestKey)??null;
-      else if(operation==='commitProfileSave'){
-        const value=input as CommitInput;
-        if(failSecond && value.item.localItemId==='second')throw Error('mock partial failure');
-        const receipt:ItemReceipt={receiptRef:ref('r'),requestKey:value.requestKey,accountContextRef:value.accountContextRef,
-          manifestDigest:value.manifestDigest,item:value.item,parent:{outcome:receipts.size?'already_saved':'saved',savedRef:ref('s')},
-          project:value.projectRef?{outcome:projectFail?'failed':'added',projectRef:value.projectRef}:{outcome:'not_requested'},localCopy:'keep'};
-        receipts.set(value.requestKey,structuredClone(receipt));if(loseCommit){loseCommit=false;throw Error('lost response');}result=receipt;
-      }else if(operation==='verifyProfileSaveReceipt'){
+      else if(operation==='commitProfileSave'||operation==='consumeProfileSaveContinuation')throw Error('Move must not commit parent Save');
+      else if(operation==='verifyProfileSaveReceipt'){
         result=forge?{...receipts.get((input as CommitInput).requestKey),manifestDigest:'f'.repeat(64)}:receipts.get((input as CommitInput).requestKey)??null;
         if(switchOnVerify)grant={accountContextRef:ref('z'),selectionConfirmed:true};
       } else throw Error('Parent owns authentication consumption, not specialist');
@@ -43,9 +37,17 @@ function fixture() {
   };
   const adapter=new MoveProfileSaveAdapter(deps);
   const start=async(selected=selection())=>{const r=await adapter.prepare(selected,browser);assert.equal(r.state,'continue');if(r.state!=='continue')throw Error('stage');return r;};
-  return {adapter,deps,records,receipts,calls,start,setNow:(n:number)=>now=n,
-    setGrant:(v:CurrentGrant|null)=>grant=v,projectFail:()=>projectFail=true,lose:()=>loseCommit=true,forge:()=>forge=true,
-    switchOnVerify:()=>switchOnVerify=true,failSecond:(v:boolean)=>failSecond=v};
+  const seed=(index=0,patch:Partial<ItemReceipt>={})=>{
+    const record=[...records.values()].at(-1);if(!record||!grant)throw Error('stage');
+    const requestKey=record.requestPrefix+':'+index;
+    const receipt:ItemReceipt={receiptRef:ref(index?'q':'r'),requestKey,accountContextRef:grant.accountContextRef,
+      manifestDigest:record.parentStage.manifestDigest,item:record.manifest.selected[index]!,
+      parent:{outcome:'saved',savedRef:ref('s'),...patch.parent},
+      project:patch.project??(grant.projectRef?{outcome:'added',projectRef:grant.projectRef}:{outcome:'not_requested'}),localCopy:'keep'};
+    receipts.set(requestKey,structuredClone(receipt));return receipt;
+  };
+  return {adapter,deps,records,receipts,calls,start,seed,setNow:(n:number)=>now=n,
+    setGrant:(v:CurrentGrant|null)=>grant=v,forge:()=>forge=true,switchOnVerify:()=>switchOnVerify=true};
 }
 test('exact native identity and published profile; slug is not the binding',async()=>{
   const f=fixture(),r=await f.start();const record=[...f.records.values()][0]!;
@@ -81,46 +83,59 @@ test('expired stage, wrong browser, stale item and forged completion cannot save
   assert.equal((await f.adapter.finish(r.ticket,selection(slug,'2026-09-20'),browser)).state,'invalid');
   assert.equal((await f.adapter.finish('saved=1',selection(),browser)).state,'invalid');
   f.setNow(700_000);assert.equal((await f.adapter.finish(r.ticket,selection(),browser)).state,'expired');assert.equal(f.receipts.size,0);
+  assert.equal(f.calls.includes('commitProfileSave'),false);
+  assert.equal(f.calls.includes('prepareGuestProfileTransfer'),true);
+  assert.equal(f.calls.filter(v=>v==='prepareGuestProfileTransfer').length,1);
 });
 test('exact durable Save, duplicate retry and bounded safe return; zero Watch surface',async()=>{
-  const f=fixture(),r=await f.start();
+  const f=fixture(),r=await f.start();f.seed();
   assert.deepEqual(await f.adapter.finish(r.ticket,selection(),browser),{state:'parent_saved',projectFailed:false,returnPath:'/companies/'+slug,localCopy:'keep'});
   assert.equal((await f.adapter.finish(r.ticket,selection(),browser)).state,'parent_saved');
-  assert.equal(f.calls.filter(v=>v==='commitProfileSave').length,1);
-  assert.equal(f.calls.some(v=>/watch|alert|signup|project/i.test(v)),false);assert.equal(f.records.size,1);
+  assert.equal(f.calls.includes('commitProfileSave'),false);
+  assert.equal(f.calls.includes('consumeProfileSaveContinuation'),false);
+  assert.equal(f.calls.some(v=>/watch|alert|signup/i.test(v)),false);assert.equal(f.records.size,1);
 });
 test('Save + Project failure retains Save/local copy; optional Project is bound separately',async()=>{
-  const f=fixture();f.setGrant({accountContextRef:ref('a'),selectionConfirmed:true,projectRef:ref('p')});f.projectFail();const r=await f.start();
+  const f=fixture();f.setGrant({accountContextRef:ref('a'),selectionConfirmed:true,projectRef:ref('p')});const r=await f.start();
+  f.seed(0,{project:{outcome:'failed',projectRef:ref('p')}});
   assert.equal((await f.adapter.finish(r.ticket,selection(),browser) as {projectFailed:boolean}).projectFailed,true);
   assert.equal(f.receipts.size,1);f.setGrant({accountContextRef:ref('a'),selectionConfirmed:true,projectRef:ref('q')});
   assert.equal((await f.adapter.finish(r.ticket,selection(),browser)).state,'account_changed');
+  assert.equal(f.calls.includes('commitProfileSave'),false);
 });
 test('already Saved with new Project gets one bounded membership result',async()=>{
-  const f=fixture(),first=await f.start();await f.adapter.finish(first.ticket,selection(),browser);
+  const f=fixture(),first=await f.start();f.seed();await f.adapter.finish(first.ticket,selection(),browser);
   f.setGrant({accountContextRef:ref('a'),selectionConfirmed:true,projectRef:ref('p')});const next=await f.start();
+  f.seed(0,{parent:{outcome:'already_saved',savedRef:ref('s')},project:{outcome:'added',projectRef:ref('p')}});
   assert.equal((await f.adapter.finish(next.ticket,selection(),browser)).state,'parent_saved');
   const receipt=[...f.receipts.values()][1]!;assert.equal(receipt.parent.outcome,'already_saved');assert.equal(receipt.project.outcome,'added');
+  assert.equal(f.calls.includes('commitProfileSave'),false);
 });
-test('lost response lookup succeeds after expiry without duplicate parent mutation',async()=>{
-  const f=fixture(),r=await f.start();f.lose();assert.equal((await f.adapter.finish(r.ticket,selection(),browser)).state,'unavailable');
-  f.setNow(900_000);assert.equal((await f.adapter.finish(r.ticket,selection(),browser)).state,'parent_saved');
-  assert.equal(f.calls.filter(v=>v==='commitProfileSave').length,1);
+test('missing receipt stays local-only and an existing receipt recovers after expiry without a parent commit',async()=>{
+  const f=fixture(),r=await f.start();
+  assert.equal((await f.adapter.finish(r.ticket,selection(),browser)).state,'unavailable');
+  assert.equal(f.calls.includes('commitProfileSave'),false);
+  f.seed();f.setNow(900_000);
+  assert.equal((await f.adapter.finish(r.ticket,selection(),browser)).state,'parent_saved');
+  assert.equal(f.calls.filter(v=>v==='commitProfileSave').length,0);
 });
 test('account switch before retry or during receipt verification never confirms',async()=>{
-  const f=fixture(),r=await f.start();f.lose();await f.adapter.finish(r.ticket,selection(),browser);
+  const f=fixture(),r=await f.start();await f.adapter.finish(r.ticket,selection(),browser);
   f.setGrant({accountContextRef:ref('z'),selectionConfirmed:true});assert.equal((await f.adapter.finish(r.ticket,selection(),browser)).state,'account_changed');
-  const g=fixture(),s=await g.start();g.switchOnVerify();assert.equal((await g.adapter.finish(s.ticket,selection(),browser)).state,'account_changed');
+  const g=fixture(),s=await g.start();g.seed();g.switchOnVerify();assert.equal((await g.adapter.finish(s.ticket,selection(),browser)).state,'account_changed');
 });
 test('forged receipt, no parent approval and changed publication cannot produce success',async()=>{
-  const f=fixture(),r=await f.start();f.forge();assert.equal((await f.adapter.finish(r.ticket,selection(),browser)).state,'unavailable');
+  const f=fixture(),r=await f.start();f.seed();f.forge();assert.equal((await f.adapter.finish(r.ticket,selection(),browser)).state,'unavailable');
   const g=fixture(),s=await g.start();g.setGrant(null);assert.equal((await g.adapter.finish(s.ticket,selection(),browser)).state,'unavailable');assert.equal(g.receipts.size,0);
   const h=fixture(),t=await h.start(),row=await h.deps.resolveExactPublished(slug);h.deps.resolveExactPublished=async()=>({...row!,publicationState:'INACTIVE'});
   assert.equal((await h.adapter.finish(t.ticket,selection(),browser)).state,'local_only');assert.equal(h.receipts.size,0);
+  assert.equal(h.calls.includes('commitProfileSave'),false);
 });
-test('partial batch failure retains successful receipt and retries only missing item',async()=>{
-  const f=fixture(),selected=[...selection(),...selection('second')],r=await f.start(selected);f.failSecond(true);
+test('partial batch keeps the existing receipt and does not commit the missing item',async()=>{
+  const f=fixture(),selected=[...selection(),...selection('second')],r=await f.start(selected);f.seed(0);
   assert.equal((await f.adapter.finish(r.ticket,selected,browser)).state,'unavailable');assert.equal(f.receipts.size,1);
-  f.failSecond(false);assert.equal((await f.adapter.finish(r.ticket,selected,browser)).state,'parent_saved');assert.equal(f.receipts.size,2);
+  f.seed(1);assert.equal((await f.adapter.finish(r.ticket,selected,browser)).state,'parent_saved');assert.equal(f.receipts.size,2);
+  assert.equal(f.calls.includes('commitProfileSave'),false);
 });
 test('BFF enforces Origin, CSRF, body limit and rejects client context/extra fields',async()=>{
   const f=fixture(),deps={config:f.deps.config,adapter:f.adapter,allowRequest:async()=>true};
@@ -144,6 +159,11 @@ test('parent facade uses frozen route/envelope, no raw principal or URL payload'
     assert.deepEqual(Object.keys(value),['version','operation','input']);
     return Response.json({ok:true,operation:value.operation,result:null});}});
   assert.equal((await call('getProfileSaveReceipt',{requestKey:'fixture',accountContextRef:ref('a')},browser)).ok,true);assert.equal(count,1);
+  let blocked=0;
+  const deny=parentFacade(f.deps.config,{async post(){blocked++;return Response.json({ok:true});}});
+  assert.equal((await deny('commitProfileSave',{requestKey:'x',accountContextRef:ref('a'),transferRef:ref('t'),manifestDigest:'a'.repeat(64),item:{localItemId:slug,revision:'a'.repeat(64),digest:'a'.repeat(64),profile:{hub:'move',nativeId:'usdot-1002530',profileClass:'mover'}}},browser)).ok,false);
+  assert.equal((await deny('consumeProfileSaveContinuation',{continuationRef:ref('c'),issuer:'move',audience:'ask',browserProof:ref('b')},browser)).ok,false);
+  assert.equal(blocked,0);
 });
 test('return is exact server profile and rejects traversal/external/encoded paths',()=>{
   const task={kind:'profile' as const,hub:'move' as const,canonicalSlug:slug,profile:{hub:'move' as const,nativeId:'usdot-1002530',profileClass:'mover'}};
@@ -155,16 +175,16 @@ test('return is exact server profile and rejects traversal/external/encoded path
 test('missing class review is unresolved rather than guessed; saved UUID is allowed',async()=>{
   const f=fixture(),row=await f.deps.resolveExactPublished(slug);
   assert.equal(mapMoveProfile(slug,{...row!,reviewedClass:null}),null);
-  const r=await f.start();await f.adapter.finish(r.ticket,selection(),browser);
+  const r=await f.start();f.seed();await f.adapter.finish(r.ticket,selection(),browser);
   [...f.receipts.values()][0]!.parent.savedRef='12345678-1234-4234-8234-123456789abc';
   assert.equal((await f.adapter.finish(r.ticket,selection(),browser)).state,'parent_saved');
 });
 
-test('source checkpoint precedes any parent receipt/commit; persistence failure cannot write parent',async()=>{
-  const f=fixture(),start=await f.start();let checkpointed=false;
+test('source checkpoint precedes any parent receipt read; persistence failure cannot write parent',async()=>{
+  const f=fixture(),start=await f.start();f.seed();let checkpointed=false;
   f.deps.store.withRecord=async(k,work)=>work(f.records.get(k)??null,async()=>{checkpointed=true;});
   const parent=f.deps.parent;
-  f.deps.parent=async(op,input,bound)=>{assert.equal(checkpointed,true);return parent(op,input,bound);};
+  f.deps.parent=async(op,input,bound)=>{assert.equal(checkpointed,true);assert.notEqual(op,'commitProfileSave');return parent(op,input,bound);};
   assert.equal((await f.adapter.finish(start.ticket,selection(),browser)).state,'parent_saved');
   const g=fixture(),other=await g.start();
   g.deps.store.withRecord=async(k,work)=>work(g.records.get(k)??null,async()=>{throw Error('source checkpoint failed');});

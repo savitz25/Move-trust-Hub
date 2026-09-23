@@ -43,8 +43,18 @@ export async function handleSourceCallback(request:Request,runtime:Runtime|null)
     finally{reader.releaseLock();}
     const bytes=Buffer.concat(chunks);
     let body:unknown;try{body=JSON.parse(bytes.toString('utf8'));}catch{return reply({ok:false,error:'invalid'},400);}
-    if(!object(body)||!opaque(body.continuationRef))return reply({ok:false,error:'invalid'},400);
+    if(!object(body)||typeof body.action!=='string')return reply({ok:false,error:'invalid'},400);
     const proof=new Request(request.url,{method:'POST',headers:request.headers,body:bytes,signal:request.signal});
+    if(body.action==='resolve'&&exact(body,['action','profile'])) {
+      const profile=body.profile;
+      if(!object(profile)||!exact(profile,['hub','nativeId','profileClass'])||
+        typeof profile.hub!=='string'||typeof profile.nativeId!=='string'||typeof profile.profileClass!=='string')return reply({ok:false,error:'invalid'},400);
+      const caller=await runtime.authorize(proof,'source:read');
+      if(!caller)return reply({ok:false,error:'unauthorized'},403);
+      const result=await runtime.resolvePublication(profile);
+      return result?reply({ok:true,result},200):reply({ok:false,error:'unavailable'},503);
+    }
+    if(!opaque(body.continuationRef))return reply({ok:false,error:'invalid'},400);
     if(body.action==='source'&&exact(body,['action','continuationRef'])) {
       const result=await runtime.source(body.continuationRef as string,proof);
       return result?reply({ok:true,result},200):reply({ok:false,error:'unauthorized'},403);

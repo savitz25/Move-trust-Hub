@@ -118,7 +118,7 @@ export class MoveProfileSaveAdapter {
    * derives identity, approval and optional Project through the verified channel.
    * No URL completion flag, consumer ID, Project ID or receipt body is authority.
    */
-  async finish(ticket:unknown,selection:unknown,browser:BrowserBinding):Promise<AdapterResult> {
+  async finish(ticket:unknown,selection:unknown,browser:BrowserBinding,issued?:CurrentGrant):Promise<AdapterResult> {
     const d=this.dependencies;
     if(!enabled(d.config))return failure('unavailable');
     if(!allowedBrowser(browser,d.config) || !opaque(ticket) || !isSelection(selection))return failure('invalid');
@@ -128,38 +128,32 @@ export class MoveProfileSaveAdapter {
         const item=record.manifest.selected[i]!;
         return row.companySlug!==item.localItemId || row.revision!==item.revision || row.digest!==item.digest || hash(projection(row.companySlug,row.savedAt))!==item.digest;
       }))return failure('invalid');
-      const grant=await d.currentGrant(browser,hash(ticket));
+      const readGrant=()=>issued?Promise.resolve(issued):d.currentGrant(browser,hash(ticket));
+      const grant=await readGrant();
       if(!grant || !grant.selectionConfirmed || !opaque(grant.accountContextRef) || (grant.projectRef!==undefined && !opaque(grant.projectRef)))return failure('unavailable');
       if(record.accountContextRef && !sameGrant(grant,{accountContextRef:record.accountContextRef,projectRef:record.projectRef,selectionConfirmed:true}))return failure('account_changed');
-      if(!record.accountContextRef && record.expiresAt<=d.now())return failure('expired');
       // withRecord must persist this binding atomically, including on lost responses.
       record.accountContextRef=grant.accountContextRef;record.projectRef=grant.projectRef;
-      // Persist ownership BEFORE any remote commit. A lost response or process
-      // crash must never roll this binding back and allow a different account.
+      // Persist ownership BEFORE any parent read. Move never commits a parent Save.
       await checkpoint?.();
       let projectFailed=false;
       for(const [index,item] of record.manifest.selected.entries()) {
-        if(!sameGrant(await d.currentGrant(browser,hash(ticket)),grant))return failure('account_changed');
+        if(!sameGrant(await readGrant(),grant))return failure('account_changed');
+        const current=mapMoveProfile(item.localItemId,await d.resolveExactPublished(item.localItemId));
+        if(!current || current.nativeId!==item.profile.nativeId)return failure('invalid');
+        const capability=profileCapability(current);
+        if(capability!=='SAVE_SUPPORTED')return {state:'local_only',capability,localCopy:'keep'};
         const input:CommitInput={requestKey:record.requestPrefix+':'+index,accountContextRef:grant.accountContextRef,
           transferRef:record.parentStage.transferRef,manifestDigest:record.parentStage.manifestDigest,item,...(grant.projectRef?{projectRef:grant.projectRef}:{})};
         const lookup=await d.parent('getProfileSaveReceipt',{requestKey:input.requestKey,accountContextRef:input.accountContextRef},browser);
         if(!lookup.ok)return failure('unavailable');
-        let receipt=lookup.result;
-        if(!receipt){
-          if(record.expiresAt<=d.now())return failure('expired');
-          // Publication/binding rechecked locally and again by the parent at commit.
-          const current=mapMoveProfile(item.localItemId,await d.resolveExactPublished(item.localItemId));
-          if(!current || current.nativeId!==item.profile.nativeId)return failure('invalid');
-          const capability=profileCapability(current);
-          if(capability!=='SAVE_SUPPORTED')return {state:'local_only',capability,localCopy:'keep'};
-          const commit=await d.parent('commitProfileSave',input,browser);
-          if(!commit.ok)return failure('unavailable');receipt=commit.result;
-        }
+        const receipt=lookup.result;
+        if(!receipt)return record.expiresAt<=d.now()?failure('expired'):failure('unavailable');
         if(!matches(receipt,input))return failure('unavailable');
         const verified=await d.parent('verifyProfileSaveReceipt',{requestKey:input.requestKey,accountContextRef:input.accountContextRef,
           receiptRef:receipt.receiptRef,manifestDigest:input.manifestDigest,item,...(grant.projectRef?{projectRef:grant.projectRef}:{})},browser);
         if(!verified.ok || !matches(verified.result,input) || verified.result.receiptRef!==receipt.receiptRef)return failure('unavailable');
-        if(!sameGrant(await d.currentGrant(browser,hash(ticket)),grant))return failure('account_changed');
+        if(!sameGrant(await readGrant(),grant))return failure('account_changed');
         projectFailed ||= verified.result.project.outcome==='failed';
       }
       const registry:TrustedOriginRegistry={environment:'isolated',isolatedBackendVerified:true,

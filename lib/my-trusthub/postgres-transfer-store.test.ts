@@ -71,7 +71,10 @@ test('S05 exact fixed parent route, approved source and origin pair; production 
   assert.ok(isolatedConfig(env,ports()));assert.equal(isolatedConfig(env,null),null);
   for(const patch of [{VERCEL_ENV:'production'},{MTH_MOVE_PARENT_SAVE_MODE:'production'},{MTH_MOVE_PARENT_SAVE_ISOLATED_APPROVED:'false'},
     {MTH_MOVE_PARENT_SAVE_FORM_PATH:'/invented-route'},{MTH_MOVE_PARENT_SAVE_PARENT_ORIGIN:'https://www.asktrusthub.com'},
-    {MTH_MOVE_PARENT_SAVE_SOURCE_BACKEND:'arepfylnilkjmyduhwbz'},{NEXT_PUBLIC_MOVE_PARENT_SAVE_ENABLED:'false'}])
+    {MTH_MOVE_PARENT_SAVE_SOURCE_BACKEND:'arepfylnilkjmyduhwbz'},
+    {MTH_MOVE_PARENT_SAVE_SOURCE_BACKEND:'qvvxvbcdmbjzrgvwjatw'},
+    {MTH_MOVE_PARENT_SAVE_SOURCE_BACKEND:'tzzcogaricohtezsugjr'},
+    {NEXT_PUBLIC_MOVE_PARENT_SAVE_ENABLED:'false'}])
     assert.equal(createIsolatedMoveRuntime({...env,...patch},ports()),null);
 });
 test('S06 source snapshot preserves request mapping and refuses unverified caller/browser (MOCKED service)',async()=>{
@@ -90,11 +93,15 @@ test('S06 source snapshot preserves request mapping and refuses unverified calle
 test('S07 unapplied SQL has forced RLS, no login/membership, immutable context and guarded rollback',()=>{
   const up=readFileSync('supabase/migrations/20260921154559_move_v23_source_stage.sql','utf8');
   const down=readFileSync('supabase/rollback/20260921154559_move_v23_source_stage.down.sql','utf8');
-  assert.equal((up.match(/force row level security/g)||[]).length,2);
+  assert.equal((up.match(/force row level security/g)||[]).length,3);
   assert.match(up,/nologin noinherit nosuperuser/);assert.match(up,/continuation_hash text not null unique/);
   assert.match(up,/Immutable source transfer or account context changed/);
   assert.doesNotMatch(up,/grant\s+mth_move_profile_transfer\s+to/i);
+  assert.match(up,/claim_assertion_nonce/);
+  assert.match(up,/on conflict \(nonce_hash\) do nothing/);
+  assert.doesNotMatch(up,/grant\s+[^\n]*service_role/i);
   assert.match(down,/Live source retry metadata remains/);
+  assert.match(down,/Live assertion nonces remain/);
 });
 
 test('S08 acknowledgment binds once; rejects forged scope/browser/digest/replay into another owner (MOCKED service)',async()=>{

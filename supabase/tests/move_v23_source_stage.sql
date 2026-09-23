@@ -6,7 +6,9 @@ do $$ begin
      has_table_privilege('authenticated','mth_profile_transfer.stages','select') then raise exception 'Browser grant leak'; end if;
   if exists(select 1 from pg_roles where rolname='mth_move_profile_transfer' and (rolcanlogin or rolbypassrls or rolsuper)) then raise exception 'Unsafe role'; end if;
   if (select count(*) from pg_class c join pg_namespace n on n.oid=c.relnamespace
-      where n.nspname='mth_profile_transfer' and c.relname in ('stages','quota') and c.relrowsecurity and c.relforcerowsecurity)<>2 then raise exception 'RLS missing'; end if;
+      where n.nspname='mth_profile_transfer' and c.relname in ('stages','quota','assertion_nonces') and c.relrowsecurity and c.relforcerowsecurity)<>3 then raise exception 'RLS missing'; end if;
+  if has_table_privilege('anon','mth_profile_transfer.assertion_nonces','select') or
+     has_table_privilege('authenticated','mth_profile_transfer.assertion_nonces','insert') then raise exception 'Nonce grant leak'; end if;
 end $$;
 set local role mth_move_profile_transfer;
 insert into mth_profile_transfer.stages(ticket_hash,browser_hash,continuation_hash,record,expires_at,receipt_retry_until)
@@ -31,6 +33,20 @@ do $$ begin
     raise exception 'Expiry extension unexpectedly accepted';
   exception when raise_exception then
     if sqlerrm<>'Immutable source transfer or account context changed' then raise; end if;
+  end;
+end $$;
+do $$ begin
+  if mth_profile_transfer.claim_assertion_nonce(repeat('ab',32), clock_timestamp()+interval '40 seconds') is not true then
+    raise exception 'First nonce claim must succeed';
+  end if;
+  if mth_profile_transfer.claim_assertion_nonce(repeat('ab',32), clock_timestamp()+interval '40 seconds') is not false then
+    raise exception 'Replayed nonce must be rejected';
+  end if;
+  begin
+    perform mth_profile_transfer.cleanup_assertion_nonces(501);
+    raise exception 'Unbounded nonce cleanup accepted';
+  exception when raise_exception then
+    if sqlerrm<>'invalid_cleanup_limit' then raise; end if;
   end;
 end $$;
 rollback;

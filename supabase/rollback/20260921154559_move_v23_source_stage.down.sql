@@ -7,7 +7,13 @@ do $$ begin
   if exists(select 1 from mth_profile_transfer.stages where receipt_retry_until>clock_timestamp()) then
     raise exception 'Live source retry metadata remains; refuse destructive rollback';
   end if;
+  if exists(select 1 from mth_profile_transfer.assertion_nonces where expires_at>clock_timestamp()) then
+    raise exception 'Live assertion nonces remain; refuse destructive rollback';
+  end if;
 end $$;
+drop function mth_profile_transfer.claim_assertion_nonce(text, timestamptz);
+drop function mth_profile_transfer.cleanup_assertion_nonces(integer);
+drop table mth_profile_transfer.assertion_nonces;
 drop table mth_profile_transfer.stages;
 drop table mth_profile_transfer.quota;
 drop function mth_profile_transfer.guard_stage_update();

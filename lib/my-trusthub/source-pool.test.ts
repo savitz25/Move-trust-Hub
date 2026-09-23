@@ -13,7 +13,10 @@ test('S09 lazy source pool requires exact approved isolated target; no connectio
     {MTH_MOVE_PARENT_SAVE_DATABASE_CA:undefined},{MTH_MOVE_PARENT_SAVE_SOURCE_BACKEND:'other'},
     {MTH_MOVE_PARENT_SAVE_DATABASE_URL:env.MTH_MOVE_PARENT_SAVE_DATABASE_URL+'?sslmode=disable'},
     {MTH_MOVE_PARENT_SAVE_DATABASE_URL:'postgresql://source_login@other.invalid/fixture'},
-    {MTH_MOVE_PARENT_SAVE_DATABASE_URL:'postgresql://source_login@isolated.invalid/other'}])
+    {MTH_MOVE_PARENT_SAVE_DATABASE_URL:'postgresql://source_login@isolated.invalid/other'},
+    {MTH_MOVE_PARENT_SAVE_DATABASE_URL:'postgresql://source_login:tzzcogaricohtezsugjr@isolated.invalid/fixture'},
+    {MTH_MOVE_PARENT_SAVE_DATABASE_URL:'postgresql://source_login:qvvxvbcdmbjzrgvwjatw@isolated.invalid/fixture'},
+    {MTH_MOVE_PARENT_SAVE_DATABASE_URL:'postgresql://source_login:arepfylnilkjmyduhwbz@isolated.invalid/fixture'}])
     assert.equal(createIsolatedSourcePool({...env,...patch},approved),null);
   for(const databaseUser of ['postgres','service_role','supabase_admin'])
     assert.equal(createIsolatedSourcePool({...env,MTH_MOVE_PARENT_SAVE_DATABASE_URL:`postgresql://${databaseUser}@isolated.invalid/fixture`},

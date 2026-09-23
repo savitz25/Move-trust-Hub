@@ -1,10 +1,15 @@
 import { randomBytes, timingSafeEqual } from 'node:crypto';
-import { enabled, type AdapterConfig, type MoveProfileSaveAdapter, type BrowserBinding } from './profile-save-adapter';
+import { enabled, type AdapterConfig, type MoveProfileSaveAdapter, type BrowserBinding, type CurrentGrant } from './profile-save-adapter';
 export const COOKIE_NAME='mth_move_profile_transfer';
 const headers={'Cache-Control':'private, no-store','Referrer-Policy':'no-referrer','X-Content-Type-Options':'nosniff'};
+const opaque=(value:unknown):value is string=>typeof value==='string'&&/^[A-Za-z0-9_-]{43}$/.test(value);
 export type HttpDependencies={config:AdapterConfig;adapter:MoveProfileSaveAdapter;
   /** Reviewed per-browser limiter, not an unbounded deployed process-local Map. */
-  allowRequest(request:Request):Promise<boolean>};
+  allowRequest(request:Request):Promise<boolean>;
+  /** Ask current-grant bridge. Missing ports stay unavailable and never commit. */
+  grantChallenge?(browser:BrowserBinding,ticket:string):Promise<{target:string;challengeRef:string}|null>;
+  resolveGrant?(browser:BrowserBinding,ticket:string,proofRef:string):Promise<CurrentGrant|'account_changed'|null>;
+};
 const json=(body:unknown,status=200)=>Response.json(body,{status,headers});
 async function boundedJson(request:Request):Promise<unknown> {
   if(!request.body)throw Error('invalid');
@@ -37,8 +42,19 @@ export async function handleMoveProfileSave(request:Request,dependencies:HttpDep
     const browser:BrowserBinding={binding:existing,csrfVerified:true,origin:d.config.moveOrigin,environment:'isolated'};
     if(input.action==='prepare' && Object.keys(input).length===2 && Object.hasOwn(input,'selected'))
       return json(await d.adapter.prepare(input.selected,browser));
-    if(input.action==='receipt' && Object.keys(input).length===3 && Object.hasOwn(input,'ticket') && Object.hasOwn(input,'selected'))
-      return json(await d.adapter.finish(input.ticket,input.selected,browser));
+    if(input.action==='grant-challenge' && Object.keys(input).length===2 && Object.hasOwn(input,'ticket')){
+      if(!d.grantChallenge || !opaque(input.ticket))return json({state:'unavailable',localCopy:'keep'},503);
+      const challenge=await d.grantChallenge(browser,input.ticket);
+      return challenge?json({state:'challenge',target:challenge.target,challengeRef:challenge.challengeRef,localCopy:'keep'}):json({state:'unavailable',localCopy:'keep'},503);
+    }
+    if(input.action==='receipt' && Object.keys(input).length===4 && Object.hasOwn(input,'ticket') && Object.hasOwn(input,'selected') && Object.hasOwn(input,'proofRef')){
+      if(!opaque(input.proofRef))return json({state:'invalid',localCopy:'keep'},400);
+      if(!d.resolveGrant)return json({state:'unavailable',localCopy:'keep'},503);
+      const grant=await d.resolveGrant(browser,input.ticket,input.proofRef);
+      if(grant==='account_changed')return json({state:'account_changed',localCopy:'keep'});
+      if(!grant)return json({state:'unavailable',localCopy:'keep'},503);
+      return json(await d.adapter.finish(input.ticket,input.selected,browser,grant));
+    }
     return json({state:'invalid',localCopy:'keep'},400);
   }catch{return json({state:'unavailable',localCopy:'keep'},503);}
 }
