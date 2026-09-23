@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next';
 import bundleAnalyzer from '@next/bundle-analyzer';
+import { withSentryConfig } from '@sentry/nextjs/config';
 import { IMMUTABLE_ASSET, apiCacheControl } from './lib/cache/control';
 import { getAllHubRedirects } from './lib/migration/hub-redirects';
 import {
@@ -379,4 +380,28 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withBundleAnalyzer(nextConfig);
+const sentryAuthToken = process.env.SENTRY_AUTH_TOKEN;
+const sentryOrg = process.env.SENTRY_ORG;
+const sentryProject = process.env.SENTRY_PROJECT;
+
+export default withSentryConfig(withBundleAnalyzer(nextConfig), {
+  org: sentryOrg,
+  project: sentryProject,
+  authToken: sentryAuthToken,
+  silent: !process.env.CI,
+  widenClientFileUpload: true,
+  tunnelRoute: '/sentry-tunnel',
+  sourcemaps: {
+    disable: !sentryAuthToken || !sentryOrg || !sentryProject,
+    deleteSourcemapsAfterUpload: true,
+  },
+  release: {
+    name: process.env.VERCEL_GIT_COMMIT_SHA,
+  },
+  bundleSizeOptimizations: {
+    excludeDebugStatements: true,
+    excludeReplayIframe: true,
+    excludeReplayShadowDom: true,
+    excludeReplayWorker: true,
+  },
+});

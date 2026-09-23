@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
+import * as Sentry from '@sentry/nextjs';
 import {
   buildClientErrorPayload,
   reportClientError,
@@ -20,6 +21,7 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
+    Sentry.captureException(error);
     const message = error?.message || 'Segment render error';
     reportClientError(
       buildClientErrorPayload({

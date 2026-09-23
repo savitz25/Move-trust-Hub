@@ -1,10 +1,19 @@
 /**
- * Next.js startup hook — env sanity check on Node runtime only.
- * Non-strict so `next build` succeeds without every optional secret.
+ * Next.js startup hook — Sentry (client/server/edge) + env sanity on Node.
+ * Non-strict env check so `next build` succeeds without every optional secret.
  */
-export async function register() {
-  if (process.env.NEXT_RUNTIME !== 'nodejs') return;
+import * as Sentry from '@sentry/nextjs';
 
-  const { validateEnv } = await import('@/lib/env');
-  validateEnv({ strict: false });
+export async function register() {
+  if (process.env.NEXT_RUNTIME === 'nodejs') {
+    await import('./sentry.server.config');
+    const { validateEnv } = await import('@/lib/env');
+    validateEnv({ strict: false });
+  }
+
+  if (process.env.NEXT_RUNTIME === 'edge') {
+    await import('./sentry.edge.config');
+  }
 }
+
+export const onRequestError = Sentry.captureRequestError;
