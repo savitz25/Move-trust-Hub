@@ -8,7 +8,13 @@ do $$ begin
 end $$;
 -- Intentionally fail on collisions; never repurpose another schema/role.
 create schema mth_profile_transfer;
-revoke all on schema mth_profile_transfer from public, anon, authenticated;
+-- public is the PostgreSQL PUBLIC pseudo-role, not schema public.
+-- These revokes stay inside mth_profile_transfer and do not alter schema public.
+revoke all on schema mth_profile_transfer from public, anon, authenticated, service_role;
+-- Future objects created here by the migration owner keep explicit grants only.
+alter default privileges in schema mth_profile_transfer revoke all on tables from public, anon, authenticated, service_role;
+alter default privileges in schema mth_profile_transfer revoke all on sequences from public, anon, authenticated, service_role;
+alter default privileges in schema mth_profile_transfer revoke all on functions from public, anon, authenticated, service_role;
 create role mth_move_profile_transfer nologin noinherit nosuperuser nocreatedb nocreaterole noreplication nobypassrls;
 create table mth_profile_transfer.stages (
   ticket_hash text primary key check(ticket_hash ~ '^[a-f0-9]{64}$'),
@@ -41,7 +47,8 @@ begin
   end if;
   return new;
 end $$;
-revoke all on function mth_profile_transfer.guard_stage_update() from public,anon,authenticated;
+revoke all on function mth_profile_transfer.guard_stage_update() from public, anon, authenticated, service_role;
+grant execute on function mth_profile_transfer.guard_stage_update() to mth_move_profile_transfer;
 create trigger stages_immutable before update on mth_profile_transfer.stages
 for each row execute function mth_profile_transfer.guard_stage_update();
 create table mth_profile_transfer.quota (
@@ -54,7 +61,7 @@ alter table mth_profile_transfer.stages enable row level security;
 alter table mth_profile_transfer.stages force row level security;
 alter table mth_profile_transfer.quota enable row level security;
 alter table mth_profile_transfer.quota force row level security;
-revoke all on all tables in schema mth_profile_transfer from public,anon,authenticated;
+revoke all on all tables in schema mth_profile_transfer from public, anon, authenticated, service_role;
 grant usage on schema mth_profile_transfer to mth_move_profile_transfer;
 grant select,insert,update,delete on mth_profile_transfer.stages,mth_profile_transfer.quota to mth_move_profile_transfer;
 create policy source_service_only on mth_profile_transfer.stages to mth_move_profile_transfer using(true) with check(true);
@@ -67,7 +74,7 @@ create table mth_profile_transfer.assertion_nonces (
 create index assertion_nonces_expiry on mth_profile_transfer.assertion_nonces(expires_at);
 alter table mth_profile_transfer.assertion_nonces enable row level security;
 alter table mth_profile_transfer.assertion_nonces force row level security;
-revoke all on mth_profile_transfer.assertion_nonces from public, anon, authenticated;
+revoke all on mth_profile_transfer.assertion_nonces from public, anon, authenticated, service_role;
 grant select, insert, delete on mth_profile_transfer.assertion_nonces to mth_move_profile_transfer;
 create policy source_service_only on mth_profile_transfer.assertion_nonces to mth_move_profile_transfer using(true) with check(true);
 create function mth_profile_transfer.claim_assertion_nonce(p_nonce_hash text, p_expires_at timestamptz) returns boolean
@@ -96,10 +103,32 @@ begin
   get diagnostics removed = row_count;
   return removed;
 end $$;
-revoke all on function mth_profile_transfer.claim_assertion_nonce(text, timestamptz) from public, anon, authenticated;
-revoke all on function mth_profile_transfer.cleanup_assertion_nonces(integer) from public, anon, authenticated;
+revoke all on function mth_profile_transfer.claim_assertion_nonce(text, timestamptz) from public, anon, authenticated, service_role;
+revoke all on function mth_profile_transfer.cleanup_assertion_nonces(integer) from public, anon, authenticated, service_role;
 grant execute on function mth_profile_transfer.claim_assertion_nonce(text, timestamptz) to mth_move_profile_transfer;
 grant execute on function mth_profile_transfer.cleanup_assertion_nonces(integer) to mth_move_profile_transfer;
+-- A schema-scoped default revoke cannot remove the built-in PUBLIC EXECUTE grant on
+-- functions. This trigger covers only objects created later in this schema.
+create function mth_profile_transfer.lock_future_privileges() returns event_trigger
+language plpgsql security invoker set search_path=pg_catalog as $$
+declare cmd record;
+begin
+  for cmd in select object_identity, schema_name, object_type from pg_event_trigger_ddl_commands() loop
+    if cmd.schema_name is distinct from 'mth_profile_transfer' then
+      continue;
+    end if;
+    if cmd.object_type in ('table','sequence') then
+      execute format('revoke all on table %s from public, anon, authenticated, service_role', cmd.object_identity);
+    elsif cmd.object_type in ('function','procedure') then
+      execute format('revoke all on function %s from public, anon, authenticated, service_role', cmd.object_identity);
+    end if;
+  end loop;
+end $$;
+revoke all on function mth_profile_transfer.lock_future_privileges() from public, anon, authenticated, service_role;
+create event trigger mth_profile_transfer_lock_future_privileges
+  on ddl_command_end
+  when tag in ('CREATE TABLE','CREATE TABLE AS','CREATE SEQUENCE','CREATE FUNCTION','CREATE PROCEDURE')
+  execute function mth_profile_transfer.lock_future_privileges();
 -- NO login, membership, password, service_role grant, scheduler or backend connection.
 -- A separately approved dedicated connection must use this one narrow capability.
 commit;

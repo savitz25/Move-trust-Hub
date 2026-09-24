@@ -11,12 +11,20 @@ do $$ begin
     raise exception 'Live assertion nonces remain; refuse destructive rollback';
   end if;
 end $$;
+-- Schema-scoped default ACLs depend on the schema. Restore built-in defaults
+-- before DROP SCHEMA so this script does not need CASCADE.
+alter default privileges in schema mth_profile_transfer grant execute on functions to public;
+alter default privileges in schema mth_profile_transfer revoke all on tables from public, anon, authenticated, service_role;
+alter default privileges in schema mth_profile_transfer revoke all on sequences from public, anon, authenticated, service_role;
+alter default privileges in schema mth_profile_transfer revoke all on functions from anon, authenticated, service_role;
+drop event trigger if exists mth_profile_transfer_lock_future_privileges;
 drop function mth_profile_transfer.claim_assertion_nonce(text, timestamptz);
 drop function mth_profile_transfer.cleanup_assertion_nonces(integer);
 drop table mth_profile_transfer.assertion_nonces;
 drop table mth_profile_transfer.stages;
 drop table mth_profile_transfer.quota;
 drop function mth_profile_transfer.guard_stage_update();
+drop function mth_profile_transfer.lock_future_privileges();
 drop schema mth_profile_transfer; -- no CASCADE: unexpected dependencies must block
 drop role mth_move_profile_transfer; -- active grants/memberships must be reviewed
 commit;
