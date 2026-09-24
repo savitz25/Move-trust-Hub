@@ -59,6 +59,7 @@ const meta: Record<string, Pick<MoveHomepageMeasure, 'family' | 'entityClass' | 
   pa_puc_hhg_operator_list_rows: { family: 'STATE_AUTHORITY', entityClass: 'PA PUC active Household Goods Operators list row', destination: '/pennsylvania', acceptedArtifact: 'move-pa-state-intel-v1' },
   nc_ncuc_hhg_c_number_identities: { family: 'STATE_AUTHORITY', entityClass: 'NCUC household-goods C-number identity', destination: '/north-carolina', acceptedArtifact: 'move-nc-state-intel-v1' },
   oh_puco_hhg_certificate_universe: { family: 'STATE_AUTHORITY', entityClass: 'PUCO household-goods certificate roster', destination: '/ohio', acceptedArtifact: 'move-oh-state-intel-v1' },
+  ga_dps_hhg_mca_identities: { family: 'STATE_AUTHORITY', entityClass: 'Georgia DPS household-goods MCA identity', destination: '/georgia', acceptedArtifact: 'move-ga-state-intel-v1' },
   published_state_intelligence_pages: { family: 'PUBLIC_SURFACES', entityClass: 'Published specialist state page', destination: '#state-intelligence', acceptedArtifact: 'canonical state publication model' },
 };
 
