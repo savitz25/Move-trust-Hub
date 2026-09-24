@@ -17,7 +17,7 @@ import { PROFILE_SAVE_RUNTIME_VERSION } from '../lib/my-trusthub/vendor/interfac
 const root=process.env.PARENT_REVIEW_ROOT;
 if(!root)throw Error('PARENT_REVIEW_ROOT required');
 const head=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
-assert.equal(head,'07c5a96c1b90d443c5942d58480d3c8e2574ff51');
+assert.equal(head,'bce29118ea03f4fbb738d86ac8864a0593e35bdb');
 for(const file of ['lib/my-trusthub/profile-save/interface.ts','lib/my-trusthub/contracts/v2-3-profile-save.ts']) {
   const frozen=execFileSync('git',['show','26c4e9ed5c2d6ed8fbf3b3712516b7bbfdee3cd2:'+file],{cwd:root,encoding:'utf8'});
   const current=execFileSync('git',['show',head+':'+file],{cwd:root,encoding:'utf8'});
