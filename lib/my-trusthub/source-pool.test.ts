@@ -3,13 +3,14 @@ import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { PostgresTransferStore } from './postgres-transfer-store';
-import { bindSourceCapability, createIsolatedSourcePool, SOURCE_CAPABILITY, SOURCE_LOGIN, SOURCE_SEARCH_PATH, type IsolatedPoolConfig } from './source-pool';
+import { bindSourceCapability, createIsolatedSourcePool, SOURCE_CAPABILITY, SOURCE_LOGIN, SOURCE_POOLER_USER, SOURCE_PROJECT_REF, SOURCE_SEARCH_PATH, type IsolatedPoolConfig } from './source-pool';
 import { TRANSFER_VERSION_V3, manifestDigest, type GuestStageInput } from './vendor/v2-3-profile-transfer';
 import type { TransferRecord } from './profile-save-adapter';
 
-const approved={sourceBackend:'fixture-isolated',databaseHost:'isolated.invalid',databaseName:'fixture',databaseUser:SOURCE_LOGIN,sessionAffinity:'dedicated' as const};
+const approved={sourceBackend:'fixture-isolated',databaseHost:'isolated.invalid',databaseName:'postgres',databaseUser:SOURCE_LOGIN,sessionAffinity:'dedicated' as const};
+const databaseUrl=`postgresql://${SOURCE_POOLER_USER}@isolated.invalid:5432/postgres`;
 const env={VERCEL_ENV:'preview',NODE_ENV:'production',MTH_MOVE_PARENT_SAVE_MODE:'isolated',MTH_MOVE_PARENT_SAVE_ISOLATED_APPROVED:'true',
-  MTH_MOVE_PARENT_SAVE_SOURCE_BACKEND:'fixture-isolated',MTH_MOVE_PARENT_SAVE_DATABASE_URL:`postgresql://${SOURCE_LOGIN}@isolated.invalid/fixture`,
+  MTH_MOVE_PARENT_SAVE_SOURCE_BACKEND:'fixture-isolated',MTH_MOVE_PARENT_SAVE_DATABASE_URL:databaseUrl,
   MTH_MOVE_PARENT_SAVE_DATABASE_CA:'FIXTURE NOT A CERTIFICATE'};
 
 function idlePool(seen: IsolatedPoolConfig[]) {
@@ -30,32 +31,41 @@ test('S09 lazy source pool admits only mth_move_v23_preview and does not connect
   assert.equal(seen[0].query_timeout, 5000);
   assert.equal(seen[0].statement_timeout, 5000);
   assert.equal(seen[0].lock_timeout, 3000);
-  assert.equal('port' in seen[0], false);
+  assert.equal(seen[0].connectionString, databaseUrl);
+  assert.equal(SOURCE_POOLER_USER, `${SOURCE_LOGIN}.${SOURCE_PROJECT_REF}`);
+  assert.equal(SOURCE_PROJECT_REF, 'zvoijbohtyuhqfuvteoy');
   await pool.end();
+  const rejectedUrls = [
+    env.MTH_MOVE_PARENT_SAVE_DATABASE_URL + '?sslmode=disable',
+    env.MTH_MOVE_PARENT_SAVE_DATABASE_URL + '#fragment',
+    `postgresql://${SOURCE_LOGIN}@isolated.invalid:5432/postgres`,
+    `postgresql://${SOURCE_LOGIN}.otherrefotherrefoth@isolated.invalid:5432/postgres`,
+    `postgresql://${SOURCE_LOGIN}.arepfylnilkjmyduhwbz@isolated.invalid:5432/postgres`,
+    `postgresql://${SOURCE_LOGIN}.tzzcogaricohtezsugjr@isolated.invalid:5432/postgres`,
+    `postgresql://${SOURCE_LOGIN}.qvvxvbcdmbjzrgvwjatw@isolated.invalid:5432/postgres`,
+    `postgresql://${SOURCE_POOLER_USER}@isolated.invalid:6543/postgres`,
+    `postgresql://${SOURCE_POOLER_USER}@isolated.invalid/postgres`,
+    `postgresql://${SOURCE_POOLER_USER}@isolated.invalid:5433/postgres`,
+    `postgresql://${SOURCE_POOLER_USER}@other.invalid:5432/postgres`,
+    `postgresql://${SOURCE_POOLER_USER}@isolated.invalid:5432/other`,
+    `postgresql://${SOURCE_POOLER_USER}:tzzcogaricohtezsugjr@isolated.invalid:5432/postgres`,
+  ];
+  for (const databaseUrl of rejectedUrls) {
+    const attempts: IsolatedPoolConfig[] = [];
+    assert.equal(createIsolatedSourcePool({ ...env, MTH_MOVE_PARENT_SAVE_DATABASE_URL: databaseUrl }, approved, idlePool(attempts)), null, databaseUrl);
+    assert.equal(attempts.length, 0);
+  }
   for (const patch of [{ VERCEL_ENV: 'production' }, { VERCEL_ENV: undefined }, { MTH_MOVE_PARENT_SAVE_ISOLATED_APPROVED: 'false' },
-    { MTH_MOVE_PARENT_SAVE_DATABASE_CA: undefined }, { MTH_MOVE_PARENT_SAVE_SOURCE_BACKEND: 'other' },
-    { MTH_MOVE_PARENT_SAVE_DATABASE_URL: env.MTH_MOVE_PARENT_SAVE_DATABASE_URL + '?sslmode=disable' },
-    { MTH_MOVE_PARENT_SAVE_DATABASE_URL: `postgresql://${SOURCE_LOGIN}@other.invalid/fixture` },
-    { MTH_MOVE_PARENT_SAVE_DATABASE_URL: `postgresql://${SOURCE_LOGIN}@isolated.invalid/other` },
-    { MTH_MOVE_PARENT_SAVE_DATABASE_URL: `postgresql://${SOURCE_LOGIN}:tzzcogaricohtezsugjr@isolated.invalid/fixture` },
-    { MTH_MOVE_PARENT_SAVE_DATABASE_URL: `postgresql://${SOURCE_LOGIN}:qvvxvbcdmbjzrgvwjatw@isolated.invalid/fixture` },
-    { MTH_MOVE_PARENT_SAVE_DATABASE_URL: `postgresql://${SOURCE_LOGIN}:arepfylnilkjmyduhwbz@isolated.invalid/fixture` }]) {
+    { MTH_MOVE_PARENT_SAVE_DATABASE_CA: undefined }, { MTH_MOVE_PARENT_SAVE_SOURCE_BACKEND: 'other' }]) {
     const attempts: IsolatedPoolConfig[] = [];
     assert.equal(createIsolatedSourcePool({ ...env, ...patch }, approved, idlePool(attempts)), null);
     assert.equal(attempts.length, 0);
   }
-  for (const databaseUser of ['postgres', 'service_role', 'supabase_admin', 'source_login', 'mth_move_profile_transfer']) {
+  for (const databaseUser of ['postgres', 'service_role', 'supabase_admin', 'source_login', 'mth_move_profile_transfer', SOURCE_POOLER_USER]) {
     const attempts: IsolatedPoolConfig[] = [];
-    assert.equal(createIsolatedSourcePool(
-      { ...env, MTH_MOVE_PARENT_SAVE_DATABASE_URL: `postgresql://${databaseUser}@isolated.invalid/fixture` },
-      { ...approved, databaseUser }, idlePool(attempts)), null);
+    assert.equal(createIsolatedSourcePool(env, { ...approved, databaseUser }, idlePool(attempts)), null, databaseUser);
     assert.equal(attempts.length, 0);
   }
-  const mismatched: IsolatedPoolConfig[] = [];
-  assert.equal(createIsolatedSourcePool(
-    { ...env, MTH_MOVE_PARENT_SAVE_DATABASE_URL: 'postgresql://other_login@isolated.invalid/fixture' },
-    approved, idlePool(mismatched)), null);
-  assert.equal(mismatched.length, 0);
 });
 
 type Proof = { login: string; active_role: string; search_path: string };
@@ -162,6 +172,7 @@ test('the store insert cannot run before the capability role is proven', async (
 test('source pool does not bind the role on a pool connect event', () => {
   const source = readFileSync('lib/my-trusthub/source-pool.ts', 'utf8');
   assert.doesNotMatch(source, /\.on\(\s*['"]connect['"]/);
+  assert.doesNotMatch(source, /pooler\.supabase\.com|aws-0-/);
   assert.match(source, /never exposed until capability-role identity/);
   assert.match(source, /max:2/);
 });

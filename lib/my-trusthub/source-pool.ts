@@ -4,7 +4,10 @@ import type { SourceConnection, SourcePool } from './postgres-transfer-store';
 import { containsForbiddenMoveTarget } from './reviewed-origins';
 
 export const SOURCE_LOGIN='mth_move_v23_preview', SOURCE_CAPABILITY='mth_move_profile_transfer',
-  SOURCE_SEARCH_PATH='pg_catalog, mth_profile_transfer';
+  SOURCE_SEARCH_PATH='pg_catalog, mth_profile_transfer',
+  SOURCE_PROJECT_REF='zvoijbohtyuhqfuvteoy',
+  SOURCE_POOLER_USER=`${SOURCE_LOGIN}.${SOURCE_PROJECT_REF}`,
+  SOURCE_SESSION_PORT='5432';
 type InnerClient = { query(sql: string, values?: unknown[]): Promise<{ rows: any[]; rowCount?: number | null }>; release(destroy?: boolean): void };
 type InnerPool = { connect(): Promise<InnerClient>; end(): Promise<void> };
 
@@ -48,9 +51,11 @@ export type IsolatedPoolConfig = {
 };
 
 /** Lazy isolated-only pool. No .env loading, production fallback, or fixture store.
- * The only accepted login is mth_move_v23_preview. Each checkout goes through
- * bindSourceCapability before any application statement. Dedicated session
- * affinity only; this pool is not usable with a transaction pooler. */
+ * approved.databaseUser is the logical role mth_move_v23_preview. The Supavisor
+ * session URI username is that role plus the exact isolated project ref. Port
+ * 5432 is required; 6543 and an omitted port are rejected because the store
+ * holds a session advisory lock. The host comes only from approved metadata.
+ * Each checkout goes through bindSourceCapability before any application statement. */
 export function createIsolatedSourcePool(env: Record<string,string|undefined>, approved: {
   sourceBackend: string; databaseHost: string; databaseName: string; databaseUser: string; sessionAffinity: 'dedicated';
 }, createPool: (config: IsolatedPoolConfig) => InnerPool = (config) => new Pool(config)): (SourcePool & { end(): Promise<void> }) | null {
@@ -63,8 +68,9 @@ export function createIsolatedSourcePool(env: Record<string,string|undefined>, a
     if(!raw || !ca) return null;
     const url=new URL(raw);
     if(!['postgres:','postgresql:'].includes(url.protocol) || url.search || url.hash ||
+      url.port!==SOURCE_SESSION_PORT ||
       url.hostname!==approved.databaseHost || decodeURIComponent(url.pathname.slice(1))!==approved.databaseName ||
-      decodeURIComponent(url.username)!==approved.databaseUser ||
+      decodeURIComponent(url.username)!==SOURCE_POOLER_USER ||
       /^(postgres|service_role|supabase_admin)$/.test(approved.databaseUser) ||
       containsForbiddenMoveTarget(raw)) return null;
     return bindSourceCapability(createPool({connectionString:raw,ssl:{ca,rejectUnauthorized:true},max:2,
