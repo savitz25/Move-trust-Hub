@@ -43,8 +43,7 @@ begin
     foreach function_name in array ARRAY[
       'mth_profile_transfer.guard_stage_update()',
       'mth_profile_transfer.claim_assertion_nonce(text,timestamptz)',
-      'mth_profile_transfer.cleanup_assertion_nonces(integer)',
-      'mth_profile_transfer.lock_future_privileges()'
+      'mth_profile_transfer.cleanup_assertion_nonces(integer)'
     ] loop
       if has_function_privilege(role_name, function_name, 'EXECUTE') then
         raise exception 'Function execute leak for % on %', role_name, function_name;
@@ -71,8 +70,7 @@ begin
   end if;
   if not has_function_privilege('mth_move_profile_transfer', 'mth_profile_transfer.guard_stage_update()', 'EXECUTE')
      or not has_function_privilege('mth_move_profile_transfer', 'mth_profile_transfer.claim_assertion_nonce(text,timestamptz)', 'EXECUTE')
-     or not has_function_privilege('mth_move_profile_transfer', 'mth_profile_transfer.cleanup_assertion_nonces(integer)', 'EXECUTE')
-     or has_function_privilege('mth_move_profile_transfer', 'mth_profile_transfer.lock_future_privileges()', 'EXECUTE') then
+     or not has_function_privilege('mth_move_profile_transfer', 'mth_profile_transfer.cleanup_assertion_nonces(integer)', 'EXECUTE') then
     raise exception 'Capability function privilege mismatch';
   end if;
   if exists(select 1 from pg_roles where rolname='mth_move_profile_transfer' and (rolcanlogin or rolbypassrls or rolsuper or rolinherit or rolcreatedb or rolcreaterole or rolreplication)) then

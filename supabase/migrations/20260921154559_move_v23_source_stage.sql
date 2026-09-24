@@ -15,6 +15,9 @@ revoke all on schema mth_profile_transfer from public, anon, authenticated, serv
 alter default privileges in schema mth_profile_transfer revoke all on tables from public, anon, authenticated, service_role;
 alter default privileges in schema mth_profile_transfer revoke all on sequences from public, anon, authenticated, service_role;
 alter default privileges in schema mth_profile_transfer revoke all on functions from public, anon, authenticated, service_role;
+-- A schema-scoped revoke cannot remove PostgreSQL's built-in PUBLIC EXECUTE
+-- default. This owner-level default does not change existing functions.
+alter default privileges revoke execute on functions from public;
 create role mth_move_profile_transfer nologin noinherit nosuperuser nocreatedb nocreaterole noreplication nobypassrls;
 create table mth_profile_transfer.stages (
   ticket_hash text primary key check(ticket_hash ~ '^[a-f0-9]{64}$'),
@@ -107,28 +110,6 @@ revoke all on function mth_profile_transfer.claim_assertion_nonce(text, timestam
 revoke all on function mth_profile_transfer.cleanup_assertion_nonces(integer) from public, anon, authenticated, service_role;
 grant execute on function mth_profile_transfer.claim_assertion_nonce(text, timestamptz) to mth_move_profile_transfer;
 grant execute on function mth_profile_transfer.cleanup_assertion_nonces(integer) to mth_move_profile_transfer;
--- A schema-scoped default revoke cannot remove the built-in PUBLIC EXECUTE grant on
--- functions. This trigger covers only objects created later in this schema.
-create function mth_profile_transfer.lock_future_privileges() returns event_trigger
-language plpgsql security invoker set search_path=pg_catalog as $$
-declare cmd record;
-begin
-  for cmd in select object_identity, schema_name, object_type from pg_event_trigger_ddl_commands() loop
-    if cmd.schema_name is distinct from 'mth_profile_transfer' then
-      continue;
-    end if;
-    if cmd.object_type in ('table','sequence') then
-      execute format('revoke all on table %s from public, anon, authenticated, service_role', cmd.object_identity);
-    elsif cmd.object_type in ('function','procedure') then
-      execute format('revoke all on function %s from public, anon, authenticated, service_role', cmd.object_identity);
-    end if;
-  end loop;
-end $$;
-revoke all on function mth_profile_transfer.lock_future_privileges() from public, anon, authenticated, service_role;
-create event trigger mth_profile_transfer_lock_future_privileges
-  on ddl_command_end
-  when tag in ('CREATE TABLE','CREATE TABLE AS','CREATE SEQUENCE','CREATE FUNCTION','CREATE PROCEDURE')
-  execute function mth_profile_transfer.lock_future_privileges();
 -- NO login, membership, password, service_role grant, scheduler or backend connection.
 -- A separately approved dedicated connection must use this one narrow capability.
 commit;
