@@ -1,0 +1,25 @@
+import { readFileSync } from 'node:fs';
+import { assertGeorgiaMoveSnapshot } from '../lib/georgia-intelligence/snapshot';
+import { lookupGeorgiaMca } from '../lib/georgia-intelligence/lookup';
+import { interpretMoveAskQuery } from '../lib/move-ask/interpret';
+import { normalizedPublishedStatePath } from '../lib/seo/published-state-path';
+
+const snap = assertGeorgiaMoveSnapshot();
+const page = readFileSync('components/intelligence/GeorgiaMoveIntelligence.tsx', 'utf8');
+const sitemap = readFileSync('app/sitemap.ts', 'utf8');
+if (!sitemap.includes("'/georgia'")) throw new Error('sitemap');
+if (sitemap.includes("'/georgia/")) throw new Error('local route');
+if (!page.includes('not a USDOT')) throw new Error('distinction');
+if (page.includes('Atlanta intelligence')) throw new Error('atlanta page');
+if (normalizedPublishedStatePath('/Georgia') !== '/georgia') throw new Error('case');
+const listed = lookupGeorgiaMca('9327');
+if (!listed.hits.length) throw new Error('mca 9327');
+const missing = lookupGeorgiaMca('1');
+if (missing.hits.length) throw new Error('unknown mca');
+const ask = interpretMoveAskQuery('Georgia moving company');
+if (ask.query.mode !== 'fail_closed') throw new Error('search');
+if (!/not FMCSA/i.test(ask.query.failReason ?? '')) throw new Error('federal distinction');
+const complaints = interpretMoveAskQuery('Georgia mover complaints');
+if (!/not acquired|not zero/i.test(complaints.query.failReason ?? '')) throw new Error('complaints');
+if (snap.current_hhg_roster.GA_DPS_HHG_EXACT_USDOT_JOINS !== 0) throw new Error('joins');
+console.log('assert:ga-move-001 pass', snap.fingerprint.slice(0, 12));

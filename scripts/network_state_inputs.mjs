@@ -38,6 +38,8 @@ export function stateInputs(pub, localStates) {
     paHhgDistinctUtilityCodes: pub.paSnapshot.current_hhg_roster.PA_PUC_HHG_DISTINCT_UTILITY_CODES,
     ncHhgListRows: pub.ncSnapshot.current_hhg_roster.NC_NCUC_HHG_LIST_ROWS,
     ncHhgDistinctCNumbers: pub.ncSnapshot.current_hhg_roster.NC_NCUC_DISTINCT_C_NUMBERS,
+    gaHhgListingRows: pub.gaSnapshot.current_hhg_roster.GA_DPS_HHG_LISTING_ROWS,
+    gaHhgDistinctMca: pub.gaSnapshot.current_hhg_roster.GA_DPS_HHG_DISTINCT_MCA,
     publishedStateIntelligencePaths: pub.publishedStateIntelligencePaths,
     floridaResearchCountyLandings: pub.floridaResearchCountyLandings.length,
     localMoverStateLandings: localStates.length,

@@ -1,9 +1,9 @@
 {
   "schemaVersion": "move-network-metrics-v1",
-  "generatedAt": "2026-09-18T15:21:41.731Z",
+  "generatedAt": "2026-09-24T02:38:14.630Z",
   "newestDocumentedSourceAsOf": "2026-09-09",
   "newestDocumentedSourceAsOfNote": "Newest documented official source-effective date among metrics that carry a sourceAsOf. Not the as-of date of every federal profile, not Git time, and not deploy time.",
-  "sourceFingerprint": "684c435a4e012c6d3952541a58ddc0e29ddc4ca009d5f37c0b7efbe42e8cecf2",
+  "sourceFingerprint": "a3db11f79cd8046958b0da32d6c58cb866140544d7f7c0f01a0a75bb247d96bf",
   "federalDirectory": {
     "publishableProfiles": 5022,
     "indexableProfiles": 4905,
@@ -101,8 +101,14 @@
     "retrievedAt": "2026-09-18T14:30:00Z",
     "snapshotAsOf": "2026-09-18"
   },
+  "georgia": {
+    "listingRows": 572,
+    "distinctMca": 380,
+    "exactUsdotJoins": 0,
+    "sourceAsOf": null
+  },
   "network": {
-    "publishedStateIntelligencePages": 13,
+    "publishedStateIntelligencePages": 14,
     "publishedStateIntelligencePaths": [
       "/florida",
       "/new-jersey",
@@ -116,7 +122,8 @@
       "/oregon",
       "/pennsylvania",
       "/north-carolina",
-      "/ohio"
+      "/ohio",
+      "/georgia"
     ],
     "floridaResearchCountyLandings": 4,
     "localMoverStateLandings": 51
@@ -204,7 +211,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "One publishable companies row in the current directory cohort.",
@@ -215,7 +222,7 @@
         ],
         "geographicCoverage": "National directory; HQ location is not service territory",
         "sourceDates": "Latest observed fmcsa_last_checked 2026-08-23; not the as-of date for every profile.",
-        "generationDate": "2026-09-18",
+        "generationDate": "2026-09-24",
         "currentActiveRule": "This metric is all PUBLISHABLE rows, not only authority_active=true."
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
@@ -235,7 +242,7 @@
         "companies"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Publishable directory rows currently marked indexable.",
@@ -245,7 +252,7 @@
         ],
         "geographicCoverage": "National directory",
         "sourceDates": "Latest observed fmcsa_last_checked 2026-08-23",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-23T05:02:52.712+00:00"
@@ -265,7 +272,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Publishable rows with authority_active true.",
@@ -276,7 +283,7 @@
         ],
         "geographicCoverage": "National directory",
         "sourceDates": "Latest observed fmcsa_last_checked 2026-08-23",
-        "generationDate": "2026-09-18",
+        "generationDate": "2026-09-24",
         "currentActiveRule": "authority_active = true on the directory row"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
@@ -297,7 +304,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Profile rows carrying an MC field; not distinct MC identities.",
@@ -307,7 +314,7 @@
         ],
         "geographicCoverage": "National directory",
         "sourceDates": "Latest observed fmcsa_last_checked 2026-08-23",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-23T05:02:52.712+00:00",
@@ -333,7 +340,7 @@
         "fdacs"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "FDACS IM registration rows currently stored.",
@@ -344,7 +351,7 @@
         ],
         "geographicCoverage": "Florida state registration. Headquarters is not service territory.",
         "sourceDates": "retrieved_at 2026-08-21",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-21T03:29:40.443+00:00"
@@ -364,7 +371,7 @@
         "fdacs"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "FDACS IM rows with status=active.",
@@ -375,7 +382,7 @@
         ],
         "geographicCoverage": "Florida",
         "sourceDates": "retrieved_at 2026-08-21",
-        "generationDate": "2026-09-18",
+        "generationDate": "2026-09-24",
         "currentActiveRule": "status = 'active'"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
@@ -396,7 +403,7 @@
         "fdacs"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Active FDACS MB registration rows.",
@@ -407,7 +414,7 @@
         ],
         "geographicCoverage": "Florida",
         "sourceDates": "retrieved_at 2026-08-21",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-21T03:29:40.443+00:00"
@@ -427,7 +434,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Publishable companies with a Florida headquarters string.",
@@ -438,7 +445,7 @@
         ],
         "geographicCoverage": "Florida HQ / business address as stored",
         "sourceDates": "Latest observed fmcsa_last_checked 2026-08-23",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-21T03:29:40.443+00:00"
@@ -457,7 +464,7 @@
         "nj_dca_pmw"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the statewide NJ mover universe.",
@@ -467,7 +474,7 @@
         ],
         "geographicCoverage": "New Jersey",
         "sourceDates": "NJ-MOVE snapshot as_of 2026-09-03",
-        "generationDate": "2026-09-18",
+        "generationDate": "2026-09-24",
         "whyUnknown": "The authoritative PM/PW/PC roster remains request-only / open-search. UNKNOWN must never render as zero."
       },
       "snapshotAsOf": "2026-09-03",
@@ -487,7 +494,7 @@
         "nj_oag_operation_safe_move"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC_PARTIAL",
       "trace": {
         "counts": "Structured NOV respondent rows from acquired 2025 and 2024 official releases.",
@@ -497,7 +504,7 @@
         ],
         "geographicCoverage": "New Jersey",
         "sourceDates": "NJ-MOVE snapshot as_of 2026-09-03",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-03",
       "retrievedAt": null
@@ -516,7 +523,7 @@
         "bhgs"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the complete CAL-T universe.",
@@ -526,7 +533,7 @@
         ],
         "geographicCoverage": "California",
         "sourceDates": "CA-MOVE snapshot as_of 2026-09-03",
-        "generationDate": "2026-09-18",
+        "generationDate": "2026-09-24",
         "whyUnknown": "Public verification is search-only at search.dca.ca.gov/hhm_search. Citation rows are enforcement observations, not the licensed universe."
       },
       "snapshotAsOf": "2026-09-03",
@@ -546,7 +553,7 @@
         "bhgs_citations"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Official HTML citation rows matching violation section 19237.",
@@ -556,7 +563,7 @@
         ],
         "geographicCoverage": "California",
         "sourceDates": "CA-MOVE snapshot as_of 2026-09-03",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-03",
       "retrievedAt": null
@@ -575,7 +582,7 @@
         "bhgs_citations"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "19237 citation rows marked UNLICENSED.",
@@ -585,7 +592,7 @@
         ],
         "geographicCoverage": "California",
         "sourceDates": "CA-MOVE snapshot as_of 2026-09-03",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-03",
       "retrievedAt": null
@@ -604,7 +611,7 @@
         "bhgs_citations"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "19237 citation rows with an exact CAL-T/T identifier.",
@@ -614,7 +621,7 @@
         ],
         "geographicCoverage": "California",
         "sourceDates": "CA-MOVE snapshot as_of 2026-09-03",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-03",
       "retrievedAt": null
@@ -633,7 +640,7 @@
         "txdmv"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "No statewide numeric denominator is published.",
@@ -643,7 +650,7 @@
         ],
         "geographicCoverage": "Texas intrastate household-goods authority",
         "sourceDates": "Accepted Texas snapshot as of 2026-09-03",
-        "generationDate": "2026-09-18",
+        "generationDate": "2026-09-24",
         "whyUnknown": "The official roster is open-search only and was not bulk acquired."
       },
       "snapshotAsOf": "2026-09-03",
@@ -663,7 +670,7 @@
         "washington_utc_directory"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC_PARTIAL",
       "trace": {
         "counts": "Active results shown in the official UTC directory header.",
@@ -673,7 +680,7 @@
         ],
         "geographicCoverage": "Washington intrastate household-goods directory",
         "sourceDates": "Directory retrieved 2026-09-04T16:52:37.571398+00:00",
-        "generationDate": "2026-09-18",
+        "generationDate": "2026-09-24",
         "currentActiveRule": "UTC directory filter: Household Goods Carriers; Regulatory status = Active."
       },
       "snapshotAsOf": "2026-09-04",
@@ -693,7 +700,7 @@
         "washington_utc"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "No numeric bulk-roster denominator is published.",
@@ -703,7 +710,7 @@
         ],
         "geographicCoverage": "Washington",
         "sourceDates": "Accepted Washington snapshot as of 2026-09-04",
-        "generationDate": "2026-09-18",
+        "generationDate": "2026-09-24",
         "whyUnknown": "OPEN_HTML_TABLE / OPEN_SEARCH_ONLY; no pagination crawl."
       },
       "snapshotAsOf": "2026-09-04",
@@ -723,7 +730,7 @@
         "co_puc_opr"
       ],
       "sourceAsOf": "2025-06-27",
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Official ACTIVE Total Permits on the PUC OPR household-goods PDF.",
@@ -733,7 +740,7 @@
         ],
         "geographicCoverage": "Colorado intrastate household-goods permits",
         "sourceDates": "Accepted Colorado snapshot as of 2025-06-27",
-        "generationDate": "2026-09-18",
+        "generationDate": "2026-09-24",
         "currentActiveRule": "Permit Status: ACTIVE on the official OPR listing."
       },
       "snapshotAsOf": "2026-09-09",
@@ -753,7 +760,7 @@
         "va_dmv_authorized_carriers"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Filtered official DMV Authorized Motor Carriers directory (Household goods carrier).",
@@ -763,7 +770,7 @@
         ],
         "geographicCoverage": "Virginia intrastate Household Goods Carrier certificates",
         "sourceDates": "Retrieved 2026-09-10T15:05:33.623358+00:00; listing sourceAsOf UNKNOWN",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": null,
       "retrievedAt": "2026-09-10T15:05:33.623358+00:00"
@@ -782,7 +789,7 @@
         "va_dmv_authorized_carriers"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Filtered official DMV Authorized Motor Carriers directory (Property carrier).",
@@ -792,7 +799,7 @@
         ],
         "geographicCoverage": "Virginia Property Carrier permits",
         "sourceDates": "Retrieved 2026-09-10T15:05:33.623358+00:00; listing sourceAsOf UNKNOWN",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": null,
       "retrievedAt": "2026-09-10T15:05:33.623358+00:00"
@@ -811,7 +818,7 @@
         "co_puc_opr"
       ],
       "sourceAsOf": "2025-06-27",
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Official REVOKED Total Permits on the PUC OPR household-goods PDF.",
@@ -821,7 +828,7 @@
         ],
         "geographicCoverage": "Colorado",
         "sourceDates": "Accepted Colorado snapshot as of 2025-06-27",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-09",
       "retrievedAt": "2026-09-09T15:42:05+00:00"
@@ -840,7 +847,7 @@
         "co_puc_opr"
       ],
       "sourceAsOf": "2025-06-27",
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Official SUSPENDED Total Permits on the PUC OPR household-goods PDF.",
@@ -850,7 +857,7 @@
         ],
         "geographicCoverage": "Colorado",
         "sourceDates": "Accepted Colorado snapshot as of 2025-06-27",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-09",
       "retrievedAt": "2026-09-09T15:42:05+00:00"
@@ -869,7 +876,7 @@
         "odot_ccd_hhg_list"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Count official authorized-list rows (113) and distinct certificate numbers (113).",
@@ -879,7 +886,7 @@
         ],
         "geographicCoverage": "Oregon intrastate household-goods certificates",
         "sourceDates": "List LastItemModifiedDate 2026-09-09T19:21:37Z; sourceAsOf not published",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": null,
       "retrievedAt": "2026-09-16T17:19:02.104Z"
@@ -898,7 +905,7 @@
         "pa_puc_hhg_operators_list"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Count official operator-list rows (269) and distinct Utility Codes (267).",
@@ -908,7 +915,7 @@
         ],
         "geographicCoverage": "Pennsylvania intrastate Household Goods carriers",
         "sourceDates": "sourceAsOf not published; retrieval is not certification date",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z"
     },
@@ -926,7 +933,7 @@
         "ncuc_hhg_carrier_list"
       ],
       "sourceAsOf": "2026-09-08",
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Count distinct C-numbers (362) on 362 list rows.",
@@ -936,7 +943,35 @@
         ],
         "geographicCoverage": "North Carolina intrastate household-goods certificates",
         "sourceDates": "Carrier-list revision September 8, 2026; monthly list is not real-time status",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
+      },
+      "snapshotAsOf": "2026-09-12T21:07:55.427Z"
+    },
+    {
+      "unit": "count",
+      "key": "ga_dps_hhg_mca_identities",
+      "label": "Georgia DPS household-goods MCA identities",
+      "value": 380,
+      "valueState": "KNOWN",
+      "grain": "ga_dps_hhg_mca_identity",
+      "denominator": "Distinct MCA numbers on the DPS licensed household-goods movers list",
+      "description": "Distinct Georgia DPS MCA numbers on the licensed household-goods movers list. Not location rows, not FMCSA interstate authority, and not an Active/Inactive status column.",
+      "coverage": "Georgia",
+      "contributingSourceSystems": [
+        "ga_dps_hhg_movers_list"
+      ],
+      "sourceAsOf": null,
+      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "publicationStatus": "PUBLIC",
+      "trace": {
+        "counts": "Count distinct MCA numbers (380) on 572 deduped location rows.",
+        "doesNotCount": "Not USDOT. Not a complaint count. Listing is not a separate enforcement finding.",
+        "contributingSourceSystems": [
+          "ga_dps_hhg_movers_list"
+        ],
+        "geographicCoverage": "Georgia intrastate household-goods certificates",
+        "sourceDates": "Source list has no printed revision date; retrieval is not the effective date",
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z"
     },
@@ -954,7 +989,7 @@
         "puco"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "presentation": {
         "family": "STATE_AUTHORITY",
@@ -970,7 +1005,7 @@
         ],
         "geographicCoverage": "Ohio intrastate household-goods certificates",
         "sourceDates": "Search-only; retrieval is not certificate effective date",
-        "generationDate": "2026-09-18",
+        "generationDate": "2026-09-24",
         "whyUnknown": "The official current household-goods roster is open-search only and was not bulk acquired. Search-only is not zero."
       },
       "snapshotAsOf": "2026-09-18",
@@ -990,7 +1025,7 @@
         "nysdot_weekly_bulletin"
       ],
       "sourceAsOf": "2026-09-09",
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Count household-goods application blocks across 36 2026 bulletin issues.",
@@ -1000,7 +1035,7 @@
         ],
         "geographicCoverage": "New York",
         "sourceDates": "Bulletin window 2026-01-07 through 2026-09-09",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-11",
       "retrievedAt": "2026-09-11",
@@ -1026,7 +1061,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Publishable profiles with authority_active=false.",
@@ -1037,7 +1072,7 @@
         ],
         "geographicCoverage": "National directory",
         "sourceDates": "Latest observed refresh 2026-08-23",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-23T05:02:52.712+00:00"
@@ -1057,7 +1092,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Publishable profiles with a null authority flag.",
@@ -1068,7 +1103,7 @@
         ],
         "geographicCoverage": "National directory",
         "sourceDates": "Latest observed refresh 2026-08-23",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-23T05:02:52.712+00:00"
@@ -1088,7 +1123,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Profiles classified as carrier.",
@@ -1099,7 +1134,7 @@
         ],
         "geographicCoverage": "National directory",
         "sourceDates": "Latest observed refresh 2026-08-23",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-23T05:02:52.712+00:00"
@@ -1119,7 +1154,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Profiles classified as broker.",
@@ -1130,7 +1165,7 @@
         ],
         "geographicCoverage": "National directory",
         "sourceDates": "Latest observed refresh 2026-08-23",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-23T05:02:52.712+00:00"
@@ -1150,7 +1185,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Profiles classified as carrier/broker.",
@@ -1161,7 +1196,7 @@
         ],
         "geographicCoverage": "National directory",
         "sourceDates": "Latest observed refresh 2026-08-23",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-23T05:02:52.712+00:00"
@@ -1181,7 +1216,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Profiles classified as unknown role.",
@@ -1192,7 +1227,7 @@
         ],
         "geographicCoverage": "National directory",
         "sourceDates": "Latest observed refresh 2026-08-23",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-23T05:02:52.712+00:00"
@@ -1212,7 +1247,7 @@
         "provider_state_authority"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Verified Florida state-authority identity links.",
@@ -1223,7 +1258,7 @@
         ],
         "geographicCoverage": "Florida",
         "sourceDates": "Retrieved 2026-08-21",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-21T03:29:40.443+00:00"
@@ -1242,7 +1277,7 @@
         "provider_contact_observation"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Publication-safe contact observations.",
@@ -1252,7 +1287,7 @@
         ],
         "geographicCoverage": "Florida",
         "sourceDates": "Retrieved 2026-08-21",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-21T03:29:40.443+00:00"
@@ -1272,7 +1307,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Federal profiles with NJ headquarters.",
@@ -1283,7 +1318,7 @@
         ],
         "geographicCoverage": "New Jersey HQ",
         "sourceDates": "Latest observed refresh 2026-08-23",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-23T05:02:52.712+00:00"
@@ -1303,7 +1338,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Federal profiles with CA headquarters.",
@@ -1314,7 +1349,7 @@
         ],
         "geographicCoverage": "California HQ",
         "sourceDates": "Latest observed refresh 2026-08-23",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z",
       "retrievedAt": "2026-08-23T05:02:52.712+00:00"
@@ -1323,27 +1358,27 @@
       "unit": "count",
       "key": "published_state_intelligence_pages",
       "label": "Published state moving-intelligence pages",
-      "value": 13,
+      "value": 14,
       "valueState": "KNOWN",
       "grain": "published_state_intelligence_page",
       "denominator": "Indexable specialist state intelligence routes currently published",
       "description": "Published specialist state intelligence pages. Not a count of movers.",
-      "coverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina, /ohio",
+      "coverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina, /ohio, /georgia",
       "contributingSourceSystems": [
         "move-state-intel"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
-        "counts": "Published /florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina, /ohio intelligence routes.",
+        "counts": "Published /florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina, /ohio, /georgia intelligence routes.",
         "doesNotCount": "Not local-mover landings and not federal directory rows.",
         "contributingSourceSystems": [
           "move-state-intel"
         ],
-        "geographicCoverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina, /ohio",
+        "geographicCoverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina, /ohio, /georgia",
         "sourceDates": "Publication gates in specialist catalogs",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "snapshotAsOf": null,
       "retrievedAt": null
@@ -1364,7 +1399,7 @@
       "sourceAsOf": null,
       "retrievedAt": "2026-09-10T15:05:33.623358+00:00",
       "snapshotAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "va_hhg_authority_id",
@@ -1374,7 +1409,7 @@
         ],
         "geographicCoverage": "Virginia",
         "sourceDates": "Official effective date unknown",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "presentation": {
         "family": "STATE_AUTHORITY",
@@ -1399,7 +1434,7 @@
       "sourceAsOf": null,
       "retrievedAt": "2026-09-10T15:05:33.623358+00:00",
       "snapshotAsOf": null,
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "va_property_authority_id",
@@ -1409,7 +1444,7 @@
         ],
         "geographicCoverage": "Virginia",
         "sourceDates": "Official effective date unknown",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "presentation": {
         "family": "BUSINESS_EVIDENCE",
@@ -1434,7 +1469,7 @@
       "sourceAsOf": "2026-09-09",
       "retrievedAt": "2026-09-11",
       "snapshotAsOf": "2026-09-11",
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "bulletin_issue",
@@ -1444,7 +1479,7 @@
         ],
         "geographicCoverage": "New York",
         "sourceDates": "2026-09-09",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "presentation": {
         "family": "REGULATORY",
@@ -1469,7 +1504,7 @@
       "sourceAsOf": "2026-09-09",
       "retrievedAt": "2026-09-11",
       "snapshotAsOf": "2026-09-11",
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "application_case_number",
@@ -1479,7 +1514,7 @@
         ],
         "geographicCoverage": "New York",
         "sourceDates": "2026-09-09",
-        "generationDate": "2026-09-18"
+        "generationDate": "2026-09-24"
       },
       "presentation": {
         "family": "REGULATORY",
@@ -1504,7 +1539,7 @@
       "sourceAsOf": null,
       "retrievedAt": "2026-09-11",
       "snapshotAsOf": "2026-09-11",
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "ny_hhg_authority_roster",
@@ -1514,7 +1549,7 @@
         ],
         "geographicCoverage": "New York",
         "sourceDates": "Official effective date unknown",
-        "generationDate": "2026-09-18",
+        "generationDate": "2026-09-24",
         "whyUnknown": "Search-only capability; no accepted bulk roster."
       },
       "presentation": {
@@ -1540,7 +1575,7 @@
       "sourceAsOf": null,
       "retrievedAt": "2026-09-12",
       "snapshotAsOf": "2026-09-12",
-      "generatedAt": "2026-09-18T15:21:41.731Z",
+      "generatedAt": "2026-09-24T02:38:14.630Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "il_hhg_authority_roster",
@@ -1550,7 +1585,7 @@
         ],
         "geographicCoverage": "Illinois",
         "sourceDates": "Official effective date unknown",
-        "generationDate": "2026-09-18",
+        "generationDate": "2026-09-24",
         "whyUnknown": "Search-only capability; no accepted bulk roster."
       },
       "presentation": {
@@ -3134,6 +3169,96 @@
           ]
         },
         "fingerprint": "382df2ce695bbd694ab410345fa2a54244e0014108db50ef370dc71f8d8e9d1b"
+      }
+    },
+    "lib/georgia-intelligence/accepted-snapshot.json": {
+      "path": "lib/georgia-intelligence/accepted-snapshot.json",
+      "snapshot": {
+        "version": "move-ga-state-intel-v1",
+        "ticket": "GA-MOVE-001",
+        "as_of": "2026-09-24",
+        "generated_at": "2026-09-24T02:36:09Z",
+        "snapshotAsOf": "2026-09-24",
+        "retrievedAt": "2026-09-24T02:31:14Z",
+        "no_trust_score": true,
+        "no_paid_ranking": true,
+        "no_georgia_local_routes": true,
+        "no_atlanta_intelligence_page": true,
+        "publication": {
+          "canonical": "https://www.movetrusthub.com/georgia",
+          "indexable": true,
+          "robots": "index,follow",
+          "route": "/georgia",
+          "h1": "Georgia Moving & Household Goods Intelligence"
+        },
+        "regulator": {
+          "agency": "Georgia Department of Public Safety",
+          "division": "Commercial Vehicle Enforcement / Regulatory Compliance",
+          "short": "Georgia DPS",
+          "credential_term": "MCA / household-goods certificate number on the licensed movers list",
+          "list_url": "https://regulatorycompliance.gamccd.net/public/",
+          "grid_url": "https://regulatorycompliance.gamccd.net/public/Home/_HHgrid",
+          "guidance_url": "https://www.gamccd.net/HouseholdGoods.aspx",
+          "tariff_url": "https://www.gamccd.net/Documents/Household%20Goods%20MRT%20No.7.pdf",
+          "rules_url": "https://rules.sos.ga.gov/gac/570-38-3",
+          "complaint_form_url": "https://www.gamccd.net/Documents/TR0051.pdf",
+          "intrastate_only": true
+        },
+        "clocks": {
+          "generatedAt": "2026-09-24T02:36:09Z",
+          "snapshotAsOf": "2026-09-24",
+          "retrievedAt": "2026-09-24T02:31:14Z",
+          "sourceAsOf": null,
+          "do_not_use_retrieval_as_authority_effective_date": true,
+          "hhg_roster": {
+            "sourceAsOf": null,
+            "retrievedAt": "2026-09-24T02:31:14Z",
+            "note": "The DPS Movers List does not print a revision date. retrievedAt is not an authority effective date."
+          },
+          "tariff": {
+            "number": 7,
+            "adopted": "2026-01-05",
+            "effective": "2026-01-13",
+            "source": "CVE Regulatory Compliance portal announcement and Household Goods MRT No. 7 PDF"
+          }
+        },
+        "current_hhg_roster": {
+          "coverage": "ACQUIRED_LICENSED_LIST_SNAPSHOT",
+          "GA_DPS_HHG_ROSTER_STATUS": "LICENSED_MOVERS_LIST_SNAPSHOT",
+          "GA_DPS_HHG_RAW_TABLE_ROWS": 605,
+          "GA_DPS_HHG_LISTING_ROWS": 572,
+          "GA_DPS_HHG_DISTINCT_MCA": 380,
+          "GA_DPS_HHG_ROWS_MISSING_MCA": 8,
+          "GA_DPS_HHG_ROWS_WITH_PUBLIC_EMAIL_NOT_REPUBLISHED": 557,
+          "GA_DPS_HHG_EXACT_USDOT_JOINS": 0,
+          "status_semantics": "LISTED_ON_DPS_LICENSED_HHG_ROSTER",
+          "status_note": "The portal labels this the list of household goods movers licensed by DPS. It does not print an Active/Inactive column. Listing is not a separate enforcement finding."
+        },
+        "tariff": {
+          "number": 7,
+          "effective": "2026-01-13",
+          "applies_to": "Intrastate household-goods moves under Georgia DPS jurisdiction",
+          "not_a_price_calculator": true,
+          "not_interstate": true
+        },
+        "complaints": {
+          "coverage": "NOT_ACQUIRED",
+          "disposition_dataset": "REQUEST_ONLY",
+          "intake": "KNOWN",
+          "count": null
+        },
+        "identity": {
+          "preferred": "Georgia MCA number printed on the licensed movers list",
+          "usdot_on_source": false,
+          "name_only_join": "UNSAFE",
+          "ga_certificate_is_not_fmcsa": true
+        },
+        "expansion_ledger": {
+          "GRAPH_WRITES": 0,
+          "NET_NEW_PUBLIC_PROFILES": 0,
+          "EXACT_USDOT_JOINS": 0
+        },
+        "fingerprint": "5619950c36c6cdd7b3f6df516585920c2c7aa245c2a2e82b4f03bc1ec4275e6b"
       }
     },
     "lib/illinois-intelligence/accepted-snapshot.json": {
@@ -5800,6 +5925,13 @@
       "snapshotAsOf": "2026-09-09"
     },
     {
+      "path": "lib/georgia-intelligence/accepted-snapshot.json",
+      "sha256": "a6c548c1cfaa1f246f37db80a4a2b47e91adba584e97924af42b77e7567e05a9",
+      "sourceAsOf": null,
+      "retrievedAt": "2026-09-24T02:31:14Z",
+      "snapshotAsOf": "2026-09-24"
+    },
+    {
       "path": "lib/illinois-intelligence/accepted-snapshot.json",
       "sha256": "f9f118a26cef0549a38671e5e8bb13336a56640785738356205c4b3de25cb200",
       "sourceAsOf": null,
@@ -6825,6 +6957,15 @@
       "roster": "Current roster OPEN_SEARCH_ONLY",
       "evidence": "Carrier-specific tariffs, consumer estimate and claim rules, and FMCSA overlay; search-only is not zero",
       "sourceClock": "Retrieved 2026-09-18T14:30:00Z; sourceAsOf not invented for search-only roster"
+    },
+    {
+      "state": "Georgia",
+      "href": "/georgia",
+      "regulator": "Georgia DPS",
+      "authority": "Household-goods certificate / MCA",
+      "roster": "380 distinct MCA numbers / 572 location rows",
+      "evidence": "Licensed movers list and Maximum Rate Tariff No. 7; not FMCSA interstate authority",
+      "sourceClock": "Retrieved 2026-09-24T02:31:14Z; sourceAsOf not printed on the list"
     }
   ],
   "consumerRules": {

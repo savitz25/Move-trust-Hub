@@ -60,6 +60,8 @@ export type MoveNetworkMetricsInput = {
   paHhgDistinctUtilityCodes: number;
   ncHhgListRows: number;
   ncHhgDistinctCNumbers: number;
+  gaHhgListingRows: number;
+  gaHhgDistinctMca: number;
   publishedStateIntelligencePaths: string[];
   floridaResearchCountyLandings: number;
   localMoverStateLandings: number;
@@ -130,6 +132,9 @@ export function assertGrainSafety(input: MoveNetworkMetricsInput): void {
   if (!input.publishedStateIntelligencePaths.includes('/pennsylvania')) throw new Error('Pennsylvania state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/north-carolina')) throw new Error('North Carolina state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/ohio')) throw new Error('Ohio state intelligence path missing');
+  if (!input.publishedStateIntelligencePaths.includes('/georgia')) throw new Error('Georgia state intelligence path missing');
+  if (input.gaHhgDistinctMca <= 0) throw new Error('Georgia MCA count missing');
+  if (input.gaHhgListingRows < input.gaHhgDistinctMca) throw new Error('Georgia listing rows cannot be fewer than distinct MCA numbers');
   if (input.paHhgOperatorListRows <= 0) throw new Error('Pennsylvania HHG operator list row count missing');
   if (input.ncHhgDistinctCNumbers <= 0) throw new Error('North Carolina HHG C-number count missing');
   if (input.ncHhgListRows !== input.ncHhgDistinctCNumbers) {
@@ -704,6 +709,28 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       ),
     }),
     metric({
+      key: 'ga_dps_hhg_mca_identities',
+      label: 'Georgia DPS household-goods MCA identities',
+      value: input.gaHhgDistinctMca,
+      valueState: 'KNOWN',
+      grain: 'ga_dps_hhg_mca_identity',
+      denominator: 'Distinct MCA numbers on the DPS licensed household-goods movers list',
+      description:
+        'Distinct Georgia DPS MCA numbers on the licensed household-goods movers list. Not location rows, not FMCSA interstate authority, and not an Active/Inactive status column.',
+      coverage: 'Georgia',
+      contributingSourceSystems: ['ga_dps_hhg_movers_list'],
+      sourceAsOf: null,
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        `Count distinct MCA numbers (${input.gaHhgDistinctMca}) on ${input.gaHhgListingRows} deduped location rows.`,
+        'Not USDOT. Not a complaint count. Listing is not a separate enforcement finding.',
+        ['ga_dps_hhg_movers_list'],
+        'Georgia intrastate household-goods certificates',
+        'Source list has no printed revision date; retrieval is not the effective date',
+      ),
+    }),
+    metric({
       key: 'oh_puco_hhg_certificate_universe',
       label: 'Ohio PUCO household-goods certificate universe',
       value: null,
@@ -816,6 +843,7 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
     coRevokedHhgListings: input.coRevokedHhgListings,
     coSuspendedHhgListings: input.coSuspendedHhgListings,
     ncHhgDistinctCNumbers: input.ncHhgDistinctCNumbers,
+    gaHhgDistinctMca: input.gaHhgDistinctMca,
     statePages: input.publishedStateIntelligencePaths,
     flCounties: input.floridaResearchCountyLandings,
     landings: input.localMoverStateLandings,
@@ -913,6 +941,12 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
     ohio: {
       rosterCoverage: 'OPEN_SEARCH_ONLY',
       currentCertificateUniverse: null,
+      sourceAsOf: null,
+    },
+    georgia: {
+      listingRows: input.gaHhgListingRows,
+      distinctMca: input.gaHhgDistinctMca,
+      exactUsdotJoins: 0,
       sourceAsOf: null,
     },
     network: {
