@@ -1,0 +1,141 @@
+{
+ "ticket": "TN-MOVE-001",
+ "revenue_intrastate_authority": {
+  "agency": "Tennessee Department of Revenue, Vehicle Services Division, Motor Carrier Section",
+  "url": "https://www.tn.gov/revenue/motor-carrier/intrastate-authority.html",
+  "http_status": 200,
+  "retrieved_at": "2026-09-24T19:37:12Z",
+  "html_sha256": "255632f636be4fc5447a452cad78c399ad6ea00093865b146b794aa9f9d23afe",
+  "statements": [
+   "Intrastate Authority allows for-hire motor carriers and private towing and wrecker services to use any of the public highways of Tennessee for the transportation of persons or property, or both, in intrastate commerce.",
+   "Provide proof of insurance. Insurance companies must furnish these forms:",
+   "Form E - Uniform Motor Carrier Bodily Injury and Property Damage Liability Certificate of Insurance",
+   "Form H - Uniform Motor Carrier Cargo Certificate of Insurance (required for carriers hauling the following: general freight, household goods, mobile homes)"
+  ],
+  "new_applicant_requirements": [
+   "Intrastate Authority Application",
+   "Designated Agent for Service of Process form",
+   "Proof of insurance (Form E; Form H where required)"
+  ],
+  "process_agent_statement": "A process agent is a Tennessee representative upon who court papers may be served in any proceeding brought against a motor carrier.",
+  "tntap_url": "https://tntap.tn.gov/eservices/_/"
+ },
+ "tntap_motor_carrier": {
+  "url": "https://www.tn.gov/revenue/motor-carrier/tntap---motor-carrier.html",
+  "retrieved_at": "2026-09-24T19:37:13Z",
+  "html_sha256": "c86874438ca51608d84449e36cf0f788408b3879264e4ff14305f08794676a98",
+  "intrastate_authority_functions": [
+   "Registration",
+   "Renewals",
+   "Payments",
+   "Third-party Access for Permitting Agency",
+   "Manage/Update Account Information"
+  ],
+  "note": "TNTAP Intrastate Authority functions are carrier account functions. The public TNTAP landing page offers no carrier or authority search."
+ },
+ "application_form": {
+  "form": "RV-F1315501 (10/25) Application for Intrastate Authority",
+  "url": "https://www.tn.gov/content/dam/tn/revenue/documents/forms/motorcarrier/f1315501.pdf",
+  "http_last_modified": "Mon, 27 Oct 2025 19:01:21 GMT",
+  "retrieved_at": "2026-09-24T19:37:41Z",
+  "sha256": "70139032bf902870c2dee938c99be6035e340c9775025c367e18a9c2daf87b66",
+  "fees": {
+   "new_application": "$50",
+   "per_vehicle_new_and_renewal": "$8",
+   "reopen_closed_account": "$50"
+  },
+  "fields_observed": [
+   "Name",
+   "DBA",
+   "Street Address",
+   "Mailing Address",
+   "Registration Year",
+   "USDOT",
+   "FEIN",
+   "SSN",
+   "vehicle VIN / plate / weight",
+   "cargo class: General / Cargo / Bus; Hazardous / Non-hazardous"
+  ],
+  "usdot_field_note": "The state application asks for a USDOT number. A Tennessee Intrastate Authority account is not a USDOT or MC number, and no public state roster exposes the pairing."
+ },
+ "process_agent_form": {
+  "form": "RV-F1310001 (Rev. 4/22) Motor Carrier Processing Agent",
+  "statute": "Tenn. Code Ann. § 65-15-109",
+  "url": "https://www.tn.gov/content/dam/tn/revenue/documents/forms/motorcarrier/f1310001.pdf",
+  "http_last_modified": "Tue, 07 Feb 2023 22:59:03 GMT",
+  "retrieved_at": "2026-09-24T19:37:42Z",
+  "sha256": "95f1685d97fbcd1b58d2a328982c20865f21049dd1b3d248a3691e7cfeaa52d1"
+ },
+ "rules_current": {
+  "chapter": "1340-06-01 Rules and Regulations as to Supervision and Control of Motor Vehicles and Motor Buses",
+  "publisher": "Rules of the Tennessee Department of Safety, Division of Commercial Vehicle Enforcement (Tennessee Secretary of State publication)",
+  "revision_label": "March, 2026 (Revised)",
+  "amendments_and_repeals_filed": "2025-12-09",
+  "effective": "2026-03-09",
+  "url": "https://publications.tnsosfiles.com/rules/1340/1340-06/1340-06-01.20260309.pdf",
+  "index_url": "https://publications.tnsosfiles.com/rules/1340/1340.htm",
+  "file": "raw/rules-1340-06-01.20260309.pdf",
+  "http_last_modified": "Mon, 09 Mar 2026 13:53:59 GMT",
+  "retrieved_at": "2026-09-24T19:41:47Z",
+  "sha256": "dd72dd49b9269989867f6330c8743bf7d65807dcfa027536f4c9a4a8681f9405",
+  "sections_in_force": [
+   ".01 Freight Carriers Not to Carry Passengers",
+   ".02 Insurance",
+   ".03 Schedule of Limits",
+   ".04 Adoption of Department of Transportation Safety Regulations",
+   ".05 Transportation of Hazardous Materials",
+   ".06 Identification of Intrastate Carriers",
+   ".07 Routing of Hazardous Material Vehicles",
+   ".08 Lighting Requirements"
+  ],
+  "repealed_range": ".09 through .55",
+  "insurance_filing_text": "(1) No motor carrier subject to the provisions of T.C.A. §§ 65- 15-101 et seq., shall engage in transportation of passengers or property for compensation, and no cer tificate or permit shall be issued to a motor carrier, or shall remain in force, unless and until there shall have been filed with and approved by the Commissioner of Safety and Homeland Security for intrastate commerce or the United States Department of Transportation for interstate commerce a policy of insurance (or certificate of insurance in lieu thereof), or a surety bond in not less than the amounts hereinafter prescribed, conditioned to pay, within the amount of such policy of insurance (or certificate of insurance in lieu thereof), or surety bond, any final judgment recovered against such motor carrier for bodily injuries to or the death of any person resulting from the negligent operation, for loss or damage to property of others;",
+  "intrastate_cargo_liability_text": "(3) Motor Common Carriers (intrastate only) - Cargo liability security required for loss or damage to property belonging to shippers or consignees and coming into the possession of motor carriers in connection with their transportation service: (a) For loss or damage to property carried on any one motor vehicle: $5,000. (b) For loss of or damage to or aggregate of losses or damages of or to property occurring at any one time and place: $10,000.",
+  "household_goods_rule_13_text": "1340-06-01-.13 REPEALED. Authority: T.C.A. §§ 4-3-2012, 65-15-106, and 65-15-113. Administrative History: Original rule certified May 9, 1974. Rule 1340-06-01-.13 was transferred from rule 1220-02-01-.13 by the Secretary of State with editorial changes pursuant to Pub lic Chapter 305 of 1995 and Public Chapter 826 of 2002; effective March 28, 2003. Emergency rule filed August 16, 2011; effective through February 12, 2012. Repeal and new rule filed August 16, 2011; effective January 29, 2012. Repeal filed December 9, 2025; effective March 9, 2026.",
+  "current_text_keyword_counts": {
+   "household": 0,
+   "tariff": 0,
+   "estimate": 0,
+   "claim": 0,
+   "bill of lading": 0
+  }
+ },
+ "rules_prior_revision": {
+  "revision_label": "August, 2021 (Revised)",
+  "url": "https://publications.tnsosfiles.com/rules/1340/1340-06/1340-06-01.20210825.pdf",
+  "sha256": "baeee427a981a690f09a9cbe7ad9affe3ec48b77cdf0132795f45d9a642ebdd9",
+  "retrieved_at": "2026-09-24T19:40:48Z",
+  "status": "SUPERSEDED on 2026-03-09",
+  "former_household_goods_and_tariff_rules": [
+   "1340-06-01-.02 Tariffs for Public Inspection: tariffs kept open for public inspection at the carrier principal office and terminals",
+   "1340-06-01-.03 Fares, Charges and Free Transportation: no charge greater, less or different than the filed tariff",
+   "1340-06-01-.13 Estimates of Charges, Determination of Weights, and Handling of Claims for Loss or Damage by Household Goods Movers in Intrastate Commerce (in force 2012-01-29 to 2026-03-09)"
+  ],
+  "note": "Historical text only. These provisions do not appear in the current March 2026 revision."
+ },
+ "complaints": {
+  "agency": "Division of Consumer Affairs, Tennessee Attorney General Office",
+  "url": "https://www.tn.gov/attorneygeneral/working-for-tennessee/file-a-consumer-complaint.html",
+  "retrieved_at": "2026-09-24T19:42:37Z",
+  "html_sha256": "f71d0e739e8e4aaf31154c719d6b377ff882ea03b29867e83cf03f8b4389e34b",
+  "statements": [
+   "The Division of Consumer Affairs (DCA), now housed in the Attorney General’s Office, works to handle consumer complaints and educate consumers on the latest scams and threats that could cause harm.",
+   "DCA will forward your complaint to the individual or business and attempt to facilitate a mutually acceptable resolution."
+  ]
+ },
+ "roster_search": {
+  "TN_INTRASTATE_AUTHORITY_BULK": "NOT_ACQUIRED",
+  "time_box_minutes_used": "about 15 of 30",
+  "checked": [
+   "Revenue Intrastate Authority page: application and renewal framework only; no carrier list, download or search link",
+   "Revenue Motor Carrier and Motor Carrier Forms pages: forms only",
+   "TNTAP public landing page: public options are tax-account, privilege-tax and vendor lookups and new registration; no carrier or Intrastate Authority search",
+   "Revenue TNTAP Motor Carrier page: Intrastate Authority functions are carrier account functions",
+   "Web search for a published Tennessee Intrastate Authority carrier list or open-data export: none found"
+  ],
+  "not_done": [
+   "No TNTAP login, account creation, CAPTCHA, or protected function was used",
+   "No certificate or account numbers were enumerated"
+  ]
+ }
+}

@@ -61,6 +61,7 @@ const meta: Record<string, Pick<MoveHomepageMeasure, 'family' | 'entityClass' | 
   oh_puco_hhg_certificate_universe: { family: 'STATE_AUTHORITY', entityClass: 'PUCO household-goods certificate roster', destination: '/ohio', acceptedArtifact: 'move-oh-state-intel-v1' },
   ga_dps_hhg_mca_identities: { family: 'STATE_AUTHORITY', entityClass: 'Georgia DPS household-goods MCA identity', destination: '/georgia', acceptedArtifact: 'move-ga-state-intel-v1' },
   ma_dpu_hhg_certificate_identities: { family: 'STATE_AUTHORITY', entityClass: 'Massachusetts DPU household-goods certificate identity', destination: '/massachusetts', acceptedArtifact: 'move-ma-state-intel-v1' },
+  tn_intrastate_authority_universe: { family: 'STATE_AUTHORITY', entityClass: 'Tennessee Intrastate Authority roster', destination: '/tennessee', acceptedArtifact: 'move-tn-state-intel-v1' },
   published_state_intelligence_pages: { family: 'PUBLIC_SURFACES', entityClass: 'Published specialist state page', destination: '#state-intelligence', acceptedArtifact: 'canonical state publication model' },
 };
 

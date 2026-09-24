@@ -7,6 +7,7 @@ import { lookupGeorgiaMca } from '../georgia-intelligence/lookup';
 import { GEORGIA_MOVE_SNAPSHOT } from '../georgia-intelligence/snapshot';
 import { lookupMassachusettsDpuCertificate, massachusettsDpuRowLabel, searchMassachusettsDpuName } from '../massachusetts-intelligence/lookup';
 import { MASSACHUSETTS_MOVE_SNAPSHOT } from '../massachusetts-intelligence/snapshot';
+import { TENNESSEE_MOVE_SNAPSHOT } from '../tennessee-intelligence/snapshot';
 import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
 import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
@@ -27,6 +28,7 @@ const STATE_NAMES: Record<string, string> = {
   pennsylvania: 'PA',
   'north carolina': 'NC',
   ohio: 'OH',
+  tennessee: 'TN',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -37,6 +39,7 @@ const STATE_NAMES: Record<string, string> = {
   va: 'VA',
   il: 'IL',
   ma: 'MA',
+  tn: 'TN',
 };
 
 function detectState(q: string): string | undefined {
@@ -204,6 +207,28 @@ function isBostonGeographyOnly(q: string): boolean {
   const rest = q.toLowerCase().replace(/[^a-z0-9 ]+/g, ' ')
     .replace(/\b(boston|ma|massachusetts|movers?|moving|compan(y|ies)|in|near|around|local|find|the|a|licensed|best|top|good|reliable|cheap)\b/g, ' ').trim();
   return rest === '';
+}
+
+const TN_ALTERNATIVES = ['Open Tennessee household-goods research.', 'Show current interstate household-goods carriers headquartered in Tennessee.'];
+const TN_CITIES = /\b(nashville|memphis|knoxville|chattanooga|clarksville|murfreesboro)\b/i;
+
+function mentionsTennessee(q: string): boolean {
+  return /\btennessee\b|\btn\b|\btntap\b/i.test(q);
+}
+
+/** Another state named outright takes the query out of the Tennessee layer. */
+function mentionsOtherStateThanTennessee(q: string): boolean {
+  const other = detectState(q.replace(/\btennessee\b|\btn\b/gi, ' ').replace(TN_CITIES, ' '));
+  return Boolean(other && other !== 'TN');
+}
+
+/** Headquarters questions are federal geography, not Tennessee state authority. */
+function asksAboutHeadquarters(q: string): boolean {
+  return /\bheadquarter\w*|\bbased in\b|\blocated in\b|\bprincipal office\b/i.test(q);
+}
+
+function tnContext(q: string): boolean {
+  return mentionsTennessee(q) && !mentionsOtherStateThanTennessee(q) && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
 }
 
 function mentionsPhiladelphiaOrPittsburgh(q: string): boolean {
@@ -510,6 +535,44 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
       MA_ALTERNATIVES,
     );
     push('Geography', 'Boston — no city intelligence page');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (tnContext(q) && !isRouteOrInterstate(q)) {
+    const tn = TENNESSEE_MOVE_SNAPSHOT;
+    const city = q.match(TN_CITIES)?.[1];
+    const cityNote = city ? ` ${city[0]!.toUpperCase()}${city.slice(1).toLowerCase()} is geography only; MoveTrustHub has no city intelligence page.` : '';
+    if (/\b(complaints?|dispositions?|enforcement|scams?|report)\b/i.test(q)) {
+      const query = fail(
+        "Tennessee's Division of Consumer Affairs, in the Attorney General's Office, takes consumer complaints and forwards them to the business to try to reach a resolution. No public company-level complaint dataset was acquired. Complaint intake is not zero complaints, and a complaint is not a finding.",
+        TN_ALTERNATIVES,
+      );
+      query.coverageState = 'NOT_ACQUIRED';
+      push('Coverage', 'Tennessee complaints — INTAKE_KNOWN / OUTCOMES_NOT_ACQUIRED');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (isRanking(q)) {
+      const query = fail(
+        `MoveTrustHub does not rank movers and does not publish a Trust Score. Tennessee research explains Intrastate Authority; it is not a winner or cheapest list.${cityNote}`,
+        TN_ALTERNATIVES,
+      );
+      push('Mode', 'fail_closed');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (/\b(tariffs?|rates?|prices?|costs?|how much|quotes?|estimates?|claims?|weights?|bill of lading|rules?|regulations?)\b/i.test(q)) {
+      const query = fail(
+        `Tennessee's current motor-carrier rules (Chapter 1340-06-01, effective ${tn.rules.effective}) set insurance and minimum cargo liability (${tn.rules.intrastate_cargo_liability_limits.per_vehicle} per vehicle, ${tn.rules.intrastate_cargo_liability_limits.any_one_time_and_place} at any one time and place for intrastate common carriers). The former household-goods rule on estimates, weights and loss or damage claims, and the tariff rules, were repealed effective ${tn.rules.effective}; they are not current protections. No Tennessee tariff index was found. A tariff is not a quote, and there is no statewide moving price.`,
+        TN_ALTERNATIVES,
+      );
+      push('Coverage', 'Tennessee rules — CURRENT TEXT; tariff index NOT_ACQUIRED');
+      return { raw: q, query, interpretation: lines };
+    }
+    const query = fail(
+      `Tennessee household-goods movers that stay inside Tennessee need Tennessee Intrastate Authority from the Tennessee Department of Revenue (applied for and renewed through TNTAP), with Form H cargo insurance for household goods. Tennessee publishes no public Intrastate Authority roster or search, so there is no count here; missing is not zero. Tennessee Intrastate Authority is not a USDOT or MC number, and a Tennessee address is not state authority. Moves that cross a state line are FMCSA interstate moves.${cityNote}`,
+      TN_ALTERNATIVES,
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'NOT_ACQUIRED — Tennessee Intrastate Authority roster');
     return { raw: q, query, interpretation: lines };
   }
 
