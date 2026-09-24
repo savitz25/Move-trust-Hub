@@ -1,0 +1,214 @@
+{
+  "version": "move-tn-state-intel-v1",
+  "ticket": "TN-MOVE-001",
+  "as_of": "2026-09-24",
+  "generated_at": "2026-09-24T19:45:42Z",
+  "snapshotAsOf": "2026-09-24",
+  "retrievedAt": "2026-09-24T19:37:12Z",
+  "no_trust_score": true,
+  "no_paid_ranking": true,
+  "no_tennessee_local_routes": true,
+  "no_nashville_intelligence_page": true,
+  "publication": {
+    "canonical": "https://www.movetrusthub.com/tennessee",
+    "indexable": true,
+    "robots": "index,follow",
+    "route": "/tennessee",
+    "h1": "Tennessee Moving & Household Goods Intelligence"
+  },
+  "regulator": {
+    "agency": "Tennessee Department of Revenue",
+    "division": "Vehicle Services Division, Motor Carrier Section",
+    "short": "Tennessee Revenue",
+    "credential_term": "Tennessee Intrastate Authority",
+    "authority_url": "https://www.tn.gov/revenue/motor-carrier/intrastate-authority.html",
+    "tntap_url": "https://tntap.tn.gov/eservices/_/",
+    "application_form": "RV-F1315501 (10/25) Application for Intrastate Authority",
+    "application_url": "https://www.tn.gov/content/dam/tn/revenue/documents/forms/motorcarrier/f1315501.pdf",
+    "process_agent_form": "RV-F1310001 (Rev. 4/22) Motor Carrier Processing Agent",
+    "process_agent_url": "https://www.tn.gov/content/dam/tn/revenue/documents/forms/motorcarrier/f1310001.pdf",
+    "process_agent_statute": "Tenn. Code Ann. § 65-15-109",
+    "rules_publisher": "Rules of the Tennessee Department of Safety, Division of Commercial Vehicle Enforcement (Tennessee Secretary of State publication)",
+    "rules_url": "https://publications.tnsosfiles.com/rules/1340/1340-06/1340-06-01.20260309.pdf",
+    "complaint_agency": "Division of Consumer Affairs, Tennessee Attorney General Office",
+    "complaint_url": "https://www.tn.gov/attorneygeneral/working-for-tennessee/file-a-consumer-complaint.html",
+    "intrastate_only": true,
+    "interstate_regulator": "FMCSA"
+  },
+  "authority_model": {
+    "definition": "Intrastate Authority allows for-hire motor carriers and private towing and wrecker services to use any of the public highways of Tennessee for the transportation of persons or property, or both, in intrastate commerce.",
+    "new_applicant_requirements": [
+      "Intrastate Authority Application",
+      "Designated Agent for Service of Process form",
+      "Proof of insurance (Form E; Form H where required)"
+    ],
+    "process_agent": "A process agent is a Tennessee representative upon who court papers may be served in any proceeding brought against a motor carrier.",
+    "insurance_forms": [
+      "Form E - Uniform Motor Carrier Bodily Injury and Property Damage Liability Certificate of Insurance",
+      "Form H - Uniform Motor Carrier Cargo Certificate of Insurance (required for carriers hauling the following: general freight, household goods, mobile homes)"
+    ],
+    "form_h_household_goods": true,
+    "fees": {
+      "new_application": "$50",
+      "per_vehicle_new_and_renewal": "$8",
+      "reopen_closed_account": "$50"
+    },
+    "tntap_functions": [
+      "Registration",
+      "Renewals",
+      "Payments",
+      "Third-party Access for Permitting Agency",
+      "Manage/Update Account Information"
+    ],
+    "application_asks_for_usdot": true,
+    "usdot_field_note": "The state application asks for a USDOT number. A Tennessee Intrastate Authority account is not a USDOT or MC number, and no public state roster exposes the pairing."
+  },
+  "clocks": {
+    "generatedAt": "2026-09-24T19:45:42Z",
+    "snapshotAsOf": "2026-09-24",
+    "retrievedAt": "2026-09-24T19:37:12Z",
+    "sourceAsOf": null,
+    "do_not_use_retrieval_as_authority_effective_date": true,
+    "authority_roster": {
+      "sourceAsOf": null,
+      "note": "No public roster exists to carry a clock."
+    },
+    "rules": {
+      "revision": "March, 2026 (Revised)",
+      "filed": "2025-12-09",
+      "effective": "2026-03-09",
+      "retrievedAt": "2026-09-24T19:41:47Z"
+    },
+    "application_form": {
+      "revision": "10/25",
+      "httpLastModified": "Mon, 27 Oct 2025 19:01:21 GMT"
+    }
+  },
+  "current_hhg_roster": {
+    "coverage": "NOT_ACQUIRED",
+    "TN_INTRASTATE_AUTHORITY_BULK": "NOT_ACQUIRED",
+    "TN_INTRASTATE_AUTHORITY_PUBLIC_SEARCH": "NOT_AVAILABLE",
+    "TN_INTRASTATE_AUTHORITY_ROWS": null,
+    "TN_INTRASTATE_AUTHORITY_DISTINCT_IDS": null,
+    "TN_HHG_AUTHORITY_ROWS": null,
+    "TN_EXACT_USDOT_JOINS": 0,
+    "TN_EXACT_MC_JOINS": 0,
+    "reason": "Tennessee Revenue publishes the Intrastate Authority application and renewal framework but no carrier list, download or public search. TNTAP Intrastate Authority functions are carrier account functions. Search-only would still not be zero; here there is no public search at all.",
+    "search": {
+      "TN_INTRASTATE_AUTHORITY_BULK": "NOT_ACQUIRED",
+      "time_box_minutes_used": "about 15 of 30",
+      "checked": [
+        "Revenue Intrastate Authority page: application and renewal framework only; no carrier list, download or search link",
+        "Revenue Motor Carrier and Motor Carrier Forms pages: forms only",
+        "TNTAP public landing page: public options are tax-account, privilege-tax and vendor lookups and new registration; no carrier or Intrastate Authority search",
+        "Revenue TNTAP Motor Carrier page: Intrastate Authority functions are carrier account functions",
+        "Web search for a published Tennessee Intrastate Authority carrier list or open-data export: none found"
+      ],
+      "not_done": [
+        "No TNTAP login, account creation, CAPTCHA, or protected function was used",
+        "No certificate or account numbers were enumerated"
+      ]
+    },
+    "missing_is_not_zero": true,
+    "tennessee_address_is_not_state_authority": true,
+    "household_goods_is_a_cargo_insurance_class_not_a_published_roster": true
+  },
+  "rules": {
+    "chapter": "1340-06-01 Rules and Regulations as to Supervision and Control of Motor Vehicles and Motor Buses",
+    "revision": "March, 2026 (Revised)",
+    "effective": "2026-03-09",
+    "sections_in_force": [
+      ".01 Freight Carriers Not to Carry Passengers",
+      ".02 Insurance",
+      ".03 Schedule of Limits",
+      ".04 Adoption of Department of Transportation Safety Regulations",
+      ".05 Transportation of Hazardous Materials",
+      ".06 Identification of Intrastate Carriers",
+      ".07 Routing of Hazardous Material Vehicles",
+      ".08 Lighting Requirements"
+    ],
+    "repealed_range": ".09 through .55",
+    "insurance_filing_text": "(1) No motor carrier subject to the provisions of T.C.A. §§ 65- 15-101 et seq., shall engage in transportation of passengers or property for compensation, and no cer tificate or permit shall be issued to a motor carrier, or shall remain in force, unless and until there shall have been filed with and approved by the Commissioner of Safety and Homeland Security for intrastate commerce or the United States Department of Transportation for interstate commerce a policy of insurance (or certificate of insurance in lieu thereof), or a surety bond in not less than the amounts hereinafter prescribed, conditioned to pay, within the amount of such policy of insurance (or certificate of insurance in lieu thereof), or surety bond, any final judgment recovered against such motor carrier for bodily injuries to or the death of any person resulting from the negligent operation, for loss or damage to property of others;",
+    "intrastate_cargo_liability_text": "(3) Motor Common Carriers (intrastate only) - Cargo liability security required for loss or damage to property belonging to shippers or consignees and coming into the possession of motor carriers in connection with their transportation service: (a) For loss or damage to property carried on any one motor vehicle: $5,000. (b) For loss of or damage to or aggregate of losses or damages of or to property occurring at any one time and place: $10,000.",
+    "intrastate_cargo_liability_limits": {
+      "per_vehicle": "$5,000",
+      "any_one_time_and_place": "$10,000"
+    },
+    "household_goods_rule_status": "REPEALED_EFFECTIVE_2026_03_09",
+    "household_goods_rule_13_text": "1340-06-01-.13 REPEALED. Authority: T.C.A. §§ 4-3-2012, 65-15-106, and 65-15-113. Administrative History: Original rule certified May 9, 1974. Rule 1340-06-01-.13 was transferred from rule 1220-02-01-.13 by the Secretary of State with editorial changes pursuant to Pub lic Chapter 305 of 1995 and Public Chapter 826 of 2002; effective March 28, 2003. Emergency rule filed August 16, 2011; effective through February 12, 2012. Repeal and new rule filed August 16, 2011; effective January 29, 2012. Repeal filed December 9, 2025; effective March 9, 2026.",
+    "current_text_keyword_counts": {
+      "household": 0,
+      "tariff": 0,
+      "estimate": 0,
+      "claim": 0,
+      "bill of lading": 0
+    },
+    "prior_revision": {
+      "revision_label": "August, 2021 (Revised)",
+      "url": "https://publications.tnsosfiles.com/rules/1340/1340-06/1340-06-01.20210825.pdf",
+      "sha256": "baeee427a981a690f09a9cbe7ad9affe3ec48b77cdf0132795f45d9a642ebdd9",
+      "retrieved_at": "2026-09-24T19:40:48Z",
+      "status": "SUPERSEDED on 2026-03-09",
+      "former_household_goods_and_tariff_rules": [
+        "1340-06-01-.02 Tariffs for Public Inspection: tariffs kept open for public inspection at the carrier principal office and terminals",
+        "1340-06-01-.03 Fares, Charges and Free Transportation: no charge greater, less or different than the filed tariff",
+        "1340-06-01-.13 Estimates of Charges, Determination of Weights, and Handling of Claims for Loss or Damage by Household Goods Movers in Intrastate Commerce (in force 2012-01-29 to 2026-03-09)"
+      ],
+      "note": "Historical text only. These provisions do not appear in the current March 2026 revision."
+    },
+    "repealed_rules_are_not_current_protections": true
+  },
+  "tariff": {
+    "model": "NO_CURRENT_RULE",
+    "TN_TARIFF_INDEX": "NOT_ACQUIRED",
+    "current_rule_requirement": "NONE_IN_CHAPTER_1340_06_01",
+    "note": "The former rules requiring tariffs to be kept open for public inspection and barring charges that differ from the filed tariff were in the August 2021 revision and are not in the March 2026 revision. No state tariff index was found.",
+    "not_a_quote": true,
+    "no_statewide_price": true,
+    "rate_sheets_parsed": false
+  },
+  "complaints": {
+    "coverage": "NOT_ACQUIRED",
+    "intake": "KNOWN",
+    "intake_statements": [
+      "The Division of Consumer Affairs (DCA), now housed in the Attorney General’s Office, works to handle consumer complaints and educate consumers on the latest scams and threats that could cause harm.",
+      "DCA will forward your complaint to the individual or business and attempt to facilitate a mutually acceptable resolution."
+    ],
+    "provider_level_complaints": "NOT_ACQUIRED",
+    "outcomes": "REQUEST_ONLY",
+    "count": null,
+    "complaint_is_not_a_finding": true
+  },
+  "identity": {
+    "preferred": null,
+    "state_authority_identifier_published": false,
+    "usdot_on_source": false,
+    "mc_on_source": false,
+    "name_only_join": "UNSAFE",
+    "tn_intrastate_authority_is_not_usdot": true,
+    "tn_intrastate_authority_is_not_mc": true
+  },
+  "capabilities": {
+    "intrastate_authority_framework": "KNOWN",
+    "form_h_household_goods_cargo_insurance": "KNOWN",
+    "intrastate_cargo_liability_limits": "KNOWN",
+    "state_authority_bulk_roster": "NOT_ACQUIRED",
+    "state_authority_public_search": "UNSUPPORTED",
+    "household_goods_consumer_rules": "UNSUPPORTED",
+    "tariff_index": "NOT_ACQUIRED",
+    "complaint_intake": "KNOWN",
+    "complaint_outcomes": "REQUEST_ONLY",
+    "name_only_state_fmcsa_join": "UNSUPPORTED",
+    "combined_state_fmcsa_mover_count": "UNSUPPORTED",
+    "local_city_pages": "UNSUPPORTED"
+  },
+  "expansion_ledger": {
+    "GRAPH_WRITES": 0,
+    "NET_NEW_PUBLIC_PROFILES": 0,
+    "EXACT_USDOT_JOINS": 0,
+    "EXACT_MC_JOINS": 0,
+    "PROFILE_ATTACHMENTS": 0
+  },
+  "source_rule_pdf_sha256": "dd72dd49b9269989867f6330c8743bf7d65807dcfa027536f4c9a4a8681f9405",
+  "fingerprint": "aa892cceecbc7ad96f9e9df43f9f941e5e9df24f6622ff23bc1fb66751d63b69"
+}

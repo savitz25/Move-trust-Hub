@@ -188,6 +188,13 @@ export type MoveNetworkMetricsV1 = {
     currentCertificateUniverse: null;
     sourceAsOf: null;
   };
+  tennessee: {
+    rosterCoverage: 'NOT_ACQUIRED';
+    currentAuthorityUniverse: null;
+    sourceAsOf: null;
+    rulesEffective: string;
+    householdGoodsRuleStatus: 'REPEALED_EFFECTIVE_2026_03_09';
+  };
   georgia: {
     listingRows: number;
     distinctMca: number;

@@ -140,6 +140,7 @@ export function assertGrainSafety(input: MoveNetworkMetricsInput): void {
   if (input.gaHhgDistinctMca <= 0) throw new Error('Georgia MCA count missing');
   if (input.gaHhgListingRows < input.gaHhgDistinctMca) throw new Error('Georgia listing rows cannot be fewer than distinct MCA numbers');
   if (!input.publishedStateIntelligencePaths.includes('/massachusetts')) throw new Error('Massachusetts state intelligence path missing');
+  if (!input.publishedStateIntelligencePaths.includes('/tennessee')) throw new Error('Tennessee state intelligence path missing');
   if (input.maHhgDistinctCertificates <= 0) throw new Error('Massachusetts DPU certificate count missing');
   if (input.maHhgListingRows < input.maHhgDistinctCertificates) throw new Error('Massachusetts listing rows cannot be fewer than distinct DPU certificates');
   if (input.maTariffPostedRows + input.maTariffPendingRows !== input.maHhgListingRows) throw new Error('Massachusetts tariff rows must partition the listing rows');
@@ -790,6 +791,35 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       ),
     }),
     metric({
+      key: 'tn_intrastate_authority_universe',
+      label: 'Tennessee Intrastate Authority household-goods carrier universe',
+      value: null,
+      valueState: 'NOT_ACQUIRED',
+      grain: 'tn_intrastate_authority_roster',
+      denominator: 'Current Tennessee Intrastate Authority holders — no public roster or search',
+      description:
+        'Tennessee Revenue publishes no public Intrastate Authority roster or carrier search, so the number of carriers holding it is unknown, not zero. Tennessee Intrastate Authority is not a USDOT or MC number, and a Tennessee address is not state authority.',
+      coverage: 'Tennessee',
+      contributingSourceSystems: ['tn_revenue_motor_carrier'],
+      sourceAsOf: null,
+      generatedAt,
+      publicationStatus: 'PUBLIC_UNKNOWN',
+      presentation: {
+        family: 'STATE_AUTHORITY',
+        entityClass: 'Tennessee Intrastate Authority roster',
+        destination: '/tennessee',
+        acceptedArtifact: 'move-tn-state-intel-v1',
+      },
+      trace: commonTrace(
+        'No statewide Tennessee Intrastate Authority carrier denominator is published.',
+        'Not Tennessee-address FMCSA carriers, not USDOT or MC identities, not tariff filings, and not complaint counts.',
+        ['tn_revenue_motor_carrier'],
+        'Tennessee intrastate for-hire carriers',
+        'No roster clock; retrieval is not an authority effective date',
+        { whyUnknown: 'Tennessee Revenue exposes the application and renewal framework only; TNTAP functions are carrier account functions. Missing is not zero.' },
+      ),
+    }),
+    metric({
       key: 'ny_dot_2026_hhg_bulletin_observations',
       label: 'NYSDOT 2026 household-goods bulletin application observations',
       value: input.nyHhgBulletinObservations,
@@ -989,6 +1019,13 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       exactUsdotJoins: 0,
       exactMcJoins: 0,
       sourceAsOf: '2026-06-16',
+    },
+    tennessee: {
+      rosterCoverage: 'NOT_ACQUIRED',
+      currentAuthorityUniverse: null,
+      sourceAsOf: null,
+      rulesEffective: '2026-03-09',
+      householdGoodsRuleStatus: 'REPEALED_EFFECTIVE_2026_03_09',
     },
     network: {
       publishedStateIntelligencePages: input.publishedStateIntelligencePaths.length,

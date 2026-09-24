@@ -82,7 +82,7 @@ function baseInput(over: Partial<MoveNetworkMetricsInput> = {}): MoveNetworkMetr
     maHhgDistinctCertificates: 308,
     maTariffPostedRows: 300,
     maTariffPendingRows: 9,
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania', '/north-carolina', '/ohio', '/georgia', '/massachusetts'],
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania', '/north-carolina', '/ohio', '/georgia', '/massachusetts', '/tennessee'],
     floridaResearchCountyLandings: 4,
     localMoverStateLandings: 51,
     ...over,

@@ -100,6 +100,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'DPU regulated household-goods movers & filed tariffs',
       },
       {
+        label: 'Tennessee research',
+        href: '/tennessee',
+        description: 'Intrastate Authority, Form H cargo insurance & current rules',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',
