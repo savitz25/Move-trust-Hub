@@ -1,9 +1,9 @@
 {
   "schemaVersion": "move-network-metrics-v1",
-  "generatedAt": "2026-09-24T02:38:14.630Z",
+  "generatedAt": "2026-09-24T14:47:48.675Z",
   "newestDocumentedSourceAsOf": "2026-09-09",
   "newestDocumentedSourceAsOfNote": "Newest documented official source-effective date among metrics that carry a sourceAsOf. Not the as-of date of every federal profile, not Git time, and not deploy time.",
-  "sourceFingerprint": "a3db11f79cd8046958b0da32d6c58cb866140544d7f7c0f01a0a75bb247d96bf",
+  "sourceFingerprint": "248847b3f74f61b9507ae3572abd99f980a05115d55c7d451f44d697cc2d8a86",
   "federalDirectory": {
     "publishableProfiles": 5022,
     "indexableProfiles": 4905,
@@ -107,8 +107,17 @@
     "exactUsdotJoins": 0,
     "sourceAsOf": null
   },
+  "massachusetts": {
+    "listingRows": 309,
+    "distinctCertificates": 308,
+    "tariffPostedRows": 300,
+    "tariffPendingRows": 9,
+    "exactUsdotJoins": 0,
+    "exactMcJoins": 0,
+    "sourceAsOf": "2026-06-16"
+  },
   "network": {
-    "publishedStateIntelligencePages": 14,
+    "publishedStateIntelligencePages": 15,
     "publishedStateIntelligencePaths": [
       "/florida",
       "/new-jersey",
@@ -123,7 +132,8 @@
       "/pennsylvania",
       "/north-carolina",
       "/ohio",
-      "/georgia"
+      "/georgia",
+      "/massachusetts"
     ],
     "floridaResearchCountyLandings": 4,
     "localMoverStateLandings": 51
@@ -211,7 +221,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "One publishable companies row in the current directory cohort.",
@@ -242,7 +252,7 @@
         "companies"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Publishable directory rows currently marked indexable.",
@@ -272,7 +282,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Publishable rows with authority_active true.",
@@ -304,7 +314,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Profile rows carrying an MC field; not distinct MC identities.",
@@ -340,7 +350,7 @@
         "fdacs"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "FDACS IM registration rows currently stored.",
@@ -371,7 +381,7 @@
         "fdacs"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "FDACS IM rows with status=active.",
@@ -403,7 +413,7 @@
         "fdacs"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Active FDACS MB registration rows.",
@@ -434,7 +444,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Publishable companies with a Florida headquarters string.",
@@ -464,7 +474,7 @@
         "nj_dca_pmw"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the statewide NJ mover universe.",
@@ -494,7 +504,7 @@
         "nj_oag_operation_safe_move"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC_PARTIAL",
       "trace": {
         "counts": "Structured NOV respondent rows from acquired 2025 and 2024 official releases.",
@@ -523,7 +533,7 @@
         "bhgs"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "Nothing numeric is published for the complete CAL-T universe.",
@@ -553,7 +563,7 @@
         "bhgs_citations"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Official HTML citation rows matching violation section 19237.",
@@ -582,7 +592,7 @@
         "bhgs_citations"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "19237 citation rows marked UNLICENSED.",
@@ -611,7 +621,7 @@
         "bhgs_citations"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "19237 citation rows with an exact CAL-T/T identifier.",
@@ -640,7 +650,7 @@
         "txdmv"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "No statewide numeric denominator is published.",
@@ -670,7 +680,7 @@
         "washington_utc_directory"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC_PARTIAL",
       "trace": {
         "counts": "Active results shown in the official UTC directory header.",
@@ -700,7 +710,7 @@
         "washington_utc"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "No numeric bulk-roster denominator is published.",
@@ -730,7 +740,7 @@
         "co_puc_opr"
       ],
       "sourceAsOf": "2025-06-27",
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Official ACTIVE Total Permits on the PUC OPR household-goods PDF.",
@@ -760,7 +770,7 @@
         "va_dmv_authorized_carriers"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Filtered official DMV Authorized Motor Carriers directory (Household goods carrier).",
@@ -789,7 +799,7 @@
         "va_dmv_authorized_carriers"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Filtered official DMV Authorized Motor Carriers directory (Property carrier).",
@@ -818,7 +828,7 @@
         "co_puc_opr"
       ],
       "sourceAsOf": "2025-06-27",
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Official REVOKED Total Permits on the PUC OPR household-goods PDF.",
@@ -847,7 +857,7 @@
         "co_puc_opr"
       ],
       "sourceAsOf": "2025-06-27",
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Official SUSPENDED Total Permits on the PUC OPR household-goods PDF.",
@@ -876,7 +886,7 @@
         "odot_ccd_hhg_list"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Count official authorized-list rows (113) and distinct certificate numbers (113).",
@@ -905,7 +915,7 @@
         "pa_puc_hhg_operators_list"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Count official operator-list rows (269) and distinct Utility Codes (267).",
@@ -933,7 +943,7 @@
         "ncuc_hhg_carrier_list"
       ],
       "sourceAsOf": "2026-09-08",
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Count distinct C-numbers (362) on 362 list rows.",
@@ -961,7 +971,7 @@
         "ga_dps_hhg_movers_list"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Count distinct MCA numbers (380) on 572 deduped location rows.",
@@ -971,6 +981,34 @@
         ],
         "geographicCoverage": "Georgia intrastate household-goods certificates",
         "sourceDates": "Source list has no printed revision date; retrieval is not the effective date",
+        "generationDate": "2026-09-24"
+      },
+      "snapshotAsOf": "2026-09-12T21:07:55.427Z"
+    },
+    {
+      "unit": "count",
+      "key": "ma_dpu_hhg_certificate_identities",
+      "label": "Massachusetts DPU household-goods certificate identities",
+      "value": 308,
+      "valueState": "KNOWN",
+      "grain": "ma_dpu_hhg_certificate_identity",
+      "denominator": "Distinct certificate numbers on the DPU list of regulated household-goods movers",
+      "description": "Distinct Massachusetts DPU certificate numbers on the list of moving companies regulated by the Transportation Oversight Division. Not company rows, not FMCSA interstate authority, and not an Active/Inactive status column.",
+      "coverage": "Massachusetts",
+      "contributingSourceSystems": [
+        "ma_dpu_regulated_movers_list"
+      ],
+      "sourceAsOf": "2026-06-16",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
+      "publicationStatus": "PUBLIC",
+      "trace": {
+        "counts": "Count distinct certificate numbers (308) on 309 company rows; one row prints no certificate number.",
+        "doesNotCount": "Not USDOT or MC. Not a complaint count. Filed tariffs are not quotes. Listing is not a separate enforcement finding.",
+        "contributingSourceSystems": [
+          "ma_dpu_regulated_movers_list"
+        ],
+        "geographicCoverage": "Massachusetts intrastate household-goods certificates",
+        "sourceDates": "List page LAST UPDATED June 16, 2026; retrieval is not the effective date",
         "generationDate": "2026-09-24"
       },
       "snapshotAsOf": "2026-09-12T21:07:55.427Z"
@@ -989,7 +1027,7 @@
         "puco"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "presentation": {
         "family": "STATE_AUTHORITY",
@@ -1025,7 +1063,7 @@
         "nysdot_weekly_bulletin"
       ],
       "sourceAsOf": "2026-09-09",
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Count household-goods application blocks across 36 2026 bulletin issues.",
@@ -1061,7 +1099,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Publishable profiles with authority_active=false.",
@@ -1092,7 +1130,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Publishable profiles with a null authority flag.",
@@ -1123,7 +1161,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Profiles classified as carrier.",
@@ -1154,7 +1192,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Profiles classified as broker.",
@@ -1185,7 +1223,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Profiles classified as carrier/broker.",
@@ -1216,7 +1254,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Profiles classified as unknown role.",
@@ -1247,7 +1285,7 @@
         "provider_state_authority"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Verified Florida state-authority identity links.",
@@ -1277,7 +1315,7 @@
         "provider_contact_observation"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Publication-safe contact observations.",
@@ -1307,7 +1345,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Federal profiles with NJ headquarters.",
@@ -1338,7 +1376,7 @@
         "fmcsa"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "Federal profiles with CA headquarters.",
@@ -1358,25 +1396,25 @@
       "unit": "count",
       "key": "published_state_intelligence_pages",
       "label": "Published state moving-intelligence pages",
-      "value": 14,
+      "value": 15,
       "valueState": "KNOWN",
       "grain": "published_state_intelligence_page",
       "denominator": "Indexable specialist state intelligence routes currently published",
       "description": "Published specialist state intelligence pages. Not a count of movers.",
-      "coverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina, /ohio, /georgia",
+      "coverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina, /ohio, /georgia, /massachusetts",
       "contributingSourceSystems": [
         "move-state-intel"
       ],
       "sourceAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
-        "counts": "Published /florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina, /ohio, /georgia intelligence routes.",
+        "counts": "Published /florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina, /ohio, /georgia, /massachusetts intelligence routes.",
         "doesNotCount": "Not local-mover landings and not federal directory rows.",
         "contributingSourceSystems": [
           "move-state-intel"
         ],
-        "geographicCoverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina, /ohio, /georgia",
+        "geographicCoverage": "/florida, /new-jersey, /california, /texas, /washington, /colorado, /virginia, /new-york, /illinois, /oregon, /pennsylvania, /north-carolina, /ohio, /georgia, /massachusetts",
         "sourceDates": "Publication gates in specialist catalogs",
         "generationDate": "2026-09-24"
       },
@@ -1399,7 +1437,7 @@
       "sourceAsOf": null,
       "retrievedAt": "2026-09-10T15:05:33.623358+00:00",
       "snapshotAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "va_hhg_authority_id",
@@ -1434,7 +1472,7 @@
       "sourceAsOf": null,
       "retrievedAt": "2026-09-10T15:05:33.623358+00:00",
       "snapshotAsOf": null,
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "va_property_authority_id",
@@ -1469,7 +1507,7 @@
       "sourceAsOf": "2026-09-09",
       "retrievedAt": "2026-09-11",
       "snapshotAsOf": "2026-09-11",
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "bulletin_issue",
@@ -1504,7 +1542,7 @@
       "sourceAsOf": "2026-09-09",
       "retrievedAt": "2026-09-11",
       "snapshotAsOf": "2026-09-11",
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC",
       "trace": {
         "counts": "application_case_number",
@@ -1539,7 +1577,7 @@
       "sourceAsOf": null,
       "retrievedAt": "2026-09-11",
       "snapshotAsOf": "2026-09-11",
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "ny_hhg_authority_roster",
@@ -1575,7 +1613,7 @@
       "sourceAsOf": null,
       "retrievedAt": "2026-09-12",
       "snapshotAsOf": "2026-09-12",
-      "generatedAt": "2026-09-24T02:38:14.630Z",
+      "generatedAt": "2026-09-24T14:47:48.675Z",
       "publicationStatus": "PUBLIC_UNKNOWN",
       "trace": {
         "counts": "il_hhg_authority_roster",
@@ -3462,6 +3500,116 @@
           }
         ],
         "fingerprint": "b484ba81488f813b43698ccb8a034afc645809be03662f101a951020839c388d"
+      }
+    },
+    "lib/massachusetts-intelligence/accepted-snapshot.json": {
+      "path": "lib/massachusetts-intelligence/accepted-snapshot.json",
+      "snapshot": {
+        "version": "move-ma-state-intel-v1",
+        "ticket": "MA-MOVE-001",
+        "as_of": "2026-09-24",
+        "generated_at": "2026-09-24T14:45:43Z",
+        "snapshotAsOf": "2026-09-24",
+        "retrievedAt": "2026-09-24T14:37:20Z",
+        "no_trust_score": true,
+        "no_paid_ranking": true,
+        "no_massachusetts_local_routes": true,
+        "no_boston_intelligence_page": true,
+        "publication": {
+          "canonical": "https://www.movetrusthub.com/massachusetts",
+          "indexable": true,
+          "robots": "index,follow",
+          "route": "/massachusetts",
+          "h1": "Massachusetts Moving & Household Goods Intelligence"
+        },
+        "regulator": {
+          "agency": "Massachusetts Department of Public Utilities",
+          "division": "Transportation Oversight Division",
+          "short": "Massachusetts DPU",
+          "credential_term": "DPU certificate number on the list of moving companies regulated by the Transportation Oversight Division",
+          "list_url": "https://www.mass.gov/info-details/moving-companies-regulated-by-the-department-of-public-utilities-dpu",
+          "csv_url": "https://www.mass.gov/files/csv/2026-06/DPU%20Moving%20Company%20Tariff%20February%202026%20%281%29.csv",
+          "guide_url": "https://www.mass.gov/guides/moving-within-massachusetts",
+          "complaint_form_url": "https://www.mass.gov/forms/file-a-complaint-against-a-bus-moving-or-towing-company",
+          "division_url": "https://www.mass.gov/orgs/transportation-oversight-division",
+          "complaint_email": "DPU.Transportation@mass.gov",
+          "complaint_phone": "(617) 305-3559",
+          "intrastate_only": true,
+          "interstate_regulator": "FMCSA"
+        },
+        "clocks": {
+          "generatedAt": "2026-09-24T14:45:43Z",
+          "snapshotAsOf": "2026-09-24",
+          "retrievedAt": "2026-09-24T14:37:20Z",
+          "sourceAsOf": "2026-06-16",
+          "do_not_use_retrieval_as_authority_effective_date": true,
+          "dpu_list": {
+            "sourceAsOf": "2026-06-16",
+            "pageDatePublished": "2024-08-21",
+            "pageLastUpdated": "2026-06-16",
+            "csvHttpLastModified": "2026-06-16T16:19:55Z",
+            "csvFileLabel": "DPU Moving Company Tariff February 2026 (1).csv",
+            "retrievedAt": "2026-09-24T14:37:20Z",
+            "note": "The page states it is updated as of the LAST UPDATED date printed at its foot (June 16, 2026). The CSV file name says February 2026; that label is recorded verbatim and not used as a clock."
+          },
+          "tariffs": {
+            "effectiveDates": "NOT_ACQUIRED_AT_LIST_GRAIN",
+            "note": "The list links each carrier's filed tariff but prints no effective date. Individual tariff documents were not parsed; link labels are not effective dates."
+          }
+        },
+        "current_hhg_roster": {
+          "coverage": "ACQUIRED_OFFICIAL_LIST_SNAPSHOT",
+          "MA_DPU_HHG_ROSTER_STATUS": "OFFICIAL_CSV_SNAPSHOT",
+          "MA_DPU_HHG_LISTING_ROWS": 309,
+          "MA_DPU_HHG_DISTINCT_CERTIFICATES": 308,
+          "MA_DPU_HHG_ROWS_MISSING_CERTIFICATE": 1,
+          "MA_DPU_HHG_DUPLICATE_CERTIFICATES": 0,
+          "MA_DPU_HHG_ROWS_WITH_DBA": 52,
+          "MA_DPU_HHG_MA_BUSINESS_ADDRESS_ROWS": 270,
+          "MA_DPU_HHG_OUT_OF_STATE_BUSINESS_ADDRESS_ROWS": 39,
+          "MA_DPU_HHG_BOSTON_CITY_ROWS": 24,
+          "MA_DPU_HHG_EXACT_USDOT_JOINS": 0,
+          "MA_DPU_HHG_EXACT_MC_JOINS": 0,
+          "status_semantics": "LISTED_ON_DPU_REGULATED_HHG_MOVER_LIST",
+          "status_note": "DPU describes this as the list of companies its Transportation Oversight Division regulates to move household goods within Massachusetts. It prints no Active/Inactive column. Listing is not a separate enforcement finding and not FMCSA interstate authority.",
+          "address_note": "City/Town and State are the business address DPU prints. An out-of-state address does not mean interstate authority, and a city is not a service area."
+        },
+        "tariff": {
+          "model": "CARRIER_FILED_TARIFFS",
+          "MA_DPU_TARIFF_POSTED_ROWS": 300,
+          "MA_DPU_TARIFF_PENDING_ROWS": 9,
+          "MA_DPU_DISTINCT_TARIFF_DOCUMENTS": 299,
+          "MA_DPU_ROWS_SHARING_A_TARIFF_DOCUMENT": 2,
+          "filed_rate_rule": "Moving companies must file their rates with the DPU and may not charge more or less than the rates on file.",
+          "filed_rate_rule_source": "https://www.mass.gov/guides/moving-within-massachusetts",
+          "not_a_quote": true,
+          "not_a_statewide_maximum_rate_tariff": true,
+          "not_interstate": true,
+          "rate_sheets_parsed": false
+        },
+        "complaints": {
+          "coverage": "NOT_ACQUIRED",
+          "intake": "KNOWN",
+          "disposition_dataset": "REQUEST_ONLY",
+          "public_complaint_page_status": "HTTP 404 at retrieval (https://www.mass.gov/how-to/find-complaints-on-bus-moving-and-tow-companies)",
+          "count": null
+        },
+        "identity": {
+          "preferred": "Massachusetts DPU certificate number printed on the regulated movers list",
+          "usdot_on_source": false,
+          "mc_on_source": false,
+          "name_only_join": "UNSAFE",
+          "dpu_certificate_is_not_fmcsa": true
+        },
+        "expansion_ledger": {
+          "GRAPH_WRITES": 0,
+          "NET_NEW_PUBLIC_PROFILES": 0,
+          "EXACT_USDOT_JOINS": 0,
+          "EXACT_MC_JOINS": 0,
+          "PROFILE_ATTACHMENTS": 0
+        },
+        "source_csv_sha256": "32892fc01fbce6b3ace1def4464b55a7760f4273a5dc48abf1f95ab77d5a70a7",
+        "fingerprint": "4d716b593ec05ba56cdf69c87a33d307aa941ead0bf3967074b8dacc1a7d92ff"
       }
     },
     "lib/new-york-intelligence/accepted-snapshot.json": {
@@ -5939,6 +6087,13 @@
       "snapshotAsOf": "2026-09-12"
     },
     {
+      "path": "lib/massachusetts-intelligence/accepted-snapshot.json",
+      "sha256": "81cc58ff67a4bee9d4cdeb94398772750d241cd10ac37003250fb3c5857c0364",
+      "sourceAsOf": "2026-06-16",
+      "retrievedAt": "2026-09-24T14:37:20Z",
+      "snapshotAsOf": "2026-09-24"
+    },
+    {
       "path": "lib/new-york-intelligence/accepted-snapshot.json",
       "sha256": "41385ec9d7b688d164a8f69d5fd7417b4529ab105565aebf46c4c6f627269c70",
       "sourceAsOf": null,
@@ -6966,6 +7121,15 @@
       "roster": "380 distinct MCA numbers / 572 location rows",
       "evidence": "Licensed movers list and Maximum Rate Tariff No. 7; not FMCSA interstate authority",
       "sourceClock": "Retrieved 2026-09-24T02:31:14Z; sourceAsOf not printed on the list"
+    },
+    {
+      "state": "Massachusetts",
+      "href": "/massachusetts",
+      "regulator": "Massachusetts DPU",
+      "authority": "Household-goods certificate (DPU certificate number)",
+      "roster": "308 distinct certificate numbers / 309 company rows",
+      "evidence": "Regulated movers list with carrier-filed tariffs; filed rates are not quotes and not FMCSA interstate authority",
+      "sourceClock": "List updated 2026-06-16; retrieved 2026-09-24T14:37:20Z"
     }
   ],
   "consumerRules": {

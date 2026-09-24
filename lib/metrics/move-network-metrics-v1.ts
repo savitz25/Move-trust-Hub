@@ -194,6 +194,15 @@ export type MoveNetworkMetricsV1 = {
     exactUsdotJoins: 0;
     sourceAsOf: null;
   };
+  massachusetts: {
+    listingRows: number;
+    distinctCertificates: number;
+    tariffPostedRows: number;
+    tariffPendingRows: number;
+    exactUsdotJoins: 0;
+    exactMcJoins: 0;
+    sourceAsOf: string;
+  };
   network: {
     publishedStateIntelligencePages: number;
     publishedStateIntelligencePaths: string[];
