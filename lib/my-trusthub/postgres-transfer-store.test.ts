@@ -4,14 +4,15 @@ import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { PostgresTransferStore, validTransferRecord, type SourceConnection } from './postgres-transfer-store';
 import { createIsolatedMoveRuntime, isolatedConfig, PARENT_FORM_PATH, type IsolatedMovePorts } from './isolated-runtime';
-import { TRANSFER_VERSION, manifestDigest, type GuestStageInput } from './vendor/v2-3-profile-transfer';
+import { TRANSFER_VERSION_V3, manifestDigest, type GuestStageInput } from './vendor/v2-3-profile-transfer';
 import type { TransferRecord } from './profile-save-adapter';
 import { handleSourceCallback, SOURCE_CALLBACK_PATH } from './source-callback-http';
 const ref=(c:string)=>c.repeat(43), hash=(s:string)=>createHash('sha256').update(s).digest('hex');
-const manifest:GuestStageInput={version:TRANSFER_VERSION,sourceHub:'move',audience:'ask',selected:[{
+const manifest:GuestStageInput={version:TRANSFER_VERSION_V3,sourceHub:'move',audience:'ask',selected:[{
   localItemId:'hindman-isaacs-moving-storage-inc',revision:'a'.repeat(64),digest:'a'.repeat(64),
   profile:{hub:'move',nativeId:'usdot-1002530',profileClass:'mover'}}],returnTask:{kind:'profile',hub:'move',
-  canonicalSlug:'hindman-isaacs-moving-storage-inc',profile:{hub:'move',nativeId:'usdot-1002530',profileClass:'mover'}}};
+  canonicalSlug:'hindman-isaacs-moving-storage-inc',returnPath:'/companies/hindman-isaacs-moving-storage-inc',
+  profile:{hub:'move',nativeId:'usdot-1002530',profileClass:'mover'}}};
 const record=():TransferRecord=>({browserHash:hash(ref('b')),manifest,parentStage:{transferRef:ref('t'),manifestDigest:manifestDigest(manifest),expiresAt:500000},
   continuationRef:ref('c'),requestPrefix:ref('r'),expiresAt:500000});
 function sqlFixture(){

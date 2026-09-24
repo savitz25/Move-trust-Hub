@@ -51,6 +51,8 @@ function fixture() {
 }
 test('exact native identity and published profile; slug is not the binding',async()=>{
   const f=fixture(),r=await f.start();const record=[...f.records.values()][0]!;
+  assert.equal(record.manifest.version,'v2-3/selected-profiles/3');
+  assert.equal(record.manifest.returnTask.returnPath,'/companies/'+slug);
   assert.equal(record.manifest.selected[0]!.profile.nativeId,'usdot-1002530');
   assert.equal(record.manifest.selected[0]!.localItemId,slug);
   assert.equal(record.manifest.selected[0]!.profile.profileClass,'mover');
@@ -166,8 +168,8 @@ test('parent facade uses frozen route/envelope, no raw principal or URL payload'
   assert.equal(blocked,0);
 });
 test('return is exact server profile and rejects traversal/external/encoded paths',()=>{
-  const task={kind:'profile' as const,hub:'move' as const,canonicalSlug:slug,profile:{hub:'move' as const,nativeId:'usdot-1002530',profileClass:'mover'}};
-  const registry={environment:'isolated' as const,isolatedBackendVerified:true,origins:{move:browser.origin,insurance:'https://insurance.test',lender:'https://lender.test'}};
+  const task={kind:'profile' as const,hub:'move' as const,canonicalSlug:slug,returnPath:'/companies/'+slug,profile:{hub:'move' as const,nativeId:'usdot-1002530',profileClass:'mover'}};
+  const registry={environment:'isolated' as const,isolatedBackendVerified:true,origins:{move:browser.origin,insurance:'https://insurance.test',lender:'https://lender.test',contractor:'https://contractor.test',senior:'https://senior.test',investor:'https://investor.test'}};
   assert.equal(validateProfileReturn('/companies/'+slug,task,registry),browser.origin+'/companies/'+slug);
   for(const value of ['//evil.test','https://evil.test','/companies/../my','/companies/%2e%2e/my','/companies/%252e%252e/my','/companies/\\evil','/companies/other','/companies/'+slug+'?saved=1'])
     assert.equal(validateProfileReturn(value,task,registry),null);

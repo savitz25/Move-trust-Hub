@@ -7,7 +7,7 @@ import { isAnonymousPublicProfileAllowed } from '@/lib/provider/publication';
 import type { PublicationState } from '@/lib/provider/types';
 import { isSelection, projection } from './selection';
 import { profileCapability, type TrustedProfile, type SaveCapability } from './vendor/v2-3-profile-save';
-import { TRANSFER_VERSION, STAGING_TTL_MS, isGuestStageInput, manifestDigest, itemKey, validateProfileReturn,
+import { TRANSFER_VERSION_V3, STAGING_TTL_MS, isGuestStageInput, manifestDigest, itemKey, validateProfileReturn,
   type GuestStageInput, type GuestStageRef, type ItemReceipt, type CommitInput, type TrustedOriginRegistry } from './vendor/v2-3-profile-transfer';
 import type { Operation, RequestFor, ResponseFor } from './vendor/interface';
 
@@ -95,8 +95,10 @@ export class MoveProfileSaveAdapter {
         selected.push({localItemId:row.companySlug,revision:row.revision,digest:row.digest,
           profile:{hub:'move',nativeId:trusted.nativeId,profileClass:trusted.profileClass}});
       }
-      const manifest:GuestStageInput={version:TRANSFER_VERSION,sourceHub:'move',audience:'ask',selected,
-        returnTask:{kind:'profile',hub:'move',canonicalSlug:selection[0]!.companySlug,profile:selected[0]!.profile}};
+      const canonicalSlug=selection[0]!.companySlug;
+      const returnPath='/companies/'+canonicalSlug;
+      const manifest:GuestStageInput={version:TRANSFER_VERSION_V3,sourceHub:'move',audience:'ask',selected,
+        returnTask:{kind:'profile',hub:'move',canonicalSlug,profile:selected[0]!.profile,returnPath}};
       if(!isGuestStageInput(manifest))return failure('invalid');
       // Require the server-bound route; browser input cannot choose a destination.
       const path=d.config.parentFormPath;
@@ -157,10 +159,10 @@ export class MoveProfileSaveAdapter {
         projectFailed ||= verified.result.project.outcome==='failed';
       }
       const registry:TrustedOriginRegistry={environment:'isolated',isolatedBackendVerified:true,
-        origins:{move:d.config.moveOrigin,insurance:'https://insurance.test',lender:'https://lender.test'}};
-      const path='/companies/'+record.manifest.returnTask.canonicalSlug;
-      if(!validateProfileReturn(path,record.manifest.returnTask,registry))return failure('invalid');
-      return {state:'parent_saved',projectFailed,returnPath:path,localCopy:'keep'};
+        origins:{move:d.config.moveOrigin,insurance:'https://insurance.test',lender:'https://lender.test',contractor:'https://contractor.test',senior:'https://senior.test',investor:'https://investor.test'}};
+      const returnPath=record.manifest.returnTask.returnPath;
+      if(returnPath!=='/companies/'+record.manifest.returnTask.canonicalSlug || !validateProfileReturn(returnPath,record.manifest.returnTask,registry))return failure('invalid');
+      return {state:'parent_saved',projectFailed,returnPath,localCopy:'keep'};
     });}catch{return failure('unavailable');}
   }
 }

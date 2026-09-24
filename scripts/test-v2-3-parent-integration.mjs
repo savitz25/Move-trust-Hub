@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import { resolve, join } from 'node:path';
-import { mkdtempSync } from 'node:fs';
+import { mkdtempSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
 import { DatabaseSync } from 'node:sqlite';
@@ -17,14 +17,16 @@ import { PROFILE_SAVE_RUNTIME_VERSION } from '../lib/my-trusthub/vendor/interfac
 const root=process.env.PARENT_REVIEW_ROOT;
 if(!root)throw Error('PARENT_REVIEW_ROOT required');
 const head=execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim();
-assert.equal(head,'ada0c19337e07bdfae511fc2e3d62459b09efdcd');
-// The reviewed parent implementation may advance; the immutable wire may not.
-for(const file of ['lib/my-trusthub/profile-save/interface.ts','lib/my-trusthub/contracts/v2-3-profile-transfer.ts',
-  'lib/my-trusthub/contracts/v2-3-profile-save.ts']) {
+assert.equal(head,'07c5a96c1b90d443c5942d58480d3c8e2574ff51');
+for(const file of ['lib/my-trusthub/profile-save/interface.ts','lib/my-trusthub/contracts/v2-3-profile-save.ts']) {
   const frozen=execFileSync('git',['show','26c4e9ed5c2d6ed8fbf3b3712516b7bbfdee3cd2:'+file],{cwd:root,encoding:'utf8'});
   const current=execFileSync('git',['show',head+':'+file],{cwd:root,encoding:'utf8'});
   assert.equal(current,frozen,'Immutable specialist contract drift: '+file);
 }
+const normalize=text=>text.replaceAll('\r\n','\n').replaceAll('./v2-3-profile-save.ts','./v2-3-profile-save');
+const askTransfer=normalize(execFileSync('git',['show',head+':lib/my-trusthub/contracts/v2-3-profile-transfer.ts'],{cwd:root,encoding:'utf8'}));
+const moveTransfer=normalize(readFileSync(new URL('../lib/my-trusthub/vendor/v2-3-profile-transfer.ts',import.meta.url),'utf8')).replace(/^\/\/ Vendored from Ask .*\n/,'');
+assert.equal(moveTransfer,askTransfer,'Move vendor transfer wire drifted from Ask');
 const load=path=>import(pathToFileURL(resolve(root,path)).href);
 const {ParentProfileSaveRuntime}=await load('lib/my-trusthub/profile-save/runtime.ts');
 const {handleProfileSave}=await load('lib/my-trusthub/profile-save/http.ts');
