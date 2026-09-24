@@ -116,6 +116,32 @@ begin
     raise exception 'Schema-scoped default ACL grants an unintended role';
   end if;
 end $$;
+do $$
+declare mem record;
+begin
+  if session_user <> 'postgres' or current_user <> 'postgres' then
+    raise exception 'Unexpected connector role';
+  end if;
+
+  select m.admin_option, m.inherit_option, m.set_option
+    into strict mem
+  from pg_auth_members m
+  join pg_roles member_role on member_role.oid = m.member
+  join pg_roles granted_role on granted_role.oid = m.roleid
+  where member_role.rolname = current_user
+    and granted_role.rolname = 'mth_move_profile_transfer';
+
+  if mem.admin_option is not true
+     or mem.inherit_option is not false
+     or mem.set_option is not false then
+    raise exception 'Unexpected membership options before test role switch';
+  end if;
+end $$;
+
+grant mth_move_profile_transfer
+  to current_user
+  with inherit false, set true;
+
 set local role mth_move_profile_transfer;
 insert into mth_profile_transfer.stages(ticket_hash,browser_hash,continuation_hash,record,expires_at,receipt_retry_until)
 values(repeat('a',64),repeat('b',64),repeat('c',64),jsonb_build_object('browserHash',repeat('b',64),

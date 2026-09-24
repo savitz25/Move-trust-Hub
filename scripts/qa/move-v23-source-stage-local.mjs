@@ -60,6 +60,9 @@ console.log('PASS real migration without approval fails closed and leaves no obj
 const approved = await emptyDatabase();
 await approved.exec(`select set_config('mth.v23_isolated','approved',false)`);
 await approved.exec(text.up);
+// Disposable mirror of the hosted PostgreSQL 17 creator membership.
+// The SQL test requires this baseline and rolls back only its own SET TRUE change.
+await approved.exec(`grant mth_move_profile_transfer to postgres with admin true, inherit false, set false`);
 await approved.exec(text.test);
 const triggers = await approved.query(`select count(*)::int as n from pg_event_trigger where evtname like 'mth_profile_transfer%'`);
 if (triggers.rows[0].n !== 0) throw new Error('Event trigger exists after apply');
