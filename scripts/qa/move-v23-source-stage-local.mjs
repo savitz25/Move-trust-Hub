@@ -65,9 +65,5 @@ const triggers = await approved.query(`select count(*)::int as n from pg_event_t
 if (triggers.rows[0].n !== 0) throw new Error('Event trigger exists after apply');
 await approved.exec(text.down);
 await assertAbsent(approved);
-await approved.exec(`create function public.restore_probe() returns int language sql as 'select 1'`);
-const restored = await approved.query(`select has_function_privilege('public', 'public.restore_probe()', 'EXECUTE') as ok`);
-await approved.exec(`drop function public.restore_probe()`);
-if (restored.rows[0].ok !== true) throw new Error('Rollback did not restore the built-in function default');
 await approved.close();
 console.log('PASS approved migration, prepared SQL test, and rollback');

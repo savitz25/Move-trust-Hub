@@ -68,9 +68,32 @@ begin
      or has_table_privilege('mth_move_profile_transfer', 'mth_profile_transfer.assertion_nonces', 'UPDATE') then
     raise exception 'Capability table privilege mismatch';
   end if;
-  if not has_function_privilege('mth_move_profile_transfer', 'mth_profile_transfer.guard_stage_update()', 'EXECUTE')
-     or not has_function_privilege('mth_move_profile_transfer', 'mth_profile_transfer.claim_assertion_nonce(text,timestamptz)', 'EXECUTE')
-     or not has_function_privilege('mth_move_profile_transfer', 'mth_profile_transfer.cleanup_assertion_nonces(integer)', 'EXECUTE') then
+  if (select count(*) from pg_proc p join pg_namespace n on n.oid=p.pronamespace
+      where n.nspname='mth_profile_transfer' and p.prokind in ('f','p')) <> 3 then
+    raise exception 'Unexpected My TrustHub routine count';
+  end if;
+  if exists (
+    select 1
+    from pg_proc p
+    join pg_namespace n on n.oid=p.pronamespace
+    cross join (values ('public'),('anon'),('authenticated'),('service_role')) as roles(role_name)
+    where n.nspname='mth_profile_transfer' and p.prokind in ('f','p')
+      and has_function_privilege(roles.role_name, p.oid, 'EXECUTE')
+  ) then
+    raise exception 'Routine execute leak';
+  end if;
+  if exists (
+    select 1
+    from pg_proc p
+    join pg_namespace n on n.oid=p.pronamespace
+    where n.nspname='mth_profile_transfer' and p.prokind in ('f','p')
+      and (
+        (p.proname in ('guard_stage_update','claim_assertion_nonce','cleanup_assertion_nonces')
+          and not has_function_privilege('mth_move_profile_transfer', p.oid, 'EXECUTE'))
+        or (p.proname not in ('guard_stage_update','claim_assertion_nonce','cleanup_assertion_nonces')
+          and has_function_privilege('mth_move_profile_transfer', p.oid, 'EXECUTE'))
+      )
+  ) then
     raise exception 'Capability function privilege mismatch';
   end if;
   if exists(select 1 from pg_roles where rolname='mth_move_profile_transfer' and (rolcanlogin or rolbypassrls or rolsuper or rolinherit or rolcreatedb or rolcreaterole or rolreplication)) then
@@ -90,22 +113,8 @@ begin
     where n.nspname = 'mth_profile_transfer'
       and (x.grantee = 0 or r.rolname in ('anon','authenticated','service_role'))
   ) then
-    raise exception 'Default privilege leak';
+    raise exception 'Schema-scoped default ACL grants an unintended role';
   end if;
-  create table mth_profile_transfer.privilege_probe(id int);
-  create function mth_profile_transfer.privilege_probe() returns int language sql as 'select 1';
-  if has_table_privilege('public', 'mth_profile_transfer.privilege_probe', 'SELECT')
-     or has_table_privilege('anon', 'mth_profile_transfer.privilege_probe', 'SELECT')
-     or has_table_privilege('authenticated', 'mth_profile_transfer.privilege_probe', 'SELECT')
-     or has_table_privilege('service_role', 'mth_profile_transfer.privilege_probe', 'SELECT')
-     or has_function_privilege('public', 'mth_profile_transfer.privilege_probe()', 'EXECUTE')
-     or has_function_privilege('anon', 'mth_profile_transfer.privilege_probe()', 'EXECUTE')
-     or has_function_privilege('authenticated', 'mth_profile_transfer.privilege_probe()', 'EXECUTE')
-     or has_function_privilege('service_role', 'mth_profile_transfer.privilege_probe()', 'EXECUTE') then
-    raise exception 'Future object privilege leak';
-  end if;
-  drop function mth_profile_transfer.privilege_probe();
-  drop table mth_profile_transfer.privilege_probe;
 end $$;
 set local role mth_move_profile_transfer;
 insert into mth_profile_transfer.stages(ticket_hash,browser_hash,continuation_hash,record,expires_at,receipt_retry_until)

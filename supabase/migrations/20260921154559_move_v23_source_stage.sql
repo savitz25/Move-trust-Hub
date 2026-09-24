@@ -11,13 +11,15 @@ create schema mth_profile_transfer;
 -- public is the PostgreSQL PUBLIC pseudo-role, not schema public.
 -- These revokes stay inside mth_profile_transfer and do not alter schema public.
 revoke all on schema mth_profile_transfer from public, anon, authenticated, service_role;
--- Future objects created here by the migration owner keep explicit grants only.
+-- Schema-scoped default revokes do not remove PostgreSQL's built-in global
+-- PUBLIC EXECUTE default for functions. They only avoid extra schema-local grants.
+-- Every function created below is revoked explicitly in this same transaction.
+-- Any future function added to mth_profile_transfer must receive that same
+-- explicit revoke from PUBLIC, anon, authenticated, and service_role before
+-- any capability grant. Do not rely on an event trigger or a database-wide default.
 alter default privileges in schema mth_profile_transfer revoke all on tables from public, anon, authenticated, service_role;
 alter default privileges in schema mth_profile_transfer revoke all on sequences from public, anon, authenticated, service_role;
 alter default privileges in schema mth_profile_transfer revoke all on functions from public, anon, authenticated, service_role;
--- A schema-scoped revoke cannot remove PostgreSQL's built-in PUBLIC EXECUTE
--- default. This owner-level default does not change existing functions.
-alter default privileges revoke execute on functions from public;
 create role mth_move_profile_transfer nologin noinherit nosuperuser nocreatedb nocreaterole noreplication nobypassrls;
 create table mth_profile_transfer.stages (
   ticket_hash text primary key check(ticket_hash ~ '^[a-f0-9]{64}$'),

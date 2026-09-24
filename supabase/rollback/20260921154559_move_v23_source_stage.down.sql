@@ -11,8 +11,8 @@ do $$ begin
     raise exception 'Live assertion nonces remain; refuse destructive rollback';
   end if;
 end $$;
--- Schema-scoped default ACLs depend on the schema. Restore built-in defaults
--- before DROP SCHEMA so this script does not need CASCADE.
+-- Clear schema-scoped default ACL rows before DROP SCHEMA.
+-- This does not change PostgreSQL's built-in function default and does not use CASCADE.
 alter default privileges in schema mth_profile_transfer grant execute on functions to public;
 alter default privileges in schema mth_profile_transfer revoke all on tables from public, anon, authenticated, service_role;
 alter default privileges in schema mth_profile_transfer revoke all on sequences from public, anon, authenticated, service_role;
@@ -25,7 +25,4 @@ drop table mth_profile_transfer.quota;
 drop function mth_profile_transfer.guard_stage_update();
 drop schema mth_profile_transfer; -- no CASCADE: unexpected dependencies must block
 drop role mth_move_profile_transfer; -- active grants/memberships must be reviewed
--- Restore the migration owner's built-in function default. This does not grant
--- execute on functions that already exist.
-alter default privileges grant execute on functions to public;
 commit;
