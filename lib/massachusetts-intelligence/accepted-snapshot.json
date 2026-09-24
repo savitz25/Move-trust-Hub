@@ -1,0 +1,107 @@
+{
+  "version": "move-ma-state-intel-v1",
+  "ticket": "MA-MOVE-001",
+  "as_of": "2026-09-24",
+  "generated_at": "2026-09-24T14:45:43Z",
+  "snapshotAsOf": "2026-09-24",
+  "retrievedAt": "2026-09-24T14:37:20Z",
+  "no_trust_score": true,
+  "no_paid_ranking": true,
+  "no_massachusetts_local_routes": true,
+  "no_boston_intelligence_page": true,
+  "publication": {
+    "canonical": "https://www.movetrusthub.com/massachusetts",
+    "indexable": true,
+    "robots": "index,follow",
+    "route": "/massachusetts",
+    "h1": "Massachusetts Moving & Household Goods Intelligence"
+  },
+  "regulator": {
+    "agency": "Massachusetts Department of Public Utilities",
+    "division": "Transportation Oversight Division",
+    "short": "Massachusetts DPU",
+    "credential_term": "DPU certificate number on the list of moving companies regulated by the Transportation Oversight Division",
+    "list_url": "https://www.mass.gov/info-details/moving-companies-regulated-by-the-department-of-public-utilities-dpu",
+    "csv_url": "https://www.mass.gov/files/csv/2026-06/DPU%20Moving%20Company%20Tariff%20February%202026%20%281%29.csv",
+    "guide_url": "https://www.mass.gov/guides/moving-within-massachusetts",
+    "complaint_form_url": "https://www.mass.gov/forms/file-a-complaint-against-a-bus-moving-or-towing-company",
+    "division_url": "https://www.mass.gov/orgs/transportation-oversight-division",
+    "complaint_email": "DPU.Transportation@mass.gov",
+    "complaint_phone": "(617) 305-3559",
+    "intrastate_only": true,
+    "interstate_regulator": "FMCSA"
+  },
+  "clocks": {
+    "generatedAt": "2026-09-24T14:45:43Z",
+    "snapshotAsOf": "2026-09-24",
+    "retrievedAt": "2026-09-24T14:37:20Z",
+    "sourceAsOf": "2026-06-16",
+    "do_not_use_retrieval_as_authority_effective_date": true,
+    "dpu_list": {
+      "sourceAsOf": "2026-06-16",
+      "pageDatePublished": "2024-08-21",
+      "pageLastUpdated": "2026-06-16",
+      "csvHttpLastModified": "2026-06-16T16:19:55Z",
+      "csvFileLabel": "DPU Moving Company Tariff February 2026 (1).csv",
+      "retrievedAt": "2026-09-24T14:37:20Z",
+      "note": "The page states it is updated as of the LAST UPDATED date printed at its foot (June 16, 2026). The CSV file name says February 2026; that label is recorded verbatim and not used as a clock."
+    },
+    "tariffs": {
+      "effectiveDates": "NOT_ACQUIRED_AT_LIST_GRAIN",
+      "note": "The list links each carrier's filed tariff but prints no effective date. Individual tariff documents were not parsed; link labels are not effective dates."
+    }
+  },
+  "current_hhg_roster": {
+    "coverage": "ACQUIRED_OFFICIAL_LIST_SNAPSHOT",
+    "MA_DPU_HHG_ROSTER_STATUS": "OFFICIAL_CSV_SNAPSHOT",
+    "MA_DPU_HHG_LISTING_ROWS": 309,
+    "MA_DPU_HHG_DISTINCT_CERTIFICATES": 308,
+    "MA_DPU_HHG_ROWS_MISSING_CERTIFICATE": 1,
+    "MA_DPU_HHG_DUPLICATE_CERTIFICATES": 0,
+    "MA_DPU_HHG_ROWS_WITH_DBA": 52,
+    "MA_DPU_HHG_MA_BUSINESS_ADDRESS_ROWS": 270,
+    "MA_DPU_HHG_OUT_OF_STATE_BUSINESS_ADDRESS_ROWS": 39,
+    "MA_DPU_HHG_BOSTON_CITY_ROWS": 24,
+    "MA_DPU_HHG_EXACT_USDOT_JOINS": 0,
+    "MA_DPU_HHG_EXACT_MC_JOINS": 0,
+    "status_semantics": "LISTED_ON_DPU_REGULATED_HHG_MOVER_LIST",
+    "status_note": "DPU describes this as the list of companies its Transportation Oversight Division regulates to move household goods within Massachusetts. It prints no Active/Inactive column. Listing is not a separate enforcement finding and not FMCSA interstate authority.",
+    "address_note": "City/Town and State are the business address DPU prints. An out-of-state address does not mean interstate authority, and a city is not a service area."
+  },
+  "tariff": {
+    "model": "CARRIER_FILED_TARIFFS",
+    "MA_DPU_TARIFF_POSTED_ROWS": 300,
+    "MA_DPU_TARIFF_PENDING_ROWS": 9,
+    "MA_DPU_DISTINCT_TARIFF_DOCUMENTS": 299,
+    "MA_DPU_ROWS_SHARING_A_TARIFF_DOCUMENT": 2,
+    "filed_rate_rule": "Moving companies must file their rates with the DPU and may not charge more or less than the rates on file.",
+    "filed_rate_rule_source": "https://www.mass.gov/guides/moving-within-massachusetts",
+    "not_a_quote": true,
+    "not_a_statewide_maximum_rate_tariff": true,
+    "not_interstate": true,
+    "rate_sheets_parsed": false
+  },
+  "complaints": {
+    "coverage": "NOT_ACQUIRED",
+    "intake": "KNOWN",
+    "disposition_dataset": "REQUEST_ONLY",
+    "public_complaint_page_status": "HTTP 404 at retrieval (https://www.mass.gov/how-to/find-complaints-on-bus-moving-and-tow-companies)",
+    "count": null
+  },
+  "identity": {
+    "preferred": "Massachusetts DPU certificate number printed on the regulated movers list",
+    "usdot_on_source": false,
+    "mc_on_source": false,
+    "name_only_join": "UNSAFE",
+    "dpu_certificate_is_not_fmcsa": true
+  },
+  "expansion_ledger": {
+    "GRAPH_WRITES": 0,
+    "NET_NEW_PUBLIC_PROFILES": 0,
+    "EXACT_USDOT_JOINS": 0,
+    "EXACT_MC_JOINS": 0,
+    "PROFILE_ATTACHMENTS": 0
+  },
+  "source_csv_sha256": "32892fc01fbce6b3ace1def4464b55a7760f4273a5dc48abf1f95ab77d5a70a7",
+  "fingerprint": "4d716b593ec05ba56cdf69c87a33d307aa941ead0bf3967074b8dacc1a7d92ff"
+}

@@ -5,6 +5,8 @@ import { lookupPaPucIdentity } from '../pennsylvania-intelligence/lookup';
 import { PENNSYLVANIA_MOVE_SNAPSHOT } from '../pennsylvania-intelligence/snapshot';
 import { lookupGeorgiaMca } from '../georgia-intelligence/lookup';
 import { GEORGIA_MOVE_SNAPSHOT } from '../georgia-intelligence/snapshot';
+import { lookupMassachusettsDpuCertificate, massachusettsDpuRowLabel, searchMassachusettsDpuName } from '../massachusetts-intelligence/lookup';
+import { MASSACHUSETTS_MOVE_SNAPSHOT } from '../massachusetts-intelligence/snapshot';
 import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
 import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
@@ -12,6 +14,7 @@ import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type 
 const STATE_NAMES: Record<string, string> = {
   florida: 'FL',
   georgia: 'GA',
+  massachusetts: 'MA',
   'new jersey': 'NJ',
   california: 'CA',
   texas: 'TX',
@@ -33,6 +36,7 @@ const STATE_NAMES: Record<string, string> = {
   co: 'CO',
   va: 'VA',
   il: 'IL',
+  ma: 'MA',
 };
 
 function detectState(q: string): string | undefined {
@@ -157,6 +161,49 @@ function isOhIntrastateAuthorityAsk(q: string): boolean {
     /\bohio movers?\b|\bmovers in ohio\b|\bmoving companies\b/i.test(q) ||
     (/\bmovers?\b/i.test(q) && (mentionsOhio(q) || mentionsOhioCity(q)))
   );
+}
+
+const FEDERAL_ID = /\b(?:usdot|dot|mc)\s*#?-?\s*\d{3,8}\b/i;
+const MA_ALTERNATIVES = ['Open Massachusetts household-goods research.', 'Show current interstate household-goods carriers headquartered in Massachusetts.'];
+
+function mentionsMassachusetts(q: string): boolean {
+  return /\bmassachusetts\b|\bin ma\b|\bma dpu\b|\bmass\.?\s+dpu\b/i.test(q);
+}
+
+function mentionsBoston(q: string): boolean {
+  return /\bboston\b/i.test(q);
+}
+
+/** Another state named outright takes the query out of the Massachusetts layer. */
+function mentionsOtherState(q: string): boolean {
+  const other = detectState(q.replace(/\bmassachusetts\b|\bin ma\b|\bboston\b/gi, ' '));
+  return Boolean(other && other !== 'MA');
+}
+
+function isRouteOrInterstate(q: string): boolean {
+  return /\binterstate\b|\blong[- ]distance\b|\bcross[- ]country\b|\bout[- ]of[- ]state\b|\bfrom\b.+\bto\b/i.test(q);
+}
+
+/** Massachusetts DPU context: the state, or DPU with no other state named. */
+function maDpuContext(q: string): boolean {
+  return (mentionsMassachusetts(q) || /\bdpu\b|\bdepartment of public utilities\b/i.test(q)) && !mentionsOtherState(q);
+}
+
+/** DPU certificates print as 3-6 digits or YYHGnn (e.g. 24HG59). Never a USDOT/MC. */
+function parseMaDpuCertificate(q: string): string | null {
+  if (FEDERAL_ID.test(q) || !maDpuContext(q)) return null;
+  const hg = q.match(/\b(\d{2}HG\d{2,3}[A-Z]?)\b/i);
+  if (hg) return hg[1]!.toUpperCase();
+  const labeled = q.match(/\b(?:dpu|certificate|cert)\s*(?:no\.?|number|#)?\s*#?\s*(\d{3,6})\b/i);
+  return labeled?.[1] ?? null;
+}
+
+/** Only geography and category words: Boston is a place here, never a company name. */
+function isBostonGeographyOnly(q: string): boolean {
+  if (!mentionsBoston(q) || !/\bmovers?\b|\bmoving compan/i.test(q)) return false;
+  const rest = q.toLowerCase().replace(/[^a-z0-9 ]+/g, ' ')
+    .replace(/\b(boston|ma|massachusetts|movers?|moving|compan(y|ies)|in|near|around|local|find|the|a|licensed|best|top|good|reliable|cheap)\b/g, ' ').trim();
+  return rest === '';
 }
 
 function mentionsPhiladelphiaOrPittsburgh(q: string): boolean {
@@ -392,6 +439,77 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
       ['Open Georgia household-goods research.', 'Find USDOT 3244649.'],
     );
     push('Coverage', 'PARTIAL — Georgia intrastate list is not interstate authority');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  const maCertificate = parseMaDpuCertificate(q);
+  if (maCertificate) {
+    const found = lookupMassachusettsDpuCertificate(maCertificate);
+    const hit = found.hits[0];
+    const query = fail(
+      hit
+        ? `${massachusettsDpuRowLabel(hit)}. ${found.note} A DPU certificate is not a USDOT or MC number, and a filed tariff is not a quote.`
+        : `DPU certificate ${found.query}: ${found.note}`,
+      MA_ALTERNATIVES,
+    );
+    push('Massachusetts DPU certificate', found.query);
+    push('Limitation', 'DPU certificate is not FMCSA interstate authority');
+    return { raw: q, query, interpretation: lines };
+  }
+  if (maDpuContext(q) && !FEDERAL_ID.test(q)) {
+    const roster = MASSACHUSETTS_MOVE_SNAPSHOT.current_hhg_roster;
+    const tariff = MASSACHUSETTS_MOVE_SNAPSHOT.tariff;
+    if (/\b(complaints?|dispositions?|enforcement|suspensions?|revocations?|penalt)/i.test(q)) {
+      const query = fail(
+        'Massachusetts DPU accepts written complaints about moving companies through its Transportation Oversight Division complaint form. A public statewide complaint-disposition or enforcement dataset was not acquired. That is not zero complaints and not a mover census.',
+        MA_ALTERNATIVES,
+      );
+      query.coverageState = 'NOT_ACQUIRED';
+      push('Coverage', 'DPU complaints — INTAKE_KNOWN / DISPOSITIONS_NOT_ACQUIRED');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (isRanking(q)) {
+      const query = fail(
+        'MoveTrustHub does not rank movers and does not publish a Trust Score. Massachusetts research lists DPU-regulated household-goods movers in source order, not a winner or cheapest ranking. Boston is not a city intelligence page.',
+        MA_ALTERNATIVES,
+      );
+      push('Mode', 'fail_closed');
+      push('Coverage', 'No Massachusetts city intelligence page');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (/\b(tariffs?|rates?|prices?|costs?|how much|quotes?)\b/i.test(q)) {
+      const query = fail(
+        `Each DPU-regulated mover files its own tariff. DPU's guide says movers must file their rates with DPU and may not charge more or less than the rates on file. That is a filed rate, not a quote for your move. The June 16, 2026 list links ${tariff.MA_DPU_TARIFF_POSTED_ROWS} posted tariffs and shows ${tariff.MA_DPU_TARIFF_PENDING_ROWS} as pending. Massachusetts has no statewide maximum-rate tariff on this list, and DPU tariffs do not cover interstate moves.`,
+        MA_ALTERNATIVES,
+      );
+      push('Coverage', 'DPU carrier-filed tariffs — LINKED, NOT PARSED');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (!isRouteOrInterstate(q)) {
+      const named = searchMassachusettsDpuName(q.replace(/\bboston\b/gi, ' '));
+      if (named.hits.length) {
+        const shown = named.hits.slice(0, 5).map(massachusettsDpuRowLabel).join('; ');
+        const query = fail(
+          `${named.hits.length} DPU list row(s) contain "${named.terms.join(' ')}": ${shown}${named.hits.length > 5 ? '; more rows on the official list' : ''}. These are Massachusetts DPU list rows only. They are not linked to any USDOT or MC identity by name; search the USDOT number for interstate authority.`,
+          MA_ALTERNATIVES,
+        );
+        push('Coverage', 'PARTIAL — DPU list name match, not a federal identity');
+        return { raw: q, query, interpretation: lines };
+      }
+      const query = fail(
+        `Massachusetts DPU regulated household-goods movers: ${roster.MA_DPU_HHG_DISTINCT_CERTIFICATES} distinct certificate numbers on ${roster.MA_DPU_HHG_LISTING_ROWS} company rows (list updated June 16, 2026). That is intrastate authority, not FMCSA interstate authority, and DPU prints no USDOT or MC number. Each mover files its own tariff; a tariff is not a quote.${mentionsBoston(q) ? ' Boston is geography only; there is no Boston intelligence page.' : ''}`,
+        MA_ALTERNATIVES,
+      );
+      push('Coverage', 'PARTIAL — Massachusetts intrastate list is not interstate authority');
+      return { raw: q, query, interpretation: lines };
+    }
+  }
+  if (isBostonGeographyOnly(q) && !mentionsOtherState(q) && !isRouteOrInterstate(q)) {
+    const query = fail(
+      `Boston is treated as geography, not a company name, and MoveTrustHub has no Boston intelligence page. Moves within Massachusetts are regulated by the Massachusetts DPU (${MASSACHUSETTS_MOVE_SNAPSHOT.current_hhg_roster.MA_DPU_HHG_DISTINCT_CERTIFICATES} certificate numbers on the June 16, 2026 list). A business address in Boston is not a service area. MoveTrustHub does not rank movers.`,
+      MA_ALTERNATIVES,
+    );
+    push('Geography', 'Boston — no city intelligence page');
     return { raw: q, query, interpretation: lines };
   }
 

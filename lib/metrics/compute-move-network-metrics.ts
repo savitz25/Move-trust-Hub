@@ -62,6 +62,10 @@ export type MoveNetworkMetricsInput = {
   ncHhgDistinctCNumbers: number;
   gaHhgListingRows: number;
   gaHhgDistinctMca: number;
+  maHhgListingRows: number;
+  maHhgDistinctCertificates: number;
+  maTariffPostedRows: number;
+  maTariffPendingRows: number;
   publishedStateIntelligencePaths: string[];
   floridaResearchCountyLandings: number;
   localMoverStateLandings: number;
@@ -135,6 +139,10 @@ export function assertGrainSafety(input: MoveNetworkMetricsInput): void {
   if (!input.publishedStateIntelligencePaths.includes('/georgia')) throw new Error('Georgia state intelligence path missing');
   if (input.gaHhgDistinctMca <= 0) throw new Error('Georgia MCA count missing');
   if (input.gaHhgListingRows < input.gaHhgDistinctMca) throw new Error('Georgia listing rows cannot be fewer than distinct MCA numbers');
+  if (!input.publishedStateIntelligencePaths.includes('/massachusetts')) throw new Error('Massachusetts state intelligence path missing');
+  if (input.maHhgDistinctCertificates <= 0) throw new Error('Massachusetts DPU certificate count missing');
+  if (input.maHhgListingRows < input.maHhgDistinctCertificates) throw new Error('Massachusetts listing rows cannot be fewer than distinct DPU certificates');
+  if (input.maTariffPostedRows + input.maTariffPendingRows !== input.maHhgListingRows) throw new Error('Massachusetts tariff rows must partition the listing rows');
   if (input.paHhgOperatorListRows <= 0) throw new Error('Pennsylvania HHG operator list row count missing');
   if (input.ncHhgDistinctCNumbers <= 0) throw new Error('North Carolina HHG C-number count missing');
   if (input.ncHhgListRows !== input.ncHhgDistinctCNumbers) {
@@ -731,6 +739,28 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       ),
     }),
     metric({
+      key: 'ma_dpu_hhg_certificate_identities',
+      label: 'Massachusetts DPU household-goods certificate identities',
+      value: input.maHhgDistinctCertificates,
+      valueState: 'KNOWN',
+      grain: 'ma_dpu_hhg_certificate_identity',
+      denominator: 'Distinct certificate numbers on the DPU list of regulated household-goods movers',
+      description:
+        'Distinct Massachusetts DPU certificate numbers on the list of moving companies regulated by the Transportation Oversight Division. Not company rows, not FMCSA interstate authority, and not an Active/Inactive status column.',
+      coverage: 'Massachusetts',
+      contributingSourceSystems: ['ma_dpu_regulated_movers_list'],
+      sourceAsOf: '2026-06-16',
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      trace: commonTrace(
+        `Count distinct certificate numbers (${input.maHhgDistinctCertificates}) on ${input.maHhgListingRows} company rows; one row prints no certificate number.`,
+        'Not USDOT or MC. Not a complaint count. Filed tariffs are not quotes. Listing is not a separate enforcement finding.',
+        ['ma_dpu_regulated_movers_list'],
+        'Massachusetts intrastate household-goods certificates',
+        'List page LAST UPDATED June 16, 2026; retrieval is not the effective date',
+      ),
+    }),
+    metric({
       key: 'oh_puco_hhg_certificate_universe',
       label: 'Ohio PUCO household-goods certificate universe',
       value: null,
@@ -844,6 +874,8 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
     coSuspendedHhgListings: input.coSuspendedHhgListings,
     ncHhgDistinctCNumbers: input.ncHhgDistinctCNumbers,
     gaHhgDistinctMca: input.gaHhgDistinctMca,
+    maHhgDistinctCertificates: input.maHhgDistinctCertificates,
+    maTariffPostedRows: input.maTariffPostedRows,
     statePages: input.publishedStateIntelligencePaths,
     flCounties: input.floridaResearchCountyLandings,
     landings: input.localMoverStateLandings,
@@ -948,6 +980,15 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       distinctMca: input.gaHhgDistinctMca,
       exactUsdotJoins: 0,
       sourceAsOf: null,
+    },
+    massachusetts: {
+      listingRows: input.maHhgListingRows,
+      distinctCertificates: input.maHhgDistinctCertificates,
+      tariffPostedRows: input.maTariffPostedRows,
+      tariffPendingRows: input.maTariffPendingRows,
+      exactUsdotJoins: 0,
+      exactMcJoins: 0,
+      sourceAsOf: '2026-06-16',
     },
     network: {
       publishedStateIntelligencePages: input.publishedStateIntelligencePaths.length,

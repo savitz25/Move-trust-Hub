@@ -95,6 +95,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'PUCO household-goods certificates & interstate overlay',
       },
       {
+        label: 'Massachusetts research',
+        href: '/massachusetts',
+        description: 'DPU regulated household-goods movers & filed tariffs',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',
