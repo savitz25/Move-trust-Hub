@@ -10,7 +10,7 @@ import { classifyProvider } from '../lib/provider/classification.ts';
 
 const root=process.env.ASK_HANDOFF_REVIEW_ROOT;
 assert.ok(root,'ASK_HANDOFF_REVIEW_ROOT required');
-assert.equal(execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),'07c5a96c1b90d443c5942d58480d3c8e2574ff51');
+assert.equal(execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),'bce29118ea03f4fbb738d86ac8864a0593e35bdb');
 const load=file=>import(pathToFileURL(resolve(root,file)).href);
 const {buildMoveDeepLink}=await load('lib/orchestration/journey-links.ts');
 const {resolveEntityDestination}=await load('lib/network/entity-destination.ts');
