@@ -3,12 +3,15 @@ import { parseMoveIdentifiers } from './identifier';
 import { lookupOregonCertificate } from '../oregon-intelligence/lookup';
 import { lookupPaPucIdentity } from '../pennsylvania-intelligence/lookup';
 import { PENNSYLVANIA_MOVE_SNAPSHOT } from '../pennsylvania-intelligence/snapshot';
+import { lookupGeorgiaMca } from '../georgia-intelligence/lookup';
+import { GEORGIA_MOVE_SNAPSHOT } from '../georgia-intelligence/snapshot';
 import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
 import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
 
 const STATE_NAMES: Record<string, string> = {
   florida: 'FL',
+  georgia: 'GA',
   'new jersey': 'NJ',
   california: 'CA',
   texas: 'TX',
@@ -34,6 +37,7 @@ const STATE_NAMES: Record<string, string> = {
 
 function detectState(q: string): string | undefined {
   if (/\bnj\b/i.test(q)) return 'NJ';
+  if (/\bgeorgia\b/i.test(q) || /\bin ga\b/i.test(q)) return 'GA';
   if (/\bpennsylvania\b/i.test(q)) return 'PA';
   if (/\bnorth carolina\b/i.test(q) || /\bin nc\b/i.test(q)) return 'NC';
   if (/\bohio\b/i.test(q) || /\bin oh\b/i.test(q) || /\bpuco\b/i.test(q)) return 'OH';
@@ -359,6 +363,35 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     );
     push('Mode', 'fail_closed');
     push('Coverage', 'No Chicago intelligence page');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (/\bgeorgia\b/i.test(q) && /\b(complaints?|disposition|enforcement)\b/i.test(q)) {
+    const query = fail(
+      `Georgia DPS publishes a household-goods complaint form. A public bulk complaint-disposition dataset was not acquired. That is not zero complaints and not a mover census. Tariff No. ${GEORGIA_MOVE_SNAPSHOT.tariff.number} is separate intrastate maximum-rate context.`,
+      ['Open Georgia household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Coverage', 'NOT_ACQUIRED — Georgia complaint dispositions');
+    return { raw: q, query, interpretation: lines };
+  }
+  if (/\bgeorgia\b/i.test(q) && /\b(mca|certificate)\b/i.test(q)) {
+    const labeled = q.match(/\b(?:mca|certificate)\s*#?\s*(\d{3,8})\b/i);
+    const found = lookupGeorgiaMca(labeled?.[1] ?? q);
+    const query = fail(
+      found.hits.length
+        ? `${found.note} ${found.hits.length} listing row(s) for MCA ${found.query}.`
+        : found.note,
+      ['Open Georgia household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Coverage', 'PARTIAL — Georgia MCA is not USDOT');
+    return { raw: q, query, interpretation: lines };
+  }
+  if (/\bgeorgia\b/i.test(q) && /\b(mover|moving compan|household)/i.test(q)) {
+    const query = fail(
+      `Georgia DPS licensed household-goods list: ${GEORGIA_MOVE_SNAPSHOT.current_hhg_roster.GA_DPS_HHG_DISTINCT_MCA} distinct MCA numbers on ${GEORGIA_MOVE_SNAPSHOT.current_hhg_roster.GA_DPS_HHG_LISTING_ROWS} location rows. That is intrastate certificate evidence, not FMCSA interstate authority. Maximum Rate Tariff No. 7 was effective January 13, 2026. Atlanta is not a separate intelligence page.`,
+      ['Open Georgia household-goods research.', 'Find USDOT 3244649.'],
+    );
+    push('Coverage', 'PARTIAL — Georgia intrastate list is not interstate authority');
     return { raw: q, query, interpretation: lines };
   }
 

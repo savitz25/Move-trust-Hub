@@ -1,0 +1,87 @@
+{
+  "version": "move-ga-state-intel-v1",
+  "ticket": "GA-MOVE-001",
+  "as_of": "2026-09-24",
+  "generated_at": "2026-09-24T02:36:09Z",
+  "snapshotAsOf": "2026-09-24",
+  "retrievedAt": "2026-09-24T02:31:14Z",
+  "no_trust_score": true,
+  "no_paid_ranking": true,
+  "no_georgia_local_routes": true,
+  "no_atlanta_intelligence_page": true,
+  "publication": {
+    "canonical": "https://www.movetrusthub.com/georgia",
+    "indexable": true,
+    "robots": "index,follow",
+    "route": "/georgia",
+    "h1": "Georgia Moving & Household Goods Intelligence"
+  },
+  "regulator": {
+    "agency": "Georgia Department of Public Safety",
+    "division": "Commercial Vehicle Enforcement / Regulatory Compliance",
+    "short": "Georgia DPS",
+    "credential_term": "MCA / household-goods certificate number on the licensed movers list",
+    "list_url": "https://regulatorycompliance.gamccd.net/public/",
+    "grid_url": "https://regulatorycompliance.gamccd.net/public/Home/_HHgrid",
+    "guidance_url": "https://www.gamccd.net/HouseholdGoods.aspx",
+    "tariff_url": "https://www.gamccd.net/Documents/Household%20Goods%20MRT%20No.7.pdf",
+    "rules_url": "https://rules.sos.ga.gov/gac/570-38-3",
+    "complaint_form_url": "https://www.gamccd.net/Documents/TR0051.pdf",
+    "intrastate_only": true
+  },
+  "clocks": {
+    "generatedAt": "2026-09-24T02:36:09Z",
+    "snapshotAsOf": "2026-09-24",
+    "retrievedAt": "2026-09-24T02:31:14Z",
+    "sourceAsOf": null,
+    "do_not_use_retrieval_as_authority_effective_date": true,
+    "hhg_roster": {
+      "sourceAsOf": null,
+      "retrievedAt": "2026-09-24T02:31:14Z",
+      "note": "The DPS Movers List does not print a revision date. retrievedAt is not an authority effective date."
+    },
+    "tariff": {
+      "number": 7,
+      "adopted": "2026-01-05",
+      "effective": "2026-01-13",
+      "source": "CVE Regulatory Compliance portal announcement and Household Goods MRT No. 7 PDF"
+    }
+  },
+  "current_hhg_roster": {
+    "coverage": "ACQUIRED_LICENSED_LIST_SNAPSHOT",
+    "GA_DPS_HHG_ROSTER_STATUS": "LICENSED_MOVERS_LIST_SNAPSHOT",
+    "GA_DPS_HHG_RAW_TABLE_ROWS": 605,
+    "GA_DPS_HHG_LISTING_ROWS": 572,
+    "GA_DPS_HHG_DISTINCT_MCA": 380,
+    "GA_DPS_HHG_ROWS_MISSING_MCA": 8,
+    "GA_DPS_HHG_ROWS_WITH_PUBLIC_EMAIL_NOT_REPUBLISHED": 557,
+    "GA_DPS_HHG_EXACT_USDOT_JOINS": 0,
+    "status_semantics": "LISTED_ON_DPS_LICENSED_HHG_ROSTER",
+    "status_note": "The portal labels this the list of household goods movers licensed by DPS. It does not print an Active/Inactive column. Listing is not a separate enforcement finding."
+  },
+  "tariff": {
+    "number": 7,
+    "effective": "2026-01-13",
+    "applies_to": "Intrastate household-goods moves under Georgia DPS jurisdiction",
+    "not_a_price_calculator": true,
+    "not_interstate": true
+  },
+  "complaints": {
+    "coverage": "NOT_ACQUIRED",
+    "disposition_dataset": "REQUEST_ONLY",
+    "intake": "KNOWN",
+    "count": null
+  },
+  "identity": {
+    "preferred": "Georgia MCA number printed on the licensed movers list",
+    "usdot_on_source": false,
+    "name_only_join": "UNSAFE",
+    "ga_certificate_is_not_fmcsa": true
+  },
+  "expansion_ledger": {
+    "GRAPH_WRITES": 0,
+    "NET_NEW_PUBLIC_PROFILES": 0,
+    "EXACT_USDOT_JOINS": 0
+  },
+  "fingerprint": "5619950c36c6cdd7b3f6df516585920c2c7aa245c2a2e82b4f03bc1ec4275e6b"
+}

@@ -65,6 +65,7 @@ const STATE_NAMES = {
   illinois: 'Illinois',
   pennsylvania: 'Pennsylvania',
   'north-carolina': 'North Carolina',
+  georgia: 'Georgia',
   washington: 'Washington',
   ohio: 'Ohio',
   colorado: 'Colorado',

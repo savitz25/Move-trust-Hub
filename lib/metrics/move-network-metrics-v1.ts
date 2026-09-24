@@ -188,6 +188,12 @@ export type MoveNetworkMetricsV1 = {
     currentCertificateUniverse: null;
     sourceAsOf: null;
   };
+  georgia: {
+    listingRows: number;
+    distinctMca: number;
+    exactUsdotJoins: 0;
+    sourceAsOf: null;
+  };
   network: {
     publishedStateIntelligencePages: number;
     publishedStateIntelligencePaths: string[];
