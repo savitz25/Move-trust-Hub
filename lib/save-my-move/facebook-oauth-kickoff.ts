@@ -4,7 +4,7 @@ import { createClient as createSupabaseClient } from '@supabase/supabase-js';
 import { cookies } from 'next/headers';
 import { createClient } from '@/lib/supabase/server';
 import {
-  AUTH_CALLBACK_URL,
+  authCallbackUrl,
   ensureProductionOAuthUrl,
 } from '@/lib/save-my-move/auth-redirect';
 import {
@@ -44,7 +44,7 @@ async function buildManualAuthorizeUrl(): Promise<string | null> {
 
   const params = new URLSearchParams({
     provider: 'facebook',
-    redirect_to: AUTH_CALLBACK_URL,
+    redirect_to: authCallbackUrl(),
     scopes: FACEBOOK_SCOPES,
     code_challenge: challenge,
     code_challenge_method: 's256',
@@ -58,7 +58,7 @@ async function trySignInWithOAuthSsr(): Promise<{ url: string | null; error: str
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'facebook',
     options: {
-      redirectTo: AUTH_CALLBACK_URL,
+      redirectTo: authCallbackUrl(),
       scopes: FACEBOOK_SCOPES,
     },
   });
@@ -80,7 +80,7 @@ async function trySignInWithOAuthPlain(): Promise<{ url: string | null; error: s
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'facebook',
     options: {
-      redirectTo: AUTH_CALLBACK_URL,
+      redirectTo: authCallbackUrl(),
       scopes: FACEBOOK_SCOPES,
     },
   });

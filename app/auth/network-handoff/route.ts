@@ -5,9 +5,11 @@ import type { EmailOtpType } from '@supabase/supabase-js';
 import {
   getSupabaseAnonKey,
   getSupabaseUrl,
+  isIsolatedMoveBrowserAuthAdmitted,
   isSupabaseAdminConfigured,
   isSupabaseConfigured,
 } from '@/lib/supabase/config';
+import { approvedIsolatedAuthOrigin } from '@/lib/save-my-move/redirect';
 import {
   consumeNetworkHandoff,
   CURRENT_HUB,
@@ -21,7 +23,11 @@ export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
 function failRedirect(reason: string) {
-  const failUrl = new URL(HUB_DEFAULT_PATH.move, HUB_ORIGINS.move);
+  if (isIsolatedMoveBrowserAuthAdmitted() && !approvedIsolatedAuthOrigin()) {
+    return new NextResponse('Isolated auth origin is not approved.', { status: 503 });
+  }
+  const origin = approvedIsolatedAuthOrigin() ?? HUB_ORIGINS.move;
+  const failUrl = new URL(HUB_DEFAULT_PATH.move, origin);
   failUrl.searchParams.set('handoff', 'failed');
   failUrl.searchParams.set('reason', reason);
   const res = NextResponse.redirect(failUrl);
@@ -59,6 +65,10 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const code = searchParams.get('code') || '';
   const nextHint = searchParams.get('next');
+
+  if (isIsolatedMoveBrowserAuthAdmitted()) {
+    return failRedirect('isolated_preview');
+  }
 
   if (!code || !isSupabaseConfigured()) {
     console.warn('[network-handoff/complete] missing code or supabase config', {

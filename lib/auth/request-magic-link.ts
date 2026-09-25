@@ -3,12 +3,13 @@ import 'server-only';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { createClient } from '@/lib/supabase/server';
 import {
+  isIsolatedMoveBrowserAuthAdmitted,
   isSupabaseAdminConfigured,
   isSupabaseConfigured,
 } from '@/lib/supabase/config';
 import {
-  AUTH_CALLBACK_URL,
-  PRODUCTION_SITE_ORIGIN,
+  authCallbackUrl,
+  productionAuthRedirect,
   sanitizePostLoginPath,
 } from '@/lib/save-my-move/redirect';
 import {
@@ -63,7 +64,7 @@ function buildConfirmUrl(params: {
   type: string;
   nextPath: string;
 }): string {
-  const url = new URL(`${PRODUCTION_SITE_ORIGIN}/auth/confirm`);
+  const url = new URL(productionAuthRedirect('/auth/confirm'));
   url.searchParams.set('token_hash', params.tokenHash);
   url.searchParams.set('type', params.type);
   url.searchParams.set('next', params.nextPath);
@@ -76,7 +77,7 @@ function buildConfirmUrl(params: {
  */
 async function sendViaResend(email: string, nextPath: string): Promise<RequestMagicLinkResult> {
   const admin = createAdminClient();
-  const redirectTo = `${AUTH_CALLBACK_URL}?next=${encodeURIComponent(nextPath)}`;
+  const redirectTo = `${authCallbackUrl()}?next=${encodeURIComponent(nextPath)}`;
 
   const { data, error } = await admin.auth.admin.generateLink({
     type: 'magiclink',
@@ -131,7 +132,7 @@ async function sendViaSupabaseOtp(
   email: string,
   nextPath: string
 ): Promise<RequestMagicLinkResult> {
-  const redirectTo = `${AUTH_CALLBACK_URL}?next=${encodeURIComponent(nextPath)}`;
+  const redirectTo = `${authCallbackUrl()}?next=${encodeURIComponent(nextPath)}`;
   const supabase = await createClient();
   const { error } = await supabase.auth.signInWithOtp({
     email,
@@ -172,7 +173,12 @@ export async function requestMagicLink(params: {
   const nextPath = sanitizePostLoginPath(params.next);
 
   // Production path: generate link + Resend (reliable, branded, no Supabase mailer limit).
-  if (isSupabaseAdminConfigured() && isResendConfigured()) {
+  // Isolated preview auth stays on the browser anon client and must not call production service role.
+  if (
+    !isIsolatedMoveBrowserAuthAdmitted() &&
+    isSupabaseAdminConfigured() &&
+    isResendConfigured()
+  ) {
     return sendViaResend(email, nextPath);
   }
 
