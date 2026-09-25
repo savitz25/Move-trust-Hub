@@ -145,7 +145,7 @@ test('hosted preview threads browser, durable nonce, source continuation, and re
       if (parsed.action === 'binding') return Response.json({ ok: true, result: { profile: { hub: 'move', nativeId: 'usdot-1002530', profileClass: 'mover' }, binding: { id: 'binding-1', networkEntityId: 'network-1', status: 'accepted' } } });
       if (parsed.action === 'challenge') {
         assert.equal(parsed.continuationRef, stageRecord?.continuationRef);
-        return Response.json({ ok: true, result: { target: ASK_PREVIEW + '/my/profile-save/current-grant', challengeRef: 'd'.repeat(43) } });
+        return Response.json({ ok: true, result: { target: ASK_PREVIEW + '/my/profile-save/current-grant', fields: { challengeRef: 'd'.repeat(43) } } });
       }
       return Response.json({ ok: true, result: { accountContextRef: 'a'.repeat(43), selectionConfirmed: true, sessionBinding: hash('session-a'), proofRef: 'e'.repeat(43), expiresAt: Date.now() + 30_000 } });
     }

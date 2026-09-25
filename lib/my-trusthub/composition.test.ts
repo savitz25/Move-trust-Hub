@@ -168,7 +168,7 @@ test('current-grant challenge and resolve stay on the reviewed browser, proof an
     const claims = claimsOf(new Headers(init?.headers).get(ASSERTION_HEADER)!);
     assert.equal(claims.browser, browser); assert.equal(claims.scope, 'receipt:verify'); assert.equal(claims.grant, null);
     const body = JSON.parse(String(init?.body));
-    if (body.action === 'challenge') return Response.json({ ok: true, result: { target: ASK_PREVIEW + GRANT_BROWSER_PATH, challengeRef: 'd'.repeat(43) } });
+    if (body.action === 'challenge') return Response.json({ ok: true, result: { target: ASK_PREVIEW + GRANT_BROWSER_PATH, fields: { challengeRef: 'd'.repeat(43) } } });
     if (body.proofRef === 'e'.repeat(43)) return Response.json({ ok: true, result: { accountContextRef: 'z'.repeat(43), selectionConfirmed: true, sessionBinding: hash('session'), expiresAt: now + 30_000 } });
     return Response.json({ ok: false }, { status: 403 });
   };
@@ -181,6 +181,36 @@ test('current-grant challenge and resolve stay on the reviewed browser, proof an
   assert.equal(await resolveCurrentGrantProof({ record, browser: binding, proofRef: 'short', key: keys.privateKey, parentOrigin: ASK_PREVIEW, moveOrigin: MOVE_PREVIEW, send, now }), null);
   assert.equal(sends, 1);
   assert.equal(await resolveCurrentGrantProof({ record, browser: binding, proofRef: 'e'.repeat(43), key: keys.privateKey, parentOrigin: ASK_PREVIEW, moveOrigin: MOVE_PREVIEW, send, now }), 'account_changed');
+});
+
+test('Ask challenge contract is fields.challengeRef and a proof must still be inside 30 seconds', async () => {
+  const keys = pair(); const now = 1_700_000_000_000;
+  const binding: BrowserBinding = { binding: browser, csrfVerified: true, origin: MOVE_PREVIEW, environment: 'isolated' };
+  const record = { browserHash: hash(browser), continuationRef: 'c'.repeat(43), accountContextRef: 'a'.repeat(43) };
+  const fields = { challengeRef: 'd'.repeat(43) };
+  const target = ASK_PREVIEW + GRANT_BROWSER_PATH;
+  const call = (result: unknown) => requestCurrentGrantChallenge({
+    record, browser: binding, key: keys.privateKey, parentOrigin: ASK_PREVIEW, moveOrigin: MOVE_PREVIEW, now,
+    send: (async () => Response.json({ ok: true, result })) as typeof fetch,
+  });
+  assert.deepEqual(await call({ target, fields }), { target, challengeRef: fields.challengeRef });
+  assert.equal(await call({ target, challengeRef: fields.challengeRef }), null);
+  assert.equal(await call({ target }), null);
+  assert.equal(await call({ target, fields: { challengeRef: 'short' } }), null);
+  assert.equal(await call({ target, fields, extra: true }), null);
+  assert.equal(await call({ target, fields: { ...fields, note: 'extra' } }), null);
+  assert.equal(await call({ target: target + '?next=1', fields }), null);
+  assert.equal(await call({ target: 'https://evil.test/my/profile-save/current-grant', fields }), null);
+  const proof = (expiresAt: number) => resolveCurrentGrantProof({
+    record, browser: binding, proofRef: 'e'.repeat(43), key: keys.privateKey, parentOrigin: ASK_PREVIEW, moveOrigin: MOVE_PREVIEW, now,
+    send: (async () => Response.json({ ok: true, result: { accountContextRef: record.accountContextRef, selectionConfirmed: true, sessionBinding: hash('session'), expiresAt } })) as typeof fetch,
+  });
+  const live = await proof(now + 30_000);
+  assert.equal(live !== 'account_changed' && live?.expiresAt, now + 30_000);
+  assert.equal(await proof(now), null);
+  assert.equal(await proof(now - 1), null);
+  assert.equal(await proof(now + 60_000), null);
+  assert.equal(await proof(now + 32_001), null);
 });
 
 test('browser proof rejects the wrong origin, a malformed proofRef, and every popup failure', () => {
