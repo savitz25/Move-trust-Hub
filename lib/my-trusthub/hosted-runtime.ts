@@ -2,7 +2,7 @@ import 'server-only';
 import { createHash } from 'node:crypto';
 import { PostgresAssertionNonceStore } from './assertion-nonce-store';
 import { createIsolatedMoveRuntime, type IsolatedMovePorts } from './isolated-runtime';
-import { requestCurrentGrantChallenge, resolveCurrentGrantProof } from './parent-grant';
+import { readBoundedJson, requestCurrentGrantChallenge, resolveCurrentGrantProof } from './parent-grant';
 import { signedParentChannel, type AssertionContext } from './parent-facade';
 import { publicationSourceApproved, resolveExactMovePublication, CERTIFIED_NATIVE_ID, CERTIFIED_SLUG, CERTIFIED_CLASS, type PublicationRow } from './publication-resolver';
 import { PostgresTransferStore, type SourcePool } from './postgres-transfer-store';
@@ -82,7 +82,7 @@ export async function fetchAcceptedBinding(input: {
     headers: { 'Content-Type': 'application/json', [ASSERTION_HEADER]: signAssertion(input.key, 'move', target, 'transfer:stage', bytes, input.browser.binding, null, null, input.now) },
   });
   if (!response.ok) return null;
-  const parsed: unknown = await response.json();
+  const parsed = await readBoundedJson(response);
   if (!object(parsed) || parsed.ok !== true || !object(parsed.result)) return null;
   const result = parsed.result;
   if (Object.keys(result).sort().join() !== 'binding,profile' || !object(result.profile) || !object(result.binding)) return null;
@@ -101,6 +101,7 @@ async function readCertified(pool: SourcePool, profile: { hub: 'move'; nativeId:
   try {
     db = await pool.connect();
     const result = await db.query<Record<string, unknown>>(PUBLICATION_SQL, [CERTIFIED_NATIVE_ID, CERTIFIED_CLASS]);
+    if (result.rows.length !== 1) return null;
     const row = result.rows[0];
     if (!row) return null;
     return {

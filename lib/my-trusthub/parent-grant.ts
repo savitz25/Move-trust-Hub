@@ -21,6 +21,29 @@ function reviewedPair(parentOrigin: string, moveOrigin: string): boolean {
   return parentOrigin === ASK_PREVIEW && moveOrigin === MOVE_PREVIEW;
 }
 
+/** Peer JSON is capped by bytes actually read. Content-Length is not authority. */
+export async function readBoundedJson(response: Response): Promise<unknown> {
+  try {
+    if (!response.body) return null;
+    const reader = response.body.getReader();
+    const chunks: Uint8Array[] = [];
+    let size = 0;
+    for (;;) {
+      const step = await reader.read();
+      if (step.done) break;
+      size += step.value.byteLength;
+      if (size > 65_536) {
+        await reader.cancel();
+        return null;
+      }
+      chunks.push(step.value);
+    }
+    return JSON.parse(Buffer.concat(chunks).toString('utf8'));
+  } catch {
+    return null;
+  }
+}
+
 async function postGrant(key: AssertionKey, body: unknown, browser: string, send: typeof fetch, now?: number): Promise<unknown> {
   const bytes = Buffer.from(JSON.stringify(body));
   const target = ASK_PREVIEW + GRANT_API_PATH;
@@ -29,7 +52,7 @@ async function postGrant(key: AssertionKey, body: unknown, browser: string, send
     headers: { 'Content-Type': 'application/json', [ASSERTION_HEADER]: signAssertion(key, 'move', target, 'receipt:verify', bytes, browser, null, null, now) },
   });
   if (!response.ok) return null;
-  const parsed: unknown = await response.json();
+  const parsed = await readBoundedJson(response);
   if (!object(parsed) || parsed.ok !== true || !object(parsed.result)) return null;
   return parsed.result;
 }

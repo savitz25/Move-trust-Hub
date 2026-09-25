@@ -1,10 +1,12 @@
 import assert from 'node:assert/strict';
 import { createHash, generateKeyPairSync } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { ASSERTION_HEADER, signAssertion, type AssertionClaims } from './service-assertion';
 import { CERTIFIED_PUBLICATION_CONTRACT, REVIEWED_SOURCE_METADATA, createPreviewMoveRuntime, fetchAcceptedBinding } from './hosted-runtime';
 import { getMoveProfileSaveBindings, getMoveProfileSaveRuntime } from './profile-save-server';
 import { MOVE_SERVICE_OPERATIONS } from './parent-facade';
+import { requestCurrentGrantChallenge, resolveCurrentGrantProof } from './parent-grant';
 import { ASK_PREVIEW, GRANT_API_PATH, MOVE_PREVIEW, SOURCE_PATH } from './reviewed-origins';
 import { SOURCE_CAPABILITY, SOURCE_LOGIN, SOURCE_POOLER_USER, SOURCE_SEARCH_PATH } from './source-pool';
 import { PARENT_FORM_PATH } from './isolated-runtime';
@@ -203,4 +205,73 @@ test('hosted preview threads browser, durable nonce, source continuation, and re
   assert.equal(db.queries.some(sql => sql.includes('claim_assertion_nonce')), true);
   const replay = new Request(MOVE_PREVIEW + SOURCE_PATH, { method: 'POST', headers: { 'content-type': 'application/json', [ASSERTION_HEADER]: proofToken }, body: proofBody });
   assert.equal(await runtime.authorize(replay, 'source:read'), null);
+});
+
+const certifiedRow = { native_id: 'usdot-1002530', canonical_slug: slug, publication_state: 'PUBLISHABLE', reviewed_class: 'mover' };
+
+function publicationPool(count: number) {
+  let sql = '';
+  const pool = { async connect() { return { async query(statement: string) {
+    if (statement.includes('session_user')) return { rows: [{ login: SOURCE_LOGIN, active_role: SOURCE_CAPABILITY, search_path: SOURCE_SEARCH_PATH }] };
+    if (statement.includes('certified_publication')) {
+      sql = statement;
+      return { rows: Array.from({ length: count }, () => ({ ...certifiedRow })) };
+    }
+    return { rows: [] };
+  }, release() {} }; }, async end() {} };
+  return { pool, text: () => sql };
+}
+
+test('certified publication reader accepts only exactly one row', async () => {
+  const env = baseEnv();
+  const profile = { hub: 'move' as const, nativeId: 'usdot-1002530', profileClass: 'mover' };
+  const one = publicationPool(1);
+  const accepted = createPreviewMoveRuntime(env, { send: (async () => new Response(null, { status: 500 })) as typeof fetch, createPool: () => one.pool });
+  assert.equal((await accepted!.resolvePublication(profile))?.canonicalSlug, slug);
+  assert.equal(/limit\s+1/i.test(one.text()), false);
+  for (const count of [0, 2, 3]) {
+    const many = publicationPool(count);
+    const runtime = createPreviewMoveRuntime(env, { send: (async () => new Response(null, { status: 500 })) as typeof fetch, createPool: () => many.pool });
+    assert.equal(await runtime!.resolvePublication(profile), null, String(count));
+    assert.equal(/limit\s+1/i.test(many.text()), false);
+  }
+});
+
+function oversizedResponse(): Response {
+  const chunk = new Uint8Array(40_000);
+  return new Response(new ReadableStream({ start(controller) {
+    controller.enqueue(chunk);
+    controller.enqueue(chunk);
+    controller.close();
+  } }), { status: 200, headers: { 'content-type': 'application/json', 'content-length': '10' } });
+}
+
+function padded(value: unknown): Response {
+  const text = JSON.stringify(value);
+  const extra = 65_536 - Buffer.byteLength(text);
+  assert.ok(extra >= 0);
+  return new Response(text + ' '.repeat(extra), { status: 200, headers: { 'content-type': 'application/json' } });
+}
+
+test('Ask current-grant responses are capped at 65536 bytes before JSON parsing', async () => {
+  const material = keys();
+  const signing = { kid: 'move-test', pem: material.privatePem };
+  const record = { browserHash: hash(browser.binding), continuationRef: 'c'.repeat(43), accountContextRef: 'a'.repeat(43) };
+  const now = 1_700_000_000_000;
+  const challenge = { ok: true, result: { target: ASK_PREVIEW + '/my/profile-save/current-grant', fields: { challengeRef: 'd'.repeat(43) } } };
+  const resolved = { ok: true, result: { accountContextRef: record.accountContextRef, selectionConfirmed: true, sessionBinding: hash('session'), expiresAt: now + 30_000 } };
+  const binding = { ok: true, result: { profile: { hub: 'move', nativeId: 'usdot-1002530', profileClass: 'mover' }, binding: { id: 'binding-1', networkEntityId: 'network-1', status: 'accepted' } } };
+  const grant = { record, browser, key: signing, parentOrigin: ASK_PREVIEW, moveOrigin: MOVE_PREVIEW, now };
+  assert.equal((await requestCurrentGrantChallenge({ ...grant, send: (async () => oversizedResponse()) as typeof fetch })), null);
+  assert.equal((await resolveCurrentGrantProof({ ...grant, proofRef: 'e'.repeat(43), send: (async () => oversizedResponse()) as typeof fetch })), null);
+  assert.equal(await fetchAcceptedBinding({ browser, key: signing, send: (async () => oversizedResponse()) as typeof fetch, now }), null);
+  assert.deepEqual(await requestCurrentGrantChallenge({ ...grant, send: (async () => padded(challenge)) as typeof fetch }), { target: ASK_PREVIEW + '/my/profile-save/current-grant', challengeRef: 'd'.repeat(43) });
+  assert.equal((await resolveCurrentGrantProof({ ...grant, proofRef: 'e'.repeat(43), send: (async () => padded(resolved)) as typeof fetch })) !== null, true);
+  assert.deepEqual(await fetchAcceptedBinding({ browser, key: signing, send: (async () => padded(binding)) as typeof fetch, now }), { id: 'binding-1', networkEntityId: 'network-1', status: 'accepted' });
+  assert.equal(await fetchAcceptedBinding({ browser, key: signing, send: (async () => new Response('{', { status: 200 })) as typeof fetch, now }), null);
+  assert.equal(await requestCurrentGrantChallenge({ ...grant, send: (async () => new Response('{', { status: 200 })) as typeof fetch }), null);
+  const grantSource = readFileSync('lib/my-trusthub/parent-grant.ts', 'utf8');
+  const hostedSource = readFileSync('lib/my-trusthub/hosted-runtime.ts', 'utf8');
+  assert.equal(grantSource.includes('response.json('), false);
+  assert.equal(hostedSource.includes('response.json('), false);
 });
