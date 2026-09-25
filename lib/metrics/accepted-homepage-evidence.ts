@@ -8,6 +8,7 @@ import paSnapshot from '@/lib/pennsylvania-intelligence/accepted-snapshot.json';
 import gaSnapshot from '@/lib/georgia-intelligence/accepted-snapshot.json';
 import maSnapshot from '@/lib/massachusetts-intelligence/accepted-snapshot.json';
 import tnSnapshot from '@/lib/tennessee-intelligence/accepted-snapshot.json';
+import nvSnapshot from '@/lib/nevada-intelligence/accepted-snapshot.json';
 import ncSnapshot from '@/lib/north-carolina-intelligence/accepted-snapshot.json';
 import ohSnapshot from '@/lib/ohio-intelligence/accepted-snapshot.json';
 import txSnapshot from '@/lib/texas-intelligence/accepted-snapshot.json';
@@ -77,6 +78,7 @@ const meta: Record<string, Pick<MoveHomepageMeasure, 'family' | 'entityClass' | 
   ga_dps_hhg_mca_identities: { family: 'STATE_AUTHORITY', entityClass: 'Georgia DPS household-goods MCA identity', destination: '/georgia', acceptedArtifact: 'move-ga-state-intel-v1' },
   ma_dpu_hhg_certificate_identities: { family: 'STATE_AUTHORITY', entityClass: 'Massachusetts DPU household-goods certificate identity', destination: '/massachusetts', acceptedArtifact: 'move-ma-state-intel-v1' },
   tn_intrastate_authority_universe: { family: 'STATE_AUTHORITY', entityClass: 'Tennessee Intrastate Authority roster', destination: '/tennessee', acceptedArtifact: 'move-tn-state-intel-v1' },
+  nv_nta_hhg_cpcn_identities: { family: 'STATE_AUTHORITY', entityClass: 'Nevada NTA household-goods CPCN identity', destination: '/nevada', acceptedArtifact: 'move-nv-state-intel-v1' },
   published_state_intelligence_pages: { family: 'PUBLIC_SURFACES', entityClass: 'Published specialist state page', destination: '#state-intelligence', acceptedArtifact: 'canonical state publication model' },
 };
 
@@ -106,6 +108,7 @@ export const MOVE_HOMEPAGE_STATE_CARDS = [
   { state: 'Georgia', href: gaSnapshot.publication.route, regulator: 'Georgia DPS', authority: 'Household-goods certificate / MCA', roster: `${gaSnapshot.current_hhg_roster.GA_DPS_HHG_DISTINCT_MCA} distinct MCA numbers / ${gaSnapshot.current_hhg_roster.GA_DPS_HHG_LISTING_ROWS} location rows`, evidence: 'Licensed movers list and Maximum Rate Tariff No. 7; not FMCSA interstate authority', sourceClock: `Retrieved ${gaSnapshot.retrievedAt}; sourceAsOf not printed on the list` },
   { state: 'Massachusetts', href: maSnapshot.publication.route, regulator: 'Massachusetts DPU', authority: 'Household-goods certificate (DPU certificate number)', roster: `${maSnapshot.current_hhg_roster.MA_DPU_HHG_DISTINCT_CERTIFICATES} distinct certificate numbers / ${maSnapshot.current_hhg_roster.MA_DPU_HHG_LISTING_ROWS} company rows`, evidence: 'Regulated movers list with carrier-filed tariffs; filed rates are not quotes and not FMCSA interstate authority', sourceClock: `List updated ${maSnapshot.clocks.sourceAsOf}; retrieved ${maSnapshot.retrievedAt}` },
   { state: 'Tennessee', href: tnSnapshot.publication.route, regulator: 'Tennessee Revenue', authority: 'Tennessee Intrastate Authority (Form H cargo insurance for household goods)', roster: 'Public roster NOT_ACQUIRED', evidence: 'Revenue authority framework and current motor-carrier rules; the household-goods estimate and claims rule was repealed March 9, 2026; missing is not zero', sourceClock: `Rules effective ${tnSnapshot.rules.effective}; retrieved ${tnSnapshot.retrievedAt}` },
+  { state: 'Nevada', href: nvSnapshot.publication.route, regulator: 'Nevada Transportation Authority', authority: 'Certificate of Public Convenience and Necessity (CPCN)', roster: `${nvSnapshot.current_hhg_roster.NV_NTA_ACTIVE_MOVER_CERTIFICATES} certificates on the NTA Active Mover list + ${nvSnapshot.current_hhg_roster.NV_NTA_HHG_DOCUMENT_EVIDENCE_NOT_ON_ACTIVE_LIST} other household-goods certificates in the directory`, evidence: 'NTA certificate and tariff directory, carrier-filed tariffs and intrastate complaint intake; a CPCN is not USDOT or MC', sourceClock: `No as-of date printed; retrieved ${nvSnapshot.retrievedAt}` },
 ] as const;
 
 export const MOVE_CONSUMER_RULES = {

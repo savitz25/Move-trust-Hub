@@ -8,6 +8,8 @@ import { GEORGIA_MOVE_SNAPSHOT } from '../georgia-intelligence/snapshot';
 import { lookupMassachusettsDpuCertificate, massachusettsDpuRowLabel, searchMassachusettsDpuName } from '../massachusetts-intelligence/lookup';
 import { MASSACHUSETTS_MOVE_SNAPSHOT } from '../massachusetts-intelligence/snapshot';
 import { TENNESSEE_MOVE_SNAPSHOT } from '../tennessee-intelligence/snapshot';
+import { lookupNevadaCpcn, nevadaRowLabel, searchNevadaNtaName } from '../nevada-intelligence/lookup';
+import { NEVADA_MOVE_SNAPSHOT } from '../nevada-intelligence/snapshot';
 import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
 import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
@@ -29,6 +31,7 @@ const STATE_NAMES: Record<string, string> = {
   'north carolina': 'NC',
   ohio: 'OH',
   tennessee: 'TN',
+  nevada: 'NV',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -40,6 +43,7 @@ const STATE_NAMES: Record<string, string> = {
   il: 'IL',
   ma: 'MA',
   tn: 'TN',
+  nv: 'NV',
 };
 
 function detectState(q: string): string | undefined {
@@ -229,6 +233,44 @@ function asksAboutHeadquarters(q: string): boolean {
 
 function tnContext(q: string): boolean {
   return mentionsTennessee(q) && !mentionsOtherStateThanTennessee(q) && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+
+const NV_ALTERNATIVES = ['Open Nevada household-goods research.', 'Show current interstate household-goods carriers headquartered in Nevada.'];
+const NV_CITIES = /\b(las vegas|north las vegas|henderson|reno|sparks|carson city)\b/i;
+
+function mentionsNevada(q: string): boolean {
+  return /\bnevada\b|\bnv\b|\bnta\b|\bnevada transportation authority\b/i.test(q);
+}
+
+/** Another state named outright takes the query out of the Nevada layer. */
+function mentionsOtherStateThanNevada(q: string): boolean {
+  const other = detectState(q.replace(/\bnevada\b|\bnv\b/gi, ' ').replace(NV_CITIES, ' '));
+  return Boolean(other && other !== 'NV');
+}
+
+function nvContext(q: string): boolean {
+  return mentionsNevada(q) && !mentionsOtherStateThanNevada(q) && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+
+/** NTA CPCN numbers print as 3-4 digits with an optional revision suffix (3251.3). Never a USDOT/MC. */
+function parseNevadaCpcn(q: string): string | null {
+  if (FEDERAL_ID.test(q) || mentionsOtherStateThanNevada(q)) return null;
+  const labeled = q.match(/\b(?:cpcn|nta\s+certificate|nta\s+cert)\s*(?:no\.?|number|#)?\s*#?\s*(\d{3,4}(?:\.\d{1,3})?)\b/i);
+  if (labeled) return labeled[1]!;
+  if (!mentionsNevada(q)) return null;
+  return q.match(/\b(?:certificate|cert)\s*(?:no\.?|number|#)?\s*#?\s*(\d{3,4}(?:\.\d{1,3})?)\b/i)?.[1] ?? null;
+}
+
+/** Only a Nevada city and category words: the city is a place here, never a company name. */
+function isNevadaCityGeographyOnly(q: string): boolean {
+  if (!NV_CITIES.test(q) || !/\bmovers?\b|\bmoving compan/i.test(q)) return false;
+  const rest = q.toLowerCase().replace(NV_CITIES, ' ').replace(/[^a-z0-9 ]+/g, ' ')
+    .replace(/\b(nv|nevada|movers?|moving|compan(y|ies)|in|near|around|local|find|the|a|licensed|best|top|good|reliable|cheap)\b/g, ' ').trim();
+  return rest === '';
+}
+
+function titleCity(city: string): string {
+  return city.replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
 function mentionsPhiladelphiaOrPittsburgh(q: string): boolean {
@@ -573,6 +615,77 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     );
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'NOT_ACQUIRED — Tennessee Intrastate Authority roster');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  const nvCpcn = parseNevadaCpcn(q);
+  if (nvCpcn) {
+    const found = lookupNevadaCpcn(nvCpcn);
+    const shown = found.hits.map(nevadaRowLabel).join('; ');
+    const query = fail(
+      found.hits.length
+        ? `${shown}. ${found.note} An NTA CPCN is not a USDOT or MC number, and a filed tariff is not a quote.`
+        : `Nevada CPCN ${found.query}: ${found.note}`,
+      NV_ALTERNATIVES,
+    );
+    push('Nevada NTA CPCN', found.query);
+    push('Limitation', 'NTA CPCN is not FMCSA interstate authority');
+    return { raw: q, query, interpretation: lines };
+  }
+  const nvCity = q.match(NV_CITIES)?.[1];
+  const nvCityNote = nvCity ? ` ${titleCity(nvCity)} is geography only; MoveTrustHub has no city intelligence page.` : '';
+  if ((nvContext(q) || (isNevadaCityGeographyOnly(q) && !mentionsOtherStateThanNevada(q))) && !isRouteOrInterstate(q)) {
+    const nv = NEVADA_MOVE_SNAPSHOT;
+    const roster = nv.current_hhg_roster;
+    if (/\b(complaints?|dispositions?|enforcement|scams?|report)\b/i.test(q)) {
+      const query = fail(
+        "The Nevada Transportation Authority takes complaints about household-goods moves within Nevada through its Household Goods Mover complaint form, and an NTA investigator is assigned to each one. NTA does not have jurisdiction over interstate service; interstate moving complaints go to FMCSA. Complaint records and outcomes are not published in bulk, so there is no complaint count. A complaint is not a finding.",
+        NV_ALTERNATIVES,
+      );
+      query.coverageState = 'NOT_ACQUIRED';
+      push('Coverage', 'Nevada complaints — INTAKE_KNOWN / OUTCOMES_REQUEST_ONLY');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (isRanking(q)) {
+      const query = fail(
+        `MoveTrustHub does not rank movers and does not publish a Trust Score. Nevada research lists NTA household-goods certificates by name, not a winner or cheapest list.${nvCityNote}`,
+        NV_ALTERNATIVES,
+      );
+      push('Mode', 'fail_closed');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (/\b(tariffs?|rates?|prices?|costs?|how much|quotes?|estimates?)\b/i.test(q)) {
+      const query = fail(
+        `Each Nevada household-goods carrier files its own tariff with the Nevada Transportation Authority, naming its rates, charges and rules for the territory in its certificate; NTA links ${nv.tariff.NV_NTA_HHG_TARIFF_LINKS} household-goods tariffs. A tariff is not a quote, and there is no statewide Nevada moving price. Tariff effective dates were not extracted. NTA tariffs do not cover moves that cross a state line.`,
+        NV_ALTERNATIVES,
+      );
+      push('Coverage', 'Nevada carrier-filed tariffs — LINKED, NOT PARSED');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (/\b(applications?|applicants?|dockets?|notices?|pending)\b/i.test(q)) {
+      const apps = nv.applications;
+      const query = fail(
+        `NTA's 2026 public notices include ${apps.NV_NTA_2026_HHG_APPLICATION_NOTICES} applications for household-goods authority (of ${apps.NV_NTA_2026_NOTICES} notices). An application is not a granted CPCN, and applicants are not counted as licensed movers.`,
+        NV_ALTERNATIVES,
+      );
+      push('Coverage', 'PARTIAL — 2026 notices only');
+      return { raw: q, query, interpretation: lines };
+    }
+    const named = searchNevadaNtaName(q.replace(NV_CITIES, ' '));
+    if (named.hits.length) {
+      const shown = named.hits.slice(0, 5).map(nevadaRowLabel).join('; ');
+      const query = fail(
+        `${named.hits.length} NTA household-goods row(s) contain "${named.terms.join(' ')}": ${shown}${named.hits.length > 5 ? '; more on the Nevada page' : ''}. These are Nevada Transportation Authority rows only. They are not linked to any USDOT or MC identity by name; search the USDOT number for interstate authority.`,
+        NV_ALTERNATIVES,
+      );
+      push('Coverage', 'PARTIAL — NTA name match, not a federal identity');
+      return { raw: q, query, interpretation: lines };
+    }
+    const query = fail(
+      `Nevada household-goods movers that stay inside Nevada need a Certificate of Public Convenience and Necessity (CPCN) from the Nevada Transportation Authority. NTA lists ${roster.NV_NTA_ACTIVE_MOVER_CERTIFICATES} certificates on its Active Mover list, and ${roster.NV_NTA_HHG_DOCUMENT_EVIDENCE_NOT_ON_ACTIVE_LIST} more household-goods certificates appear in its directory with status text such as Temporary Discontinuance or Other Pending OSC (retrieved September 25, 2026). An NTA CPCN is not a USDOT or MC number, NTA prints neither, and a Nevada address is not NTA authority. Moves that cross a state line are FMCSA interstate moves. There is no combined Nevada mover count.${nvCityNote}`,
+      NV_ALTERNATIVES,
+    );
+    push('Coverage', 'KNOWN — NTA household-goods certificates (intrastate only)');
     return { raw: q, query, interpretation: lines };
   }
 

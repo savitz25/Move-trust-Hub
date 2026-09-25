@@ -105,6 +105,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'Intrastate Authority, Form H cargo insurance & current rules',
       },
       {
+        label: 'Nevada research',
+        href: '/nevada',
+        description: 'NTA household-goods certificates (CPCN) & filed tariffs',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',

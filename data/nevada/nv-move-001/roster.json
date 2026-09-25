@@ -1,0 +1,1025 @@
+{
+  "source": {
+    "agency": "Nevada Transportation Authority",
+    "directory": "https://nta.nv.gov/Carriers/Tariffs-Certificates/",
+    "directorySha256": "3bfef51522546cf765322cbac90c2bdb8942dfd36785d4ef324f5a2f32ca6483",
+    "activeCertificatesIndex": "http://tsa1.nv.gov/ActiveCertificates.asp",
+    "activeMoverCategory": "http://tsa1.nv.gov/ActiveCertificatesTable.asp?nNo=5",
+    "activeMoverSha256": "b71e18d6aff6e8b4abeac8775c0d8b0aa2aeade00ce44631b7110fa895faa738",
+    "activeWarehousePermitCategory": "http://tsa1.nv.gov/ActiveCertificatesTable.asp?nNo=10",
+    "complaints": "https://nta.nv.gov/Forms/Complaints/",
+    "complaintsSha256": "fb9f37df4df599e5587db16c25847b79ca5ddb31e841f6c3aca96dd6e2218130",
+    "notices2026": "https://nta.nv.gov/About/Notices/2026/2026_Notices/",
+    "retrievedAt": "2026-09-25T15:05:00Z",
+    "fieldsNotWritten": [
+      "Phone",
+      "Fax",
+      "addresses",
+      "people named in tariffs or notices"
+    ]
+  },
+  "rows": [
+    {
+      "cpcn": "3251.3",
+      "carrierName": "Ace World Wide Moving and Storage Co Inc",
+      "dba": "Ace World Wide of Nevada",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3251.3",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Ace World Wide Moving and Storage Co Inc",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/Cert_-_Numbers_to_C/Ace_World_Wide_Moving_3251-cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/Ace_World_Wide_3251-tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "1c5e36e0ad729d86d6c9fbfe7d4033cf132fa407d18c22fb2209c09101ca9e13",
+        "pages": 35,
+        "textChars": 3821
+      },
+      "certificateTextSaysHouseholdGoods": false
+    },
+    {
+      "cpcn": "3405.2",
+      "carrierName": "Agia Christina, LLC",
+      "dba": "Good Greek Moving and Storage",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "CPCN_BASE_NUMBER_REVISION_DIFFERS",
+      "directoryCpcnAsPrinted": "3405.1",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Agia Christina, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/Cert_-_Numbers_to_C/Agia_Christina_LLC_DBA_Good_Greek_Moving_and_Storage_3405-cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/Agia_Christina_LLC_DBA_Good_Greek_Moving_and_Storage_3405-tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "6d806d31ef0c96b8c5c37e97f9fc57427f01bea7e4ec0173a947cea314e6c4f7",
+        "pages": 16,
+        "textChars": 3115
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3256.3",
+      "carrierName": "All My Sons Moving and Storage of Las Vegas LLC",
+      "dba": null,
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3256.3",
+      "directoryStatusText": null,
+      "directoryCorporateName": "All My Sons Moving and Storage of Las Vegas, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/Cert_-_Numbers_to_C/All_My_Sons_Moving_and_Storage_3256-cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/All_My_Sons_Moving_and_Storage_3256-tar-ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "656742ac586dee24710968dade9f6bf157230baaa4b898c82036677c4638bef3",
+        "pages": 18,
+        "textChars": 2885
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3379",
+      "carrierName": "All Veteran Transit, LLC",
+      "dba": null,
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3379",
+      "directoryStatusText": null,
+      "directoryCorporateName": "All Veteran Transit, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/All_Veterans_Transit_3379_cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/All_Veteran_Transit_LLC_3379_tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "8eab9be6a44c591c8655f568319c0d8cdd4c5cfeefc13c6edc435409bfa4794a",
+        "pages": 16,
+        "textChars": 2839
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3400",
+      "carrierName": "Anytime Anywhere Piano Moving Co., LLC",
+      "dba": null,
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3400",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Anytime Anywhere Piano Moving Co., LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/Cert_-_Numbers_to_C/Anytime_Anywhere_Piano_Moving_Co_LLC_3400-cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/Anytime_Anywhere_Piano_Moving_Co_LLC_3400-tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "0f98c57bafbdf98d8a2989d066c81a2b28061df6ee1012dc31dc11a0bf32454b",
+        "pages": 15,
+        "textChars": 2375
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3239",
+      "carrierName": "ASP Inc",
+      "dba": "Aaction Movers of Nevada Inc",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3239",
+      "directoryStatusText": null,
+      "directoryCorporateName": "ASP Inc",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/Cert_-_Numbers_to_C/ASP_Action_Movers_3239-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/ASP_AACTION_Movers_NV_3239-tar.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "ec36b0f36328fb73587d631578948b643c34d6d1f2cc5b4dd30018a2d8988d47",
+        "pages": 35,
+        "textChars": 3592
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3368",
+      "carrierName": "Aspen Moving Company LLC",
+      "dba": "Aspen Moving Company",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3368",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Aspen Moving Company, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/Cert_-_Numbers_to_C/Aspen_Moving_3368_180309-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/Aspen_Moving_3368_tar.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "f973da8c71202c4a24e4ee0c33b1fdd96802f7f2c474754e2ecda4b26993e61a",
+        "pages": 16,
+        "textChars": 2960
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3066.2",
+      "carrierName": "Barry E. Jones",
+      "dba": "Carson Valley Movers",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3066.2",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Barry E. Jones",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/Barry_E_Jones_3066-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/Barry_Jones_Carson_Valley_Movers_3066-tar.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "96969fa82dbb2262c66d8330b380c9cd88d48172708c4cbe6e9dbf93001a74ae",
+        "pages": 19,
+        "textChars": 2375
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3244",
+      "carrierName": "Bekins A-1 Movers, Inc.",
+      "dba": "National Moving & Storage",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3244",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Bekins A-1 Movers, Inc.",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/Cert_-_Numbers_to_C/Bekins_A_1_Movers_3244-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/Bekins_A-1_Movers_National_Moving_Storage_3244-tar.pdf",
+      "tariffTitleSaysHouseholdGoods": null,
+      "tariffPdf": {
+        "sha256": "fc12c789eb1f8718c40dbaee0c7d34a4d07667275bb70613f942685030e5e97a",
+        "pages": 48,
+        "textChars": 0
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3156.2",
+      "carrierName": "Berger Transfer & Storage Inc",
+      "dba": null,
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3156.2",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Berger Transfer & Storage, Inc.",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/Cert_-_Numbers_to_C/Berger_Transfer_and_Storage_3156-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/Berger_Transfer_and_Storage_3156-tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "86af64aa01aa7362a329fab37ae898df1efc7baec0b5c5485fa5e7e1be739595",
+        "pages": 33,
+        "textChars": 3508
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3343.1",
+      "carrierName": "Black Wolf Moving Nevada, LLC",
+      "dba": "Two Men and a Truck",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3343.1",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Black Wolf Moving Nevada, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/Black_Wolf_Moving_NV_Two_Men_and_a_Truck_3343-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/Black_Wolf_Moving_NV_Two_Men_and_a_Truck_3343-tar-ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "229be90eb92627f41ee145c734cd9713e4bf02e29650c8c42185678bf357ebfa",
+        "pages": 16,
+        "textChars": 2953
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3337.3",
+      "carrierName": "Champion Movers, LLC",
+      "dba": "Champion Movers",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3337.3",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Champion Movers, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/Cert_-_Numbers_to_C/Champion_Movers_3337-cert-ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/Champion_Movers_3337-tar-ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "accccbb02516e7c018c1717a2f835441b57707da8807d7a896a3b26c914bea59",
+        "pages": 19,
+        "textChars": 2711
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3237.1",
+      "carrierName": "Coleman World Group, LLC",
+      "dba": "Coleman American Moving Services, Inc",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3237.1",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Coleman World Group, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/Cert_-_Numbers_to_C/Coleman_World_Group_Coleman_American_Moving_Services_3237-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/Coleman_World_Group_Coleman_American_Moving_Services_3237-tar.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "7a59fadb939931a4c4163ba0c1182bae23bc2ab8754ca2d3eb15054eba182ccd",
+        "pages": 27,
+        "textChars": 7673
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3151.2",
+      "carrierName": "Colonial Van and Storage, Inc.",
+      "dba": null,
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3151.2",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Colonial Van and Storage, Inc.",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/Colonial_Van_Storage_3151-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/Colonial_Van_Storage_3151-tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "6fa3b00d9fdc10704e7132d47ee2a1a1ca1231a5b6c4aba554e7f194038ceb8f",
+        "pages": 33,
+        "textChars": 4779
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3415",
+      "carrierName": "Coyotes Services, LLC",
+      "dba": "Coyotes Moving",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3415",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Coyotes Services, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/Cert_-_Numbers_to_C/Coyotes_Services_LLC_DBA_Coyotes_Moving_3415-cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/Coyotes_Services_LLC_DBA_Coyotes_Moving_3415-tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "b21268bc44951204c4f77ece21daf5394d68a9d381f0f8bbe7a7e7b8836df597",
+        "pages": 16,
+        "textChars": 2711
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3397",
+      "carrierName": "Double Eagle Relocation, LLC",
+      "dba": "College H.U.N.K.S. Hauling Junk and Moving",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3397",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Double Eagle Relocation, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/D_to_G/DoubleEagleRelocationLLC_CollegeHUNKSHaulingJunkMoving_3397_Cert-ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/D_to_G/DoubleEagleRelocationLLC_CollegeHUNKSHaulingJunkMoving_3397_tar-ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "5218ac066f9f505d276b613f9f4b62d9c47fe84ca5ab269db3ba371418d6291d",
+        "pages": 16,
+        "textChars": 3133
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3380.1",
+      "carrierName": "Forward Moving, LLC",
+      "dba": "Zippy Shell of Las Vegas Zippy Shell",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "CPCN_BASE_NUMBER_REVISION_DIFFERS",
+      "directoryCpcnAsPrinted": "3380",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Forward Moving, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/D_to_G/Forward_Moving_LLC_dba_Zippy_Shell_of_Las_Vegas_3380_cert-ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/D_to_G/Forward_Moving_LLC_dba_Zippy_Shell_of_Las_Vegas_3380-tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "dd01fe195359e41d3ae02565ec8dfd9870fec5a2f05e7186a509318661580e8e",
+        "pages": 15,
+        "textChars": 3588
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3396",
+      "carrierName": "GLX Moving Company of Nevada, LLC",
+      "dba": null,
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3396",
+      "directoryStatusText": null,
+      "directoryCorporateName": "GLX Moving Company of Nevada, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/D_to_G/GLX_Moving_Company_of_Nevada_LLC_3396_cert-ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/D_to_G/GLX_Moving_Company_of_Nevada_LLC_3396_tar-ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "23c041ece8b910817364edc6084d37dd7e191e3fd622cfbb1378d8fde7f72c72",
+        "pages": 16,
+        "textChars": 3010
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3408",
+      "carrierName": "Goldline Moving, LLC",
+      "dba": "Goldline Moving",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3408",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Goldline Moving, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/D_to_G/Goldline_Moving_LLC_3408-cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/D_to_G/Goldline_Moving_LLC_3408-tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "88fd698974026599b33eb4eff6f4846ce8f4bc1ffd1a3adcd062c2089aef382b",
+        "pages": 16,
+        "textChars": 2702
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3372",
+      "carrierName": "High Altitude Services, LLC",
+      "dba": "Reno Tahoe Movers",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3372",
+      "directoryStatusText": null,
+      "directoryCorporateName": "High Altitude Services, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/H_to_L/High_Altitude_Services_3372-cert-ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/H_to_L/High_Altitude_Services_3372-tar-ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "6de8f3f77f60a13f437c4430134deb9d8e596b2690d1b826db95848a22de9733",
+        "pages": 15,
+        "textChars": 6080
+      },
+      "certificateTextSaysHouseholdGoods": false
+    },
+    {
+      "cpcn": "3356",
+      "carrierName": "J & R Quality Movers, LLC",
+      "dba": null,
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3356",
+      "directoryStatusText": null,
+      "directoryCorporateName": "J & R Quality Movers, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/H_to_L/JR_Quality_Movers_3356-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/H_to_L/JR_Quality_Movers_3356-tar.pdf",
+      "tariffTitleSaysHouseholdGoods": null,
+      "tariffPdf": {
+        "sha256": "6f50622e8b925cea0d5e9524c8fe2d166057afdeac19fee785d2540912482abe",
+        "pages": 20,
+        "textChars": 0
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3377",
+      "carrierName": "Jackie Movers, LLC",
+      "dba": "Jackie Movers",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3377",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Jackie Movers, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/H_to_L/JackieMoversLLCdbaJackieMovers_3377_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/H_to_L/JackieMoversLLCdbaJackieMovers_3377_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "ba0d5b1805c40ac004dc4bbd6e6f9ccea6b5b46e705c98fb3983731197e67cc2",
+        "pages": 14,
+        "textChars": 2981
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3402",
+      "carrierName": "JE Moving Services, LLC",
+      "dba": null,
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3402",
+      "directoryStatusText": null,
+      "directoryCorporateName": "JE Moving Services, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/H_to_L/JE_Moving_Services_LLC_3402-cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/H_to_L/JE_Moving_Services_LLC_3402-tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "375e73f9d496e48e1be5be7b527a3c2fac25c6422e59c324c08af5920ec94745",
+        "pages": 15,
+        "textChars": 3444
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3344.7",
+      "carrierName": "Move 4 Less, LLC",
+      "dba": "Move 4 Less, MoveU4Less.com, Select Flat Rate Moving",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3344.7",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Move 4 Less, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/M_to_O/Move_4_Less_LLC_3344_cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/M_to_O/Move_4_Less_LLC_3344_tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "29dd4adc027e6b9d63e2a3281edd1842de12fe005589f8e9de6e6ce162165398",
+        "pages": 26,
+        "textChars": 3330
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3398.1",
+      "carrierName": "Muscle Movers LLC",
+      "dba": null,
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "CPCN_BASE_NUMBER_REVISION_DIFFERS",
+      "directoryCpcnAsPrinted": "3398",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Muscle Movers LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/M_to_O/Muscle_Movers_LLC_3398-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/M_to_O/Muscle_Movers_LLC_3398-tar.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "390e3d3eececa5ee1b676fe6aee9dbee737020ec75c8005057891f171409924a",
+        "pages": 15,
+        "textChars": 2717
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3259",
+      "carrierName": "Nevada Movers Express, Inc.",
+      "dba": "Family Movers Express",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3259",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Nevada Movers Express, Inc.",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/M_to_O/Nevada_Movers_Express_Family_Movers_Express_3259-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/M_to_O/Nevada_Movers_Express_Family_Movers_Express_3259-tar.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "1d26488324cf7214aea49052826ab9c24728b047d8548378318c2f36d44b54b9",
+        "pages": 16,
+        "textChars": 2901
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3367",
+      "carrierName": "Nevada Relocation Services, LLC",
+      "dba": null,
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3367",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Nevada Relocation Services, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/M_to_O/Nevada_Relocation_Services_3367_180705_CERT.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/M_to_O/Nevada_Relocation_Services_3367_180705_tar.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "231b90118f1d3978c1565ef0b786fd63d8717d9ae123252617e80ca50bba45f1",
+        "pages": 16,
+        "textChars": 2944
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "1070.741",
+      "carrierName": "O'Brien's Moving and Storage, Inc.",
+      "dba": null,
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "1070.741",
+      "directoryStatusText": null,
+      "directoryCorporateName": "O'Brien's Moving and Storage, Inc.",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/M_to_O/OBriens_Moving_Storage_1070-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/M_to_O/OBriens_Moving_Storage_1070sub741-tar-ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": null,
+      "tariffPdf": null,
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3047.4",
+      "carrierName": "Owens Brothers Transfer Company, Inc.",
+      "dba": null,
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3047.4",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Owens Brothers Transfer Company",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/M_to_O/Owens_Brothers_Transfer_Company_3047-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/M_to_O/Owens_Bros_Transfer_3047-tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "d58f58fc0362f647442851b979a27e015b3e13223e76d210254fbb16d6911843",
+        "pages": 14,
+        "textChars": 3417
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3258.6",
+      "carrierName": "Phoenix Movers, LLC",
+      "dba": "Carneys Full Service Movers",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3258.6",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Phoenix Movers, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/P_to_S/PhoenixMoversLLC_dbaCarneysFullServiceMovers_3258_cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/P_to_S/PhoenixMoversLLC_dba_Carneys_3258_tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "45b67364a469997d59918e32a1c6ce7b0422a747df1337d2df4d3050f3e1a2ff",
+        "pages": 17,
+        "textChars": 2823
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3388",
+      "carrierName": "Queen Business Solutions, LLC",
+      "dba": "moveON moving, Move On Moving",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3388",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Queen Business Solutions, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/P_to_S/QueenBusinessSolutions_moveONmoving_MoveOnMoving_3388-cert_ADA(1).pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/P_to_S/QueenBusinessSolutions_moveONmoving_MoveOnMoving_3388-tar_ADA(1).pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "2b17d718b8d34ffb825c382e258a31f4a6311d663a1a034a766a95dd2fd8219c",
+        "pages": 20,
+        "textChars": 3204
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3373",
+      "carrierName": "R.A. Moving, LLC",
+      "dba": "Two Men And A Truck of Reno, Nevada",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3373",
+      "directoryStatusText": null,
+      "directoryCorporateName": "R.A. Moving, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/P_to_S/RA_MovingLLC_TwoMenAndATruckofRenoNevada-cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/P_to_S/RA_MovingLLC_TwoMenAndATruckofRenoNevada-tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "9920a01b0191d12a7ff98cc88d37ee8fc197cf5046e005ef06a58b6592bcc14b",
+        "pages": 18,
+        "textChars": 2947
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3339",
+      "carrierName": "Red Carpet Moving, Inc.",
+      "dba": "Red Carpet Moving",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3339",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Red Carpet Moving, Inc.",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/P_to_S/Red_Carpet_Moving_3339-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/P_to_S/Red_Carpet_Moving_3339-tar.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "0d1c229b2ccf88bb77920ad5dd0f4379e1b59defb72665b7f02b1111794f7392",
+        "pages": 17,
+        "textChars": 3095
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3350.3",
+      "carrierName": "Shaul Marketing, Inc.",
+      "dba": "Triple 7 Movers",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3350.3",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Shaul Marketing, Inc.",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/P_to_S/Shaul_Marketing_Triple_7_Movers_3350-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/P_to_S/Shaul_Marketing_Triple_7_Movers_3350-tar.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "4aabb8d2005fa6431cbe89d603095383d0d1766cbfda691aec053d5fa919c2c2",
+        "pages": 21,
+        "textChars": 3344
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3374.1",
+      "carrierName": "Skyline Moving Service, LLC",
+      "dba": "Skyline Moving Service",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3374.1",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Skyline Moving Service, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/P_to_S/SkylineMovingService_3374-cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/P_to_S/SkylineMovingService_3374-tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "dadbedc0f59effca81a30bc21524e7fb384009eb7213ed0508f1128c8045a82b",
+        "pages": 22,
+        "textChars": 2797
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3255.2",
+      "carrierName": "Slater Transfer and Storage, Inc.",
+      "dba": null,
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3255.2",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Slater Transfer and Storage, Inc.",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/P_to_S/Slater_Transfer_Storage_3255-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/P_to_S/Slater_Transfer_3255-tar.pdf",
+      "tariffTitleSaysHouseholdGoods": null,
+      "tariffPdf": {
+        "sha256": "c5347177b00b132050b68ed907aff30d40263a7344f2b5e2f457d54fcec509a2",
+        "pages": 8,
+        "textChars": 0
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3390",
+      "carrierName": "The Sowell Company",
+      "dba": "Erinie's Van & Storage",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3390",
+      "directoryStatusText": null,
+      "directoryCorporateName": "The Sowell Company, Inc",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/T_to_Z/The_Sowell_Company_Inc_3390_cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/T_to/The_Sowell_Company_Inc_3390_tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "e8235253620745c520b46f966e730b3f970c9d92621788f1adacf852344a1f54",
+        "pages": 28,
+        "textChars": 3408
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3364",
+      "carrierName": "Umbrella Enterprises, LLC",
+      "dba": "Umbrella Movers",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3364",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Umbrella Enterprises, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/T_to_Z/Umbrella_Enterprises_Umbrella_Movers_3364-cert.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/T_to/Umbrella_Enterprises_Umbrella_Movers_3364-tar.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "71ec255503086c4fcd7f83c852aa06ba2965085a0af83f45bee5c7a0c21a1d34",
+        "pages": 16,
+        "textChars": 2972
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3401",
+      "carrierName": "Umove Company, LLC",
+      "dba": "Your Move",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3401",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Umove Company, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/T_to_Z/Umove_Company_LLC_DBA_Your_Move_3401-cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/T_to/Umove_Company_LLC_DBA_Your_Move_3401-tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": false,
+      "tariffPdf": {
+        "sha256": "df7c02a2863dc90a336050676e2217e9047a0c55c6d57ab92029323467640c09",
+        "pages": 12,
+        "textChars": 2722
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3371",
+      "carrierName": "United Moving Solutions, Inc.",
+      "dba": "United Moving Solutions",
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3371",
+      "directoryStatusText": null,
+      "directoryCorporateName": "United Moving Solutions, Inc",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/T_to_Z/UnitedMovingSolutionsInc_3371-cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/T_to/UnitedMovingSolutionsInc_3371-tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "15210a464ff27247dfcd68a5a151868be70afc9329e91778463cc94ed58e8aa3",
+        "pages": 19,
+        "textChars": 3049
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3383",
+      "carrierName": "Wolf Pack Moving, LLC",
+      "dba": null,
+      "classificationEvidence": "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER",
+      "ntaActiveListStatus": "Active",
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3383",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Wolf Pack Moving, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/T_to_Z/WolfPack_Moving_3383_cert_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/T_to/WolfPack_Moving_3383_tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "3238ff3d5d3d65a62901f918f4c707090dec418da6e771566ae1302a0f6b70c1",
+        "pages": 15,
+        "textChars": 2937
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3362",
+      "carrierName": "Astillita Productions, Inc.",
+      "dba": "Acme Moving Co.",
+      "classificationEvidence": "NTA_FILED_DOCUMENT_SAYS_HOUSEHOLD_GOODS_NOT_ON_ACTIVE_MOVER_LIST",
+      "ntaActiveListStatus": null,
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3362",
+      "directoryStatusText": "Other Pending OSC",
+      "directoryCorporateName": "Astillita Productions, Inc.",
+      "certificateUrl": null,
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/Astillita_Productions_Acme_Moving_Co_3362-tar.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "f965ffc641074d40161985aef748fbb7a5611ce692a10b9b57d7dbe207fe5e99",
+        "pages": 13,
+        "textChars": 3368
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3394",
+      "carrierName": "Blvd Moving Of Nevada, LLC",
+      "dba": null,
+      "classificationEvidence": "NTA_FILED_DOCUMENT_SAYS_HOUSEHOLD_GOODS_NOT_ON_ACTIVE_MOVER_LIST",
+      "ntaActiveListStatus": null,
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3394",
+      "directoryStatusText": "Temporary Discontinuance",
+      "directoryCorporateName": "Blvd Moving Of Nevada, LLC",
+      "certificateUrl": null,
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/Tar_-_A_to_C/Blvd_Moving_of_Nevada_LLC_3394_Tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "6ed15e5394bb50ef42b0360ec4f944eb057a2db1c5402bf8b9120be3c550db57",
+        "pages": 12,
+        "textChars": 2888
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3338",
+      "carrierName": "Discount Movers, Inc.",
+      "dba": null,
+      "classificationEvidence": "NTA_FILED_DOCUMENT_SAYS_HOUSEHOLD_GOODS_NOT_ON_ACTIVE_MOVER_LIST",
+      "ntaActiveListStatus": null,
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3338",
+      "directoryStatusText": "Revocation Pending Expiration",
+      "directoryCorporateName": "Discount Movers, Inc.",
+      "certificateUrl": null,
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/D_to_G/Discount_Movers_3338-tar-ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "4fbb1680c6946f2c2e89d50f00dce4327c30d652de9a4bdae3851b2446260724",
+        "pages": 26,
+        "textChars": 2720
+      },
+      "certificateTextSaysHouseholdGoods": null
+    },
+    {
+      "cpcn": "3386",
+      "carrierName": "Moving Up Enterprises, LLC",
+      "dba": "College Hunks Hauling Junk and Moving",
+      "classificationEvidence": "NTA_FILED_DOCUMENT_SAYS_HOUSEHOLD_GOODS_NOT_ON_ACTIVE_MOVER_LIST",
+      "ntaActiveListStatus": null,
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3386",
+      "directoryStatusText": null,
+      "directoryCorporateName": "Moving Up Enterprises, LLC",
+      "certificateUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Certificates/M_to_O/Moving_Up_Enterprises_LLC_cert%20_3386_ADA.pdf",
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/M_to_O/Moving_Up_Enterprises_LLC_3386_tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "01f8266aed5d431e6a8c14d8568b289ab010a583a8e03d6f979c65b208d9ed7c",
+        "pages": 16,
+        "textChars": 3099
+      },
+      "certificateTextSaysHouseholdGoods": true
+    },
+    {
+      "cpcn": "3391",
+      "carrierName": "Supersonic Movers, LLC",
+      "dba": "SuperSonic Movers",
+      "classificationEvidence": "NTA_FILED_DOCUMENT_SAYS_HOUSEHOLD_GOODS_NOT_ON_ACTIVE_MOVER_LIST",
+      "ntaActiveListStatus": null,
+      "directoryMatch": "EXACT_CPCN",
+      "directoryCpcnAsPrinted": "3391",
+      "directoryStatusText": "Other Pending OSC",
+      "directoryCorporateName": "Supersonic Movers, LLC",
+      "certificateUrl": null,
+      "tariffUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/Carriers/Tariffs/P_to_S/Supersonic_Movers_LLC_3391_tar_ADA.pdf",
+      "tariffTitleSaysHouseholdGoods": true,
+      "tariffPdf": {
+        "sha256": "f72ac8545cfefa58efff4514834c8efcd8658ab066604fc289cdfa99923dd7d4",
+        "pages": 15,
+        "textChars": 3104
+      },
+      "certificateTextSaysHouseholdGoods": null
+    }
+  ],
+  "notices2026Hhg": [
+    {
+      "docket": "26-07033",
+      "type": "Application",
+      "noticeDate": "09/09/2026",
+      "applicant": "Dobbs Legacy, LLC d/b/a DL Movers",
+      "noticeSaysHouseholdGoods": true,
+      "noticeUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/About/Notices/2026/09-September/26-07033%20Dobbs%20Legacy%20LLC%20dba%20DL%20Movers_ADA.pdf",
+      "noticeSha256": "4a56fea1977703b1287cecc7951be2fa050b39602d0af07a30bd16929affe694"
+    },
+    {
+      "docket": "26-08009",
+      "type": "Application",
+      "noticeDate": "08/17/2026",
+      "applicant": "Sky Tavern",
+      "noticeSaysHouseholdGoods": true,
+      "noticeUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/About/Notices/2026/08-August/26-08009%20Sky%20Tavern_ADA.pdf",
+      "noticeSha256": "4a1b89be861be6fe091cda346652e07e177ad62d3e0904f1f1bb40e76063e38a"
+    },
+    {
+      "docket": "26-06017",
+      "type": "Application",
+      "noticeDate": "07/02/2026",
+      "applicant": "Coyotes Services, LLC",
+      "noticeSaysHouseholdGoods": true,
+      "noticeUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/About/Notices/2026/07-July/26-06017%20Coyotes%20Services%20LLC_ADA.pdf",
+      "noticeSha256": "a6eace9cb75b67a8b70ce39de85576a524b75ceaa9153530c974ef87bf58a264"
+    },
+    {
+      "docket": "26-05008",
+      "type": "Application",
+      "noticeDate": null,
+      "applicant": "Cherry on Top Moving and Storage, LLC",
+      "noticeSaysHouseholdGoods": true,
+      "noticeUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/About/Notices/2026/06-June/26-05008%20Cherry%20on%20Top%20moving%20and%20storage_ADA.pdf",
+      "noticeSha256": "df8e07c2f0c6be07a5a5f7513469fa3e44850e2ad1c307b9a5e9edd509f6128c"
+    },
+    {
+      "docket": "26-01039",
+      "type": "Application",
+      "noticeDate": "01/30/2026",
+      "applicant": "C & N Enterprises, Inc. dba A Team Moving and Storage",
+      "noticeSaysHouseholdGoods": true,
+      "noticeUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/About/Notices/2026/01-January/26-01039%20C%20and%20N%20Enterprises%20Inc.%20dba%20A%20Team%20Moving%20and%20Storage_ADA.pdf",
+      "noticeSha256": "9f15d67452ec45c98b032981890b3dafc15ee9f1f87122df9bd3e830725e5124"
+    }
+  ],
+  "summary": {
+    "directoryRows": 594,
+    "directoryRowsWithCpcn": 594,
+    "directoryStatusTexts": {
+      "Other Pending OSC": 15,
+      "Revocation Pending Expiration": 15,
+      "Temporary Discontinuance": 52
+    },
+    "activeMoverCategoryRows": 41,
+    "activeMoverStatusAsPrinted": {
+      "Active": 41
+    },
+    "activeWarehousePermitRows": 22,
+    "hhgRows": 46,
+    "hhgDistinctCpcnBase": 46,
+    "hhgByEvidence": {
+      "NTA_ACTIVE_CERTIFICATES_CATEGORY_MOVER": 41,
+      "NTA_FILED_DOCUMENT_SAYS_HOUSEHOLD_GOODS_NOT_ON_ACTIVE_MOVER_LIST": 5
+    },
+    "activeMoverDirectoryMatch": {
+      "CPCN_BASE_NUMBER_REVISION_DIFFERS": 3,
+      "EXACT_CPCN": 38
+    },
+    "hhgDirectoryStatusText": {
+      "(none printed)": 42,
+      "Other Pending OSC": 2,
+      "Revocation Pending Expiration": 1,
+      "Temporary Discontinuance": 1
+    },
+    "hhgWithTariffLink": 46,
+    "hhgTariffTitleSaysHouseholdGoods": 41,
+    "hhgTariffScannedWithoutText": 4,
+    "directory3xxxRowsExcludedAsNotHhg": 6,
+    "notices2026Rows": 126,
+    "notices2026HhgApplications": 5,
+    "federalIdentifiersOnSource": false,
+    "exactUsdotJoins": 0,
+    "exactMcJoins": 0
+  }
+}

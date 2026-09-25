@@ -188,6 +188,15 @@ export type MoveNetworkMetricsV1 = {
     currentCertificateUniverse: null;
     sourceAsOf: null;
   };
+  nevada: {
+    hhgRows: number;
+    distinctCpcn: number;
+    activeMoverCertificates: number;
+    tariffLinks: number;
+    exactUsdotJoins: 0;
+    exactMcJoins: 0;
+    sourceAsOf: null;
+  };
   tennessee: {
     rosterCoverage: 'NOT_ACQUIRED';
     currentAuthorityUniverse: null;
