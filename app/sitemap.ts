@@ -83,6 +83,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/georgia',
     '/massachusetts',
     '/tennessee',
+    '/nevada',
     '/new-jersey',
     '/texas',
     '/washington',
@@ -127,7 +128,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority:
         route === ''
           ? 1
-          : route === '/local-movers' || route === '/california' || route === '/florida' || route === '/georgia' || route === '/massachusetts' || route === '/tennessee' || route === '/new-jersey' || route === '/texas' || route === '/washington' || route === '/colorado' || route === '/virginia' || route === '/new-york' || route === '/illinois' || route === '/oregon' || route === '/pennsylvania' || route === '/north-carolina' || route === '/ohio'
+          : route === '/local-movers' || route === '/california' || route === '/florida' || route === '/georgia' || route === '/massachusetts' || route === '/tennessee' || route === '/nevada' || route === '/new-jersey' || route === '/texas' || route === '/washington' || route === '/colorado' || route === '/virginia' || route === '/new-york' || route === '/illinois' || route === '/oregon' || route === '/pennsylvania' || route === '/north-carolina' || route === '/ohio'
             ? 0.9
             : route === '/verify-dot' || route === '/review'
               ? 0.88

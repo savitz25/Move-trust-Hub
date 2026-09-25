@@ -1,0 +1,223 @@
+{
+  "version": "move-nv-state-intel-v1",
+  "ticket": "NV-MOVE-001",
+  "as_of": "2026-09-25",
+  "generated_at": "2026-09-25T15:30:00Z",
+  "snapshotAsOf": "2026-09-25",
+  "retrievedAt": "2026-09-25T15:05:00Z",
+  "no_trust_score": true,
+  "no_paid_ranking": true,
+  "no_nevada_local_routes": true,
+  "no_las_vegas_intelligence_page": true,
+  "publication": {
+    "canonical": "https://www.movetrusthub.com/nevada",
+    "indexable": true,
+    "robots": "index,follow",
+    "route": "/nevada",
+    "h1": "Nevada Moving & Household Goods Intelligence"
+  },
+  "regulator": {
+    "agency": "Nevada Transportation Authority",
+    "short": "NTA",
+    "credential_term": "Certificate of Public Convenience and Necessity (CPCN) number as NTA prints it",
+    "directory_url": "https://nta.nv.gov/Carriers/Tariffs-Certificates/",
+    "active_certificates_url": "http://tsa1.nv.gov/ActiveCertificates.asp",
+    "active_mover_category_url": "http://tsa1.nv.gov/ActiveCertificatesTable.asp?nNo=5",
+    "complaints_url": "https://nta.nv.gov/Forms/Complaints/",
+    "hhg_complaint_form_url": "http://hal.nv.gov/form/NTA/Household_Goods_Mover_Complaint",
+    "notices_url": "https://nta.nv.gov/About/Notices/2026/2026_Notices/",
+    "intrastate_only": true,
+    "interstate_regulator": "FMCSA",
+    "interstate_statement": "The Nevada Transportation Authority does not have jurisdiction over interstate service. Interstate service is defined as services originating in one State and ending in another State."
+  },
+  "clocks": {
+    "generatedAt": "2026-09-25T15:30:00Z",
+    "snapshotAsOf": "2026-09-25",
+    "retrievedAt": "2026-09-25T15:05:00Z",
+    "sourceAsOf": null,
+    "do_not_use_retrieval_as_authority_effective_date": true,
+    "nta_directory": {
+      "sourceAsOf": null,
+      "retrievedAt": "2026-09-25T15:05:00Z",
+      "sha256": "3bfef51522546cf765322cbac90c2bdb8942dfd36785d4ef324f5a2f32ca6483",
+      "note": "The directory prints no as-of date."
+    },
+    "nta_active_mover_list": {
+      "sourceAsOf": null,
+      "retrievedAt": "2026-09-25T15:05:00Z",
+      "sha256": "b71e18d6aff6e8b4abeac8775c0d8b0aa2aeade00ce44631b7110fa895faa738",
+      "note": "The Active Certificates page prints no as-of date."
+    },
+    "tariffs": {
+      "effectiveDates": "NOT_ACQUIRED",
+      "note": "Tariffs are scanned documents; their issued, accepted and effective dates are stamps that OCR reads unreliably, so no tariff date is published. Retrieval is not a tariff date."
+    },
+    "notices": {
+      "window": "2026 public notices",
+      "dates": "notice date as printed per row"
+    },
+    "federal_overlay_observedAt": "2026-09-25T14:52:00Z"
+  },
+  "directory": {
+    "coverage": "KNOWN",
+    "NV_NTA_DIRECTORY_ROWS": 594,
+    "NV_NTA_DIRECTORY_STATUS_TEXTS": {
+      "Other Pending OSC": 15,
+      "Revocation Pending Expiration": 15,
+      "Temporary Discontinuance": 52
+    },
+    "all_transportation_classes": true,
+    "has_class_column": false,
+    "note": "The Tariffs & Certificates directory lists every NTA class (towing, limousine, charter bus, taxi, movers and others) by corporate name. It is not a mover list and is never counted as movers."
+  },
+  "current_hhg_roster": {
+    "coverage": "KNOWN",
+    "classification": "NTA Active Certificates category 'Mover', plus directory rows whose NTA-filed certificate or tariff says household goods",
+    "NV_NTA_HHG_ROWS": 46,
+    "NV_NTA_HHG_DISTINCT_CPCN": 46,
+    "NV_NTA_ACTIVE_MOVER_CERTIFICATES": 41,
+    "NV_NTA_ACTIVE_MOVER_STATUS_AS_PRINTED": {
+      "Active": 41
+    },
+    "NV_NTA_HHG_DOCUMENT_EVIDENCE_NOT_ON_ACTIVE_LIST": 5,
+    "NV_NTA_HHG_DIRECTORY_STATUS_TEXT": {
+      "(none printed)": 42,
+      "Other Pending OSC": 2,
+      "Revocation Pending Expiration": 1,
+      "Temporary Discontinuance": 1
+    },
+    "NV_NTA_ACTIVE_MOVER_DIRECTORY_MATCH": {
+      "CPCN_BASE_NUMBER_REVISION_DIFFERS": 3,
+      "EXACT_CPCN": 38
+    },
+    "NV_NTA_3XXX_DIRECTORY_ROWS_EXCLUDED_AS_NOT_HHG": 6,
+    "NV_NTA_ACTIVE_WAREHOUSE_PERMITS": 22,
+    "NV_NTA_HHG_EXACT_USDOT_JOINS": 0,
+    "NV_NTA_HHG_EXACT_MC_JOINS": 0,
+    "status_semantics": "Status is kept exactly as NTA prints it: 'Active' on the Active Certificates list; the directory prints status text only when there is one (Temporary Discontinuance, Revocation Pending Expiration, Other Pending OSC). No status is invented.",
+    "name_is_not_class": "Company names were never used to classify. Six 3xxx-series directory rows are towing companies and are excluded.",
+    "revision_suffix_note": "Three Active Mover certificates (3380.1, 3398.1, 3405.2) appear in the directory under the same certificate number with an earlier revision suffix; they are matched on that number, not on name."
+  },
+  "tariff": {
+    "model": "CARRIER_FILED_TARIFFS",
+    "NV_NTA_HHG_TARIFF_LINKS": 46,
+    "NV_NTA_HHG_TARIFF_TITLE_SAYS_HOUSEHOLD_GOODS": 41,
+    "NV_NTA_HHG_TARIFF_SCANNED_WITHOUT_TEXT": 4,
+    "not_a_quote": true,
+    "not_a_statewide_rate": true,
+    "not_interstate": true,
+    "rate_sheets_parsed": false,
+    "note": "Each mover files its own tariff naming rates, charges and rules within the territory in its certificate. A tariff is not a quote and there is no statewide Nevada moving price."
+  },
+  "applications": {
+    "coverage": "PARTIAL",
+    "window": "2026 public notices",
+    "NV_NTA_2026_NOTICES": 126,
+    "NV_NTA_2026_HHG_APPLICATION_NOTICES": 5,
+    "application_is_not_a_cpcn": true,
+    "rows": [
+      {
+        "docket": "26-07033",
+        "type": "Application",
+        "noticeDate": "09/09/2026",
+        "applicant": "Dobbs Legacy, LLC d/b/a DL Movers",
+        "noticeSaysHouseholdGoods": true,
+        "noticeUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/About/Notices/2026/09-September/26-07033%20Dobbs%20Legacy%20LLC%20dba%20DL%20Movers_ADA.pdf",
+        "noticeSha256": "4a56fea1977703b1287cecc7951be2fa050b39602d0af07a30bd16929affe694"
+      },
+      {
+        "docket": "26-08009",
+        "type": "Application",
+        "noticeDate": "08/17/2026",
+        "applicant": "Sky Tavern",
+        "noticeSaysHouseholdGoods": true,
+        "noticeUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/About/Notices/2026/08-August/26-08009%20Sky%20Tavern_ADA.pdf",
+        "noticeSha256": "4a1b89be861be6fe091cda346652e07e177ad62d3e0904f1f1bb40e76063e38a"
+      },
+      {
+        "docket": "26-06017",
+        "type": "Application",
+        "noticeDate": "07/02/2026",
+        "applicant": "Coyotes Services, LLC",
+        "noticeSaysHouseholdGoods": true,
+        "noticeUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/About/Notices/2026/07-July/26-06017%20Coyotes%20Services%20LLC_ADA.pdf",
+        "noticeSha256": "a6eace9cb75b67a8b70ce39de85576a524b75ceaa9153530c974ef87bf58a264"
+      },
+      {
+        "docket": "26-05008",
+        "type": "Application",
+        "noticeDate": null,
+        "applicant": "Cherry on Top Moving and Storage, LLC",
+        "noticeSaysHouseholdGoods": true,
+        "noticeUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/About/Notices/2026/06-June/26-05008%20Cherry%20on%20Top%20moving%20and%20storage_ADA.pdf",
+        "noticeSha256": "df8e07c2f0c6be07a5a5f7513469fa3e44850e2ad1c307b9a5e9edd509f6128c"
+      },
+      {
+        "docket": "26-01039",
+        "type": "Application",
+        "noticeDate": "01/30/2026",
+        "applicant": "C & N Enterprises, Inc. dba A Team Moving and Storage",
+        "noticeSaysHouseholdGoods": true,
+        "noticeUrl": "https://nta.nv.gov/uploadedFiles/ntanvgov/content/About/Notices/2026/01-January/26-01039%20C%20and%20N%20Enterprises%20Inc.%20dba%20A%20Team%20Moving%20and%20Storage_ADA.pdf",
+        "noticeSha256": "9f15d67452ec45c98b032981890b3dafc15ee9f1f87122df9bd3e830725e5124"
+      }
+    ]
+  },
+  "complaints": {
+    "coverage": "NOT_ACQUIRED",
+    "intake": "KNOWN",
+    "jurisdiction": "Moves within Nevada only; interstate moves go to FMCSA.",
+    "company_level_records": "NOT_ACQUIRED",
+    "outcomes": "REQUEST_ONLY",
+    "count": null,
+    "complaint_is_not_a_finding": true
+  },
+  "existing_coverage_audit": {
+    "federal_overlay": {
+      "source": "MoveTrustHub production research search (FMCSA spine), recorded headquarters state NV",
+      "observedAt": "2026-09-25T14:52:00Z",
+      "interstate_hhg_carriers_headquartered_nv": 44,
+      "movers_in_nevada_public_identity_cohort": 46,
+      "note": "Headquarters address is not NTA authority and not a service area. These are existing federal records and were not duplicated."
+    },
+    "existing_nevada_routes": [
+      "/moving-to/nevada (destination guide)",
+      "/moving-to/nevada/[slug]",
+      "/local-movers/nevada/[county]"
+    ],
+    "state_intelligence_route_before": null,
+    "nta_evidence_before": "NONE"
+  },
+  "identity": {
+    "preferred": "NTA CPCN number as printed",
+    "usdot_on_source": false,
+    "mc_on_source": false,
+    "name_only_join": "UNSAFE",
+    "cpcn_is_not_usdot": true,
+    "cpcn_is_not_mc": true,
+    "zero_joins_is_not_zero_overlap": true
+  },
+  "capabilities": {
+    "nta_directory": "KNOWN",
+    "nta_hhg_subset": "KNOWN",
+    "nta_hhg_tariff_links": "KNOWN",
+    "nta_hhg_tariff_effective_dates": "NOT_ACQUIRED",
+    "nta_hhg_applications_2026": "PARTIAL",
+    "complaint_intake": "KNOWN",
+    "complaint_records": "NOT_ACQUIRED",
+    "complaint_outcomes": "REQUEST_ONLY",
+    "exact_nta_fmcsa_join": "UNKNOWN",
+    "name_only_nta_fmcsa_join": "UNSUPPORTED",
+    "combined_nta_fmcsa_mover_count": "UNSUPPORTED",
+    "local_city_pages": "UNSUPPORTED"
+  },
+  "expansion_ledger": {
+    "GRAPH_WRITES": 0,
+    "NET_NEW_PUBLIC_PROFILES": 0,
+    "EXACT_USDOT_JOINS": 0,
+    "EXACT_MC_JOINS": 0,
+    "PROFILE_ATTACHMENTS": 0
+  },
+  "source_roster_sha256": "8324ec142600efaed72f6ac349416a64bef3891d3312e2fb5238cbdefe1bcabc",
+  "fingerprint": "4a8af0569b5d5d023dbdcd7b37ac30842158282d11e45fd7ffbfd8cfa43d4f80"
+}

@@ -66,6 +66,10 @@ export type MoveNetworkMetricsInput = {
   maHhgDistinctCertificates: number;
   maTariffPostedRows: number;
   maTariffPendingRows: number;
+  nvHhgRows: number;
+  nvHhgDistinctCpcn: number;
+  nvActiveMoverCertificates: number;
+  nvTariffLinks: number;
   publishedStateIntelligencePaths: string[];
   floridaResearchCountyLandings: number;
   localMoverStateLandings: number;
@@ -141,6 +145,9 @@ export function assertGrainSafety(input: MoveNetworkMetricsInput): void {
   if (input.gaHhgListingRows < input.gaHhgDistinctMca) throw new Error('Georgia listing rows cannot be fewer than distinct MCA numbers');
   if (!input.publishedStateIntelligencePaths.includes('/massachusetts')) throw new Error('Massachusetts state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/tennessee')) throw new Error('Tennessee state intelligence path missing');
+  if (!input.publishedStateIntelligencePaths.includes('/nevada')) throw new Error('Nevada state intelligence path missing');
+  if (input.nvHhgDistinctCpcn <= 0) throw new Error('Nevada NTA CPCN count missing');
+  if (input.nvActiveMoverCertificates > input.nvHhgDistinctCpcn) throw new Error('Nevada Active Mover certificates cannot exceed the household-goods subset');
   if (input.maHhgDistinctCertificates <= 0) throw new Error('Massachusetts DPU certificate count missing');
   if (input.maHhgListingRows < input.maHhgDistinctCertificates) throw new Error('Massachusetts listing rows cannot be fewer than distinct DPU certificates');
   if (input.maTariffPostedRows + input.maTariffPendingRows !== input.maHhgListingRows) throw new Error('Massachusetts tariff rows must partition the listing rows');
@@ -791,6 +798,34 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       ),
     }),
     metric({
+      key: 'nv_nta_hhg_cpcn_identities',
+      label: 'Nevada NTA household-goods CPCN identities',
+      value: input.nvHhgDistinctCpcn,
+      valueState: 'KNOWN',
+      grain: 'nv_nta_hhg_cpcn_identity',
+      denominator: 'Distinct NTA certificate numbers classified as household goods (Active Mover list plus NTA-filed documents)',
+      description:
+        `Distinct Nevada Transportation Authority CPCN numbers for household-goods carriers: ${input.nvActiveMoverCertificates} on NTA's Active Mover list and the rest in the Tariffs & Certificates directory with household-goods certificates or tariffs. Not the whole NTA directory, not FMCSA interstate authority, and not a statewide mover count.`,
+      coverage: 'Nevada',
+      contributingSourceSystems: ['nv_nta_active_certificates', 'nv_nta_tariffs_certificates'],
+      sourceAsOf: null,
+      generatedAt,
+      publicationStatus: 'PUBLIC',
+      presentation: {
+        family: 'STATE_AUTHORITY',
+        entityClass: 'Nevada NTA household-goods CPCN identity',
+        destination: '/nevada',
+        acceptedArtifact: 'move-nv-state-intel-v1',
+      },
+      trace: commonTrace(
+        `Count distinct CPCN numbers (${input.nvHhgDistinctCpcn}) on ${input.nvHhgRows} household-goods rows; company names are never used to classify.`,
+        'Not USDOT or MC. Not towing, limousine or other NTA classes. Filed tariffs are not quotes. Applications are not certificates.',
+        ['nv_nta_active_certificates', 'nv_nta_tariffs_certificates'],
+        'Nevada intrastate household-goods certificates',
+        'No as-of date printed; retrieval is not an authority effective date',
+      ),
+    }),
+    metric({
       key: 'tn_intrastate_authority_universe',
       label: 'Tennessee Intrastate Authority household-goods carrier universe',
       value: null,
@@ -1019,6 +1054,15 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       exactUsdotJoins: 0,
       exactMcJoins: 0,
       sourceAsOf: '2026-06-16',
+    },
+    nevada: {
+      hhgRows: input.nvHhgRows,
+      distinctCpcn: input.nvHhgDistinctCpcn,
+      activeMoverCertificates: input.nvActiveMoverCertificates,
+      tariffLinks: input.nvTariffLinks,
+      exactUsdotJoins: 0,
+      exactMcJoins: 0,
+      sourceAsOf: null,
     },
     tennessee: {
       rosterCoverage: 'NOT_ACQUIRED',
