@@ -60,13 +60,13 @@ test('exact native identity and published profile; slug is not the binding',asyn
   assert.equal(r.target,'http://127.0.0.1:4322/mock-parent-confirm');
   assert.equal(r.target.includes(r.fields.continuationRef),false);
   assert.equal(JSON.stringify(record).includes('notes'),false);
-  assert.equal(mapMoveProfile('fuzzy-alias',await f.deps.resolveExactPublished(slug)),null);
+  assert.equal(mapMoveProfile('fuzzy-alias',await f.deps.resolveExactPublished(slug,browser)),null);
 });
 test('unbound, unsupported and unpublished profiles fail closed without parent mutation',async()=>{
   for(const [patch,capability] of [
     [{binding:null},'SAVE_LOCAL_ONLY'],[{binding:{id:'r',networkEntityId:'n',status:'review_required'}},'IDENTITY_REVIEW_REQUIRED'],
     [{reviewedClass:'auto_carrier'},'UNSUPPORTED_CLASS'],[{publicationState:'INGESTED'},'PROFILE_NOT_PUBLISHED'],
-  ] as const){const f=fixture(),row=await f.deps.resolveExactPublished(slug);f.deps.resolveExactPublished=async()=>({...row!,...patch});
+  ] as const){const f=fixture(),row=await f.deps.resolveExactPublished(slug,browser);f.deps.resolveExactPublished=async()=>({...row!,...patch});
     assert.deepEqual(await f.adapter.prepare(selection(),browser),{state:'local_only',capability,localCopy:'keep'});assert.equal(f.calls.length,0);}
 });
 test('strict selections reject extra/forged identity/notes, missing fields, oversize and digest tamper',async()=>{
@@ -129,7 +129,7 @@ test('account switch before retry or during receipt verification never confirms'
 test('forged receipt, no parent approval and changed publication cannot produce success',async()=>{
   const f=fixture(),r=await f.start();f.seed();f.forge();assert.equal((await f.adapter.finish(r.ticket,selection(),browser)).state,'unavailable');
   const g=fixture(),s=await g.start();g.setGrant(null);assert.equal((await g.adapter.finish(s.ticket,selection(),browser)).state,'unavailable');assert.equal(g.receipts.size,0);
-  const h=fixture(),t=await h.start(),row=await h.deps.resolveExactPublished(slug);h.deps.resolveExactPublished=async()=>({...row!,publicationState:'INACTIVE'});
+  const h=fixture(),t=await h.start(),row=await h.deps.resolveExactPublished(slug,browser);h.deps.resolveExactPublished=async()=>({...row!,publicationState:'INACTIVE'});
   assert.equal((await h.adapter.finish(t.ticket,selection(),browser)).state,'local_only');assert.equal(h.receipts.size,0);
   assert.equal(h.calls.includes('commitProfileSave'),false);
 });
@@ -175,7 +175,7 @@ test('return is exact server profile and rejects traversal/external/encoded path
     assert.equal(validateProfileReturn(value,task,registry),null);
 });
 test('missing class review is unresolved rather than guessed; saved UUID is allowed',async()=>{
-  const f=fixture(),row=await f.deps.resolveExactPublished(slug);
+  const f=fixture(),row=await f.deps.resolveExactPublished(slug,browser);
   assert.equal(mapMoveProfile(slug,{...row!,reviewedClass:null}),null);
   const r=await f.start();f.seed();await f.adapter.finish(r.ticket,selection(),browser);
   [...f.receipts.values()][0]!.parent.savedRef='12345678-1234-4234-8234-123456789abc';

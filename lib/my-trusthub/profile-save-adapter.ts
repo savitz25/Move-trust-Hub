@@ -14,7 +14,10 @@ import type { Operation, RequestFor, ResponseFor } from './vendor/interface';
 const opaque = (v: unknown): v is string => typeof v === 'string' && /^[A-Za-z0-9_-]{43}$/.test(v);
 const hash = (v: string) => createHash('sha256').update(v).digest('hex');
 export type BrowserBinding = { binding: string; csrfVerified: true; origin: string; environment: 'isolated' };
-export type CurrentGrant = { accountContextRef: string; selectionConfirmed: true; projectRef?: string };
+export type CurrentGrant = {
+  accountContextRef: string; selectionConfirmed: true; projectRef?: string;
+  sessionBinding?: string; proofRef?: string; expiresAt?: number;
+};
 export type TrustedMoveRecord = {
   id: string; slug: string; publicationState?: PublicationState | null;
   // Class is supplied by reviewed mapper data, NOT assumed from local slug/US DOT.
@@ -44,8 +47,8 @@ export type AdapterConfig = {
 };
 export interface Dependencies {
   config: AdapterConfig; store: TransferStore;
-  resolveExactPublished(slug: string): Promise<TrustedMoveRecord | null>;
-  parent<K extends Operation>(operation: K, input: RequestFor<K>['input'], browser: BrowserBinding): Promise<ResponseFor<K>>;
+  resolveExactPublished(slug: string, browser: BrowserBinding): Promise<TrustedMoveRecord | null>;
+  parent<K extends Operation>(operation: K, input: RequestFor<K>['input'], browser: BrowserBinding, assertion?: { session: string | null; grant: string | null }): Promise<ResponseFor<K>>;
   /** Verified parent-session/P13 service, not legacy Move Auth or client-supplied context. */
   currentGrant(browser: BrowserBinding, ticketHash: string): Promise<CurrentGrant | null>;
   now(): number;
@@ -88,7 +91,7 @@ export class MoveProfileSaveAdapter {
       const selected:GuestStageInput['selected']=[];
       for(const row of selection) {
         if(hash(projection(row.companySlug,row.savedAt))!==row.digest)return failure('invalid');
-        const trusted=mapMoveProfile(row.companySlug,await d.resolveExactPublished(row.companySlug));
+        const trusted=mapMoveProfile(row.companySlug,await d.resolveExactPublished(row.companySlug,browser));
         if(!trusted)return {state:'local_only',capability:'IDENTITY_REVIEW_REQUIRED',localCopy:'keep'};
         const capability=profileCapability(trusted);
         if(capability!=='SAVE_SUPPORTED')return {state:'local_only',capability,localCopy:'keep'};
@@ -103,11 +106,12 @@ export class MoveProfileSaveAdapter {
       // Require the server-bound route; browser input cannot choose a destination.
       const path=d.config.parentFormPath;
       if(!path || !/^\/[a-z0-9/-]+$/.test(path) || path.startsWith('//') || path.includes('..'))return failure('unavailable');
-      const stage=await d.parent('prepareGuestProfileTransfer',manifest,browser);
+      const stageContext={session:null,grant:null};
+      const stage=await d.parent('prepareGuestProfileTransfer',manifest,browser,stageContext);
       if(!stage.ok || !opaque(stage.result.transferRef) || stage.result.manifestDigest!==manifestDigest(manifest) ||
         !Number.isFinite(stage.result.expiresAt) || stage.result.expiresAt<=d.now() || stage.result.expiresAt>d.now()+STAGING_TTL_MS)return failure('unavailable');
       const continuation=await d.parent('prepareProfileSaveContinuation',{sourceHub:'move',audience:'ask',...{
-        transferRef:stage.result.transferRef,manifestDigest:stage.result.manifestDigest}},browser);
+        transferRef:stage.result.transferRef,manifestDigest:stage.result.manifestDigest}},browser,stageContext);
       if(!continuation.ok || !opaque(continuation.result.continuationRef) || !Number.isFinite(continuation.result.expiresAt) ||
         continuation.result.expiresAt<=d.now() || continuation.result.expiresAt>stage.result.expiresAt)return failure('unavailable');
       const ticket=randomBytes(32).toString('base64url');
@@ -134,6 +138,10 @@ export class MoveProfileSaveAdapter {
       const grant=await readGrant();
       if(!grant || !grant.selectionConfirmed || !opaque(grant.accountContextRef) || (grant.projectRef!==undefined && !opaque(grant.projectRef)))return failure('unavailable');
       if(record.accountContextRef && !sameGrant(grant,{accountContextRef:record.accountContextRef,projectRef:record.projectRef,selectionConfirmed:true}))return failure('account_changed');
+      const receiptContext={
+        session:typeof grant.sessionBinding==='string'&&/^[a-f0-9]{64}$/.test(grant.sessionBinding)?grant.sessionBinding:null,
+        grant:typeof grant.proofRef==='string'&&opaque(grant.proofRef)?grant.proofRef:null,
+      };
       // withRecord must persist this binding atomically, including on lost responses.
       record.accountContextRef=grant.accountContextRef;record.projectRef=grant.projectRef;
       // Persist ownership BEFORE any parent read. Move never commits a parent Save.
@@ -141,27 +149,29 @@ export class MoveProfileSaveAdapter {
       let projectFailed=false;
       for(const [index,item] of record.manifest.selected.entries()) {
         if(!sameGrant(await readGrant(),grant))return failure('account_changed');
-        const current=mapMoveProfile(item.localItemId,await d.resolveExactPublished(item.localItemId));
+        const current=mapMoveProfile(item.localItemId,await d.resolveExactPublished(item.localItemId,browser));
         if(!current || current.nativeId!==item.profile.nativeId)return failure('invalid');
         const capability=profileCapability(current);
         if(capability!=='SAVE_SUPPORTED')return {state:'local_only',capability,localCopy:'keep'};
         const input:CommitInput={requestKey:record.requestPrefix+':'+index,accountContextRef:grant.accountContextRef,
           transferRef:record.parentStage.transferRef,manifestDigest:record.parentStage.manifestDigest,item,...(grant.projectRef?{projectRef:grant.projectRef}:{})};
-        const lookup=await d.parent('getProfileSaveReceipt',{requestKey:input.requestKey,accountContextRef:input.accountContextRef},browser);
+        const lookup=await d.parent('getProfileSaveReceipt',{requestKey:input.requestKey,accountContextRef:input.accountContextRef},browser,receiptContext);
         if(!lookup.ok)return failure('unavailable');
         const receipt=lookup.result;
         if(!receipt)return record.expiresAt<=d.now()?failure('expired'):failure('unavailable');
         if(!matches(receipt,input))return failure('unavailable');
         const verified=await d.parent('verifyProfileSaveReceipt',{requestKey:input.requestKey,accountContextRef:input.accountContextRef,
-          receiptRef:receipt.receiptRef,manifestDigest:input.manifestDigest,item,...(grant.projectRef?{projectRef:grant.projectRef}:{})},browser);
+          receiptRef:receipt.receiptRef,manifestDigest:input.manifestDigest,item,...(grant.projectRef?{projectRef:grant.projectRef}:{})},browser,receiptContext);
         if(!verified.ok || !matches(verified.result,input) || verified.result.receiptRef!==receipt.receiptRef)return failure('unavailable');
         if(!sameGrant(await readGrant(),grant))return failure('account_changed');
         projectFailed ||= verified.result.project.outcome==='failed';
       }
       const registry:TrustedOriginRegistry={environment:'isolated',isolatedBackendVerified:true,
         origins:{move:d.config.moveOrigin,insurance:'https://insurance.test',lender:'https://lender.test',contractor:'https://contractor.test',senior:'https://senior.test',investor:'https://investor.test'}};
-      const returnPath=record.manifest.returnTask.returnPath;
-      if(returnPath!=='/companies/'+record.manifest.returnTask.canonicalSlug || !validateProfileReturn(returnPath,record.manifest.returnTask,registry))return failure('invalid');
+      const task=record.manifest.returnTask;
+      if(!('returnPath' in task) || typeof task.returnPath!=='string')return failure('invalid');
+      const returnPath=task.returnPath;
+      if(returnPath!=='/companies/'+task.canonicalSlug || !validateProfileReturn(returnPath,task,registry))return failure('invalid');
       return {state:'parent_saved',projectFailed,returnPath,localCopy:'keep'};
     });}catch{return failure('unavailable');}
   }

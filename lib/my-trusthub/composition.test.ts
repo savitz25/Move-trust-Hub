@@ -225,11 +225,12 @@ test('signed parent channel binds the reviewed origin pair and cannot carry a co
     const claims = await verifyAssertion(new Request(ASK_PREVIEW + PROFILE_SAVE_ENDPOINT, { method: 'POST', headers: { [ASSERTION_HEADER]: token } }), Buffer.from(String(init?.body)), keys.publicKey, 'move', 'receipt:verify', nonceStore(), Date.now());
     assert.equal(claims.grant, 'p'.repeat(43)); assert.equal(claims.session, hash('session'));
     return Response.json({ ok: true, operation: 'getProfileSaveReceipt', result: null });
-  }, () => ({ session: hash('session'), grant: 'p'.repeat(43) }));
+  });
   const binding: BrowserBinding = { binding: browser, csrfVerified: true, origin: MOVE_PREVIEW, environment: 'isolated' };
+  const context = { session: hash('session'), grant: 'p'.repeat(43) };
   const envelope = { version: PROFILE_SAVE_RUNTIME_VERSION, operation: 'getProfileSaveReceipt', input: { requestKey: 'k', accountContextRef: 'a'.repeat(43) } };
-  assert.equal((await channel.post(ASK_PREVIEW + PROFILE_SAVE_ENDPOINT, envelope, binding, AbortSignal.timeout(1000))).ok, true);
-  await assert.rejects(channel.post(ASK_PREVIEW + PROFILE_SAVE_ENDPOINT, { ...envelope, operation: 'commitProfileSave' }, binding, AbortSignal.timeout(1000)));
-  await assert.rejects(channel.post('https://ask.test' + PROFILE_SAVE_ENDPOINT, envelope, binding, AbortSignal.timeout(1000)));
+  assert.equal((await channel.post(ASK_PREVIEW + PROFILE_SAVE_ENDPOINT, envelope, binding, AbortSignal.timeout(1000), context)).ok, true);
+  await assert.rejects(channel.post(ASK_PREVIEW + PROFILE_SAVE_ENDPOINT, { ...envelope, operation: 'commitProfileSave' }, binding, AbortSignal.timeout(1000), context));
+  await assert.rejects(channel.post('https://ask.test' + PROFILE_SAVE_ENDPOINT, envelope, binding, AbortSignal.timeout(1000), context));
   assert.equal(posts, 1);
 });
