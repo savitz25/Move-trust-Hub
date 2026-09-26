@@ -28,17 +28,19 @@ test('Move regulatory boundaries and shared UI are explicit', () => {
   const root = join(__dirname, '..', '..');
   const shell = readFileSync(join(root, 'components/specialist-search/SpecialistSearchShell.tsx'), 'utf8');
   const result = readFileSync(join(root, 'components/ask-move-result.tsx'), 'utf8');
+  const card = readFileSync(join(root, 'components/ask-move-result-card.tsx'), 'utf8');
   const ask = readFileSync(join(root, 'app/(move)/ask/page.tsx'), 'utf8');
   const home = readFileSync(join(root, 'components/home/home-mover-search.tsx'), 'utf8');
   assert.match(shell, /What do you want to find out/);
   assert.match(shell, /Advanced filters/);
   assert.match(shell, /headquarters is not service territory/i);
-  assert.match(result, /Why this matched/);
-  assert.match(result, /Trace this result/);
-  assert.match(result, /Research this mover/);
+  assert.match(card, /Why this matched/);
+  assert.match(card, /Trace this result/);
+  assert.match(card, /View profile →/);
+  assert.doesNotMatch(result + card, /Research this mover/);
   assert.match(ask, /index: false/);
   assert.match(home, /SpecialistSearchShell/);
-  assert.doesNotMatch(shell + result, /best mover|recommended mover|quality rank/i);
+  assert.doesNotMatch(shell + result + card, /best mover|recommended mover|quality rank/i);
 });
 
 test('carrier vs broker remains an educational definition, not a directory ranking', () => {
