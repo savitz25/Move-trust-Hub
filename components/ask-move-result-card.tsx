@@ -32,16 +32,19 @@ export function AskMoveResultCard({
       data-testid="ask-result-card"
       {...surface}
     >
-      <div className="flex min-w-0 flex-wrap items-start justify-between gap-2">
+      <div
+        data-testid="ask-card-heading"
+        className="flex w-full flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between"
+      >
         {profile ? (
           <Link
             href={profile}
             data-search-action="profile"
             data-testid="ask-profile-link"
-            className="group min-w-0 flex-1 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+            className="group w-full max-w-full rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-auto sm:min-w-[12rem] sm:flex-1"
           >
-            <span className="flex min-w-0 flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
-              <h3 className="min-w-0 break-words text-xl font-semibold leading-snug text-[#C2410C] underline decoration-[#C2410C]/40 underline-offset-2">
+            <span className="flex w-full flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+              <h3 className="max-w-full break-normal text-xl font-semibold leading-snug text-[#C2410C] underline decoration-[#C2410C]/40 underline-offset-2">
                 {row.displayName}
               </h3>
               <span className="inline-flex min-h-11 shrink-0 items-center text-sm font-semibold text-[#C2410C]">
@@ -50,11 +53,11 @@ export function AskMoveResultCard({
             </span>
           </Link>
         ) : (
-          <h3 className="min-w-0 flex-1 break-words text-xl font-semibold leading-snug text-[#0A2540]">
+          <h3 className="w-full max-w-full break-normal text-xl font-semibold leading-snug text-[#0A2540] sm:w-auto sm:min-w-[12rem] sm:flex-1">
             {row.displayName}
           </h3>
         )}
-        <span className="rounded-full border border-[#E2E8F0] px-2 py-0.5 text-[11px] font-semibold">
+        <span className="max-w-full break-normal rounded-full border border-[#E2E8F0] px-2 py-0.5 text-[11px] font-semibold">
           {row.role}
         </span>
       </div>

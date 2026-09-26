@@ -48,7 +48,8 @@ test("a published profile card is one link with a visible cue and a wrapping nam
   const anchor = profileAnchor(html);
   assert.match(anchor, /href="\/companies\/hindman-isaacs-moving-storage-inc"/);
   assert.match(anchor, /View profile →/);
-  assert.match(anchor, /break-words/);
+  assert.match(anchor, /break-normal/);
+  assert.doesNotMatch(anchor, /break-words|min-w-0/);
   assert.match(anchor, /flex-col/);
   assert.match(anchor, /sm:flex-row/);
   assert.match(anchor, /HINDMAN &amp; ISAACS MOVING AND STORAGE INCORPORATED OF PALM BEACH/);
@@ -75,6 +76,35 @@ test("why-matched and match method sit inside Trace, and Trace is not the profil
   assert.match(face, /Select this company and continue/);
   assert.match(face, /href="\/ask\?q=isaacs&amp;company=1"/);
   assert.doesNotMatch(html, /best mover|recommended|hire this|Trust Score/i);
+});
+
+test("a Florida no-profile heading stacks the badge and does not break ordinary words", () => {
+  const html = render(
+    card({
+      href: null,
+      displayName: "I 95 Relocation Inc.",
+      legalName: null,
+      usdot: null,
+      mc: null,
+      role: "Florida Intrastate Mover registration",
+      fmcsaStatus: null,
+      headquarters: null,
+      floridaIm: "IM95",
+      sourceLastChecked: undefined,
+      matchEvidence: undefined,
+      publicationNote: "Registration grain. Not a published FMCSA interstate profile.",
+    }),
+  );
+  const heading = html.match(/data-testid="ask-card-heading" class="([^"]+)"/);
+  const name = html.match(/<h3 class="([^"]+)">I 95 Relocation Inc\.<\/h3>/);
+  assert.ok(heading && name);
+  assert.match(heading[1], /flex-col/);
+  assert.match(heading[1], /sm:flex-row/);
+  assert.match(name[1], /w-full/);
+  assert.match(name[1], /break-normal/);
+  assert.match(name[1], /sm:min-w-\[12rem\]/);
+  assert.doesNotMatch(name[1], /break-words|min-w-0/);
+  assert.doesNotMatch(html, /View profile|data-card-surface|\/companies\//);
 });
 
 test("a row without a published profile has no profile link and stays inert", () => {
