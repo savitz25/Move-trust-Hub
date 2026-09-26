@@ -86,7 +86,7 @@ function baseInput(over: Partial<MoveNetworkMetricsInput> = {}): MoveNetworkMetr
     nvHhgDistinctCpcn: 46,
     nvActiveMoverCertificates: 41,
     nvTariffLinks: 46,
-    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania', '/north-carolina', '/ohio', '/georgia', '/massachusetts', '/tennessee', '/nevada'],
+    publishedStateIntelligencePaths: ['/florida', '/new-jersey', '/california', '/texas', '/washington', '/colorado', '/virginia', '/new-york', '/illinois', '/oregon', '/pennsylvania', '/north-carolina', '/ohio', '/georgia', '/massachusetts', '/tennessee', '/nevada', '/minnesota'],
     floridaResearchCountyLandings: 4,
     localMoverStateLandings: 51,
     ...over,

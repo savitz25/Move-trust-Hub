@@ -106,6 +106,7 @@ export const HUBS: Record<HubId, HubConfig> = {
           { href: '/massachusetts', label: 'Massachusetts research' },
           { href: '/tennessee', label: 'Tennessee research' },
           { href: '/nevada', label: 'Nevada research' },
+          { href: '/minnesota', label: 'Minnesota research' },
           { href: '/new-jersey', label: 'New Jersey research' },
           { href: '/oregon', label: 'Oregon research' },
           { href: '/pennsylvania', label: 'Pennsylvania research' },

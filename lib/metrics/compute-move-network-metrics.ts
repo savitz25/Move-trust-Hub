@@ -146,6 +146,7 @@ export function assertGrainSafety(input: MoveNetworkMetricsInput): void {
   if (!input.publishedStateIntelligencePaths.includes('/massachusetts')) throw new Error('Massachusetts state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/tennessee')) throw new Error('Tennessee state intelligence path missing');
   if (!input.publishedStateIntelligencePaths.includes('/nevada')) throw new Error('Nevada state intelligence path missing');
+  if (!input.publishedStateIntelligencePaths.includes('/minnesota')) throw new Error('Minnesota state intelligence path missing');
   if (input.nvHhgDistinctCpcn <= 0) throw new Error('Nevada NTA CPCN count missing');
   if (input.nvActiveMoverCertificates > input.nvHhgDistinctCpcn) throw new Error('Nevada Active Mover certificates cannot exceed the household-goods subset');
   if (input.maHhgDistinctCertificates <= 0) throw new Error('Massachusetts DPU certificate count missing');
@@ -826,6 +827,35 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       ),
     }),
     metric({
+      key: 'mn_hhg_permit_universe',
+      label: 'Minnesota Household Goods Mover Permit universe',
+      value: null,
+      valueState: 'NOT_ACQUIRED',
+      grain: 'mn_hhg_permit_roster',
+      denominator: 'Current Minnesota Household Goods Mover Permit holders — no public roster',
+      description:
+        'MnDOT publishes a per-carrier Carrier Search but no household-goods permit roster, filter or export, so the number of permit holders is unknown, not zero. A Minnesota permit is not a USDOT or MC number, and a Minnesota address is not a permit.',
+      coverage: 'Minnesota',
+      contributingSourceSystems: ['mn_mndot_cvo'],
+      sourceAsOf: null,
+      generatedAt,
+      publicationStatus: 'PUBLIC_UNKNOWN',
+      presentation: {
+        family: 'STATE_AUTHORITY',
+        entityClass: 'Minnesota Household Goods Mover Permit roster',
+        destination: '/minnesota',
+        acceptedArtifact: 'move-mn-state-intel-v1',
+      },
+      trace: commonTrace(
+        'No statewide Minnesota household-goods permit denominator is published.',
+        'Not Minnesota-address FMCSA carriers, not USDOT or MC identities, not tariff filings, and not complaint counts.',
+        ['mn_mndot_cvo'],
+        'Minnesota intrastate household-goods carriers',
+        'No roster clock; retrieval is not an authority effective date',
+        { whyUnknown: 'MnDOT Carrier Search verifies one carrier at a time by MnDOT #, USDOT # or name; building a roster would require enumeration. Missing is not zero.' },
+      ),
+    }),
+    metric({
       key: 'tn_intrastate_authority_universe',
       label: 'Tennessee Intrastate Authority household-goods carrier universe',
       value: null,
@@ -1063,6 +1093,13 @@ export function computeMoveNetworkMetrics(input: MoveNetworkMetricsInput): MoveN
       exactUsdotJoins: 0,
       exactMcJoins: 0,
       sourceAsOf: null,
+    },
+    minnesota: {
+      rosterCoverage: 'NOT_ACQUIRED',
+      currentPermitUniverse: null,
+      sourceAsOf: null,
+      statutesEdition: '2025 Minnesota Statutes',
+      verification: 'KNOWN',
     },
     tennessee: {
       rosterCoverage: 'NOT_ACQUIRED',

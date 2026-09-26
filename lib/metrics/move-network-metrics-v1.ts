@@ -197,6 +197,13 @@ export type MoveNetworkMetricsV1 = {
     exactMcJoins: 0;
     sourceAsOf: null;
   };
+  minnesota: {
+    rosterCoverage: 'NOT_ACQUIRED';
+    currentPermitUniverse: null;
+    sourceAsOf: null;
+    statutesEdition: string;
+    verification: 'KNOWN';
+  };
   tennessee: {
     rosterCoverage: 'NOT_ACQUIRED';
     currentAuthorityUniverse: null;

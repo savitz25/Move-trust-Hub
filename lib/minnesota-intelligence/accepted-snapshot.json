@@ -1,0 +1,205 @@
+{
+  "version": "move-mn-state-intel-v1",
+  "ticket": "MN-MOVE-001",
+  "as_of": "2026-09-26",
+  "generated_at": "2026-09-26T14:10:00Z",
+  "snapshotAsOf": "2026-09-26",
+  "retrievedAt": "2026-09-26T13:40:00Z",
+  "no_trust_score": true,
+  "no_paid_ranking": true,
+  "no_minnesota_local_routes": true,
+  "no_minneapolis_intelligence_page": true,
+  "publication": {
+    "canonical": "https://www.movetrusthub.com/minnesota",
+    "indexable": true,
+    "robots": "index,follow",
+    "route": "/minnesota",
+    "h1": "Minnesota Moving & Household Goods Intelligence"
+  },
+  "regulator": {
+    "agency": "Minnesota Department of Transportation",
+    "office": "Office of Freight and Commercial Vehicle Operations",
+    "short": "MnDOT",
+    "credential_term": "Household Goods Mover Permit (Minn. Stat. 221.121)",
+    "household_goods_page": "https://www.dot.state.mn.us/cvo/household-goods.html",
+    "carrier_search_url": "https://mnitservices.my.site.com/license/MCISSearchBox?AgencyVar=OFCVO",
+    "complaint_page": "https://www.dot.state.mn.us/cvo/complaint.html",
+    "complaint_form": "https://mndotforms.formstack.com/forms/motor_carrier_vehicle_complaint",
+    "fmcsa_complaints": "https://nccdb.fmcsa.dot.gov/nccdb/home.aspx",
+    "application_packet": "https://edocs-public.dot.state.mn.us/edocs_public/DMResultSet/download?docId=39041084",
+    "intrastate_only": true,
+    "interstate_regulator": "FMCSA"
+  },
+  "clocks": {
+    "generatedAt": "2026-09-26T14:10:00Z",
+    "snapshotAsOf": "2026-09-26",
+    "retrievedAt": "2026-09-26T13:40:00Z",
+    "sourceAsOf": null,
+    "statutes_edition": "2025 Minnesota Statutes",
+    "mndot_pages_as_of": null,
+    "permit_roster": {
+      "sourceAsOf": null,
+      "note": "No public roster exists to carry a clock."
+    },
+    "federal_overlay_observedAt": "2026-09-26T13:20:00Z",
+    "do_not_use_retrieval_as_authority_effective_date": true
+  },
+  "permit_framework": {
+    "coverage": "KNOWN",
+    "definition": "Household goods movers are people or entities who move personal effects and property used or to be used by the owner in the owner's dwelling.",
+    "apply": "(a) A person desiring to operate as a household goods carrier shall file an application with the commissioner on a form the commissioner prescribes.",
+    "issue": "(b) The commissioner shall issue the permit relating to it to an applicant who has filed an application complying with this subdivision, who has paid the required fee, and who has complied with the financial responsibility requirements in section 221.141 . The commissioner shall not issue a permit to an applicant who has an unsatisfactory safety rating.",
+    "duration": "(c) A permit once granted continues in full force and effect until abandoned or unless suspended or revoked, subject to compliance by the permit holder with the applicable provisions of law and the rules of the commissioner governing permit carriers.",
+    "statewide": "(d) All permits granted to household goods carriers must allow statewide operation. Notwithstanding any geographical restrictions imposed upon a permit at the time it was granted or any state law or rule to the contrary, the holder of a household goods permit may operate statewide.",
+    "statewide_meaning": "Permit authority is statewide Minnesota authority. It does not mean the carrier is headquartered in Minnesota, serves every shipment, holds interstate authority, or is recommended.",
+    "permit_fee": "The petitioner shall pay a fee of $150 into the treasury of the state of Minnesota for each permit applied for under this section.",
+    "no_operation_without_permit": "No person may operate as a motor carrier or advertise or otherwise hold out as a motor carrier without a certificate of registration or permit in effect.",
+    "no_operation_before_permit_mndot": "NOTE: You may not legally operate as a motor carrier until you receive your household goods mover permit.",
+    "renewal": "Permits issued under section 221.121 are effective for a 12-month period. A permit holder must renew the permit annually by registration of the vehicles operated under authority of that permit as required by subdivision 2. A permit holder has one annual renewal date encompassing all of the permits held by the holder.",
+    "vehicle_registration": "(b) A permit holder or motor carrier of passengers shall pay an annual registration fee of $75 on each vehicle, including pickup and delivery vehicles, operated by the carrier under authority of the permit or certificate of registration during the 12-month period or fraction of the 12-month period.",
+    "usdot_step": "Apply for a USDOT number using the U.S. Federal Motor Carrier Safety Administration (FMCSA) website",
+    "usdot_types": "NOTE: There are two types of USDOT numbers -- intrastate and interstate. Intrastate means transporting within a state’s boundaries (no free is required). Interstate means transporting across a state boundary (a fee is required).",
+    "maintenance_facts_kept_separate": [
+      "permit",
+      "annual renewal",
+      "vehicle registration and identification card",
+      "continuous insurance",
+      "safety rating"
+    ],
+    "no_synthetic_license_status": true
+  },
+  "insurance": {
+    "coverage": "KNOWN",
+    "filing": "Before providing transportation, your insurance underwriter must file a Form E – “Uniform Motor Carrier Bodily Injury and Property Damage Liability Certificate of Insurance” and a Form H – “Uniform Motor Carrier Cargo Certificate of Insurance” with our office.",
+    "limits": [
+      "Not less than $100,000/$300,000 public liability (Form E)",
+      "Not less than $50,000 destruction of property (Form E)",
+      "Not less than $50,000 cargo insurance (Form H)"
+    ],
+    "statutory_cargo": "A household goods mover shall maintain in effect cargo insurance or cargo bond in the amount of $50,000 and shall file with the commissioner a cargo certificate of insurance or cargo bond.",
+    "continuous": "Policies of insurance, surety bonds, other types of security, and endorsements must be continuously in effect and must remain in effect until canceled.",
+    "insurance_is_not_quality": true
+  },
+  "rates_and_records": {
+    "tariff_rule": "A household goods mover shall maintain a tariff showing rates and charges for transporting household goods. A household goods mover must prepare a tariff under this section in accordance with Code of Federal Regulations, title 49, part 1310.3, which is incorporated by reference.",
+    "tariff_availability": "(a) A household goods mover subject to this section must maintain all of its effective tariffs at its principal place of business and at each of its terminal locations, and must make the tariffs available to the public for inspection at all times the household goods mover is open for business.",
+    "tariff_copies": "(b) Upon request, a household goods mover must provide copies of tariffs, specific tariff provisions, or tariff subscriptions to the commissioner or any interested person.",
+    "fixed_compensation": "A household goods mover must not charge or receive a greater, lesser, or different compensation for the transportation or service provided than the rates and charges specified in the tariff under section 221.161 .",
+    "shipment_record": "(a) A household goods mover shall keep a record of each shipment transported under a permit. A record may consist of one or more documents, including a bill of lading, freight bill, manifest, delivery receipt, or other document. If it consists of more than one document, the documents constituting a shipment record must be available for inspection together.",
+    "shipment_record_contents": "(b) A record must show the: (1) names of the consignor and consignee; (2) date of shipment; (3) origin and destination points; (4) description of the freight; (5) weight, volume, or measurement of the freight, if applicable to the rating of the freight; (6) exact rate or rates assessed; (7) total charges due, including the nature and amount of any charges for special service; and (8) the name of each carrier participating in the transportation.",
+    "shipment_record_retention": "A shipping document or record described in subdivision 2 or 3, or a copy of it, must be retained by the carrier for at least three years from the date on the shipping document or record.",
+    "MN_TARIFF_REPOSITORY": "NOT_ACQUIRED",
+    "state_tariff_repository_published": false,
+    "not_a_quote": true,
+    "no_statewide_price": true,
+    "rate_sheets_parsed": false,
+    "record_is_not_tariff_is_not_quote": true
+  },
+  "current_hhg_roster": {
+    "coverage": "NOT_ACQUIRED",
+    "MN_HHG_PERMIT_ROSTER": "NOT_ACQUIRED",
+    "MN_HHG_PERMIT_ROWS": null,
+    "MN_HHG_DISTINCT_PERMITS": null,
+    "MN_EXACT_PERMIT_USDOT_BRIDGES": 0,
+    "MN_EXACT_MC_JOINS": 0,
+    "verification": "KNOWN",
+    "verification_path": "MnDOT Carrier Search by MnDOT #, USDOT # or name; each carrier's detail page lists its authority types (for example Household Goods), status and status date.",
+    "search_fields": [
+      "MnDOT #",
+      "USDOT #",
+      "Name"
+    ],
+    "result_columns": [
+      "Organization Name",
+      "Doing Business As",
+      "MnDOT #",
+      "USDOT #",
+      "City",
+      "State"
+    ],
+    "detail_fields": [
+      "Authority Type",
+      "Authority Status",
+      "Status Date"
+    ],
+    "why_not_acquired": "Public per-carrier verification. There is no roster, authority-type filter or export, so an active household-goods permit population could only be built by enumerating names or numbers, which was not done.",
+    "missing_is_not_zero": true,
+    "minnesota_address_is_not_state_authority": true,
+    "paths_checked": [
+      "MnDOT CVO household goods mover page (no roster)",
+      "MnDOT CVO Resources / Forms (application packets only)",
+      "MnDOT Carrier Search (per-carrier lookup; no roster, filter or export)",
+      "Revisor of Statutes chapter 221 (law, not a roster)"
+    ]
+  },
+  "complaints": {
+    "coverage": "NOT_ACQUIRED",
+    "intake": "KNOWN",
+    "mndot_statement": "File a complaint with MnDOT or call 651-366-3661 for more assistance.",
+    "fmcsa_scope": "Across state lines: Freight (trucks moving cargo) Hazardous materials Motor coach / bus",
+    "latest_published_complaint_report": "2019 Complaint Report (PDF)",
+    "company_level_records": "NOT_ACQUIRED",
+    "outcomes": "REQUEST_ONLY",
+    "count": null,
+    "complaint_is_not_a_finding": true
+  },
+  "enforcement": {
+    "coverage": "KNOWN",
+    "administrative_orders": "The commissioner may issue an order requiring violations to be corrected and administratively assessing monetary penalties for a violation of (1) section 221.021 ; (2) section 221.033, subdivision 2b ; (3) section 221.171 ; (4) section 221.141 ; (5) a federal, state, or local law, regulation, rule, or ordinance pertaining to railroad-highway grade crossings; or (6) rules of the commissioner relating to the transportation of hazardous waste, motor carrier operations, or insurance. An order must be issued as provided in this section.",
+    "penalty_amount": "(a) The commissioner may issue an order assessing a penalty of up to $5,000 for all violations identified during a single audit or investigation of (1) section 221.021 , 221.141 , or 221.171 , or (2) rules of the commissioner relating to motor carrier operations or insurance.",
+    "suspension": "a household goods mover permit or a motor carrier registration issued under section 221.0251 or 221.0252 is suspended without a hearing, by order of the commissioner, if the permit holder or carrier fails to maintain and file with the commissioner, the insurance or bond required by section 221.141 and rules adopted under that section or the carrier or permit holder fails to pay annual vehicle registration fees or renew permits as required by section 221.131 , or the permit holder or carrier fails to pay an administrative penalty under section 221.036 .",
+    "provider_level_actions": "NOT_ACQUIRED",
+    "name_only_adverse_join": "UNSUPPORTED"
+  },
+  "existing_coverage_audit": {
+    "federal_overlay": {
+      "source": "MoveTrustHub production research search (FMCSA spine), recorded headquarters state MN",
+      "observedAt": "2026-09-26T13:20:00Z",
+      "interstate_hhg_carriers_headquartered_mn": 66,
+      "movers_in_minnesota_public_identity_cohort": 69,
+      "note": "Headquarters address is not a Minnesota permit and not a service area. Existing federal records were not duplicated."
+    },
+    "existing_minnesota_routes": [
+      "/moving-to/minnesota (destination guide)",
+      "/moving-to/minnesota/[slug]"
+    ],
+    "state_intelligence_route_before": null,
+    "mndot_evidence_before": "NONE"
+  },
+  "identity": {
+    "preferred": "MnDOT # as printed by the MnDOT Carrier Search (verification only; no roster held)",
+    "usdot_on_state_search": true,
+    "exact_bridges_accepted": 0,
+    "name_only_join": "UNSAFE",
+    "mn_permit_is_not_usdot": true,
+    "mn_permit_is_not_mc": true,
+    "mc_not_required_for_intrastate": true,
+    "zero_bridges_is_not_zero_overlap": true
+  },
+  "capabilities": {
+    "permit_framework": "KNOWN",
+    "active_permit_roster": "NOT_ACQUIRED",
+    "permit_verification": "KNOWN",
+    "state_usdot_bridge": "UNKNOWN",
+    "insurance_requirements": "KNOWN",
+    "tariff_rules": "KNOWN",
+    "carrier_tariff_corpus": "NOT_ACQUIRED",
+    "shipment_record_rules": "KNOWN",
+    "complaint_intake": "KNOWN",
+    "complaint_outcomes": "REQUEST_ONLY",
+    "enforcement_powers": "KNOWN",
+    "provider_enforcement_actions": "NOT_ACQUIRED",
+    "name_only_state_fmcsa_join": "UNSUPPORTED",
+    "combined_state_fmcsa_mover_count": "UNSUPPORTED",
+    "local_city_pages": "UNSUPPORTED"
+  },
+  "expansion_ledger": {
+    "GRAPH_WRITES": 0,
+    "NET_NEW_PUBLIC_PROFILES": 0,
+    "EXACT_USDOT_JOINS": 0,
+    "EXACT_MC_JOINS": 0,
+    "PROFILE_ATTACHMENTS": 0
+  },
+  "source_capture_sha256": "916a55b8f8b54ba96d9d0812b476777b5e73b1e65ea43473b0b1ff76d8242319",
+  "fingerprint": "fbd810749239faa78696c44b882c7aa0b18411bccae556115b65890a605521ab"
+}

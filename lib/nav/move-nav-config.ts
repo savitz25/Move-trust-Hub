@@ -110,6 +110,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'NTA household-goods certificates (CPCN) & filed tariffs',
       },
       {
+        label: 'Minnesota research',
+        href: '/minnesota',
+        description: 'MnDOT Household Goods Mover Permit, Form E/H insurance & tariff rules',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',
