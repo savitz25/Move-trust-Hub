@@ -22,6 +22,48 @@ export type RequestMagicLinkResult =
   | { ok: true; delivery: 'resend' | 'supabase' }
   | { ok: false; status: number; error: string };
 
+type OtpArgs = {
+  email: string;
+  options: { emailRedirectTo: string; shouldCreateUser: boolean };
+};
+
+export type MagicLinkPorts = {
+  session: () => Promise<{
+    auth: {
+      signInWithOtp: (args: OtpArgs) => Promise<{ error: { message: string; code?: string } | null }>;
+    };
+  }>;
+  admin: () => {
+    auth: {
+      admin: {
+        generateLink: (args: {
+          type: 'magiclink';
+          email: string;
+          options: { redirectTo: string };
+        }) => Promise<{
+          data?: { properties?: { hashed_token?: string; verification_type?: string } };
+          error: { message: string } | null;
+        }>;
+      };
+    };
+  };
+  adminConfigured: () => boolean;
+  resendReady: () => boolean;
+  sendResend: (input: { to: string; confirmUrl: string }) => Promise<
+    { ok: true } | { ok: false; code?: string; error: string }
+  >;
+};
+
+function defaultMagicLinkPorts(): MagicLinkPorts {
+  return {
+    session: () => createClient() as ReturnType<MagicLinkPorts['session']>,
+    admin: () => createAdminClient() as ReturnType<MagicLinkPorts['admin']>,
+    adminConfigured: isSupabaseAdminConfigured,
+    resendReady: isResendConfigured,
+    sendResend: sendMagicLinkEmail,
+  };
+}
+
 function mapSupabaseOtpError(message: string): { status: number; error: string } {
   const lower = message.toLowerCase();
 
@@ -75,8 +117,12 @@ function buildConfirmUrl(params: {
  * Preferred path: admin.generateLink + Resend branded email.
  * Avoids Supabase built-in mailer rate limits (common cause of “Could not send sign-in link”).
  */
-async function sendViaResend(email: string, nextPath: string): Promise<RequestMagicLinkResult> {
-  const admin = createAdminClient();
+async function sendViaResend(
+  email: string,
+  nextPath: string,
+  ports: MagicLinkPorts
+): Promise<RequestMagicLinkResult> {
+  const admin = ports.admin();
   const redirectTo = `${authCallbackUrl()}?next=${encodeURIComponent(nextPath)}`;
 
   const { data, error } = await admin.auth.admin.generateLink({
@@ -113,7 +159,7 @@ async function sendViaResend(email: string, nextPath: string): Promise<RequestMa
     nextPath,
   });
 
-  const sent = await sendMagicLinkEmail({ to: email, confirmUrl });
+  const sent = await ports.sendResend({ to: email, confirmUrl });
   if (!sent.ok) {
     return {
       ok: false,
@@ -130,15 +176,16 @@ async function sendViaResend(email: string, nextPath: string): Promise<RequestMa
  */
 async function sendViaSupabaseOtp(
   email: string,
-  nextPath: string
+  nextPath: string,
+  ports: MagicLinkPorts
 ): Promise<RequestMagicLinkResult> {
   const redirectTo = `${authCallbackUrl()}?next=${encodeURIComponent(nextPath)}`;
-  const supabase = await createClient();
+  const supabase = await ports.session();
   const { error } = await supabase.auth.signInWithOtp({
     email,
     options: {
       emailRedirectTo: redirectTo,
-      shouldCreateUser: true,
+      shouldCreateUser: !isIsolatedMoveBrowserAuthAdmitted(),
     },
   });
 
@@ -153,10 +200,13 @@ async function sendViaSupabaseOtp(
 /**
  * Request a magic-link email for portal / Save My Move sign-in.
  */
-export async function requestMagicLink(params: {
-  email: string;
-  next?: string | null;
-}): Promise<RequestMagicLinkResult> {
+export async function requestMagicLink(
+  params: {
+    email: string;
+    next?: string | null;
+  },
+  ports: MagicLinkPorts = defaultMagicLinkPorts()
+): Promise<RequestMagicLinkResult> {
   if (!isSupabaseConfigured()) {
     return {
       ok: false,
@@ -176,18 +226,18 @@ export async function requestMagicLink(params: {
   // Isolated preview auth stays on the browser anon client and must not call production service role.
   if (
     !isIsolatedMoveBrowserAuthAdmitted() &&
-    isSupabaseAdminConfigured() &&
-    isResendConfigured()
+    ports.adminConfigured() &&
+    ports.resendReady()
   ) {
-    return sendViaResend(email, nextPath);
+    return sendViaResend(email, nextPath, ports);
   }
 
   // Local/dev or missing Resend: use Supabase mailer (may hit rate limits).
-  if (!isResendConfigured()) {
+  if (!ports.resendReady()) {
     console.warn(
       '[magic-link] RESEND_API_KEY missing — falling back to Supabase Auth mailer'
     );
   }
 
-  return sendViaSupabaseOtp(email, nextPath);
+  return sendViaSupabaseOtp(email, nextPath, ports);
 }
