@@ -40,6 +40,7 @@ export function SaveMyMoveProvider({ children, onValue }: { children?: React.Rea
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [savedMoverSlugs, setSavedMoverSlugs] = useState<Set<string>>(new Set());
+  const [accountSaved, setAccountSaved] = useState<{ userId: string; slugs: Set<string> } | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [redirectPath, setRedirectPath] = useState('/my-move');
   const [modalContext, setModalContext] = useState<SaveMyMoveContext>('dashboard');
@@ -52,6 +53,10 @@ export function SaveMyMoveProvider({ children, onValue }: { children?: React.Rea
   const isMoverSaved = useCallback(
     (companySlug: string) => savedMoverSlugs.has(companySlug),
     [savedMoverSlugs]
+  );
+  const isMoverAccountSaved = useCallback(
+    (slug: string) => Boolean(user && accountSaved?.userId === user.id && accountSaved.slugs.has(slug)),
+    [user, accountSaved]
   );
 
   const executePendingSaveAction = useCallback(async () => {
@@ -125,9 +130,8 @@ export function SaveMyMoveProvider({ children, onValue }: { children?: React.Rea
 
     // Always seed from device local shortlist (guest + cloud soft-fallback)
     const local = getLocalSavedMoverSlugs();
-    if (local.length) {
-      setSavedMoverSlugs((prev) => new Set([...prev, ...local]));
-    }
+    setSavedMoverSlugs(new Set(local));
+    setAccountSaved(null);
 
     if (!user) {
       return () => {
@@ -135,9 +139,10 @@ export function SaveMyMoveProvider({ children, onValue }: { children?: React.Rea
       };
     }
 
-    getSavedMoverSlugsAction()
+    getSavedMoverSlugsAction(user.id)
       .then((slugs) => {
         if (cancelled) return;
+        setAccountSaved({ userId: user.id, slugs: new Set(slugs) });
         const merged = getLocalSavedMoverSlugs();
         setSavedMoverSlugs(new Set([...slugs, ...merged]));
       })
@@ -213,11 +218,12 @@ export function SaveMyMoveProvider({ children, onValue }: { children?: React.Rea
       loading,
       savedMoverSlugs,
       isMoverSaved,
+      isMoverAccountSaved,
       markMoverSaved,
       openSaveModal,
       requireAuth,
     }),
-    [user, loading, savedMoverSlugs, isMoverSaved, markMoverSaved, openSaveModal, requireAuth]
+    [user, loading, savedMoverSlugs, isMoverSaved, isMoverAccountSaved, markMoverSaved, openSaveModal, requireAuth]
   );
 
   useEffect(() => { onValue?.(value); }, [onValue, value]);

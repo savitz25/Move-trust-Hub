@@ -16,6 +16,7 @@ export function posthogHost(): string {
 }
 
 export function shouldEnablePosthog(): boolean {
+  if (process.env.NEXT_PUBLIC_MOVE_V23_LOCAL_ONLY === '1') return false;
   if (analyticsEnvironment() !== 'production') return false;
   if (!posthogProjectToken() || !posthogHost()) return false;
   if (typeof window !== 'undefined') {

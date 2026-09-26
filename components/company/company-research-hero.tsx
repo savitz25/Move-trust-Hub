@@ -15,6 +15,7 @@ import {
   roleExplanation,
 } from '@/lib/company/research-profile';
 import type { Company } from '@/types';
+import { PROFILE, PROFILE_SLUG, serverGate } from '@/lib/my-trusthub/config';
 
 export function CompanyResearchHero({
   company,
@@ -145,6 +146,7 @@ export function CompanyResearchHero({
           companySlug={company.slug}
           companyName={company.name}
           variant="button"
+          parentSaveEligible={serverGate(process.env) && company.id === PROFILE.nativeId && company.slug === PROFILE_SLUG && company.publicationState === 'PUBLISHABLE'}
           className="min-h-11 w-full sm:w-auto"
         />
         <Link href="/#plan-your-move" className={`${actionClass} border`}>

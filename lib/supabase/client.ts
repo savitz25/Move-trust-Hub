@@ -2,6 +2,7 @@
 
 import { createBrowserClient } from '@supabase/ssr';
 import type { Database } from '@/types/supabase';
+import { legacyClientDisabled } from '@/lib/my-trusthub/preview-isolation';
 import {
   getSupabaseAnonKey,
   getSupabaseUrl,
@@ -16,6 +17,7 @@ let browserClient: ReturnType<typeof createBrowserClient<Database>> | null = nul
  * Returns null when env vars are not configured (build / local without Supabase).
  */
 export function createBrowserSupabaseClient() {
+  if (legacyClientDisabled()) return null;
   if (!isSupabaseConfigured()) return null;
 
   if (!browserClient) {

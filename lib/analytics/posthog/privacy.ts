@@ -3,6 +3,10 @@
  */
 
 export const SENSITIVE_QUERY_KEYS = [
+  'from_q',
+  'id',
+  'continuationref',
+  'proofref',
   'q',
   'query',
   'question',

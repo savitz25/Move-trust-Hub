@@ -102,6 +102,7 @@ export type SaveMoverResult =
 export async function saveMoverAction(input: {
   companySlug: string;
   notes?: string;
+  expectedUserId?: string;
 }): Promise<SaveMoverResult> {
   const slug = input.companySlug?.trim();
   if (!slug) {
@@ -117,6 +118,11 @@ export async function saveMoverAction(input: {
       code: 'NO_SESSION',
       allowLocal: true,
     };
+  }
+
+  // An on-demand Save must not follow a changed session into another account.
+  if (input.expectedUserId !== undefined && input.expectedUserId !== user.id) {
+    return { ok: false, error: 'Session changed; kept on this device', code: 'SESSION_CHANGED', allowLocal: true };
   }
 
   try {
@@ -176,9 +182,9 @@ export async function saveMoverAction(input: {
 }
 
 /** Soft: empty array if not signed in or table error (never throws). */
-export async function getSavedMoverSlugsAction(): Promise<string[]> {
+export async function getSavedMoverSlugsAction(expectedUserId?: string): Promise<string[]> {
   const user = await getAuthenticatedUser();
-  if (!user) return [];
+  if (!user || (expectedUserId !== undefined && expectedUserId !== user.id)) return [];
   try {
     const supabase = await createClient();
     const { data, error } = await supabase

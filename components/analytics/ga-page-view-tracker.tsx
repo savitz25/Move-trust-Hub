@@ -5,6 +5,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import type { GaHub } from '@/lib/analytics/ga-config';
 import { isGaConfigured } from '@/lib/analytics/ga-config';
 import { getHubFromPathname } from '@/lib/hub/paths';
+import { sanitizeAnalyticsUrl } from '@/lib/analytics/posthog/privacy';
 
 declare global {
   interface Window {
@@ -62,7 +63,9 @@ export function GaPageViewTracker({ measurementId, hub }: Props) {
     if (!isGaConfigured(measurementId)) return;
 
     const query = searchParams?.toString();
-    const pagePath = query ? `${pathname}?${query}` : pathname;
+    const safeUrl = sanitizeAnalyticsUrl(query ? `${pathname}?${query}` : pathname);
+    const parsed = new URL(safeUrl ?? pathname, window.location.origin);
+    const pagePath = parsed.pathname + parsed.search;
     const pageTitle = typeof document !== 'undefined' ? document.title : undefined;
     const pathHub = getHubFromPathname(pathname);
 

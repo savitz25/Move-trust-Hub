@@ -103,12 +103,14 @@ export const GA_CROSS_DOMAIN_LINKS_MOVE = [
 export const GA_CROSS_DOMAIN_LINKS = GA_CROSS_DOMAIN_LINKS_MOVE;
 
 export function isGaConfigured(id?: string | null): boolean {
+  if (process.env.NEXT_PUBLIC_MOVE_V23_LOCAL_ONLY === '1') return false;
   const candidate = id ?? GA_MEASUREMENT_ID;
   return Boolean(candidate && isValidGaId(candidate));
 }
 
 /** Dev-only warnings — never log secrets. */
 export function warnIfGaMisconfigured(resolvedId?: string | null, hub?: GaHub): void {
+  if (process.env.NEXT_PUBLIC_MOVE_V23_LOCAL_ONLY === '1') return;
   if (process.env.NODE_ENV === 'production') return;
   const id = resolvedId ?? GA_MEASUREMENT_ID;
   if (hub === 'insurance' && !id) {
