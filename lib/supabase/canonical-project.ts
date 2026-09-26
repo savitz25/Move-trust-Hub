@@ -6,6 +6,15 @@ export const CANONICAL_SUPABASE_PROJECT_REF = 'arepfylnilkjmyduhwbz';
 export const CANONICAL_SUPABASE_URL = `https://${CANONICAL_SUPABASE_PROJECT_REF}.supabase.co`;
 export const FORBIDDEN_SUPABASE_PROJECT_REF = 'uvqkyupfnpswdozmuzih';
 
+/** Reviewed V2-3 Move preview branch. Not a general project allowlist. */
+export const ISOLATED_MOVE_BROWSER_PROJECT_REF = 'zvoijbohtyuhqfuvteoy';
+export const ISOLATED_MOVE_BROWSER_SUPABASE_URL =
+  `https://${ISOLATED_MOVE_BROWSER_PROJECT_REF}.supabase.co`;
+export const ISOLATED_MOVE_BROWSER_AUTH_APPROVAL_ENV =
+  'NEXT_PUBLIC_MOVE_ISOLATED_AUTH_APPROVED';
+export const ISOLATED_MOVE_BROWSER_AUTH_ORIGIN_ENV =
+  'NEXT_PUBLIC_MOVE_ISOLATED_AUTH_ORIGIN';
+
 export function extractSupabaseProjectRef(url: string | undefined | null): string | null {
   if (!url?.trim()) return null;
   try {

@@ -14,6 +14,10 @@ const withBundleAnalyzer = bundleAnalyzer({
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig: NextConfig = {
+  env: {
+    // Lets the browser enforce VERCEL_ENV !== production. Not a dashboard setting.
+    NEXT_PUBLIC_VERCEL_ENV: process.env.VERCEL_ENV ?? '',
+  },
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
   compress: true,

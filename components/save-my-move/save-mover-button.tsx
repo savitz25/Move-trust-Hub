@@ -12,6 +12,7 @@ import {
 import { trackSaveMyMoveMover } from '@/components/ga-events';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
+import { KeepInMyTrustHub } from '@/components/save-my-move/keep-in-my-trusthub';
 
 type SaveMoverButtonProps = {
   companySlug: string;
@@ -32,6 +33,8 @@ export function SaveMoverButton({
     typeof window !== 'undefined' ? isLocalMoverSaved(companySlug) : false
   );
   const saved = isMoverSaved(companySlug) || localSaved;
+  const showParentSave =
+    localSaved && process.env.NEXT_PUBLIC_MOVE_PARENT_SAVE_ENABLED === '1';
 
   const handleSave = async () => {
     if (loading || saved) return;
@@ -78,42 +81,50 @@ export function SaveMoverButton({
     }
   };
 
+  const parentSave = showParentSave ? <KeepInMyTrustHub companySlug={companySlug} /> : null;
+
   if (variant === 'button') {
     return (
-      <Button
-        variant={saved ? 'secondary' : 'outline'}
-        size="sm"
-        onClick={() => void handleSave()}
-        disabled={saving || saved || loading}
-        className={className}
-        aria-pressed={saved}
-      >
-        <Heart className={cn('h-3.5 w-3.5 mr-1', saved && 'fill-current text-primary')} />
-        {saved ? 'Saved' : saving ? 'Saving…' : 'Save mover'}
-      </Button>
+      <span className="inline-flex min-w-0 flex-col items-start gap-1">
+        <Button
+          variant={saved ? 'secondary' : 'outline'}
+          size="sm"
+          onClick={() => void handleSave()}
+          disabled={saving || saved || loading}
+          className={className}
+          aria-pressed={saved}
+        >
+          <Heart className={cn('h-3.5 w-3.5 mr-1', saved && 'fill-current text-primary')} />
+          {saved ? 'Saved' : saving ? 'Saving…' : 'Save mover'}
+        </Button>
+        {parentSave}
+      </span>
     );
   }
 
   return (
-    <button
-      type="button"
-      onClick={() => void handleSave()}
-      disabled={saving || saved || loading}
-      className={cn(
-        'inline-flex items-center justify-center rounded-full p-1.5 transition-colors',
-        saved
-          ? 'text-primary bg-primary/10'
-          : 'text-muted-foreground hover:text-primary hover:bg-primary/10',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40',
-        className
-      )}
-      aria-label={
-        saved ? `${companyName} saved to your shortlist` : `Save ${companyName} to your shortlist`
-      }
-      aria-pressed={saved}
-      title={saved ? 'Saved to My Move' : 'Save to My Move'}
-    >
-      <Heart className={cn('h-4 w-4', saved && 'fill-current')} />
-    </button>
+    <span className="inline-flex min-w-0 flex-col items-start gap-1">
+      <button
+        type="button"
+        onClick={() => void handleSave()}
+        disabled={saving || saved || loading}
+        className={cn(
+          'inline-flex items-center justify-center rounded-full p-1.5 transition-colors',
+          saved
+            ? 'text-primary bg-primary/10'
+            : 'text-muted-foreground hover:text-primary hover:bg-primary/10',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40',
+          className
+        )}
+        aria-label={
+          saved ? `${companyName} saved to your shortlist` : `Save ${companyName} to your shortlist`
+        }
+        aria-pressed={saved}
+        title={saved ? 'Saved to My Move' : 'Save to My Move'}
+      >
+        <Heart className={cn('h-4 w-4', saved && 'fill-current')} />
+      </button>
+      {parentSave}
+    </span>
   );
 }

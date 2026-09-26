@@ -13,8 +13,7 @@ import { identifierVariants, normalizeStoredIdentifier } from './identifier';
 import { buildSaferLookupUrl } from '../verify-dot/fmcsa';
 import { extractStateCodeFromHeadquarters } from '../directory/coverage-filter';
 import {
-  getSupabaseServiceRoleKey,
-  getSupabaseUrl,
+  getServiceRoleSupabaseTarget,
   isSupabaseAdminConfigured,
 } from '@/lib/supabase/config';
 import { isIndexablePublication } from '@/lib/provider/publication';
@@ -107,10 +106,9 @@ type Chain = {
 };
 
 function admin() {
-  const url = getSupabaseUrl();
-  const key = getSupabaseServiceRoleKey();
-  if (!url || !key) throw new Error('Supabase admin client requires SUPABASE_SERVICE_ROLE_KEY (server-only).');
-  const client = createClient(url, key, {
+  const target = getServiceRoleSupabaseTarget();
+  if (!target) throw new Error('Supabase admin client requires SUPABASE_SERVICE_ROLE_KEY (server-only).');
+  const client = createClient(target.url, target.key, {
     auth: { autoRefreshToken: false, persistSession: false },
     global: { fetch: (input, init) => fetch(input, { ...init, signal: AbortSignal.timeout(12_000) }) },
   });

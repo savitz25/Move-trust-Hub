@@ -1,8 +1,12 @@
+import { ISOLATED_MOVE_BROWSER_AUTH_ORIGIN_ENV } from '@/lib/supabase/canonical-project';
+import { isIsolatedMoveBrowserAuthAdmitted } from '@/lib/supabase/config';
+
 /** Default landing page after Save My Move sign-in. */
 export const DEFAULT_POST_LOGIN_PATH = '/my-move';
 
 /** Production site origin — never use localhost or Vercel preview URLs for auth. */
 export const PRODUCTION_SITE_ORIGIN = 'https://www.movetrusthub.com';
+const PRODUCTION_AUTH_HOSTS = new Set(['www.movetrusthub.com', 'movetrusthub.com']);
 
 /**
  * Canonical OAuth / magic-link callback — must match Supabase Auth redirect allowlist.
@@ -25,8 +29,42 @@ export function isLocalAuthUrl(url: string): boolean {
  * Post-auth browser redirect — production always uses movetrusthub.com,
  * never request origin (avoids Supabase Site URL localhost fallback leaking through).
  */
+/**
+ * Preview origin for isolated browser auth. Null unless admission is on and
+ * the origin is an https host that is not Move production.
+ */
+export function approvedIsolatedAuthOrigin(): string | null {
+  if (!isIsolatedMoveBrowserAuthAdmitted()) return null;
+  const raw = process.env[ISOLATED_MOVE_BROWSER_AUTH_ORIGIN_ENV]?.trim();
+  if (!raw) return null;
+  try {
+    const url = new URL(raw);
+    if (url.protocol !== 'https:') return null;
+    if (url.username || url.password || url.search || url.hash) return null;
+    if (url.pathname !== '/' && url.pathname !== '') return null;
+    const host = url.hostname.toLowerCase();
+    if (PRODUCTION_AUTH_HOSTS.has(host) || host.endsWith('.supabase.co')) return null;
+    return url.origin;
+  } catch {
+    return null;
+  }
+}
+
+function isolatedAuthOriginOrThrow(): string {
+  const origin = approvedIsolatedAuthOrigin();
+  if (!origin) {
+    throw new Error(
+      `${ISOLATED_MOVE_BROWSER_AUTH_ORIGIN_ENV} must be the https origin of this Move preview. Production auth origins are not used.`
+    );
+  }
+  return origin;
+}
+
 export function productionAuthRedirect(path: string, request?: Request): string {
   const safePath = path.startsWith('/') ? path : `/${path}`;
+  if (isIsolatedMoveBrowserAuthAdmitted()) {
+    return `${isolatedAuthOriginOrThrow()}${safePath}`;
+  }
   if (process.env.NODE_ENV === 'development') {
     const origin = request ? new URL(request.url).origin : 'http://localhost:3000';
     return `${origin}${safePath}`;
@@ -34,10 +72,18 @@ export function productionAuthRedirect(path: string, request?: Request): string 
   return `${PRODUCTION_SITE_ORIGIN}${safePath}`;
 }
 
+/** Callback for the current runtime. Production stays on www.movetrusthub.com. */
+export function authCallbackUrl(): string {
+  if (isIsolatedMoveBrowserAuthAdmitted()) {
+    return `${isolatedAuthOriginOrThrow()}/auth/callback`;
+  }
+  return AUTH_CALLBACK_URL;
+}
+
 /** Auth callback URL with optional post-login `next` path (portal, my-move, etc.). */
 export function authCallbackUrlWithNext(nextPath?: string | null): string {
   const next = sanitizePostLoginPath(nextPath);
-  return `${AUTH_CALLBACK_URL}?next=${encodeURIComponent(next)}`;
+  return `${authCallbackUrl()}?next=${encodeURIComponent(next)}`;
 }
 
 /**
@@ -49,7 +95,12 @@ export function ensureProductionOAuthUrl(oauthUrl: string): string {
   try {
     const parsed = new URL(oauthUrl);
     const redirectTo = parsed.searchParams.get('redirect_to');
-    if (!redirectTo || isLocalAuthUrl(redirectTo)) {
+    const replaceRedirect =
+      !redirectTo ||
+      isLocalAuthUrl(redirectTo) ||
+      (isIsolatedMoveBrowserAuthAdmitted() &&
+        redirectTo.startsWith(PRODUCTION_SITE_ORIGIN));
+    if (replaceRedirect) {
       let nextFromRedirect: string | null = null;
       if (redirectTo) {
         try {
@@ -62,7 +113,7 @@ export function ensureProductionOAuthUrl(oauthUrl: string): string {
         'redirect_to',
         nextFromRedirect
           ? authCallbackUrlWithNext(nextFromRedirect)
-          : AUTH_CALLBACK_URL
+          : authCallbackUrl()
       );
     }
     return parsed.toString();
