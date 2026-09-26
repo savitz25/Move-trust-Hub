@@ -1,6 +1,7 @@
 /**
- * Fail build/CI if Supabase URL is missing, is the legacy free project (uvq),
- * or is not the canonical Move DB (are) when ENFORCE_CANONICAL_SUPABASE=1 / CI / production.
+ * Fail the Vercel build unless Supabase is the canonical Move project, or the
+ * exact reviewed isolated project under the non-production browser-auth contract.
+ * ALLOW_NON_CANONICAL_SUPABASE does not admit a Vercel preview or production build.
  *
  * Usage:
  *   npx tsx scripts/guard-supabase-project.ts
@@ -8,12 +9,11 @@
  */
 import { readFileSync } from 'node:fs';
 import {
-  assertCanonicalSupabaseUrl,
   CANONICAL_SUPABASE_PROJECT_REF,
   extractSupabaseProjectRef,
   FORBIDDEN_SUPABASE_PROJECT_REF,
-  isForbiddenSupabaseUrl,
 } from '../lib/supabase/canonical-project';
+import { assessSupabaseProjectGuard } from './supabase-project-guard';
 
 function loadEnvFiles() {
   for (const file of ['.env.local', '.env.production.local', '.env']) {
@@ -49,29 +49,10 @@ console.log('NEXT_PUBLIC_SUPABASE_URL ref:', ref ?? '(missing)');
 console.log('canonical:', CANONICAL_SUPABASE_PROJECT_REF);
 console.log('forbidden:', FORBIDDEN_SUPABASE_PROJECT_REF);
 
-if (!url) {
-  console.error('FAIL: NEXT_PUBLIC_SUPABASE_URL is not set');
+const result = assessSupabaseProjectGuard();
+if (!result.ok) {
+  console.error('FAIL:', result.message);
   process.exit(1);
 }
 
-if (isForbiddenSupabaseUrl(url)) {
-  console.error(
-    `FAIL: URL host contains forbidden project ${FORBIDDEN_SUPABASE_PROJECT_REF}`
-  );
-  process.exit(1);
-}
-
-try {
-  assertCanonicalSupabaseUrl(url, {
-    requireCanonical:
-      process.env.ENFORCE_CANONICAL_SUPABASE === '1' ||
-      process.env.CI === 'true' ||
-      process.env.VERCEL_ENV === 'production' ||
-      process.env.NODE_ENV === 'production',
-  });
-} catch (err) {
-  console.error('FAIL:', err instanceof Error ? err.message : err);
-  process.exit(1);
-}
-
-console.log('OK: Supabase project guard passed');
+console.log('OK: Supabase project guard passed', result.mode);
