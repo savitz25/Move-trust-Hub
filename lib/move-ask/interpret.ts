@@ -10,6 +10,7 @@ import { MASSACHUSETTS_MOVE_SNAPSHOT } from '../massachusetts-intelligence/snaps
 import { TENNESSEE_MOVE_SNAPSHOT } from '../tennessee-intelligence/snapshot';
 import { lookupNevadaCpcn, nevadaRowLabel, searchNevadaNtaName } from '../nevada-intelligence/lookup';
 import { NEVADA_MOVE_SNAPSHOT } from '../nevada-intelligence/snapshot';
+import { MINNESOTA_MOVE_SNAPSHOT } from '../minnesota-intelligence/snapshot';
 import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
 import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
@@ -32,6 +33,7 @@ const STATE_NAMES: Record<string, string> = {
   ohio: 'OH',
   tennessee: 'TN',
   nevada: 'NV',
+  minnesota: 'MN',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -44,6 +46,7 @@ const STATE_NAMES: Record<string, string> = {
   ma: 'MA',
   tn: 'TN',
   nv: 'NV',
+  mn: 'MN',
 };
 
 function detectState(q: string): string | undefined {
@@ -267,6 +270,32 @@ function isNevadaCityGeographyOnly(q: string): boolean {
   const rest = q.toLowerCase().replace(NV_CITIES, ' ').replace(/[^a-z0-9 ]+/g, ' ')
     .replace(/\b(nv|nevada|movers?|moving|compan(y|ies)|in|near|around|local|find|the|a|licensed|best|top|good|reliable|cheap)\b/g, ' ').trim();
   return rest === '';
+}
+
+const MN_ALTERNATIVES = ['Open Minnesota household-goods research.', 'Show current interstate household-goods carriers headquartered in Minnesota.'];
+const MN_CITIES = /\b(minneapolis|st\.? paul|saint paul|rochester|duluth|bloomington|st\.? cloud|saint cloud|eagan|plymouth|maple grove)\b/i;
+const MN_UNAMBIGUOUS_CITIES = /\b(minneapolis|st\.? paul|saint paul|duluth)\b/i;
+
+function mentionsMinnesota(q: string): boolean {
+  return /\bminnesota\b|\bmn\b|\bmndot\b/i.test(q);
+}
+
+/** Another state named outright takes the query out of the Minnesota layer. */
+function mentionsOtherStateThanMinnesota(q: string): boolean {
+  const other = detectState(q.replace(/\bminnesota\b|\bmn\b/gi, ' ').replace(MN_CITIES, ' '));
+  return Boolean(other && other !== 'MN');
+}
+
+/** Minnesota intent: the state, MnDOT, or an unambiguous Minnesota city with a moving term. Rochester and Bloomington need "Minnesota". */
+function mnContext(q: string): boolean {
+  const named = mentionsMinnesota(q) || (MN_UNAMBIGUOUS_CITIES.test(q) && /\bmov(?:e|er|ers|ing)\b/i.test(q));
+  return named && !mentionsOtherStateThanMinnesota(q) && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+
+/** A MnDOT # (or Minnesota permit number) is verified on MnDOT's Carrier Search; this hub holds no roster. */
+function parseMnDotNumber(q: string): string | null {
+  if (FEDERAL_ID.test(q)) return null;
+  return q.match(/\b(?:mndot|minnesota\s+(?:hhg\s+|household\s+goods\s+)?permit)\s*(?:no\.?|number|#)?\s*#?\s*(\d{3,8})\b/i)?.[1] ?? null;
 }
 
 function titleCity(city: string): string {
@@ -615,6 +644,80 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     );
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'NOT_ACQUIRED — Tennessee Intrastate Authority roster');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  const mnDot = parseMnDotNumber(q);
+  if (mnDot) {
+    const query = fail(
+      `MnDOT # ${mnDot}: MoveTrustHub holds no Minnesota permit roster, so this number is not looked up here. Verify it on MnDOT's Carrier Search, where each carrier's page lists its authority types (for example Household Goods), status and status date. A MnDOT # or Minnesota Household Goods Mover Permit is not a USDOT or MC number.`,
+      MN_ALTERNATIVES,
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Minnesota MnDOT #', mnDot);
+    push('Limitation', 'Verify on MnDOT Carrier Search; not FMCSA authority');
+    return { raw: q, query, interpretation: lines };
+  }
+  const mnCity = q.match(MN_CITIES)?.[1];
+  const mnCityNote = mnCity ? ` ${titleCity(mnCity.replace(/^st\.? /i, 'St. '))} is geography only; MoveTrustHub has no city intelligence page.` : '';
+  const mnIntrastateRoute = MN_CITIES.test(q) && /\bto\b/i.test(q) && (q.match(new RegExp(MN_CITIES.source, 'gi')) ?? []).length >= 2;
+  if (mnContext(q) && (!isRouteOrInterstate(q) || mnIntrastateRoute) && !/\binterstate\b/i.test(q)) {
+    const mn = MINNESOTA_MOVE_SNAPSHOT;
+    if (/\b\d{5,8}\b/.test(q) && !/\b(usdot|dot|mc|mndot|permit)\b/i.test(q)) {
+      const query = fail(
+        'That number has no label. Say whether it is a USDOT number, an MC number, or a MnDOT # so it can be checked against the right record. A MnDOT # is verified on MnDOT\'s Carrier Search; USDOT and MC numbers are federal.',
+        MN_ALTERNATIVES,
+      );
+      push('Mode', 'fail_closed');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (/\b(complaints?|dispositions?|enforcement|penalt\w*|scams?|report)\b/i.test(q)) {
+      const query = fail(
+        "MnDOT takes complaints about for-hire motor carriers, including household goods movers, through its motor carrier complaint form; moves across state lines go to FMCSA. MnDOT can order violations corrected and assess administrative penalties (up to $5,000 per audit or investigation), and a permit is suspended if insurance lapses or renewal or penalty fees go unpaid. Company-level complaint records and outcomes are not published in bulk, so there is no complaint count. A complaint is not a finding.",
+        MN_ALTERNATIVES,
+      );
+      query.coverageState = 'NOT_ACQUIRED';
+      push('Coverage', 'Minnesota complaints — INTAKE_KNOWN / OUTCOMES_REQUEST_ONLY');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (isRanking(q)) {
+      const query = fail(
+        `MoveTrustHub does not rank movers and does not publish a Trust Score. Minnesota research explains the MnDOT Household Goods Mover Permit; it is not a winner or cheapest list.${mnCityNote}`,
+        MN_ALTERNATIVES,
+      );
+      push('Mode', 'fail_closed');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (/\b(insurance|insured|form e|form h|cargo|liability)\b/i.test(q)) {
+      const query = fail(
+        `Before moving household goods in Minnesota, the mover's insurer must file a Form E (bodily injury and property damage liability) and a Form H (cargo) with MnDOT. MnDOT lists: ${mn.insurance.limits.join('; ')}. Minnesota law requires the $50,000 cargo insurance or bond to stay continuously in effect, and a lapse suspends the permit. Insurance on file is a legal requirement, not a measure of quality.`,
+        MN_ALTERNATIVES,
+      );
+      push('Coverage', 'KNOWN — Minnesota insurance requirements');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (/\b(bill of lading|shipping (?:document|record)|shipment record|freight bill|paperwork)\b/i.test(q)) {
+      const query = fail(
+        'Minnesota household goods movers must keep a record of each shipment (for example a bill of lading or freight bill) showing the consignor and consignee, date, origin and destination, a description of the goods, weight or volume if it sets the rate, the exact rates, total charges including special services, and each participating carrier, and keep it for at least three years (Minn. Stat. 221.172). A shipment record is not a tariff and not a quote.',
+        MN_ALTERNATIVES,
+      );
+      push('Coverage', 'KNOWN — Minnesota shipment-record rule');
+      return { raw: q, query, interpretation: lines };
+    }
+    if (/\b(tariffs?|rates?|prices?|costs?|how much|quotes?|estimates?|charges?)\b/i.test(q)) {
+      const query = fail(
+        "Each Minnesota household goods mover must keep its own tariff of rates and charges, make it available for public inspection at its place of business, and provide copies on request; it may not charge more, less or differently than its tariff (Minn. Stat. 221.161 and 221.171). MnDOT publishes no tariff library, so no carrier tariffs are collected here. A tariff is not a quote, and there is no statewide Minnesota moving price. Ask the mover for its tariff and a written estimate.",
+        MN_ALTERNATIVES,
+      );
+      push('Coverage', 'Minnesota tariff rules KNOWN — carrier tariffs NOT_ACQUIRED');
+      return { raw: q, query, interpretation: lines };
+    }
+    const query = fail(
+      `Minnesota household goods movers need a Household Goods Mover Permit from MnDOT (Minn. Stat. 221.121); the permit allows statewide operation in Minnesota and is renewed each year with vehicle registration, with Form E and Form H insurance filed with MnDOT. MnDOT publishes no permit roster, so there is no permit count here; missing is not zero. Verify a carrier on MnDOT's Carrier Search by MnDOT #, USDOT # or name. A Minnesota permit is not a USDOT or MC number, and a Minnesota address is not a permit. Moves that cross a state line are FMCSA interstate moves.${mnCityNote}`,
+      MN_ALTERNATIVES,
+    );
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'NOT_ACQUIRED — Minnesota permit roster (verification KNOWN)');
     return { raw: q, query, interpretation: lines };
   }
 
