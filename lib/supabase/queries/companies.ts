@@ -34,6 +34,7 @@ import { isMissingEnrichmentColumnError } from '@/lib/suggestions/jsonb-payload'
 import { finalizeCompanyEnrichmentForDisplay } from '@/lib/verification/company-display-enrichment';
 import { isSeoIndexableCompany } from '@/lib/provider/publication';
 import type { PublicationState } from '@/lib/provider/types';
+import { previewReadOnlyFetch } from '@/lib/my-trusthub/preview-isolation';
 
 function createAnonSupabaseClient() {
   const url = getSupabaseUrl();
@@ -41,6 +42,7 @@ function createAnonSupabaseClient() {
   if (!url || !anonKey) return null;
   try {
     return createSupabaseClient<Database>(url, anonKey, {
+      global: { fetch: previewReadOnlyFetch },
       auth: { persistSession: false, autoRefreshToken: false },
     });
   } catch (err) {

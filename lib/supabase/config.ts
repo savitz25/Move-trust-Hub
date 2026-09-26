@@ -6,6 +6,7 @@ import {
   assertCanonicalSupabaseUrl,
   isForbiddenSupabaseUrl,
 } from '@/lib/supabase/canonical-project';
+import { legacyClientDisabled } from '@/lib/my-trusthub/preview-isolation';
 
 function readEnv(value: string | undefined): string | undefined {
   const trimmed = value?.trim();
@@ -53,6 +54,7 @@ export function getSupabaseAnonKey(): string | undefined {
 }
 
 export function getSupabaseServiceRoleKey(): string | undefined {
+  if (legacyClientDisabled()) return undefined;
   return readEnv(process.env.SUPABASE_SERVICE_ROLE_KEY);
 }
 
@@ -67,5 +69,6 @@ export function isSupabaseAdminConfigured(): boolean {
 }
 
 export function getAdminSecret(): string | undefined {
+  if (legacyClientDisabled()) return undefined;
   return process.env.ADMIN_SECRET?.trim();
 }

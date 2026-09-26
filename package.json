@@ -327,7 +327,12 @@
     "check:th-search-r1-014": "tsx --require ./scripts/stub-server-only.cjs --test lib/move-ask/r1-journey.test.ts",
     "check:th-search-r1-018": "tsx --require ./scripts/stub-server-only.cjs --test lib/search/r1-018-move-01.test.ts lib/search/match.test.ts lib/search/network-resolver.test.ts lib/search/classify-intent.test.ts lib/directory/filter-companies.test.ts lib/move-ask/r1-name.test.ts lib/move-ask/r1-association.test.ts lib/move-ask/r1-reproduction.test.ts lib/move-ask/r1-behavior.test.ts lib/move-ask/r1-journey.test.ts",
     "check:th-p0-move-01": "tsx --test lib/trust/th-p0-move-01.test.ts",
-    "check:vertical-separation": "tsx scripts/check-vertical-separation.ts && tsx --test lib/migration/hub-redirects.test.ts app/sitemap.test.ts"
+    "check:vertical-separation": "tsx scripts/check-vertical-separation.ts && tsx --test lib/migration/hub-redirects.test.ts app/sitemap.test.ts",
+    "test:v2-1": "node --import tsx --test lib/save-my-move/local-shortlist.test.ts lib/save-my-move/save-mover-intent.test.ts lib/save-my-move/save-mover-action.test.mjs",
+    "test:v2-3-move": "node scripts/test-v23-unit.mjs",
+    "test:v2-3-postgres": "node --import tsx scripts/test-v23-postgres.mjs",
+    "test:v2-3-parent": "node --import tsx scripts/test-v23-ask-contract.mjs",
+    "test:v2-3-profile-compat": "node --import tsx --test components/company/external-reputation.test.ts components/company/company-profile-v3-legacy-guard.test.ts lib/reviews/aggregate-rating.test.ts lib/trust/profile-metrics.test.ts lib/trust/review-display-policy.test.ts lib/trust/auto-transport-mobile-overflow-guard.test.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -366,7 +371,9 @@
     "zustand": "^5.0.3"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
     "@next/bundle-analyzer": "15.5.19",
+    "@playwright/test": "1.55.0",
     "@tailwindcss/postcss": "^4.1.3",
     "@types/d3-geo": "^3.1.0",
     "@types/geojson": "^7946.0.16",
@@ -377,6 +384,8 @@
     "@types/topojson-client": "^3.1.5",
     "cross-env": "7.0.3",
     "d3-geo": "^3.1.1",
+    "embedded-postgres": "17.10.0-beta.17",
+    "esbuild": "0.28.0",
     "eslint": "^9.23.0",
     "eslint-config-next": "15.5.19",
     "postcss": "^8.5.3",

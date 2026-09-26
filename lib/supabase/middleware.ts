@@ -1,6 +1,7 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import type { Database } from '@/types/supabase';
 import { hasSupabaseAuthCookies } from '@/lib/supabase/auth-cookies';
+import { legacyClientDisabled } from '@/lib/my-trusthub/preview-isolation';
 import {
   getAdminSecret,
   getSupabaseAnonKey,
@@ -35,6 +36,7 @@ function guardAdminRoute(request: NextRequest): NextResponse | null {
  * Refresh runs only when session cookies exist — avoids edge→Supabase on public HTML.
  */
 export async function updateSession(request: NextRequest): Promise<NextResponse> {
+  if (legacyClientDisabled()) return NextResponse.next({ request });
   const adminRedirect = guardAdminRoute(request);
   if (adminRedirect) return adminRedirect;
 
