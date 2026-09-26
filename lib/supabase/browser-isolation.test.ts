@@ -5,11 +5,13 @@ import {
   CANONICAL_SUPABASE_URL,
   ISOLATED_MOVE_BROWSER_SUPABASE_URL,
 } from './canonical-project';
+import { createAdminClient } from './admin';
 import {
   getServiceRoleSupabaseTarget,
   getSupabaseAnonKey,
   getSupabaseUrl,
   isIsolatedMoveBrowserAuthAdmitted,
+  isSupabaseAdminConfigured,
   isSupabaseConfigured,
 } from './config';
 import {
@@ -188,17 +190,35 @@ test('production URL cannot pair with the isolated anon key', () => {
   );
 });
 
-test('production service-role key is never aimed at the isolated project', () => {
+test('isolated admission returns no service-role target before any production fallback', () => {
   withEnv(
     {
       ...previewIsolated,
       SUPABASE_SERVICE_ROLE_KEY: jwt(PROD, 'service_role'),
     },
     () => {
+      assert.equal(isIsolatedMoveBrowserAuthAdmitted(), true);
+      assert.equal(getServiceRoleSupabaseTarget(), null);
+      assert.equal(isSupabaseAdminConfigured(), false);
+      assert.throws(() => createAdminClient(), /SUPABASE_SERVICE_ROLE_KEY/);
+    }
+  );
+});
+
+test('without isolation a production service-role key stays on the production project', () => {
+  withEnv(
+    {
+      VERCEL_ENV: 'preview',
+      NEXT_PUBLIC_SUPABASE_URL: CANONICAL_SUPABASE_URL,
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: jwt(PROD, 'anon'),
+      SUPABASE_SERVICE_ROLE_KEY: jwt(PROD, 'service_role'),
+    },
+    () => {
+      assert.equal(isIsolatedMoveBrowserAuthAdmitted(), false);
       const target = getServiceRoleSupabaseTarget();
       assert.equal(target?.url, CANONICAL_SUPABASE_URL);
-      assert.equal(target?.url.includes(ISO), false);
       assert.equal(target?.key, jwt(PROD, 'service_role'));
+      assert.equal(isSupabaseAdminConfigured(), true);
     }
   );
 });

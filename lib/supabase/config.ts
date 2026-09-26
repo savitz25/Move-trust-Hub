@@ -114,10 +114,12 @@ export function getSupabaseServiceRoleKey(): string | undefined {
 
 /**
  * Service-role clients never follow the browser URL.
- * A production key stays on the production project. An isolated key is refused.
- * An unprovable key is refused while the public URL is the isolated project.
+ * Isolated browser auth builds no service-role client: not the production
+ * project, and not an isolated service-role credential.
+ * Outside that admission, a production key stays on the production project.
  */
 export function getServiceRoleSupabaseTarget(): { url: string; key: string } | null {
+  if (isIsolatedMoveBrowserAuthAdmitted()) return null;
   const key = getSupabaseServiceRoleKey();
   if (!key) return null;
   const claims = readSupabaseKeyClaims(key);
@@ -128,7 +130,6 @@ export function getServiceRoleSupabaseTarget(): { url: string; key: string } | n
     return { url: CANONICAL_SUPABASE_URL, key };
   }
 
-  if (isIsolatedMoveBrowserAuthAdmitted()) return null;
   const publicRef = extractSupabaseProjectRef(readEnv(process.env.NEXT_PUBLIC_SUPABASE_URL));
   if (publicRef === ISOLATED_MOVE_BROWSER_PROJECT_REF) return null;
   let url: string | undefined;

@@ -4,6 +4,12 @@ import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
 import { requestMagicLink } from '../auth/request-magic-link';
+import { checkMagicLinkRateLimit } from '../save-my-move/magic-link-rate-limit';
+import {
+  getServiceRoleSupabaseTarget,
+  isSupabaseAdminConfigured,
+  isSupabaseConfigured,
+} from './config';
 import {
   buildCountyServiceClient,
   countyServiceClientBuilds,
@@ -135,7 +141,7 @@ test('public supabase privileged fallback stays on the canonical project', () =>
 
 test('isolated magic link does not create users or use production admin or Resend', async () => {
   await withEnv(isolated, async () => {
-    const otp: Array<{ options: { shouldCreateUser: boolean } }> = [];
+    const otp: Array<{ options: { shouldCreateUser: boolean; emailRedirectTo: string } }> = [];
     const adminCalls: string[] = [];
     const resendCalls: string[] = [];
     const result = await requestMagicLink(
@@ -190,7 +196,7 @@ test('non-isolated magic link still allows signup and can use the admin path', a
       NEXT_PUBLIC_SUPABASE_ANON_KEY: jwt(PROD, 'anon'),
     },
     async () => {
-      const otp: Array<{ options: { shouldCreateUser: boolean } }> = [];
+      const otp: Array<{ options: { shouldCreateUser: boolean; emailRedirectTo: string } }> = [];
       const adminCalls: string[] = [];
       await requestMagicLink(
         { email: 'person@example.com' },
@@ -275,4 +281,61 @@ test('live server code does not pair the browser URL with the service-role key',
   }
   walk(root);
   assert.deepEqual(hits, []);
+});
+
+test('Hindman profile, local Save, and isolated login do not need a production service-role client', async () => {
+  const profile = readFileSync(new URL('../supabase/queries/companies.ts', import.meta.url), 'utf8');
+  const page = readFileSync(new URL('../data-server.ts', import.meta.url), 'utf8');
+  const shortlist = readFileSync(new URL('../save-my-move/local-shortlist.ts', import.meta.url), 'utf8');
+  const button = readFileSync(new URL('../../components/save-my-move/save-mover-button.tsx', import.meta.url), 'utf8');
+  const saveAction = readFileSync(new URL('../../actions/save-my-move.ts', import.meta.url), 'utf8');
+  assert.equal(profile.includes('createAdminClient'), false);
+  assert.match(profile, /createAnonSupabaseClient/);
+  assert.match(profile, /getCompanyBySlugOrUsdotFromDb/);
+  assert.match(page, /getCompanyBySlugAsync/);
+  assert.match(page, /getCompanyBySlugOrUsdotFromDb/);
+  assert.equal(page.includes('createAdminClient'), false);
+  assert.equal(shortlist.includes('supabase'), false);
+  assert.equal(saveAction.includes('createAdminClient'), false);
+  const localCall = button.indexOf('addLocalSavedMover(');
+  const cloudCall = button.indexOf('saveMoverAction(');
+  assert.ok(localCall >= 0 && cloudCall > localCall);
+  assert.match(button, /companySlug/);
+
+  await withEnv(isolated, async () => {
+    assert.equal(isSupabaseConfigured(), true);
+    assert.equal(getServiceRoleSupabaseTarget(), null);
+    assert.equal(isSupabaseAdminConfigured(), false);
+    const rate = await checkMagicLinkRateLimit({
+      email: 'qa-user@example.com',
+      ip: '203.0.113.10',
+    });
+    assert.deepEqual(rate, { allowed: true });
+    const otp: Array<{ options: { shouldCreateUser: boolean; emailRedirectTo: string } }> = [];
+    const result = await requestMagicLink(
+      { email: 'qa-user@example.com', next: '/companies/hindman-isaacs-moving-storage-inc' },
+      {
+        session: async () => ({
+          auth: {
+            signInWithOtp: async (args) => {
+              otp.push(args);
+              return { error: null };
+            },
+          },
+        }),
+        admin: () => {
+          throw new Error('production admin');
+        },
+        adminConfigured: () => true,
+        resendReady: () => true,
+        sendResend: async () => {
+          throw new Error('production resend');
+        },
+      }
+    );
+    assert.equal(result.ok, true);
+    assert.equal(otp[0].options.shouldCreateUser, false);
+    assert.match(otp[0].options.emailRedirectTo, /move-preview\.example\.com/);
+    assert.equal(otp[0].options.emailRedirectTo.includes('movetrusthub.com'), false);
+  });
 });
