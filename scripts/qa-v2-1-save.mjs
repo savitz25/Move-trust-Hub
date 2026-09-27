@@ -1,0 +1,94 @@
+/** Local-only component harness. Real Save button/storage/runtime; mocked auth/cloud.
+ * npm exec -- node scripts/qa-v2-1-save.mjs [--baseline]
+ * No credentials, database, Next route, or production mutation endpoint.
+ */
+import { build } from 'esbuild';
+import { createServer } from 'node:http';
+import { execFileSync } from 'node:child_process';
+import { resolve, basename } from 'node:path';
+
+const baseline = process.argv.includes('--baseline');
+const root = process.cwd();
+const entry = `
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { SaveMoverButton } from './components/save-my-move/save-mover-button';
+import { DeferredSaveMyMove } from './components/performance/deferred-save-my-move';
+import { Ctx, DEFERRED_FALLBACK } from './components/save-my-move/save-my-move-context';
+window.b3 = {
+  cloud: [], analytics: [], authCalls: 0, user: null, authError: null,
+  wait: null, listener: null, pathname: '/companies/b3-test-mover',
+  resolveAuth() { this.wait?.(); this.wait = null; },
+  authEvent(id) { this.listener?.('SIGNED_IN', id ? { user: { id } } : null); },
+  render(slug = 'b3-test-mover', variant = 'button') {
+    this.pathname = '/companies/' + slug;
+    root.render(<DeferredSaveMyMove><Ctx.Provider value={this.context ?? DEFERRED_FALLBACK}><main><h1>B3 isolated component fixture</h1>
+      <SaveMoverButton companySlug={slug} companyName={slug} variant={variant} />
+    </main></Ctx.Provider></DeferredSaveMyMove>);
+  },
+  accountContext(id, confirmed) {
+    this.context = { ...DEFERRED_FALLBACK, loading: false, user: id ? {id} : null,
+      isMoverSaved: () => true, isMoverAccountSaved: () => Boolean(id && confirmed) };
+    this.render();
+  }
+};
+const root = createRoot(document.getElementById('root'));
+window.b3.render();
+`;
+const mocks = {
+  'next/navigation': `export const usePathname = () => window.b3.pathname;`,
+  '@/components/save-my-move/save-my-move-provider': `
+    export { useSaveMyMove } from '${root.replaceAll('\\', '/')}/components/save-my-move/save-my-move-context';
+    export function SaveMyMoveProvider() { return null; }`,
+  '@/lib/supabase/client': `export function createBrowserSupabaseClient() { return { auth: {
+    async getUser() {
+      window.b3.authCalls++;
+      if (window.b3.delayAuth) await new Promise(done => window.b3.wait = done);
+      return { data: { user: window.b3.user }, error: window.b3.authError };
+    },
+    onAuthStateChange(callback) {
+      window.b3.listener = callback;
+      return { data: { subscription: { unsubscribe() { window.b3.listener = null; } } } };
+    }
+  } }; }`,
+  '@/actions/save-my-move': `export async function saveMoverAction(input) {
+    window.b3.cloud.push(input); return { ok: true, cloud: !window.b3.cloudFailed };
+  }`,
+  '@/components/ga-events': `export function trackSaveMyMoveMover(input) { window.b3.analytics.push(input); }`,
+};
+const result = await build({
+  stdin: { contents: entry, resolveDir: root, loader: 'tsx' },
+  bundle: true, write: false, format: 'esm', splitting: true,
+  outdir: resolve(root, '.b3-memory'), chunkNames: '[name]-[hash]',
+  jsx: 'automatic', define: { 'process.env.NODE_ENV': '"development"' },
+  plugins: [{ name: 'isolated-adapters', setup(builder) {
+    builder.onResolve({ filter: /.*/ }, args => mocks[args.path] ? { path: args.path, namespace: 'b3' } : null);
+    builder.onLoad({ filter: /.*/, namespace: 'b3' }, args => ({ contents: mocks[args.path], loader: 'js', resolveDir: root }));
+    if (baseline) builder.onLoad({ filter: /save-mover-button\.tsx$/ }, () => ({
+      contents: execFileSync('git', ['show', '5018639dee0901bbc630cafdd633015421f86e00:components/save-my-move/save-mover-button.tsx'], { encoding: 'utf8' }),
+      loader: 'tsx', resolveDir: resolve(root, 'components/save-my-move'),
+    }));
+  } }],
+});
+const assets = new Map(result.outputFiles.map(file => ['/' + basename(file.path), file.text]));
+let delayRuntime = 0;
+let failRuntime = false;
+const server = createServer(async (request, response) => {
+  const url = new URL(request.url, 'http://127.0.0.1');
+  if (url.pathname === '/control') {
+    delayRuntime = Number(url.searchParams.get('delay') ?? 0);
+    failRuntime = url.searchParams.get('fail') === '1';
+    response.end('OK'); return;
+  }
+  if (assets.has(url.pathname)) {
+    if (url.pathname.includes('save-mover-runtime')) {
+      if (delayRuntime) await new Promise(done => setTimeout(done, delayRuntime));
+      if (failRuntime) { response.writeHead(503); response.end('Test module failure'); return; }
+    }
+    response.setHeader('Content-Type', 'text/javascript');
+    response.end(assets.get(url.pathname)); return;
+  }
+  response.setHeader('Content-Type', 'text/html');
+  response.end('<!doctype html><html lang="en"><meta name="viewport" content="width=device-width,initial-scale=1"><title>B3 isolated Save QA</title><style>body{font:16px sans-serif;margin:16px}button{padding:12px}svg{width:16px;height:16px}span[role=status]{display:block;max-width:256px;overflow-wrap:anywhere}button:focus-visible{outline:3px solid blue}</style><div id="root"></div><script type="module" src="/stdin.js"></script></html>');
+});
+server.listen(4311, '127.0.0.1', () => console.log(`B3 ${baseline ? 'BASELINE' : 'HEAD'} harness: http://127.0.0.1:4311; auth/cloud MOCKED; provider deliberately never resolves.`));

@@ -12,18 +12,22 @@ export type LocalSavedMover = {
 
 const STORAGE_KEY = 'mth-local-saved-movers';
 
-function readRaw(): LocalSavedMover[] {
+function readRaw(strict = false): LocalSavedMover[] {
   if (typeof window === 'undefined') return [];
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return [];
     const parsed = JSON.parse(raw) as unknown;
-    if (!Array.isArray(parsed)) return [];
+    if (!Array.isArray(parsed)) throw new Error('Unreadable local shortlist');
+    if (strict && parsed.some(row => !row || typeof row !== 'object' || typeof row.companySlug !== 'string')) {
+      throw new Error('Unreadable local shortlist');
+    }
     return parsed.filter(
       (row): row is LocalSavedMover =>
         Boolean(row && typeof row === 'object' && typeof (row as LocalSavedMover).companySlug === 'string')
     );
-  } catch {
+  } catch (error) {
+    if (strict) throw error;
     return [];
   }
 }
@@ -54,14 +58,18 @@ export function addLocalSavedMover(input: {
   companyName: string;
   notes?: string | null;
 }): LocalSavedMover {
-  const rows = readRaw().filter((r) => r.companySlug !== input.companySlug);
+  if (typeof window === 'undefined') throw new Error('Local storage unavailable');
+  // Never replace an unreadable shortlist or claim success after a failed write.
+  const existing = readRaw(true);
+  const previous = existing.find((r) => r.companySlug === input.companySlug);
+  const rows = existing.filter((r) => r.companySlug !== input.companySlug);
   const row: LocalSavedMover = {
     companySlug: input.companySlug,
     companyName: input.companyName.trim() || input.companySlug,
-    notes: input.notes ?? null,
-    savedAt: new Date().toISOString(),
+    notes: input.notes === undefined ? previous?.notes ?? null : input.notes,
+    savedAt: previous?.savedAt ?? new Date().toISOString(),
   };
-  writeRaw([row, ...rows]);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify([row, ...rows]));
   return row;
 }
 

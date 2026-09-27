@@ -8,6 +8,7 @@ export type SaveMyMoveContextValue = {
   loading: boolean;
   savedMoverSlugs: ReadonlySet<string>;
   isMoverSaved: (companySlug: string) => boolean;
+  isMoverAccountSaved: (companySlug: string) => boolean;
   markMoverSaved: (companySlug: string) => void;
   openSaveModal: (opts?: { redirectPath?: string; context?: SaveMyMoveContext }) => void;
   requireAuth: (opts?: { redirectPath?: string; context?: SaveMyMoveContext }) => boolean;
@@ -17,13 +18,15 @@ export const Ctx = createContext<SaveMyMoveContextValue | null>(null);
 
 /**
  * Used while DeferredSaveMyMove has not mounted the real provider yet.
- * loading: true prevents save/auth clicks from firing against a half-ready client.
+ * loading: true means no provider account evidence yet. Profile Save resolves
+ * its essential runtime on demand instead of waiting for this provider.
  */
 export const DEFERRED_FALLBACK: SaveMyMoveContextValue = {
   user: null,
   loading: true,
   savedMoverSlugs: new Set(),
   isMoverSaved: () => false,
+  isMoverAccountSaved: () => false,
   markMoverSaved: () => {},
   openSaveModal: () => {},
   requireAuth: () => false,
@@ -41,4 +44,3 @@ export function useSaveMyMove() {
 export function useSaveMyMoveOptional() {
   return useContext(Ctx);
 }
-
