@@ -35,7 +35,8 @@ export function isLocalAuthUrl(url: string): boolean {
  */
 export function approvedIsolatedAuthOrigin(): string | null {
   if (!isIsolatedMoveBrowserAuthAdmitted()) return null;
-  const raw = process.env[ISOLATED_MOVE_BROWSER_AUTH_ORIGIN_ENV]?.trim();
+  // Literal property access so Next inlines this NEXT_PUBLIC value into the browser bundle.
+  const raw = process.env.NEXT_PUBLIC_MOVE_ISOLATED_AUTH_ORIGIN?.trim();
   if (!raw) return null;
   try {
     const url = new URL(raw);

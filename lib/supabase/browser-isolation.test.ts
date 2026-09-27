@@ -111,6 +111,15 @@ test('preview approval does not admit a different project', () => {
   );
 });
 
+test('client-reachable isolated auth env reads are static NEXT_PUBLIC property access', () => {
+  const config = readFileSync(new URL('./config.ts', import.meta.url), 'utf8');
+  const redirect = readFileSync(new URL('../save-my-move/redirect.ts', import.meta.url), 'utf8');
+  assert.match(config, /process\.env\.NEXT_PUBLIC_MOVE_ISOLATED_AUTH_APPROVED/);
+  assert.match(redirect, /process\.env\.NEXT_PUBLIC_MOVE_ISOLATED_AUTH_ORIGIN/);
+  assert.doesNotMatch(config, /process\.env\[/);
+  assert.doesNotMatch(redirect, /process\.env\[/);
+});
+
 test('preview admits only the exact isolated URL with approval', () => {
   withEnv(previewIsolated, () => {
     assert.equal(isIsolatedMoveBrowserAuthAdmitted(), true);

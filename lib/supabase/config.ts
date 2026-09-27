@@ -7,7 +7,6 @@ import {
   CANONICAL_SUPABASE_PROJECT_REF,
   CANONICAL_SUPABASE_URL,
   extractSupabaseProjectRef,
-  ISOLATED_MOVE_BROWSER_AUTH_APPROVAL_ENV,
   ISOLATED_MOVE_BROWSER_PROJECT_REF,
   ISOLATED_MOVE_BROWSER_SUPABASE_URL,
   isCanonicalSupabaseUrl,
@@ -49,7 +48,8 @@ export function deploymentEnv(): string | undefined {
  */
 export function isIsolatedMoveBrowserAuthAdmitted(): boolean {
   if (deploymentEnv() === 'production') return false;
-  if (process.env[ISOLATED_MOVE_BROWSER_AUTH_APPROVAL_ENV] !== '1') return false;
+  // Literal property access so Next inlines this NEXT_PUBLIC value into the browser bundle.
+  if (process.env.NEXT_PUBLIC_MOVE_ISOLATED_AUTH_APPROVED !== '1') return false;
   return readEnv(process.env.NEXT_PUBLIC_SUPABASE_URL) === ISOLATED_MOVE_BROWSER_SUPABASE_URL;
 }
 
