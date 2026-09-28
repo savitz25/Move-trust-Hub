@@ -59,7 +59,7 @@ export default function MichiganMoveIntelligencePage() {
           <li>No combined Michigan plus federal mover total; no name-based adverse-evidence matching.</li>
           <li>Carrier tariff documents, provider-level complaints and enforcement outcomes: NOT_ACQUIRED.</li>
           <li>No city intelligence pages; Detroit, Grand Rapids, Lansing and Ann Arbor are search context only.</li>
-          <li>No Trust Score, rating or recommendation.</li>
+          <li>No ratings or recommendations.</li>
         </ul>
       </section>
     </main>
