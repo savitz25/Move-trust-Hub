@@ -1,0 +1,41 @@
+{
+  "ticket": "MI-MOVE-001",
+  "retrieved_at": "2026-09-28",
+  "state_regulator": {
+    "url": "https://www.michigan.gov/msp/divisions/cved/regulatory",
+    "authority": "MSP/CVED issues intrastate for-hire authority; household-goods carriers renew annually and purchase decals",
+    "insurance": "General requirements include Certificate of Liability and Form E; household-goods carriers additionally file Form H",
+    "tariff": "Tariff Membership required for travel over 40 miles without a continuous contract",
+    "continuous_contract": "Copy of any continuous contracts, if applicable"
+  },
+  "carrier_search": {
+    "url": "https://mspcapsearch.state.mi.us/",
+    "request": "One ordinary public search through POST /Home/GetCarrierList using the page's verification token and authorityType=Household Goods, currentAuthorityStatus=Active",
+    "visible_filters": ["CVED #", "US DOT", "FEDERAL MOTOR CARRIER", "CARRIER NAME", "DBA", "ADDRESS", "CITY", "STATE", "ZIP", "OPERATION TYPE", "AUTHORITY STATUS"],
+    "visible_export": ["Excel", "PDF"],
+    "source_as_of": null,
+    "source_status_label": "Active",
+    "rows": 199,
+    "distinct_cved": 199,
+    "printed_usdot_rows": 188,
+    "distinct_printed_usdot": 187,
+    "printed_federal_motor_carrier": 99,
+    "other_status_rows": null
+  },
+  "consumer_guidance": {
+    "url": "https://www.michigan.gov/msp/divisions/cved/regulatory/key-tips-to-protecting-your-household-goods-move",
+    "usdot_not_authority": true,
+    "complaint_context": ["hostage freight", "cargo theft", "property damage"],
+    "rate_threshold_miles": 40,
+    "valuation_guidance": true
+  },
+  "investigation": {
+    "url": "https://www.michigan.gov/msp/divisions/cved/investigation-unit",
+    "complaint_intake": "KNOWN",
+    "provider_level_complaint_rows": "NOT_ACQUIRED",
+    "adjudicated_outcomes": "NOT_ACQUIRED"
+  },
+  "carrier_tariff_documents": "NOT_ACQUIRED",
+  "new_canonical_organizations": 0,
+  "graph_writes": 0
+}
