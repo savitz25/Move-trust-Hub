@@ -12,6 +12,7 @@ import { lookupNevadaCpcn, nevadaRowLabel, searchNevadaNtaName } from '../nevada
 import { NEVADA_MOVE_SNAPSHOT } from '../nevada-intelligence/snapshot';
 import { MINNESOTA_MOVE_SNAPSHOT } from '../minnesota-intelligence/snapshot';
 import { MICHIGAN_MOVE_SNAPSHOT } from '../michigan-intelligence/snapshot';
+import { CONNECTICUT_MOVE_SNAPSHOT, lookupCtHhgCertificate } from '../connecticut-intelligence/snapshot';
 import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
 import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
@@ -36,6 +37,7 @@ const STATE_NAMES: Record<string, string> = {
   nevada: 'NV',
   minnesota: 'MN',
   michigan: 'MI',
+  connecticut: 'CT',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -50,6 +52,7 @@ const STATE_NAMES: Record<string, string> = {
   nv: 'NV',
   mn: 'MN',
   mi: 'MI',
+  ct: 'CT',
 };
 
 function detectState(q: string): string | undefined {
@@ -278,6 +281,19 @@ function isNevadaCityGeographyOnly(q: string): boolean {
 const MN_ALTERNATIVES = ['Open Minnesota household-goods research.', 'Show current interstate household-goods carriers headquartered in Minnesota.'];
 const MI_ALTERNATIVES = ['Open Michigan household-goods research.', 'Check current CVED authority in the official carrier search.'];
 const MI_CITIES = /\b(detroit|grand rapids|lansing|ann arbor)\b/i;
+const CT_ALTERNATIVES = ['Open Connecticut household-goods research.', 'Verify current RCHG status in Connecticut eLicense.'];
+const CT_CITIES = /\b(hartford|new haven|stamford|bridgeport)\b/i;
+
+function ctContext(q: string): boolean {
+  const named = /\bconnecticut\b|\bin ct\b|\bctdot\b|\brchg\b/i.test(q) ||
+    (CT_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
+  const other = detectState(q.replace(/\bconnecticut\b|\bin ct\b/gi, ' ').replace(CT_CITIES, ' '));
+  return named && (!other || other === 'CT') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+
+function ctRanking(q: string): boolean {
+  return /\b(best|safest|recommend(?:ed)?|top[- ]?rated|highest[- ]?rated|most trustworthy|most trusted|trust score|aggregaterating|ratingvalue|paid ranking|sponsored ranking|number one)\b|#\s*1\b/i.test(q);
+}
 
 function miContext(q: string): boolean {
   const named = /\bmichigan\b|\bin mi\b|\bcved\b|\bmsp carrier authority\b/i.test(q) ||
@@ -656,6 +672,40 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     );
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'NOT_ACQUIRED — Tennessee Intrastate Authority roster');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (ctContext(q) && !isRouteOrInterstate(q)) {
+    const ct = CONNECTICUT_MOVE_SNAPSHOT;
+    const city = q.match(CT_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only; there is no Connecticut city intelligence page.` : '';
+    if (ctRanking(q)) {
+      const query = fail('MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. Connecticut roster order is not a provider winner.', CT_ALTERNATIVES);
+      push('Mode', 'fail_closed');
+      return { raw: q, query, interpretation: lines };
+    }
+    const cert = q.match(/\b(?:HG\s*#?\s*\d{1,5}|(?:CTDOT|Connecticut|RCHG)\s+(?:HHG\s+|household[- ]goods\s+|mover\s+)?(?:certificate|cert|authority|permit)\s*(?:no\.?|number|#)?\s*#?\s*\d{1,5})\b/i)?.[0].match(/(?:HG\s*#?\s*|\b)(\d{1,5})\s*$/i)?.[1];
+    if (cert) {
+      const rows = lookupCtHhgCertificate(cert);
+      const reason = rows.length
+        ? `CTDOT certificate HG${cert} appears on ${rows.length} row${rows.length === 1 ? '' : 's'} of the 2026 household-goods roster: ${rows.map((row) => row.legalName).join('; ')}. The roster is not live status; verify RCHG in Connecticut eLicense. An HG certificate is not a USDOT or MC number.`
+        : `CTDOT certificate HG${cert} is absent from the captured 2026 roster. Absence does not prove no authority; verify RCHG in Connecticut eLicense.`;
+      const query = fail(reason, CT_ALTERNATIVES);
+      push('CTDOT HG certificate', `HG${cert}`);
+      return { raw: q, query, interpretation: lines };
+    }
+    let reason: string;
+    if (/\b\d{3,8}\b/.test(q) && !/\b(usdot|dot|mc|hg|certificate|cert|permit|authority)\b/i.test(q)) {
+      reason = 'That number has no label. Specify CTDOT HG certificate, USDOT or MC; no name or carrier lookup was inferred.';
+    } else if (/\b(complaints?|citations?|enforcement|discipline|violations?)\b/i.test(q)) {
+      reason = 'CTDOT requires written household-goods complaints. Its Administrative Law Unit hears citation matters and publishes final decisions. Provider-level complaint and 2022–2026 citation/outcome corpora were not acquired; a complaint or notice is not a finding.';
+    } else if (/\b(tariffs?|rates?|prices?|quotes?|estimates?)\b/i.test(q)) {
+      reason = 'CTDOT handles household-goods tariffs and stopped approving fuel surcharges in those tariffs on January 2, 2023. CTDOT advises a binding quote. A carrier tariff corpus and statewide price comparison were not acquired.';
+    } else {
+      reason = `CTDOT's 2026 household-goods list has ${ct.rosterRows} roster rows and ${ct.distinctCertificates} distinct HG certificates. The workbook prints no USDOT or MC field, so there are no exact federal bridges from this source. CTDOT authority is separate from USDOT and MC; use eLicense code RCHG for current-status verification. No combined Connecticut and federal mover count.${cityNote}`;
+    }
+    const query = fail(reason, CT_ALTERNATIVES);
+    push('Coverage', 'CTDOT 2026 household-goods roster snapshot');
     return { raw: q, query, interpretation: lines };
   }
 

@@ -1,0 +1,52 @@
+{
+  "version": "move-ct-state-intel-v1",
+  "ticket": "CT-MOVE-001",
+  "sourceAsOf": null,
+  "sourceFileLastModifiedHttp": "Wed, 20 May 2026 13:50:36 GMT",
+  "retrievedAt": "2026-09-28T17:53:58Z",
+  "generatedAt": "2026-09-28T17:53:58Z",
+  "publication": {
+    "route": "/connecticut",
+    "indexable": true,
+    "regulator": "Connecticut Department of Transportation, Bureau of Public Transportation"
+  },
+  "current_hhg_roster": {
+    "source": "https://portal.ct.gov/dot/publictrans/bureau-of-public-transportation/household-goods-movers-with-ctdot-cert",
+    "coverage": "OFFICIAL_2026_WORKBOOK",
+    "grain": "Source row, not unique company",
+    "rows": 117,
+    "source_footer_total": 117,
+    "distinct_hg_certificates": 115,
+    "duplicate_certificate_rows": 2,
+    "source_status_label": null,
+    "rows_with_printed_usdot": 0,
+    "rows_with_printed_mc": 0,
+    "rows_without_printed_federal_identifier": 117
+  },
+  "elicense": {
+    "verification": "KNOWN",
+    "code": "RCHG",
+    "roster_ingestion": "NONE"
+  },
+  "tariff": {
+    "framework": "KNOWN",
+    "fuel_surcharge_approval_ended": "2023-01-02",
+    "carrier_documents": "NOT_ACQUIRED"
+  },
+  "complaints": {
+    "written_intake": "KNOWN",
+    "provider_rows": "NOT_ACQUIRED",
+    "outcomes": "NOT_ACQUIRED"
+  },
+  "enforcement": {
+    "citation_and_final_decision_capability": "KNOWN",
+    "provider_level_corpus": "NOT_ACQUIRED",
+    "exact_certificate_attachments": 0,
+    "name_only_attachments": 0
+  },
+  "graph": {
+    "new_canonical_organizations": 0,
+    "writes": 0,
+    "claim_eligibility_broadened": false
+  }
+}
