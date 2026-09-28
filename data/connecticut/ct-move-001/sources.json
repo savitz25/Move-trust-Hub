@@ -1,0 +1,45 @@
+{
+  "ticket": "CT-MOVE-001",
+  "regulator": "Connecticut Department of Transportation, Bureau of Public Transportation, Regulatory & Compliance Unit",
+  "roster": {
+    "capability": "ACQUIRED",
+    "url": "https://portal.ct.gov/dot/publictrans/bureau-of-public-transportation/household-goods-movers-with-ctdot-cert",
+    "grain": "CTDOT 2026 household-goods carrier-list row; certificate is a separate identifier and can repeat",
+    "source_status_label": null,
+    "publication_date_printed": null,
+    "source_file_last_modified_http": "Wed, 20 May 2026 13:50:36 GMT",
+    "row_count": 117,
+    "distinct_hg_certificates": 115,
+    "source_footer_total": 117,
+    "rows_with_printed_usdot": 0,
+    "rows_with_printed_mc": 0
+  },
+  "elicense": {
+    "url": "https://portal.ct.gov/dot/publictrans/bureau-of-public-transportation/elicense-services",
+    "verification": "KNOWN",
+    "household_goods_code": "RCHG",
+    "roster_ingestion": "NONE"
+  },
+  "tariff": {
+    "url": "https://portal.ct.gov/dot/publictrans/bureau-of-public-transportation/regulatory-compliance-unit",
+    "framework": "KNOWN",
+    "fuel_surcharge_approval_ended": "2023-01-02",
+    "carrier_tariff_corpus": "NOT_ACQUIRED"
+  },
+  "complaints": {
+    "url": "https://portal.ct.gov/dot/publictrans/bureau-of-public-transportation/regulatory-compliance-unit",
+    "written_intake": "KNOWN",
+    "provider_level_rows": "NOT_ACQUIRED",
+    "outcomes": "NOT_ACQUIRED"
+  },
+  "enforcement": {
+    "url": "https://portal.ct.gov/dot/administrative-law-unit/final-decisions",
+    "citation_and_final_decision_capability": "KNOWN",
+    "provider_level_corpus_2022_2026": "NOT_ACQUIRED",
+    "attached_rows": 0,
+    "name_only_attachments": 0
+  },
+  "new_canonical_organizations": 0,
+  "graph_writes": 0,
+  "claim_eligibility_changes": 0
+}

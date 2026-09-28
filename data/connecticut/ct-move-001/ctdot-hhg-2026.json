@@ -1,0 +1,1319 @@
+{
+  "contract": "ct-move-001-ctdot-hhg-2026-v1",
+  "sourceUrl": "https://portal.ct.gov/dot/-/media/dot/public-transportation/hhg-annual-registration.xlsx?hash=C131B3F94680E8B130171EB5919411D1&rev=ea4c3598044b4f4d8bd8920a030f5c47",
+  "sourcePage": "https://portal.ct.gov/dot/publictrans/bureau-of-public-transportation/household-goods-movers-with-ctdot-cert",
+  "sourceSha256": "3aa39c8d1531128a7c2b39fa871c3ea02fbde4d8a755fc4a47f57258d26a156c",
+  "sourceLastModifiedHttp": "Wed, 20 May 2026 13:50:36 GMT",
+  "sourcePublicationDate": null,
+  "retrievedAt": "2026-09-28T17:53:58Z",
+  "generatedAt": "2026-09-28T17:53:58Z",
+  "rosterYear": 2026,
+  "sourceAnnouncedTotal": 117,
+  "rowCount": 117,
+  "distinctCertificates": 115,
+  "duplicateCertificateRows": 2,
+  "rowsWithPrintedUsdot": 0,
+  "distinctPrintedUsdot": 0,
+  "rowsWithPrintedMc": 0,
+  "rowsWithoutPrintedFederalIdentifier": 117,
+  "rows": [
+    {
+      "sourceRow": 2,
+      "legalName": "1-800-PACK RAT, LLC",
+      "dba": null,
+      "towns": [
+        "MIDDLETOWN"
+      ],
+      "ctdotCertificate": "HG1776",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 3,
+      "legalName": "2 YOUNG STUDES MOVING LLC",
+      "dba": null,
+      "towns": [
+        "NEW HAVEN"
+      ],
+      "ctdotCertificate": "HG1759",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 4,
+      "legalName": "ABSOLUTE PACKERS LLC",
+      "dba": null,
+      "towns": [
+        "STRATFORD"
+      ],
+      "ctdotCertificate": "HG1801",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 5,
+      "legalName": "ACE VAN & STORAGE INC.",
+      "dba": null,
+      "towns": [
+        "CHESHIRE"
+      ],
+      "ctdotCertificate": "HG906",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 6,
+      "legalName": "ACTION MOVING AND STORAGE AND LOGISTICS, LLC",
+      "dba": null,
+      "towns": [
+        "BEACON FALLS",
+        "SEYMOUR"
+      ],
+      "ctdotCertificate": "HG1542",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 7,
+      "legalName": "ADAMS MOVING COMPANY LLC",
+      "dba": null,
+      "towns": [
+        "BRANFORD"
+      ],
+      "ctdotCertificate": "HG1824",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 8,
+      "legalName": "ADVANTAGE MOVING AND STORAGE LLC",
+      "dba": null,
+      "towns": [
+        "NEWINGTON",
+        "BRISTOL"
+      ],
+      "ctdotCertificate": "HG1751",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 9,
+      "legalName": "ALL MY BROTHERS MOVING COMPANY LLC",
+      "dba": null,
+      "towns": [
+        "DANBURY"
+      ],
+      "ctdotCertificate": "HG1786",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 10,
+      "legalName": "ALL MY SONS MOVING & STORAGE OF CONNECTICUT LLC",
+      "dba": null,
+      "towns": [
+        "STRATFORD"
+      ],
+      "ctdotCertificate": "HG1738",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 11,
+      "legalName": "ALL MY SONS OF HARTFORD LLC",
+      "dba": null,
+      "towns": [
+        "HARTFORD"
+      ],
+      "ctdotCertificate": "HG1811",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 12,
+      "legalName": "ALL POINTS DISTRIBUTION LLC",
+      "dba": null,
+      "towns": [
+        "NORWALK"
+      ],
+      "ctdotCertificate": "HG1816",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 13,
+      "legalName": "AMERICAN RELOCATORS INC",
+      "dba": null,
+      "towns": [
+        "OXFORD"
+      ],
+      "ctdotCertificate": "HG1823",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 14,
+      "legalName": "AMSTON REAL ESTATE, LLC",
+      "dba": "AMSTON HOME TRANSITION SOLUTIONS",
+      "towns": [
+        "WALLINGFORD"
+      ],
+      "ctdotCertificate": "HG1827",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 15,
+      "legalName": "ANTHONY AUGLIERA INC.",
+      "dba": null,
+      "towns": [
+        "EAST HAVEN"
+      ],
+      "ctdotCertificate": "HG81",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 16,
+      "legalName": "ANTWALL 13 LLC",
+      "dba": "DBA TWO MEN AND A TRUCK CONNECTICUT",
+      "towns": [
+        "ROCKY HILL"
+      ],
+      "ctdotCertificate": "HG1775",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 17,
+      "legalName": "ANTWALL 13 LLC",
+      "dba": "DBA TWO MEN AND A TRUCK CONNECTICUT",
+      "towns": [
+        "NEW HAVEN"
+      ],
+      "ctdotCertificate": "HG1792",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 18,
+      "legalName": "ANTWALL 13, LLC",
+      "dba": "DBA TWO MEN AND A TRUCK CONNECTICUT",
+      "towns": [
+        "ROCKY HILL"
+      ],
+      "ctdotCertificate": "HG1775",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 19,
+      "legalName": "ANTWELL 13, LLC",
+      "dba": "DBA TWO MEN AND A TRUCK CONNECTICUT",
+      "towns": [
+        "NEW HAVEN"
+      ],
+      "ctdotCertificate": "HG1792",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 20,
+      "legalName": "ARMSTRONG MOVING AND STORAGE LLC",
+      "dba": null,
+      "towns": [
+        "SANDY HOOK"
+      ],
+      "ctdotCertificate": "HG1748",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 21,
+      "legalName": "ARNOFF MOVING AND STORAGE INC.",
+      "dba": null,
+      "towns": [
+        "LAKEVILLE"
+      ],
+      "ctdotCertificate": "HG1010",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 22,
+      "legalName": "ARTHUR WERNER MOVING AND STORAGE INC.",
+      "dba": null,
+      "towns": [
+        "BRIDGEPORT"
+      ],
+      "ctdotCertificate": "HG1120",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 23,
+      "legalName": "ASTRO MOVING INC.",
+      "dba": null,
+      "towns": [
+        "BRIDGEPORT"
+      ],
+      "ctdotCertificate": "HG1587",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 24,
+      "legalName": "B & M LOGISTICS, LLC",
+      "dba": null,
+      "towns": [
+        "MIDDLEFIELD"
+      ],
+      "ctdotCertificate": "HG59",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 25,
+      "legalName": "BARNES MOVING AND STORAGE OF NEW ENGLAND LLC",
+      "dba": null,
+      "towns": [
+        "STONINGTON"
+      ],
+      "ctdotCertificate": "HG233",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 26,
+      "legalName": "BERT HILL'S EXPRESS INC.",
+      "dba": "DBA BERT H ILL MOVER",
+      "towns": [],
+      "ctdotCertificate": "HG1763",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 27,
+      "legalName": "BRAUN MOVING, INC.",
+      "dba": "DBA BRAUN MOVING",
+      "towns": [
+        "NEWTOWN"
+      ],
+      "ctdotCertificate": "HG119",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 28,
+      "legalName": "BUBBA'S MOVING LLC",
+      "dba": null,
+      "towns": [
+        "WETHERSFIELD"
+      ],
+      "ctdotCertificate": "HG1828",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 29,
+      "legalName": "BUTT BROTHERS MOVING & STORAGE LLC",
+      "dba": "DBA B & B MOVING AND STORAGE",
+      "towns": [
+        "BROOKFIELD",
+        "DANBURY"
+      ],
+      "ctdotCertificate": "HG1747",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 30,
+      "legalName": "CAPITOL SERVICES GROUP LLC",
+      "dba": "DBA CAPITOL RELOCATION & LOGISTICS",
+      "towns": [
+        "SOUTH WINDSOR"
+      ],
+      "ctdotCertificate": "HG514",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 31,
+      "legalName": "CASTLE EXPRESS MOVING LLC",
+      "dba": null,
+      "towns": [
+        "ENFIELD"
+      ],
+      "ctdotCertificate": "HG1768",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 32,
+      "legalName": "CENTRAL CONNECTICUT TRANSPORTATION INC.",
+      "dba": null,
+      "towns": [
+        "WALLINGFORD"
+      ],
+      "ctdotCertificate": "HG975",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 33,
+      "legalName": "CERTIFIED VAN SERVICE OF CT INC.",
+      "dba": null,
+      "towns": [
+        "BETHEL"
+      ],
+      "ctdotCertificate": "HG1547",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 34,
+      "legalName": "CHRISTOPHER A. CABRAL",
+      "dba": "DBA J & C MOVING LLC",
+      "towns": [
+        "WINDSOR"
+      ],
+      "ctdotCertificate": "HG1757",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 35,
+      "legalName": "CLANCY MOVING SYSTEMS INC.",
+      "dba": "DBA CLANCY MOVING",
+      "towns": [
+        "STAMFORD"
+      ],
+      "ctdotCertificate": "HG1734",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 36,
+      "legalName": "COLLEGIAN MOVERS, INC.",
+      "dba": null,
+      "towns": [
+        "MILFORD"
+      ],
+      "ctdotCertificate": "HG589",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 37,
+      "legalName": "COLLINS BROHERS MOVING COMPANY OF CONNECTICUT LLC",
+      "dba": null,
+      "towns": [
+        "GREENWICH"
+      ],
+      "ctdotCertificate": "HG1795",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 38,
+      "legalName": "CONNECTICUT'S FINEST MOVERS, LLC",
+      "dba": "DBA CONNECTICUT'S FINEST MOVERS",
+      "towns": [
+        "MILFORD"
+      ],
+      "ctdotCertificate": "HG1789",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 39,
+      "legalName": "CONTINUUM INTERNATIONAL LOGISICS INC.",
+      "dba": "DBA CONTINUUM INTERNATIONAL",
+      "towns": [
+        "DANBURY",
+        "BROOKFIELD"
+      ],
+      "ctdotCertificate": "HG1743",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 40,
+      "legalName": "CT FAMILY FIRST MOVERS LLC",
+      "dba": null,
+      "towns": [
+        "NORTH BRANFORD"
+      ],
+      "ctdotCertificate": "HG1833",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 41,
+      "legalName": "CV CLARK LLC",
+      "dba": "DBA H.A. LATHAM MOVING AND STORAGE",
+      "towns": [
+        "OLD SAYBROOK"
+      ],
+      "ctdotCertificate": "HG180",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 42,
+      "legalName": "DALEY MOVING AND STORAGE INC. OF TORRINGTON",
+      "dba": null,
+      "towns": [
+        "TORRINGTON"
+      ],
+      "ctdotCertificate": "HG47",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 43,
+      "legalName": "DASHING DELIVERIES LLC",
+      "dba": "DASHING DELIVERIES AND MOVING CO",
+      "towns": [
+        "SHERMAN"
+      ],
+      "ctdotCertificate": "HG1834",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 44,
+      "legalName": "DAVID LAVOIE, LLC",
+      "dba": null,
+      "towns": [
+        "PUTNAM"
+      ],
+      "ctdotCertificate": "HG1793",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 45,
+      "legalName": "DEROSIER STORAGE CO. INC.",
+      "dba": null,
+      "towns": [
+        "STRATFORD"
+      ],
+      "ctdotCertificate": "HG136",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 46,
+      "legalName": "DON BEACH MOVERS OF NEW LONDON, INC.",
+      "dba": null,
+      "towns": [
+        "NEW LONDON"
+      ],
+      "ctdotCertificate": "HG1401",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 47,
+      "legalName": "DON BEACH MOVERS, INC.",
+      "dba": "DBA GARDINER MOVING AND STORAGE",
+      "towns": [
+        "NEW LONDON"
+      ],
+      "ctdotCertificate": "HG52",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 48,
+      "legalName": "DYNA MOVING AND STORAGE SYSTEMS, INC.",
+      "dba": null,
+      "towns": [
+        "SOUTHINGTON"
+      ],
+      "ctdotCertificate": "HG92",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 49,
+      "legalName": "EJD HAULING LLC",
+      "dba": "DBA COLLEGE HUNKS HAULING JUNK AND MOVING",
+      "towns": [
+        "MIDDLETOWN",
+        "BLOOMFIELD"
+      ],
+      "ctdotCertificate": "HG1796",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 50,
+      "legalName": "ELATE MOVING LLC",
+      "dba": "DBA ELATE MOVING LLC",
+      "towns": [
+        "GREENWICH"
+      ],
+      "ctdotCertificate": "HG1777",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 51,
+      "legalName": "ESSEX MOVING COMPANY LLC",
+      "dba": null,
+      "towns": [
+        "ESSEX"
+      ],
+      "ctdotCertificate": "HG1817",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 52,
+      "legalName": "EXPERT MOVERS LLC",
+      "dba": null,
+      "towns": [
+        "DANBURY"
+      ],
+      "ctdotCertificate": "HG1803",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 53,
+      "legalName": "E-Z MOVING LLC",
+      "dba": null,
+      "towns": [
+        "RIDGEFIELD"
+      ],
+      "ctdotCertificate": "HG1809",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 54,
+      "legalName": "FA BENE LLC",
+      "dba": "COLLEGE HUNKS HAULING AND COLLEGE HUNKS MOVING",
+      "towns": [
+        "BRANFORD"
+      ],
+      "ctdotCertificate": "HG1813",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 55,
+      "legalName": "FALLON MOVING AND STORAGE INCL",
+      "dba": null,
+      "towns": [
+        "WINDSOR"
+      ],
+      "ctdotCertificate": "HG849",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 56,
+      "legalName": "FLYNN'S MOTOR EXPRESS INC.",
+      "dba": "DBA CT MOVING AND STORAGE",
+      "towns": [
+        "SOUTHINGTON"
+      ],
+      "ctdotCertificate": "HG257",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 57,
+      "legalName": "FOUR STAR MOVERS, INC.",
+      "dba": null,
+      "towns": [
+        "BRIDGEPORT"
+      ],
+      "ctdotCertificate": "HG1730",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 58,
+      "legalName": "GENTLE GIANT MOVING COMPANY (NY), LLC",
+      "dba": "GENTLE GIANT MOVING & STORAGE",
+      "towns": [
+        "BRIDGEPORT"
+      ],
+      "ctdotCertificate": "HG1826",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 59,
+      "legalName": "GREEN FACILITY SERVICES LLC",
+      "dba": "dba Greene Moving & Storage",
+      "towns": [
+        "MANCHESTER"
+      ],
+      "ctdotCertificate": "HG1447",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 60,
+      "legalName": "HARRINGTON HUNKS INC.",
+      "dba": "DBA COLLEGE HUNKS HAULING JUNK AND MOVING",
+      "towns": [
+        "BROOKFIELD"
+      ],
+      "ctdotCertificate": "HG1806",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 61,
+      "legalName": "HEYMOVER LLC",
+      "dba": null,
+      "towns": [
+        "STRATFORD"
+      ],
+      "ctdotCertificate": "HG1837",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 62,
+      "legalName": "INTENSE MOVERS INC.",
+      "dba": null,
+      "towns": [
+        "STAMFORD"
+      ],
+      "ctdotCertificate": "HG1822",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 63,
+      "legalName": "JAMES ANCTIL LLC",
+      "dba": "DBA MARIE'S MOVERS",
+      "towns": [
+        "SOUTHBURY"
+      ],
+      "ctdotCertificate": "HG1791",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 64,
+      "legalName": "JB MOVING SERVICES, INC.",
+      "dba": null,
+      "towns": [
+        "STAMFORD"
+      ],
+      "ctdotCertificate": "HG1740",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 65,
+      "legalName": "JETTE ENTERPRISES LLC",
+      "dba": "DBA JETTE MOVERS",
+      "towns": [
+        "KILLINGWORTH"
+      ],
+      "ctdotCertificate": "HG1771",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 66,
+      "legalName": "JIM FAHEY MOVING AND STORAGE LLC",
+      "dba": "DBA JIM FAHEY MOVING AND STORAGE",
+      "towns": [
+        "DANBURY",
+        "WESTPORT"
+      ],
+      "ctdotCertificate": "HG1767",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 67,
+      "legalName": "JOYCE OF NEW ENGLAND, INC.",
+      "dba": null,
+      "towns": [
+        "OXFORD"
+      ],
+      "ctdotCertificate": "HG49",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 68,
+      "legalName": "JOYCE VAN LINES, INC.",
+      "dba": null,
+      "towns": [
+        "OXFORD"
+      ],
+      "ctdotCertificate": "HG24",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 69,
+      "legalName": "KASTER MOVING CO., LLC",
+      "dba": "DBA KASTER MOVING & STORAGE",
+      "towns": [
+        "STAMFORD"
+      ],
+      "ctdotCertificate": "HG238",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 70,
+      "legalName": "KAY'S TRUCKING INC.",
+      "dba": null,
+      "towns": [
+        "SOUTH WINDSOR"
+      ],
+      "ctdotCertificate": "HG173",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 71,
+      "legalName": "LITTLE JOHN'S MOVERS INC.",
+      "dba": null,
+      "towns": [
+        "MERIDEN"
+      ],
+      "ctdotCertificate": "HG581",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 72,
+      "legalName": "LOGIC MOVING COMPANY LLC",
+      "dba": "DBA LOGIC MOVING",
+      "towns": [
+        "NEW HAVEN"
+      ],
+      "ctdotCertificate": "HG1782",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 73,
+      "legalName": "LOTUS TRANSITIONS, LLC",
+      "dba": "",
+      "towns": [
+        "MARLBOROUGH",
+        "OLD SAYBROOK"
+      ],
+      "ctdotCertificate": "HG1780",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 74,
+      "legalName": "MAJOR MOVERS INC",
+      "dba": null,
+      "towns": [
+        "HAMDEN"
+      ],
+      "ctdotCertificate": "HG1836",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 75,
+      "legalName": "MANCHESTER MOVING & STORAGE INC.",
+      "dba": null,
+      "towns": [
+        "VERNON",
+        "MANCHESTER"
+      ],
+      "ctdotCertificate": "HG1764",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 76,
+      "legalName": "MARTIN MOVING AND STORAGE CO.",
+      "dba": null,
+      "towns": [
+        "MIDDLETOWN"
+      ],
+      "ctdotCertificate": "HG415",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 77,
+      "legalName": "MCCABE'S MOVING PREPARATIONS LLC",
+      "dba": "DBA MCCABES MOVING",
+      "towns": [
+        "SOUTHINGTON"
+      ],
+      "ctdotCertificate": "HG1745",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 78,
+      "legalName": "MEANT2BE MOVERS LLC",
+      "dba": null,
+      "towns": [
+        "EAST HARTFORD"
+      ],
+      "ctdotCertificate": "HG1769",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 79,
+      "legalName": "MERCADO MOVERS LLC",
+      "dba": "DBA FINISHLINE MOVERS",
+      "towns": [
+        "WALLINGFORD",
+        "MERIDEN"
+      ],
+      "ctdotCertificate": "HG1830",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 80,
+      "legalName": "MHO MOVERS LLC",
+      "dba": null,
+      "towns": [
+        "NORWALK"
+      ],
+      "ctdotCertificate": "HG1760",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 81,
+      "legalName": "MIKE'S DELIVERY SERVICE LLC",
+      "dba": null,
+      "towns": [
+        "HAMDEN"
+      ],
+      "ctdotCertificate": "HG1051",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 82,
+      "legalName": "MOE'S MOVING & STORAGE LLC",
+      "dba": null,
+      "towns": [
+        "FRANKLIN"
+      ],
+      "ctdotCertificate": "HG1810",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 83,
+      "legalName": "MORGAN AND BROTHER MANHATTAN STORAGE CO., INC.",
+      "dba": "DBA DRINKWATER'S OF GREENWICH",
+      "towns": [
+        "GREENWICH"
+      ],
+      "ctdotCertificate": "HG154",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 84,
+      "legalName": "MOVE CLEAN ORGANIZE LLC",
+      "dba": null,
+      "towns": [
+        "BERLIN"
+      ],
+      "ctdotCertificate": "HG1784",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 85,
+      "legalName": "MOVIN ONN LLC",
+      "dba": null,
+      "towns": [
+        "BRISTOL"
+      ],
+      "ctdotCertificate": "HG1832",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 86,
+      "legalName": "MOVING & STORAGE INC.",
+      "dba": "DBA NOAH'S ARK MOVING & STORAGE",
+      "towns": [
+        "WESTPORT"
+      ],
+      "ctdotCertificate": "HG1749",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 87,
+      "legalName": "MPAS MOVING CONNECTICUT LLC",
+      "dba": "DBA TWO MEN AND A TRUCK",
+      "towns": [
+        "NORWALK"
+      ],
+      "ctdotCertificate": "HG1603",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 88,
+      "legalName": "MPAS MOVING CONNECTICUT LLC",
+      "dba": "DBA TWO MEN AND A TRUCK",
+      "towns": [
+        "NORWALK"
+      ],
+      "ctdotCertificate": "HG290",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 89,
+      "legalName": "MUSCLE MAN MOVERS INC.",
+      "dba": "MUSCLE MEN MOVERS & STORAGE",
+      "towns": [
+        "STAMFORD"
+      ],
+      "ctdotCertificate": "HG1733",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 90,
+      "legalName": "OZ MOVING & STORAGE INC.",
+      "dba": null,
+      "towns": [
+        "COS COB"
+      ],
+      "ctdotCertificate": "HG1808",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 91,
+      "legalName": "PIECE OF CAKE MOVING & STORAGE, LLC",
+      "dba": null,
+      "towns": [
+        "EASTON"
+      ],
+      "ctdotCertificate": "HG1838",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 92,
+      "legalName": "PURCELL MOVING CORP.",
+      "dba": "DBA DANIEL PURCELL & SONS",
+      "towns": [
+        "WESTPORT"
+      ],
+      "ctdotCertificate": "HG1007",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 93,
+      "legalName": "R & R RELOCATION SPECIALISTS LLC",
+      "dba": null,
+      "towns": [
+        "TORRINGTON"
+      ],
+      "ctdotCertificate": "HG1754",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 94,
+      "legalName": "REAL MOVING LLC",
+      "dba": null,
+      "towns": [
+        "SANDY HOOK",
+        "BETHEL"
+      ],
+      "ctdotCertificate": "HG1818",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 95,
+      "legalName": "RIDGEFIELD MOVING LLC",
+      "dba": null,
+      "towns": [
+        "RIDGEFIELD"
+      ],
+      "ctdotCertificate": "HG1839",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 96,
+      "legalName": "ROBERT W. LIPPINCOTT INC.",
+      "dba": "DBA LIPPINCOTT VAN LINES",
+      "towns": [
+        "WINSTEAD"
+      ],
+      "ctdotCertificate": "HG1144",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 97,
+      "legalName": "ROBERT W. LIPPINCOTT INC.",
+      "dba": "DBA LIPPINCOTT VAN LINES - NEW HAVEN",
+      "towns": [
+        "WINSTEAD",
+        "NORTH HAVEN"
+      ],
+      "ctdotCertificate": "HG23",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 98,
+      "legalName": "ROGOVIN MOVING AND STORAGE CO., INC.",
+      "dba": null,
+      "towns": [
+        "NEW LONDON"
+      ],
+      "ctdotCertificate": "HG216",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 99,
+      "legalName": "RT RELOCATION LLC",
+      "dba": null,
+      "towns": [
+        "CHESHIRE"
+      ],
+      "ctdotCertificate": "HG1802",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 100,
+      "legalName": "SATURDAY MORNING MOVING LLC",
+      "dba": null,
+      "towns": [
+        "CHESHIRE"
+      ],
+      "ctdotCertificate": "HG1815",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 101,
+      "legalName": "SCARLETS MOVING COMPANY LLC",
+      "dba": null,
+      "towns": [
+        "NORWALK"
+      ],
+      "ctdotCertificate": "HG1829",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 102,
+      "legalName": "SEAMEN'S MOVING AND DELIVERY OF CONNECTICUT INC.",
+      "dba": null,
+      "towns": [
+        "WESTPORT"
+      ],
+      "ctdotCertificate": "HG1766",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 103,
+      "legalName": "SHEPARD'S MOVING & STORAGE LLC",
+      "dba": null,
+      "towns": [
+        "BETHEL"
+      ],
+      "ctdotCertificate": "HG1821",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 104,
+      "legalName": "SHINC BROKERS LLC",
+      "dba": "DBA THE MONSTER MOVERS",
+      "towns": [
+        "WESTPORT"
+      ],
+      "ctdotCertificate": "HG1765",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 105,
+      "legalName": "SHLEPPERS HOLDINGS LLC",
+      "dba": "DBA SHLEPPERS MOVING & STORAGE",
+      "towns": [
+        "BRIDGEPORT"
+      ],
+      "ctdotCertificate": "HG1790",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 106,
+      "legalName": "SHORELINE SERVICES INC.",
+      "dba": "DBA LOWE MOVING & STORAGE",
+      "towns": [
+        "NEW LONDON",
+        "WATERFORD"
+      ],
+      "ctdotCertificate": "HG1773",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 107,
+      "legalName": "SIRACUSA MOVING AND STORAGE CO., INC.",
+      "dba": null,
+      "towns": [
+        "NEW BRITAIN"
+      ],
+      "ctdotCertificate": "HG146",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 108,
+      "legalName": "SMOOTH MOVING LLC",
+      "dba": null,
+      "towns": [
+        "MILFORD"
+      ],
+      "ctdotCertificate": "HG1814",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 109,
+      "legalName": "STERLING MOVING & STORAGE INC.",
+      "dba": null,
+      "towns": [
+        "BOZRAH"
+      ],
+      "ctdotCertificate": "HG1170",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 110,
+      "legalName": "SWEET LOGISTICS LLC",
+      "dba": "DBA TWO MEN AND A TRUCK",
+      "towns": [
+        "PROSPECT"
+      ],
+      "ctdotCertificate": "HG1831",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 111,
+      "legalName": "TAIT TRANSPORTATION LLC",
+      "dba": "DBA COLONIAL MOVING & STORAGE",
+      "towns": [
+        "BERLIN"
+      ],
+      "ctdotCertificate": "HG1794",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 112,
+      "legalName": "TOP TIER MOVING LLC",
+      "dba": "DBA TOP TIER MOVING",
+      "towns": [
+        "THOMASTON"
+      ],
+      "ctdotCertificate": "HG1781",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 113,
+      "legalName": "TWO BROTHERS MOVING LLC",
+      "dba": "DBA TWO BROTHERS MOVING",
+      "towns": [
+        "MIDDLETOWN"
+      ],
+      "ctdotCertificate": "HG1804",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 114,
+      "legalName": "VASSIE CHAMBLEE",
+      "dba": "DBA BUDDY MOVING & SALES",
+      "towns": [
+        "MIDDLETOWN",
+        "WESTBROOK"
+      ],
+      "ctdotCertificate": "HG1731",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 115,
+      "legalName": "WHALEN MOVING AND STORAGE, LLC",
+      "dba": null,
+      "towns": [
+        "NORFOLK"
+      ],
+      "ctdotCertificate": "HG1742",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 116,
+      "legalName": "WILLIAM B. MEYER INC.",
+      "dba": null,
+      "towns": [
+        "STRATFORD"
+      ],
+      "ctdotCertificate": "HG122",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 117,
+      "legalName": "WOODLAND MOVING AND WAREHOUSE INC.",
+      "dba": null,
+      "towns": [
+        "WEST HARTFORD"
+      ],
+      "ctdotCertificate": "HG462",
+      "usdot": null,
+      "mc": null
+    },
+    {
+      "sourceRow": 118,
+      "legalName": "ZIP TO ZIP MOVING INC.",
+      "dba": null,
+      "towns": [
+        "WESTPORT"
+      ],
+      "ctdotCertificate": "HG1820",
+      "usdot": null,
+      "mc": null
+    }
+  ]
+}
