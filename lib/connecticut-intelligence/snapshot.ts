@@ -34,7 +34,7 @@ export const CONNECTICUT_MOVE_SNAPSHOT = {
 } as const;
 
 export function lookupCtHhgCertificate(raw: string) {
-  const match = raw.trim().toUpperCase().match(/^(?:HG)?\s*(\d{3,5})$/);
+  const match = raw.trim().toUpperCase().match(/^(?:HG)?\s*(\d{1,5})$/);
   if (!match) return [];
   const certificate = `HG${match[1]}`;
   return CONNECTICUT_MOVE_SNAPSHOT.rows.filter((row) => row.ctdotCertificate === certificate);

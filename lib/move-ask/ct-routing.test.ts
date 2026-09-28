@@ -14,6 +14,7 @@ test('CTDOT 2026 source grain, clocks and identity boundaries', () => {
   assert.equal(s.distinctCertificates, 115);
   assert.equal(s.duplicateCertificateRows, 2);
   assert.equal(lookupCtHhgCertificate('HG1775').length, 2);
+  assert.equal(lookupCtHhgCertificate('HG81').length, 1);
   assert.equal(lookupCtHhgCertificate('HG1792').length, 2);
   assert.equal(s.printedUsdotRows, 0);
   assert.equal(s.printedMcRows, 0);
@@ -43,6 +44,7 @@ test('Connecticut authority, identifiers, city context and evidence route safely
   }
   assert.match(plan('CTDOT certificate HG1775').failReason ?? '', /2 rows/);
   assert.match(plan('HG1776 Connecticut').failReason ?? '', /2026 household-goods roster/);
+  assert.match(plan('HG81 Connecticut').failReason ?? '', /2026 household-goods roster/);
   assert.match(plan('CTDOT certificate HG9999').failReason ?? '', /Absence does not prove no authority/);
   assert.equal(plan('USDOT 123456 Connecticut').mode, 'identifier');
   assert.equal(plan('MC 123456 Connecticut').mode, 'identifier');

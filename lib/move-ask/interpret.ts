@@ -684,7 +684,7 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
       push('Mode', 'fail_closed');
       return { raw: q, query, interpretation: lines };
     }
-    const cert = q.match(/\b(?:HG\s*#?\s*\d{3,5}|(?:CTDOT|Connecticut|RCHG)\s+(?:HHG\s+|household[- ]goods\s+|mover\s+)?(?:certificate|cert|authority|permit)\s*(?:no\.?|number|#)?\s*#?\s*\d{3,5})\b/i)?.[0].match(/(?:HG\s*#?\s*|\b)(\d{3,5})\s*$/i)?.[1];
+    const cert = q.match(/\b(?:HG\s*#?\s*\d{1,5}|(?:CTDOT|Connecticut|RCHG)\s+(?:HHG\s+|household[- ]goods\s+|mover\s+)?(?:certificate|cert|authority|permit)\s*(?:no\.?|number|#)?\s*#?\s*\d{1,5})\b/i)?.[0].match(/(?:HG\s*#?\s*|\b)(\d{1,5})\s*$/i)?.[1];
     if (cert) {
       const rows = lookupCtHhgCertificate(cert);
       const reason = rows.length
