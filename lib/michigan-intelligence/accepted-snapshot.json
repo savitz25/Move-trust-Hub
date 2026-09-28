@@ -1,0 +1,42 @@
+{
+  "version": "move-mi-state-intel-v1",
+  "ticket": "MI-MOVE-001",
+  "retrievedAt": "2026-09-28T13:27:16.497Z",
+  "sourceAsOf": null,
+  "publication": {
+    "route": "/michigan",
+    "indexable": true,
+    "regulator": "Michigan State Police Commercial Vehicle Enforcement Division"
+  },
+  "current_hhg_roster": {
+    "source": "https://mspcapsearch.state.mi.us/",
+    "filter": {
+      "authorityType": "Household Goods",
+      "currentAuthorityStatus": "Active"
+    },
+    "coverage": "PUBLIC_FILTERED_EXPORT",
+    "rows": 199,
+    "distinct_cved_numbers": 199,
+    "rows_with_printed_usdot": 188,
+    "distinct_printed_usdot": 187,
+    "rows_with_printed_federal_motor_carrier_number": 99
+  },
+  "insurance": {
+    "form_e": "KNOWN",
+    "form_h": "KNOWN",
+    "carrier_filing_rows": "NOT_ACQUIRED"
+  },
+  "tariff": {
+    "membership_requirement": "KNOWN_IF_OVER_40_MILES_AND_NOT_CONTINUOUS_CONTRACT",
+    "carrier_documents": "NOT_ACQUIRED"
+  },
+  "complaints": {
+    "intake": "KNOWN",
+    "provider_rows": "NOT_ACQUIRED",
+    "outcomes": "NOT_ACQUIRED"
+  },
+  "graph": {
+    "new_canonical_organizations": 0,
+    "writes": 0
+  }
+}

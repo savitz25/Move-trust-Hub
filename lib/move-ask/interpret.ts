@@ -11,6 +11,7 @@ import { TENNESSEE_MOVE_SNAPSHOT } from '../tennessee-intelligence/snapshot';
 import { lookupNevadaCpcn, nevadaRowLabel, searchNevadaNtaName } from '../nevada-intelligence/lookup';
 import { NEVADA_MOVE_SNAPSHOT } from '../nevada-intelligence/snapshot';
 import { MINNESOTA_MOVE_SNAPSHOT } from '../minnesota-intelligence/snapshot';
+import { MICHIGAN_MOVE_SNAPSHOT } from '../michigan-intelligence/snapshot';
 import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
 import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
@@ -34,6 +35,7 @@ const STATE_NAMES: Record<string, string> = {
   tennessee: 'TN',
   nevada: 'NV',
   minnesota: 'MN',
+  michigan: 'MI',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -47,6 +49,7 @@ const STATE_NAMES: Record<string, string> = {
   tn: 'TN',
   nv: 'NV',
   mn: 'MN',
+  mi: 'MI',
 };
 
 function detectState(q: string): string | undefined {
@@ -273,6 +276,15 @@ function isNevadaCityGeographyOnly(q: string): boolean {
 }
 
 const MN_ALTERNATIVES = ['Open Minnesota household-goods research.', 'Show current interstate household-goods carriers headquartered in Minnesota.'];
+const MI_ALTERNATIVES = ['Open Michigan household-goods research.', 'Check current CVED authority in the official carrier search.'];
+const MI_CITIES = /\b(detroit|grand rapids|lansing|ann arbor)\b/i;
+
+function miContext(q: string): boolean {
+  const named = /\bmichigan\b|\bin mi\b|\bcved\b|\bmsp carrier authority\b/i.test(q) ||
+    (MI_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
+  const other = detectState(q.replace(/\bmichigan\b|\bin mi\b/gi, ' ').replace(MI_CITIES, ' '));
+  return named && (!other || other === 'MI') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
 const MN_CITIES = /\b(minneapolis|st\.? paul|saint paul|rochester|duluth|bloomington|st\.? cloud|saint cloud|eagan|plymouth|maple grove)\b/i;
 const MN_UNAMBIGUOUS_CITIES = /\b(minneapolis|st\.? paul|saint paul|duluth)\b/i;
 
@@ -644,6 +656,39 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     );
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'NOT_ACQUIRED — Tennessee Intrastate Authority roster');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (miContext(q) && !isRouteOrInterstate(q)) {
+    const mi = MICHIGAN_MOVE_SNAPSHOT;
+    const city = q.match(MI_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only; there is no Michigan city intelligence page.` : '';
+    const cved = q.match(/\b(?:cved|michigan\s+(?:hhg\s+|mover\s+)?(?:authority|permit))\s*(?:no\.?|number|#)?\s*#?\s*(\d{3,5})\b/i)?.[1];
+    if (cved) {
+      const row = mi.rows.find((entry) => entry.cvedNumber === cved);
+      const query = fail(row
+        ? `CVED # ${cved}: Michigan's captured search row lists ${row.name} as Household Goods with status ${row.currentAuthorityStatus}. ${row.usDotNumber ? `Printed USDOT # ${row.usDotNumber}. ` : ''}${row.federalMotorCarrierNumber ? `Printed federal motor carrier # ${row.federalMotorCarrierNumber}. ` : ''}Recheck current authority in CVED's live search. CVED authority is not USDOT or MC authority.`
+        : `CVED # ${cved} is absent from the captured Active Household Goods rows. That does not prove it lacks authority; verify in CVED's live search.`,
+        MI_ALTERNATIVES);
+      push('Michigan CVED #', cved);
+      return { raw: q, query, interpretation: lines };
+    }
+    let reason: string;
+    if (/\b\d{5,8}\b/.test(q) && !/\b(usdot|dot|mc|cved|permit|authority)\b/i.test(q)) {
+      reason = 'That number has no label. Specify CVED # for Michigan authority, or USDOT or MC for federal records.';
+    } else if (isRanking(q)) {
+      reason = 'MoveTrustHub does not rank movers and does not publish a Trust Score. Michigan authority research is not a recommendation.';
+    } else if (/\b(complaints?|enforcement|discipline|violations?)\b/i.test(q)) {
+      reason = 'Michigan CVED receives household-goods complaints and its Investigation Unit accepts reports. Provider-level complaint rows and adjudicated outcomes were not acquired. A complaint is not a finding.';
+    } else if (/\b(tariffs?|rates?|prices?|quotes?|estimates?)\b/i.test(q)) {
+      reason = 'Michigan CVED requires tariff membership for household-goods moves over 40 miles unless the carrier operates under a continuous contract. MSP describes shorter moves as having unregulated rates and longer moves as regulated by weight and mileage. Carrier tariff documents were not acquired. A tariff is not a quote.';
+    } else if (/\b(insurance|insured|form h|form e|cargo)\b/i.test(q)) {
+      reason = 'Michigan CVED lists a liability certificate and Form E among general requirements. Household-goods carriers also supply Form H from their insurer. Insurance filings and Michigan authority are distinct; a USDOT number alone does not establish authority.';
+    } else {
+      reason = `Michigan State Police CVED authorizes point-to-point Michigan household-goods moves. Its public search returned ${mi.activeHhgAuthorityRows} Active Household Goods rows with ${mi.distinctCvedNumbers} distinct CVED numbers when retrieved ${mi.retrievedAt}. Exactly ${mi.printedUsdotBridges} rows print USDOT numbers and ${mi.printedFederalMotorCarrierBridges} print federal motor carrier numbers. Michigan CVED authority is not a USDOT or MC number; verify current status with CVED. No combined state and federal mover count.${cityNote}`;
+    }
+    const query = fail(reason, MI_ALTERNATIVES);
+    push('Coverage', 'Michigan CVED Active Household Goods public search snapshot');
     return { raw: q, query, interpretation: lines };
   }
 

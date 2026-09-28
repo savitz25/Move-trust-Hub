@@ -10,6 +10,7 @@ import maSnapshot from '@/lib/massachusetts-intelligence/accepted-snapshot.json'
 import tnSnapshot from '@/lib/tennessee-intelligence/accepted-snapshot.json';
 import nvSnapshot from '@/lib/nevada-intelligence/accepted-snapshot.json';
 import mnSnapshot from '@/lib/minnesota-intelligence/accepted-snapshot.json';
+import miSnapshot from '@/lib/michigan-intelligence/accepted-snapshot.json';
 import ncSnapshot from '@/lib/north-carolina-intelligence/accepted-snapshot.json';
 import ohSnapshot from '@/lib/ohio-intelligence/accepted-snapshot.json';
 import txSnapshot from '@/lib/texas-intelligence/accepted-snapshot.json';
@@ -112,6 +113,7 @@ export const MOVE_HOMEPAGE_STATE_CARDS = [
   { state: 'Tennessee', href: tnSnapshot.publication.route, regulator: 'Tennessee Revenue', authority: 'Tennessee Intrastate Authority (Form H cargo insurance for household goods)', roster: 'Public roster NOT_ACQUIRED', evidence: 'Revenue authority framework and current motor-carrier rules; the household-goods estimate and claims rule was repealed March 9, 2026; missing is not zero', sourceClock: `Rules effective ${tnSnapshot.rules.effective}; retrieved ${tnSnapshot.retrievedAt}` },
   { state: 'Nevada', href: nvSnapshot.publication.route, regulator: 'Nevada Transportation Authority', authority: 'Certificate of Public Convenience and Necessity (CPCN)', roster: `${nvSnapshot.current_hhg_roster.NV_NTA_ACTIVE_MOVER_CERTIFICATES} certificates on the NTA Active Mover list + ${nvSnapshot.current_hhg_roster.NV_NTA_HHG_DOCUMENT_EVIDENCE_NOT_ON_ACTIVE_LIST} other household-goods certificates in the directory`, evidence: 'NTA certificate and tariff directory, carrier-filed tariffs and intrastate complaint intake; a CPCN is not USDOT or MC', sourceClock: `No as-of date printed; retrieved ${nvSnapshot.retrievedAt}` },
   { state: 'Minnesota', href: mnSnapshot.publication.route, regulator: 'MnDOT', authority: 'Household Goods Mover Permit (statewide; Form E and Form H insurance)', roster: 'Public roster NOT_ACQUIRED — verify per carrier on MnDOT Carrier Search', evidence: 'Permit framework, insurance limits, filed-tariff and shipment-record rules from the 2025 Minnesota Statutes; missing is not zero', sourceClock: `2025 Minnesota Statutes; MnDOT pages retrieved ${mnSnapshot.retrievedAt}` },
+  { state: 'Michigan', href: miSnapshot.publication.route, regulator: 'Michigan State Police CVED', authority: 'Michigan household-goods CVED authority', roster: `${miSnapshot.current_hhg_roster.rows} Active Household Goods rows / ${miSnapshot.current_hhg_roster.distinct_cved_numbers} distinct CVED numbers`, evidence: `${miSnapshot.current_hhg_roster.rows_with_printed_usdot} rows with printed USDOT; ${miSnapshot.current_hhg_roster.rows_with_printed_federal_motor_carrier_number} with federal motor carrier number. Form E/H, tariff rules and complaint intake separate from federal authority`, sourceClock: `CVED search retrieved ${miSnapshot.retrievedAt}; source as-of not printed` },
 ] as const;
 
 export const MOVE_CONSUMER_RULES = {
