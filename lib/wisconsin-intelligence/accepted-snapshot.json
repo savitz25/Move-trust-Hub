@@ -1,0 +1,39 @@
+{
+  "version": "move-wi-state-intel-v1",
+  "ticket": "WI-MOVE-001",
+  "sourceAsOf": null,
+  "snapshotAsOf": null,
+  "retrievedAt": "2026-09-29",
+  "generatedAt": "2026-09-29T15:36:44Z",
+  "publication": {
+    "route": "/wisconsin",
+    "canonical": "https://www.movetrusthub.com/wisconsin",
+    "robots": "index,follow",
+    "rankings": false,
+    "trustScore": false
+  },
+  "regulator": "Wisconsin Department of Transportation, DMV Motor Carrier Services",
+  "authority": "Wisconsin Intrastate Local Cartage (LC)",
+  "lcAuthority": {
+    "verification": "KNOWN",
+    "roster": "NOT_ACQUIRED",
+    "rows": null,
+    "distinctLcNumbers": null,
+    "statusAsOf": null
+  },
+  "householdGoods": { "roster": "NOT_ACQUIRED", "rows": null },
+  "federalBridges": {
+    "rowsWithUsdot": null,
+    "distinctUsdots": null,
+    "rowsWithMc": null,
+    "distinctMcs": null,
+    "exactBridges": null,
+    "unmatchedStateRows": null
+  },
+  "insurance": { "formERequirement": "KNOWN", "providerStatus": "NOT_ACQUIRED" },
+  "complaints": { "datcpIntake": "KNOWN", "fmcsaInterstateIntake": "KNOWN", "providerRows": "NOT_ACQUIRED" },
+  "enforcement": { "capability": "PARTIAL", "window": "2022-2026", "providerRows": "NOT_ACQUIRED" },
+  "newCanonicalOrganizations": 0,
+  "graphWrites": 0,
+  "claimEligibilityChanges": 0
+}
