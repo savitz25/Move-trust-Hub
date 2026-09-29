@@ -39,6 +39,7 @@ const STATE_NAMES: Record<string, string> = {
   michigan: 'MI',
   connecticut: 'CT',
   wisconsin: 'WI',
+  indiana: 'IN',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -55,6 +56,7 @@ const STATE_NAMES: Record<string, string> = {
   mi: 'MI',
   ct: 'CT',
   wi: 'WI',
+  in: 'IN',
 };
 
 function detectState(q: string): string | undefined {
@@ -287,6 +289,14 @@ const MD_ALTERNATIVES = ['Open Maryland household-goods registration research.',
 const MD_CITIES = /\b(baltimore|annapolis|frederick|rockville)\b/i;
 const WI_ALTERNATIVES = ['Open Wisconsin intrastate authority research.', 'Contact WisDOT Motor Carrier Services to verify an LC authority.'];
 const WI_CITIES = /\b(milwaukee|madison|green bay|kenosha)\b/i;
+const IN_ALTERNATIVES = ['Open Indiana household-goods operating-authority research.', 'Contact Indiana DOR Motor Carrier Services to verify a certificate and current renewal.'];
+const IN_CITIES = /\b(indianapolis|fort wayne|evansville|south bend)\b/i;
+function inContext(q: string): boolean {
+  const named = /\bindiana\b|\bin in\b|\bindiana dor\b/i.test(q) ||
+    (IN_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
+  const other = detectState(q.replace(/\bindiana\b|\bin in\b/gi, ' ').replace(IN_CITIES, ' '));
+  return named && (!other || other === 'IN') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
 function wiContext(q: string): boolean {
   const named = /\bwisconsin\b|\bin wi\b|\bwisdot\b/i.test(q) ||
     (WI_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
@@ -690,6 +700,22 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     );
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'NOT_ACQUIRED — Tennessee Intrastate Authority roster');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (inContext(q) && !isRouteOrInterstate(q)) {
+    const city = q.match(IN_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only; there is no Indiana city intelligence page.` : '';
+    let reason: string;
+    if (ctRanking(q)) reason = 'MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. Indiana operating authority is not a provider winner.';
+    else if (/\b\d{3,8}\b/.test(q) && !/\b(usdot|dot|mc|certificate|authority)\b/i.test(q)) reason = 'That number has no label. Specify an Indiana certificate, USDOT or MC; no carrier lookup was inferred.';
+    else if (/\b(complaints?|enforcement|disciplin|revocation|suspension)\b/i.test(q)) reason = 'Indiana Attorney General accepts consumer complaints, while DOR Motor Carrier Services handles Indiana authority questions. No public provider-level Indiana household-goods complaint or 2022-2026 enforcement corpus was acquired; a complaint is not a finding. Interstate mover complaints follow FMCSA guidance.';
+    else if (/\b(insurance|insured|form e)\b/i.test(q)) reason = 'Indiana DOR requires an insurer-filed Form E after authority approval and before final certificate issuance. Provider-level current Form E status was NOT_ACQUIRED.';
+    else if (/\b(tariffs?|rates?|charges?)\b/i.test(q)) reason = 'Indiana DOR requires a household-goods tariff before final authority. DOR keeps tariffs on file and available on request, but a bulk tariff corpus was NOT_ACQUIRED. A tariff is not a quote or mover ranking.';
+    else reason = `Indiana DOR Motor Carrier Services requires a Certificate of Public Convenience and Necessity for for-hire household-goods moves between Indiana points. Permanent authority renews annually by November 30; temporary and emergency temporary authority are separate. A public statewide HHG authority roster and count were NOT_ACQUIRED. Verify an individual certificate and current status with DOR. Indiana authority, USDOT and federal MC are distinct; no exact bridges or combined mover count were inferred.${cityNote}`;
+    const query = fail(reason, IN_ALTERNATIVES);
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'Indiana DOR HHG authority verification; roster and exact federal bridges NOT_ACQUIRED');
     return { raw: q, query, interpretation: lines };
   }
 

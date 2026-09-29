@@ -1,0 +1,43 @@
+{
+  "version": "move-in-state-intel-v1",
+  "ticket": "IN-MOVE-001",
+  "sourceAsOf": null,
+  "snapshotAsOf": null,
+  "retrievedAt": "2026-09-29",
+  "generatedAt": "2026-09-29T18:57:43Z",
+  "publication": {
+    "route": "/indiana",
+    "canonical": "https://www.movetrusthub.com/indiana",
+    "robots": "index,follow",
+    "rankings": false,
+    "trustScore": false
+  },
+  "regulator": "Indiana Department of Revenue, Motor Carrier Services",
+  "authority": "Certificate of Public Convenience and Necessity",
+  "householdGoodsAuthority": {
+    "verification": "KNOWN",
+    "roster": "NOT_ACQUIRED",
+    "rows": null,
+    "distinctAuthorityNumbers": null,
+    "statusAsOf": null,
+    "permanentRenewalDeadline": "November 30 annually",
+    "temporaryAuthorityDays": 180,
+    "emergencyTemporaryAuthorityDays": 30,
+    "commonAndContractGrains": "SEPARATE"
+  },
+  "federalBridges": {
+    "rowsWithUsdot": null,
+    "distinctUsdots": null,
+    "rowsWithMc": null,
+    "distinctMcs": null,
+    "exactBridges": null,
+    "unmatchedStateRows": null
+  },
+  "insurance": { "formERequirement": "KNOWN", "providerStatus": "NOT_ACQUIRED" },
+  "tariffs": { "publicOnRequest": "KNOWN", "corpus": "NOT_ACQUIRED" },
+  "complaints": { "indianaAttorneyGeneralIntake": "KNOWN", "fmcsaInterstateIntake": "KNOWN", "providerRows": "NOT_ACQUIRED", "outcomes": "NOT_ACQUIRED" },
+  "enforcement": { "capability": "PARTIAL", "window": "2022-2026", "providerRows": "NOT_ACQUIRED" },
+  "newCanonicalOrganizations": 0,
+  "graphWrites": 0,
+  "claimEligibilityChanges": 0
+}
