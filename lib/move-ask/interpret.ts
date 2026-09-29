@@ -38,6 +38,7 @@ const STATE_NAMES: Record<string, string> = {
   minnesota: 'MN',
   michigan: 'MI',
   connecticut: 'CT',
+  wisconsin: 'WI',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -53,6 +54,7 @@ const STATE_NAMES: Record<string, string> = {
   mn: 'MN',
   mi: 'MI',
   ct: 'CT',
+  wi: 'WI',
 };
 
 function detectState(q: string): string | undefined {
@@ -283,6 +285,14 @@ const MI_ALTERNATIVES = ['Open Michigan household-goods research.', 'Check curre
 const MI_CITIES = /\b(detroit|grand rapids|lansing|ann arbor)\b/i;
 const MD_ALTERNATIVES = ['Open Maryland household-goods registration research.', 'Verify a mover in Maryland Labor live public query.'];
 const MD_CITIES = /\b(baltimore|annapolis|frederick|rockville)\b/i;
+const WI_ALTERNATIVES = ['Open Wisconsin intrastate authority research.', 'Contact WisDOT Motor Carrier Services to verify an LC authority.'];
+const WI_CITIES = /\b(milwaukee|madison|green bay|kenosha)\b/i;
+function wiContext(q: string): boolean {
+  const named = /\bwisconsin\b|\bin wi\b|\bwisdot\b/i.test(q) ||
+    (WI_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
+  const other = detectState(q.replace(/\bwisconsin\b|\bin wi\b/gi, ' ').replace(WI_CITIES, ' '));
+  return named && (!other || other === 'WI') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
 function mdContext(q: string): boolean {
   const named = /\bmaryland\b|\bin md\b|\bmaryland labor\b/i.test(q) || (MD_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
   const other = detectState(q.replace(/\bmaryland\b|\bin md\b/gi, ' ').replace(MD_CITIES, ' '));
@@ -680,6 +690,21 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     );
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'NOT_ACQUIRED — Tennessee Intrastate Authority roster');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (wiContext(q) && !isRouteOrInterstate(q)) {
+    const city = q.match(WI_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only; there is no Wisconsin city intelligence page.` : '';
+    let reason: string;
+    if (ctRanking(q)) reason = 'MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. Wisconsin LC authority is not a provider winner.';
+    else if (/\b\d{3,8}\b/.test(q) && !/\b(usdot|dot|mc|lc|authority)\b/i.test(q)) reason = 'That number has no label. Specify Wisconsin LC authority, USDOT or MC; no carrier lookup was inferred.';
+    else if (/\b(complaints?|enforcement|disciplin|revocation|suspension)\b/i.test(q)) reason = 'Wisconsin DATCP accepts general consumer complaints. WisDOT Motor Carrier Services handles LC authority questions. No public provider-level intrastate mover complaint or LC enforcement corpus was acquired; a complaint is not a finding. Interstate mover complaints follow FMCSA guidance.';
+    else if (/\b(insurance|insured|form e)\b/i.test(q)) reason = 'WisDOT requires proof of insurance for intrastate for-hire carriers and an insurer-filed Form E certificate. The registered-owner and insurance names must match the LC authority identity. Provider-level insurance status was NOT_ACQUIRED.';
+    else reason = `WisDOT Motor Carrier Services issues Wisconsin intrastate for-hire property authority as LC plus an authority number. LC covers property commodities beyond household goods; a statewide LC roster and household-goods-specific census were NOT_ACQUIRED. Verify an individual LC authority and commodity scope with WisDOT. LC authority, USDOT and federal MC are distinct; no exact bridges or combined mover count were inferred.${cityNote}`;
+    const query = fail(reason, WI_ALTERNATIVES);
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'WisDOT LC authority verification; roster and HHG census NOT_ACQUIRED');
     return { raw: q, query, interpretation: lines };
   }
 
