@@ -281,6 +281,14 @@ function isNevadaCityGeographyOnly(q: string): boolean {
 const MN_ALTERNATIVES = ['Open Minnesota household-goods research.', 'Show current interstate household-goods carriers headquartered in Minnesota.'];
 const MI_ALTERNATIVES = ['Open Michigan household-goods research.', 'Check current CVED authority in the official carrier search.'];
 const MI_CITIES = /\b(detroit|grand rapids|lansing|ann arbor)\b/i;
+const MD_ALTERNATIVES = ['Open Maryland household-goods registration research.', 'Verify a mover in Maryland Labor live public query.'];
+const MD_CITIES = /\b(baltimore|annapolis|frederick|rockville)\b/i;
+function mdContext(q: string): boolean {
+  const named = /\bmaryland\b|\bin md\b|\bmaryland labor\b/i.test(q) || (MD_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
+  const other = detectState(q.replace(/\bmaryland\b|\bin md\b/gi, ' ').replace(MD_CITIES, ' '));
+  return named && (!other || other === 'MD') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+
 const CT_ALTERNATIVES = ['Open Connecticut household-goods research.', 'Verify current RCHG status in Connecticut eLicense.'];
 const CT_CITIES = /\b(hartford|new haven|stamford|bridgeport)\b/i;
 
@@ -672,6 +680,20 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     );
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'NOT_ACQUIRED — Tennessee Intrastate Authority roster');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (mdContext(q) && !isRouteOrInterstate(q)) {
+    const city = q.match(MD_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only; there is no Maryland city intelligence page.` : '';
+    let reason: string;
+    if (ctRanking(q)) reason = 'MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. Maryland registration lookup is not a provider winner.';
+    else if (/\b\d{3,8}\b/.test(q) && !/\b(usdot|dot|mc|registration|license)\b/i.test(q)) reason = 'That number has no label. Specify Maryland registration, USDOT or MC; no carrier lookup was inferred.';
+    else if (/\b(complaints?|unregistered|disciplin|enforc|penalt)/i.test(q)) reason = 'Maryland Labor offers complaint intake for property, conduct, contract and payment issues; call 410-230-6174 for suspected lack of registration, insurance or workers compensation. The public query directs disciplinary inquiries to the Registration Unit. Provider-level outcomes were NOT_ACQUIRED; a complaint is not a finding.';
+    else reason = `Maryland Labor requires household-goods mover registration for covered in-state service and provides a live public query by company, trade name, location or registration number. A statewide roster count and exact USDOT/MC bridges were NOT_ACQUIRED because the search requires reCAPTCHA. Missing is not zero. Maryland registration is separate from USDOT and MC.${cityNote}`;
+    const query = fail(reason, MD_ALTERNATIVES);
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'Maryland Labor live registration verification; roster NOT_ACQUIRED');
     return { raw: q, query, interpretation: lines };
   }
 
