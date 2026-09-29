@@ -1,0 +1,37 @@
+{
+  "version": "move-md-state-intel-v1",
+  "ticket": "MD-MOVE-001",
+  "sourceAsOf": null,
+  "snapshotAsOf": "2026-09-29",
+  "retrievedAt": "2026-09-29",
+  "generatedAt": "2026-09-29T12:42:24Z",
+  "publication": {
+    "route": "/maryland",
+    "canonical": "https://www.movetrusthub.com/maryland",
+    "robots": "index,follow",
+    "rankings": false,
+    "trustScore": false
+  },
+  "regulator": "Maryland Department of Labor, Division of Occupational and Professional Licensing",
+  "authority": "Household Goods Movers Registration",
+  "current_hhg_roster": {
+    "coverage": "VERIFICATION_ONLY",
+    "rows": null,
+    "distinctRegistrationNumbers": null,
+    "sourceAsOf": null,
+    "queryFooterUpdatedAt": "2025-12-01"
+  },
+  "federalBridges": {
+    "rowsWithUsdot": null,
+    "distinctUsdots": null,
+    "rowsWithMc": null,
+    "distinctMcs": null,
+    "exactBridges": null,
+    "rowsWithoutFederalIds": null
+  },
+  "complaints": { "capability": "KNOWN", "providerRows": null },
+  "enforcement": { "capability": "KNOWN/PARTIAL", "window": "2025-2026", "providerRows": null },
+  "newCanonicalOrganizations": 0,
+  "graphWrites": 0,
+  "claimEligibilityChanges": 0
+}
