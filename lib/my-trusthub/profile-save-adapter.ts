@@ -69,6 +69,12 @@ export function previewTrace(stage: string, code: string): void {
     code: /^[A-Za-z0-9_]{1,40}$/.test(code) ? code : 'other',
   }));
 }
+/** Parent receipt enum only. Never pass a reference, binding, or payload. */
+export function receiptTraceCode(outcomes: readonly string[]): 'saved' | 'already_saved' | 'other' {
+  if (outcomes.length > 0 && outcomes.every(outcome => outcome === 'saved')) return 'saved';
+  if (outcomes.length > 0 && outcomes.every(outcome => outcome === 'already_saved')) return 'already_saved';
+  return 'other';
+}
 function isolatedOrigin(value:string):boolean {
   try { const url=new URL(value);return url.origin===value && !url.username && !url.password &&
     ((url.protocol==='http:' && ['localhost','127.0.0.1'].includes(url.hostname)) ||

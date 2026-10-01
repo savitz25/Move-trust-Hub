@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { createHash } from 'node:crypto';
-import { MoveProfileSaveAdapter, mapMoveProfile, type Dependencies, type TransferRecord, type BrowserBinding, type CurrentGrant } from './profile-save-adapter';
+import { MoveProfileSaveAdapter, mapMoveProfile, previewTrace, receiptTraceCode, type Dependencies, type TransferRecord, type BrowserBinding, type CurrentGrant } from './profile-save-adapter';
 import { projection } from './selection';
 import { manifestDigest, validateProfileReturn, type ItemReceipt, type GuestStageInput, type CommitInput } from './vendor/v2-3-profile-transfer';
 import type { Operation, RequestFor, ResponseFor } from './vendor/interface';
@@ -173,6 +173,14 @@ test('preview trace keeps stage codes and drops opaque throw text',async()=>{
     assert.equal((await call('prepareGuestProfileTransfer',{sourceHub:'move'},browser,{session:null,grant:null})).ok,false);
     assert.equal(warnings.some(line=>line.includes(secret)),false);
     assert.equal(warnings.some(line=>line.includes('"stage":"parent_response"')&&line.includes('"code":"Error"')),true);
+    assert.equal(receiptTraceCode(['saved']),'saved');
+    assert.equal(receiptTraceCode(['already_saved','already_saved']),'already_saved');
+    assert.equal(receiptTraceCode(['saved','already_saved']),'other');
+    assert.equal(receiptTraceCode([]),'other');
+    previewTrace('parent_response', receiptTraceCode(['saved']));
+    previewTrace('parent_response', secret);
+    assert.equal(warnings.some(line=>line.includes('"stage":"parent_response"')&&line.includes('"code":"saved"')),true);
+    assert.equal(warnings.some(line=>line.includes(secret)),false);
     assert.equal(warnings.every(line=>line.startsWith('{"event":"mth_prepare"')),true);
   } finally {
     console.warn=original;

@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { MoveProfileSaveAdapter, enabled, type Dependencies, type AdapterConfig } from './profile-save-adapter';
+import { MoveProfileSaveAdapter, enabled, previewTrace, receiptTraceCode, type Dependencies, type AdapterConfig } from './profile-save-adapter';
 import { parentFacade, type ScopedChannel } from './parent-facade';
 import { PostgresTransferStore, type SourcePool } from './postgres-transfer-store';
 import { COOKIE_NAME, type HttpDependencies } from './profile-save-http';
@@ -82,6 +82,7 @@ export function createIsolatedMoveRuntime(env: Record<string,string|undefined>, 
               receipt.manifestDigest!==r.parentStage.manifestDigest || receipt.project.projectRef!==project ||
               itemKey(receipt.item)!==itemKey(r.manifest.selected[i]!) || receipt.localCopy!=='keep') throw Error('invalid_source_ack');
         }
+        previewTrace('parent_response', receiptTraceCode(receipts.map(receipt => String(receipt.parent.outcome))));
         r.accountContextRef=context;r.projectRef=project;await checkpoint();
         // An acknowledgment only binds context. It NEVER grants browser success:
         // finish still checks current parent authority and verifies each receipt.
