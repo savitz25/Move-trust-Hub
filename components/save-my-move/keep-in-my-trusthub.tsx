@@ -74,18 +74,43 @@ export function KeepInMyTrustHub({companySlug}:{companySlug:string}) {
         return;
       }
       const result=await post({action:'prepare',selected},csrf);
-      if(controller.signal.aborted || JSON.stringify(await selection())!==JSON.stringify(selected))return;
+      // savedAt can refresh while prepare is in flight. The slug row still matches the staged continuation.
+      if(controller.signal.aborted)return;
+      await selection();
+      if(controller.signal.aborted)return;
+      const previewHandoff=process.env.NEXT_PUBLIC_VERCEL_ENV==='preview';
+      const knownState=new Set(['continue','local_only','unavailable','invalid','expired','account_changed','parent_saved']);
+      const handoff={
+        prepare_state:knownState.has(result?.state)?result.state:'other',
+        ticket_valid:'no',target_valid:'no',continuation_valid:'no',form_created:'no',form_submit_called:'no',
+      };
+      const publishHandoff=()=>{
+        if(!previewHandoff)return;
+        try{document.getElementById(statusId)?.setAttribute('data-mth-handoff',
+          `prepare_state=${handoff.prepare_state},ticket_valid=${handoff.ticket_valid},target_valid=${handoff.target_valid},continuation_valid=${handoff.continuation_valid},form_created=${handoff.form_created},form_submit_called=${handoff.form_submit_called}`);}catch{/* flag only */}
+      };
+      publishHandoff();
       if(!check && result.state==='continue' && typeof result.ticket==='string' && /^[A-Za-z0-9_-]{43}$/.test(result.ticket)){
+        handoff.ticket_valid='yes';
         // Store opaque retry reference only, not research or auth. No query flags.
         sessionStorage.setItem(storageKey,result.ticket);setHasTicket(true);
         // Form target and opaque fields come from the same-origin reviewed BFF.
         const target=new URL(result.target);
-        if(target.search || target.hash || target.username || target.password ||
-          !(target.hostname.endsWith('.vercel.app') || target.hostname.endsWith('.test') || ['localhost','127.0.0.1'].includes(target.hostname)) ||
-          !['http:','https:'].includes(target.protocol) || !/^[A-Za-z0-9_-]{43}$/.test(result.fields?.continuationRef))throw Error('unavailable');
+        const continuationOk=/^[A-Za-z0-9_-]{43}$/.test(result.fields?.continuationRef);
+        const targetOk=!target.search && !target.hash && !target.username && !target.password &&
+          (target.hostname.endsWith('.vercel.app') || target.hostname.endsWith('.test') || ['localhost','127.0.0.1'].includes(target.hostname)) &&
+          ['http:','https:'].includes(target.protocol);
+        handoff.target_valid=targetOk?'yes':'no';
+        handoff.continuation_valid=continuationOk?'yes':'no';
+        publishHandoff();
+        if(!targetOk || !continuationOk)throw Error('unavailable');
         const form=document.createElement('form');form.method='POST';form.action=target.href;
         const input=document.createElement('input');input.type='hidden';input.name='continuationRef';input.value=result.fields.continuationRef;
-        form.append(input);document.body.append(form);form.submit();return;
+        form.append(input);document.body.append(form);
+        handoff.form_created='yes';
+        handoff.form_submit_called='yes';
+        publishHandoff();
+        form.submit();return;
       }
       setMessage(check && result.state==='parent_saved' ? 'Saved to My TrustHub'
         : result.state==='local_only' ? 'Saved on this device' : 'Saved on this device — My TrustHub sync unavailable');
