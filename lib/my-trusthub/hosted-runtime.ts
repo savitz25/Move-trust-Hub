@@ -6,7 +6,7 @@ import { readBoundedJson, requestCurrentGrantChallenge, resolveCurrentGrantProof
 import { signedParentChannel, type AssertionContext } from './parent-facade';
 import { publicationSourceApproved, resolveExactMovePublication, CERTIFIED_NATIVE_ID, CERTIFIED_SLUG, CERTIFIED_CLASS, type PublicationRow } from './publication-resolver';
 import { PostgresTransferStore, type SourcePool } from './postgres-transfer-store';
-import type { BrowserBinding, CurrentGrant, TrustedMoveRecord } from './profile-save-adapter';
+import { previewTrace, type BrowserBinding, type CurrentGrant, type TrustedMoveRecord } from './profile-save-adapter';
 import { ASK_PREVIEW, GRANT_API_PATH, MOVE_PREVIEW } from './reviewed-origins';
 import { askVerifyKey, moveSigningKey } from './service-keys';
 import { ASSERTION_HEADER, signAssertion, verifyAskSourceCaller, type AssertionKey } from './service-assertion';
@@ -142,10 +142,10 @@ export function createPreviewMoveRuntime(env: Record<string, string | undefined>
   }, signing, send);
   const guarded = { async post(url: string, envelope: unknown, browser: BrowserBinding, signal: AbortSignal, context: AssertionContext) {
     const operation = object(envelope) && typeof envelope.operation === 'string' ? envelope.operation : '';
-    if (operation === 'commitProfileSave' || operation === 'consumeProfileSaveContinuation') throw Error('unauthorized');
+    if (operation === 'commitProfileSave' || operation === 'consumeProfileSaveContinuation') { previewTrace('parent_dispatch', 'forbidden_operation'); throw Error('unauthorized'); }
     const stage = operation.startsWith('prepare');
-    if (stage && (context.session !== null || context.grant !== null)) throw Error('unauthorized');
-    if (!stage && (typeof context.session !== 'string' || context.grant === null)) throw Error('unauthorized');
+    if (stage && (context.session !== null || context.grant !== null)) { previewTrace('parent_dispatch', 'stage_context'); throw Error('unauthorized'); }
+    if (!stage && (typeof context.session !== 'string' || context.grant === null)) { previewTrace('parent_dispatch', 'receipt_context'); throw Error('unauthorized'); }
     return channel.post(url, envelope, browser, signal, context);
   } };
   const ports: IsolatedMovePorts = {

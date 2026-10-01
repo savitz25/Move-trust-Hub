@@ -153,6 +153,32 @@ test('BFF enforces Origin, CSRF, body limit and rejects client context/extra fie
   assert.equal((await (await handleMoveProfileSave(request({action:'prepare',selected:selection()},auth),deps)).json()).state,'continue');
   assert.equal((await handleMoveProfileSave(request({action:'bootstrap'}),null)).status,503);
 });
+test('preview trace keeps stage codes and drops opaque throw text',async()=>{
+  const previous=process.env.VERCEL_ENV;
+  process.env.VERCEL_ENV='preview';
+  const warnings:string[]=[];
+  const original=console.warn;
+  console.warn=(message?:unknown)=>{warnings.push(String(message));};
+  const secret='opaque-continuation-secret-value';
+  try {
+    const f=fixture();
+    const prepared=await f.adapter.prepare(selection(),browser);
+    assert.equal(prepared.state,'continue');
+    if(prepared.state==='continue')assert.equal(warnings.some(line=>line.includes(prepared.ticket)||line.includes(prepared.fields.continuationRef)),false);
+    assert.equal(warnings.some(line=>line.includes('"stage":"manifest_valid"')&&line.includes('"code":"yes"')),true);
+    assert.equal(warnings.some(line=>line.includes('"stage":"parent_dispatch"')&&line.includes('"code":"attempt"')),true);
+    assert.equal(warnings.some(line=>line.includes('"stage":"parent_response"')&&line.includes('"code":"ok"')),true);
+    warnings.length=0;
+    const call=parentFacade(f.deps.config,{async post(){throw new Error(secret);}});
+    assert.equal((await call('prepareGuestProfileTransfer',{sourceHub:'move'},browser,{session:null,grant:null})).ok,false);
+    assert.equal(warnings.some(line=>line.includes(secret)),false);
+    assert.equal(warnings.some(line=>line.includes('"stage":"parent_response"')&&line.includes('"code":"Error"')),true);
+    assert.equal(warnings.every(line=>line.startsWith('{"event":"mth_prepare"')),true);
+  } finally {
+    console.warn=original;
+    if(previous===undefined)delete process.env.VERCEL_ENV;else process.env.VERCEL_ENV=previous;
+  }
+});
 test('parent facade uses frozen route/envelope, no raw principal or URL payload',async()=>{
   const f=fixture();let count=0;
   const call=parentFacade(f.deps.config,{async post(url,envelope,bound){count++;

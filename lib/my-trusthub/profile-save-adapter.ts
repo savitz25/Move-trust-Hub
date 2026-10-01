@@ -59,6 +59,16 @@ export type AdapterResult =
   | {state:'continue'; ticket:string; target:string; fields:{continuationRef:string}; localCopy:'keep'}
   | {state:'parent_saved'; projectFailed:boolean; returnPath:string; localCopy:'keep'};
 const failure = (state:'unavailable'|'invalid'|'expired'|'account_changed'): AdapterResult => ({state,localCopy:'keep'});
+const TRACE_STAGES = new Set(['allowed_browser','selection_valid','digest_valid','trusted_profile','capability','manifest_valid','parent_path_valid','parent_dispatch','parent_response']);
+/** Preview logs only. Codes are short enums; callers must not pass secrets. */
+export function previewTrace(stage: string, code: string): void {
+  if (process.env.VERCEL_ENV !== 'preview') return;
+  console.warn(JSON.stringify({
+    event: 'mth_prepare',
+    stage: TRACE_STAGES.has(stage) ? stage : 'other',
+    code: /^[A-Za-z0-9_]{1,40}$/.test(code) ? code : 'other',
+  }));
+}
 function isolatedOrigin(value:string):boolean {
   try { const url=new URL(value);return url.origin===value && !url.username && !url.password &&
     ((url.protocol==='http:' && ['localhost','127.0.0.1'].includes(url.hostname)) ||
@@ -86,14 +96,20 @@ export class MoveProfileSaveAdapter {
   async prepare(selection:unknown,browser:BrowserBinding):Promise<AdapterResult> {
     const d=this.dependencies;
     if(!enabled(d.config))return failure('unavailable');
-    if(!allowedBrowser(browser,d.config) || !isSelection(selection))return failure('invalid');
+    const browserOk=allowedBrowser(browser,d.config), selectionOk=isSelection(selection);
+    previewTrace('allowed_browser', browserOk ? 'yes' : 'no');
+    previewTrace('selection_valid', selectionOk ? 'yes' : 'no');
+    if(!browserOk || !selectionOk)return failure('invalid');
     try {
       const selected:GuestStageInput['selected']=[];
       for(const row of selection) {
-        if(hash(projection(row.companySlug,row.savedAt))!==row.digest)return failure('invalid');
+        if(hash(projection(row.companySlug,row.savedAt))!==row.digest){previewTrace('digest_valid','no');return failure('invalid');}
+        previewTrace('digest_valid','yes');
         const trusted=mapMoveProfile(row.companySlug,await d.resolveExactPublished(row.companySlug,browser));
+        previewTrace('trusted_profile', trusted ? 'yes' : 'no');
         if(!trusted)return {state:'local_only',capability:'IDENTITY_REVIEW_REQUIRED',localCopy:'keep'};
         const capability=profileCapability(trusted);
+        previewTrace('capability', capability);
         if(capability!=='SAVE_SUPPORTED')return {state:'local_only',capability,localCopy:'keep'};
         selected.push({localItemId:row.companySlug,revision:row.revision,digest:row.digest,
           profile:{hub:'move',nativeId:trusted.nativeId,profileClass:trusted.profileClass}});
@@ -102,12 +118,17 @@ export class MoveProfileSaveAdapter {
       const returnPath='/companies/'+canonicalSlug;
       const manifest:GuestStageInput={version:TRANSFER_VERSION_V3,sourceHub:'move',audience:'ask',selected,
         returnTask:{kind:'profile',hub:'move',canonicalSlug,profile:selected[0]!.profile,returnPath}};
+      previewTrace('manifest_valid', isGuestStageInput(manifest) ? 'yes' : 'no');
       if(!isGuestStageInput(manifest))return failure('invalid');
       // Require the server-bound route; browser input cannot choose a destination.
       const path=d.config.parentFormPath;
-      if(!path || !/^\/[a-z0-9/-]+$/.test(path) || path.startsWith('//') || path.includes('..'))return failure('unavailable');
+      const pathOk=!!path && /^\/[a-z0-9/-]+$/.test(path) && !path.startsWith('//') && !path.includes('..');
+      previewTrace('parent_path_valid', pathOk ? 'yes' : 'no');
+      if(!pathOk)return failure('unavailable');
       const stageContext={session:null,grant:null};
+      previewTrace('parent_dispatch','attempt');
       const stage=await d.parent('prepareGuestProfileTransfer',manifest,browser,stageContext);
+      previewTrace('parent_response', stage.ok ? 'ok' : stage.error);
       if(!stage.ok || !opaque(stage.result.transferRef) || stage.result.manifestDigest!==manifestDigest(manifest) ||
         !Number.isFinite(stage.result.expiresAt) || stage.result.expiresAt<=d.now() || stage.result.expiresAt>d.now()+STAGING_TTL_MS)return failure('unavailable');
       const continuation=await d.parent('prepareProfileSaveContinuation',{sourceHub:'move',audience:'ask',...{

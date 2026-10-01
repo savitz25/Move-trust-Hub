@@ -1,12 +1,17 @@
 import { PROFILE_SAVE_ENDPOINT, PROFILE_SAVE_RUNTIME_VERSION,
   type Operation, type RequestFor, type ResponseFor } from './vendor/interface';
-import { enabled, type AdapterConfig, type BrowserBinding } from './profile-save-adapter';
+import { enabled, previewTrace, type AdapterConfig, type BrowserBinding } from './profile-save-adapter';
 import { ASK_PREVIEW, MOVE_PREVIEW } from './reviewed-origins';
 import { ASSERTION_HEADER, signAssertion, type AssertionKey } from './service-assertion';
 
 /** Move may stage and read receipts. Parent confirmation owns commit and consume. */
 export const MOVE_SERVICE_OPERATIONS = ['prepareGuestProfileTransfer', 'prepareProfileSaveContinuation', 'getProfileSaveReceipt', 'verifyProfileSaveReceipt'] as const;
 const allowed = new Set<string>(MOVE_SERVICE_OPERATIONS);
+function traceCode(error: unknown): string {
+  if (!(error instanceof Error)) return 'unknown';
+  if (/^(unauthorized|unavailable|invalid|disabled)$/.test(error.message)) return error.message;
+  return /^[A-Za-z0-9_]{1,40}$/.test(error.name) ? error.name : 'unknown';
+}
 
 /** The channel implementation must supply approved P13 service identity, scopes,
  * current parent session and browser binding OUTSIDE JSON. Never forward browser
@@ -18,13 +23,17 @@ export type ScopedChannel = {
 };
 export function signedParentChannel(config: AdapterConfig, key: AssertionKey, send: typeof fetch): ScopedChannel {
   return { async post(url, envelope, browser, signal, context) {
-    if (!context || !Object.hasOwn(context, 'session') || !Object.hasOwn(context, 'grant')) throw Error('unauthorized');
-    if (config.parentOrigin !== ASK_PREVIEW || config.moveOrigin !== MOVE_PREVIEW || url !== ASK_PREVIEW + PROFILE_SAVE_ENDPOINT) throw Error('unauthorized');
+    if (!context || !Object.hasOwn(context, 'session') || !Object.hasOwn(context, 'grant')) { previewTrace('parent_dispatch', 'context'); throw Error('unauthorized'); }
+    if (config.parentOrigin !== ASK_PREVIEW || config.moveOrigin !== MOVE_PREVIEW || url !== ASK_PREVIEW + PROFILE_SAVE_ENDPOINT) { previewTrace('parent_dispatch', 'target'); throw Error('unauthorized'); }
     const operation = (envelope as { operation?: string }).operation;
-    if (!operation || !allowed.has(operation)) throw Error('unauthorized');
+    if (!operation || !allowed.has(operation)) { previewTrace('parent_dispatch', 'operation'); throw Error('unauthorized'); }
     const bytes = Buffer.from(JSON.stringify(envelope));
     const scope = operation.startsWith('prepare') ? 'transfer:stage' : 'receipt:verify';
-    const headers = { 'Content-Type': 'application/json', [ASSERTION_HEADER]: signAssertion(key, 'move', url, scope, bytes, browser.binding, context.session, context.grant) };
+    let assertion: string;
+    try { assertion = signAssertion(key, 'move', url, scope, bytes, browser.binding, context.session, context.grant); }
+    catch (error) { previewTrace('parent_dispatch', traceCode(error)); throw error; }
+    previewTrace('parent_dispatch', 'send');
+    const headers = { 'Content-Type': 'application/json', [ASSERTION_HEADER]: assertion };
     return send(url, { method: 'POST', body: bytes, headers, cache: 'no-store', redirect: 'error', signal });
   } };
 }
@@ -36,7 +45,7 @@ export function parentFacade(config:AdapterConfig,channel:ScopedChannel) {
       const envelope={version:PROFILE_SAVE_RUNTIME_VERSION,operation,input};
       if(Buffer.byteLength(JSON.stringify(envelope),'utf8')>65_536)return {ok:false,error:'invalid'};
       const response=await channel.post(config.parentOrigin+PROFILE_SAVE_ENDPOINT,envelope,browser,AbortSignal.timeout(10_000),context);
-      if(!response.ok || response.redirected)return {ok:false,error:'unavailable'};
+      if(!response.ok || response.redirected){previewTrace('parent_response','http_'+String(response.status));return {ok:false,error:'unavailable'};}
       if(!response.body)return {ok:false,error:'invalid'};
       const reader=response.body.getReader(),chunks:Uint8Array[]=[];let size=0;
       while(true){const {done,value}=await reader.read();if(done)break;size+=value.length;
@@ -46,6 +55,6 @@ export function parentFacade(config:AdapterConfig,channel:ScopedChannel) {
         Object.keys(body).some(k=>!['ok','operation','result'].includes(k)))return {ok:false,error:'unavailable'};
       // Specific result receipt/digest checks happen in the specialist adapter.
       return body as ResponseFor<K>;
-    } catch {return {ok:false,error:'unavailable'};}
+    } catch (error) { previewTrace('parent_response', traceCode(error)); return {ok:false,error:'unavailable'}; }
   };
 }
