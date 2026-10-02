@@ -12,6 +12,6 @@ test("Rendered homepage preserves generated values and search-only unknowns", ()
       assert.ok(html.includes(row.value.toLocaleString("en-US")), row.key);
   assert.ok(html.includes("UNKNOWN"));
   assert.ok(html.includes("closure pending"));
-  assert.ok(html.includes(`${m.homepageStateCards.length} specialist state surfaces`));
+  assert.ok(html.includes(`${m.homepageStateCards.length} states with published moving intelligence`));
   assert.ok(html.includes("Directory profiles with an MC number"));
 });

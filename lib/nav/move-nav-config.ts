@@ -115,6 +115,31 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'MnDOT Household Goods Mover Permit, Form E/H insurance & tariff rules',
       },
       {
+        label: 'Michigan research',
+        href: '/michigan',
+        description: 'State Police CVED household-goods authority & active roster',
+      },
+      {
+        label: 'Maryland research',
+        href: '/maryland',
+        description: 'Maryland Labor mover registration & live verification',
+      },
+      {
+        label: 'Connecticut research',
+        href: '/connecticut',
+        description: 'CTDOT household-goods HG certificates & roster',
+      },
+      {
+        label: 'Wisconsin research',
+        href: '/wisconsin',
+        description: 'WisDOT Local Cartage authority & Form E insurance',
+      },
+      {
+        label: 'Indiana research',
+        href: '/indiana',
+        description: 'Indiana DOR household-goods authority & tariff rules',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',
