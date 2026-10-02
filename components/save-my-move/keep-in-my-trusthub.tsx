@@ -119,11 +119,15 @@ export function KeepInMyTrustHub({companySlug}:{companySlug:string}) {
     finally{window.clearTimeout(timeout);if(operation.current===controller){operation.current=null;setBusy(false);
       if(controller.signal.aborted)setMessage('Saved on this device — My TrustHub sync unavailable');}}
   }
-  return <span className="inline-flex max-w-64 flex-col gap-1">
-    <button type="button" className="rounded border px-3 py-2 text-sm focus-visible:outline focus-visible:outline-2" aria-disabled={busy}
-      aria-busy={busy} aria-describedby={statusId} onClick={()=>void run(false)}>Keep this in My TrustHub</button>
-    {hasTicket?<button type="button" className="rounded border px-3 py-2 text-sm" aria-disabled={busy} onClick={()=>void run(true)}>Check My TrustHub save</button>:null}
-    <span id={statusId} role="status" aria-live="polite" className="text-xs">{message}</span>
-    {detail?<span className="text-xs">{detail}</span>:null}
+  const control='inline-flex min-h-11 items-center justify-center gap-1.5 rounded-md border border-[#0A2540] bg-[#0A2540] px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#13355a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 aria-disabled:cursor-progress aria-disabled:opacity-70';
+  const secondary='inline-flex min-h-11 items-center justify-center rounded-md border border-border bg-background px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 aria-disabled:opacity-70';
+  return <span className="inline-flex max-w-72 flex-col gap-1.5" data-mth-keep="true">
+    <span className="inline-flex flex-wrap items-center gap-1.5">
+      <button type="button" className={control} aria-disabled={busy}
+        aria-busy={busy} aria-describedby={statusId} onClick={()=>void run(false)}>Keep this in My TrustHub</button>
+      {hasTicket?<button type="button" className={secondary} aria-disabled={busy} onClick={()=>void run(true)}>Check My TrustHub save</button>:null}
+    </span>
+    <span id={statusId} role="status" aria-live="polite" className="text-xs text-muted-foreground">{message}</span>
+    {detail?<span className="text-xs text-muted-foreground">{detail}</span>:null}
   </span>;
 }

@@ -6,6 +6,7 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { MoveBrandLockup } from '@/components/move-brand-lockup';
 import { MoveMegaMenu } from '@/components/nav/move-mega-menu';
+import { MyTrustHubAccountLink } from '@/components/my-trusthub/my-trusthub-account-link';
 import { MyMoveNavLink } from '@/components/save-my-move/my-move-nav-link';
 import { SwitchHubMenu } from '@/components/switch-hub-menu';
 import { MOVE_HEADER_CTA } from '@/lib/design/move-design-system';
@@ -61,11 +62,13 @@ export function MoveNetworkHeader() {
         </nav>
 
         <div className="th-header-actions">
+          <MyTrustHubAccountLink variant="desktop" />
           <MyMoveNavLink variant="desktop" className="th-btn-secondary !h-11 !text-sm" />
           <SwitchHubMenu currentHubId="move" />
         </div>
 
         <div className="th-header-mobile-actions">
+          <MyTrustHubAccountLink variant="mobile-header" />
           <MyMoveNavLink variant="mobile-header" />
           <button
             ref={menuRef}
@@ -116,6 +119,7 @@ export function MoveNetworkHeader() {
               >
                 {MOVE_HEADER_CTA.label}
               </Link>
+              <MyTrustHubAccountLink variant="drawer" onNavigate={() => setOpen(false)} />
               <Link prefetch={false} href="/my-move" className="th-drawer-link" onClick={() => setOpen(false)}>
                 My Move
               </Link>
