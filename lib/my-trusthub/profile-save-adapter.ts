@@ -7,13 +7,13 @@ import { isAnonymousPublicProfileAllowed } from '@/lib/provider/publication';
 import type { PublicationState } from '@/lib/provider/types';
 import { isSelection, projection } from './selection';
 import { profileCapability, type TrustedProfile, type SaveCapability } from './vendor/v2-3-profile-save';
-import { TRANSFER_VERSION_V3, STAGING_TTL_MS, isGuestStageInput, manifestDigest, itemKey, validateProfileReturn,
+import { TRANSFER_VERSION_V3, STAGING_TTL_MS, PRODUCTION_ORIGINS, isGuestStageInput, manifestDigest, itemKey, validateProfileReturn,
   type GuestStageInput, type GuestStageRef, type ItemReceipt, type CommitInput, type TrustedOriginRegistry } from './vendor/v2-3-profile-transfer';
 import type { Operation, RequestFor, ResponseFor } from './vendor/interface';
 
 const opaque = (v: unknown): v is string => typeof v === 'string' && /^[A-Za-z0-9_-]{43}$/.test(v);
 const hash = (v: string) => createHash('sha256').update(v).digest('hex');
-export type BrowserBinding = { binding: string; csrfVerified: true; origin: string; environment: 'isolated' };
+export type BrowserBinding = { binding: string; csrfVerified: true; origin: string; environment: 'isolated' | 'production' };
 export type CurrentGrant = {
   accountContextRef: string; selectionConfirmed: true; projectRef?: string;
   sessionBinding?: string; proofRef?: string; expiresAt?: number;
@@ -80,12 +80,17 @@ function isolatedOrigin(value:string):boolean {
     ((url.protocol==='http:' && ['localhost','127.0.0.1'].includes(url.hostname)) ||
       (url.protocol==='https:' && (url.hostname.endsWith('.vercel.app') || url.hostname.endsWith('.test')))); } catch {return false;}
 }
+/** Isolated: reviewed preview/test origins with the isolated-pair attestation.
+ * Production: exactly the canonical Move and Ask origins and never an isolated
+ * attestation. No other environment value or origin shape is enabled. */
 export function enabled(config:AdapterConfig):boolean {
-  return config.enabled && config.environment==='isolated' && config.verifiedIsolatedPair &&
-    isolatedOrigin(config.moveOrigin) && isolatedOrigin(config.parentOrigin) && config.moveOrigin!==config.parentOrigin;
+  if (!config.enabled || config.moveOrigin===config.parentOrigin) return false;
+  if (config.environment==='isolated') return config.verifiedIsolatedPair && isolatedOrigin(config.moveOrigin) && isolatedOrigin(config.parentOrigin);
+  return config.environment==='production' && !config.verifiedIsolatedPair &&
+    config.moveOrigin===PRODUCTION_ORIGINS.move && config.parentOrigin==='https://www.asktrusthub.com';
 }
 function allowedBrowser(browser:BrowserBinding,config:AdapterConfig):boolean {
-  return browser.csrfVerified===true && browser.environment==='isolated' && browser.origin===config.moveOrigin && opaque(browser.binding);
+  return browser.csrfVerified===true && browser.environment===config.environment && browser.origin===config.moveOrigin && opaque(browser.binding);
 }
 function sameGrant(a:CurrentGrant|null,b:CurrentGrant):boolean {
   return !!a && a.selectionConfirmed===true && a.accountContextRef===b.accountContextRef && a.projectRef===b.projectRef;
@@ -193,7 +198,7 @@ export class MoveProfileSaveAdapter {
         if(!sameGrant(await readGrant(),grant))return failure('account_changed');
         projectFailed ||= verified.result.project.outcome==='failed';
       }
-      const registry:TrustedOriginRegistry={environment:'isolated',isolatedBackendVerified:true,
+      const registry:TrustedOriginRegistry={environment:d.config.environment,isolatedBackendVerified:d.config.environment==='isolated',
         origins:{move:d.config.moveOrigin,insurance:'https://insurance.test',lender:'https://lender.test',contractor:'https://contractor.test',senior:'https://senior.test',investor:'https://investor.test'}};
       const task=record.manifest.returnTask;
       if(!('returnPath' in task) || typeof task.returnPath!=='string')return failure('invalid');

@@ -6,7 +6,7 @@ import { GitCompare, Heart, LogOut, Package, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
-import { PARENT_SAVE_ENABLED, useMyTrustHubHref } from '@/components/my-trusthub/my-trusthub-origin';
+import { ONE_ACCOUNT_ENABLED, useMyTrustHubHref } from '@/components/my-trusthub/my-trusthub-origin';
 import { MoveHqHero } from '@/components/save-my-move/move-hq/move-hq-hero';
 import { MoveHqQuickActions } from '@/components/save-my-move/move-hq/move-hq-quick-actions';
 import { MyMoveReports } from '@/components/my-move-plan/my-move-reports';
@@ -256,7 +256,7 @@ export function MyMoveDashboard({
   }
 
   // --- Signed out, one-account mode: My Move is the Move workspace; the account is My TrustHub ---
-  if (!user && PARENT_SAVE_ENABLED) {
+  if (!user && ONE_ACCOUNT_ENABLED) {
     return (
       <div className="space-y-6">
         <MyMoveReports compact onPlanCount={setPlanCount} />

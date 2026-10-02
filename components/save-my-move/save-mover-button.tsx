@@ -14,7 +14,7 @@ import { trackSaveMyMoveMover } from '@/components/ga-events';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 import { KeepInMyTrustHub } from '@/components/save-my-move/keep-in-my-trusthub';
-import { PARENT_SAVE_ENABLED, useMyTrustHubHref } from '@/components/my-trusthub/my-trusthub-origin';
+import { ONE_ACCOUNT_ENABLED, keepAllowedForSlug, useMyTrustHubHref } from '@/components/my-trusthub/my-trusthub-origin';
 
 type SaveMoverButtonProps = {
   companySlug: string;
@@ -42,7 +42,8 @@ export function SaveMoverButton({
   );
   const mySavedHref = useMyTrustHubHref('/my/saved');
   const saved = isMoverSaved(companySlug) || localSaved;
-  const showParentSave = localSaved && PARENT_SAVE_ENABLED;
+  // Canary-aware: Keep is offered only for admitted slugs (all slugs when no canary list is set).
+  const showParentSave = localSaved && keepAllowedForSlug(companySlug);
 
   const handleSave = async () => {
     if (loading || saved || busy) return;
@@ -55,7 +56,7 @@ export function SaveMoverButton({
       trackSaveMyMoveMover({ company_slug: companySlug });
 
       if (!user) {
-        if (PARENT_SAVE_ENABLED) {
+        if (ONE_ACCOUNT_ENABLED || keepAllowedForSlug(companySlug)) {
           toast.success(`${companyName} saved on this device`, {
             description: 'Choose “Keep this in My TrustHub” to reach it from any device with your one TrustHub account.',
           });
@@ -111,7 +112,7 @@ export function SaveMoverButton({
         const res = await removeSavedMoverBySlugAction(companySlug);
         if (!res.ok) console.warn('[SaveMoverButton] cloud unsave soft-fail', res);
       }
-      toast.success(`${companyName} removed from this device`, PARENT_SAVE_ENABLED
+      toast.success(`${companyName} removed from this device`, ONE_ACCOUNT_ENABLED || keepAllowedForSlug(companySlug)
         ? {
             description: 'Kept it in My TrustHub? Manage it there under Saved.',
             action: {

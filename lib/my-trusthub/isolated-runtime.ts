@@ -4,7 +4,7 @@ import { parentFacade, type ScopedChannel } from './parent-facade';
 import { PostgresTransferStore, type SourcePool } from './postgres-transfer-store';
 import { COOKIE_NAME, type HttpDependencies } from './profile-save-http';
 import { itemKey, type ItemReceipt } from './vendor/v2-3-profile-transfer';
-import { containsForbiddenMoveTarget } from './reviewed-origins';
+import { containsForbiddenMoveTarget, deploymentPair } from './reviewed-origins';
 import { resolveExactMovePublication, type ExactPublicationReader, type Publication } from './publication-resolver';
 
 /** Ask owns /my/profile-save. The wire version stays v2-3/selected-profiles/2. */
@@ -12,8 +12,9 @@ export const PARENT_FORM_PATH = '/my/profile-save';
 const hash = (s: string) => createHash('sha256').update(s).digest('hex');
 const opaque = (s: unknown): s is string => typeof s === 'string' && /^[A-Za-z0-9_-]{43}$/.test(s);
 export type IsolatedMovePorts = {
-  /** Approved metadata, not a flag inferred from a URL or Vercel Preview status. */
-  verifiedPair: { moveOrigin: string; parentOrigin: string; sourceBackend: string; isolated: true };
+  /** Approved metadata, not a flag inferred from a URL or Vercel Preview status.
+   * `isolated` is true for the reviewed preview pair and false for production. */
+  verifiedPair: { moveOrigin: string; parentOrigin: string; sourceBackend: string; isolated: boolean };
   sessionAffinity: 'dedicated'; pool: SourcePool;
   channel: ScopedChannel;
   resolveExactPublished: Dependencies['resolveExactPublished'];
@@ -25,15 +26,22 @@ export type IsolatedMovePorts = {
   readCertifiedPublication?: ExactPublicationReader;
 };
 export function isolatedConfig(env: Record<string,string|undefined>, p: IsolatedMovePorts | null): AdapterConfig | null {
-  if (!p || env.VERCEL_ENV === 'production' || env.NODE_ENV === 'production' && env.VERCEL_ENV !== 'preview' ||
-      env.NEXT_PUBLIC_MOVE_PARENT_SAVE_ENABLED !== '1' || env.MTH_MOVE_PARENT_SAVE_MODE !== 'isolated' ||
-      env.MTH_MOVE_PARENT_SAVE_ISOLATED_APPROVED !== 'true' || p.verifiedPair.isolated !== true ||
-      p.sessionAffinity !== 'dedicated' || p.verifiedPair.sourceBackend !== env.MTH_MOVE_PARENT_SAVE_SOURCE_BACKEND ||
-      !p.verifiedPair.sourceBackend || containsForbiddenMoveTarget(p.verifiedPair.sourceBackend) ||
+  const pair = deploymentPair(env);
+  if (!p || !pair || p.sessionAffinity !== 'dedicated' || env.NEXT_PUBLIC_MOVE_PARENT_SAVE_ENABLED !== '1' ||
+      p.verifiedPair.sourceBackend !== env.MTH_MOVE_PARENT_SAVE_SOURCE_BACKEND || !p.verifiedPair.sourceBackend ||
       p.verifiedPair.moveOrigin !== env.MTH_MOVE_PARENT_SAVE_MOVE_ORIGIN ||
       p.verifiedPair.parentOrigin !== env.MTH_MOVE_PARENT_SAVE_PARENT_ORIGIN ||
       env.MTH_MOVE_PARENT_SAVE_FORM_PATH !== PARENT_FORM_PATH) return null;
-  const config: AdapterConfig = { enabled:true,environment:'isolated',verifiedIsolatedPair:true,
+  if (pair.kind === 'isolated') {
+    // Existing reviewed isolated checks, unchanged: the reviewed ports name the
+    // pair; the environment supplies the approved backend name.
+    if (env.VERCEL_ENV === 'production' || env.NODE_ENV === 'production' && env.VERCEL_ENV !== 'preview' ||
+        env.MTH_MOVE_PARENT_SAVE_MODE !== 'isolated' || env.MTH_MOVE_PARENT_SAVE_ISOLATED_APPROVED !== 'true' ||
+        p.verifiedPair.isolated !== true || containsForbiddenMoveTarget(p.verifiedPair.sourceBackend)) return null;
+  } else if (env.VERCEL_ENV !== 'production' || p.verifiedPair.isolated !== false ||
+      p.verifiedPair.sourceBackend !== pair.sourceBackend || p.verifiedPair.moveOrigin !== pair.moveOrigin ||
+      p.verifiedPair.parentOrigin !== pair.parentOrigin) return null;
+  const config: AdapterConfig = { enabled:true,environment:pair.kind,verifiedIsolatedPair:pair.kind==='isolated',
     moveOrigin:p.verifiedPair.moveOrigin,parentOrigin:p.verifiedPair.parentOrigin,parentFormPath:PARENT_FORM_PATH };
   return enabled(config) ? config : null;
 }

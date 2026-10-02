@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { ASK_PREVIEW, GRANT_API_PATH, GRANT_BROWSER_PATH, MOVE_PREVIEW } from './reviewed-origins';
+import { GRANT_API_PATH, GRANT_BROWSER_PATH, reviewedPair, type MovePair } from './reviewed-origins';
 import { ASSERTION_HEADER, signAssertion, type AssertionKey } from './service-assertion';
 import type { BrowserBinding, CurrentGrant } from './profile-save-adapter';
 
@@ -16,10 +16,6 @@ function liveProof(expiresAt: unknown, now: number): expiresAt is number {
 
 export type GrantRecord = { browserHash: string; continuationRef: string; accountContextRef?: string };
 export type ResolvedCurrentGrant = CurrentGrant & { sessionBinding: string; proofRef: string; expiresAt: number };
-
-function reviewedPair(parentOrigin: string, moveOrigin: string): boolean {
-  return parentOrigin === ASK_PREVIEW && moveOrigin === MOVE_PREVIEW;
-}
 
 /** Peer JSON is capped by bytes actually read. Content-Length is not authority. */
 export async function readBoundedJson(response: Response): Promise<unknown> {
@@ -44,12 +40,12 @@ export async function readBoundedJson(response: Response): Promise<unknown> {
   }
 }
 
-async function postGrant(key: AssertionKey, body: unknown, browser: string, send: typeof fetch, now?: number): Promise<unknown> {
+async function postGrant(key: AssertionKey, body: unknown, browser: string, send: typeof fetch, pair: MovePair, now?: number): Promise<unknown> {
   const bytes = Buffer.from(JSON.stringify(body));
-  const target = ASK_PREVIEW + GRANT_API_PATH;
+  const target = pair.parentOrigin + GRANT_API_PATH;
   const response = await send(target, {
     method: 'POST', body: bytes, cache: 'no-store', redirect: 'error', signal: AbortSignal.timeout(5000),
-    headers: { 'Content-Type': 'application/json', [ASSERTION_HEADER]: signAssertion(key, 'move', target, 'receipt:verify', bytes, browser, null, null, now) },
+    headers: { 'Content-Type': 'application/json', [ASSERTION_HEADER]: signAssertion(key, 'move', target, 'receipt:verify', bytes, browser, null, null, now ?? Date.now(), pair) },
   });
   if (!response.ok) return null;
   const parsed = await readBoundedJson(response);
@@ -62,13 +58,14 @@ export async function requestCurrentGrantChallenge(input: {
   record: GrantRecord | null; browser: BrowserBinding; key: AssertionKey;
   parentOrigin: string; moveOrigin: string; send: typeof fetch; now?: number;
 }): Promise<{ target: string; challengeRef: string } | null> {
-  if (!reviewedPair(input.parentOrigin, input.moveOrigin) || !input.record || input.record.browserHash !== hash(input.browser.binding)) return null;
+  const pair = reviewedPair(input.parentOrigin, input.moveOrigin);
+  if (!pair || !input.record || input.record.browserHash !== hash(input.browser.binding)) return null;
   if (!opaque(input.record.continuationRef) || !opaque(input.browser.binding)) return null;
-  const result = await postGrant(input.key, { action: 'challenge', continuationRef: input.record.continuationRef }, input.browser.binding, input.send, input.now);
+  const result = await postGrant(input.key, { action: 'challenge', continuationRef: input.record.continuationRef }, input.browser.binding, input.send, pair, input.now);
   if (!object(result) || Object.keys(result).sort().join() !== 'fields,target' || typeof result.target !== 'string' || !object(result.fields)) return null;
   if (Object.keys(result.fields).sort().join() !== 'challengeRef' || !opaque(result.fields.challengeRef)) return null;
   const target = new URL(result.target);
-  if (target.origin + target.pathname !== ASK_PREVIEW + GRANT_BROWSER_PATH || target.search || target.hash) return null;
+  if (target.origin + target.pathname !== pair.parentOrigin + GRANT_BROWSER_PATH || target.search || target.hash) return null;
   return { target: target.origin + target.pathname, challengeRef: result.fields.challengeRef };
 }
 
@@ -77,10 +74,11 @@ export async function resolveCurrentGrantProof(input: {
   record: GrantRecord | null; browser: BrowserBinding; proofRef: unknown; key: AssertionKey;
   parentOrigin: string; moveOrigin: string; send: typeof fetch; now?: number;
 }): Promise<ResolvedCurrentGrant | 'account_changed' | null> {
-  if (!reviewedPair(input.parentOrigin, input.moveOrigin) || !input.record || input.record.browserHash !== hash(input.browser.binding)) return null;
+  const pair = reviewedPair(input.parentOrigin, input.moveOrigin);
+  if (!pair || !input.record || input.record.browserHash !== hash(input.browser.binding)) return null;
   if (!opaque(input.proofRef) || !opaque(input.record.continuationRef)) return null;
   const result = await postGrant(input.key, { action: 'resolve', continuationRef: input.record.continuationRef, proofRef: input.proofRef },
-    input.browser.binding, input.send, input.now);
+    input.browser.binding, input.send, pair, input.now);
   if (!object(result) || result.selectionConfirmed !== true || !opaque(result.accountContextRef)) return null;
   if (result.projectRef !== undefined && !opaque(result.projectRef)) return null;
   if (typeof result.sessionBinding !== 'string' || !/^[a-f0-9]{64}$/.test(result.sessionBinding) || !liveProof(result.expiresAt, input.now ?? Date.now())) return null;

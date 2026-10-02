@@ -20,10 +20,13 @@ export type Publication = {
 };
 export type ExactPublicationReader = (profile: CertifiedProfile) => Promise<PublicationRow | null>;
 
-/** Approval is an operator attestation name, never a project ref or connection URL. */
+/** Approval is an operator attestation name, never a project ref or connection URL.
+ * Production uses its own attestation pair (MTH_V23_MOVE_PRODUCTION_SOURCE[_APPROVED]);
+ * the isolated attestation never opens production and vice versa. */
 export function publicationSourceApproved(env: Record<string, string | undefined>): boolean {
-  if (env.VERCEL_ENV === 'production' || env.MTH_V23_MOVE_ISOLATED_SOURCE_APPROVED !== 'true') return false;
-  const name = env.MTH_V23_MOVE_ISOLATED_SOURCE?.trim() ?? '';
+  const production = env.VERCEL_ENV === 'production';
+  if (production ? env.MTH_V23_MOVE_PRODUCTION_SOURCE_APPROVED !== 'true' : env.MTH_V23_MOVE_ISOLATED_SOURCE_APPROVED !== 'true') return false;
+  const name = (production ? env.MTH_V23_MOVE_PRODUCTION_SOURCE : env.MTH_V23_MOVE_ISOLATED_SOURCE)?.trim() ?? '';
   if (!name || name.length > 80 || /[:/?#@\s]/.test(name) || containsForbiddenMoveTarget(name) || /supabase/i.test(name)) return false;
   return true;
 }

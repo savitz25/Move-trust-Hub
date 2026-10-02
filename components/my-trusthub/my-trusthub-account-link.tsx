@@ -1,7 +1,7 @@
 'use client';
 
 import { ShieldCheck } from 'lucide-react';
-import { PARENT_SAVE_ENABLED, useMyTrustHubHref } from '@/components/my-trusthub/my-trusthub-origin';
+import { ONE_ACCOUNT_ENABLED, useMyTrustHubHref } from '@/components/my-trusthub/my-trusthub-origin';
 import { cn } from '@/lib/utils';
 
 type Variant = 'desktop' | 'mobile-header' | 'drawer';
@@ -21,7 +21,7 @@ export function MyTrustHubAccountLink({
   className?: string;
 }) {
   const href = useMyTrustHubHref('/my');
-  if (!PARENT_SAVE_ENABLED) return null;
+  if (!ONE_ACCOUNT_ENABLED) return null;
   const title = 'My TrustHub — your one TrustHub account and saved research';
 
   if (variant === 'mobile-header') {

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Bookmark } from 'lucide-react';
 import { useSaveMyMoveOptional } from '@/components/save-my-move/save-my-move-provider';
-import { PARENT_SAVE_ENABLED } from '@/components/my-trusthub/my-trusthub-origin';
+import { ONE_ACCOUNT_ENABLED } from '@/components/my-trusthub/my-trusthub-origin';
 import { cn } from '@/lib/utils';
 
 /** One account (My TrustHub); My Move is the Move workspace, not a sign-in. */
@@ -49,7 +49,7 @@ export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkP
         )}
         aria-label={showBadge ? `My Move, ${savedCount} saved movers` : 'My Move'}
         title={
-          PARENT_SAVE_ENABLED
+          ONE_ACCOUNT_ENABLED
             ? WORKSPACE_TITLE
             : ctx?.user
               ? 'My Move — research HQ'
@@ -109,7 +109,7 @@ export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkP
       )}
       aria-label={showBadge ? `My Move, ${savedCount} saved movers` : 'My Move'}
       title={
-        PARENT_SAVE_ENABLED
+        ONE_ACCOUNT_ENABLED
           ? WORKSPACE_TITLE
           : ctx?.user
             ? 'My Move — saved plans and shortlists'

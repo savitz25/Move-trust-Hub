@@ -7,7 +7,7 @@ import { signedParentChannel, type AssertionContext } from './parent-facade';
 import { publicationSourceApproved, resolveExactMovePublication, CERTIFIED_NATIVE_ID, CERTIFIED_SLUG, CERTIFIED_CLASS, type PublicationRow } from './publication-resolver';
 import { PostgresTransferStore, type SourcePool } from './postgres-transfer-store';
 import { previewTrace, type BrowserBinding, type CurrentGrant, type TrustedMoveRecord } from './profile-save-adapter';
-import { ASK_PREVIEW, GRANT_API_PATH, MOVE_PREVIEW } from './reviewed-origins';
+import { deploymentPair, GRANT_API_PATH, ISOLATED_PAIR, PRODUCTION_PAIR, type MovePair } from './reviewed-origins';
 import { askVerifyKey, moveSigningKey } from './service-keys';
 import { ASSERTION_HEADER, signAssertion, verifyAskSourceCaller, type AssertionKey } from './service-assertion';
 import { createIsolatedSourcePool, SOURCE_LOGIN, type IsolatedPoolConfig } from './source-pool';
@@ -18,14 +18,24 @@ const boundedId = (value: unknown): value is string => typeof value === 'string'
 
 /** Reviewed isolated metadata. The host is supplied, not derived from a region. */
 export const REVIEWED_SOURCE_METADATA = {
-  sourceBackend: 'isolated-move-reader',
+  sourceBackend: ISOLATED_PAIR.sourceBackend,
   databaseHost: 'aws-0-us-west-2.pooler.supabase.com',
   databaseName: 'postgres',
   databaseUser: SOURCE_LOGIN,
   sessionAffinity: 'dedicated' as const,
 };
 
-/** Design only. This module does not create the object. */
+/** Production source metadata. The Supavisor session host is pinned by an
+ * explicit environment value that must match the pooler host pattern; the
+ * login and backend name come from the production pair, never from the URL. */
+export function productionSourceMetadata(env: Record<string, string | undefined>) {
+  const host = env.MTH_MOVE_PARENT_SAVE_DATABASE_HOST?.trim().toLowerCase() ?? '';
+  if (!/^aws-[0-9]+-[a-z0-9-]+\.pooler\.supabase\.com$/.test(host)) return null;
+  return { sourceBackend: PRODUCTION_PAIR.sourceBackend, databaseHost: host, databaseName: 'postgres', databaseUser: PRODUCTION_PAIR.login, sessionAffinity: 'dedicated' as const };
+}
+
+/** Design only. This module does not create the object. In production the
+ * same shape is the Hindman canary attestation table, not a mover registry. */
 export const CERTIFIED_PUBLICATION_CONTRACT = {
   schema: 'mth_profile_transfer',
   table: 'certified_publication',
@@ -54,11 +64,12 @@ export type PreviewDeps = {
   createPool?: (config: IsolatedPoolConfig) => { connect(): Promise<{ query(sql: string, values?: unknown[]): Promise<{ rows: Record<string, unknown>[] }>; release(destroy?: boolean): void }>; end(): Promise<void> };
 };
 
-function askFetch(env: Record<string, string | undefined>, send: typeof fetch): typeof fetch {
-  const bypass = env.MTH_MOVE_PARENT_SAVE_PARENT_PROTECTION_BYPASS;
+function askFetch(env: Record<string, string | undefined>, send: typeof fetch, pair: MovePair): typeof fetch {
+  // Deployment Protection bypass is a preview-only transport concern.
+  const bypass = pair.kind === 'isolated' ? env.MTH_MOVE_PARENT_SAVE_PARENT_PROTECTION_BYPASS : undefined;
   return async (input, init) => {
     const url = String(input);
-    if (!url.startsWith(ASK_PREVIEW + '/')) throw Error('unauthorized');
+    if (!url.startsWith(pair.parentOrigin + '/')) throw Error('unauthorized');
     const headers = new Headers(init?.headers);
     if (bypass) headers.set('x-vercel-protection-bypass', bypass);
     return send(url, { ...init, headers });
@@ -71,15 +82,16 @@ function object(value: unknown): value is Record<string, unknown> {
 
 /** Parent binding lookup. Not one of the six profile-save operations. */
 export async function fetchAcceptedBinding(input: {
-  browser: BrowserBinding; key: AssertionKey; send: typeof fetch; now?: number;
+  browser: BrowserBinding; key: AssertionKey; send: typeof fetch; now?: number; pair?: MovePair;
 }): Promise<TrustedMoveRecord['binding'] | null> {
-  if (input.browser.csrfVerified !== true || input.browser.environment !== 'isolated' || input.browser.origin !== MOVE_PREVIEW || !opaque(input.browser.binding)) return null;
+  const pair = input.pair ?? ISOLATED_PAIR;
+  if (input.browser.csrfVerified !== true || input.browser.environment !== pair.kind || input.browser.origin !== pair.moveOrigin || !opaque(input.browser.binding)) return null;
   const body = { action: 'binding' };
   const bytes = Buffer.from(JSON.stringify(body));
-  const target = ASK_PREVIEW + GRANT_API_PATH;
+  const target = pair.parentOrigin + GRANT_API_PATH;
   const response = await input.send(target, {
     method: 'POST', body: bytes, cache: 'no-store', redirect: 'error', signal: AbortSignal.timeout(5000),
-    headers: { 'Content-Type': 'application/json', [ASSERTION_HEADER]: signAssertion(input.key, 'move', target, 'transfer:stage', bytes, input.browser.binding, null, null, input.now) },
+    headers: { 'Content-Type': 'application/json', [ASSERTION_HEADER]: signAssertion(input.key, 'move', target, 'transfer:stage', bytes, input.browser.binding, null, null, input.now ?? Date.now(), pair) },
   });
   if (!response.ok) return null;
   const parsed = await readBoundedJson(response);
@@ -122,23 +134,27 @@ async function storedGrant(store: PostgresTransferStore, browser: BrowserBinding
   return found;
 }
 
-/** Preview-only ports. Returns null unless every reviewed check is present.
- * A feature flag by itself does not open this runtime. */
-export function createPreviewMoveRuntime(env: Record<string, string | undefined>, deps: PreviewDeps = {}) {
-  if (env.VERCEL_ENV === 'production') return null;
+/** Hosted ports for the one deployment pair this environment admits. Returns
+ * null unless every reviewed check is present. A feature flag by itself does
+ * not open this runtime; production additionally needs the explicit handoff
+ * pins (reviewed-origins.productionHandoffEnabled). */
+export function createHostedMoveRuntime(env: Record<string, string | undefined>, deps: PreviewDeps = {}) {
+  const pair = deploymentPair(env);
+  if (!pair) return null;
   const signing = moveSigningKey(env);
   const askKey = askVerifyKey(env);
   if (!signing || !askKey || !publicationSourceApproved(env)) return null;
-  if (env.MTH_MOVE_PARENT_SAVE_MOVE_ORIGIN !== MOVE_PREVIEW || env.MTH_MOVE_PARENT_SAVE_PARENT_ORIGIN !== ASK_PREVIEW) return null;
-  if (env.MTH_MOVE_PARENT_SAVE_SOURCE_BACKEND !== REVIEWED_SOURCE_METADATA.sourceBackend) return null;
-  const send = askFetch(env, deps.send ?? fetch);
-  const pool = createIsolatedSourcePool(env, REVIEWED_SOURCE_METADATA, deps.createPool);
+  if (env.MTH_MOVE_PARENT_SAVE_MOVE_ORIGIN !== pair.moveOrigin || env.MTH_MOVE_PARENT_SAVE_PARENT_ORIGIN !== pair.parentOrigin) return null;
+  const metadata = pair.kind === 'isolated' ? REVIEWED_SOURCE_METADATA : productionSourceMetadata(env);
+  if (!metadata || env.MTH_MOVE_PARENT_SAVE_SOURCE_BACKEND !== metadata.sourceBackend) return null;
+  const send = askFetch(env, deps.send ?? fetch, pair);
+  const pool = createIsolatedSourcePool(env, metadata, deps.createPool, pair);
   if (!pool) return null;
   const store = new PostgresTransferStore(pool, 'dedicated');
   const nonces = new PostgresAssertionNonceStore(pool);
   const channel = signedParentChannel({
-    enabled: true, environment: 'isolated', verifiedIsolatedPair: true,
-    moveOrigin: MOVE_PREVIEW, parentOrigin: ASK_PREVIEW, parentFormPath: '/my/profile-save',
+    enabled: true, environment: pair.kind, verifiedIsolatedPair: pair.kind === 'isolated',
+    moveOrigin: pair.moveOrigin, parentOrigin: pair.parentOrigin, parentFormPath: '/my/profile-save',
   }, signing, send);
   const guarded = { async post(url: string, envelope: unknown, browser: BrowserBinding, signal: AbortSignal, context: AssertionContext) {
     const operation = object(envelope) && typeof envelope.operation === 'string' ? envelope.operation : '';
@@ -149,13 +165,13 @@ export function createPreviewMoveRuntime(env: Record<string, string | undefined>
     return channel.post(url, envelope, browser, signal, context);
   } };
   const ports: IsolatedMovePorts = {
-    verifiedPair: { moveOrigin: MOVE_PREVIEW, parentOrigin: ASK_PREVIEW, sourceBackend: REVIEWED_SOURCE_METADATA.sourceBackend, isolated: true },
+    verifiedPair: { moveOrigin: pair.moveOrigin, parentOrigin: pair.parentOrigin, sourceBackend: metadata.sourceBackend, isolated: pair.kind === 'isolated' },
     sessionAffinity: 'dedicated',
     pool,
     channel: guarded,
     async resolveExactPublished(slug, browser) {
       if (slug !== CERTIFIED_SLUG) return null;
-      const binding = await fetchAcceptedBinding({ browser, key: signing, send });
+      const binding = await fetchAcceptedBinding({ browser, key: signing, send, pair });
       if (!binding) return null;
       const publication = await resolveExactMovePublication(env, identity => readCertified(pool, identity),
         { hub: 'move', nativeId: CERTIFIED_NATIVE_ID, profileClass: CERTIFIED_CLASS });
@@ -170,18 +186,22 @@ export function createPreviewMoveRuntime(env: Record<string, string | undefined>
       });
       return grant;
     },
-    verifySourceCaller: (proof, scope) => verifyAskSourceCaller(proof, scope, askKey, nonces),
+    verifySourceCaller: (proof, scope) => verifyAskSourceCaller(proof, scope, askKey, nonces, Date.now(), pair),
     readCertifiedPublication: identity => readCertified(pool, identity),
   };
   const runtime = createIsolatedMoveRuntime(env, ports);
   if (!runtime) { void pool.end(); return null; }
   runtime.http.grantChallenge = async (browser, ticket) => requestCurrentGrantChallenge({
     record: await storedGrant(store, browser, ticket), browser, key: signing,
-    parentOrigin: ASK_PREVIEW, moveOrigin: MOVE_PREVIEW, send,
+    parentOrigin: pair.parentOrigin, moveOrigin: pair.moveOrigin, send,
   });
   runtime.http.resolveGrant = async (browser, ticket, proofRef) => resolveCurrentGrantProof({
     record: await storedGrant(store, browser, ticket), browser, proofRef, key: signing,
-    parentOrigin: ASK_PREVIEW, moveOrigin: MOVE_PREVIEW, send,
+    parentOrigin: pair.parentOrigin, moveOrigin: pair.moveOrigin, send,
   });
   return runtime;
 }
+
+/** Previous name, kept for callers and tests. Production still resolves only
+ * through the explicit production pins. */
+export const createPreviewMoveRuntime = createHostedMoveRuntime;

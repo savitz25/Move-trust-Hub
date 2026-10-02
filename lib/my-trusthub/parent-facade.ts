@@ -1,7 +1,7 @@
 import { PROFILE_SAVE_ENDPOINT, PROFILE_SAVE_RUNTIME_VERSION,
   type Operation, type RequestFor, type ResponseFor } from './vendor/interface';
 import { enabled, previewTrace, type AdapterConfig, type BrowserBinding } from './profile-save-adapter';
-import { ASK_PREVIEW, MOVE_PREVIEW } from './reviewed-origins';
+import { reviewedPair } from './reviewed-origins';
 import { ASSERTION_HEADER, signAssertion, type AssertionKey } from './service-assertion';
 
 /** Move may stage and read receipts. Parent confirmation owns commit and consume. */
@@ -24,13 +24,14 @@ export type ScopedChannel = {
 export function signedParentChannel(config: AdapterConfig, key: AssertionKey, send: typeof fetch): ScopedChannel {
   return { async post(url, envelope, browser, signal, context) {
     if (!context || !Object.hasOwn(context, 'session') || !Object.hasOwn(context, 'grant')) { previewTrace('parent_dispatch', 'context'); throw Error('unauthorized'); }
-    if (config.parentOrigin !== ASK_PREVIEW || config.moveOrigin !== MOVE_PREVIEW || url !== ASK_PREVIEW + PROFILE_SAVE_ENDPOINT) { previewTrace('parent_dispatch', 'target'); throw Error('unauthorized'); }
+    const pins = reviewedPair(config.parentOrigin, config.moveOrigin);
+    if (!pins || pins.kind !== config.environment || url !== pins.parentOrigin + PROFILE_SAVE_ENDPOINT) { previewTrace('parent_dispatch', 'target'); throw Error('unauthorized'); }
     const operation = (envelope as { operation?: string }).operation;
     if (!operation || !allowed.has(operation)) { previewTrace('parent_dispatch', 'operation'); throw Error('unauthorized'); }
     const bytes = Buffer.from(JSON.stringify(envelope));
     const scope = operation.startsWith('prepare') ? 'transfer:stage' : 'receipt:verify';
     let assertion: string;
-    try { assertion = signAssertion(key, 'move', url, scope, bytes, browser.binding, context.session, context.grant); }
+    try { assertion = signAssertion(key, 'move', url, scope, bytes, browser.binding, context.session, context.grant, Date.now(), pins); }
     catch (error) { previewTrace('parent_dispatch', traceCode(error)); throw error; }
     previewTrace('parent_dispatch', 'send');
     const headers = { 'Content-Type': 'application/json', [ASSERTION_HEADER]: assertion };

@@ -97,9 +97,13 @@ export function KeepInMyTrustHub({companySlug}:{companySlug:string}) {
         // Form target and opaque fields come from the same-origin reviewed BFF.
         const target=new URL(result.target);
         const continuationOk=/^[A-Za-z0-9_-]{43}$/.test(result.fields?.continuationRef);
+        // Reviewed preview/test hosts, or exactly the production Ask confirmation
+        // form. No other production host or path is ever posted to.
+        const productionTarget=target.origin==='https://www.asktrusthub.com' && target.pathname==='/my/profile-save';
         const targetOk=!target.search && !target.hash && !target.username && !target.password &&
-          (target.hostname.endsWith('.vercel.app') || target.hostname.endsWith('.test') || ['localhost','127.0.0.1'].includes(target.hostname)) &&
-          ['http:','https:'].includes(target.protocol);
+          (productionTarget ||
+            ((target.hostname.endsWith('.vercel.app') || target.hostname.endsWith('.test') || ['localhost','127.0.0.1'].includes(target.hostname)) &&
+            ['http:','https:'].includes(target.protocol)));
         handoff.target_valid=targetOk?'yes':'no';
         handoff.continuation_valid=continuationOk?'yes':'no';
         publishHandoff();

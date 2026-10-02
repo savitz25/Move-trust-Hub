@@ -39,7 +39,7 @@ export async function handleMoveProfileSave(request:Request,dependencies:HttpDep
     const csrf=request.headers.get('x-mth-csrf');
     if(!existing || !csrf || !/^[A-Za-z0-9_-]{43}$/.test(existing) || !/^[A-Za-z0-9_-]{43}$/.test(csrf) ||
       !timingSafeEqual(Buffer.from(existing),Buffer.from(csrf)))return json({state:'invalid',localCopy:'keep'},403);
-    const browser:BrowserBinding={binding:existing,csrfVerified:true,origin:d.config.moveOrigin,environment:'isolated'};
+    const browser:BrowserBinding={binding:existing,csrfVerified:true,origin:d.config.moveOrigin,environment:d.config.environment};
     if(input.action==='prepare' && Object.keys(input).length===2 && Object.hasOwn(input,'selected'))
       return json(await d.adapter.prepare(input.selected,browser));
     if(input.action==='grant-challenge' && Object.keys(input).length===2 && Object.hasOwn(input,'ticket')){
