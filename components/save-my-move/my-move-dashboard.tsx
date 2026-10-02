@@ -6,6 +6,7 @@ import { GitCompare, Heart, LogOut, Package, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useSaveMyMove } from '@/components/save-my-move/save-my-move-provider';
+import { PARENT_SAVE_ENABLED, useMyTrustHubHref } from '@/components/my-trusthub/my-trusthub-origin';
 import { MoveHqHero } from '@/components/save-my-move/move-hq/move-hq-hero';
 import { MoveHqQuickActions } from '@/components/save-my-move/move-hq/move-hq-quick-actions';
 import { MyMoveReports } from '@/components/my-move-plan/my-move-reports';
@@ -76,6 +77,7 @@ export function MyMoveDashboard({
   passwordEnabled = false,
 }: Props) {
   const { user, loading, openSaveModal } = useSaveMyMove();
+  const myTrustHubHref = useMyTrustHubHref('/my');
   const [data, setData] = useState(initialData);
   const [dataLoading, setDataLoading] = useState(false);
   const [cloudWarning, setCloudWarning] = useState<string | null>(
@@ -249,6 +251,40 @@ export function MyMoveDashboard({
     return (
       <div className="h-48 rounded-2xl border bg-muted/20 animate-pulse" aria-busy="true">
         <span className="sr-only">Checking sign-in…</span>
+      </div>
+    );
+  }
+
+  // --- Signed out, one-account mode: My Move is the Move workspace; the account is My TrustHub ---
+  if (!user && PARENT_SAVE_ENABLED) {
+    return (
+      <div className="space-y-6">
+        <MyMoveReports compact onPlanCount={setPlanCount} />
+        <div
+          className="flex flex-col gap-3 rounded-2xl border border-primary/20 bg-primary/5 px-4 py-4 sm:flex-row sm:items-center sm:justify-between"
+          data-mth-one-account="true"
+        >
+          <div>
+            <p className="text-sm font-medium text-foreground">Your account is My TrustHub</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              My Move keeps your plans, inventories, reports and comparisons on this device. Movers
+              you keep in My TrustHub live in your one TrustHub account, ready on any device.
+            </p>
+          </div>
+          <Button asChild className="gap-2 shrink-0">
+            <a href={myTrustHubHref}>Open My TrustHub</a>
+          </Button>
+        </div>
+        <div className="rounded-2xl border border-dashed bg-muted/20 p-6 text-center sm:p-8">
+          <h2 className="text-lg font-semibold">Keep movers from any profile</h2>
+          <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
+            Save a mover on its profile, then choose “Keep this in My TrustHub”. No separate Move
+            account is needed.
+          </p>
+          <Button asChild className="mt-4" variant="outline">
+            <Link prefetch={false} href="/companies">Find movers</Link>
+          </Button>
+        </div>
       </div>
     );
   }

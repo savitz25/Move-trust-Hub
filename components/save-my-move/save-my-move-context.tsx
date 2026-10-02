@@ -9,6 +9,7 @@ export type SaveMyMoveContextValue = {
   savedMoverSlugs: ReadonlySet<string>;
   isMoverSaved: (companySlug: string) => boolean;
   markMoverSaved: (companySlug: string) => void;
+  markMoverUnsaved: (companySlug: string) => void;
   openSaveModal: (opts?: { redirectPath?: string; context?: SaveMyMoveContext }) => void;
   requireAuth: (opts?: { redirectPath?: string; context?: SaveMyMoveContext }) => boolean;
 };
@@ -25,6 +26,7 @@ export const DEFERRED_FALLBACK: SaveMyMoveContextValue = {
   savedMoverSlugs: new Set(),
   isMoverSaved: () => false,
   markMoverSaved: () => {},
+  markMoverUnsaved: () => {},
   openSaveModal: () => {},
   requireAuth: () => false,
 };

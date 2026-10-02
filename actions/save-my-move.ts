@@ -230,6 +230,35 @@ export async function removeSavedMoverAction(id: string) {
   return { ok: true as const };
 }
 
+/**
+ * Unsave by company slug for the profile Save control. Soft: a missing session
+ * is not an error because the device shortlist is the consumer's source of
+ * truth when they are not signed in to the legacy Move workspace.
+ */
+export async function removeSavedMoverBySlugAction(companySlug: string) {
+  const slug = companySlug?.trim();
+  if (!slug) return { ok: false as const, error: 'BAD_INPUT' };
+  const user = await getAuthenticatedUser();
+  if (!user) return { ok: true as const, cloud: false };
+  try {
+    const supabase = await createClient();
+    const { error } = await supabase
+      .from('saved_movers')
+      .delete()
+      .eq('company_slug', slug)
+      .eq('user_id', user.id);
+    if (error) {
+      console.error('[removeSavedMoverBySlugAction]', { code: error.code, message: error.message, slug });
+      return { ok: false as const, error: error.message };
+    }
+    revalidatePath('/my-move');
+    return { ok: true as const, cloud: true };
+  } catch (e) {
+    console.error('[removeSavedMoverBySlugAction] fatal', e);
+    return { ok: false as const, error: e instanceof Error ? e.message : 'Could not remove mover' };
+  }
+}
+
 export async function updateMoverNotesAction(id: string, notes: string) {
   const user = await requireAuthenticatedUser();
   const supabase = await createClient();

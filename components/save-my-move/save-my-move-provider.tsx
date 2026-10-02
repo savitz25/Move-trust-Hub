@@ -49,6 +49,15 @@ export function SaveMyMoveProvider({ children, onValue }: { children?: React.Rea
     setSavedMoverSlugs((prev) => new Set(prev).add(companySlug));
   }, []);
 
+  const markMoverUnsaved = useCallback((companySlug: string) => {
+    setSavedMoverSlugs((prev) => {
+      if (!prev.has(companySlug)) return prev;
+      const next = new Set(prev);
+      next.delete(companySlug);
+      return next;
+    });
+  }, []);
+
   const isMoverSaved = useCallback(
     (companySlug: string) => savedMoverSlugs.has(companySlug),
     [savedMoverSlugs]
@@ -214,10 +223,11 @@ export function SaveMyMoveProvider({ children, onValue }: { children?: React.Rea
       savedMoverSlugs,
       isMoverSaved,
       markMoverSaved,
+      markMoverUnsaved,
       openSaveModal,
       requireAuth,
     }),
-    [user, loading, savedMoverSlugs, isMoverSaved, markMoverSaved, openSaveModal, requireAuth]
+    [user, loading, savedMoverSlugs, isMoverSaved, markMoverSaved, markMoverUnsaved, openSaveModal, requireAuth]
   );
 
   useEffect(() => { onValue?.(value); }, [onValue, value]);

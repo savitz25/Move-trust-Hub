@@ -3,7 +3,11 @@
 import Link from 'next/link';
 import { Bookmark } from 'lucide-react';
 import { useSaveMyMoveOptional } from '@/components/save-my-move/save-my-move-provider';
+import { PARENT_SAVE_ENABLED } from '@/components/my-trusthub/my-trusthub-origin';
 import { cn } from '@/lib/utils';
+
+/** One account (My TrustHub); My Move is the Move workspace, not a sign-in. */
+const WORKSPACE_TITLE = 'My Move — plans, inventories, reports and comparisons';
 
 type MyMoveNavLinkProps = {
   variant: 'desktop' | 'mobile-header' | 'mobile-menu';
@@ -45,9 +49,11 @@ export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkP
         )}
         aria-label={showBadge ? `My Move, ${savedCount} saved movers` : 'My Move'}
         title={
-          ctx?.user
-            ? 'My Move — research HQ'
-            : 'My Move — research passport (sign in optional on HQ)'
+          PARENT_SAVE_ENABLED
+            ? WORKSPACE_TITLE
+            : ctx?.user
+              ? 'My Move — research HQ'
+              : 'My Move — research passport (sign in optional on HQ)'
         }
       >
         <span className="relative">
@@ -103,9 +109,11 @@ export function MyMoveNavLink({ variant, onNavigate, className }: MyMoveNavLinkP
       )}
       aria-label={showBadge ? `My Move, ${savedCount} saved movers` : 'My Move'}
       title={
-        ctx?.user
-          ? 'My Move — saved plans and shortlists'
-          : 'My Move — research passport (sign in optional on HQ)'
+        PARENT_SAVE_ENABLED
+          ? WORKSPACE_TITLE
+          : ctx?.user
+            ? 'My Move — saved plans and shortlists'
+            : 'My Move — research passport (sign in optional on HQ)'
       }
     >
       <Bookmark className="h-3.5 w-3.5 text-primary" aria-hidden="true" />

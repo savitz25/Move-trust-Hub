@@ -6,6 +6,15 @@ export const CANONICAL_SUPABASE_PROJECT_REF = 'arepfylnilkjmyduhwbz';
 export const CANONICAL_SUPABASE_URL = `https://${CANONICAL_SUPABASE_PROJECT_REF}.supabase.co`;
 export const FORBIDDEN_SUPABASE_PROJECT_REF = 'uvqkyupfnpswdozmuzih';
 
+/** Reviewed V2-3 Move preview branch. Not a general project allowlist. */
+export const ISOLATED_MOVE_BROWSER_PROJECT_REF = 'zvoijbohtyuhqfuvteoy';
+export const ISOLATED_MOVE_BROWSER_SUPABASE_URL =
+  `https://${ISOLATED_MOVE_BROWSER_PROJECT_REF}.supabase.co`;
+export const ISOLATED_MOVE_BROWSER_AUTH_APPROVAL_ENV =
+  'NEXT_PUBLIC_MOVE_ISOLATED_AUTH_APPROVED';
+export const ISOLATED_MOVE_BROWSER_AUTH_ORIGIN_ENV =
+  'NEXT_PUBLIC_MOVE_ISOLATED_AUTH_ORIGIN';
+
 export function extractSupabaseProjectRef(url: string | undefined | null): string | null {
   if (!url?.trim()) return null;
   try {
@@ -27,12 +36,14 @@ export function isForbiddenSupabaseUrl(url: string | undefined | null): boolean 
 
 /**
  * Production / CI: throw if URL points at the legacy free project or is not are.
- * Development may use are only as well (recommended); set ALLOW_NON_CANONICAL_SUPABASE=1
- * only for emergency local debugging against another project.
+ *
+ * ALLOW_NON_CANONICAL_SUPABASE=1 skips the canonical-ref check only for local
+ * and operator runs. It is ignored when VERCEL_ENV=production. The Vercel build
+ * guard also ignores it for preview. It never admits a project on a production build.
  */
 export function assertCanonicalSupabaseUrl(
   url: string | undefined | null,
-  opts: { requireCanonical?: boolean; label?: string } = {}
+  opts: { requireCanonical?: boolean; label?: string; allowNonCanonicalEscape?: boolean } = {}
 ): void {
   const label = opts.label ?? 'NEXT_PUBLIC_SUPABASE_URL';
   const ref = extractSupabaseProjectRef(url);
@@ -42,14 +53,19 @@ export function assertCanonicalSupabaseUrl(
         `Use ${CANONICAL_SUPABASE_URL} only.`
     );
   }
+  const productionBuild = process.env.VERCEL_ENV?.trim() === 'production';
   const requireCanonical =
     opts.requireCanonical ??
     (process.env.NODE_ENV === 'production' ||
-      process.env.VERCEL_ENV === 'production' ||
+      productionBuild ||
       process.env.CI === 'true' ||
       process.env.ENFORCE_CANONICAL_SUPABASE === '1');
+  const allowEscape =
+    !productionBuild &&
+    opts.allowNonCanonicalEscape !== false &&
+    process.env.ALLOW_NON_CANONICAL_SUPABASE === '1';
 
-  if (requireCanonical && process.env.ALLOW_NON_CANONICAL_SUPABASE !== '1') {
+  if (requireCanonical && !allowEscape) {
     if (!ref) {
       throw new Error(`${label} is missing or not a valid Supabase HTTPS URL.`);
     }

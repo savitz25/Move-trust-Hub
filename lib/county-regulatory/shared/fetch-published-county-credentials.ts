@@ -9,20 +9,33 @@ import { createClient } from '@supabase/supabase-js';
 import { isAnonymousPublicProfileAllowed } from '@/lib/provider/publication';
 import type { PublicationState } from '@/lib/provider/types';
 import {
-  getSupabaseServiceRoleKey,
-  getSupabaseUrl,
-  isSupabaseAdminConfigured,
+  getServiceRoleSupabaseTarget,
+  isIsolatedMoveBrowserAuthAdmitted,
 } from '@/lib/supabase/config';
 import type { CountyCredentialRow } from '@/lib/county-regulatory/shared/public-read-gate';
 
 const SELECT_COLS =
   'credential_number, normalized_status, source_status, regulator, source, retrieved_at, fdacs_im, evidence_publication_state, company_id';
 
-function serviceClient() {
-  if (!isSupabaseAdminConfigured()) return null;
-  return createClient(getSupabaseUrl()!, getSupabaseServiceRoleKey()!, {
+/** Null during isolated browser auth: no service-role client and no production fallback. */
+export function countyServiceRoleTarget(): { url: string; key: string } | null {
+  if (isIsolatedMoveBrowserAuthAdmitted()) return null;
+  return getServiceRoleSupabaseTarget();
+}
+
+export const countyServiceClientBuilds = { count: 0 };
+
+export function buildCountyServiceClient() {
+  const target = countyServiceRoleTarget();
+  if (!target) return null;
+  countyServiceClientBuilds.count += 1;
+  return createClient(target.url, target.key, {
     auth: { autoRefreshToken: false, persistSession: false },
   });
+}
+
+function serviceClient() {
+  return buildCountyServiceClient();
 }
 
 /**
