@@ -27,12 +27,19 @@ function MeasureTrace({ measure }: { measure: MoveHomepageMeasure }) {
 export function MoveEvidenceShowcase() {
   const inventory = buildMoveHomepageEvidenceInventory(loadMoveNetworkMetrics());
   const highlights = inventory.filter((m) => ['federal_publishable_directory_profiles', 'federal_directory_authority_active', 'federal_mc_identities_in_directory', 'published_state_intelligence_pages'].includes(m.key));
+  // Cards are listed in publication order, so the newest states are last.
+  const recentStates = [...MOVE_HOMEPAGE_STATE_CARDS].slice(-6).reverse();
   return <>
     <section className="move-section border-b border-border/60 bg-[#0A2540] text-white" aria-labelledby="moat-heading"><div className="move-section-inner">
       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-orange-300">Official evidence · separate grains</p>
       <h2 id="moat-heading" className="mt-2 max-w-4xl text-3xl font-semibold tracking-tight sm:text-4xl">A mover directory is only the first layer.</h2>
       <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-200 sm:text-base">MoveTrustHub connects federal mover identity with authority, operating role, state household-goods systems, regulatory evidence, and consumer rules. Incompatible evidence families are never added together.</p>
       <ul className="mt-7 grid gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/15 sm:grid-cols-2 lg:grid-cols-4">{highlights.map((m) => <li key={m.key} className="bg-[#0A2540] p-5"><p className="break-words text-3xl font-semibold tabular-nums">{m.value === null ? 'Unknown' : number.format(m.value)}</p><p className="mt-1 text-sm font-medium text-slate-100">{m.label}</p><p className="mt-2 text-xs leading-relaxed text-slate-300">{m.description}</p></li>)}</ul>
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+        <p className="text-sm font-semibold text-white">Recently added states:</p>
+        <ul className="flex flex-wrap gap-2">{recentStates.map((card) => <li key={card.href}><Link href={card.href} data-intel-event="move_intel_state_click" className="inline-flex min-h-9 items-center rounded-full border border-white/25 px-3 text-sm font-medium text-white no-underline hover:border-orange-300 hover:text-orange-200">{card.state}</Link></li>)}</ul>
+        <a href="#state-intelligence" className="inline-flex min-h-10 items-center font-semibold text-orange-300 hover:underline">Explore all {MOVE_HOMEPAGE_STATE_CARDS.length} states →</a>
+      </div>
     </div></section>
 
     <section className="move-section" aria-labelledby="inventory-heading"><div className="move-section-inner">
@@ -43,7 +50,7 @@ export function MoveEvidenceShowcase() {
     </div></section>
 
     <section id="state-intelligence" className="move-section border-y border-border/60 bg-muted/20" aria-labelledby="state-intel-heading"><div className="move-section-inner">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">{MOVE_HOMEPAGE_STATE_CARDS.length} specialist state surfaces</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">{MOVE_HOMEPAGE_STATE_CARDS.length} states with published moving intelligence</p>
       <h2 id="state-intel-heading" className="mt-2 text-3xl font-semibold tracking-tight text-[#0A2540] sm:text-4xl">State authority changes the research question.</h2>
       <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">These cards explain research coverage, not mover quality. State permits, registrations, and certificates remain separate from FMCSA interstate operating authority.</p>
       <ul className="mt-7 grid gap-4 lg:grid-cols-2">{MOVE_HOMEPAGE_STATE_CARDS.map((card) => <li key={card.href} className="rounded-2xl border border-border bg-card p-5"><p className="text-xs font-semibold uppercase tracking-wide text-primary">{card.regulator}</p><h3 className="mt-1 text-xl font-semibold text-[#0A2540]">{card.state}</h3><p className="mt-3 text-sm"><strong>State authority:</strong> {card.authority}</p><p className="mt-2 text-sm"><strong>Roster coverage:</strong> {card.roster}</p><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{card.evidence}</p><p className="mt-3 text-xs text-muted-foreground">{card.sourceClock}</p><Link href={card.href} data-intel-event="move_intel_state_click" className="mt-4 inline-flex min-h-10 items-center font-semibold text-primary hover:underline">Explore {card.state} intelligence →</Link></li>)}</ul>

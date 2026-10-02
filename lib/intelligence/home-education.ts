@@ -47,7 +47,7 @@ export const MOVE_HOME_EVIDENCE_DEPTH = [
     id: 'state_registration',
     label: 'State Registration',
     status: 'State-specific' as const,
-    note: 'Florida FDACS registrations are researched on Florida Moving Intelligence. They are not a national count.',
+    note: 'State permits, registrations, and certificates are researched on each state intelligence page. They are not a national count.',
   },
   {
     id: 'geography',
@@ -82,6 +82,16 @@ export const MOVE_HOME_MARKET_ROLES = [
 ] as const;
 
 export const MOVE_HOME_ASK_THE_MARKET = [
+  {
+    q: 'Who regulates movers inside Indiana?',
+    href: '/ask?q=' + encodeURIComponent('movers in Indiana'),
+    hint: 'In-state moves need Indiana DOR authority. See what the public record does and does not show.',
+  },
+  {
+    q: 'How do I verify a mover in Maryland?',
+    href: '/ask?q=' + encodeURIComponent('how do I verify a mover in Maryland'),
+    hint: 'Maryland Labor registers household-goods movers and offers a live public lookup.',
+  },
   {
     q: 'What does a USDOT number tell me?',
     href: '/verify-dot',
