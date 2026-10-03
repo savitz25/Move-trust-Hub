@@ -32,7 +32,7 @@ function world() {
   let n = 0;
   const calls: string[] = [], submitted: Array<{ target: string; fields: Record<string, string> }> = [];
   const tickets = new Map<string, { continuationRef: string; acknowledged: boolean }>();
-  const parent = { account: null as string | null, saved: new Set<string>(), watches: new Set<string>(), bffUp: true, statusUp: true, abandon: false, refuse: false };
+  const parent = { account: null as string | null, saved: new Set<string>(), watches: new Set<string>(), bffUp: true, statusUp: true, abandon: false, refuse: false, eligible: true };
   const ports: DirectPorts = {
     async post(body, csrf) {
       const b = body as { action: string; selected?: unknown; ticket?: string };
@@ -42,6 +42,8 @@ function world() {
       assert.equal(csrf, 'c'.repeat(43));
       if (b.action === 'prepare') {
         assert.equal(isSelection(b.selected), true);
+        // Not publicly publishable, unsupported class, or no exact accepted identity.
+        if (!parent.eligible) return { state: 'local_only', capability: 'IDENTITY_REVIEW_REQUIRED', localCopy: 'keep' };
         const ticket = ref(++n), continuationRef = ref(++n);
         tickets.set(ticket, { continuationRef, acknowledged: false });
         return { state: 'continue', ticket, target: TARGET, fields: { continuationRef }, localCopy: 'keep' };
@@ -174,6 +176,16 @@ test('D. Save with the parent unavailable: device Save succeeds, nothing navigat
   w.parent.bffUp = false; removeLocalSavedMover(SLUG);
   assert.equal(await startDirect(w.ports, SLUG, 'unsave', new Date().toISOString()), 'unavailable');
   assert.equal(isLocalMoverSaved(SLUG), false);
+});
+
+test('B/C/D/E/F. a profile that is not eligible stays a device Save: nothing navigates, nothing is pending, no account claim', async () => {
+  device.clear(); const w = world(); w.parent.account = 'owner-a'; w.parent.eligible = false;
+  const row = addLocalSavedMover({ companySlug: SLUG, companyName: NAME });
+  assert.equal(await startDirect(w.ports, SLUG, 'save', row.savedAt), 'not_eligible');
+  assert.equal(isLocalMoverSaved(SLUG), true); assert.equal(w.submitted.length, 0); assert.equal(w.pending(), false);
+  assert.equal(w.parent.saved.size, 0); assert.equal(parentSync(w.ports.local, SLUG), null); assert.equal(await resumeDirect(w.ports, SLUG), null);
+  // Its Unsave is device-only: there is nothing in the account to remove.
+  assert.equal(unsaveReachesParent({ direct: true, parentSync: parentSync(w.ports.local, SLUG) }), false);
 });
 
 test('E. signed-out Save: device Save succeeds; the optional sign-in continuation finishes the parent Save', async () => {

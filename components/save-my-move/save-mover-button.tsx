@@ -95,13 +95,13 @@ export function SaveMoverButton({
   const signInToSync = () => {
     const savedAt = listLocalSavedMovers().find((row) => row.companySlug === companySlug)?.savedAt ?? new Date().toISOString();
     void handOff('save_signin', savedAt).then((result) => {
-      if (result === 'unavailable') toast.message('My TrustHub is unavailable right now', { description: 'Your Save stays on this device.' });
+      if (result !== 'navigating') toast.message('My TrustHub is unavailable right now', { description: 'Your Save stays on this device.' });
     });
   };
 
   const retryParentUnsave = () => {
     void handOff('unsave', new Date().toISOString()).then((result) => {
-      if (result === 'unavailable') toast.error('My TrustHub could not be reached', { description: 'It may still be saved there. Try again in a moment.' });
+      if (result !== 'navigating') toast.error('My TrustHub could not be reached', { description: 'It may still be saved there. Try again in a moment.' });
     });
   };
   const notConfirmedUnsave = (description: string) => {
@@ -160,9 +160,12 @@ export function SaveMoverButton({
           const res = await saveMoverAction({ companySlug }).catch(() => null);
           if (!res?.ok) console.warn('[SaveMoverButton] cloud soft-fail', res);
         }
-        if ((await handOff('save', row.savedAt)) === 'navigating') return;
+        const sync = await handOff('save', row.savedAt);
+        if (sync === 'navigating') return;
         toast.success(`${companyName} saved on this device`, {
-          description: 'My TrustHub sync is unavailable right now.',
+          description: sync === 'not_eligible'
+            ? 'This profile can’t be added to My TrustHub yet.'
+            : 'My TrustHub sync is unavailable right now.',
         });
         return;
       }

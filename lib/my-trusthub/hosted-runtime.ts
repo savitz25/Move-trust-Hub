@@ -4,7 +4,8 @@ import { PostgresAssertionNonceStore } from './assertion-nonce-store';
 import { createIsolatedMoveRuntime, type IsolatedMovePorts } from './isolated-runtime';
 import { readBoundedJson, requestCurrentGrantChallenge, resolveCurrentGrantProof } from './parent-grant';
 import { signedParentChannel, type AssertionContext } from './parent-facade';
-import { publicationSourceApproved, resolveExactMovePublication, CERTIFIED_NATIVE_ID, CERTIFIED_SLUG, CERTIFIED_CLASS, type PublicationRow } from './publication-resolver';
+import { publicationSourceApproved, resolveExactMovePublication, SUPPORTED_CLASS, type CertifiedProfile, type PublicationRow } from './publication-resolver';
+import { publishedMoverSource, MOVE_NATIVE_ID, MOVE_SLUG, type CompaniesPort, type PublicationSource } from './publication-source';
 import { PostgresTransferStore, type SourcePool } from './postgres-transfer-store';
 import { previewTrace, type BrowserBinding, type CurrentGrant, type TrustedMoveRecord } from './profile-save-adapter';
 import { deploymentPair, GRANT_API_PATH, ISOLATED_PAIR, PRODUCTION_PAIR, type MovePair } from './reviewed-origins';
@@ -34,8 +35,10 @@ export function productionSourceMetadata(env: Record<string, string | undefined>
   return { sourceBackend: PRODUCTION_PAIR.sourceBackend, databaseHost: host, databaseName: 'postgres', databaseUser: PRODUCTION_PAIR.login, sessionAffinity: 'dedicated' as const };
 }
 
-/** Design only. This module does not create the object. In production the
- * same shape is the Hindman canary attestation table, not a mover registry. */
+/** ISOLATED PREVIEW PAIR ONLY. Design of the reviewed one-row attestation the
+ * isolated pair reads; this module does not create the object. Production does
+ * not read it: production resolves publication from the real published-mover
+ * source (publication-source.ts). The isolated pair never reads production. */
 export const CERTIFIED_PUBLICATION_CONTRACT = {
   schema: 'mth_profile_transfer',
   table: 'certified_publication',
@@ -55,12 +58,18 @@ export const CERTIFIED_PUBLICATION_CONTRACT = {
   rls: 'ENABLE and FORCE ROW LEVEL SECURITY. SELECT policy admits only the certified native id for the capability role.',
 } as const;
 
-const PUBLICATION_SQL = `select native_id, canonical_slug, publication_state, reviewed_class
-  from mth_profile_transfer.certified_publication
+const PUBLICATION_COLUMNS = `select native_id, canonical_slug, publication_state, reviewed_class
+  from mth_profile_transfer.certified_publication`;
+const PUBLICATION_SQL = `${PUBLICATION_COLUMNS}
   where hub = 'move' and native_id = $1 and reviewed_class = $2`;
+const PUBLICATION_BY_SLUG_SQL = `${PUBLICATION_COLUMNS}
+  where hub = 'move' and canonical_slug = $1`;
 
 export type PreviewDeps = {
   send?: typeof fetch;
+  /** Production publication source port. Default: the anonymous public
+   * `companies` read the profile page uses, pinned to the production project. */
+  companies?: (project: string) => CompaniesPort | null;
   createPool?: (config: IsolatedPoolConfig) => { connect(): Promise<{ query(sql: string, values?: unknown[]): Promise<{ rows: Record<string, unknown>[] }>; release(destroy?: boolean): void }>; end(): Promise<void> };
 };
 
@@ -80,13 +89,18 @@ function object(value: unknown): value is Record<string, unknown> {
   return !!value && typeof value === 'object' && !Array.isArray(value);
 }
 
-/** Parent binding lookup. Not one of the six profile-save operations. */
+/** Parent binding lookup for one exact identity Move has just proved published.
+ * The parent re-proves publication with Move and returns a binding only when
+ * exactly one accepted binding matches that identity. Not one of the six
+ * profile-save operations. */
 export async function fetchAcceptedBinding(input: {
-  browser: BrowserBinding; key: AssertionKey; send: typeof fetch; now?: number; pair?: MovePair;
+  browser: BrowserBinding; key: AssertionKey; send: typeof fetch; now?: number; pair?: MovePair; profile: CertifiedProfile;
 }): Promise<TrustedMoveRecord['binding'] | null> {
   const pair = input.pair ?? ISOLATED_PAIR;
   if (input.browser.csrfVerified !== true || input.browser.environment !== pair.kind || input.browser.origin !== pair.moveOrigin || !opaque(input.browser.binding)) return null;
-  const body = { action: 'binding' };
+  const asked = input.profile;
+  if (!asked || asked.hub !== 'move' || asked.profileClass !== SUPPORTED_CLASS || typeof asked.nativeId !== 'string' || !MOVE_NATIVE_ID.test(asked.nativeId)) return null;
+  const body = { action: 'binding', profile: { hub: 'move', nativeId: asked.nativeId, profileClass: SUPPORTED_CLASS } };
   const bytes = Buffer.from(JSON.stringify(body));
   const target = pair.parentOrigin + GRANT_API_PATH;
   const response = await input.send(target, {
@@ -101,18 +115,19 @@ export async function fetchAcceptedBinding(input: {
   const profile = result.profile;
   const binding = result.binding;
   if (Object.keys(profile).sort().join() !== 'hub,nativeId,profileClass') return null;
-  if (profile.hub !== 'move' || profile.nativeId !== CERTIFIED_NATIVE_ID || profile.profileClass !== CERTIFIED_CLASS) return null;
+  // The answer must be about exactly the identity that was asked for.
+  if (profile.hub !== 'move' || profile.nativeId !== asked.nativeId || profile.profileClass !== SUPPORTED_CLASS) return null;
   if (Object.keys(binding).sort().join() !== 'id,networkEntityId,status' || binding.status !== 'accepted') return null;
   if (!boundedId(binding.id) || !boundedId(binding.networkEntityId)) return null;
   return { id: binding.id, networkEntityId: binding.networkEntityId, status: 'accepted' };
 }
 
-async function readCertified(pool: SourcePool, profile: { hub: 'move'; nativeId: string; profileClass: string }): Promise<PublicationRow | null> {
-  if (profile.nativeId !== CERTIFIED_NATIVE_ID || profile.profileClass !== CERTIFIED_CLASS) return null;
+/** Isolated pair: the reviewed attestation table in the isolated database. */
+async function readCertified(pool: SourcePool, sql: string, values: unknown[]): Promise<PublicationRow | null> {
   let db: Awaited<ReturnType<SourcePool['connect']>> | null = null;
   try {
     db = await pool.connect();
-    const result = await db.query<Record<string, unknown>>(PUBLICATION_SQL, [CERTIFIED_NATIVE_ID, CERTIFIED_CLASS]);
+    const result = await db.query<Record<string, unknown>>(sql, values);
     if (result.rows.length !== 1) return null;
     const row = result.rows[0];
     if (!row) return null;
@@ -122,6 +137,23 @@ async function readCertified(pool: SourcePool, profile: { hub: 'move'; nativeId:
       reviewedClass: row.reviewed_class == null ? null : String(row.reviewed_class),
     };
   } catch { return null; } finally { db?.release(); }
+}
+function isolatedPublicationSource(pool: SourcePool): PublicationSource {
+  return {
+    byIdentity: profile => MOVE_NATIVE_ID.test(profile.nativeId) && profile.profileClass === SUPPORTED_CLASS
+      ? readCertified(pool, PUBLICATION_SQL, [profile.nativeId, SUPPORTED_CLASS]) : Promise.resolve(null),
+    bySlug: slug => MOVE_SLUG.test(slug) ? readCertified(pool, PUBLICATION_BY_SLUG_SQL, [slug]) : Promise.resolve(null),
+  };
+}
+
+/** The publication source for the admitted pair. Production: the real
+ * published-mover source (public.companies through the profile page's own read
+ * path and rules), any eligible mover. Isolated: the isolated database's
+ * reviewed attestation, unchanged. Neither ever reads the other's data. */
+async function publicationSourceFor(pair: MovePair, pool: SourcePool, deps: PreviewDeps): Promise<PublicationSource | null> {
+  if (pair.kind === 'isolated') return isolatedPublicationSource(pool);
+  const port = deps.companies ? deps.companies(pair.project) : (await import('./companies-publication-port')).companiesPublicationPort(pair.project);
+  return port ? publishedMoverSource(port) : null;
 }
 
 async function storedGrant(store: PostgresTransferStore, browser: BrowserBinding, ticket: string) {
@@ -164,18 +196,27 @@ export function createHostedMoveRuntime(env: Record<string, string | undefined>,
     if (!stage && (typeof context.session !== 'string' || context.grant === null)) { previewTrace('parent_dispatch', 'receipt_context'); throw Error('unauthorized'); }
     return channel.post(url, envelope, browser, signal, context);
   } };
+  // Resolved lazily and once: the production port loads the profile's own read path.
+  let sourcePromise: Promise<PublicationSource | null> | null = null;
+  const publicationSource = () => (sourcePromise ??= publicationSourceFor(pair, pool, deps).catch(() => null));
+  const readPublication = async (identity: CertifiedProfile) => (await publicationSource())?.byIdentity(identity) ?? null;
   const ports: IsolatedMovePorts = {
     verifiedPair: { moveOrigin: pair.moveOrigin, parentOrigin: pair.parentOrigin, sourceBackend: metadata.sourceBackend, isolated: pair.kind === 'isolated' },
     sessionAffinity: 'dedicated',
     pool,
     channel: guarded,
+    // Exact slug -> the mover's own publication row -> its USDOT identity ->
+    // re-proved by identity -> exactly one accepted parent binding for that
+    // identity. Any miss is "not eligible": the device Save stands.
     async resolveExactPublished(slug, browser) {
-      if (slug !== CERTIFIED_SLUG) return null;
-      const binding = await fetchAcceptedBinding({ browser, key: signing, send, pair });
+      const source = await publicationSource();
+      const found = source ? await source.bySlug(slug) : null;
+      if (!found) return null;
+      const profile: CertifiedProfile = { hub: 'move', nativeId: found.nativeId, profileClass: SUPPORTED_CLASS };
+      const publication = await resolveExactMovePublication(env, readPublication, profile);
+      if (!publication || publication.canonicalSlug !== slug) return null;
+      const binding = await fetchAcceptedBinding({ browser, key: signing, send, pair, profile });
       if (!binding) return null;
-      const publication = await resolveExactMovePublication(env, identity => readCertified(pool, identity),
-        { hub: 'move', nativeId: CERTIFIED_NATIVE_ID, profileClass: CERTIFIED_CLASS });
-      if (!publication) return null;
       return { id: publication.identity.nativeId, slug: publication.canonicalSlug, publicationState: publication.publicationState, reviewedClass: publication.reviewedClass, binding };
     },
     async currentGrant(browser, ticketHash) {
@@ -187,7 +228,7 @@ export function createHostedMoveRuntime(env: Record<string, string | undefined>,
       return grant;
     },
     verifySourceCaller: (proof, scope) => verifyAskSourceCaller(proof, scope, askKey, nonces, Date.now(), pair),
-    readCertifiedPublication: identity => readCertified(pool, identity),
+    readCertifiedPublication: readPublication,
   };
   const runtime = createIsolatedMoveRuntime(env, ports);
   if (!runtime) { void pool.end(); return null; }

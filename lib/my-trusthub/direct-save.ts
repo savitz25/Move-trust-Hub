@@ -71,15 +71,18 @@ export function parentSync(local: KeyValue, slug: string): ParentSync | null {
 }
 
 /** Stage and hand off. `navigating` means the browser is leaving for the parent
- * form; `unavailable` means nothing left this page and the device state stands.
+ * form; `unavailable` means nothing left this page and the device state stands;
+ * `not_eligible` is the same, because this profile cannot be saved to the
+ * account (not publicly publishable, unsupported class, or no exact identity).
  * `proceed` is asked right before the hand-off: when the user has already left
  * the profile, nothing navigates. */
-export async function startDirect(ports: DirectPorts, slug: string, intent: DirectIntent, savedAt: string, proceed: () => boolean = () => true): Promise<'navigating' | 'unavailable'> {
+export async function startDirect(ports: DirectPorts, slug: string, intent: DirectIntent, savedAt: string, proceed: () => boolean = () => true): Promise<'navigating' | 'unavailable' | 'not_eligible'> {
   try {
     const selected = await directSelection(slug, savedAt, ports.digest);
     const csrf = record(await ports.post({ action: 'bootstrap' })).csrf;
     if (typeof csrf !== 'string') return 'unavailable';
     const result = record(await ports.post({ action: 'prepare', selected }, csrf));
+    if (result.state === 'local_only') return 'not_eligible';
     const continuationRef = record(result.fields).continuationRef;
     if (result.state !== 'continue' || !opaque(result.ticket) || !opaque(continuationRef) || !handoffTargetAllowed(result.target)) return 'unavailable';
     if (!proceed()) return 'unavailable';

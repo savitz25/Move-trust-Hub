@@ -5,7 +5,8 @@ import { ASK_PREVIEW, GRANT_BROWSER_PATH, MOVE_PREVIEW, SOURCE_PATH } from './re
 import { ASSERTION_HEADER, issuer, signAssertion, verifyAskSourceCaller, verifyAssertion, type AssertionClaims, type AssertionKey } from './service-assertion';
 import { askVerifyKey, moveSigningKey } from './service-keys';
 import { PostgresAssertionNonceStore } from './assertion-nonce-store';
-import { CERTIFIED_SLUG, publicationSourceApproved, resolveExactMovePublication } from './publication-resolver';
+import { publicationSourceApproved, resolveExactMovePublication } from './publication-resolver';
+const CERTIFIED_SLUG = 'hindman-isaacs-moving-storage-inc'; // the Hindman reference profile
 import { acceptCurrentGrantMessage, exactGrantTarget, parentSavedAllowed } from './current-grant-browser';
 import { requestCurrentGrantChallenge, resolveCurrentGrantProof } from './parent-grant';
 import { MOVE_SERVICE_OPERATIONS, signedParentChannel } from './parent-facade';
@@ -59,11 +60,20 @@ test('publication resolver requires the approved isolated source and the exact c
   assert.deepEqual(found, { identity: profile, canonicalSlug: CERTIFIED_SLUG, publicationState: 'PUBLISHABLE', reviewedClass: 'mover', checkedAt: now });
   assert.equal(Object.hasOwn(found!, 'binding'), false);
   assert.equal(reads, 1);
-  for (const bad of [{ nativeId: 'usdot-1' }, { profileClass: 'auto_carrier' }, { hub: 'insurance' }, { name: 'Hindman' }]) {
+  for (const bad of [{ nativeId: 'usdot-0' }, { nativeId: 'hindman-isaacs-moving-storage-inc' }, { nativeId: '1002530' }, { profileClass: 'auto_carrier' }, { hub: 'insurance' }, { name: 'Hindman' }]) {
     assert.equal(await resolveExactMovePublication(approved, read, { ...profile, ...bad }, now), null);
   }
-  assert.equal(reads, 1, 'fuzzy or non-certified identities never reach the reader');
-  assert.equal(await resolveExactMovePublication(approved, async () => ({ ...row, canonicalSlug: 'other-slug' }), profile, now), null);
+  assert.equal(reads, 1, 'fuzzy or malformed identities never reach the reader');
+  // The reader must answer for exactly the identity asked, with a well-formed slug.
+  assert.equal(await resolveExactMovePublication(approved, async () => ({ ...row, nativeId: 'usdot-373544' }), profile, now), null);
+  assert.equal(await resolveExactMovePublication(approved, async () => ({ ...row, canonicalSlug: 'Other Slug' }), profile, now), null);
+  assert.equal(await resolveExactMovePublication(approved, async () => ({ ...row, canonicalSlug: '' }), profile, now), null);
+  // Any supported identity resolves through the same path, with its own canonical slug.
+  const other = { hub: 'move', nativeId: 'usdot-373544', profileClass: 'mover' };
+  assert.deepEqual(await resolveExactMovePublication(approved, async asked => ({ ...row, nativeId: asked.nativeId, canonicalSlug: 'gentle-giant-moving' }), other, now),
+    { identity: other, canonicalSlug: 'gentle-giant-moving', publicationState: 'PUBLISHABLE', reviewedClass: 'mover', checkedAt: now });
+  assert.equal(await resolveExactMovePublication(approved, async () => ({ ...row, publicationState: 'INGESTED' }), profile, now), null);
+  assert.equal(await resolveExactMovePublication(approved, async () => ({ ...row, reviewedClass: 'unsupported' }), profile, now), null);
   assert.equal(await resolveExactMovePublication(approved, async () => ({ ...row, publicationState: 'INDEXABLE' }), profile, now), null);
   assert.equal(await resolveExactMovePublication(approved, async () => ({ ...row, reviewedClass: 'carrier' }), profile, now), null);
   assert.equal(await resolveExactMovePublication(approved, async () => null, profile, now), null);

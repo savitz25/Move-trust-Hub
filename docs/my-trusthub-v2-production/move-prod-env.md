@@ -7,7 +7,7 @@ the operator. Nothing from the preview branch is reused.
 | Name | Value | Notes |
 | --- | --- | --- |
 | `NEXT_PUBLIC_MOVE_PARENT_SAVE_ENABLED` | `1` | bundled at build; rebuild after changing |
-| `NEXT_PUBLIC_MOVE_PARENT_SAVE_CANARY_SLUGS` | `hindman-isaacs-moving-storage-inc` | canary: Keep is offered ONLY on this profile; every other surface keeps current production behaviour. Remove when widening. |
+| `NEXT_PUBLIC_MOVE_PARENT_SAVE_CANARY_SLUGS` | `hindman-isaacs-moving-storage-inc,gentle-giant-moving,caraway-moving-inc` | widening canary: one-click My TrustHub sync runs ONLY on these three profile pages; every other surface keeps current production behaviour. Bundled at build; rebuild after changing. Remove only after the live three-mover proof passes. See `widening.md`. |
 | `MTH_MOVE_PARENT_SAVE_MODE` | `production` | set to anything else to roll the runtime back without a rebuild |
 | `MTH_MOVE_PARENT_SAVE_PRODUCTION_APPROVED` | `true` | operator attestation |
 | `MTH_MOVE_PARENT_SAVE_PRODUCTION_PROJECT` | `arepfylnilkjmyduhwbz` | exact pin |

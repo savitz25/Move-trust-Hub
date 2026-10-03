@@ -18,6 +18,7 @@ import type { TransferRecord } from './profile-save-adapter';
 const hash = (value: string) => createHash('sha256').update(value).digest('hex');
 const browser: BrowserBinding = { binding: 'b'.repeat(43), csrfVerified: true, origin: MOVE_PREVIEW, environment: 'isolated' };
 const slug = 'hindman-isaacs-moving-storage-inc';
+const HINDMAN_PROFILE = { hub: 'move' as const, nativeId: 'usdot-1002530', profileClass: 'mover' };
 
 function keys() {
   const generated = generateKeyPairSync('ed25519');
@@ -112,19 +113,19 @@ test('accepted binding uses transfer:stage with a null session and the verified 
     const status = url.endsWith('rejected') ? 'review_required' : 'accepted';
     return Response.json({ ok: true, result: { profile, binding: { id: 'binding-1', networkEntityId: 'network-1', status } } });
   }) as typeof fetch;
-  const accepted = await fetchAcceptedBinding({ browser, key: { kid: 'move-test', pem: material.privatePem }, send });
+  const accepted = await fetchAcceptedBinding({ profile: HINDMAN_PROFILE, browser, key: { kid: 'move-test', pem: material.privatePem }, send });
   assert.deepEqual(accepted, { id: 'binding-1', networkEntityId: 'network-1', status: 'accepted' });
   assert.equal(captured.body?.action, 'binding');
   assert.equal(captured.claims?.scope, 'transfer:stage');
   assert.equal(captured.claims?.session, null);
   assert.equal(captured.claims?.grant, null);
   assert.equal(captured.claims?.browser, browser.binding);
-  const wrong = await fetchAcceptedBinding({ browser, key: { kid: 'move-test', pem: material.privatePem }, send: (async (_url, init) => {
+  const wrong = await fetchAcceptedBinding({ profile: HINDMAN_PROFILE, browser, key: { kid: 'move-test', pem: material.privatePem }, send: (async (_url, init) => {
     const parsed = JSON.parse(String(init?.body)) as { action?: string };
     return Response.json({ ok: true, result: { profile: { hub: 'move', nativeId: 'usdot-9', profileClass: 'mover' }, binding: { id: 'binding-1', networkEntityId: 'network-1', status: 'accepted' }, extra: parsed.action } });
   }) as typeof fetch });
   assert.equal(wrong, null);
-  const unaccepted = await fetchAcceptedBinding({ browser, key: { kid: 'move-test', pem: material.privatePem }, send: (async () => Response.json({ ok: true, result: { profile: { hub: 'move', nativeId: 'usdot-1002530', profileClass: 'mover' }, binding: { id: 'binding-1', networkEntityId: 'network-1', status: 'review_required' } } })) as typeof fetch });
+  const unaccepted = await fetchAcceptedBinding({ profile: HINDMAN_PROFILE, browser, key: { kid: 'move-test', pem: material.privatePem }, send: (async () => Response.json({ ok: true, result: { profile: { hub: 'move', nativeId: 'usdot-1002530', profileClass: 'mover' }, binding: { id: 'binding-1', networkEntityId: 'network-1', status: 'review_required' } } })) as typeof fetch });
   assert.equal(unaccepted, null);
   void env;
 });
@@ -264,11 +265,11 @@ test('Ask current-grant responses are capped at 65536 bytes before JSON parsing'
   const grant = { record, browser, key: signing, parentOrigin: ASK_PREVIEW, moveOrigin: MOVE_PREVIEW, now };
   assert.equal((await requestCurrentGrantChallenge({ ...grant, send: (async () => oversizedResponse()) as typeof fetch })), null);
   assert.equal((await resolveCurrentGrantProof({ ...grant, proofRef: 'e'.repeat(43), send: (async () => oversizedResponse()) as typeof fetch })), null);
-  assert.equal(await fetchAcceptedBinding({ browser, key: signing, send: (async () => oversizedResponse()) as typeof fetch, now }), null);
+  assert.equal(await fetchAcceptedBinding({ profile: HINDMAN_PROFILE, browser, key: signing, send: (async () => oversizedResponse()) as typeof fetch, now }), null);
   assert.deepEqual(await requestCurrentGrantChallenge({ ...grant, send: (async () => padded(challenge)) as typeof fetch }), { target: ASK_PREVIEW + '/my/profile-save/current-grant', challengeRef: 'd'.repeat(43) });
   assert.equal((await resolveCurrentGrantProof({ ...grant, proofRef: 'e'.repeat(43), send: (async () => padded(resolved)) as typeof fetch })) !== null, true);
-  assert.deepEqual(await fetchAcceptedBinding({ browser, key: signing, send: (async () => padded(binding)) as typeof fetch, now }), { id: 'binding-1', networkEntityId: 'network-1', status: 'accepted' });
-  assert.equal(await fetchAcceptedBinding({ browser, key: signing, send: (async () => new Response('{', { status: 200 })) as typeof fetch, now }), null);
+  assert.deepEqual(await fetchAcceptedBinding({ profile: HINDMAN_PROFILE, browser, key: signing, send: (async () => padded(binding)) as typeof fetch, now }), { id: 'binding-1', networkEntityId: 'network-1', status: 'accepted' });
+  assert.equal(await fetchAcceptedBinding({ profile: HINDMAN_PROFILE, browser, key: signing, send: (async () => new Response('{', { status: 200 })) as typeof fetch, now }), null);
   assert.equal(await requestCurrentGrantChallenge({ ...grant, send: (async () => new Response('{', { status: 200 })) as typeof fetch }), null);
   const grantSource = readFileSync('lib/my-trusthub/parent-grant.ts', 'utf8');
   const hostedSource = readFileSync('lib/my-trusthub/hosted-runtime.ts', 'utf8');

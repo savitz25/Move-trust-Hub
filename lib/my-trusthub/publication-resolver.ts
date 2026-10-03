@@ -1,8 +1,10 @@
 import { containsForbiddenMoveTarget } from './reviewed-origins';
 
-export const CERTIFIED_NATIVE_ID = 'usdot-1002530';
-export const CERTIFIED_SLUG = 'hindman-isaacs-moving-storage-inc';
-export const CERTIFIED_CLASS = 'mover' as const;
+/** The supported Save class and the exact identity grain. A Move mover is
+ * identified by its USDOT number only: `usdot-<number>`. */
+export const SUPPORTED_CLASS = 'mover' as const;
+const NATIVE_ID = /^usdot-[1-9][0-9]{0,8}$/;
+const SLUG = /^[a-z0-9][a-z0-9-]{0,159}$/;
 
 export type CertifiedProfile = { hub: 'move'; nativeId: string; profileClass: string };
 export type PublicationRow = {
@@ -12,10 +14,10 @@ export type PublicationRow = {
   reviewedClass: string | null;
 };
 export type Publication = {
-  identity: { hub: 'move'; nativeId: typeof CERTIFIED_NATIVE_ID; profileClass: typeof CERTIFIED_CLASS };
-  canonicalSlug: typeof CERTIFIED_SLUG;
+  identity: { hub: 'move'; nativeId: string; profileClass: typeof SUPPORTED_CLASS };
+  canonicalSlug: string;
   publicationState: 'PUBLISHABLE';
-  reviewedClass: typeof CERTIFIED_CLASS;
+  reviewedClass: typeof SUPPORTED_CLASS;
   checkedAt: number;
 };
 export type ExactPublicationReader = (profile: CertifiedProfile) => Promise<PublicationRow | null>;
@@ -31,9 +33,12 @@ export function publicationSourceApproved(env: Record<string, string | undefined
   return true;
 }
 
-/** Exact native ID, slug, PUBLISHABLE state, and reviewed mover class.
- * No name lookup, no production fallback, and no network binding in the result.
- * A missing reader or unapproved source is unavailable.
+/** Exact identity in, exact publication out. The profile must be the supported
+ * grain (hub move, class mover, native id usdot-<number>); the publication
+ * source must return the same native id, a well-formed canonical slug, the
+ * PUBLISHABLE state and the mover class. No name lookup, no cross-environment
+ * fallback, and no network binding in the result. A missing reader or an
+ * unapproved source is unavailable.
  */
 export async function resolveExactMovePublication(
   env: Record<string, string | undefined>,
@@ -44,16 +49,17 @@ export async function resolveExactMovePublication(
   if (!publicationSourceApproved(env) || !read || !profile || typeof profile !== 'object' || Array.isArray(profile)) return null;
   const body = profile as Record<string, unknown>;
   if (Object.keys(body).sort().join() !== 'hub,nativeId,profileClass') return null;
-  if (body.hub !== 'move' || body.nativeId !== CERTIFIED_NATIVE_ID || body.profileClass !== CERTIFIED_CLASS) return null;
-  const row = await read({ hub: 'move', nativeId: CERTIFIED_NATIVE_ID, profileClass: CERTIFIED_CLASS });
-  if (!row || row.nativeId !== CERTIFIED_NATIVE_ID || row.canonicalSlug !== CERTIFIED_SLUG) return null;
-  if (row.publicationState !== 'PUBLISHABLE' || row.reviewedClass !== CERTIFIED_CLASS) return null;
+  if (body.hub !== 'move' || typeof body.nativeId !== 'string' || !NATIVE_ID.test(body.nativeId) || body.profileClass !== SUPPORTED_CLASS) return null;
+  const nativeId = body.nativeId;
+  const row = await read({ hub: 'move', nativeId, profileClass: SUPPORTED_CLASS });
+  if (!row || row.nativeId !== nativeId || typeof row.canonicalSlug !== 'string' || !SLUG.test(row.canonicalSlug)) return null;
+  if (row.publicationState !== 'PUBLISHABLE' || row.reviewedClass !== SUPPORTED_CLASS) return null;
   if (!Number.isFinite(now)) return null;
   return {
-    identity: { hub: 'move', nativeId: CERTIFIED_NATIVE_ID, profileClass: CERTIFIED_CLASS },
-    canonicalSlug: CERTIFIED_SLUG,
+    identity: { hub: 'move', nativeId, profileClass: SUPPORTED_CLASS },
+    canonicalSlug: row.canonicalSlug,
     publicationState: 'PUBLISHABLE',
-    reviewedClass: CERTIFIED_CLASS,
+    reviewedClass: SUPPORTED_CLASS,
     checkedAt: now,
   };
 }
