@@ -28,7 +28,8 @@ type SaveMoverButtonProps = {
 };
 
 /**
- * Save → Saved → Unsave. Device-first: the local shortlist is written or
+ * One toggle: Save → Saved → Save. Selecting the control while it reads Saved
+ * unsaves; there is no separate Unsave control. Device-first: the local shortlist is written or
  * cleared immediately and never waits for the auth provider. The legacy cloud
  * shortlist is an optional soft sync attempted only when auth has resolved to a
  * signed-in user. The control is disabled only while its own operation runs.
@@ -264,7 +265,7 @@ export function SaveMoverButton({
     }
   };
 
-  const label = saved ? 'Saved' : busy === 'save' ? 'Saving…' : 'Save mover';
+  const label = saved ? 'Saved' : busy === 'save' ? 'Saving…' : 'Save';
   const progress = syncing && typeof document !== 'undefined'
     ? createPortal(
         <div role="status" aria-live="assertive" data-mth-sync={syncing} className="fixed inset-0 z-[200] flex items-center justify-center bg-background/70 p-4">
@@ -289,32 +290,23 @@ export function SaveMoverButton({
   if (variant === 'button') {
     return (
       <span className="inline-flex min-w-0 flex-col items-start gap-1.5" data-save-state={saved ? 'saved' : 'unsaved'} data-save-auth={loading ? 'pending' : 'resolved'}>
-        <span className="inline-flex min-w-0 flex-wrap items-center gap-1.5">
-          <Button
-            variant={saved ? 'secondary' : 'outline'}
-            size="sm"
-            onClick={() => void (saved ? handleUnsave() : handleSave())}
-            disabled={disabled}
-            className={className}
-            aria-pressed={saved}
-            aria-label={saved ? `${companyName} saved — select to unsave` : `Save ${companyName}`}
-            title={saved ? 'Saved on this device — select to unsave' : 'Save to your shortlist'}
-          >
-            <Heart className={cn('mr-1 h-3.5 w-3.5', saved && 'fill-current text-primary')} aria-hidden="true" />
-            {busy === 'unsave' ? 'Removing…' : label}
-          </Button>
-          {saved ? (
-            <button
-              type="button"
-              onClick={() => void handleUnsave()}
-              disabled={disabled}
-              className="min-h-11 rounded-md px-2 text-sm font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 disabled:opacity-60"
-              aria-label={`Unsave ${companyName}`}
-            >
-              Unsave
-            </button>
-          ) : null}
-        </span>
+        {/* One toggle. The visible word (Save / Saved) and aria-pressed carry
+            the state; the filled heart only reinforces it. */}
+        <Button
+          variant={saved ? 'secondary' : 'outline'}
+          size="sm"
+          onClick={() => void (saved ? handleUnsave() : handleSave())}
+          disabled={disabled || syncing !== null}
+          className={className}
+          aria-pressed={saved}
+          aria-busy={busy !== null || syncing !== null}
+          aria-label={saved ? `Saved: ${companyName}. Select to remove from your saved movers.` : `Save ${companyName}`}
+          title={saved ? 'Saved — select to unsave' : 'Save to your shortlist'}
+          data-save-toggle="true"
+        >
+          <Heart className={cn('mr-1 h-3.5 w-3.5', saved && 'fill-current text-primary')} aria-hidden="true" />
+          {busy === 'unsave' ? 'Removing…' : label}
+        </Button>
         {parentNotice}
         {progress}
       </span>

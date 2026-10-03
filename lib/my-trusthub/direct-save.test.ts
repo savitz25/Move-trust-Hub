@@ -241,6 +241,21 @@ test('the Keep step is gone from the profile Save control', () => {
   assert.doesNotMatch(button, /KeepInMyTrustHub|Keep this in My TrustHub|Confirm Save/);
 });
 
+test('the profile Save control is one toggle: no separate Unsave control beside Saved', () => {
+  const button = readFileSync('components/save-my-move/save-mover-button.tsx', 'utf8');
+  // No element whose visible text or label is a standalone Unsave action.
+  assert.doesNotMatch(button, />\s*Unsave\s*</); assert.doesNotMatch(button, /aria-label=\{`Unsave /);
+  const start = button.indexOf("if (variant === 'button')"), profile = button.slice(start, button.indexOf('return (', start + 60));
+  // Exactly one control in the profile variant, and it toggles on the saved state.
+  assert.equal(profile.split('<Button').length - 1, 1);
+  assert.equal(profile.split('<button').length - 1, 0);
+  assert.match(profile, /onClick=\{\(\) => void \(saved \? handleUnsave\(\) : handleSave\(\)\)\}/);
+  assert.match(profile, /aria-pressed=\{saved\}/);
+  assert.match(button, /saved \? 'Saved' : busy === 'save' \? 'Saving…' : 'Save'/);
+  // The toggle is disabled while the My TrustHub hand-off is in flight.
+  assert.match(profile, /disabled=\{disabled \|\| syncing !== null\}/);
+});
+
 test('BFF status: CSRF-bound, browser-bound, presentation only', async () => {
   const origin = 'http://127.0.0.1:4321', url = origin + '/api/my-trusthub/profile-save';
   const asked: string[] = [];
