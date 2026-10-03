@@ -199,6 +199,12 @@ export function createHostedMoveRuntime(env: Record<string, string | undefined>,
     record: await storedGrant(store, browser, ticket), browser, proofRef, key: signing,
     parentOrigin: pair.parentOrigin, moveOrigin: pair.moveOrigin, send,
   });
+  // Set only by the parent's signed source acknowledgement (or a verified
+  // receipt check) for this exact browser and ticket.
+  runtime.http.parentStatus = async (browser, ticket) => {
+    const found = await storedGrant(store, browser, ticket) as { accountContextRef?: string } | null;
+    return opaque(found?.accountContextRef) ? 'parent_acknowledged' : 'pending';
+  };
   return runtime;
 }
 

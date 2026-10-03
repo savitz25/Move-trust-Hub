@@ -9,6 +9,9 @@ export type HttpDependencies={config:AdapterConfig;adapter:MoveProfileSaveAdapte
   /** Ask current-grant bridge. Missing ports stay unavailable and never commit. */
   grantChallenge?(browser:BrowserBinding,ticket:string):Promise<{target:string;challengeRef:string}|null>;
   resolveGrant?(browser:BrowserBinding,ticket:string,proofRef:string):Promise<CurrentGrant|'account_changed'|null>;
+  /** One-click Save: whether the parent's signed acknowledgement is bound to
+   * this browser's ticket. Presentation only; it grants nothing. */
+  parentStatus?(browser:BrowserBinding,ticket:string):Promise<'parent_acknowledged'|'pending'>;
 };
 const json=(body:unknown,status=200)=>Response.json(body,{status,headers});
 async function boundedJson(request:Request):Promise<unknown> {
@@ -46,6 +49,10 @@ export async function handleMoveProfileSave(request:Request,dependencies:HttpDep
       if(!d.grantChallenge || !opaque(input.ticket))return json({state:'unavailable',localCopy:'keep'},503);
       const challenge=await d.grantChallenge(browser,input.ticket);
       return challenge?json({state:'challenge',target:challenge.target,challengeRef:challenge.challengeRef,localCopy:'keep'}):json({state:'unavailable',localCopy:'keep'},503);
+    }
+    if(input.action==='status' && Object.keys(input).length===2 && Object.hasOwn(input,'ticket')){
+      if(!d.parentStatus || !opaque(input.ticket))return json({state:'unavailable',localCopy:'keep'},503);
+      return json({state:await d.parentStatus(browser,input.ticket),localCopy:'keep'});
     }
     if(input.action==='receipt' && Object.keys(input).length===4 && Object.hasOwn(input,'ticket') && Object.hasOwn(input,'selected') && Object.hasOwn(input,'proofRef')){
       if(!opaque(input.proofRef))return json({state:'invalid',localCopy:'keep'},400);

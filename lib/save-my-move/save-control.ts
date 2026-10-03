@@ -53,7 +53,20 @@ export function keepAllowed(slug: string, env: { parentSaveEnabled: boolean; can
   return env.parentSaveEnabled && (env.canarySlugs.length === 0 || env.canarySlugs.includes(slug));
 }
 
-/** Keep in My TrustHub follows the device row and the canary list only. */
+/** One-click parent sync runs only for an admitted profile, on that profile's
+ * own page (the one place the parent returns to). Everywhere else Save and
+ * Unsave stay device/legacy only. Auth state plays no part. */
+export function directParentSync(input: { keepAllowed: boolean; pathname: string | null; slug: string }): boolean {
+  return input.keepAllowed && input.pathname === '/companies/' + input.slug;
+}
+
+/** Unsave is offered to the parent only when this device believes the profile
+ * reached My TrustHub (or could not tell). The device removal never waits. */
+export function unsaveReachesParent(input: { direct: boolean; parentSync: 'synced' | 'unknown' | null }): boolean {
+  return input.direct && input.parentSync !== null;
+}
+
+/** Legacy explicit Keep control: follows the device row and the canary list only. */
 export function keepControlVisible(input: { localSaved: boolean; keepAllowed: boolean }): boolean {
   return input.localSaved && input.keepAllowed;
 }
