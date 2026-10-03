@@ -10,6 +10,7 @@ import {
   isLocalMoverSaved,
   removeLocalSavedMover,
 } from '@/lib/save-my-move/local-shortlist';
+import { keepControlVisible, planSave, planUnsave, saveControlDisabled, type SaveBusy } from '@/lib/save-my-move/save-control';
 import { trackSaveMyMoveMover } from '@/components/ga-events';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
@@ -24,10 +25,12 @@ type SaveMoverButtonProps = {
 };
 
 /**
- * Save → Saved → Unsave. Saved is a live state, never a disabled dead end:
- * the control stays pressable to unsave, and an explicit Unsave action sits
- * beside it. Device copy first; the legacy Move cloud shortlist is a soft sync;
- * My TrustHub is the one account (Keep in My TrustHub).
+ * Save → Saved → Unsave. Device-first: the local shortlist is written or
+ * cleared immediately and never waits for the auth provider. The legacy cloud
+ * shortlist is an optional soft sync attempted only when auth has resolved to a
+ * signed-in user. The control is disabled only while its own operation runs.
+ * Saved is a live state, never a dead end. My TrustHub is the one account
+ * (Keep in My TrustHub).
  */
 export function SaveMoverButton({
   companySlug,
@@ -36,17 +39,20 @@ export function SaveMoverButton({
   className,
 }: SaveMoverButtonProps) {
   const { user, loading, isMoverSaved, markMoverSaved, markMoverUnsaved, openSaveModal } = useSaveMyMove();
-  const [busy, setBusy] = useState<'save' | 'unsave' | null>(null);
+  const [busy, setBusy] = useState<SaveBusy>(null);
   const [localSaved, setLocalSaved] = useState(() =>
     typeof window !== 'undefined' ? isLocalMoverSaved(companySlug) : false
   );
   const mySavedHref = useMyTrustHubHref('/my/saved');
   const saved = isMoverSaved(companySlug) || localSaved;
-  // Canary-aware: Keep is offered only for admitted slugs (all slugs when no canary list is set).
-  const showParentSave = localSaved && keepAllowedForSlug(companySlug);
+  const auth = { loading, user: Boolean(user) };
+  const showParentSave = keepControlVisible({ localSaved, keepAllowed: keepAllowedForSlug(companySlug) });
+  const keepGuidance = ONE_ACCOUNT_ENABLED || keepAllowedForSlug(companySlug);
+  const disabled = saveControlDisabled(busy);
 
   const handleSave = async () => {
-    if (loading || saved || busy) return;
+    const plan = planSave({ saved, busy, auth });
+    if (plan.kind === 'skip') return;
     setBusy('save');
     try {
       // Always persist on device first — never leave the user with only a red toast
@@ -55,8 +61,16 @@ export function SaveMoverButton({
       markMoverSaved(companySlug);
       trackSaveMyMoveMover({ company_slug: companySlug });
 
-      if (!user) {
-        if (ONE_ACCOUNT_ENABLED || keepAllowedForSlug(companySlug)) {
+      if (plan.kind === 'local_only') {
+        // Auth is still initializing: device success only, no cloud attempt.
+        toast.success(`${companyName} saved on this device`, keepGuidance
+          ? { description: 'Choose “Keep this in My TrustHub” to reach it from any device with your one TrustHub account.' }
+          : undefined);
+        return;
+      }
+
+      if (plan.kind === 'local_guest') {
+        if (keepGuidance) {
           toast.success(`${companyName} saved on this device`, {
             description: 'Choose “Keep this in My TrustHub” to reach it from any device with your one TrustHub account.',
           });
@@ -97,9 +111,11 @@ export function SaveMoverButton({
   };
 
   const handleUnsave = async () => {
-    if (loading || !saved || busy) return;
+    const plan = planUnsave({ saved, busy, auth });
+    if (plan.kind === 'skip') return;
     setBusy('unsave');
     try {
+      // Device row and Keep ticket are cleared immediately, regardless of auth state.
       removeLocalSavedMover(companySlug);
       setLocalSaved(false);
       markMoverUnsaved(companySlug);
@@ -108,11 +124,11 @@ export function SaveMoverButton({
       } catch {
         // storage unavailable — nothing to clear
       }
-      if (user) {
+      if (plan.kind === 'local_then_cloud') {
         const res = await removeSavedMoverBySlugAction(companySlug);
         if (!res.ok) console.warn('[SaveMoverButton] cloud unsave soft-fail', res);
       }
-      toast.success(`${companyName} removed from this device`, ONE_ACCOUNT_ENABLED || keepAllowedForSlug(companySlug)
+      toast.success(`${companyName} removed from this device`, keepGuidance
         ? {
             description: 'Kept it in My TrustHub? Manage it there under Saved.',
             action: {
@@ -134,13 +150,13 @@ export function SaveMoverButton({
 
   if (variant === 'button') {
     return (
-      <span className="inline-flex min-w-0 flex-col items-start gap-1.5" data-save-state={saved ? 'saved' : 'unsaved'}>
+      <span className="inline-flex min-w-0 flex-col items-start gap-1.5" data-save-state={saved ? 'saved' : 'unsaved'} data-save-auth={loading ? 'pending' : 'resolved'}>
         <span className="inline-flex min-w-0 flex-wrap items-center gap-1.5">
           <Button
             variant={saved ? 'secondary' : 'outline'}
             size="sm"
             onClick={() => void (saved ? handleUnsave() : handleSave())}
-            disabled={busy !== null || loading}
+            disabled={disabled}
             className={className}
             aria-pressed={saved}
             aria-label={saved ? `${companyName} saved — select to unsave` : `Save ${companyName}`}
@@ -153,7 +169,7 @@ export function SaveMoverButton({
             <button
               type="button"
               onClick={() => void handleUnsave()}
-              disabled={busy !== null || loading}
+              disabled={disabled}
               className="min-h-11 rounded-md px-2 text-sm font-medium text-muted-foreground underline-offset-4 hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 disabled:opacity-60"
               aria-label={`Unsave ${companyName}`}
             >
@@ -167,11 +183,11 @@ export function SaveMoverButton({
   }
 
   return (
-    <span className="inline-flex min-w-0 flex-col items-start gap-1" data-save-state={saved ? 'saved' : 'unsaved'}>
+    <span className="inline-flex min-w-0 flex-col items-start gap-1" data-save-state={saved ? 'saved' : 'unsaved'} data-save-auth={loading ? 'pending' : 'resolved'}>
       <button
         type="button"
         onClick={() => void (saved ? handleUnsave() : handleSave())}
-        disabled={busy !== null || loading}
+        disabled={disabled}
         className={cn(
           'inline-flex items-center justify-center rounded-full p-1.5 transition-colors',
           saved

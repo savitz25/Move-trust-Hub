@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, type ReactNode } from 'react';
+import { canarySlugs, keepAllowed } from '@/lib/save-my-move/save-control';
 
 /** One account across TrustHub: My TrustHub lives on Ask. Move links to it. */
 const MyTrustHubOriginContext = createContext('https://www.asktrusthub.com');
@@ -11,11 +12,10 @@ export const PARENT_SAVE_ENABLED = process.env.NEXT_PUBLIC_MOVE_PARENT_SAVE_ENAB
 /** Canary list. When set, the Keep control is offered only for these exact
  * profile slugs and every other surface keeps its current behaviour. When
  * unset, Keep is offered for every saved mover (the reviewed preview state). */
-export const CANARY_SLUGS: readonly string[] = (process.env.NEXT_PUBLIC_MOVE_PARENT_SAVE_CANARY_SLUGS ?? '')
-  .split(',').map((slug) => slug.trim()).filter(Boolean);
+export const CANARY_SLUGS: readonly string[] = canarySlugs(process.env.NEXT_PUBLIC_MOVE_PARENT_SAVE_CANARY_SLUGS);
 
 export function keepAllowedForSlug(slug: string): boolean {
-  return PARENT_SAVE_ENABLED && (CANARY_SLUGS.length === 0 || CANARY_SLUGS.includes(slug));
+  return keepAllowed(slug, { parentSaveEnabled: PARENT_SAVE_ENABLED, canarySlugs: CANARY_SLUGS });
 }
 
 /** The one-account presentation (header entry, My Move workspace card, Save
