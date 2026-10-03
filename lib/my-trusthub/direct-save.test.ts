@@ -23,14 +23,16 @@ const TARGET = 'https://www.asktrusthub.com/my/profile-save';
 const ref = (n: number) => createHash('sha256').update('ref' + n).digest('base64url');
 
 /** Stand-in for the pair: the Move BFF (bootstrap / prepare / status) and the
- * Ask form the browser is handed to. The parent commits only under a verified
- * session and acknowledges only what it committed; Saved rows are keyed by
- * owner and entity exactly like the owner-scoped parent Save. */
+ * Ask form the browser is handed to. The parent commits or removes only under a
+ * verified session and acknowledges only what it did; Saved rows are keyed by
+ * owner and entity exactly like the owner-scoped parent Save. `abandon` drops
+ * the hand-off after it starts (the user clicked away mid-chain) and `refuse`
+ * makes the account refuse the removal. */
 function world() {
   let n = 0;
-  const session = new Map<string, string>(), calls: string[] = [], submitted: Array<{ target: string; fields: Record<string, string> }> = [];
+  const calls: string[] = [], submitted: Array<{ target: string; fields: Record<string, string> }> = [];
   const tickets = new Map<string, { continuationRef: string; acknowledged: boolean }>();
-  const parent = { account: null as string | null, saved: new Set<string>(), watches: new Set<string>(), bffUp: true, statusUp: true };
+  const parent = { account: null as string | null, saved: new Set<string>(), watches: new Set<string>(), bffUp: true, statusUp: true, abandon: false, refuse: false };
   const ports: DirectPorts = {
     async post(body, csrf) {
       const b = body as { action: string; selected?: unknown; ticket?: string };
@@ -54,17 +56,17 @@ function world() {
     submit(target, fields) {
       submitted.push({ target, fields });
       const stage = [...tickets.values()].find(t => t.continuationRef === fields.continuationRef);
-      if (!stage) return;
+      if (!stage || parent.abandon) return;
       if (fields.intent === 'save_signin' && !parent.account) parent.account = 'owner-a'; // the user signs in on Ask
       if (!parent.account) return; // signed out: the parent returns without asking
       const row = parent.account + ':usdot-1002530';
-      if (fields.intent === 'unsave') parent.saved.delete(row);
+      if (fields.intent === 'unsave') { if (parent.refuse) return; parent.saved.delete(row); stage.acknowledged = true; }
       else { parent.saved.add(row); stage.acknowledged = true; }
     },
-    session: keyValue(session),
     local: keyValue(device),
   };
-  return { ports, parent, session, calls, submitted };
+  const pending = () => device.has('mth-direct:' + SLUG);
+  return { ports, parent, pending, calls, submitted };
 }
 
 test('A. Save with a verified parent account: device Save first, then exactly one My TrustHub Saved row', async () => {
@@ -73,7 +75,7 @@ test('A. Save with a verified parent account: device Save first, then exactly on
   assert.equal(isLocalMoverSaved(SLUG), true); assert.equal(w.calls.length, 0); // device write precedes any network call
   assert.equal(await startDirect(w.ports, SLUG, 'save', row.savedAt), 'navigating');
   assert.deepEqual(w.submitted.map(s => [s.target, Object.keys(s.fields).sort().join(), s.fields.intent]), [[TARGET, 'continuationRef,intent', 'save']]);
-  assert.deepEqual(await resumeDirect(w.ports, SLUG), { intent: 'save', outcome: 'synced' });
+  assert.deepEqual(await resumeDirect(w.ports, SLUG), { intent: 'save', outcome: 'confirmed' });
   assert.deepEqual([...w.parent.saved], ['owner-a:usdot-1002530']);
   assert.equal(parentSync(w.ports.local, SLUG), 'synced');
   // The pending marker is consumed once: a reload reports nothing and calls nothing.
@@ -85,7 +87,7 @@ test('B. repeated Save is idempotent: no duplicate parent row', async () => {
   for (let i = 0; i < 3; i++) {
     const row = addLocalSavedMover({ companySlug: SLUG, companyName: NAME });
     assert.equal(await startDirect(w.ports, SLUG, 'save', row.savedAt), 'navigating');
-    assert.equal((await resumeDirect(w.ports, SLUG))?.outcome, 'synced');
+    assert.equal((await resumeDirect(w.ports, SLUG))?.outcome, 'confirmed');
   }
   assert.equal(w.parent.saved.size, 1);
   assert.equal(planSave({ saved: true, busy: null, auth: { loading: false, user: false } }).kind, 'skip'); // a Saved control never re-saves
@@ -101,7 +103,7 @@ test('C. Unsave with a verified parent account: device row removed immediately, 
   assert.equal(await startDirect(w.ports, SLUG, 'unsave', new Date().toISOString()), 'navigating');
   assert.equal(w.submitted.at(-1)!.fields.intent, 'unsave');
   assert.equal(w.parent.saved.size, 0);
-  assert.deepEqual(await resumeDirect(w.ports, SLUG), { intent: 'unsave', outcome: 'unknown' });
+  assert.deepEqual(await resumeDirect(w.ports, SLUG), { intent: 'unsave', outcome: 'confirmed' });
   assert.equal(parentSync(w.ports.local, SLUG), null); // control is back to Save, device-only
   // Another account's session never removes this owner's row.
   w.parent.saved.add('owner-a:usdot-1002530'); w.parent.account = 'owner-b';
@@ -109,12 +111,60 @@ test('C. Unsave with a verified parent account: device row removed immediately, 
   assert.deepEqual([...w.parent.saved], ['owner-a:usdot-1002530']);
 });
 
+test('C2. Unsave the parent did not complete is never reported as an account Unsave and stays retryable', async () => {
+  // The production failure: the hand-off starts, then the user clicks away and
+  // the chain is abandoned after the POST. Device row is gone; account row is not.
+  device.clear(); const w = world(); w.parent.account = 'owner-a';
+  const row = addLocalSavedMover({ companySlug: SLUG, companyName: NAME });
+  await startDirect(w.ports, SLUG, 'save', row.savedAt); await resumeDirect(w.ports, SLUG);
+  removeLocalSavedMover(SLUG);
+  w.parent.abandon = true;
+  assert.equal(await startDirect(w.ports, SLUG, 'unsave', new Date().toISOString()), 'navigating');
+  assert.equal(w.parent.saved.size, 1);
+  // The pending marker is on the device, not the tab: it is still there when
+  // the profile is next opened, and that visit reports "not confirmed".
+  assert.equal(w.pending(), true);
+  assert.deepEqual(await resumeDirect(w.ports, SLUG), { intent: 'unsave', outcome: 'not_confirmed' });
+  assert.equal(isLocalMoverSaved(SLUG), false);
+  assert.equal(parentSync(w.ports.local, SLUG), 'synced'); // still believed to be in My TrustHub
+  assert.equal(unsaveReachesParent({ direct: true, parentSync: parentSync(w.ports.local, SLUG) }), true);
+  // "Try again" completes it, and only then is the account Unsave reported.
+  w.parent.abandon = false;
+  assert.equal(await startDirect(w.ports, SLUG, 'unsave', new Date().toISOString()), 'navigating');
+  assert.deepEqual(await resumeDirect(w.ports, SLUG), { intent: 'unsave', outcome: 'confirmed' });
+  assert.equal(w.parent.saved.size, 0); assert.equal(parentSync(w.ports.local, SLUG), null);
+
+  // Refused by the account, signed out on the parent, or outcome unreadable: same rule.
+  for (const fault of ['refuse', 'signed_out', 'status_down'] as const) {
+    device.clear(); const v = world(); v.parent.account = 'owner-a';
+    const saved = addLocalSavedMover({ companySlug: SLUG, companyName: NAME });
+    await startDirect(v.ports, SLUG, 'save', saved.savedAt); await resumeDirect(v.ports, SLUG);
+    removeLocalSavedMover(SLUG);
+    if (fault === 'refuse') v.parent.refuse = true;
+    if (fault === 'signed_out') v.parent.account = null;
+    assert.equal(await startDirect(v.ports, SLUG, 'unsave', new Date().toISOString()), 'navigating');
+    if (fault === 'status_down') v.parent.statusUp = false;
+    const outcome = (await resumeDirect(v.ports, SLUG))!.outcome;
+    assert.equal(outcome, fault === 'status_down' ? 'unknown' : 'not_confirmed');
+    assert.equal(parentSync(v.ports.local, SLUG), 'synced', fault);
+  }
+
+  // The user already left the profile when staging finished: nothing navigates,
+  // nothing is pending, the belief is unchanged.
+  device.clear(); const u = world(); u.parent.account = 'owner-a';
+  const kept = addLocalSavedMover({ companySlug: SLUG, companyName: NAME });
+  await startDirect(u.ports, SLUG, 'save', kept.savedAt); await resumeDirect(u.ports, SLUG);
+  const submits = u.submitted.length;
+  assert.equal(await startDirect(u.ports, SLUG, 'unsave', new Date().toISOString(), () => false), 'unavailable');
+  assert.equal(u.submitted.length, submits); assert.equal(u.pending(), false); assert.equal(parentSync(u.ports.local, SLUG), 'synced');
+});
+
 test('D. Save with the parent unavailable: device Save succeeds, nothing navigates, no account success is claimed', async () => {
   device.clear(); const w = world(); w.parent.account = 'owner-a'; w.parent.bffUp = false;
   const row = addLocalSavedMover({ companySlug: SLUG, companyName: NAME });
   assert.equal(await startDirect(w.ports, SLUG, 'save', row.savedAt), 'unavailable');
   assert.equal(isLocalMoverSaved(SLUG), true); assert.equal(w.submitted.length, 0);
-  assert.equal(w.session.size, 0); assert.equal(parentSync(w.ports.local, SLUG), null); assert.equal(await resumeDirect(w.ports, SLUG), null);
+  assert.equal(w.pending(), false); assert.equal(parentSync(w.ports.local, SLUG), null); assert.equal(await resumeDirect(w.ports, SLUG), null);
   // Parent reached but its outcome cannot be read back: still not success, and Unsave stays offered to the parent.
   w.parent.bffUp = true; w.parent.statusUp = false;
   assert.equal(await startDirect(w.ports, SLUG, 'save', row.savedAt), 'navigating');
@@ -130,13 +180,13 @@ test('E. signed-out Save: device Save succeeds; the optional sign-in continuatio
   device.clear(); const w = world();
   const row = addLocalSavedMover({ companySlug: SLUG, companyName: NAME });
   assert.equal(await startDirect(w.ports, SLUG, 'save', row.savedAt), 'navigating');
-  assert.deepEqual(await resumeDirect(w.ports, SLUG), { intent: 'save', outcome: 'device_only' });
+  assert.deepEqual(await resumeDirect(w.ports, SLUG), { intent: 'save', outcome: 'not_confirmed' });
   assert.equal(isLocalMoverSaved(SLUG), true); assert.equal(w.parent.saved.size, 0); assert.equal(parentSync(w.ports.local, SLUG), null);
   // Signed out and never synced: Unsave is device-only, no parent attempt.
   assert.equal(unsaveReachesParent({ direct: true, parentSync: parentSync(w.ports.local, SLUG) }), false);
   // The user chooses "Sign in": no Keep, no Confirm Save, no second Save click.
   assert.equal(await startDirect(w.ports, SLUG, 'save_signin', row.savedAt), 'navigating');
-  assert.deepEqual(await resumeDirect(w.ports, SLUG), { intent: 'save_signin', outcome: 'synced' });
+  assert.deepEqual(await resumeDirect(w.ports, SLUG), { intent: 'save_signin', outcome: 'confirmed' });
   assert.deepEqual([...w.parent.saved], ['owner-a:usdot-1002530']);
 });
 

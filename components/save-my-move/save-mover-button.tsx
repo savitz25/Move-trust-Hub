@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { usePathname } from 'next/navigation';
 import { Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -13,7 +14,7 @@ import {
   removeLocalSavedMover,
 } from '@/lib/save-my-move/local-shortlist';
 import { directParentSync, planSave, planUnsave, saveControlDisabled, unsaveReachesParent, type SaveBusy } from '@/lib/save-my-move/save-control';
-import { browserDirectPorts, parentSync, resumeDirect, startDirect } from '@/lib/my-trusthub/direct-save';
+import { browserDirectPorts, parentSync, resumeDirect, startDirect, type DirectIntent } from '@/lib/my-trusthub/direct-save';
 import { trackSaveMyMoveMover } from '@/components/ga-events';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
@@ -38,6 +39,12 @@ type SaveMoverButtonProps = {
  * the secure Move → Ask continuation and the parent commits under the verified
  * session, with no second control and no confirmation step. Unsave mirrors it.
  * Parent sync is additive and never gates or delays the device change.
+ *
+ * The parent hand-off is a chain of browser navigations that a click elsewhere
+ * on the page abandons part-way. While it runs the page shows a blocking
+ * progress notice, and an Unsave the parent did not acknowledge is never
+ * reported as an account Unsave: the control says it may still be saved in My
+ * TrustHub and offers the removal again.
  */
 export function SaveMoverButton({
   companySlug,
@@ -57,11 +64,52 @@ export function SaveMoverButton({
   const direct = directParentSync({ keepAllowed: keepAllowedForSlug(companySlug), pathname, slug: companySlug });
   const keepGuidance = ONE_ACCOUNT_ENABLED || keepAllowedForSlug(companySlug);
   const disabled = saveControlDisabled(busy);
+  // Parent hand-off in flight (blocking notice) and whether this device still
+  // believes the profile is in My TrustHub.
+  const [syncing, setSyncing] = useState<'save' | 'unsave' | null>(null);
+  const [parentHeld, setParentHeld] = useState(false);
+  const mounted = useRef(true);
+  useEffect(() => {
+    mounted.current = true;
+    return () => { mounted.current = false; };
+  }, []);
+  useEffect(() => {
+    if (!syncing) return;
+    // The notice ends with the page. If the navigation never happens, or the
+    // page is restored from the back/forward cache, release it.
+    const release = () => setSyncing(null);
+    const timer = window.setTimeout(release, 30_000);
+    window.addEventListener('pageshow', release);
+    return () => { window.clearTimeout(timer); window.removeEventListener('pageshow', release); };
+  }, [syncing]);
+
+  /** Stage and hand the browser to My TrustHub. Nothing navigates once the
+   * user has left this profile. */
+  const handOff = async (intent: DirectIntent, savedAt: string) => {
+    setSyncing(intent === 'unsave' ? 'unsave' : 'save');
+    const result = await startDirect(browserDirectPorts(), companySlug, intent, savedAt, () => mounted.current);
+    if (result !== 'navigating') setSyncing(null);
+    return result;
+  };
 
   const signInToSync = () => {
     const savedAt = listLocalSavedMovers().find((row) => row.companySlug === companySlug)?.savedAt ?? new Date().toISOString();
-    void startDirect(browserDirectPorts(), companySlug, 'save_signin', savedAt).then((result) => {
+    void handOff('save_signin', savedAt).then((result) => {
       if (result === 'unavailable') toast.message('My TrustHub is unavailable right now', { description: 'Your Save stays on this device.' });
+    });
+  };
+
+  const retryParentUnsave = () => {
+    void handOff('unsave', new Date().toISOString()).then((result) => {
+      if (result === 'unavailable') toast.error('My TrustHub could not be reached', { description: 'It may still be saved there. Try again in a moment.' });
+    });
+  };
+  const notConfirmedUnsave = (description: string) => {
+    setParentHeld(true);
+    toast.warning(`${companyName} removed from this device`, {
+      description,
+      duration: 15_000,
+      action: { label: 'Try again', onClick: retryParentUnsave },
     });
   };
 
@@ -72,12 +120,16 @@ export function SaveMoverButton({
     if (!direct) return;
     let active = true;
     void resumeDirect(browserDirectPorts(), companySlug).then((result) => {
-      if (!active || !result) return;
+      if (!active) return;
+      setParentHeld(parentSync(localStorage, companySlug) !== null);
+      if (!result) return;
       if (result.intent === 'unsave') {
-        toast.success(`${companyName} removed from your saved movers`);
-      } else if (result.outcome === 'synced') {
+        // Only the parent's own acknowledgement counts as an account Unsave.
+        if (result.outcome === 'confirmed') toast.success(`${companyName} removed from this device and My TrustHub`);
+        else notConfirmedUnsave('My TrustHub did not confirm the removal, so it may still be saved there.');
+      } else if (result.outcome === 'confirmed') {
         toast.success(`${companyName} saved to My TrustHub`);
-      } else if (result.outcome === 'device_only') {
+      } else if (result.outcome === 'not_confirmed') {
         toast.success('Saved on this device', {
           description: 'Sign in to My TrustHub to sync across devices.',
           action: { label: 'Sign in', onClick: signInToSync },
@@ -103,11 +155,12 @@ export function SaveMoverButton({
 
       if (direct) {
         // The device Save above is already complete. My TrustHub sync is additive.
+        setSyncing('save');
         if (plan.kind === 'local_then_cloud') {
           const res = await saveMoverAction({ companySlug }).catch(() => null);
           if (!res?.ok) console.warn('[SaveMoverButton] cloud soft-fail', res);
         }
-        if ((await startDirect(browserDirectPorts(), companySlug, 'save', row.savedAt)) === 'navigating') return;
+        if ((await handOff('save', row.savedAt)) === 'navigating') return;
         toast.success(`${companyName} saved on this device`, {
           description: 'My TrustHub sync is unavailable right now.',
         });
@@ -150,6 +203,7 @@ export function SaveMoverButton({
       });
     } catch (err) {
       console.error('[SaveMoverButton]', err);
+      setSyncing(null);
       // Local already written above; still treat as soft success
       toast.success(`${companyName} saved on this device`, {
         description: 'Cloud sync failed — shortlist kept on this device.',
@@ -158,6 +212,7 @@ export function SaveMoverButton({
       setBusy(null);
     }
   };
+  // (The blocking notice outlives `busy` on purpose: it stays until the page unloads.)
 
   const handleUnsave = async () => {
     const plan = planUnsave({ saved, busy, auth });
@@ -174,13 +229,20 @@ export function SaveMoverButton({
       } catch {
         // storage unavailable — nothing to clear
       }
+      if (reachParent) setSyncing('unsave');
       if (plan.kind === 'local_then_cloud') {
         const res = await removeSavedMoverBySlugAction(companySlug);
         if (!res.ok) console.warn('[SaveMoverButton] cloud unsave soft-fail', res);
       }
       // The device removal above is already complete. The parent removes its
-      // owner-scoped Saved row only under a verified My TrustHub session.
-      if (reachParent && (await startDirect(browserDirectPorts(), companySlug, 'unsave', new Date().toISOString())) === 'navigating') return;
+      // owner-scoped Saved row only under a verified My TrustHub session, and
+      // only its acknowledgement (read on return) counts as an account Unsave.
+      if (reachParent) {
+        setParentHeld(true);
+        if ((await handOff('unsave', new Date().toISOString())) === 'navigating') return;
+        notConfirmedUnsave('My TrustHub could not be reached, so it may still be saved there.');
+        return;
+      }
       toast.success(`${companyName} removed from this device`, keepGuidance
         ? {
             description: 'Saved it to My TrustHub? Manage it there under Saved.',
@@ -192,6 +254,7 @@ export function SaveMoverButton({
         : undefined);
     } catch (err) {
       console.error('[SaveMoverButton] unsave', err);
+      setSyncing(null);
       toast.success(`${companyName} removed from this device`);
     } finally {
       setBusy(null);
@@ -199,6 +262,26 @@ export function SaveMoverButton({
   };
 
   const label = saved ? 'Saved' : busy === 'save' ? 'Saving…' : 'Save mover';
+  const progress = syncing && typeof document !== 'undefined'
+    ? createPortal(
+        <div role="status" aria-live="assertive" data-mth-sync={syncing} className="fixed inset-0 z-[200] flex items-center justify-center bg-background/70 p-4">
+          <div className="max-w-xs rounded-lg border border-border bg-background px-5 py-4 text-center text-sm font-semibold text-foreground shadow-lg">
+            {syncing === 'unsave' ? 'Removing from My TrustHub…' : 'Saving to My TrustHub…'}
+            <span className="mt-1 block text-xs font-normal text-muted-foreground">Keep this page open. This takes a few seconds.</span>
+          </div>
+        </div>,
+        document.body
+      )
+    : null;
+  // Device copy is gone but the account removal was never acknowledged.
+  const parentNotice = direct && !saved && parentHeld && !busy && !syncing ? (
+    <span className="text-xs text-muted-foreground" data-mth-parent-held="true">
+      May still be saved in My TrustHub.{' '}
+      <button type="button" onClick={retryParentUnsave} className="font-medium underline underline-offset-4 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40">
+        Remove it there
+      </button>
+    </span>
+  ) : null;
 
   if (variant === 'button') {
     return (
@@ -229,6 +312,8 @@ export function SaveMoverButton({
             </button>
           ) : null}
         </span>
+        {parentNotice}
+        {progress}
       </span>
     );
   }
@@ -253,6 +338,8 @@ export function SaveMoverButton({
       >
         <Heart className={cn('h-4 w-4', saved && 'fill-current')} aria-hidden="true" />
       </button>
+      {parentNotice}
+      {progress}
     </span>
   );
 }
