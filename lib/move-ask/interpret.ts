@@ -41,6 +41,7 @@ const STATE_NAMES: Record<string, string> = {
   wisconsin: 'WI',
   indiana: 'IN',
   alabama: 'AL',
+  louisiana: 'LA',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -59,6 +60,7 @@ const STATE_NAMES: Record<string, string> = {
   wi: 'WI',
   in: 'IN',
   al: 'AL',
+  la: 'LA',
 };
 
 function detectState(q: string): string | undefined {
@@ -306,6 +308,14 @@ function alContext(q: string): boolean {
     (AL_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
   const other = detectState(q.replace(/\balabama\b|\bin al\b/gi, ' ').replace(AL_CITIES, ' '));
   return named && (!other || other === 'AL') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+const LA_ALTERNATIVES = ['Open Louisiana household-goods certificate research.', 'Contact LPSC Transportation Division to verify a common carrier certificate.'];
+const LA_CITIES = /\b(new orleans|baton rouge|shreveport|lafayette)\b/i;
+function laContext(q: string): boolean {
+  const named = /\blouisiana\b|\bin la\b|\blpsc\b/i.test(q) ||
+    (LA_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
+  const other = detectState(q.replace(/\blouisiana\b|\bin la\b/gi, ' ').replace(LA_CITIES, ' '));
+  return named && (!other || other === 'LA') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
 }
 function wiContext(q: string): boolean {
   const named = /\bwisconsin\b|\bin wi\b|\bwisdot\b/i.test(q) ||
@@ -743,6 +753,23 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     const query = fail(reason, AL_ALTERNATIVES);
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'APSC HHG authority verification; roster and exact federal bridges NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (laContext(q) && !isRouteOrInterstate(q)) {
+    const city = q.match(LA_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only; there is no Louisiana city or parish intelligence page.` : '';
+    let reason: string;
+    if (ctRanking(q)) reason = 'MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. Louisiana LPSC authority is not a provider winner.';
+    else if (/\b\d{3,8}\b/.test(q) && !/\b(usdot|dot|mc|certificate|authority)\b/i.test(q)) reason = 'That number has no label. Specify an LPSC certificate, USDOT or MC; no carrier lookup was inferred.';
+    else if (/\bcomplaints?\b/i.test(q)) reason = 'LPSC Transportation Division accepts household-goods complaint intake and says an investigation will be opened. No public provider-level Louisiana complaint rows were acquired; a complaint is not a finding. Interstate mover complaints follow FMCSA guidance.';
+    else if (/\b(enforcement|disciplin|revocation|suspension|citation|fine)\b/i.test(q)) reason = 'LPSC staff can confirm outstanding fines or citations for a carrier on request. A complete household-goods enforcement corpus was NOT_ACQUIRED. No provider-level orders were attached.';
+    else if (/\b(insurance|insured|cargo|form e|form h)\b/i.test(q)) reason = 'A published Louisiana household-goods cargo or liability dollar minimum was NOT_ACQUIRED. Provider-level current insurance status was NOT_ACQUIRED. Missing is not zero coverage.';
+    else if (/\b(tariffs?|rates?|charges?|estimates?|quotes?)\b/i.test(q)) reason = 'The LPSC General Order dated July 12, 2013 gives customers the right to a written estimate. A bulk tariff corpus was NOT_ACQUIRED. A tariff or estimate right is not a quote or mover ranking.';
+    else reason = `The Louisiana Public Service Commission requires a common carrier certificate under La. R.S. 45:164(E) for for-hire household-goods moves between Louisiana points. The public portal is OPEN_SEARCH_ONLY. A statewide household-goods roster and count were NOT_ACQUIRED. Verify an individual certificate with the Transportation Division. LPSC authority, USDOT and federal MC are distinct; no exact bridges or combined mover count were inferred.${cityNote}`;
+    const query = fail(reason, LA_ALTERNATIVES);
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'LPSC HHG certificate verification; roster and exact federal bridges NOT_ACQUIRED');
     return { raw: q, query, interpretation: lines };
   }
 

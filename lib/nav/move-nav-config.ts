@@ -145,6 +145,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'APSC household-goods certificate, insurance minima and tariff rule',
       },
       {
+        label: 'Louisiana research',
+        href: '/louisiana',
+        description: 'LPSC household-goods certificate and written-estimate order',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',

@@ -1,0 +1,64 @@
+{
+  "version": "move-la-state-intel-v1",
+  "ticket": "LA-MOVE-001",
+  "sourceAsOf": null,
+  "snapshotAsOf": null,
+  "retrievedAt": "2026-10-05",
+  "generatedAt": "2026-10-05T21:00:00Z",
+  "publication": {
+    "route": "/louisiana",
+    "canonical": "https://www.movetrusthub.com/louisiana",
+    "robots": "index,follow",
+    "rankings": false,
+    "trustScore": false
+  },
+  "regulator": "Louisiana Public Service Commission, Transportation Division",
+  "authority": "LPSC common carrier certificate",
+  "statute": "La. R.S. 45:164(E)",
+  "householdGoodsAuthority": {
+    "verification": "KNOWN",
+    "roster": "NOT_ACQUIRED",
+    "rows": null,
+    "distinctCertificateNumbers": null,
+    "statusAsOf": null,
+    "searchPortal": "OPEN_SEARCH_ONLY",
+    "certificate": "Common carrier certificate for intrastate household goods",
+    "interstate": "FMCSA; not an LPSC certificate"
+  },
+  "federalBridges": {
+    "rowsWithUsdot": null,
+    "distinctUsdots": null,
+    "rowsWithMc": null,
+    "distinctMcs": null,
+    "exactBridges": null,
+    "unmatchedStateRows": null
+  },
+  "insurance": {
+    "requirement": "NOT_ACQUIRED",
+    "providerStatus": "NOT_ACQUIRED",
+    "cargoMinimumUsd": null
+  },
+  "writtenEstimate": {
+    "right": "KNOWN",
+    "generalOrderDate": "2013-07-12",
+    "isCensus": false,
+    "isQuote": false
+  },
+  "tariffs": {
+    "corpus": "NOT_ACQUIRED"
+  },
+  "complaints": {
+    "lpscTransportationIntake": "KNOWN",
+    "fmcsaInterstateIntake": "KNOWN",
+    "providerRows": "NOT_ACQUIRED",
+    "outcomes": "NOT_ACQUIRED"
+  },
+  "enforcement": {
+    "capability": "PARTIAL",
+    "providerRows": "NOT_ACQUIRED",
+    "staffFineCheck": "ON_REQUEST"
+  },
+  "newCanonicalOrganizations": 0,
+  "graphWrites": 0,
+  "claimEligibilityChanges": 0
+}
