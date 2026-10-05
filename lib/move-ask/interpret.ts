@@ -40,6 +40,7 @@ const STATE_NAMES: Record<string, string> = {
   connecticut: 'CT',
   wisconsin: 'WI',
   indiana: 'IN',
+  alabama: 'AL',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -57,6 +58,7 @@ const STATE_NAMES: Record<string, string> = {
   ct: 'CT',
   wi: 'WI',
   in: 'IN',
+  al: 'AL',
 };
 
 function detectState(q: string): string | undefined {
@@ -296,6 +298,14 @@ function inContext(q: string): boolean {
     (IN_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
   const other = detectState(q.replace(/\bindiana\b|\bin in\b/gi, ' ').replace(IN_CITIES, ' '));
   return named && (!other || other === 'IN') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+const AL_ALTERNATIVES = ['Open Alabama household-goods authority research.', 'Contact APSC Motor Carrier Services to verify a certificate.'];
+const AL_CITIES = /\b(birmingham|montgomery|huntsville)\b/i;
+function alContext(q: string): boolean {
+  const named = /\balabama\b|\bin al\b|\bapsc\b/i.test(q) ||
+    (AL_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
+  const other = detectState(q.replace(/\balabama\b|\bin al\b/gi, ' ').replace(AL_CITIES, ' '));
+  return named && (!other || other === 'AL') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
 }
 function wiContext(q: string): boolean {
   const named = /\bwisconsin\b|\bin wi\b|\bwisdot\b/i.test(q) ||
@@ -716,6 +726,23 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     const query = fail(reason, IN_ALTERNATIVES);
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'Indiana DOR HHG authority verification; roster and exact federal bridges NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (alContext(q) && !isRouteOrInterstate(q)) {
+    const city = q.match(AL_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only; there is no Alabama city intelligence page.` : '';
+    let reason: string;
+    if (ctRanking(q)) reason = 'MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. Alabama APSC authority is not a provider winner.';
+    else if (/\b\d{3,8}\b/.test(q) && !/\b(usdot|dot|mc|certificate|permit|authority)\b/i.test(q)) reason = 'That number has no label. Specify an APSC certificate, permit, USDOT or MC; no carrier lookup was inferred.';
+    else if (/\bcomplaints?\b/i.test(q)) reason = 'APSC consumer services accepts complaint intake. No public provider-level Alabama household-goods complaint rows were acquired; a complaint is not a finding. Interstate mover complaints follow FMCSA guidance.';
+    else if (/\b(enforcement|disciplin|revocation|suspension)\b/i.test(q)) reason = 'Individual APSC motor-carrier dockets appear in Commission records. A complete household-goods enforcement corpus was NOT_ACQUIRED. No provider-level orders were attached.';
+    else if (/\b(insurance|insured|cargo|form e|form h)\b/i.test(q)) reason = 'APSC publishes a $5,000 cargo minimum and property liability limits, including $350,000 combined, for an intrastate certificate or permit. Provider-level current insurance status was NOT_ACQUIRED. A minimum is not proof of coverage.';
+    else if (/\b(tariffs?|rates?|charges?)\b/i.test(q)) reason = 'APSC requires an approved household-goods tariff on file. A bulk tariff corpus was NOT_ACQUIRED. A tariff is not a quote or mover ranking.';
+    else reason = `The Alabama Public Service Commission requires a certificate or permit for for-hire household-goods moves between Alabama points. Form 14H is the household-goods certificate application. Form 14A is other property authority, and a Form 19A broker license is not a carrier certificate. A public statewide household-goods roster and count were NOT_ACQUIRED. Verify an individual certificate with Motor Carrier Services. APSC authority, USDOT and federal MC are distinct; no exact bridges or combined mover count were inferred.${cityNote}`;
+    const query = fail(reason, AL_ALTERNATIVES);
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'APSC HHG authority verification; roster and exact federal bridges NOT_ACQUIRED');
     return { raw: q, query, interpretation: lines };
   }
 

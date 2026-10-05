@@ -140,6 +140,11 @@ export const FIND_MOVERS_NAV: NavMegaColumn[] = [
         description: 'Indiana DOR household-goods authority & tariff rules',
       },
       {
+        label: 'Alabama research',
+        href: '/alabama',
+        description: 'APSC household-goods certificate, insurance minima and tariff rule',
+      },
+      {
         label: 'Auto Transport',
         href: '/auto-transport',
         description: 'Licensed car shipping carriers',
