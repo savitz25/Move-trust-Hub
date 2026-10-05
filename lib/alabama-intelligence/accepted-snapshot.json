@@ -1,0 +1,75 @@
+{
+  "version": "move-al-state-intel-v1",
+  "ticket": "AL-MOVE-001",
+  "sourceAsOf": null,
+  "snapshotAsOf": null,
+  "retrievedAt": "2026-10-05",
+  "generatedAt": "2026-10-05T16:30:00Z",
+  "publication": {
+    "route": "/alabama",
+    "canonical": "https://www.movetrusthub.com/alabama",
+    "robots": "index,follow",
+    "rankings": false,
+    "trustScore": false
+  },
+  "regulator": "Alabama Public Service Commission, Motor Carrier Services",
+  "authority": "APSC motor carrier certificate or permit",
+  "householdGoodsAuthority": {
+    "verification": "KNOWN",
+    "roster": "NOT_ACQUIRED",
+    "rows": null,
+    "distinctCertificateNumbers": null,
+    "statusAsOf": null,
+    "form14h": "Household Goods certificate application",
+    "form14a": "Property certificate application; not household goods",
+    "form19a": "Broker license; not a carrier certificate",
+    "certificateAndPermit": "SEPARATE",
+    "legacySearchHost": "NOT_REACHED"
+  },
+  "federalBridges": {
+    "rowsWithUsdot": null,
+    "distinctUsdots": null,
+    "rowsWithMc": null,
+    "distinctMcs": null,
+    "exactBridges": null,
+    "unmatchedStateRows": null
+  },
+  "insurance": {
+    "requirement": "KNOWN",
+    "providerStatus": "NOT_ACQUIRED",
+    "cargoMinimumUsd": 5000,
+    "propertyLiability": {
+      "onePersonUsd": 100000,
+      "moreThanOnePersonUsd": 300000,
+      "propertyNotCargoUsd": 50000,
+      "combinedUsd": 350000
+    },
+    "brokerSuretyUsd": 10000,
+    "selfInsuranceMultipleOfCombined": 5,
+    "passengerLimits": "SEPARATE_EQUIPMENT_CLASS"
+  },
+  "tariffs": {
+    "hhgApprovedTariffRequired": "KNOWN",
+    "corpus": "NOT_ACQUIRED"
+  },
+  "annualReport": {
+    "hhgFilingRequired": "KNOWN",
+    "periodEnding": "2025-12-31",
+    "due": "2026-04-30",
+    "filedReports": "NOT_ACQUIRED",
+    "isCensus": false
+  },
+  "complaints": {
+    "apscConsumerServicesIntake": "KNOWN",
+    "fmcsaInterstateIntake": "KNOWN",
+    "providerRows": "NOT_ACQUIRED",
+    "outcomes": "NOT_ACQUIRED"
+  },
+  "enforcement": {
+    "capability": "PARTIAL",
+    "providerRows": "NOT_ACQUIRED"
+  },
+  "newCanonicalOrganizations": 0,
+  "graphWrites": 0,
+  "claimEligibilityChanges": 0
+}
