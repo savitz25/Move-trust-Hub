@@ -1,0 +1,77 @@
+{
+  "version": "move-ms-state-intel-v1",
+  "ticket": "MS-MOVE-001",
+  "sourceAsOf": null,
+  "snapshotAsOf": null,
+  "retrievedAt": "2026-10-05",
+  "generatedAt": "2026-10-05T18:40:00Z",
+  "publication": {
+    "route": "/mississippi",
+    "canonical": "https://www.movetrusthub.com/mississippi",
+    "robots": "index,follow",
+    "rankings": false,
+    "trustScore": false
+  },
+  "regulator": "Mississippi Department of Transportation, Motor Carrier",
+  "authority": "Certificate of public convenience and necessity for household goods",
+  "householdGoodsAuthority": {
+    "verification": "KNOWN",
+    "roster": "NOT_ACQUIRED",
+    "rows": null,
+    "distinctCertificateNumbers": null,
+    "statusAsOf": null,
+    "certificate": "Certificate of public convenience and necessity",
+    "contractCarrierPermit": "SEPARATE",
+    "passengerAuthority": "SEPARATE",
+    "otherPropertyAuthority": "NOT_ON_THIS_PACKET",
+    "application": "NOT_AN_ISSUED_CERTIFICATE",
+    "receiptForm": "MSR-1 blank receipt application; not a roster",
+    "commissionOrder": "NOT_ACQUIRED",
+    "oversizePermit": "SEPARATE"
+  },
+  "federalBridges": {
+    "rowsWithUsdot": null,
+    "distinctUsdots": null,
+    "rowsWithMc": null,
+    "distinctMcs": null,
+    "exactBridges": null,
+    "unmatchedStateRows": null
+  },
+  "insurance": {
+    "requirement": "KNOWN",
+    "providerStatus": "NOT_ACQUIRED",
+    "statedBasis": "Guidelines print these limits and say they are the same as 49 C.F.R. Part 387",
+    "propertyNonHazardousLiabilityUsd": 750000,
+    "cargoThreeTonsOrLessUsd": 5000,
+    "cargoMoreThanThreeTonsUsd": 10000,
+    "passengerSixteenOrMoreUsd": 5000000,
+    "passengerFifteenOrLessUsd": 1500000,
+    "passengerLimits": "SEPARATE"
+  },
+  "fees": {
+    "newRegistrationUsd": 50,
+    "perVehicleUsd": 10,
+    "ucrPerVehicleFeeWaiver": "FEE_WAIVER_NOT_AUTHORITY"
+  },
+  "sources": {
+    "guidelinesSha256": "f5696205d1bd00cc6a6529044666431a80aa2a42a017b6c802ce4d3e75ad3c16",
+    "guidelinesPdfCreated": "2013-10-15",
+    "guidelinesPdfModified": "2024-01-10",
+    "receiptApplicationSha256": "d513b41c4ebec5b9ba76d8326784e7e2eadf07ae56183018c21650e33965a93c",
+    "receiptApplicationPdfCreated": "2013-10-15",
+    "receiptApplicationPdfModified": "2013-10-15"
+  },
+  "complaints": {
+    "providerRows": "NOT_ACQUIRED",
+    "outcomes": "NOT_ACQUIRED",
+    "fmcsaInterstateIntake": "KNOWN"
+  },
+  "enforcement": {
+    "capability": "PARTIAL",
+    "providerRows": "NOT_ACQUIRED",
+    "nameOnlyJoins": 0
+  },
+  "newCanonicalOrganizations": 0,
+  "graphWrites": 0,
+  "claimEligibilityChanges": 0
+}

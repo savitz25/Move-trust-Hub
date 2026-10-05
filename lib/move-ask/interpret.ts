@@ -46,6 +46,7 @@ const STATE_NAMES: Record<string, string> = {
   louisiana: 'LA',
   kentucky: 'KY',
   'south carolina': 'SC',
+  mississippi: 'MS',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -67,6 +68,7 @@ const STATE_NAMES: Record<string, string> = {
   la: 'LA',
   ky: 'KY',
   sc: 'SC',
+  ms: 'MS',
 };
 
 function detectState(q: string): string | undefined {
@@ -337,6 +339,15 @@ function scContext(q: string): boolean {
   const named = /\bsouth carolina\b|\bin sc\b/i.test(q);
   const other = detectState(q.replace(/\bsouth carolina\b|\bin sc\b/gi, ' ').replace(SC_CITIES, ' '));
   return named && (!other || other === 'SC') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+const MS_ALTERNATIVES = ['Open Mississippi household-goods certificate research.', 'Contact MDOT Motor Carrier to verify a certificate of public convenience and necessity.'];
+const MS_CITIES = /\b(gulfport|biloxi)\b/i;
+const MS_GEO_CITIES = /\b(jackson|gulfport|biloxi)\b/i;
+function msContext(q: string): boolean {
+  const named = /\bmississippi\b|\bin ms\b/i.test(q) ||
+    (MS_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
+  const other = detectState(q.replace(/\bmississippi\b|\bin ms\b/gi, ' ').replace(MS_GEO_CITIES, ' '));
+  return named && (!other || other === 'MS') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
 }
 function wiContext(q: string): boolean {
   const named = /\bwisconsin\b|\bin wi\b|\bwisdot\b/i.test(q) ||
@@ -837,6 +848,25 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     const query = fail(reason, SC_ALTERNATIVES);
     query.coverageState = cert && matches.length ? 'PARTIAL' : cert || /\b(complaints?|enforcement|insurance|tariffs?|orders?)\b/i.test(q) ? 'NOT_ACQUIRED' : 'PARTIAL';
     push('Coverage', 'ORS Class E HHG workbook acquired; HAZ rows excluded; insurance, tariffs, orders, and federal bridges not on the file');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (msContext(q) && !isRouteOrInterstate(q)) {
+    const city = q.match(MS_GEO_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only. This research publishes no Mississippi city intelligence route.` : '';
+    let reason: string;
+    if (ctRanking(q)) reason = 'MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. A Mississippi household-goods certificate is not a provider winner.';
+    else if (/\b\d{3,8}\b/.test(q) && !/\b(usdot|dot|mc|certificate|permit|authority)\b/i.test(q)) reason = 'That number has no label. Specify an MDOT certificate, permit, USDOT or MC; no carrier lookup was inferred.';
+    else if (/\bcomplaints?\b/i.test(q)) reason = 'No public provider-level Mississippi household-goods complaint rows were acquired. A complaint is not a finding. Interstate mover complaints follow FMCSA guidance.';
+    else if (/\b(enforcement|disciplin|revocation|suspension|orders?)\b/i.test(q)) reason = 'A Mississippi household-goods order, revocation, or suspension corpus was NOT_ACQUIRED. No provider-level orders were attached, including by name.';
+    else if (/\b(insurance|insured|cargo|form e|form h)\b/i.test(q)) reason = 'MDOT guidelines print cargo liability of $5,000 for loads of three tons or less and $10,000 for loads of more than three tons, plus $750,000 property (non-hazardous) liability. Passenger seating limits are a separate class. Provider-level current insurance status was NOT_ACQUIRED. A minimum is not proof of coverage.';
+    else if (/\bpassenger\b/i.test(q)) reason = 'Passenger authority is separate from a Mississippi household-goods certificate. The guidelines also print separate passenger liability limits. No passenger roster was acquired.';
+    else if (/\bcontract(?:-|\s+)carrier\b|\bpermit\b/i.test(q)) reason = 'A contract-carrier permit is separate from a Mississippi certificate of public convenience and necessity. No contract-carrier permit roster was acquired. Missing is not zero.';
+    else if (/\b(tariffs?|rates?|charges?)\b/i.test(q)) reason = 'A Mississippi household-goods tariff corpus was NOT_ACQUIRED. A tariff requirement is not a quote or mover ranking.';
+    else reason = `The Mississippi Department of Transportation motor-carrier function uses a certificate of public convenience and necessity for for-hire household-goods moves between Mississippi points. The public guidelines and the blank MSR-1 receipt application are filing documents, not a roster. A statewide household-goods certificate count was NOT_ACQUIRED. Verify an individual certificate with MDOT Motor Carrier. An application is not an issued certificate. A contract-carrier permit, passenger authority, USDOT and federal MC stay separate. No exact bridges or combined mover count were inferred.${cityNote}`;
+    const query = fail(reason, MS_ALTERNATIVES);
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'MDOT HHG certificate verification; roster and exact federal bridges NOT_ACQUIRED');
     return { raw: q, query, interpretation: lines };
   }
 
