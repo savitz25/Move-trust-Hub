@@ -1,0 +1,87 @@
+{
+  "version": "move-sc-state-intel-v1",
+  "ticket": "SC-MOVE-001",
+  "sourceAsOf": "2026-08-04",
+  "sourceAsOfMeaning": "Filename date token on Active_HHG_Certificates_20260804.xlsx. Not a certificate effective date and not the CRM Modified On range.",
+  "snapshotAsOf": "2026-08-04",
+  "retrievedAt": "2026-10-05",
+  "generatedAt": "2026-10-05T18:40:00Z",
+  "publication": {
+    "route": "/south-carolina",
+    "canonical": "https://www.movetrusthub.com/south-carolina",
+    "robots": "index,follow",
+    "rankings": false,
+    "trustScore": false
+  },
+  "regulator": "South Carolina Office of Regulatory Staff and Public Service Commission",
+  "authority": "Class E household-goods certificate",
+  "statute": "S.C. Code Ann. § 58-23-10 et seq.",
+  "classRegulation": "S.C. Code Ann. Regs. 103-114",
+  "householdGoodsAuthority": {
+    "verification": "KNOWN",
+    "roster": "ACQUIRED",
+    "workbookFileName": "Active_HHG_Certificates_20260804.xlsx",
+    "workbookUrl": "https://ors.sc.gov/sites/scors/files/Documents/Regulatory/transportation/Class%20E/Active_HHG_Certificates_20260804.xlsx",
+    "workbookSha256": "e70dd08e3e5c61f65e2f791dc0f46c2c49248b34aa03b704508dd0ac4140c50b",
+    "sheetName": "Active HHG Certificates",
+    "sheetDataRows": 153,
+    "hiddenSheetCounted": false,
+    "rows": 150,
+    "distinctCertificateNumbers": 149,
+    "distinctCrmRecords": 150,
+    "distinctPrintedProviderNames": 149,
+    "filingStatusActive": 150,
+    "repeatedCertificateNumber": "9774-A",
+    "repeatedCertificateCrmRecords": 2,
+    "rowsPrintingDba": 46,
+    "crmModifiedOnMin": "2025-10-23T20:42:41",
+    "crmModifiedOnMax": "2026-07-28T14:29:54",
+    "addressPrinted": false,
+    "otherCertificateClasses": "SEPARATE",
+    "interstate": "FMCSA; not a South Carolina Class E certificate"
+  },
+  "classEHazInThisWorkbook": {
+    "rows": 3,
+    "certificates": ["8208", "9245", "8603"],
+    "includedInHouseholdGoodsCount": false
+  },
+  "separateHazCarrierFile": {
+    "url": "https://ors.sc.gov/sites/scors/files/Documents/Regulatory/transportation/Regulated%20HAZ%20Carriers%209-13-2024%204-30-33%20PM.xlsx",
+    "filenameDateToken": "2024-09-13",
+    "parsed": false,
+    "rows": null
+  },
+  "federalBridges": {
+    "rowsWithPrintedUsdot": null,
+    "exactBridges": null,
+    "usdotPrintedOnListing": false,
+    "mcPrintedOnListing": false
+  },
+  "insurance": {
+    "regulation": "S.C. Code Ann. Regs. 103-178",
+    "formERequirement": "KNOWN",
+    "formHRequirement": "KNOWN",
+    "providerStatus": "NOT_ACQUIRED",
+    "minimumUsd": null
+  },
+  "tariffs": {
+    "regulation": "S.C. Code Ann. Regs. 103-190",
+    "applicationRequiresAttachedTariff": true,
+    "sampleUrl": "https://ors.sc.gov/sites/scors/files/Documents/Regulatory/transportation/Class%20E/Small%20Company%20Tariff%20Sample.pdf",
+    "sampleIsCarrierTariff": false,
+    "corpus": "NOT_ACQUIRED",
+    "isQuote": false,
+    "isCurrentCompliance": false
+  },
+  "complaints": {
+    "corpus": "NOT_ACQUIRED"
+  },
+  "enforcement": {
+    "corpus": "NOT_ACQUIRED",
+    "providerRows": "NOT_ACQUIRED",
+    "docketCorpusUsedAsRoster": false
+  },
+  "newCanonicalOrganizations": 0,
+  "graphWrites": 0,
+  "claimEligibilityChanges": 0
+}

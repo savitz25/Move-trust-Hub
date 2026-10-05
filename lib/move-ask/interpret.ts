@@ -14,6 +14,7 @@ import { MINNESOTA_MOVE_SNAPSHOT } from '../minnesota-intelligence/snapshot';
 import { MICHIGAN_MOVE_SNAPSHOT } from '../michigan-intelligence/snapshot';
 import { CONNECTICUT_MOVE_SNAPSHOT, lookupCtHhgCertificate } from '../connecticut-intelligence/snapshot';
 import { KENTUCKY_MOVE_SNAPSHOT, lookupKyHhgCertificate } from '../kentucky-intelligence/snapshot';
+import { SOUTH_CAROLINA_MOVE_SNAPSHOT, lookupScHhgCertificate } from '../south-carolina-intelligence/snapshot';
 import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
 import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
@@ -44,6 +45,7 @@ const STATE_NAMES: Record<string, string> = {
   alabama: 'AL',
   louisiana: 'LA',
   kentucky: 'KY',
+  'south carolina': 'SC',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -64,6 +66,7 @@ const STATE_NAMES: Record<string, string> = {
   al: 'AL',
   la: 'LA',
   ky: 'KY',
+  sc: 'SC',
 };
 
 function detectState(q: string): string | undefined {
@@ -327,6 +330,13 @@ function kyContext(q: string): boolean {
     (KY_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
   const other = detectState(q.replace(/\bkentucky\b|\bin ky\b/gi, ' ').replace(KY_CITIES, ' '));
   return named && (!other || other === 'KY') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+const SC_ALTERNATIVES = ['Open South Carolina Class E household-goods research.', 'Read the ORS regulated household-goods carrier workbook for a certificate number.'];
+const SC_CITIES = /\b(charleston|columbia|greenville)\b/i;
+function scContext(q: string): boolean {
+  const named = /\bsouth carolina\b|\bin sc\b/i.test(q);
+  const other = detectState(q.replace(/\bsouth carolina\b|\bin sc\b/gi, ' ').replace(SC_CITIES, ' '));
+  return named && (!other || other === 'SC') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
 }
 function wiContext(q: string): boolean {
   const named = /\bwisconsin\b|\bin wi\b|\bwisdot\b/i.test(q) ||
@@ -804,6 +814,29 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     const query = fail(reason, KY_ALTERNATIVES);
     query.coverageState = cert && row ? 'PARTIAL' : cert || /\b(complaints?|enforcement|insurance|tariffs?|annual reports?)\b/i.test(q) ? 'NOT_ACQUIRED' : 'PARTIAL';
     push('Coverage', 'KYTC HHG certificate listing acquired; status, insurance compliance, tariffs, and federal bridges not on the file');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (scContext(q) && !isRouteOrInterstate(q)) {
+    const sc = SOUTH_CAROLINA_MOVE_SNAPSHOT;
+    const city = q.match(SC_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only. This research publishes no South Carolina city intelligence route.` : '';
+    const cert = q.match(/\b(?:certificate|cert)\s*(?:no\.?|number|#)?\s*#?\s*(\d{3,5}(?:-[A-Za-z])?)\b/i)?.[1]?.toUpperCase();
+    const matches = cert ? lookupScHhgCertificate(cert) : [];
+    let reason: string;
+    if (ctRanking(q)) reason = 'MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. A South Carolina Class E household-goods certificate is not a provider winner.';
+    else if (cert && matches.length === 2) reason = `South Carolina certificate ${cert} is printed on two Class E HHG rows in the ORS workbook ${sc.workbookFileName}: ${matches[0].providerCompany}${matches[0].dba ? ` (DBA ${matches[0].dba})` : ''}. Both rows print Filing Status ${matches[0].filingStatus}. The workbook does not print an address, USDOT, or MC number. Listing presence is not current insurance or tariff compliance.`;
+    else if (cert && matches.length === 1) reason = `South Carolina certificate ${matches[0].certificateNumber} is on the ORS Class E HHG workbook ${sc.workbookFileName}: ${matches[0].providerCompany}${matches[0].dba ? ` (DBA ${matches[0].dba})` : ''}. Filing Status prints ${matches[0].filingStatus}. The workbook does not print an address, USDOT, or MC number. Listing presence is not current insurance or tariff compliance.`;
+    else if (cert) reason = `South Carolina certificate ${cert} is absent from the Class E HHG rows in the ORS workbook ${sc.workbookFileName}. Absence from those rows is not proof that no authority exists. Class E HAZ rows in the same file are not household-goods certificates.`;
+    else if (/\b\d{3,8}\b/.test(q) && !/\b(usdot|dot|mc|certificate|cert|authority)\b/i.test(q)) reason = 'That number has no label. Specify a South Carolina certificate number, USDOT, or MC. No carrier lookup was inferred.';
+    else if (/\bcomplaints?\b/i.test(q)) reason = 'A South Carolina household-goods complaint corpus was NOT_ACQUIRED. A complaint is not a finding. Interstate mover complaints follow FMCSA guidance.';
+    else if (/\b(enforcement|disciplin|revocation|suspension|directives?|orders?)\b/i.test(q)) reason = 'PSC orders and directives were NOT_ACQUIRED as a corpus. No provider-level order was attached, including by name. An order is not this roster.';
+    else if (/\b(insurance|insured|cargo|form e|form h)\b/i.test(q)) reason = 'S.C. Code Ann. Regs. 103-178 requires proof of insurance, and the PSC Class E application says Form E and Form H are filed with ORS. The carrier workbook does not print insurance status. A filing requirement is not proof that a named carrier is currently compliant. No dollar minimum was taken into this snapshot.';
+    else if (/\b(tariffs?|rates?|charges?)\b/i.test(q)) reason = 'S.C. Code Ann. Regs. 103-190 says a certificated motor freight carrier may not operate until its rates and rules are filed. The PSC Class E application is returned when no tariff is attached. ORS publishes a small-company tariff sample. Carrier tariff files were NOT_ACQUIRED. A sample is not a carrier tariff, and a filing requirement is not a quote or current compliance.';
+    else reason = `The South Carolina Office of Regulatory Staff publishes Class E workbook ${sc.workbookFileName}. The household-goods count is ${sc.listingRows} Class E HHG certificate rows and ${sc.distinctCertificateNumbers} distinct certificate numbers. All ${sc.filingStatusActive} of those rows print Filing Status Active. The same sheet has ${sc.sheetDataRows} data rows because ${sc.classEHazRowsInThisWorkbook} Class E HAZ rows are also on it. Those HAZ rows are not in the ${sc.listingRows}. Certificate ${sc.repeatedCertificateNumber} is one printed provider on two CRM records. The separate hazardous-waste carrier file was not parsed. Class C, transportation network companies, applications, PSC orders, tariffs, insurance filings, FMCSA, and UCR stay separate. No address, USDOT, or MC number is on the workbook.${cityNote}`;
+    const query = fail(reason, SC_ALTERNATIVES);
+    query.coverageState = cert && matches.length ? 'PARTIAL' : cert || /\b(complaints?|enforcement|insurance|tariffs?|orders?)\b/i.test(q) ? 'NOT_ACQUIRED' : 'PARTIAL';
+    push('Coverage', 'ORS Class E HHG workbook acquired; HAZ rows excluded; insurance, tariffs, orders, and federal bridges not on the file');
     return { raw: q, query, interpretation: lines };
   }
 

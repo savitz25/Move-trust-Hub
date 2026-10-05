@@ -61,6 +61,8 @@ assert(v1.network.publishedStateIntelligencePaths.includes("/alabama"), "Alabama
 assert(v1.network.publishedStateIntelligencePaths.includes("/louisiana"), "Louisiana state intelligence represented");
 assert(v1.network.publishedStateIntelligencePaths.includes("/kentucky"), "Kentucky state intelligence represented");
 assert(v1.homepageStateCards.find((c) => c.href === "/kentucky")?.roster.includes("42 certificate rows"), "Kentucky HHG listing count stays on the homepage card");
+assert(v1.network.publishedStateIntelligencePaths.includes("/south-carolina"), "South Carolina state intelligence represented");
+assert(v1.homepageStateCards.find((c) => c.href === "/south-carolina")?.roster.includes("150 Class E HHG"), "South Carolina Class E HHG count stays on the homepage card");
 assert(byKey.oh_puco_hhg_certificate_universe.value === null, "Ohio PUCO HHG roster is not a number");
 assert(byKey.oh_puco_hhg_certificate_universe.valueState === "NOT_ACQUIRED", "Ohio not acquired");
 assert(byKey.ny_dot_2026_hhg_bulletin_observations.value === 108, "NY 2026 HHG bulletin observations");

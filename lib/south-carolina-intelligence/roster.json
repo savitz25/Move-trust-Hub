@@ -1,0 +1,1502 @@
+[
+  {
+    "crmGuid": "bc3fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Smith Dray Line & Storage Company, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "102-A",
+    "modifiedOn": "2026-01-20T20:55:34"
+  },
+  {
+    "crmGuid": "e3181c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Anderson Transfer Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "107-B",
+    "modifiedOn": "2026-01-20T20:56:21"
+  },
+  {
+    "crmGuid": "e5191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Lytle's Transfer & Storage, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "130-F",
+    "modifiedOn": "2026-01-20T20:55:57"
+  },
+  {
+    "crmGuid": "34191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Coleman American Moving Services, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "148-F",
+    "modifiedOn": "2026-01-20T20:55:54"
+  },
+  {
+    "crmGuid": "943fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Reads Moving Systems of Carolina, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "149-D",
+    "modifiedOn": "2026-01-20T20:55:15"
+  },
+  {
+    "crmGuid": "d3181c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "American International Movers, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "152-B",
+    "modifiedOn": "2026-01-20T20:55:56"
+  },
+  {
+    "crmGuid": "99191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Hilldrup Companies, Inc.",
+    "dba": "Hilldrup Moving and Storage",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "167-G",
+    "modifiedOn": "2026-01-20T20:55:58"
+  },
+  {
+    "crmGuid": "e6181c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Armstrong Transfer & Storage Co., Inc.",
+    "dba": "Armstrong Relocation Company",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "17-F",
+    "modifiedOn": "2026-01-20T20:55:56"
+  },
+  {
+    "crmGuid": "18191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Carolina Moving And Storage Company, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "2136",
+    "modifiedOn": "2026-01-20T20:54:55"
+  },
+  {
+    "crmGuid": "b8181c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "A-1 Transfer & Storage Company, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "2399-A",
+    "modifiedOn": "2026-01-20T20:55:58"
+  },
+  {
+    "crmGuid": "0b191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Carey Moving & Storage of Charlotte, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "2447-B",
+    "modifiedOn": "2026-01-20T20:56:32"
+  },
+  {
+    "crmGuid": "db191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Lawrence Transportation Systems, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "2499-A",
+    "modifiedOn": "2026-01-20T20:55:58"
+  },
+  {
+    "crmGuid": "93191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Harkins Moving & Storage, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "2691",
+    "modifiedOn": "2026-01-20T20:56:21"
+  },
+  {
+    "crmGuid": "6c191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Fountain Moving & Storage, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "2707-A",
+    "modifiedOn": "2026-01-20T20:56:07"
+  },
+  {
+    "crmGuid": "b0191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Jay Moore",
+    "dba": "Jay Moore Moving Company",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "2722-B",
+    "modifiedOn": "2026-01-20T20:55:35"
+  },
+  {
+    "crmGuid": "12191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Carey Moving & Storage, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "2973",
+    "modifiedOn": "2026-01-20T20:56:17"
+  },
+  {
+    "crmGuid": "cecddbf9-c10c-ec11-94ef-001dd8305f1a",
+    "providerCompany": "Armstrong Relocation Company, Charleston, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "2977-A",
+    "modifiedOn": "2026-01-20T20:55:22"
+  },
+  {
+    "crmGuid": "e8191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "M.A. Ellefson & Son, Inc.",
+    "dba": "Acme Moving & Storage",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "5029",
+    "modifiedOn": "2026-01-20T20:55:56"
+  },
+  {
+    "crmGuid": "22191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "All American Relocation Inc",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "6003-B",
+    "modifiedOn": "2026-01-20T20:55:56"
+  },
+  {
+    "crmGuid": "2f191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Coastal Transfer and Storage, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "6063-A",
+    "modifiedOn": "2026-01-20T20:55:29"
+  },
+  {
+    "crmGuid": "713fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Nilson Van & Storage",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "71-C",
+    "modifiedOn": "2026-01-20T20:56:06"
+  },
+  {
+    "crmGuid": "2940db5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Yarborough's Moving Service, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "8369-A",
+    "modifiedOn": "2026-01-20T20:55:42"
+  },
+  {
+    "crmGuid": "8d191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "H & S Transfer Company",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "8878",
+    "modifiedOn": "2026-01-20T20:55:56"
+  },
+  {
+    "crmGuid": "0f191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Carey Moving & Storage of Greenville, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "89-B",
+    "modifiedOn": "2026-01-20T20:55:35"
+  },
+  {
+    "crmGuid": "67191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Forest Hills Transfer and Storage, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9463",
+    "modifiedOn": "2026-01-20T20:55:57"
+  },
+  {
+    "crmGuid": "d0191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "KB Enterprises, Inc.",
+    "dba": "Two Men and a Truck",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9494-C",
+    "modifiedOn": "2026-01-20T20:56:08"
+  },
+  {
+    "crmGuid": "f43fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Upward Endeavors LLC",
+    "dba": "Two Men and a Truck of Greenville",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9664-B",
+    "modifiedOn": "2026-01-20T20:55:34"
+  },
+  {
+    "crmGuid": "f93fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "U-Save Movers, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9665-B",
+    "modifiedOn": "2026-01-20T20:55:15"
+  },
+  {
+    "crmGuid": "ee191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Mark 1 Moving & Storage, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9666-C",
+    "modifiedOn": "2026-01-20T20:55:35"
+  },
+  {
+    "crmGuid": "cd191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "K & K Investments Inc.",
+    "dba": "America's Best Moving System",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9668-D",
+    "modifiedOn": "2026-01-20T20:55:35"
+  },
+  {
+    "crmGuid": "873fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Poole's Moving & Storage, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9671",
+    "modifiedOn": "2026-01-20T20:55:34"
+  },
+  {
+    "crmGuid": "f9181c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Bill Sanders Moving, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9675-C",
+    "modifiedOn": "2026-01-20T20:54:48"
+  },
+  {
+    "crmGuid": "a63fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Samuel Redding",
+    "dba": "Redding Moving Systems",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9679-B",
+    "modifiedOn": "2026-01-20T20:55:27"
+  },
+  {
+    "crmGuid": "b4181c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "A Perfect Move, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9680-B",
+    "modifiedOn": "2026-01-20T20:54:55"
+  },
+  {
+    "crmGuid": "983fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Reliable Services Group, Inc.",
+    "dba": "Two Men and A Truck",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9684-C",
+    "modifiedOn": "2026-01-20T20:55:42"
+  },
+  {
+    "crmGuid": "6f3fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Newton Moving & Storage Company, LLC",
+    "dba": "Monro Moving & Storage Co.",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9687-A",
+    "modifiedOn": "2026-01-20T20:55:55"
+  },
+  {
+    "crmGuid": "a3191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Island Moving Professionals, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9691-A",
+    "modifiedOn": "2026-01-20T20:55:16"
+  },
+  {
+    "crmGuid": "bf191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Jimmy Moore Moving LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9697-D",
+    "modifiedOn": "2026-01-20T20:55:35"
+  },
+  {
+    "crmGuid": "e23fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Tonya J. Glaser",
+    "dba": "Glaser & Sons Local Mooving",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9703-A",
+    "modifiedOn": "2026-01-20T20:55:34"
+  },
+  {
+    "crmGuid": "ba191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Jimmy Coats",
+    "dba": "Greenwood Moving & Storage",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9705-B",
+    "modifiedOn": "2026-01-20T20:55:36"
+  },
+  {
+    "crmGuid": "61191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Everett S. Plowden",
+    "dba": "Legends Moving Service",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9711-A",
+    "modifiedOn": "2026-01-20T20:55:29"
+  },
+  {
+    "crmGuid": "4f191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Dowdy Five Star Moving & Storage, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9714-B",
+    "modifiedOn": "2026-01-20T20:55:56"
+  },
+  {
+    "crmGuid": "ca181c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "All My Sons Moving & Storage of Greenville, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9715-G",
+    "modifiedOn": "2026-01-20T20:55:35"
+  },
+  {
+    "crmGuid": "88191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Grand Strand Moving & Storage, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9718-A",
+    "modifiedOn": "2026-01-20T20:55:44"
+  },
+  {
+    "crmGuid": "d73fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Thompson & Webster, LLC",
+    "dba": "Two Men & A Truck of Augusta",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9719-A",
+    "modifiedOn": "2026-01-20T20:55:55"
+  },
+  {
+    "crmGuid": "5e3fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Movemart Relocation, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9721-A",
+    "modifiedOn": "2026-01-20T20:56:06"
+  },
+  {
+    "crmGuid": "57191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Easy Movers, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9724",
+    "modifiedOn": "2026-01-20T20:55:57"
+  },
+  {
+    "crmGuid": "d3191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Kelly Moving, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9733",
+    "modifiedOn": "2026-01-20T20:56:18"
+  },
+  {
+    "crmGuid": "2b191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Coastal Moving & Storage, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9734",
+    "modifiedOn": "2026-01-20T20:56:07"
+  },
+  {
+    "crmGuid": "25191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Coastal Carrier Moving & Storage Grand Strand, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9738-A",
+    "modifiedOn": "2026-01-20T20:55:43"
+  },
+  {
+    "crmGuid": "fe191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Minute Man Movers, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9739-B",
+    "modifiedOn": "2026-01-20T20:56:08"
+  },
+  {
+    "crmGuid": "f7191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "McCorquodale Transfer, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9740-B",
+    "modifiedOn": "2026-01-20T20:55:16"
+  },
+  {
+    "crmGuid": "4b191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Digital Packaging & Delivering Systems, Inc.",
+    "dba": "Strong Man Movers",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9744",
+    "modifiedOn": "2026-01-20T20:56:07"
+  },
+  {
+    "crmGuid": "3a191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Covan World-Wide Moving, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9745",
+    "modifiedOn": "2026-01-20T20:55:49"
+  },
+  {
+    "crmGuid": "633fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Moving with Moxie, LLC",
+    "dba": "All My Sons Moving & Storage of Hilton Head",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9750-A",
+    "modifiedOn": "2026-01-20T20:54:55"
+  },
+  {
+    "crmGuid": "7d191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Gentlemen Movers, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9756",
+    "modifiedOn": "2026-01-20T20:56:08"
+  },
+  {
+    "crmGuid": "743fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "On the Go Designer Deliveries, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9761-A",
+    "modifiedOn": "2026-01-20T20:55:15"
+  },
+  {
+    "crmGuid": "fc191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Michael S. Nierwienski",
+    "dba": "Fairway Moving Services",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9770-A",
+    "modifiedOn": "2026-01-20T20:55:44"
+  },
+  {
+    "crmGuid": "2ab50168-c647-ec11-8c62-001dd804f0b9",
+    "providerCompany": "American Van Lines Inc.",
+    "dba": "MBM Moving Systems",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9774-A",
+    "modifiedOn": "2025-10-23T20:43:13"
+  },
+  {
+    "crmGuid": "f4191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "American Van Lines Inc.",
+    "dba": "MBM Moving Systems",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9774-A",
+    "modifiedOn": "2025-10-23T20:57:52"
+  },
+  {
+    "crmGuid": "4e191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Don's Upholstery, Inc.",
+    "dba": "Don's Moving Services",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9782-A",
+    "modifiedOn": "2026-01-20T20:55:43"
+  },
+  {
+    "crmGuid": "6d3fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "New World Van Lines, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9783",
+    "modifiedOn": "2026-01-20T20:55:56"
+  },
+  {
+    "crmGuid": "f1181c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Ballantyne & Beyond Moving, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9784-A",
+    "modifiedOn": "2026-01-20T20:56:32"
+  },
+  {
+    "crmGuid": "963fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Ready Set Movers, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9787-A",
+    "modifiedOn": "2026-01-20T20:55:15"
+  },
+  {
+    "crmGuid": "c03fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Soda City Movers, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9789-A",
+    "modifiedOn": "2026-01-20T20:56:06"
+  },
+  {
+    "crmGuid": "c7181c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "All My Sons Moving & Storage of Charleston, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9792-B",
+    "modifiedOn": "2026-01-20T20:55:15"
+  },
+  {
+    "crmGuid": "d7181c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "American Moving and Storage, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9794",
+    "modifiedOn": "2026-04-22T15:20:53"
+  },
+  {
+    "crmGuid": "85191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Go Smooth Move, LLC",
+    "dba": "Smooth Move",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9796-A",
+    "modifiedOn": "2026-01-20T20:55:16"
+  },
+  {
+    "crmGuid": "9d3fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Robert Broadwater, Sr.",
+    "dba": "MAKE THE RIGHT MOVE",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9797",
+    "modifiedOn": "2026-01-20T20:54:47"
+  },
+  {
+    "crmGuid": "e2191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Low Country Moving Specialists, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9799",
+    "modifiedOn": "2026-01-20T20:55:16"
+  },
+  {
+    "crmGuid": "37191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Cougar Moving Company, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9800-A",
+    "modifiedOn": "2026-01-20T20:55:15"
+  },
+  {
+    "crmGuid": "d93fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Tiger Moving LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9801-A",
+    "modifiedOn": "2026-01-20T20:55:34"
+  },
+  {
+    "crmGuid": "46191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Delancey Street South Carolina",
+    "dba": "Delancey Street Moving & Transportation",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9804-A",
+    "modifiedOn": "2026-01-20T20:55:16"
+  },
+  {
+    "crmGuid": "a7191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "J & T's Local Moving and More LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9805",
+    "modifiedOn": "2026-01-20T20:56:22"
+  },
+  {
+    "crmGuid": "dd181c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "American Safety Movers, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9807",
+    "modifiedOn": "2026-01-20T20:55:54"
+  },
+  {
+    "crmGuid": "663fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "NBF Savannah, LLC",
+    "dba": "Two Men and a Truck",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9808-A",
+    "modifiedOn": "2026-01-20T20:55:55"
+  },
+  {
+    "crmGuid": "81191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Go Diego Go Services, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9812",
+    "modifiedOn": "2026-01-20T20:55:44"
+  },
+  {
+    "crmGuid": "b53fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Just-In Moving LLC",
+    "dba": "College HUNKS Junk Hauling and Moving",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9817-B",
+    "modifiedOn": "2026-02-10T16:56:04"
+  },
+  {
+    "crmGuid": "e03fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Timmy Hayes Moving LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9818-A",
+    "modifiedOn": "2026-01-20T20:55:15"
+  },
+  {
+    "crmGuid": "15191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Carolina Movers, LLC",
+    "dba": "Smooth Move",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9823",
+    "modifiedOn": "2026-01-20T20:56:32"
+  },
+  {
+    "crmGuid": "96191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Herren's Carolina Moving & Storage, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9828",
+    "modifiedOn": "2026-01-20T20:55:57"
+  },
+  {
+    "crmGuid": "bc181c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "ADSI Moving Systems, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9832",
+    "modifiedOn": "2026-01-20T20:55:56"
+  },
+  {
+    "crmGuid": "0640db5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "WEB Endeavors, Inc.",
+    "dba": "Two Men and a Truck",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9833-A",
+    "modifiedOn": "2026-01-20T20:55:27"
+  },
+  {
+    "crmGuid": "8f3fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "ProHelp LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9838",
+    "modifiedOn": "2026-01-20T20:56:06"
+  },
+  {
+    "crmGuid": "77191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Gamecock Moving, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9840-A",
+    "modifiedOn": "2026-01-20T20:55:50"
+  },
+  {
+    "crmGuid": "b6191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "JB Movers, Inc",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9845",
+    "modifiedOn": "2026-01-20T20:56:32"
+  },
+  {
+    "crmGuid": "d0181c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "All My Sons of Charlotte South, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9847",
+    "modifiedOn": "2026-01-20T20:55:35"
+  },
+  {
+    "crmGuid": "7a191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Gentle Giant Moving Company (NC), LLC",
+    "dba": "Gentle Giant Moving & Storage",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9849",
+    "modifiedOn": "2026-01-20T20:55:57"
+  },
+  {
+    "crmGuid": "6a3fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Need It Moved? LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9850",
+    "modifiedOn": "2026-01-20T20:56:06"
+  },
+  {
+    "crmGuid": "ea3fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Top Flight Movers, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9851",
+    "modifiedOn": "2026-01-20T20:55:34"
+  },
+  {
+    "crmGuid": "c7191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Jordan River Moving, L.L.C.",
+    "dba": "Jordan River Moving and Storage",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9853",
+    "modifiedOn": "2026-01-20T20:56:08"
+  },
+  {
+    "crmGuid": "59191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Ecolatino Multiservices LLC",
+    "dba": "Jimmy's Moving Service",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9854",
+    "modifiedOn": "2026-04-24T13:38:45"
+  },
+  {
+    "crmGuid": "7c3fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Parker Moving Services, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9857",
+    "modifiedOn": "2026-01-20T20:55:15"
+  },
+  {
+    "crmGuid": "0940db5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Wells Venture, LLC",
+    "dba": "College HUNKS Hauling Junk & Moving",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9858",
+    "modifiedOn": "2026-01-20T20:55:34"
+  },
+  {
+    "crmGuid": "f03fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Truemove LLC",
+    "dba": "College Hunks Hauling Junk & Moving",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9860",
+    "modifiedOn": "2026-01-20T20:55:34"
+  },
+  {
+    "crmGuid": "1f191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Carwin Logistics LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9861",
+    "modifiedOn": "2026-01-20T20:55:22"
+  },
+  {
+    "crmGuid": "c0181c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Advance Relocation and Storage Systems, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9862",
+    "modifiedOn": "2026-01-20T20:55:44"
+  },
+  {
+    "crmGuid": "54191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "E.E. Ward Moving & Storage Co., LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9863",
+    "modifiedOn": "2026-01-20T20:55:56"
+  },
+  {
+    "crmGuid": "2440db5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Workhorse Moving and Storage LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9864",
+    "modifiedOn": "2026-01-20T20:56:17"
+  },
+  {
+    "crmGuid": "ce3fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Strong Men Moving LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9865",
+    "modifiedOn": "2026-01-20T20:55:15"
+  },
+  {
+    "crmGuid": "01191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Bryce & Brent Trucking, Inc.",
+    "dba": "B&B Relocation Services Inc.",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9866",
+    "modifiedOn": "2026-01-20T20:56:07"
+  },
+  {
+    "crmGuid": "8b3fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Professional Movers of Charleston, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9867-A",
+    "modifiedOn": "2026-01-20T20:55:15"
+  },
+  {
+    "crmGuid": "5d191c59-cf3b-eb11-a813-001dd8309076",
+    "providerCompany": "Elite Movers, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9868",
+    "modifiedOn": "2026-01-20T20:55:16"
+  },
+  {
+    "crmGuid": "af3fdb5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Septian Jones",
+    "dba": "Coast to Coast Movers",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9871",
+    "modifiedOn": "2026-01-20T20:54:55"
+  },
+  {
+    "crmGuid": "a640db5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "All My Sons of Columbia, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9873",
+    "modifiedOn": "2026-01-20T20:56:07"
+  },
+  {
+    "crmGuid": "ab40db5d-cf3b-eb11-a813-001dd830487f",
+    "providerCompany": "Luxury Movers Moving Company LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9874",
+    "modifiedOn": "2026-04-01T13:34:25"
+  },
+  {
+    "crmGuid": "22af1cfe-b90c-ec11-94ef-001dd8305f1a",
+    "providerCompany": "ABA Moving & Storage, Inc.",
+    "dba": "Two Men and a Truck",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9879",
+    "modifiedOn": "2026-01-20T20:55:15"
+  },
+  {
+    "crmGuid": "6fb3dbc4-cc0c-ec11-94ef-001dd8305f1a",
+    "providerCompany": "Swamp Rabbit Moving LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9880",
+    "modifiedOn": "2026-01-20T20:55:35"
+  },
+  {
+    "crmGuid": "dc8e9dc5-c90c-ec11-94ef-001dd8305f1a",
+    "providerCompany": "Modern Day Movers, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9881",
+    "modifiedOn": "2026-01-20T20:55:46"
+  },
+  {
+    "crmGuid": "117541d2-c30c-ec11-94ef-001dd8305f1a",
+    "providerCompany": "Budget Movers of Augusta, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9883",
+    "modifiedOn": "2026-01-20T20:55:56"
+  },
+  {
+    "crmGuid": "0482d4ee-c80c-ec11-94ef-001dd8305f1a",
+    "providerCompany": "JEGA Movers LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9886",
+    "modifiedOn": "2026-01-20T20:56:07"
+  },
+  {
+    "crmGuid": "43804345-c00c-ec11-94ef-001dd8305f1a",
+    "providerCompany": "Anytyme Movers LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9887",
+    "modifiedOn": "2026-01-20T20:56:07"
+  },
+  {
+    "crmGuid": "f9951be9-3a42-ec11-8c62-001dd8050467",
+    "providerCompany": "Bournias, LLC",
+    "dba": "All My Sons Moving & Storage",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9891",
+    "modifiedOn": "2025-10-23T20:42:41"
+  },
+  {
+    "crmGuid": "de7c7a68-e851-ec11-8c62-001dd804b28f",
+    "providerCompany": "Christ Movers LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9892",
+    "modifiedOn": "2026-07-28T14:29:54"
+  },
+  {
+    "crmGuid": "6822a158-e851-ec11-8c62-001dd804bfc1",
+    "providerCompany": "Carolina Procurement Institute, Inc.",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9894",
+    "modifiedOn": "2026-01-20T20:56:01"
+  },
+  {
+    "crmGuid": "c6eba91c-e951-ec11-8c62-001dd804b28f",
+    "providerCompany": "Positive Moves Relocation and Transfer, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9895",
+    "modifiedOn": "2026-01-20T20:55:37"
+  },
+  {
+    "crmGuid": "551bad02-ffdc-ec11-a7b4-001dd805252a",
+    "providerCompany": "All My Sons of Myrtle Beach, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9898",
+    "modifiedOn": "2026-01-20T20:55:40"
+  },
+  {
+    "crmGuid": "782473f4-1fe8-ec11-bb3b-001dd8052a16",
+    "providerCompany": "Highway Men Moving, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9901",
+    "modifiedOn": "2026-01-20T20:55:32"
+  },
+  {
+    "crmGuid": "b5883eca-faa6-ec11-b3fe-001dd804fb18",
+    "providerCompany": "Greenville Moving Company, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9905",
+    "modifiedOn": "2026-01-20T20:55:32"
+  },
+  {
+    "crmGuid": "47917633-44d9-ed11-a7c7-001dd806ae56",
+    "providerCompany": "Glover Moving Company LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9907",
+    "modifiedOn": "2026-05-19T14:39:51"
+  },
+  {
+    "crmGuid": "6272ae23-b57f-ed11-81ad-001dd806afa8",
+    "providerCompany": "Palmetto Specialty Transfer LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9909",
+    "modifiedOn": "2026-01-20T20:56:05"
+  },
+  {
+    "crmGuid": "db081dff-2ddd-ed11-a7c6-001dd806ae56",
+    "providerCompany": "Saltwater Moving, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9910-A",
+    "modifiedOn": "2026-04-15T14:12:00"
+  },
+  {
+    "crmGuid": "a2cd303e-4505-ee11-8f6d-001dd806e076",
+    "providerCompany": "MoveCrew, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9912",
+    "modifiedOn": "2026-01-20T20:55:33"
+  },
+  {
+    "crmGuid": "cb937c08-d183-ee11-8179-001dd804ea8d",
+    "providerCompany": "JSM Endeavors, LLC",
+    "dba": "TWO MEN AND A TRUCK Aiken-Beaufort",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9914",
+    "modifiedOn": "2026-01-20T20:54:46"
+  },
+  {
+    "crmGuid": "3e93c42e-c7c5-ee11-9079-001dd8306e7a",
+    "providerCompany": "NBF Charlotte, LLC",
+    "dba": "Two Men and a Truck",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9916",
+    "modifiedOn": "2026-01-20T20:55:35"
+  },
+  {
+    "crmGuid": "ec7be100-b6d4-ee11-9079-001dd83064a6",
+    "providerCompany": "Next Stop Delivery LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9917",
+    "modifiedOn": "2026-05-20T13:14:32"
+  },
+  {
+    "crmGuid": "c9f1bdb4-66dd-ee11-9078-001dd83064a6",
+    "providerCompany": "Day By Day Errand Services, LLC",
+    "dba": "Nex Move",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9918",
+    "modifiedOn": "2026-05-12T14:12:04"
+  },
+  {
+    "crmGuid": "71417027-d803-ef11-a1fe-001dd8096703",
+    "providerCompany": "SeaDawgs Enterprises, Inc.",
+    "dba": "College Hunks Hauling Junk and Moving",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9919",
+    "modifiedOn": "2025-10-23T20:54:22"
+  },
+  {
+    "crmGuid": "360f4664-5627-ef11-840a-001dd809b5d7",
+    "providerCompany": "Ez As Pie Moving LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9920",
+    "modifiedOn": "2026-01-20T20:55:33"
+  },
+  {
+    "crmGuid": "f0d157e0-27fb-ee11-a1fe-001dd8096703",
+    "providerCompany": "Mike's Movers LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9921",
+    "modifiedOn": "2026-01-20T20:56:12"
+  },
+  {
+    "crmGuid": "2646b037-d354-ef11-a316-001dd8098a34",
+    "providerCompany": "Prosperity Realty Relocations Co",
+    "dba": "College Hunks Hauling Junk and Moving",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9922",
+    "modifiedOn": "2026-01-20T20:56:28"
+  },
+  {
+    "crmGuid": "55606342-de50-ef11-a316-001dd804c956",
+    "providerCompany": "Electric City Movers LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9923",
+    "modifiedOn": "2026-01-20T20:56:04"
+  },
+  {
+    "crmGuid": "27feb3d5-8734-ef11-8409-001dd8309987",
+    "providerCompany": "KARY HOLDINGS, LLC",
+    "dba": "All The Right Mooves Moving & Storage",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9924",
+    "modifiedOn": "2026-01-20T20:54:55"
+  },
+  {
+    "crmGuid": "0b5d7ca1-e171-ef11-a670-001dd809b418",
+    "providerCompany": "Island Thrifters LLC",
+    "dba": "Spence & Dave\u2019s Junk Removal and Moving",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9925",
+    "modifiedOn": "2026-01-20T20:56:05"
+  },
+  {
+    "crmGuid": "3895d097-39ab-ef11-b8e9-001dd806b5c1",
+    "providerCompany": "Your Movers LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9926",
+    "modifiedOn": "2026-01-20T20:55:41"
+  },
+  {
+    "crmGuid": "e5af638e-6898-ef11-ac21-001dd806b5c1",
+    "providerCompany": "Home of the Brave Moving LLC",
+    "dba": "Home of the Brave Moving Company",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9927",
+    "modifiedOn": "2026-01-20T20:55:33"
+  },
+  {
+    "crmGuid": "72dda65e-de92-ef11-ac21-001dd806b5c1",
+    "providerCompany": "LW Delivery Services LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9928",
+    "modifiedOn": "2026-01-20T20:55:29"
+  },
+  {
+    "crmGuid": "5e484569-2ac9-ef11-b8e9-001dd805523c",
+    "providerCompany": "Premier Junk and Moving Services LLC",
+    "dba": "College Hunks Moving",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9929",
+    "modifiedOn": "2026-01-20T20:56:05"
+  },
+  {
+    "crmGuid": "3cf3d78b-5f20-f011-998a-001dd80bcf22",
+    "providerCompany": "Good fellas moving LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9930",
+    "modifiedOn": "2026-01-20T20:55:34"
+  },
+  {
+    "crmGuid": "bfc27b78-e719-ef11-9f89-001dd80963e5",
+    "providerCompany": "Yeah That Movers LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9931",
+    "modifiedOn": "2026-05-19T14:37:02"
+  },
+  {
+    "crmGuid": "7e0a10ca-133b-f011-8c4e-001dd80bcf22",
+    "providerCompany": "J&H MOVERS LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9933",
+    "modifiedOn": "2026-07-14T16:09:59"
+  },
+  {
+    "crmGuid": "b2108ddc-113b-f011-8c4e-001dd80bcf22",
+    "providerCompany": "Tiger Town Movers, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9934",
+    "modifiedOn": "2026-01-20T20:55:59"
+  },
+  {
+    "crmGuid": "845a4553-224d-f011-877a-001dd80bcf22",
+    "providerCompany": "Port City Movers of Greenville, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9935",
+    "modifiedOn": "2025-10-23T20:54:59"
+  },
+  {
+    "crmGuid": "74a829cc-7de5-ef11-9342-001dd809b418",
+    "providerCompany": "Piece of Cake Moving + Storage LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9937",
+    "modifiedOn": "2026-01-20T20:55:57"
+  },
+  {
+    "crmGuid": "bc42365c-1030-f011-8c4e-001dd80bcf22",
+    "providerCompany": "POC Carolina LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9938",
+    "modifiedOn": "2025-10-23T20:55:11"
+  },
+  {
+    "crmGuid": "413ca182-c497-f011-b4cc-001dd80bcf22",
+    "providerCompany": "Broaddus Moving Specialist LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9939",
+    "modifiedOn": "2026-01-20T20:55:27"
+  },
+  {
+    "crmGuid": "23228366-6774-f011-b4cc-001dd803dca7",
+    "providerCompany": "Two Twigs Moving Charleston LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9940",
+    "modifiedOn": "2026-01-20T20:55:00"
+  },
+  {
+    "crmGuid": "8b893750-896c-f011-bec3-001dd803dca7",
+    "providerCompany": "J&E Services and Solutions, LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9941",
+    "modifiedOn": "2026-07-24T15:57:58"
+  },
+  {
+    "crmGuid": "1822464c-f808-f111-8407-001dd80db51f",
+    "providerCompany": "Zenn Movers LLC",
+    "dba": "",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9942",
+    "modifiedOn": "2026-04-08T15:20:06"
+  },
+  {
+    "crmGuid": "918090df-f708-f111-8407-001dd80db51f",
+    "providerCompany": "NBF Rock Hill LLC",
+    "dba": "Two Men and a Truck Rock Hill",
+    "utilityType": "Mover of Goods",
+    "filingType": "Class E HHG",
+    "filingStatus": "Active",
+    "certificateNumber": "9943",
+    "modifiedOn": "2026-06-08T16:27:18"
+  }
+]
