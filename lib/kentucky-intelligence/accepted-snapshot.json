@@ -1,0 +1,81 @@
+{
+  "version": "move-ky-state-intel-v1",
+  "ticket": "KY-MOVE-001",
+  "sourceAsOf": "2026-09-01",
+  "snapshotAsOf": "2026-09-01",
+  "retrievedAt": "2026-10-05",
+  "generatedAt": "2026-10-05T22:40:00Z",
+  "publication": {
+    "route": "/kentucky",
+    "canonical": "https://www.movetrusthub.com/kentucky",
+    "robots": "index,follow",
+    "rankings": false,
+    "trustScore": false
+  },
+  "regulator": "Kentucky Transportation Cabinet, Department of Vehicle Regulation, Division of Motor Carriers",
+  "authority": "Intrastate household-goods certificate",
+  "statute": "KRS 281.630",
+  "standardsStatute": "KRS 281.624",
+  "liabilityStatute": "KRS 281.655",
+  "householdGoodsAuthority": {
+    "verification": "KNOWN",
+    "roster": "ACQUIRED",
+    "listingTitle": "HHG Carrier Listing",
+    "listingFooterDate": "2026-09-01",
+    "listingUrl": "https://drive.ky.gov/Motor-Carriers/Documents/HHGCarrierListing-09-26.pdf",
+    "pdfSha256": "2c6be1bafd1019b621675f38ee3054496a66f8ad21d8fa1b8e7ddc51300aa0da",
+    "rows": 42,
+    "distinctCertificateNumbers": 42,
+    "statusPrinted": false,
+    "dmtOrDvrFieldPrinted": false,
+    "physicalAddressInKentucky": 34,
+    "physicalAddressOutsideKentucky": 8,
+    "certificate": "Household goods certificate",
+    "otherCertificateClasses": "SEPARATE",
+    "interstate": "FMCSA; not a Kentucky household-goods certificate"
+  },
+  "priorListing": {
+    "url": "https://drive.ky.gov/Motor-Carriers/Documents/HouseholdGoodsCarriers11-1-23.pdf",
+    "footerDate": "2023-11-01",
+    "usedAsPopulation": false,
+    "rows": null
+  },
+  "federalBridges": {
+    "rowsWithPrintedUsdot": null,
+    "distinctPrintedUsdots": null,
+    "rowsWithPrintedMc": null,
+    "distinctPrintedMcs": null,
+    "exactBridges": null,
+    "usdotPrintedOnListing": false
+  },
+  "insurance": {
+    "formHRequirement": "KNOWN",
+    "formERequirement": "KNOWN",
+    "providerStatus": "NOT_ACQUIRED",
+    "cargoMinimumUsd": null,
+    "declaredValueBaseRateIsInsurance": false
+  },
+  "tariffs": {
+    "requirement": "KNOWN",
+    "corpus": "NOT_ACQUIRED",
+    "isQuote": false,
+    "isCurrentCompliance": false
+  },
+  "annualReports": {
+    "form": "TC 95-44",
+    "filings": "NOT_ACQUIRED"
+  },
+  "complaints": {
+    "kytcIntake": "KNOWN",
+    "form": "TC 95-622",
+    "providerRows": "NOT_ACQUIRED",
+    "outcomes": "NOT_ACQUIRED"
+  },
+  "enforcement": {
+    "corpus": "NOT_ACQUIRED",
+    "providerRows": "NOT_ACQUIRED"
+  },
+  "newCanonicalOrganizations": 0,
+  "graphWrites": 0,
+  "claimEligibilityChanges": 0
+}

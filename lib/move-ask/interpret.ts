@@ -13,6 +13,7 @@ import { NEVADA_MOVE_SNAPSHOT } from '../nevada-intelligence/snapshot';
 import { MINNESOTA_MOVE_SNAPSHOT } from '../minnesota-intelligence/snapshot';
 import { MICHIGAN_MOVE_SNAPSHOT } from '../michigan-intelligence/snapshot';
 import { CONNECTICUT_MOVE_SNAPSHOT, lookupCtHhgCertificate } from '../connecticut-intelligence/snapshot';
+import { KENTUCKY_MOVE_SNAPSHOT, lookupKyHhgCertificate } from '../kentucky-intelligence/snapshot';
 import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
 import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
@@ -42,6 +43,7 @@ const STATE_NAMES: Record<string, string> = {
   indiana: 'IN',
   alabama: 'AL',
   louisiana: 'LA',
+  kentucky: 'KY',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -61,6 +63,7 @@ const STATE_NAMES: Record<string, string> = {
   in: 'IN',
   al: 'AL',
   la: 'LA',
+  ky: 'KY',
 };
 
 function detectState(q: string): string | undefined {
@@ -316,6 +319,14 @@ function laContext(q: string): boolean {
     (LA_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
   const other = detectState(q.replace(/\blouisiana\b|\bin la\b/gi, ' ').replace(LA_CITIES, ' '));
   return named && (!other || other === 'LA') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+const KY_ALTERNATIVES = ['Open Kentucky household-goods certificate research.', 'Read the KYTC HHG Carrier Listing for a certificate number.'];
+const KY_CITIES = /\b(louisville|lexington)\b/i;
+function kyContext(q: string): boolean {
+  const named = /\bkentucky\b|\bin ky\b|\bkytc\b/i.test(q) ||
+    (KY_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
+  const other = detectState(q.replace(/\bkentucky\b|\bin ky\b/gi, ' ').replace(KY_CITIES, ' '));
+  return named && (!other || other === 'KY') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
 }
 function wiContext(q: string): boolean {
   const named = /\bwisconsin\b|\bin wi\b|\bwisdot\b/i.test(q) ||
@@ -770,6 +781,29 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     const query = fail(reason, LA_ALTERNATIVES);
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'LPSC HHG certificate verification; roster and exact federal bridges NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (kyContext(q) && !isRouteOrInterstate(q)) {
+    const ky = KENTUCKY_MOVE_SNAPSHOT;
+    const city = q.match(KY_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only. This research publishes no Kentucky city intelligence route.` : '';
+    const cert = q.match(/\b(C\d{5})\b/i)?.[1]?.toUpperCase();
+    const row = cert ? lookupKyHhgCertificate(cert) : null;
+    let reason: string;
+    if (ctRanking(q)) reason = 'MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. A Kentucky household-goods certificate is not a provider winner.';
+    else if (cert && row) reason = `Kentucky certificate ${row.certificateNumber} is on the KYTC HHG Carrier Listing dated September 1, 2026: ${row.legalName}${row.dba.toUpperCase() === row.legalName.toUpperCase() ? '' : ` (DBA ${row.dba})`}. The listing does not print certificate status, a DMT or DVR field, USDOT, or MC. Listing presence is not current insurance, tariff, or annual-report compliance.`;
+    else if (cert) reason = `Kentucky certificate ${cert} is absent from the KYTC HHG Carrier Listing dated September 1, 2026. Absence from that listing is not proof that no authority exists.`;
+    else if (/\b\d{3,8}\b/.test(q) && !/\b(usdot|dot|mc|certificate|authority)\b/i.test(q)) reason = 'That number has no label. Specify a Kentucky certificate number, USDOT, or MC. No carrier lookup was inferred.';
+    else if (/\bcomplaints?\b/i.test(q)) reason = 'KYTC accepts household-goods complaint intake on form TC 95-622 at kytc.mccomplaints@ky.gov. No provider-level complaint rows or outcomes were acquired. A complaint form is intake.';
+    else if (/\b(enforcement|disciplin|revocation|suspension)\b/i.test(q)) reason = 'A Kentucky household-goods suspension, revocation, or order corpus was NOT_ACQUIRED. No provider-level orders were attached.';
+    else if (/\b(insurance|insured|cargo|form e|form h)\b/i.test(q)) reason = 'KYTC names Form H for household goods and Form E for liability insurance, and liability coverage must comply with KRS 281.655. The HHG Carrier Listing does not print insurance status. A filing requirement is not proof that a named carrier is currently compliant. The FAQ describes a $.60 per pound declared-value base rate and says that base rate is not insurance.';
+    else if (/\b(tariffs?|rates?|charges?)\b/i.test(q)) reason = 'KRS 281.630 requires a household-goods certificate holder to maintain a current tariff on file with the department. No tariff documents were acquired. A tariff requirement is not a quote and is not proof that a named carrier\'s tariff is current.';
+    else if (/\bannual reports?\b/i.test(q)) reason = 'KYTC publishes form TC 95-44 for the household-goods annual report. Filed annual reports were NOT_ACQUIRED.';
+    else reason = `The Kentucky Transportation Cabinet, Division of Motor Carriers, publishes an intrastate household-goods certificate listing. The September 1, 2026 HHG Carrier Listing contains ${ky.listingRows} certificate rows and ${ky.distinctCertificateNumbers} distinct certificate numbers. The listing does not print status. ${ky.physicalAddressInKentucky} physical addresses are in Kentucky and ${ky.physicalAddressOutsideKentucky} are in another state. A physical address is not the authority and is not a service area. This count is household-goods certificates only. Passenger, towing, U-Drive-It, IFTA, IRP, KYU, KIT, UCR, and FMCSA authority stay separate. No USDOT or MC number was printed on the listing.${cityNote}`;
+    const query = fail(reason, KY_ALTERNATIVES);
+    query.coverageState = cert && row ? 'PARTIAL' : cert || /\b(complaints?|enforcement|insurance|tariffs?|annual reports?)\b/i.test(q) ? 'NOT_ACQUIRED' : 'PARTIAL';
+    push('Coverage', 'KYTC HHG certificate listing acquired; status, insurance compliance, tariffs, and federal bridges not on the file');
     return { raw: q, query, interpretation: lines };
   }
 
