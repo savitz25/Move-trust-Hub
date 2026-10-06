@@ -45,6 +45,7 @@ export function publicationMetricInputs() {
   const msSnap = JSON.parse(read("lib/mississippi-intelligence/accepted-snapshot.json"));
   const okSnap = JSON.parse(read("lib/oklahoma-intelligence/accepted-snapshot.json"));
   const arSnap = JSON.parse(read("lib/arkansas-intelligence/accepted-snapshot.json"));
+  const nmSnap = JSON.parse(read("lib/new-mexico-intelligence/accepted-snapshot.json"));
 
   const paths = [];
   const caPath = caPub.match(/CA_MOVE_PUBLIC_PATH = '(\/[^']+)'/)?.[1];
@@ -52,7 +53,7 @@ export function publicationMetricInputs() {
   if (flSnap.includes("/florida") && existsSync(join(root, "app/(move)/florida/page.tsx"))) paths.push("/florida");
   if (njPath) paths.push(njPath);
   if (caPath) paths.push(caPath);
-  for (const snapshot of [txSnap, waSnap, coSnap, vaSnap, nySnap, ilSnap, orSnap, paSnap, ncSnap, ohSnap, gaSnap, maSnap, tnSnap, nvSnap, mnSnap, miSnap, mdSnap, ctSnap, wiSnap, inSnap, alSnap, laSnap, kySnap, scSnap, msSnap, okSnap, arSnap]) {
+  for (const snapshot of [txSnap, waSnap, coSnap, vaSnap, nySnap, ilSnap, orSnap, paSnap, ncSnap, ohSnap, gaSnap, maSnap, tnSnap, nvSnap, mnSnap, miSnap, mdSnap, ctSnap, wiSnap, inSnap, alSnap, laSnap, kySnap, scSnap, msSnap, okSnap, arSnap, nmSnap]) {
     const route = snapshot.publication?.route;
     const indexable = snapshot.publication?.indexable || snapshot.publication?.robots?.startsWith("index");
     if (route && indexable && existsSync(join(root, `app/(move)${route}/page.tsx`))) {
