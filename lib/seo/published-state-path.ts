@@ -13,6 +13,7 @@ export const PUBLISHED_STATEWIDE_SLUGS = [
   'south-carolina',
   'mississippi',
   'oklahoma',
+  'arkansas',
   'florida',
   'georgia',
   'illinois',
