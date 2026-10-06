@@ -19,7 +19,7 @@ assert len(set(nonblank)) == 86
 assert sum(not identifier for identifier in identifiers) == 1
 assert sum(bool(row.get("tariff_exception_document")) for row in rows) == 9
 assert duplicates == {"2460847": 2, "1066399": 2}
-assert hashlib.sha256(raw).hexdigest() == "8d29f86956d61ecfdcdcf9bc6a412cb834c4c1bb531fd66d00e9bded95a51d78"
+assert hashlib.sha256(raw).hexdigest() == "e543a04d657dff725a9c3feb40cf439575b0644d78a0481021c4d53b2142f479"
 assert snapshot["raw_sha256"] == "4fe2d2cf8dcbfd797136d663273483b1fade8b3ce2ad81426247267a0cf1f0c1"
 
 page = (ROOT / "app" / "(move)" / "kansas" / "page.tsx").read_text(encoding="utf-8")

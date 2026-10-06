@@ -9,7 +9,7 @@ export const KANSAS_MOVE_SNAPSHOT = {
   sourceRowCount: accepted.row_count,
   sourceSha256: accepted.raw_sha256,
   acceptedSnapshotSha256:
-    "8d29f86956d61ecfdcdcf9bc6a412cb834c4c1bb531fd66d00e9bded95a51d78",
+    "e543a04d657dff725a9c3feb40cf439575b0644d78a0481021c4d53b2142f479",
   sourceUrl: accepted.source,
   authorityStatute:
     "https://ksrevisor.gov/statutes/chapters/ch66/066_001_0114.html",
