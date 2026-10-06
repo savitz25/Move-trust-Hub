@@ -1,0 +1,59 @@
+{
+  "version": "move-id-state-intel-v1",
+  "ticket": "ID-MOVE-001",
+  "sourceAsOf": null,
+  "snapshotAsOf": "2026-10-06",
+  "retrievedAt": "2026-10-06",
+  "publication": {
+    "route": "/idaho",
+    "canonical": "https://www.movetrusthub.com/idaho",
+    "robots": "index,follow",
+    "rankings": false,
+    "trustScore": false
+  },
+  "regulator": "Idaho State Police Commercial Vehicle Services, Idaho Legislature, and Idaho Public Utilities Commission",
+  "authority": "Reviewed Idaho sources do not publish a current mover-specific household-goods license roster. A commodity classification and a financial-responsibility exemption are not that roster.",
+  "householdGoodsAuthority": {
+    "verification": "NO_MOVER_SPECIFIC_ROSTER_ACQUIRED",
+    "roster": "NOT_ACQUIRED",
+    "rows": null,
+    "moverSpecificLicense": "NOT_IDENTIFIED_IN_REVIEWED_SOURCES",
+    "tariffCorpus": "NOT_ACQUIRED",
+    "historicalPermit": "NOT_TREATED_AS_A_CURRENT_PROGRAM",
+    "commodityTable": "HOUSEHOLD_GOODS_EXEMPT_NOT_A_CENSUS",
+    "financialResponsibility": "IDAHO_CODE_49-1233_4_L_NOT_A_CERTIFICATE",
+    "publicUtilitiesDefinition": "IDAHO_CODE_61-107_STILL_PUBLISHED_NOT_A_COUNT",
+    "commercialVehicleRegistration": "SEPARATE",
+    "fmcsaInterstate": "SEPARATE",
+    "usdot": "SEPARATE",
+    "ucr": "SEPARATE",
+    "insurance": "SEPARATE",
+    "consumerComplaint": "SEPARATE",
+    "localBusinessRegistration": "SEPARATE"
+  },
+  "sources": {
+    "commoditiesUrl": "https://isp.idaho.gov/cvs/commodities/",
+    "commoditiesHtmlBytes": 137502,
+    "commoditiesHtmlSha256": "21d068771fe28f17dc2a8f6701cda07fd3437b9220e78f80a557323ac90d6a33",
+    "commoditiesDatePublished": "2023-12-27T07:37:45-07:00",
+    "commoditiesDateModified": "2023-12-27T15:29:31-07:00",
+    "pageClockIsRosterClock": false,
+    "householdGoods": "Exempt",
+    "furnitureMovingAndStorage": "Exempt",
+    "financialResponsibilityUrl": "https://legislature.idaho.gov/statutesrules/idstat/title49/t49ch12/sect49-1233/",
+    "publicUtilitiesDefinitionUrl": "https://legislature.idaho.gov/statutesrules/idstat/title61/t61ch1/sect61-107/",
+    "ipucUrl": "https://puc.idaho.gov/",
+    "protectYourMoveUrl": "https://www.protectyourmove.gov",
+    "ucrUrl": "https://www.ucr.gov/"
+  },
+  "complaints": {
+    "providerRows": "NOT_ACQUIRED",
+    "formIsCensus": false
+  },
+  "enforcement": {
+    "providerRows": "NOT_ACQUIRED",
+    "nameOnlyJoins": 0
+  },
+  "newCanonicalOrganizations": 0,
+  "graphWrites": 0
+}

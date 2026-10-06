@@ -18,6 +18,7 @@ import { SOUTH_CAROLINA_MOVE_SNAPSHOT, lookupScHhgCertificate } from '../south-c
 import { OKLAHOMA_MOVE_SNAPSHOT, lookupOkHhgPin } from '../oklahoma-intelligence/snapshot';
 import { NEW_MEXICO_MOVE_SNAPSHOT } from '../new-mexico-intelligence/snapshot';
 import { NEBRASKA_MOVE_SNAPSHOT, lookupNeHhgLicense } from '../nebraska-intelligence/snapshot';
+import { IDAHO_MOVE_SNAPSHOT } from '../idaho-intelligence/snapshot';
 import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
 import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
@@ -54,6 +55,7 @@ const STATE_NAMES: Record<string, string> = {
   arkansas: 'AR',
   'new mexico': 'NM',
   nebraska: 'NE',
+  idaho: 'ID',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -80,6 +82,7 @@ const STATE_NAMES: Record<string, string> = {
   ar: 'AR',
   nm: 'NM',
   ne: 'NE',
+  id: 'ID',
 };
 
 function detectState(q: string): string | undefined {
@@ -393,6 +396,13 @@ function neContext(q: string): boolean {
   const named = /\bnebraska\b|\bin ne\b/i.test(q);
   const other = detectState(q.replace(/\bnebraska\b|\bin ne\b/gi, ' '));
   return named && (!other || other === 'NE') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+const ID_ALTERNATIVES = ['Open Idaho household-goods research.', 'No current mover-specific Idaho household-goods roster was acquired. An exempt commodity is not a license.'];
+const ID_GEO_CITIES = /\b(boise|meridian|nampa|pocatello|coeur d'alene|twin falls|idaho falls)\b/i;
+function idContext(q: string): boolean {
+  const named = /\bidaho\b|\bin id\b/i.test(q);
+  const other = detectState(q.replace(/\bidaho\b|\bin id\b/gi, ' ').replace(ID_GEO_CITIES, ' '));
+  return named && (!other || other === 'ID') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
 }
 function wiContext(q: string): boolean {
   const named = /\bwisconsin\b|\bin wi\b|\bwisdot\b/i.test(q) ||
@@ -997,6 +1007,26 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     const query = fail(reason, NE_ALTERNATIVES);
     query.coverageState = row ? 'PARTIAL' : /\b(insurance|tariffs?|rates?|orders?|complaints?)\b/i.test(q) ? 'NOT_ACQUIRED' : 'PARTIAL';
     push('Coverage', 'PSC HHG licensee table acquired; insurance, tariffs, orders, and USDOT bridges NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (idContext(q) && !isRouteOrInterstate(q)) {
+    const id = IDAHO_MOVE_SNAPSHOT;
+    const city = q.match(ID_GEO_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only. This research publishes no Idaho city intelligence route.` : '';
+    let reason: string;
+    if (ctRanking(q)) reason = 'MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. Absence of an Idaho household-goods roster is not a provider winner.';
+    else if (/\b\d{3,8}\b/.test(q) && !/\b(usdot|dot|mc|certificate|permit|authority|license)\b/i.test(q)) reason = 'That number has no label. Specify an Idaho identifier, USDOT, or MC. No carrier lookup was inferred.';
+    else if (/\bcomplaints?\b/i.test(q)) reason = 'The Idaho Public Utilities Commission consumer complaint form is intake, not a complaint census. Provider complaint rows were NOT_ACQUIRED. A complaint is not a finding. Interstate mover complaints follow FMCSA guidance.';
+    else if (/\b(enforcement|disciplin|revocation|suspension|orders?)\b/i.test(q)) reason = 'Idaho household-goods enforcement orders were NOT_ACQUIRED. No provider-level orders were attached, including by name. Name-only joins are 0.';
+    else if (/\b(insurance|insured|cargo|form e|49-117)\b/i.test(q)) reason = 'Idaho Code 49-1233(4)(l) exempts motor carriers transporting household goods, as defined by the federal Surface Transportation Board, from the motor-carrier liability and property-damage insurance coverage required by that section by board rule. They are not exempt from coverage in the amounts required by section 49-117. Those dollar amounts were NOT_ACQUIRED. This is financial responsibility, not a household-goods certificate, and not proof of current coverage.';
+    else if (/\b(tariffs?|rates?|charges?)\b/i.test(q)) reason = 'An Idaho household-goods tariff corpus was NOT_ACQUIRED. A commodity exemption is not a tariff and not a quote. Historical permits are not a current tariff program.';
+    else if (/\bfmcsa\b|\busdot\b|\bucr\b|\bprotect your move\b/i.test(q)) reason = 'FMCSA interstate authority, USDOT, and UCR stay separate from Idaho. FMCSA is not an Idaho household-goods roster. A current mover-specific roster was NOT_ACQUIRED. Missing is not zero.';
+    else if (/\b(itd|registration|commercial vehicle)\b/i.test(q)) reason = 'Idaho commercial-vehicle registration is separate from a household-goods license. It was not acquired as a mover roster and is not a household-goods license census. Missing is not zero.';
+    else reason = `The Idaho State Police commodities table classifies Household Goods as ${id.commodities.householdGoods} and Furniture – Moving & storage as ${id.commodities.furnitureMovingAndStorage}. That table, modified ${id.commodities.dateModified}, is a commodity classification, not a license census. A current mover-specific statewide household-goods license, certificate, tariff, or company roster was NOT_ACQUIRED. Missing is not zero, and no company count is published. Idaho Code 49-1233(4)(l) is a financial-responsibility exemption for Surface Transportation Board household goods, not a certificate. Idaho Code 61-107 still defines transportation of property and is not a license count. The Idaho Public Utilities Commission homepage does not publish a household-goods roster. Commercial-vehicle registration, FMCSA, USDOT, UCR, insurance, consumer complaints, and local business registration stay separate.${cityNote}`;
+    const query = fail(reason, ID_ALTERNATIVES);
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'Idaho commodity table and financial-responsibility statute reviewed; mover roster NOT_ACQUIRED');
     return { raw: q, query, interpretation: lines };
   }
 
