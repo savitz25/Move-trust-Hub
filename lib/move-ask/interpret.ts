@@ -49,6 +49,7 @@ const STATE_NAMES: Record<string, string> = {
   'south carolina': 'SC',
   mississippi: 'MS',
   oklahoma: 'OK',
+  arkansas: 'AR',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -72,6 +73,7 @@ const STATE_NAMES: Record<string, string> = {
   sc: 'SC',
   ms: 'MS',
   ok: 'OK',
+  ar: 'AR',
 };
 
 function detectState(q: string): string | undefined {
@@ -360,6 +362,18 @@ function okContext(q: string): boolean {
     (OK_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
   const other = detectState(q.replace(/\boklahoma\b|\bin ok\b/gi, ' ').replace(OK_GEO_CITIES, ' '));
   return named && (!other || other === 'OK') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+const AR_ALTERNATIVES = ['Open Arkansas intrastate household-goods research.', 'Contact ARDOT Legal Division to verify household-goods authority. An application is not issued authority.'];
+const AR_CITIES = /\bfort smith\b/i;
+const AR_GEO_CITIES = /\b(little rock|fayetteville|fort smith)\b/i;
+function arContext(q: string): boolean {
+  const namedState = /\barkansas\b|\bin ar\b|\bardot\b/i.test(q);
+  const named = namedState ||
+    (AR_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q)) ||
+    (/\blittle rock\b/i.test(q) && /\b(movers?|moving)\b/i.test(q));
+  const stripped = q.replace(/\barkansas\b|\bin ar\b/gi, ' ').replace(namedState ? AR_GEO_CITIES : AR_CITIES, ' ').replace(/\blittle rock\b/gi, ' ');
+  const other = detectState(stripped);
+  return named && (!other || other === 'AR') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
 }
 function wiContext(q: string): boolean {
   const named = /\bwisconsin\b|\bin wi\b|\bwisdot\b/i.test(q) ||
@@ -902,6 +916,24 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     const query = fail(reason, OK_ALTERNATIVES);
     query.coverageState = pin && row ? 'PARTIAL' : 'NOT_ACQUIRED';
     push('Coverage', 'OCC HHG list dated 2023-11-27 acquired; current roster and exact federal bridges NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (arContext(q) && !isRouteOrInterstate(q)) {
+    const city = q.match(AR_GEO_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only. This research publishes no Arkansas city intelligence route.` : '';
+    let reason: string;
+    if (ctRanking(q)) reason = 'MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. Arkansas intrastate authority is not a provider winner.';
+    else if (/\b\d{3,8}\b/.test(q) && !/\b(usdot|dot|mc|certificate|permit|authority)\b/i.test(q)) reason = 'That number has no label. Specify an ARDOT certificate, permit, USDOT, or MC. No carrier lookup was inferred.';
+    else if (/\bcomplaints?\b/i.test(q)) reason = 'No provider-level Arkansas household-goods complaint rows were acquired. A complaint is not a finding. Interstate mover complaints follow FMCSA guidance.';
+    else if (/\b(enforcement|disciplin|revocation|suspension|orders?)\b/i.test(q)) reason = 'An Arkansas household-goods order corpus was NOT_ACQUIRED. No provider-level orders were attached, including by name.';
+    else if (/\b(insurance|insured|cargo|acord|form e)\b/i.test(q)) reason = 'The household-goods packet requires a certificate of insurance or ACORD form in the amounts set out in Rule 13.1. Those dollar amounts were NOT_ACQUIRED. The general-freight packet prints $50,000 / $100,000 / $30,000 and says those limits are for intrastate operation except passengers and household goods. Those amounts are not household-goods limits. An insurance filing is not current operating authority.';
+    else if (/\bpassenger\b/i.test(q)) reason = 'Passenger authority is separate from Arkansas household-goods authority. Passenger packets are a separate application class. No passenger roster was acquired.';
+    else if (/\bfreight\b|\bmobile home\b/i.test(q)) reason = 'General freight and mobile-home authority is a separate ARDOT application. The general-freight packet prints $50,000 / $100,000 / $30,000 and says those limits are for intrastate operation except passengers and household goods. Those amounts are not household-goods limits. No general-freight roster was acquired.';
+    else reason = `The Arkansas Department of Transportation Legal Division handles intrastate household-goods authority. The public application packets are filing documents, not a roster. A statewide household-goods count was NOT_ACQUIRED. An application, a $50 filing fee, and a $5 per-vehicle insurance filing fee are not issued authority. General freight, passenger authority, commission orders, FMCSA, and USDOT stay separate. No exact bridges or combined mover count were inferred.${cityNote}`;
+    const query = fail(reason, AR_ALTERNATIVES);
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'ARDOT HHG application packets acquired; roster and HHG insurance dollar minima NOT_ACQUIRED');
     return { raw: q, query, interpretation: lines };
   }
 

@@ -1,0 +1,66 @@
+{
+  "version": "move-ar-state-intel-v1",
+  "ticket": "AR-MOVE-001",
+  "sourceAsOf": null,
+  "snapshotAsOf": null,
+  "retrievedAt": "2026-10-06",
+  "generatedAt": "2026-10-06T17:20:00Z",
+  "publication": {
+    "route": "/arkansas",
+    "canonical": "https://www.movetrusthub.com/arkansas",
+    "robots": "index,follow",
+    "rankings": false,
+    "trustScore": false
+  },
+  "regulator": "Arkansas Department of Transportation, Legal Division",
+  "authority": "Arkansas intrastate household-goods authority",
+  "householdGoodsAuthority": {
+    "verification": "KNOWN",
+    "roster": "NOT_ACQUIRED",
+    "rows": null,
+    "distinctCertificateNumbers": null,
+    "statusAsOf": null,
+    "application": "NOT_AN_ISSUED_AUTHORITY",
+    "generalFreightMobileHome": "SEPARATE",
+    "passengerAuthority": "SEPARATE",
+    "certificateOrPermit": "PACKET_DOES_NOT_PUBLISH_A_ROSTER",
+    "insuranceFiling": "NOT_CURRENT_OPERATING_AUTHORITY",
+    "commissionOrder": "NOT_ACQUIRED",
+    "fmcsaInterstate": "SEPARATE",
+    "usdot": "SEPARATE"
+  },
+  "federalBridges": {
+    "rowsWithUsdot": null,
+    "exactBridges": null,
+    "unmatchedStateRows": null
+  },
+  "insurance": {
+    "hhgDollarMinima": "NOT_ACQUIRED",
+    "hhgRuleCited": "Rule 13.1",
+    "providerStatus": "NOT_ACQUIRED",
+    "generalFreightLimitsApplyToHouseholdGoods": false,
+    "generalFreightPrinted": "50000/100000/30000 on the general-freight packet only"
+  },
+  "fees": {
+    "applicationFilingUsd": 50,
+    "perVehicleInsuranceFilingUsd": 5,
+    "feeIsAuthority": false
+  },
+  "sources": {
+    "hhgIndividualSha256": "46e97bf6a9090523bdc92f66bef06927f18257db5ee2682a05705896e3518f46",
+    "hhgCorporationSha256": "4c2d4c4a26889d5d89b9f7f7cec0fc0a661828835ca26582227b73962af9fcf5",
+    "generalFreightIndividualSha256": "b151524b5ecee920d8561f6aa22df14bd60c9030242ab8a019c31020d34994cc",
+    "hhgIndividualPdfModified": "2026-08-12",
+    "hhgCorporationPdfModified": "2026-08-12"
+  },
+  "complaints": {
+    "providerRows": "NOT_ACQUIRED"
+  },
+  "enforcement": {
+    "providerRows": "NOT_ACQUIRED",
+    "nameOnlyJoins": 0
+  },
+  "newCanonicalOrganizations": 0,
+  "graphWrites": 0,
+  "claimEligibilityChanges": 0
+}
