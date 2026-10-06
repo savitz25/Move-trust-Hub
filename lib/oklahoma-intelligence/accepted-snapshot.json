@@ -1,0 +1,68 @@
+{
+  "version": "move-ok-state-intel-v1",
+  "ticket": "OK-MOVE-001",
+  "sourceAsOf": "2023-11-27",
+  "sourceAsOfMeaning": "Date printed on the OCC For-Hire Household Goods motor-carrier list. Not a current census date.",
+  "snapshotAsOf": null,
+  "retrievedAt": "2026-10-06",
+  "generatedAt": "2026-10-06T16:20:00Z",
+  "publication": {
+    "route": "/oklahoma",
+    "canonical": "https://www.movetrusthub.com/oklahoma",
+    "robots": "index,follow",
+    "rankings": false,
+    "trustScore": false,
+    "indexable": true
+  },
+  "regulator": "Oklahoma Corporation Commission, Transportation Division",
+  "authority": "Intrastate Household Goods Certificate",
+  "householdGoodsAuthority": {
+    "verification": "KNOWN",
+    "currentRoster": "NOT_ACQUIRED",
+    "postedListRows": 64,
+    "distinctPins": 64,
+    "postedListIsCurrentCensus": false,
+    "certificate": "Intrastate Household Goods Certificate",
+    "pin": "OCC permanent identification number for the authority",
+    "application": "MCF 1 is an application, not an issued certificate",
+    "renewal": "MCF 2 is a renewal application, not proof the certificate is current",
+    "identificationStamp": "SEPARATE_DEVICE",
+    "otherMotorCarrierAuthority": "SEPARATE_LISTS_NOT_PARSED",
+    "passengerAuthority": "SEPARATE",
+    "ucr": "SEPARATE",
+    "fmcsa": "SEPARATE"
+  },
+  "federalBridges": {
+    "rowsWithPrintedUsdot": 64,
+    "distinctPrintedUsdots": 64,
+    "rowsWithPrintedMc": null,
+    "exactBridges": null
+  },
+  "insurance": {
+    "requirement": "KNOWN",
+    "dollarMinima": "NOT_ACQUIRED",
+    "providerStatus": "NOT_ACQUIRED",
+    "statedBasis": "OCC FAQ says a liability certificate and a cargo certificate must be on file. Dollar minima were not taken from OAC 165:30-3-11."
+  },
+  "fees": {
+    "identificationStampUsd": 7,
+    "stampIsNotTheCertificate": true
+  },
+  "sources": {
+    "listUrl": "https://oklahoma.gov/content/dam/ok/en/occ/documents/tr/motor-carrier-lists/household-goods-mc.pdf",
+    "listSha256": "4c76993c1255cda10e899be7042fff9519e69c45487a2547622129d7b613e450",
+    "listDated": "2023-11-27",
+    "faqUrl": "https://oklahoma.gov/occ/divisions/transportation/household-goods-movers.html",
+    "faqPageLastModified": "2026-07-29"
+  },
+  "complaints": {
+    "providerRows": "NOT_ACQUIRED"
+  },
+  "enforcement": {
+    "providerRows": "NOT_ACQUIRED",
+    "nameOnlyJoins": 0
+  },
+  "newCanonicalOrganizations": 0,
+  "graphWrites": 0,
+  "claimEligibilityChanges": 0
+}

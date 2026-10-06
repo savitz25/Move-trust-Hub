@@ -15,6 +15,7 @@ import { MICHIGAN_MOVE_SNAPSHOT } from '../michigan-intelligence/snapshot';
 import { CONNECTICUT_MOVE_SNAPSHOT, lookupCtHhgCertificate } from '../connecticut-intelligence/snapshot';
 import { KENTUCKY_MOVE_SNAPSHOT, lookupKyHhgCertificate } from '../kentucky-intelligence/snapshot';
 import { SOUTH_CAROLINA_MOVE_SNAPSHOT, lookupScHhgCertificate } from '../south-carolina-intelligence/snapshot';
+import { OKLAHOMA_MOVE_SNAPSHOT, lookupOkHhgPin } from '../oklahoma-intelligence/snapshot';
 import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
 import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
@@ -47,6 +48,7 @@ const STATE_NAMES: Record<string, string> = {
   kentucky: 'KY',
   'south carolina': 'SC',
   mississippi: 'MS',
+  oklahoma: 'OK',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -69,6 +71,7 @@ const STATE_NAMES: Record<string, string> = {
   ky: 'KY',
   sc: 'SC',
   ms: 'MS',
+  ok: 'OK',
 };
 
 function detectState(q: string): string | undefined {
@@ -348,6 +351,15 @@ function msContext(q: string): boolean {
     (MS_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
   const other = detectState(q.replace(/\bmississippi\b|\bin ms\b/gi, ' ').replace(MS_GEO_CITIES, ' '));
   return named && (!other || other === 'MS') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+const OK_ALTERNATIVES = ['Open Oklahoma household-goods certificate research.', 'Read the OCC For-Hire Household Goods list for a PIN. The November 27, 2023 file is not a current census.'];
+const OK_CITIES = /\b(tulsa|norman|lawton|edmond|broken arrow)\b/i;
+const OK_GEO_CITIES = /\b(oklahoma city|tulsa|norman|lawton|edmond|broken arrow)\b/i;
+function okContext(q: string): boolean {
+  const named = /\boklahoma\b|\bin ok\b/i.test(q) ||
+    (OK_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q));
+  const other = detectState(q.replace(/\boklahoma\b|\bin ok\b/gi, ' ').replace(OK_GEO_CITIES, ' '));
+  return named && (!other || other === 'OK') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
 }
 function wiContext(q: string): boolean {
   const named = /\bwisconsin\b|\bin wi\b|\bwisdot\b/i.test(q) ||
@@ -867,6 +879,29 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     const query = fail(reason, MS_ALTERNATIVES);
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'MDOT HHG certificate verification; roster and exact federal bridges NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (okContext(q) && !isRouteOrInterstate(q)) {
+    const ok = OKLAHOMA_MOVE_SNAPSHOT;
+    const city = q.match(OK_GEO_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only. This research publishes no Oklahoma city intelligence route.` : '';
+    const pin = q.match(/\bpin\s*#?\s*(\d{3,8})\b/i)?.[1];
+    const row = pin ? lookupOkHhgPin(pin) : null;
+    let reason: string;
+    if (ctRanking(q)) reason = 'MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. An Oklahoma Household Goods Certificate is not a provider winner.';
+    else if (pin && row) reason = `Oklahoma PIN ${row.pin} is on the OCC For-Hire Household Goods list dated November 27, 2023: ${row.legalName}${row.dba.toUpperCase() === row.legalName.toUpperCase() ? '' : ` (DBA ${row.dba})`}. The row prints USDOT ${row.usdotPrinted}. That printed number was not checked against FMCSA. The list does not print an MC number, certificate status, or insurance status. Presence on a list dated November 27, 2023 is not a current census. Certificates are initially issued for one year.`;
+    else if (pin) reason = `Oklahoma PIN ${pin} is absent from the OCC list dated November 27, 2023. Absence from that file is not proof that no certificate exists. A current roster was NOT_ACQUIRED.`;
+    else if (/\b\d{3,8}\b/.test(q) && !/\b(usdot|dot|mc|pin|certificate|authority)\b/i.test(q)) reason = 'That number has no label. Specify an OCC PIN, USDOT, or MC. No carrier lookup was inferred.';
+    else if (/\bcomplaints?\b/i.test(q)) reason = 'No provider-level Oklahoma household-goods complaint rows were acquired. A complaint is not a finding. Interstate mover complaints follow FMCSA guidance.';
+    else if (/\b(enforcement|disciplin|revocation|suspension|orders?)\b/i.test(q)) reason = 'An Oklahoma household-goods order, revocation, or suspension corpus was NOT_ACQUIRED. No provider-level orders were attached, including by name.';
+    else if (/\b(insurance|insured|cargo|form e|form h)\b/i.test(q)) reason = 'OCC says a household-goods carrier must keep a liability insurance certificate and a cargo insurance certificate on file. Dollar minima in OAC 165:30-3-11 were NOT_ACQUIRED. The posted list does not print insurance status. A filing requirement is not proof of current coverage.';
+    else if (/\bpassenger\b/i.test(q)) reason = 'Passenger authority is separate from an Oklahoma Household Goods Certificate. No passenger roster was acquired.';
+    else if (/\b(tariffs?|rates?|charges?)\b/i.test(q)) reason = 'An Oklahoma household-goods tariff corpus was NOT_ACQUIRED. A tariff requirement is not a quote or mover ranking.';
+    else reason = `The Oklahoma Corporation Commission Transportation Division issues an Intrastate Household Goods Certificate for for-hire household-goods moves between Oklahoma points, including moves inside one city. The posted For-Hire Household Goods list dated November 27, 2023 contains ${ok.postedListRows} rows and ${ok.distinctPins} distinct PINs. Each row prints a USDOT number. No MC number is printed, and no printed USDOT was matched to FMCSA. That file is not a current census: the certificate is initially issued for one year. A current roster was NOT_ACQUIRED. An MCF 1 application is not an issued certificate. The $${ok.identificationStampUsd} identification stamp is not the certificate. Other motor-carrier lists, passenger authority, UCR, and FMCSA stay separate.${cityNote}`;
+    const query = fail(reason, OK_ALTERNATIVES);
+    query.coverageState = pin && row ? 'PARTIAL' : 'NOT_ACQUIRED';
+    push('Coverage', 'OCC HHG list dated 2023-11-27 acquired; current roster and exact federal bridges NOT_ACQUIRED');
     return { raw: q, query, interpretation: lines };
   }
 
