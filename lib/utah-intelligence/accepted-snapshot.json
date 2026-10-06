@@ -1,0 +1,49 @@
+{
+  "version": "move-ut-state-intel-v1",
+  "ticket": "UT-MOVE-001",
+  "sourceAsOf": null,
+  "snapshotAsOf": "2026-10-06",
+  "retrievedAt": "2026-10-06",
+  "publication": {
+    "route": "/utah",
+    "canonical": "https://www.movetrusthub.com/utah",
+    "robots": "index,follow",
+    "rankings": false,
+    "trustScore": false
+  },
+  "regulator": "Utah Department of Transportation and Utah Legislature",
+  "authority": "Utah intrastate motor-carrier safety and federal interstate household-goods authority are separate; reviewed Utah sources publish no mover-specific statewide household-goods roster",
+  "householdGoodsAuthority": {
+    "verification": "NO_STATE_ROSTER_IDENTIFIED_IN_REVIEWED_SOURCES",
+    "roster": "NOT_PUBLISHED_BY_REVIEWED_STATE_SOURCES",
+    "rows": null,
+    "distinctCertificateNumbers": null,
+    "application": "NOT_ACQUIRED",
+    "intrastateMotorCarrierSafety": "SEPARATE",
+    "vehicleRegistration": "SEPARATE",
+    "fmcsaInterstate": "SEPARATE",
+    "usdot": "SEPARATE",
+    "ucr": "SEPARATE",
+    "insurance": "SEPARATE",
+    "localBusinessRequirements": "SEPARATE"
+  },
+  "existingPopulation": {
+    "localDirectoryRecords": 8,
+    "countyGuides": 29,
+    "matches": "NOT_ACQUIRED",
+    "netNewEntities": 0,
+    "evidenceAttachments": 0,
+    "graphWrites": 0
+  },
+  "sourceClock": "UDOT and Utah Code pages reviewed 2026-10-06; Utah Code effective 2026-05-06; no dataset-wide HHG-roster clock",
+  "sources": [
+    "https://connect.udot.utah.gov/business/motor-carriers/",
+    "https://connect.udot.utah.gov/business/motor-carriers/are-you-a-motor-carrier/",
+    "https://le.utah.gov/xcode/Title72/Chapter9/C72-9-S102_2026050620260506.pdf",
+    "https://connect.udot.utah.gov/business/motor-carriers/motor-carrier-registration-credentials/utah-intrastate-registration/",
+    "https://connect.udot.utah.gov/business/motor-carriers/motor-carrier-registration-credentials/motor-carrier-operating-authority/",
+    "https://www.fmcsa.dot.gov/protect-your-move",
+    "https://safer.fmcsa.dot.gov/",
+    "https://www.ucr.gov/"
+  ]
+}
