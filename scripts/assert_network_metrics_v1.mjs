@@ -75,6 +75,11 @@ assert(!/\d/.test(v1.homepageStateCards.find((c) => c.href === "/arkansas")?.ros
 assert(v1.network.publishedStateIntelligencePaths.includes("/new-mexico"), "New Mexico state intelligence represented");
 assert(v1.homepageStateCards.find((c) => c.href === "/new-mexico")?.roster.includes("NOT_ACQUIRED"), "New Mexico roster stays NOT_ACQUIRED");
 assert(!/\d/.test(v1.homepageStateCards.find((c) => c.href === "/new-mexico")?.roster ?? "1"), "New Mexico homepage roster has no count");
+assert(v1.network.publishedStateIntelligencePaths.includes("/utah"), "Utah state intelligence represented");
+assert(v1.homepageStateCards.find((c) => c.href === "/utah")?.roster.includes("NOT_ACQUIRED"), "Utah roster stays NOT_ACQUIRED");
+assert(!/\d/.test(v1.homepageStateCards.find((c) => c.href === "/utah")?.roster ?? "1"), "Utah homepage roster has no count");
+assert(v1.network.publishedStateIntelligencePaths.includes("/nebraska"), "Nebraska state intelligence represented");
+assert(v1.homepageStateCards.find((c) => c.href === "/nebraska")?.roster.includes("42 table rows"), "Nebraska PSC table count stays on the homepage card");
 assert(byKey.oh_puco_hhg_certificate_universe.value === null, "Ohio PUCO HHG roster is not a number");
 assert(byKey.oh_puco_hhg_certificate_universe.valueState === "NOT_ACQUIRED", "Ohio not acquired");
 assert(byKey.ny_dot_2026_hhg_bulletin_observations.value === 108, "NY 2026 HHG bulletin observations");

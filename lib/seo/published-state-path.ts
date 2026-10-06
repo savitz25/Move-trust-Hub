@@ -14,6 +14,7 @@ export const PUBLISHED_STATEWIDE_SLUGS = [
   'mississippi',
   'oklahoma',
   'arkansas',
+  'nebraska',
   'florida',
   'georgia',
   'illinois',

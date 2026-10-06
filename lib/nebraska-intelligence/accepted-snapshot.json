@@ -1,0 +1,23 @@
+{
+  "sourceAsOf": "2026-10-06T15:35:45Z",
+  "publication": {
+    "route": "/nebraska",
+    "canonical": "https://www.movetrusthub.com/nebraska",
+    "robots": "index,follow"
+  },
+  "householdGoodsAuthority": {
+    "license": "PSC_LICENSEE_TABLE",
+    "application": "NOT_AN_ISSUED_LICENSE",
+    "insuranceRequirement": "SEPARATE_FROM_OBSERVED_FILING",
+    "rateOrTariff": "SEPARATE",
+    "pscAction": "SEPARATE",
+    "fmcsaInterstate": "SEPARATE",
+    "usdot": "SEPARATE"
+  },
+  "fees": { "licenseFeeUsd": 250, "feeIsAuthority": false },
+  "federalBridges": { "exactBridges": null },
+  "enforcement": { "nameOnlyJoins": 0, "orderCorpus": "NOT_ACQUIRED" },
+  "sources": {
+    "pageSha256": "e185c07b54ac2a938738f96b6513f31278dc3943fb788dc02a616f9f9150a3cb"
+  }
+}
