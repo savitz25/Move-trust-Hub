@@ -29,6 +29,7 @@
     "assert:ok-move-001": "tsx --test lib/move-ask/ok-routing.test.ts",
     "assert:ar-move-001": "tsx --test lib/move-ask/ar-routing.test.ts",
     "assert:nm-move-001": "tsx --test lib/move-ask/nm-routing.test.ts",
+    "assert:ne-move-001": "tsx --test lib/move-ask/ne-routing.test.ts",
     "check:share-004a": "tsx scripts/assert-share-004a.ts && node scripts/assert-share-002.mjs && tsx scripts/assert-share-003.ts",
     "assert:nj-move-001": "python scripts/nj-move-001-tests.py && tsx scripts/assert-nj-move-001.mts && tsx lib/state-hhg/nj/adapter.test.ts",
     "assert:nj-move-002": "tsx lib/state-hhg/nj/publication.test.ts && tsx scripts/assert-nj-move-002.mts",

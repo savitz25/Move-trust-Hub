@@ -17,6 +17,7 @@ import { KENTUCKY_MOVE_SNAPSHOT, lookupKyHhgCertificate } from '../kentucky-inte
 import { SOUTH_CAROLINA_MOVE_SNAPSHOT, lookupScHhgCertificate } from '../south-carolina-intelligence/snapshot';
 import { OKLAHOMA_MOVE_SNAPSHOT, lookupOkHhgPin } from '../oklahoma-intelligence/snapshot';
 import { NEW_MEXICO_MOVE_SNAPSHOT } from '../new-mexico-intelligence/snapshot';
+import { NEBRASKA_MOVE_SNAPSHOT, lookupNeHhgLicense } from '../nebraska-intelligence/snapshot';
 import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
 import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
@@ -52,6 +53,7 @@ const STATE_NAMES: Record<string, string> = {
   oklahoma: 'OK',
   arkansas: 'AR',
   'new mexico': 'NM',
+  nebraska: 'NE',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -77,6 +79,7 @@ const STATE_NAMES: Record<string, string> = {
   ok: 'OK',
   ar: 'AR',
   nm: 'NM',
+  ne: 'NE',
 };
 
 function detectState(q: string): string | undefined {
@@ -384,6 +387,12 @@ function nmContext(q: string): boolean {
   const named = /\bnew mexico\b|\bin nm\b/i.test(q);
   const other = detectState(q.replace(/\bnew mexico\b|\bin nm\b/gi, ' ').replace(NM_GEO_CITIES, ' '));
   return named && (!other || other === 'NM') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+const NE_ALTERNATIVES = ['Open Nebraska household-goods license research.', 'Read the PSC Household Goods Movers Licensees table for an ML number.'];
+function neContext(q: string): boolean {
+  const named = /\bnebraska\b|\bin ne\b/i.test(q);
+  const other = detectState(q.replace(/\bnebraska\b|\bin ne\b/gi, ' '));
+  return named && (!other || other === 'NE') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
 }
 function wiContext(q: string): boolean {
   const named = /\bwisconsin\b|\bin wi\b|\bwisdot\b/i.test(q) ||
@@ -966,6 +975,28 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     const query = fail(reason, NM_ALTERNATIVES);
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'PRC household-goods directory page retrieved; company roster NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (neContext(q) && !isRouteOrInterstate(q)) {
+    const ne = NEBRASKA_MOVE_SNAPSHOT;
+    const city = q.match(/\b(omaha|lincoln)\b/i)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only. This research publishes no Nebraska city intelligence route.` : '';
+    const labeled = q.match(/\bML-0*\d{1,3}\b/i)?.[0];
+    const row = labeled ? lookupNeHhgLicense(labeled) : null;
+    let reason: string;
+    if (ctRanking(q)) reason = 'MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. A Nebraska household-goods license is not a provider winner.';
+    else if (labeled && row) reason = `Nebraska license ${row.license} is on the PSC Household Goods Movers Licensees table: ${row.name}${row.dba ? ` (DBA ${row.dba})` : ''}. Location prints ${row.location || 'blank'}. Effective date prints ${row.effectiveDate}. The table does not print an expiration date, insurance status, tariff, or USDOT number. A license row is not current insurance compliance.`;
+    else if (labeled) reason = `Nebraska license ${labeled.toUpperCase()} is absent from the PSC licensee table retrieved ${ne.retrievedAt}. Absence from that table is not proof that no license exists.`;
+    else if (/\b\d{3,8}\b/.test(q) && !/\b(usdot|dot|mc|ml-|license)\b/i.test(q)) reason = 'That number has no label. Specify a Nebraska ML license, USDOT, or MC. No carrier lookup was inferred.';
+    else if (/\bcomplaints?\b/i.test(q)) reason = 'A Nebraska household-goods complaint corpus was NOT_ACQUIRED. A complaint is not a finding. Interstate mover complaints follow FMCSA guidance.';
+    else if (/\b(enforcement|disciplin|revocation|suspension|orders?)\b/i.test(q)) reason = `A complete Nebraska household-goods order corpus was NOT_ACQUIRED. One published action, Order ${ne.singlePublishedOrder.docket} dated ${ne.singlePublishedOrder.dated}, was not joined to a licensee row.`;
+    else if (/\b(insurance|insured|cargo|form e)\b/i.test(q)) reason = 'Neb. Rev. Stat. section 75-307 is an insurance requirement that can support suspension after notice and hearing. The licensee table does not print insurance status. Provider insurance observations are NOT_ACQUIRED. A requirement is not current compliance.';
+    else if (/\b(tariffs?|rates?|charges?)\b/i.test(q)) reason = 'As of July 1, 2021, the Commission no longer sets household-goods rates. Carrier rate filings were NOT_ACQUIRED. A filing requirement is not a quote.';
+    else reason = `The Nebraska Public Service Commission licensee table has ${ne.distinctLicenses} distinct household-goods license numbers on ${ne.listingRows} rows. HTTP Last-Modified ${ne.httpLastModified}. Licenses are valid for one year from the effective date. The table does not print expiration, insurance, a tariff, or a USDOT number. An application and the $${ne.licenseFeeUsd} fee are not a license. FMCSA interstate authority is not this state license. No exact federal bridge was made.${cityNote}`;
+    const query = fail(reason, NE_ALTERNATIVES);
+    query.coverageState = row ? 'PARTIAL' : /\b(insurance|tariffs?|rates?|orders?|complaints?)\b/i.test(q) ? 'NOT_ACQUIRED' : 'PARTIAL';
+    push('Coverage', 'PSC HHG licensee table acquired; insurance, tariffs, orders, and USDOT bridges NOT_ACQUIRED');
     return { raw: q, query, interpretation: lines };
   }
 
