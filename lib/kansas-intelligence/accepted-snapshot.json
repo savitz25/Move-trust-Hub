@@ -1,0 +1,721 @@
+{
+  "source": "https://www.kcc.ks.gov/transportation/transportation-quick-links/household-goods-tariffs",
+  "retrieved_at": "2026-10-06",
+  "raw_sha256": "4fe2d2cf8dcbfd797136d663273483b1fade8b3ce2ad81426247267a0cf1f0c1",
+  "grain": "KCC-published intrastate household-goods tariff/carrier listing row; not certificate, current insurance, or FMCSA authority",
+  "row_count": 89,
+  "rows": [
+    {
+      "carrier_tariff_label": "404 Move, Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/404_move_inc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Salina, KS",
+      "mcid_dot_identifier": "3418737"
+    },
+    {
+      "carrier_tariff_label": "AAA Family Move LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/AAA_Family_Move_LLC.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Merriam, KS",
+      "mcid_dot_identifier": "2669432"
+    },
+    {
+      "carrier_tariff_label": "A Arnold of Kansas City, LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": "View Exceptions",
+      "tariff_exception_document": "/images/PDFs/tariff-hg/A%20Arnold%20of%20Kansas%20City%20LLC.pdf",
+      "listed_address": "Olathe, KS",
+      "mcid_dot_identifier": "581194"
+    },
+    {
+      "carrier_tariff_label": "ABC/Fry Wagner, Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": "View Exceptions",
+      "tariff_exception_document": "/images/PDFs/exceptions/abc_fry_wagner_inc.pdf",
+      "listed_address": "Lenexa, KS",
+      "mcid_dot_identifier": "530191"
+    },
+    {
+      "carrier_tariff_label": "Academy Movers, Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Junction City, KS",
+      "mcid_dot_identifier": "141859"
+    },
+    {
+      "carrier_tariff_label": "Affordable Moving LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/affordable_moving_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Wichita, KS",
+      "mcid_dot_identifier": "3281396"
+    },
+    {
+      "carrier_tariff_label": "The Armstrong Company KC LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/KS_Tariff_with_Armstrong_Cover_Page_for_Filing.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Kansas City, KS",
+      "mcid_dot_identifier": "4441851"
+    },
+    {
+      "carrier_tariff_label": "Allied Van Lines, Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Fort Wayne, IN",
+      "mcid_dot_identifier": "76235"
+    },
+    {
+      "carrier_tariff_label": "American Eagle Van Lines, Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/american_eagle.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Norfolk, NE",
+      "mcid_dot_identifier": "256825"
+    },
+    {
+      "carrier_tariff_label": "Andrews Van Lines, Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Norfolk, NE",
+      "mcid_dot_identifier": "20106"
+    },
+    {
+      "carrier_tariff_label": "Apartment Movers Inc",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/apartment_movers.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Wichita, KS",
+      "mcid_dot_identifier": "568394"
+    },
+    {
+      "carrier_tariff_label": "A-TLC Moving Wichita LLC d/b/a TLC Moving Wichita",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/A-TLC_Moving_Wichita_LLC.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Wichita, KS",
+      "mcid_dot_identifier": "2990900"
+    },
+    {
+      "carrier_tariff_label": "BCV Moving On LLC d/b/a Starving Artists Moving",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/bcv_moving_on_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Topeka, KS",
+      "mcid_dot_identifier": "768024"
+    },
+    {
+      "carrier_tariff_label": "Bellhops Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/bellhops_inc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Chattanooga, TN",
+      "mcid_dot_identifier": "2878240"
+    },
+    {
+      "carrier_tariff_label": "Bids LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/bids_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Topeka, KS",
+      "mcid_dot_identifier": "4128290"
+    },
+    {
+      "carrier_tariff_label": "Boyce's Moving Service LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/boyces_moving_service_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Concord, KS",
+      "mcid_dot_identifier": "975047"
+    },
+    {
+      "carrier_tariff_label": "Budd Van Lines Inc",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/budd_van_lines.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Somerset, NJ",
+      "mcid_dot_identifier": "185771"
+    },
+    {
+      "carrier_tariff_label": "Busy Bee LLC d/b/a Edens Moving Services",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Busy_Bee_LLC.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Kansas City, KS",
+      "mcid_dot_identifier": "3176261"
+    },
+    {
+      "carrier_tariff_label": "Byrnes Wealth Inc d/b/a College Hunks Hauling Junk & College Hunks Moving",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/byrnes_wealth_inc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Bel Aire, KS",
+      "mcid_dot_identifier": "3719698"
+    },
+    {
+      "carrier_tariff_label": "Carter Moving & Delivery Inc",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/carter_moving_delivery.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Hutchinson, KS",
+      "mcid_dot_identifier": "931079"
+    },
+    {
+      "carrier_tariff_label": "Centurion Moving & Storage LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Springfield, MO",
+      "mcid_dot_identifier": "3015288"
+    },
+    {
+      "carrier_tariff_label": "Century Van Lines, Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": "View Exceptions",
+      "tariff_exception_document": "/images/PDFs/exceptions/century_van_lines.pdf",
+      "listed_address": "Leavenworth, KS",
+      "mcid_dot_identifier": "888860"
+    },
+    {
+      "carrier_tariff_label": "Coleman American Moving Services, Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": "View Exceptions",
+      "tariff_exception_document": "/images/PDFs/exceptions/coleman_american_moving_services.pdf",
+      "listed_address": "Shawnee, KS",
+      "mcid_dot_identifier": "1119362"
+    },
+    {
+      "carrier_tariff_label": "Covan World-Wide Moving Incorporated",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/covan_world_wide_moving_inc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Midland City, AL",
+      "mcid_dot_identifier": "256677"
+    },
+    {
+      "carrier_tariff_label": "Don Woods Moving LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Fort Scott, KS",
+      "mcid_dot_identifier": "861075"
+    },
+    {
+      "carrier_tariff_label": "Daniel's Moving & Storage, Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Daniels_Moving-_Storage_Inc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Phoenix, AZ",
+      "mcid_dot_identifier": "1293335"
+    },
+    {
+      "carrier_tariff_label": "Duane D. Heeke d/b/a C & D Moving",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/duane_heeke.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Garden City, KS",
+      "mcid_dot_identifier": "681349"
+    },
+    {
+      "carrier_tariff_label": "Executive Storage LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Executive_Storage_LLC.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "El Dorado, KS",
+      "mcid_dot_identifier": "3083748"
+    },
+    {
+      "carrier_tariff_label": "F&L Delivery and Assembly, LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kansas_fillable_tariff_formFLDeliveryandAssemblyLLC.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Platte Woods, MO",
+      "mcid_dot_identifier": "3727073"
+    },
+    {
+      "carrier_tariff_label": "Flat Rate Movers LLC d/b/a Black Belt Movers",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/flat_rate_movers.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Elkhorn, NE",
+      "mcid_dot_identifier": "1718769"
+    },
+    {
+      "carrier_tariff_label": "Gerber Transfer LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/gerber_transfer_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Bonner Springs, MO",
+      "mcid_dot_identifier": "2391030"
+    },
+    {
+      "carrier_tariff_label": "Go Forth LLC d/b/a Kearney Moving Services",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Go_Forth_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Kearney, NE",
+      "mcid_dot_identifier": "4041599"
+    },
+    {
+      "carrier_tariff_label": "Golden Rule Relocation",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Golden%20Rule%20Relocation%20-%20KS%20Intrastate%20Tariff%202025.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "N Kansas City, MO",
+      "mcid_dot_identifier": "3420954"
+    },
+    {
+      "carrier_tariff_label": "Help-U-Move LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Help_U_Move_LLC.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Topeka, KS",
+      "mcid_dot_identifier": "3279307"
+    },
+    {
+      "carrier_tariff_label": "Iron Mountain Information Management Services, Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Iron_Mountain_Information_Management_Services_Inc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Boston, MA",
+      "mcid_dot_identifier": "338113"
+    },
+    {
+      "carrier_tariff_label": "James B, Studdard Transfer & Storage Co., Inc. dba Studdard Moving & Storage",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": "View Exceptions",
+      "tariff_exception_document": "/images/PDFs/tariff-hg/james_b_studdard.pdf",
+      "listed_address": "Leavenworth, KS",
+      "mcid_dot_identifier": "99388"
+    },
+    {
+      "carrier_tariff_label": "Jayhawker LLC d/b/a/ Two Men And A Truck",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/jayhawker_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Topeka, KS",
+      "mcid_dot_identifier": "3563094"
+    },
+    {
+      "carrier_tariff_label": "Jonathan Kelly d/b/a It's Your Move",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/jonathan_kelly_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Parsons, KS",
+      "mcid_dot_identifier": "3084348"
+    },
+    {
+      "carrier_tariff_label": "JP Install and Moving LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/jp_installandmoving_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Kansas City, KS",
+      "mcid_dot_identifier": "4274250"
+    },
+    {
+      "carrier_tariff_label": "JTW Lincoln Inc. d/b/a Two Men And A Truck",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/JTW_Lincoln_Inc_dba_Two_Men_And_A_Truck.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Lincoln, NE",
+      "mcid_dot_identifier": "2944430"
+    },
+    {
+      "carrier_tariff_label": "JTW Omaha Movers Inc. d/b/a Two Men And A Truck",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/JTW_Omaha_Movers_Inc_dba_Two_Men_And_A_Truck.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Omaha, NE",
+      "mcid_dot_identifier": "2590545"
+    },
+    {
+      "carrier_tariff_label": "Kansas Van And Storage Criqui Corporation",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": "View Exceptions",
+      "tariff_exception_document": "/images/PDFs/exceptions/kansas_van_and_storage_02.pdf",
+      "listed_address": "Topeka, KS",
+      "mcid_dot_identifier": "72675"
+    },
+    {
+      "carrier_tariff_label": "KC Movers LLC",
+      "carrier_tariff_document": "#link_tab",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Independence, MO",
+      "mcid_dot_identifier": "3202491"
+    },
+    {
+      "carrier_tariff_label": "King's Moving & Storage, Inc",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Wichita, KS",
+      "mcid_dot_identifier": "957078"
+    },
+    {
+      "carrier_tariff_label": "Little Apple Moving Company, LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/little_apple_moving_co.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Manhattan, KS",
+      "mcid_dot_identifier": "3806485"
+    },
+    {
+      "carrier_tariff_label": "Lock & Load LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/lock_load_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "McPherson, KS",
+      "mcid_dot_identifier": "2723956"
+    },
+    {
+      "carrier_tariff_label": "Love's Moving Service LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Loves_Moving_Tariff_5_26_2026.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Topeka, KS",
+      "mcid_dot_identifier": "2460847"
+    },
+    {
+      "carrier_tariff_label": "Mack Moving & Storage d/b/a Kearney Moving Service",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/mack_moving_storage_llc_dba_kearney_moving_service.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Kearney, NE",
+      "mcid_dot_identifier": "1095051"
+    },
+    {
+      "carrier_tariff_label": "Marathon Moving & Delivery LLC d/b/a Great Day Moving",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/marathon_moving_delivery.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Kansas City, KS",
+      "mcid_dot_identifier": "1704830"
+    },
+    {
+      "carrier_tariff_label": "Mastery Moving Inc",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Mastery%20Moving%20DOT%20%20973954.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Topeka, KS",
+      "mcid_dot_identifier": "973954"
+    },
+    {
+      "carrier_tariff_label": "Meier Enterprises, Inc dba Meiers Moving & Storage",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Salina, KS",
+      "mcid_dot_identifier": "1043522"
+    },
+    {
+      "carrier_tariff_label": "Godwin Movers LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/michael_l_godwin_dba_godwin_movers.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "McPherson, KS",
+      "mcid_dot_identifier": "1066399"
+    },
+    {
+      "carrier_tariff_label": "Mighty Movers Inc",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/mighty_movers_inc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Derby, KS",
+      "mcid_dot_identifier": "1066399"
+    },
+    {
+      "carrier_tariff_label": "Mike Hammer Moving LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/mike_hammer_moving_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Lenexa, KS",
+      "mcid_dot_identifier": null
+    },
+    {
+      "carrier_tariff_label": "Mike's Moving Pros LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/mikes_moving_pros_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Topeka, KS",
+      "mcid_dot_identifier": "2891572"
+    },
+    {
+      "carrier_tariff_label": "Moovers of KC North LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Moovers_of_KC_North_LLC.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Kansas City, MO",
+      "mcid_dot_identifier": "286072"
+    },
+    {
+      "carrier_tariff_label": "Mountain Movers Inc",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/mountain_movers.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "LaCygne, KS",
+      "mcid_dot_identifier": "1933766"
+    },
+    {
+      "carrier_tariff_label": "Moving Oz LLC d/b/a Two Men and a Truck",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Moving_OZ_LLC_DBA_TWO_MEN_AND_A_TRUCK_KCC_Tariff_Draft_101121.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Wichita, KS",
+      "mcid_dot_identifier": "2277955"
+    },
+    {
+      "carrier_tariff_label": "Moving Proz LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/moving_proz_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Olathe, KS",
+      "mcid_dot_identifier": "2275038"
+    },
+    {
+      "carrier_tariff_label": "NL Wilson Moving Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Lenexa, KS",
+      "mcid_dot_identifier": "1683198"
+    },
+    {
+      "carrier_tariff_label": "OK Transfer LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/ok_transfer_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Wichita, KS",
+      "mcid_dot_identifier": "1799712"
+    },
+    {
+      "carrier_tariff_label": "Professional Movers of Kansas, LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/professional_movers_kansas_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Hays, KS",
+      "mcid_dot_identifier": "3405137"
+    },
+    {
+      "carrier_tariff_label": "Professional Moving & Storage, Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": "View Exceptions",
+      "tariff_exception_document": "/images/PDFs/exceptions/professional_moving_storage_inc.pdf",
+      "listed_address": "Lawrence, KS",
+      "mcid_dot_identifier": "917983"
+    },
+    {
+      "carrier_tariff_label": "Right Way Moving LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/right_way_moving.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Topeka, KS",
+      "mcid_dot_identifier": "2383110"
+    },
+    {
+      "carrier_tariff_label": "RJ Movers, Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Junction City, KS",
+      "mcid_dot_identifier": "2014661"
+    },
+    {
+      "carrier_tariff_label": "ROJO, Inc. d/b/a College Hunks",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/rojo_inc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Topeka, KS",
+      "mcid_dot_identifier": "3286258"
+    },
+    {
+      "carrier_tariff_label": "Roy Tuel d/b/a Gina O\u2019Ryan Services",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Gina%20O\u2019Ryan%20Services.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Derby, KS",
+      "mcid_dot_identifier": "3567050"
+    },
+    {
+      "carrier_tariff_label": "Salina Moving LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Saline_moving_kansas_tariff.jpg",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Salina, KS",
+      "mcid_dot_identifier": "4517407"
+    },
+    {
+      "carrier_tariff_label": "Saunders Moving LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Saunders_Moving_LLC.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Leawood, KS",
+      "mcid_dot_identifier": "3009556"
+    },
+    {
+      "carrier_tariff_label": "Schmidt Moving LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/schmidt_moving_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Dodge City, KS",
+      "mcid_dot_identifier": "3340566"
+    },
+    {
+      "carrier_tariff_label": "Servant Enterprises Inc d/b/a Action Moving",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/servant_enterprises.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Joplin, MO",
+      "mcid_dot_identifier": "934584"
+    },
+    {
+      "carrier_tariff_label": "Southeast Kansas Movers, Inc d/b/a Pittsburg Moving",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": "View Exceptions",
+      "tariff_exception_document": "/images/PDFs/tariff-hg/southeast_kansas_movers.pdf",
+      "listed_address": "Pittsburg, KS",
+      "mcid_dot_identifier": "2312408"
+    },
+    {
+      "carrier_tariff_label": "Stephen George d/b/a Action Transfer",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Stephen_George_dba_Action_Transfer.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Park City, KS",
+      "mcid_dot_identifier": "1826040"
+    },
+    {
+      "carrier_tariff_label": "Steve Adkins d/b/a The Movers",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/steve_adkins.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Parsons, KS",
+      "mcid_dot_identifier": "1499121"
+    },
+    {
+      "carrier_tariff_label": "Sunrise Moving and Packing LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/sunrise_moving_packing_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Godfrey, IL",
+      "mcid_dot_identifier": "4004648"
+    },
+    {
+      "carrier_tariff_label": "Superior Moving Service Inc d/b/a Superior Moving & Storage",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Kansas City, MO",
+      "mcid_dot_identifier": "69086"
+    },
+    {
+      "carrier_tariff_label": "Teambass LLC d/b/a Titan Moving",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/titan_moving.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Wichita, KS",
+      "mcid_dot_identifier": "2727872"
+    },
+    {
+      "carrier_tariff_label": "Techno Movers LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/techno_movers_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Topeka, KS",
+      "mcid_dot_identifier": "2478715"
+    },
+    {
+      "carrier_tariff_label": "The Company of Yes (TCOY)",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/tcoy.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Leavenworth, KS",
+      "mcid_dot_identifier": "3546322"
+    },
+    {
+      "carrier_tariff_label": "The Gentlemen Moving Co., LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/gentlemen_moving_co_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Great Bend, KS",
+      "mcid_dot_identifier": "4217215"
+    },
+    {
+      "carrier_tariff_label": "Thomas Transfer & Storage Co., Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": "View Exceptions",
+      "tariff_exception_document": "/images/PDFs/exceptions/thomas_tranfer_storage.pdf",
+      "listed_address": "Emporia, KS",
+      "mcid_dot_identifier": "153146"
+    },
+    {
+      "carrier_tariff_label": "Three Pea Moving LLC d/b/a Rightsize Moving Solutions",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/three_pea_moving_wichita_llc.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Wichita, KS",
+      "mcid_dot_identifier": "2268415"
+    },
+    {
+      "carrier_tariff_label": "TMT KC LLC d/b/a Two Men And A Truck",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/TMT_KC_LLC_d-b-a_Two_Men_And_A_Truck.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Kansas City, MO",
+      "mcid_dot_identifier": "3099844"
+    },
+    {
+      "carrier_tariff_label": "Toko-Mcarthy Conglomerate TMC Inc. d/b/a Your Local Moverz",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/your_local_moverz_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Kansas City, MO",
+      "mcid_dot_identifier": "3718962"
+    },
+    {
+      "carrier_tariff_label": "Troy L Love d/b/a Love's Moving Service",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/troy_love_dba_loves_moving_service.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Topeka, KS",
+      "mcid_dot_identifier": "2460847"
+    },
+    {
+      "carrier_tariff_label": "Two Tigers and a Truck LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/Two_Tigers_and_a_Truck_LLC.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "McPherson, KS",
+      "mcid_dot_identifier": "2992949"
+    },
+    {
+      "carrier_tariff_label": "United Van Lines, LLC",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Fenton, MO",
+      "mcid_dot_identifier": "77949"
+    },
+    {
+      "carrier_tariff_label": "Wright's Moving, Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Topeka, KS",
+      "mcid_dot_identifier": "995326"
+    },
+    {
+      "carrier_tariff_label": "Wilhite Moving & Storage, Inc.",
+      "carrier_tariff_document": "/images/PDFs/tariff-hg/kmca_tariff.pdf",
+      "tariff_exception_label": null,
+      "tariff_exception_document": null,
+      "listed_address": "Junction City, KS",
+      "mcid_dot_identifier": "2547726"
+    }
+  ]
+}

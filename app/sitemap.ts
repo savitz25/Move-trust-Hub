@@ -96,6 +96,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/iowa',
     '/arkansas',
     '/nebraska',
+    '/kansas',
     '/florida',
     '/georgia',
     '/massachusetts',
