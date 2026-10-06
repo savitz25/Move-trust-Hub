@@ -16,6 +16,7 @@ import { CONNECTICUT_MOVE_SNAPSHOT, lookupCtHhgCertificate } from '../connecticu
 import { KENTUCKY_MOVE_SNAPSHOT, lookupKyHhgCertificate } from '../kentucky-intelligence/snapshot';
 import { SOUTH_CAROLINA_MOVE_SNAPSHOT, lookupScHhgCertificate } from '../south-carolina-intelligence/snapshot';
 import { OKLAHOMA_MOVE_SNAPSHOT, lookupOkHhgPin } from '../oklahoma-intelligence/snapshot';
+import { NEW_MEXICO_MOVE_SNAPSHOT } from '../new-mexico-intelligence/snapshot';
 import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
 import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
@@ -50,6 +51,7 @@ const STATE_NAMES: Record<string, string> = {
   mississippi: 'MS',
   oklahoma: 'OK',
   arkansas: 'AR',
+  'new mexico': 'NM',
   ny: 'NY',
   fl: 'FL',
   nj: 'NJ',
@@ -74,6 +76,7 @@ const STATE_NAMES: Record<string, string> = {
   ms: 'MS',
   ok: 'OK',
   ar: 'AR',
+  nm: 'NM',
 };
 
 function detectState(q: string): string | undefined {
@@ -374,6 +377,13 @@ function arContext(q: string): boolean {
   const stripped = q.replace(/\barkansas\b|\bin ar\b/gi, ' ').replace(namedState ? AR_GEO_CITIES : AR_CITIES, ' ').replace(/\blittle rock\b/gi, ' ');
   const other = detectState(stripped);
   return named && (!other || other === 'AR') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+const NM_ALTERNATIVES = ['Open New Mexico household-goods research.', 'The PRC directory page did not include company rows. A current roster was NOT_ACQUIRED. An application is not active authority.'];
+const NM_GEO_CITIES = /\b(albuquerque|santa fe|las cruces|rio rancho|roswell|farmington)\b/i;
+function nmContext(q: string): boolean {
+  const named = /\bnew mexico\b|\bin nm\b/i.test(q);
+  const other = detectState(q.replace(/\bnew mexico\b|\bin nm\b/gi, ' ').replace(NM_GEO_CITIES, ' '));
+  return named && (!other || other === 'NM') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
 }
 function wiContext(q: string): boolean {
   const named = /\bwisconsin\b|\bin wi\b|\bwisdot\b/i.test(q) ||
@@ -934,6 +944,28 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     const query = fail(reason, AR_ALTERNATIVES);
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'ARDOT HHG application packets acquired; roster and HHG insurance dollar minima NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (nmContext(q) && !isRouteOrInterstate(q)) {
+    const nm = NEW_MEXICO_MOVE_SNAPSHOT;
+    const city = q.match(NM_GEO_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only. This research publishes no New Mexico city intelligence route.` : '';
+    let reason: string;
+    if (ctRanking(q)) reason = 'MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. New Mexico PRC household-goods evidence is not a provider winner.';
+    else if (/\be360\b|\bprc\s*e\s*360\b/i.test(q)) reason = `PRCe360 was announced live January 26, 2026. It is a case system, not a counted household-goods roster. A current company roster was NOT_ACQUIRED. Missing is not zero.`;
+    else if (/\b\d{3,8}\b/.test(q) && !/\b(usdot|dot|mc|certificate|permit|authority|prc)\b/i.test(q)) reason = 'That number has no label. Specify a PRC identifier, USDOT, or MC. No carrier lookup was inferred.';
+    else if (/\bcomplaints?\b/i.test(q)) reason = 'The PRC complaint form is intake, not a complaint census. Provider complaint rows were NOT_ACQUIRED. A complaint is not a finding. Interstate mover complaints follow FMCSA guidance.';
+    else if (/\b(enforcement|disciplin|revocation|suspension|orders?)\b/i.test(q)) reason = 'New Mexico household-goods enforcement orders were NOT_ACQUIRED. No provider-level orders were attached, including by name. Name-only joins are 0.';
+    else if (/\b(insurance|insured|cargo|form e|form h)\b/i.test(q)) reason = 'New Mexico household-goods insurance was NOT_ACQUIRED. Missing insurance evidence is not zero coverage and is not active authority.';
+    else if (/\b(tariffs?|rates?|charges?)\b/i.test(q)) reason = 'A New Mexico household-goods tariff corpus was NOT_ACQUIRED. The directory page says to select a company to view their tariff, but the retrieved HTML contained no tariff links. That is not a tariff census, a quote, or a mover ranking.';
+    else if (/\bapplications?\b/i.test(q)) reason = 'An application is not active authority. A current New Mexico company roster was NOT_ACQUIRED. Missing is not zero.';
+    else if (/\butilit/i.test(q)) reason = 'Other PRC utility directories were not parsed as movers. A household-goods company roster was NOT_ACQUIRED. Missing is not zero.';
+    else if (/\bfmcsa\b|\bprotect your move\b|\bprotectyourmove\b/i.test(q)) reason = 'Interstate household-goods moves are sent to Protect Your Move from the PRC no-jurisdiction resource list. FMCSA is not New Mexico intrastate authority. A New Mexico company roster was NOT_ACQUIRED.';
+    else reason = `The ${nm.regulator} publishes a Household Goods Mover Companies directory. The HTML retrieved ${nm.retrievedAt} says to select a company to view their tariff, but it contained no company rows and no tariff links. The ${nm.navigationAnchors} anchors were site navigation only. A current household-goods company roster was NOT_ACQUIRED. Missing is not zero, and no company count is published. PRCe360, announced live ${nm.e360AnnouncedLive}, is a case system, not a counted roster. The complaint form is intake, not a complaint census. An application is not active authority. Tariff corpus, USDOT/MC bridges, insurance, and enforcement orders were NOT_ACQUIRED. Other PRC utility directories were not parsed as movers. Interstate moves are sent to Protect Your Move. FMCSA is not New Mexico intrastate authority.${cityNote}`;
+    const query = fail(reason, NM_ALTERNATIVES);
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'PRC household-goods directory page retrieved; company roster NOT_ACQUIRED');
     return { raw: q, query, interpretation: lines };
   }
 

@@ -1,0 +1,58 @@
+{
+  "version": "move-nm-state-intel-v1",
+  "ticket": "NM-MOVE-001",
+  "sourceAsOf": null,
+  "snapshotAsOf": "2026-10-06",
+  "retrievedAt": "2026-10-06",
+  "publication": {
+    "route": "/new-mexico",
+    "canonical": "https://www.movetrusthub.com/new-mexico",
+    "robots": "index,follow",
+    "rankings": false,
+    "trustScore": false
+  },
+  "regulator": "New Mexico Public Regulation Commission",
+  "authority": "New Mexico intrastate household-goods mover authority is separate from FMCSA interstate authority; the retrieved directory page is not a company roster",
+  "householdGoodsAuthority": {
+    "verification": "DIRECTORY_PAGE_WITHOUT_COMPANY_ROWS",
+    "roster": "NOT_ACQUIRED",
+    "rows": null,
+    "directoryCompanyRowsInHtml": "NONE_PRESENT",
+    "directoryTariffLinksInHtml": "NONE_PRESENT",
+    "application": "NOT_AN_ISSUED_AUTHORITY",
+    "tariffCorpus": "NOT_ACQUIRED",
+    "otherUtilityDirectories": "NOT_PARSED_AS_MOVERS",
+    "e360": "CASE_SYSTEM_NOT_A_ROSTER",
+    "fmcsaInterstate": "SEPARATE",
+    "usdotMcBridges": "NOT_ACQUIRED",
+    "insurance": "NOT_ACQUIRED",
+    "enforcementOrders": "NOT_ACQUIRED"
+  },
+  "sources": {
+    "directoryUrl": "https://www.prc.nm.gov/consumer-relations/company-directory/household-goods-movers/",
+    "directoryPrompt": "Select a Household Goods Mover Company below to view their tariff",
+    "directoryHtmlBytes": 211258,
+    "directoryHtmlSha256": "b73a70a33749ede004ef87fd8ec169eeebeda354365080a8d93d09eec11df0c0",
+    "yoastDatePublished": "2021-06-21",
+    "articleModifiedTime": "2023-06-20T20:58:14+00:00",
+    "pageClockIsRosterClock": false,
+    "navigationAnchors": 71,
+    "navigationAnchorsWereCompanyRows": false,
+    "e360Url": "https://e360.prc.nm.gov/",
+    "e360AnnouncedLive": "2026-01-26",
+    "e360IsCountedRoster": false,
+    "complaintUrl": "https://complaints.nm-prc.org/",
+    "noJurisdictionUrl": "https://www.prc.nm.gov/consumer-relations/no-jurisdiction-resource-list/",
+    "protectYourMoveUrl": "https://www.protectyourmove.gov"
+  },
+  "complaints": {
+    "providerRows": "NOT_ACQUIRED",
+    "formIsCensus": false
+  },
+  "enforcement": {
+    "providerRows": "NOT_ACQUIRED",
+    "nameOnlyJoins": 0
+  },
+  "newCanonicalOrganizations": 0,
+  "graphWrites": 0
+}
