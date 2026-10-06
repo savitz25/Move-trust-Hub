@@ -16,6 +16,11 @@ import {
 import { directParentSync, planSave, planUnsave, saveControlDisabled, unsaveReachesParent, type SaveBusy } from '@/lib/save-my-move/save-control';
 import { browserDirectPorts, parentSync, resumeDirect, startDirect, type DirectIntent } from '@/lib/my-trusthub/direct-save';
 import { trackSaveMyMoveMover } from '@/components/ga-events';
+import {
+  captureMyTrustHubSaveConfirmed,
+  captureMyTrustHubSaveFailed,
+  captureMyTrustHubSaveIntent,
+} from '@/components/analytics/posthog-beacons';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 import { ONE_ACCOUNT_ENABLED, keepAllowedForSlug, useMyTrustHubHref } from '@/components/my-trusthub/my-trusthub-origin';
@@ -88,7 +93,11 @@ export function SaveMoverButton({
    * user has left this profile. */
   const handOff = async (intent: DirectIntent, savedAt: string) => {
     setSyncing(intent === 'unsave' ? 'unsave' : 'save');
+    if (intent !== 'unsave') captureMyTrustHubSaveIntent();
     const result = await startDirect(browserDirectPorts(), companySlug, intent, savedAt, () => mounted.current);
+    if (intent !== 'unsave' && result !== 'navigating') {
+      captureMyTrustHubSaveFailed(result === 'not_eligible' ? 'unable' : 'handoff_unavailable');
+    }
     if (result !== 'navigating') setSyncing(null);
     return result;
   };
@@ -129,13 +138,16 @@ export function SaveMoverButton({
         if (result.outcome === 'confirmed') toast.success(`${companyName} removed from this device and My TrustHub`);
         else notConfirmedUnsave('My TrustHub did not confirm the removal, so it may still be saved there.');
       } else if (result.outcome === 'confirmed') {
+        captureMyTrustHubSaveConfirmed();
         toast.success(`${companyName} saved to My TrustHub`);
       } else if (result.outcome === 'not_confirmed') {
+        captureMyTrustHubSaveFailed('unable');
         toast.success('Saved on this device', {
           description: 'Sign in to My TrustHub to sync across devices.',
           action: { label: 'Sign in', onClick: signInToSync },
         });
       } else {
+        captureMyTrustHubSaveFailed('handoff_unavailable');
         toast.success(`${companyName} saved on this device`);
       }
     });

@@ -4,6 +4,11 @@ export const TRUSTHUB_EVENTS = {
   SEARCH_SUBMITTED: 'search_submitted',
   SEARCH_RESULTS_RETURNED: 'search_results_returned',
   PROFILE_VIEWED: 'profile_viewed',
+  // Canonical My TrustHub Save contract, mirrored from Ask's contract. A
+  // profile_saved event is emitted only after the parent acknowledges the save.
+  PROFILE_SAVE_INTENT: 'profile_save_intent',
+  PROFILE_SAVED: 'profile_saved',
+  PROFILE_SAVE_FAILED: 'profile_save_failed',
   CLAIM_STARTED: 'claim_started',
   PAGEVIEW: '$pageview',
 } as const;

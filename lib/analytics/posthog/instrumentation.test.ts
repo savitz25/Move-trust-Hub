@@ -29,4 +29,23 @@ describe('Move PostHog instrumentation surfaces', () => {
     const src = readFileSync(join(root, 'lib/analytics/posthog/events.ts'), 'utf8');
     assert.doesNotMatch(src, /SPECIALIST_HANDOFF_STARTED/);
   });
+
+  it('Move My TrustHub Save emits the canonical intent and confirmed outcome without identifiers', () => {
+    const events = readFileSync(join(root, 'lib/analytics/posthog/events.ts'), 'utf8');
+    const beacons = readFileSync(join(root, 'components/analytics/posthog-beacons.tsx'), 'utf8');
+    const button = readFileSync(join(root, 'components/save-my-move/save-mover-button.tsx'), 'utf8');
+    assert.match(events, /PROFILE_SAVE_INTENT: 'profile_save_intent'/);
+    assert.match(events, /PROFILE_SAVED: 'profile_saved'/);
+    assert.match(events, /PROFILE_SAVE_FAILED: 'profile_save_failed'/);
+    assert.match(beacons, /captureMyTrustHubSaveIntent[\s\S]*TRUSTHUB_EVENTS\.PROFILE_SAVE_INTENT/);
+    assert.match(beacons, /captureMyTrustHubSaveConfirmed[\s\S]*TRUSTHUB_EVENTS\.PROFILE_SAVED/);
+    assert.match(beacons, /captureMyTrustHubSaveFailed[\s\S]*TRUSTHUB_EVENTS\.PROFILE_SAVE_FAILED/);
+    assert.match(beacons, /action_source: 'specialist_handoff'/);
+    assert.match(beacons, /specialist_hub: 'move'/);
+    assert.match(beacons, /failureReason: 'unable' \| 'handoff_unavailable'/);
+    assert.doesNotMatch(beacons, /companySlug|companyName|usdot|accountId|email/);
+    assert.match(button, /captureMyTrustHubSaveIntent\(\)/);
+    assert.match(button, /result\.outcome === 'confirmed'[\s\S]*captureMyTrustHubSaveConfirmed\(\)/);
+    assert.match(button, /captureMyTrustHubSaveFailed\('unable'\)/);
+  });
 });

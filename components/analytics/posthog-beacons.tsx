@@ -54,3 +54,34 @@ export function captureSearchResultsReturned(input: {
     success: input.success,
   });
 }
+
+const MY_TRUSTHUB_MOVE_SAVE_PROPERTIES = {
+  action_source: 'specialist_handoff',
+  specialist_hub: 'move',
+} as const;
+
+/** Emit only bounded contract fields; profile, account, and carrier identifiers stay out. */
+export function captureMyTrustHubSaveIntent(): void {
+  captureTrustEvent(
+    TRUSTHUB_EVENTS.PROFILE_SAVE_INTENT,
+    { ...MY_TRUSTHUB_MOVE_SAVE_PROPERTIES, outcome: 'intent' },
+    { sendBeforeUnload: true },
+  );
+}
+
+export function captureMyTrustHubSaveConfirmed(): void {
+  captureTrustEvent(TRUSTHUB_EVENTS.PROFILE_SAVED, {
+    ...MY_TRUSTHUB_MOVE_SAVE_PROPERTIES,
+    outcome: 'success',
+  });
+}
+
+export function captureMyTrustHubSaveFailed(
+  failureReason: 'unable' | 'handoff_unavailable',
+): void {
+  captureTrustEvent(TRUSTHUB_EVENTS.PROFILE_SAVE_FAILED, {
+    ...MY_TRUSTHUB_MOVE_SAVE_PROPERTIES,
+    outcome: 'failure',
+    failure_reason: failureReason,
+  });
+}
