@@ -82,7 +82,12 @@ function extractStates(query: string): Array<{ code: string; name: string; match
     }
   }
   return matches.sort((a, b) => a.index - b.index || b.match.length - a.match.length)
-    .filter((row, index, all) => !all.slice(0, index).some((prior) => prior.index === row.index));
+    .filter((row, index, all) => {
+      const earlier = all.slice(0, index);
+      if (earlier.some((prior) => prior.index === row.index)) return false;
+      // "Virginia" inside "West Virginia" is the same place, not a second state.
+      return !earlier.some((prior) => prior.index < row.index && prior.index + prior.match.length >= row.index + row.match.length);
+    });
 }
 
 export function parseDirectoryResearchQuery(raw: string): DirectoryResearchQueryPlan {

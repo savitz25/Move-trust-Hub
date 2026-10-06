@@ -85,6 +85,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/utah',
     '/new-mexico',
     '/idaho',
+    '/west-virginia',
     '/indiana',
     '/alabama',
     '/louisiana',
@@ -148,7 +149,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority:
         route === ''
           ? 1
-        : route === '/local-movers' || route === '/california' || route === '/connecticut' || route === '/maryland' || route === '/wisconsin' || route === '/utah' || route === '/new-mexico' || route === '/idaho' || route === '/indiana' || route === '/alabama' || route === '/louisiana' || route === '/kentucky' || route === '/south-carolina' || route === '/mississippi' || route === '/oklahoma' || route === '/missouri' || route === '/iowa' || route === '/arkansas' || route === '/nebraska' || route === '/florida' || route === '/georgia' || route === '/massachusetts' || route === '/tennessee' || route === '/nevada' || route === '/minnesota' || route === '/michigan' || route === '/new-jersey' || route === '/texas' || route === '/washington' || route === '/colorado' || route === '/virginia' || route === '/new-york' || route === '/illinois' || route === '/oregon' || route === '/pennsylvania' || route === '/north-carolina' || route === '/ohio'
+        : route === '/local-movers' || route === '/california' || route === '/connecticut' || route === '/maryland' || route === '/wisconsin' || route === '/utah' || route === '/new-mexico' || route === '/idaho' || route === '/west-virginia' || route === '/indiana' || route === '/alabama' || route === '/louisiana' || route === '/kentucky' || route === '/south-carolina' || route === '/mississippi' || route === '/oklahoma' || route === '/missouri' || route === '/iowa' || route === '/arkansas' || route === '/nebraska' || route === '/florida' || route === '/georgia' || route === '/massachusetts' || route === '/tennessee' || route === '/nevada' || route === '/minnesota' || route === '/michigan' || route === '/new-jersey' || route === '/texas' || route === '/washington' || route === '/colorado' || route === '/virginia' || route === '/new-york' || route === '/illinois' || route === '/oregon' || route === '/pennsylvania' || route === '/north-carolina' || route === '/ohio'
             ? 0.9
             : route === '/verify-dot' || route === '/review'
               ? 0.88

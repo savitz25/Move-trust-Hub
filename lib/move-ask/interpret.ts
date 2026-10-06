@@ -19,6 +19,7 @@ import { OKLAHOMA_MOVE_SNAPSHOT, lookupOkHhgPin } from '../oklahoma-intelligence
 import { NEW_MEXICO_MOVE_SNAPSHOT } from '../new-mexico-intelligence/snapshot';
 import { NEBRASKA_MOVE_SNAPSHOT, lookupNeHhgLicense } from '../nebraska-intelligence/snapshot';
 import { IDAHO_MOVE_SNAPSHOT } from '../idaho-intelligence/snapshot';
+import { WEST_VIRGINIA_MOVE_SNAPSHOT } from '../west-virginia-intelligence/snapshot';
 import { lookupNcNcucIdentity } from '../north-carolina-intelligence/lookup';
 import { NORTH_CAROLINA_MOVE_SNAPSHOT } from '../north-carolina-intelligence/snapshot';
 import { ASK_DEFINITIONS, type MoveRegulatoryRole, type MoveResearchQuery, type ParsedMoveAsk } from './contract';
@@ -86,6 +87,7 @@ const STATE_NAMES: Record<string, string> = {
 };
 
 function detectState(q: string): string | undefined {
+  if (/\bwest virginia\b/i.test(q) || /\bin wv\b/i.test(q)) return 'WV';
   if (/\bnj\b/i.test(q)) return 'NJ';
   if (/\bgeorgia\b/i.test(q) || /\bin ga\b/i.test(q)) return 'GA';
   if (/\bpennsylvania\b/i.test(q)) return 'PA';
@@ -403,6 +405,13 @@ function idContext(q: string): boolean {
   const named = /\bidaho\b|\bin id\b/i.test(q);
   const other = detectState(q.replace(/\bidaho\b|\bin id\b/gi, ' ').replace(ID_GEO_CITIES, ' '));
   return named && (!other || other === 'ID') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
+}
+const WV_ALTERNATIVES = ['Open West Virginia household-goods research.', 'A current household-goods certificate roster was NOT_ACQUIRED. An application is not issued authority.'];
+const WV_GEO_CITIES = /\b(charleston|morgantown|huntington)\b/i;
+function wvContext(q: string): boolean {
+  const named = /\bwest virginia\b|\bin wv\b/i.test(q);
+  const other = detectState(q.replace(/\bwest virginia\b|\bin wv\b/gi, ' ').replace(WV_GEO_CITIES, ' '));
+  return named && (!other || other === 'WV') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
 }
 function wiContext(q: string): boolean {
   const named = /\bwisconsin\b|\bin wi\b|\bwisdot\b/i.test(q) ||
@@ -1027,6 +1036,23 @@ export function interpretMoveAskQuery(raw: string, page = 1): ParsedMoveAsk {
     const query = fail(reason, ID_ALTERNATIVES);
     query.coverageState = 'NOT_ACQUIRED';
     push('Coverage', 'Idaho commodity table and financial-responsibility statute reviewed; mover roster NOT_ACQUIRED');
+    return { raw: q, query, interpretation: lines };
+  }
+
+  if (wvContext(q)) {
+    const city = q.match(WV_GEO_CITIES)?.[1];
+    const cityNote = city ? ` ${titleCity(city)} is geography only. This research publishes no West Virginia city intelligence route.` : '';
+    let reason: string;
+    if (ctRanking(q)) reason = 'MoveTrustHub does not rank or recommend movers and does not publish a Trust Score. Absence of a West Virginia household-goods roster is not a provider winner.';
+    else if (/\b(tariffs?|rates?|charges?)\b/i.test(q)) reason = 'A West Virginia household-goods tariff was NOT_ACQUIRED. A tariff is not current authority unless the source establishes that relationship. No tariff corpus was counted.';
+    else if (/\b(insurance|insured|cargo|form e)\b/i.test(q)) reason = 'Form E insurance observations were NOT_ACQUIRED. An insurance requirement is not observed coverage. Missing insurance evidence is not zero coverage and is not a household-goods certificate.';
+    else if (/\bapplications?\b/i.test(q)) reason = 'An application is not issued authority. A current West Virginia household-goods certificate roster was NOT_ACQUIRED. Missing is not zero.';
+    else if (/\bfmcsa\b|\busdot\b|\bucr\b|\bprotect your move\b/i.test(q) || isRouteOrInterstate(q)) reason = 'FMCSA interstate authority, USDOT, and UCR stay separate from the Public Service Commission of West Virginia. UCR is not household-goods authority. A current certificate roster was NOT_ACQUIRED. Missing is not zero.';
+    else if (/\b(enforcement|disciplin|revocation|suspension|orders?)\b/i.test(q)) reason = 'West Virginia PSC orders, suspensions, and revocations were NOT_ACQUIRED. No provider-level order was attached, including by name. Name-only joins are 0.';
+    else reason = `The ${WEST_VIRGINIA_MOVE_SNAPSHOT.regulator} regulates state motor-carrier certificates and permits. A current household-goods certificate roster was NOT_ACQUIRED. Missing is not zero, and no mover count is published. An application is not issued authority. A contract-carrier permit is a separate grain. A tariff is not current authority. An insurance requirement is not observed coverage. UCR is not household-goods authority. FMCSA interstate authority is not a West Virginia certificate. Exact USDOT bridges were NOT_ACQUIRED.${cityNote}`;
+    const query = fail(reason, WV_ALTERNATIVES);
+    query.coverageState = 'NOT_ACQUIRED';
+    push('Coverage', 'PSC motor-carrier section identified; household-goods certificate roster NOT_ACQUIRED');
     return { raw: q, query, interpretation: lines };
   }
 

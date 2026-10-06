@@ -1,0 +1,48 @@
+{
+  "version": "move-wv-state-intel-v1",
+  "ticket": "WV-MOVE-001",
+  "sourceAsOf": null,
+  "snapshotAsOf": "2026-10-06",
+  "retrievedAt": "2026-10-06",
+  "publication": {
+    "route": "/west-virginia",
+    "canonical": "https://www.movetrusthub.com/west-virginia",
+    "robots": "index,follow",
+    "rankings": false,
+    "trustScore": false,
+    "indexable": true
+  },
+  "regulator": "Public Service Commission of West Virginia, Transportation Division / Motor Carrier Section",
+  "authority": "A current household-goods certificate roster was not acquired. An application, a tariff, an insurance requirement, UCR, and FMCSA interstate authority are not that roster.",
+  "householdGoodsAuthority": {
+    "verification": "NO_CURRENT_HHG_ROSTER_ACQUIRED",
+    "roster": "NOT_ACQUIRED",
+    "rows": null,
+    "certificate": "SEPARATE",
+    "contractCarrierPermit": "SEPARATE",
+    "application": "NOT_AUTHORITY",
+    "tariff": "NOT_ACQUIRED",
+    "formE": "NOT_ACQUIRED",
+    "insuranceRequirement": "NOT_OBSERVED_COVERAGE",
+    "ucr": "SEPARATE",
+    "usdot": "SEPARATE",
+    "fmcsaInterstate": "SEPARATE",
+    "pscOrder": "NOT_ACQUIRED"
+  },
+  "sources": {
+    "certificateSearchUrl": "http://www.psc.state.wv.us/scripts/utilities/tblMCCertificatesSearch.cfm",
+    "rulesUrl": "https://www.psc.state.wv.us/forms/motorcarrierrules-2022Full.pdf",
+    "protectYourMoveUrl": "https://www.protectyourmove.gov",
+    "pageClockIsRosterClock": false
+  },
+  "complaints": {
+    "providerRows": "NOT_ACQUIRED",
+    "formIsCensus": false
+  },
+  "enforcement": {
+    "providerRows": "NOT_ACQUIRED",
+    "nameOnlyJoins": 0
+  },
+  "newCanonicalOrganizations": 0,
+  "graphWrites": 0
+}
