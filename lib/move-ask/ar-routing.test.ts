@@ -67,5 +67,7 @@ test('Arkansas rankings fail closed and do not capture Oklahoma or Arizona', () 
   assert.equal((readFileSync('app/sitemap.ts', 'utf8').match(/'\/arkansas'/g) ?? []).length, 2);
   assert.match(plan('mover Oklahoma').failReason ?? '', /Oklahoma Corporation Commission/);
   assert.doesNotMatch(plan('mover in Arizona').failReason ?? '', /Arkansas Department of Transportation/);
+  assert.doesNotMatch(plan('mover Fayetteville').failReason ?? '', /Arkansas Department of Transportation/);
+  assert.match(plan('mover Fayetteville Arkansas').failReason ?? '', /geography only/);
   assert.doesNotMatch(plan('mover Missouri').failReason ?? '', /Arkansas Department of Transportation/);
 });

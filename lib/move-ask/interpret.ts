@@ -364,13 +364,15 @@ function okContext(q: string): boolean {
   return named && (!other || other === 'OK') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
 }
 const AR_ALTERNATIVES = ['Open Arkansas intrastate household-goods research.', 'Contact ARDOT Legal Division to verify household-goods authority. An application is not issued authority.'];
-const AR_CITIES = /\b(fayetteville|fort smith)\b/i;
+const AR_CITIES = /\bfort smith\b/i;
 const AR_GEO_CITIES = /\b(little rock|fayetteville|fort smith)\b/i;
 function arContext(q: string): boolean {
-  const named = /\barkansas\b|\bin ar\b|\bardot\b/i.test(q) ||
+  const namedState = /\barkansas\b|\bin ar\b|\bardot\b/i.test(q);
+  const named = namedState ||
     (AR_CITIES.test(q) && /\b(movers?|moving compan(?:y|ies)|household goods)\b/i.test(q)) ||
     (/\blittle rock\b/i.test(q) && /\b(movers?|moving)\b/i.test(q));
-  const other = detectState(q.replace(/\barkansas\b|\bin ar\b/gi, ' ').replace(AR_GEO_CITIES, ' '));
+  const stripped = q.replace(/\barkansas\b|\bin ar\b/gi, ' ').replace(namedState ? AR_GEO_CITIES : AR_CITIES, ' ').replace(/\blittle rock\b/gi, ' ');
+  const other = detectState(stripped);
   return named && (!other || other === 'AR') && !FEDERAL_ID.test(q) && !asksAboutHeadquarters(q);
 }
 function wiContext(q: string): boolean {
