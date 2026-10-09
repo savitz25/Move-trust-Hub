@@ -2,6 +2,7 @@
 
 import { assertAdminSession } from '@/lib/admin/auth';
 import { evaluateCanaryRequest } from '@/lib/fmcsa/refresh/canary';
+import { fmcsaRefreshPause } from '@/lib/fmcsa/refresh/pause';
 import { runFmcsaRefresh } from '@/lib/fmcsa/refresh/runner';
 import type { RefreshMode, RefreshRunResult } from '@/lib/fmcsa/refresh/types';
 
@@ -14,6 +15,24 @@ export async function triggerFmcsaRefreshAction(input?: {
   await assertAdminSession();
 
   const mode = input?.mode ?? 'incremental';
+  const pause = fmcsaRefreshPause(mode);
+  if (pause.paused) {
+    return {
+      runId: '',
+      mode,
+      status: 'failed',
+      companiesTotal: 0,
+      companiesProcessed: 0,
+      companiesUpdated: 0,
+      companiesFailed: 0,
+      changesDetected: 0,
+      errors: [pause.reason],
+      durationMs: 0,
+      skipped: true,
+      skipReason: pause.reason,
+    };
+  }
+
   const canary = input?.canary === true;
   const decision = evaluateCanaryRequest({
     canary,

@@ -6,6 +6,8 @@ import { extractContactFromFmcsaRaw } from '@/lib/fmcsa/company-from-row';
 import { extractDisplayFieldsFromSnapshot } from '@/lib/fmcsa/refresh/batch-fields';
 import {
   FMCSA_REFRESH_BUDGET,
+  createFetchTimeout,
+  isFetchAbortError,
   isRunningRowAbandoned,
   releaseIdempotencyKey,
   type FmcsaRefreshBudgetConfig,
@@ -62,6 +64,7 @@ export type FmcsaRefreshDeps = {
     headquarters?: string | null;
     fmcsaLastChecked?: string | null;
     fmcsaRaw?: Record<string, unknown> | null;
+    signal?: AbortSignal;
   }) => Promise<FmcsaCompanyFetchResult>;
   notify?: typeof sendRefreshSummaryAlert;
   revalidate?: (path: string) => void;
@@ -274,10 +277,58 @@ export async function runFmcsaRefresh(
   const revalidate = deps?.revalidate ?? revalidatePath;
   const idemKey = idempotencyKey(options.mode, started);
 
-  if (!options.force) {
-    const guard = await loadRunningRows(supabase);
-    if (guard.error) {
-      const reason = `Refresh guard query failed; failing closed (${guard.error})`;
+  const guard = await loadRunningRows(supabase);
+  if (guard.error) {
+    const reason = `Refresh guard query failed; failing closed (${guard.error})`;
+    return emptyResult(options, started, now, {
+      status: 'failed',
+      skipped: true,
+      skipReason: reason,
+      errors: [reason],
+    });
+  }
+
+  const abandoned: RunningRow[] = [];
+  const active: RunningRow[] = [];
+  for (const row of guard.rows) {
+    if (isRunningRowAbandoned(row, now(), budget)) abandoned.push(row);
+    else active.push(row);
+  }
+
+  for (const row of abandoned) {
+    const closed = await finalizeAbandonedRun(supabase, row, now());
+    if (!closed.ok) {
+      const reason = `Abandoned run ${row.id} could not be closed (${closed.error})`;
+      return emptyResult(options, started, now, {
+        runId: row.id,
+        status: 'failed',
+        skipped: true,
+        skipReason: reason,
+        errors: [reason],
+      });
+    }
+  }
+
+  // force does not overlap a live run. A non-abandoned running row always blocks.
+  if (active.length > 0) {
+    return emptyResult(options, started, now, {
+      runId: active[0].id,
+      status: 'running',
+      skipped: true,
+      skipReason: 'Another refresh run is in progress',
+    });
+  }
+
+  if (!options.force && options.mode === 'full') {
+    const { data: existingFull, error: fullError } = await supabase
+      .from('fmcsa_refresh_runs')
+      .select('id, status')
+      .eq('idempotency_key', idemKey)
+      .eq('status', 'completed')
+      .maybeSingle();
+
+    if (fullError) {
+      const reason = `Refresh guard query failed; failing closed (${fullError.message})`;
       return emptyResult(options, started, now, {
         status: 'failed',
         skipped: true,
@@ -286,68 +337,13 @@ export async function runFmcsaRefresh(
       });
     }
 
-    const abandoned: RunningRow[] = [];
-    const active: RunningRow[] = [];
-    for (const row of guard.rows) {
-      if (isRunningRowAbandoned(row, now(), budget)) abandoned.push(row);
-      else active.push(row);
-    }
-
-    for (const row of abandoned) {
-      await finalizeAbandonedRun(supabase, row, now());
-    }
-
-    if (active.length > 0) {
+    if (existingFull) {
       return emptyResult(options, started, now, {
-        runId: active[0].id,
-        status: 'running',
+        runId: String(existingFull.id),
+        status: 'completed',
         skipped: true,
-        skipReason: 'Another refresh run is in progress',
+        skipReason: `Full refresh already completed for ${idemKey}`,
       });
-    }
-
-    if (options.mode === 'full') {
-      const { data: existingFull, error: fullError } = await supabase
-        .from('fmcsa_refresh_runs')
-        .select('id, status')
-        .eq('idempotency_key', idemKey)
-        .eq('status', 'completed')
-        .maybeSingle();
-
-      if (fullError) {
-        const reason = `Refresh guard query failed; failing closed (${fullError.message})`;
-        return emptyResult(options, started, now, {
-          status: 'failed',
-          skipped: true,
-          skipReason: reason,
-          errors: [reason],
-        });
-      }
-
-      if (existingFull) {
-        return emptyResult(options, started, now, {
-          runId: String(existingFull.id),
-          status: 'completed',
-          skipped: true,
-          skipReason: `Full refresh already completed for ${idemKey}`,
-        });
-      }
-    }
-  } else {
-    const guard = await loadRunningRows(supabase);
-    if (guard.error) {
-      const reason = `Refresh guard query failed; failing closed (${guard.error})`;
-      return emptyResult(options, started, now, {
-        status: 'failed',
-        skipped: true,
-        skipReason: reason,
-        errors: [reason],
-      });
-    }
-    for (const row of guard.rows) {
-      if (isRunningRowAbandoned(row, now(), budget)) {
-        await finalizeAbandonedRun(supabase, row, now());
-      }
     }
   }
 
@@ -362,9 +358,18 @@ export async function runFmcsaRefresh(
     });
   }
 
-  const insertKey = released.taken && options.force
-    ? releaseIdempotencyKey(idemKey, `force-${started}`)
-    : idemKey;
+  if (released.taken && !released.terminal) {
+    return emptyResult(options, started, now, {
+      status: 'running',
+      skipped: true,
+      skipReason: 'Another refresh run is in progress',
+    });
+  }
+
+  const insertKey =
+    released.taken && released.terminal && options.force
+      ? releaseIdempotencyKey(idemKey, `force-${started}`)
+      : idemKey;
 
   const { limit, clampedFrom } = selectionLimit(options, budget);
   const probeLimit = options.mode === 'full' ? limit + 1 : limit;
@@ -406,6 +411,7 @@ export async function runFmcsaRefresh(
 
   const runId = String(runRow.id);
   const deadline = started + budget.runBudgetMs;
+  const killAt = started + budget.maxDurationMs;
   const errors: string[] = [];
   let processed = 0;
   let updated = 0;
@@ -416,8 +422,18 @@ export async function runFmcsaRefresh(
   let lastCheckpointAt = started;
   let lastCheckpointProcessed = 0;
   const alertCandidates: { companyName: string; slug: string; changes: FieldChange[] }[] = [];
+  let status: RefreshRunStatus = 'failed';
+  let exitReason: string | null = null;
 
   const pastDeadline = () => now() >= deadline;
+  const insideFinalizeReserve = () => killAt - now() <= budget.finalizeReserveMs;
+
+  async function bumpLastChecked(companyId: string): Promise<void> {
+    await supabase
+      .from('companies')
+      .update({ fmcsa_last_checked: new Date(now()).toISOString() })
+      .eq('id', companyId);
+  }
 
   async function checkpoint(force: boolean): Promise<void> {
     if (pastDeadline()) return;
@@ -446,7 +462,7 @@ export async function runFmcsaRefresh(
     await checkpoint(true);
 
     for (const company of companies) {
-      if (pastDeadline()) {
+      if (pastDeadline() || insideFinalizeReserve()) {
         outcome = 'budget';
         break;
       }
@@ -457,18 +473,61 @@ export async function runFmcsaRefresh(
           processed++;
           failed++;
           errors.push(`${company.slug}: missing USDOT`);
+          await bumpLastChecked(company.id);
           await checkpoint(false);
           continue;
         }
 
-        const fetchResult = await fetchCompany({
+        const timeoutMs = killAt - now() - budget.finalizeReserveMs;
+        const fetchTimeout = createFetchTimeout(timeoutMs);
+        const fetchPromise = fetchCompany({
           usdot: dot,
           mcNumber: company.mc_number,
           companyName: company.name,
           headquarters: company.headquarters,
           fmcsaLastChecked: company.fmcsa_last_checked,
           fmcsaRaw: company.fmcsa_raw ?? null,
+          signal: fetchTimeout.signal,
         });
+        void fetchPromise.catch(() => undefined);
+        let fetchResult: FmcsaCompanyFetchResult;
+        try {
+          fetchResult = await Promise.race([
+            fetchPromise,
+            new Promise<never>((_, reject) => {
+              if (fetchTimeout.signal.aborted) {
+                reject(fetchTimeout.signal.reason);
+                return;
+              }
+              fetchTimeout.signal.addEventListener(
+                'abort',
+                () => reject(fetchTimeout.signal.reason),
+                { once: true }
+              );
+            }),
+          ]);
+        } catch (error) {
+          if (isFetchAbortError(error) || fetchTimeout.signal.aborted) {
+            processed++;
+            failed++;
+            errors.push(`${company.slug}: FMCSA fetch aborted before the platform deadline`);
+            await bumpLastChecked(company.id);
+            outcome = 'budget';
+            break;
+          }
+          throw error;
+        } finally {
+          fetchTimeout.cancel();
+        }
+
+        if (fetchTimeout.signal.aborted) {
+          processed++;
+          failed++;
+          errors.push(`${company.slug}: FMCSA fetch aborted before the platform deadline`);
+          await bumpLastChecked(company.id);
+          outcome = 'budget';
+          break;
+        }
 
         if (pastDeadline()) {
           outcome = 'budget';
@@ -491,6 +550,7 @@ export async function runFmcsaRefresh(
           errors.push(
             `${company.slug}: ${fetchResult.error ?? `FMCSA lookup failed for DOT ${dot}`}${suffix}`
           );
+          await bumpLastChecked(company.id);
           await checkpoint(false);
           continue;
         }
@@ -586,6 +646,7 @@ export async function runFmcsaRefresh(
           processed++;
           failed++;
           errors.push(`${company.slug}: DB update failed — ${updateError.message}`);
+          await bumpLastChecked(company.id);
           await checkpoint(false);
           continue;
         }
@@ -641,8 +702,8 @@ export async function runFmcsaRefresh(
     const message = error instanceof Error ? error.message : String(error);
     if (!errors.includes(message)) errors.push(message);
   } finally {
-    const status = resolveLoopStatus({ outcome, processed, failed });
-    const exitReason = exitReasonFor(outcome, status);
+    status = resolveLoopStatus({ outcome, processed, failed });
+    exitReason = exitReasonFor(outcome, status);
     metadata.exit_reason = exitReason;
     metadata.last_heartbeat_at = new Date(now()).toISOString();
     const summaryParts = [
@@ -651,31 +712,41 @@ export async function runFmcsaRefresh(
       exitReason ?? '',
     ].filter((part, index, all) => part && all.indexOf(part) === index);
     const errorSummary = summaryParts.join('\n') || null;
+    const terminalRow = {
+      status,
+      companies_processed: processed,
+      companies_updated: updated,
+      companies_failed: failed,
+      changes_detected: changesDetected,
+      error_summary: errorSummary,
+      finished_at: new Date(now()).toISOString(),
+      metadata,
+      ...(status === 'completed'
+        ? {}
+        : { idempotency_key: releaseIdempotencyKey(idemKey, `${status}-${runId}`) }),
+    };
 
-    try {
-      await supabase
-        .from('fmcsa_refresh_runs')
-        .update({
-          status,
-          companies_processed: processed,
-          companies_updated: updated,
-          companies_failed: failed,
-          changes_detected: changesDetected,
-          error_summary: errorSummary,
-          finished_at: new Date(now()).toISOString(),
-          metadata,
-          ...(status === 'completed'
-            ? {}
-            : { idempotency_key: releaseIdempotencyKey(idemKey, `${status}-${runId}`) }),
-        })
-        .eq('id', runId);
-    } catch (finalizeError) {
-      console.error('[fmcsa-refresh] failed to write terminal run status', finalizeError);
+    let terminalError: string | null = null;
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const { error } = await supabase.from('fmcsa_refresh_runs').update(terminalRow).eq('id', runId);
+        if (error) throw new Error(error.message);
+        terminalError = null;
+        break;
+      } catch (finalizeError) {
+        terminalError = finalizeError instanceof Error ? finalizeError.message : String(finalizeError);
+        if (attempt === 1) {
+          console.error('[fmcsa-refresh] failed to write terminal run status', finalizeError);
+        }
+      }
+    }
+    if (terminalError) {
+      status = 'failed';
+      const message = `terminal write failed: ${terminalError}`;
+      if (!errors.includes(message)) errors.push(message);
     }
   }
 
-  const status = resolveLoopStatus({ outcome, processed, failed });
-  const exitReason = exitReasonFor(outcome, status);
   const result: RefreshRunResult = {
     runId,
     mode: options.mode,
@@ -738,7 +809,7 @@ async function finalizeAbandonedRun(
   supabase: FmcsaRefreshDb,
   row: RunningRow,
   nowMs: number
-): Promise<void> {
+): Promise<{ ok: true } | { ok: false; error: string }> {
   const metadata = {
     ...asMetadata(row.metadata),
     exit_reason: 'abandoned_detected_by_guard',
@@ -746,39 +817,46 @@ async function finalizeAbandonedRun(
   const summary = row.error_summary
     ? `${row.error_summary}\nabandoned_detected_by_guard`
     : 'abandoned_detected_by_guard';
-  await supabase
-    .from('fmcsa_refresh_runs')
-    .update({
-      status: 'failed',
-      finished_at: new Date(nowMs).toISOString(),
-      error_summary: summary,
-      metadata,
-      idempotency_key: releaseIdempotencyKey(row.idempotency_key, `abandoned-${row.id}`),
-    })
-    .eq('id', row.id);
+  try {
+    const { error } = await supabase
+      .from('fmcsa_refresh_runs')
+      .update({
+        status: 'failed',
+        finished_at: new Date(nowMs).toISOString(),
+        error_summary: summary,
+        metadata,
+        idempotency_key: releaseIdempotencyKey(row.idempotency_key, `abandoned-${row.id}`),
+      })
+      .eq('id', row.id);
+    if (error) return { ok: false, error: error.message };
+    return { ok: true };
+  } catch (error) {
+    return { ok: false, error: error instanceof Error ? error.message : String(error) };
+  }
 }
 
 async function releaseBlockingIdempotencyKey(
   supabase: FmcsaRefreshDb,
   idemKey: string
-): Promise<{ error: string | null; taken: boolean }> {
+): Promise<{ error: string | null; taken: boolean; terminal: boolean }> {
   const { data, error } = await supabase
     .from('fmcsa_refresh_runs')
     .select('id, status, idempotency_key')
     .eq('idempotency_key', idemKey)
     .maybeSingle();
 
-  if (error) return { error: error.message, taken: false };
-  if (!data) return { error: null, taken: false };
+  if (error) return { error: error.message, taken: false, terminal: false };
+  if (!data) return { error: null, taken: false, terminal: false };
   const status = String(data.status ?? '');
-  if (status === 'completed' || status === 'running') return { error: null, taken: true };
+  if (status === 'running') return { error: null, taken: true, terminal: false };
+  if (status === 'completed') return { error: null, taken: true, terminal: true };
   await supabase
     .from('fmcsa_refresh_runs')
     .update({
       idempotency_key: releaseIdempotencyKey(String(data.idempotency_key), `released-${String(data.id)}`),
     })
     .eq('id', String(data.id));
-  return { error: null, taken: false };
+  return { error: null, taken: false, terminal: true };
 }
 
 export async function getFmcsaRefreshStats() {

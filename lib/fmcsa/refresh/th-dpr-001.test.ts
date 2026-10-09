@@ -97,6 +97,10 @@ function createHarness(options?: {
   runs?: RunRow[];
   changeLog?: ChangeRow[];
   guardError?: boolean;
+  onRunUpdate?: (
+    payload: Record<string, unknown>,
+    row: RunRow
+  ) => void | 'throw' | { error: string };
 }): Harness {
   const runs: RunRow[] = (options?.runs ?? []).map((row) => ({ ...row, metadata: row.metadata ? { ...row.metadata } : null }));
   const companies = (options?.companies ?? []).map((row) => ({ ...row }));
@@ -160,6 +164,11 @@ function createHarness(options?: {
           const row = runs.find((candidate) => candidate.id === id);
           if (!row) return { data: null, error: { message: 'run not found' } };
           const payload = state.payload as Record<string, unknown>;
+          const decision = options?.onRunUpdate?.(payload, row);
+          if (decision === 'throw') throw new Error('run update failed');
+          if (decision && typeof decision === 'object' && decision.error) {
+            return { data: null, error: { message: decision.error } };
+          }
           runUpdates.push({ id, ...payload });
           Object.assign(row, payload);
           return { data: row, error: null };
@@ -630,16 +639,53 @@ test('a fresh heartbeat still blocks the next run', async () => {
   assert.equal(harness.runs[0]?.companies_processed, 3);
 });
 
-test('a 6-minute-old row with a heartbeat older than 90s still blocks', async () => {
+test('a row started at 06:00:00 is abandoned at 06:06:00 and at 06:15:00', async () => {
+  async function expectAbandoned(at: string) {
+    const nowMs = Date.parse(at);
+    const harness = createHarness({
+      companies: [company(1)],
+      runs: [
+        blankRun('old', 'running', '2026-10-09T06:00:00.000Z', {
+          companies_processed: 11,
+          companies_updated: 11,
+          metadata: { last_heartbeat_at: '2026-10-09T06:02:00.000Z' },
+        }),
+      ],
+    });
+    const result = await runFmcsaRefresh(baseOptions({ limit: 1 }), {
+      supabase: harness.supabase,
+      now: () => nowMs,
+      budget: quietBudget,
+      revalidate() {},
+      notify: async () => ({ emailSent: false, smsSent: false }),
+      fetchCompany: async (input) => ({ snapshot: snapshot(input.usdot), lookupMethod: 'dot' }),
+    });
+    const abandoned = harness.runs.find((row) => row.id === 'old');
+    assert.equal(result.skipped, undefined);
+    assert.equal(abandoned?.status, 'failed');
+    assert.equal(abandoned?.companies_processed, 11);
+    assert.equal(abandoned?.companies_updated, 11);
+    assert.ok(abandoned?.finished_at);
+    assert.equal(
+      (abandoned?.metadata as { exit_reason?: string } | null)?.exit_reason,
+      'abandoned_detected_by_guard'
+    );
+  }
+
+  await expectAbandoned('2026-10-09T06:06:00.000Z');
+  await expectAbandoned('2026-10-09T06:15:00.000Z');
+});
+
+test('a row 5 minutes old still blocks', async () => {
   const start = Date.parse('2026-10-09T16:30:00.000Z');
   const clock = clockFrom(start);
   const harness = createHarness({
     companies: [company(1)],
     runs: [
-      blankRun('stale-beat', 'running', new Date(start - 6 * 60 * 1000).toISOString(), {
+      blankRun('young', 'running', new Date(start - 5 * 60 * 1000).toISOString(), {
         companies_processed: 11,
         companies_updated: 11,
-        metadata: { last_heartbeat_at: new Date(start - 2 * 60 * 1000).toISOString() },
+        metadata: { last_heartbeat_at: new Date(start - 120_000).toISOString() },
       }),
     ],
   });
@@ -655,15 +701,46 @@ test('a 6-minute-old row with a heartbeat older than 90s still blocks', async ()
     },
   });
 
-  const live = harness.runs.find((row) => row.id === 'stale-beat');
+  const live = harness.runs.find((row) => row.id === 'young');
   assert.equal(result.skipped, true);
   assert.equal(result.status, 'running');
-  assert.equal(result.runId, 'stale-beat');
+  assert.equal(result.runId, 'young');
   assert.equal(harness.runs.length, 1);
   assert.equal(live?.status, 'running');
   assert.equal(live?.companies_processed, 11);
-  assert.equal(live?.companies_updated, 11);
   assert.equal(live?.finished_at, null);
+});
+
+test('a cron that started a few seconds late is still cleared at 06:15', async () => {
+  const nowMs = Date.parse('2026-10-09T06:15:00.000Z');
+  const harness = createHarness({
+    companies: [company(1)],
+    runs: [
+      blankRun('late', 'running', '2026-10-09T06:00:04.000Z', {
+        companies_processed: 3,
+        companies_updated: 3,
+      }),
+    ],
+  });
+
+  const result = await runFmcsaRefresh(baseOptions({ limit: 1 }), {
+    supabase: harness.supabase,
+    now: () => nowMs,
+    budget: quietBudget,
+    revalidate() {},
+    notify: async () => ({ emailSent: false, smsSent: false }),
+    fetchCompany: async (input) => ({ snapshot: snapshot(input.usdot), lookupMethod: 'dot' }),
+  });
+
+  const abandoned = harness.runs.find((row) => row.id === 'late');
+  assert.equal(result.skipped, undefined);
+  assert.equal(abandoned?.status, 'failed');
+  assert.equal(abandoned?.companies_processed, 3);
+  assert.ok(abandoned?.finished_at);
+  assert.equal(
+    (abandoned?.metadata as { exit_reason?: string } | null)?.exit_reason,
+    'abandoned_detected_by_guard'
+  );
 });
 
 test('a 2-minute-old row with a 120s-stale heartbeat still blocks', async () => {
@@ -939,6 +1016,238 @@ test('canary limit is at most 10 and honors the step A pause', async () => {
   assert.equal(malformed.skipped, true);
   assert.match(malformed.skipReason ?? '', /1 to 10/);
   assert.equal(harness.runs.length, 0);
+});
+
+test('a fetch that never resolves at t=239s still finishes before 300s', async (t) => {
+  t.mock.timers.enable({ apis: ['setTimeout'] });
+  const start = Date.parse('2026-10-09T21:00:00.000Z');
+  const harness = createHarness({ companies: [company(1)] });
+  let fetched = false;
+  const pending = runFmcsaRefresh(baseOptions({ limit: 1 }), {
+    supabase: harness.supabase,
+    now: () => (harness.runs.length > 0 ? start + 239_000 : start),
+    budget: quietBudget,
+    revalidate() {},
+    notify: async () => ({ emailSent: false, smsSent: false }),
+    fetchCompany: () => {
+      fetched = true;
+      return new Promise(() => undefined);
+    },
+  });
+
+  for (let i = 0; i < 200 && !fetched; i++) await Promise.resolve();
+  assert.equal(fetched, true);
+  t.mock.timers.tick(41_000);
+  const result = await pending;
+  const row = harness.runs.find((candidate) => candidate.id === result.runId);
+  const elapsed = Date.parse(row?.finished_at ?? '') - start;
+  assert.equal(result.status, 'partial');
+  assert.notEqual(result.status, 'running');
+  assert.equal(result.companiesFailed, 1);
+  assert.equal((row?.metadata as { exit_reason?: string } | null)?.exit_reason, 'time_budget_exhausted');
+  assert.ok(row?.finished_at);
+  assert.ok(elapsed < 300_000);
+  assert.ok(elapsed <= 280_000);
+  assert.equal(harness.companies[0]?.fmcsa_last_checked, new Date(start + 239_000).toISOString());
+});
+
+test('a company is not started inside the finalize reserve', async () => {
+  const start = Date.parse('2026-10-09T21:30:00.000Z');
+  const harness = createHarness({ companies: [company(1)] });
+  const result = await runFmcsaRefresh(baseOptions({ limit: 1 }), {
+    supabase: harness.supabase,
+    now: () => (harness.runs.length > 0 ? start + 281_000 : start),
+    budget: { ...quietBudget, runBudgetMs: 300_000 },
+    revalidate() {},
+    notify: async () => ({ emailSent: false, smsSent: false }),
+    fetchCompany: async () => {
+      throw new Error('should not fetch');
+    },
+  });
+  const row = harness.runs.find((candidate) => candidate.id === result.runId);
+  assert.equal(result.status, 'partial');
+  assert.equal(result.companiesProcessed, 0);
+  assert.equal((row?.metadata as { exit_reason?: string } | null)?.exit_reason, 'time_budget_exhausted');
+  assert.ok(row?.finished_at);
+  assert.equal(harness.companies[0]?.fmcsa_last_checked, '2020-01-01T00:00:00.000Z');
+});
+
+test('a failed terminal write is retried once and never reported completed', async () => {
+  const route = readFileSync(join(dirname(fileURLToPath(import.meta.url)), '../../../app/api/refresh/fmcsa/route.ts'), 'utf8');
+  assert.match(route, /result\.status === 'failed' \? 500 : 200/);
+
+  for (const mode of ['error', 'throw'] as const) {
+    let attempts = 0;
+    const harness = createHarness({
+      companies: [company(1)],
+      onRunUpdate(payload) {
+        if (!payload.finished_at || payload.status == null) return;
+        if ((payload.metadata as { exit_reason?: string } | null)?.exit_reason === 'abandoned_detected_by_guard') return;
+        attempts += 1;
+        return mode === 'throw' ? 'throw' : { error: 'terminal write failed' };
+      },
+    });
+    const result = await runFmcsaRefresh(baseOptions({ limit: 1 }), {
+      supabase: harness.supabase,
+      now: () => Date.parse('2026-10-09T22:00:00.000Z'),
+      budget: quietBudget,
+      revalidate() {},
+      notify: async () => ({ emailSent: false, smsSent: false }),
+      fetchCompany: async (input) => ({ snapshot: snapshot(input.usdot), lookupMethod: 'dot' }),
+    });
+    assert.equal(attempts, 2, mode);
+    assert.equal(result.status, 'failed');
+    assert.notEqual(result.status, 'completed');
+    assert.match(result.errors.join('\n'), /terminal write failed/);
+    assert.equal(harness.runs[0]?.status, 'running');
+    assert.equal(harness.runs[0]?.finished_at, null);
+  }
+});
+
+test('a failed abandon write does not insert a new row', async () => {
+  for (const mode of ['error', 'throw'] as const) {
+    const start = Date.parse('2026-10-09T22:30:00.000Z');
+    const harness = createHarness({
+      companies: [company(1)],
+      runs: [
+        blankRun('stuck', 'running', new Date(start - 20 * 60 * 1000).toISOString(), {
+          companies_processed: 4,
+          idempotency_key: 'stuck-key',
+        }),
+      ],
+      onRunUpdate(payload) {
+        if ((payload.metadata as { exit_reason?: string } | null)?.exit_reason !== 'abandoned_detected_by_guard') {
+          return;
+        }
+        return mode === 'throw' ? 'throw' : { error: 'abandon write failed' };
+      },
+    });
+    const result = await runFmcsaRefresh(baseOptions(), {
+      supabase: harness.supabase,
+      now: () => start,
+      budget: quietBudget,
+      revalidate() {},
+      notify: async () => ({ emailSent: false, smsSent: false }),
+      fetchCompany: async () => {
+        throw new Error('should not fetch');
+      },
+    });
+    assert.equal(result.status, 'failed', mode);
+    assert.equal(result.skipped, true);
+    assert.match(result.skipReason ?? '', /could not be closed/);
+    assert.equal(harness.runs.length, 1);
+    assert.equal(harness.runs[0]?.status, 'running');
+    assert.equal(harness.runs[0]?.idempotency_key, 'stuck-key');
+  }
+});
+
+test('force does not overlap a live run and suffixes only a terminal holder', async () => {
+  const start = Date.parse('2026-10-09T23:00:00.000Z');
+  const liveKey = canonicalKey('incremental', start);
+  const live = createHarness({
+    companies: [company(1)],
+    runs: [
+      blankRun('live', 'running', new Date(start - 5_000).toISOString(), {
+        idempotency_key: liveKey,
+        companies_processed: 2,
+      }),
+    ],
+  });
+  const blocked = await runFmcsaRefresh(baseOptions({ force: true }), {
+    supabase: live.supabase,
+    now: () => start,
+    budget: quietBudget,
+    revalidate() {},
+    notify: async () => ({ emailSent: false, smsSent: false }),
+    fetchCompany: async () => {
+      throw new Error('should not fetch');
+    },
+  });
+  assert.equal(blocked.skipped, true);
+  assert.equal(blocked.status, 'running');
+  assert.equal(blocked.runId, 'live');
+  assert.equal(live.runs.length, 1);
+  assert.equal(live.runs[0]?.status, 'running');
+  assert.equal(live.runs[0]?.idempotency_key, liveKey);
+
+  const doneKey = canonicalKey('incremental', start);
+  const done = createHarness({
+    companies: [company(1)],
+    runs: [
+      blankRun('done', 'completed', new Date(start - 60_000).toISOString(), {
+        idempotency_key: doneKey,
+        finished_at: new Date(start - 30_000).toISOString(),
+      }),
+    ],
+  });
+  const forced = await runFmcsaRefresh(baseOptions({ force: true, limit: 1 }), {
+    supabase: done.supabase,
+    now: () => start,
+    budget: quietBudget,
+    revalidate() {},
+    notify: async () => ({ emailSent: false, smsSent: false }),
+    fetchCompany: async (input) => ({ snapshot: snapshot(input.usdot), lookupMethod: 'dot' }),
+  });
+  const holder = done.runs.find((row) => row.id === 'done');
+  const created = done.runs.find((row) => row.id === forced.runId);
+  assert.equal(forced.skipped, undefined);
+  assert.equal(holder?.idempotency_key, doneKey);
+  assert.equal(holder?.status, 'completed');
+  assert.match(created?.idempotency_key ?? '', new RegExp(`^${doneKey}#force-`));
+});
+
+test('a failed company bumps fmcsa_last_checked and skipped_existing does not', async () => {
+  const start = Date.parse('2026-10-09T23:30:00.000Z');
+  const clock = clockFrom(start);
+  const failedSweep = createHarness({
+    companies: [company(1, '2020-01-01T00:00:00.000Z'), company(2, '2020-01-02T00:00:00.000Z')],
+  });
+  const first = await runFmcsaRefresh(baseOptions({ mode: 'full', limit: 1 }), {
+    supabase: failedSweep.supabase,
+    now: clock.now,
+    budget: { ...quietBudget, fullInvocationCap: 1, runBudgetMs: 60_000 },
+    revalidate() {},
+    notify: async () => ({ emailSent: false, smsSent: false }),
+    fetchCompany: async () => ({ snapshot: null, lookupMethod: 'dot', error: 'lookup down' }),
+  });
+  assert.equal(first.companiesFailed, 1);
+  assert.equal(failedSweep.companies[0]?.fmcsa_last_checked, new Date(start).toISOString());
+  assert.equal(failedSweep.companies[1]?.fmcsa_last_checked, '2020-01-02T00:00:00.000Z');
+
+  const secondFetched: string[] = [];
+  await runFmcsaRefresh(baseOptions({ mode: 'full', limit: 1 }), {
+    supabase: failedSweep.supabase,
+    now: clock.now,
+    budget: { ...quietBudget, fullInvocationCap: 1, runBudgetMs: 60_000 },
+    revalidate() {},
+    notify: async () => ({ emailSent: false, smsSent: false }),
+    fetchCompany: async (input) => {
+      secondFetched.push(input.usdot);
+      return { snapshot: snapshot(input.usdot), lookupMethod: 'dot' };
+    },
+  });
+  assert.deepEqual(secondFetched, ['1000002']);
+
+  const skipped = createHarness({ companies: [company(1)] });
+  await runFmcsaRefresh(baseOptions({ limit: 1 }), {
+    supabase: skipped.supabase,
+    now: clock.now,
+    budget: quietBudget,
+    revalidate() {},
+    notify: async () => ({ emailSent: false, smsSent: false }),
+    fetchCompany: async () => ({ snapshot: null, lookupMethod: 'skipped_existing' }),
+  });
+  assert.equal(skipped.companies[0]?.fmcsa_last_checked, '2020-01-01T00:00:00.000Z');
+});
+
+test('the admin refresh action pauses every call before the runner', () => {
+  const action = readFileSync(join(dirname(fileURLToPath(import.meta.url)), '../../../actions/fmcsa-refresh.ts'), 'utf8');
+  const pauseAt = action.indexOf('fmcsaRefreshPause(');
+  const canaryAt = action.indexOf('evaluateCanaryRequest(');
+  const runAt = action.indexOf('runFmcsaRefresh(');
+  assert.ok(pauseAt > 0);
+  assert.ok(pauseAt < canaryAt);
+  assert.ok(pauseAt < runAt);
 });
 
 function blankRun(

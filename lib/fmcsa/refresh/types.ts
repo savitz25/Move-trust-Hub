@@ -76,7 +76,7 @@ export type RefreshOptions = {
   mode: RefreshMode;
   triggeredBy: RefreshTrigger;
   limit?: number;
-  /** Force re-run even if a completed full-day idempotency key exists */
+  /** Re-run when the idempotency holder is already terminal. Never overlaps a live run. */
   force?: boolean;
   /**
    * Bounded post-deploy canary. Requires an integer limit from 1 to 10,

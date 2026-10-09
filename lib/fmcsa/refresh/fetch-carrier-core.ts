@@ -3,6 +3,7 @@ import {
   classifyDotLookupResponse,
   type DotLookupResult,
 } from '@/lib/fmcsa/refresh/inactive-dot';
+import { isFetchAbortError } from '@/lib/fmcsa/refresh/budget';
 import type { FmcsaCarrierSnapshot } from '@/lib/fmcsa/refresh/types';
 import { FMCSA_REFRESH_CONFIG, sleep } from '@/lib/fmcsa/refresh/rate-limit';
 
@@ -83,26 +84,29 @@ function parseRevocationDate(carrier: FmcsaApiCarrier): string | null {
   return parsed ? parsed.toISOString().slice(0, 10) : null;
 }
 
-async function fetchJson<T>(url: string): Promise<T | null> {
+async function fetchJson<T>(url: string, signal?: AbortSignal): Promise<T | null> {
   try {
     const res = await fetch(url, {
       cache: 'no-store',
       headers: { Accept: 'application/json' },
+      signal,
     });
     if (!res.ok) return null;
     return (await res.json()) as T;
-  } catch {
+  } catch (error) {
+    if (isFetchAbortError(error)) throw error;
     return null;
   }
 }
 
 export async function lookupCarrierByDot(
   dot: string,
-  webKey: string
+  webKey: string,
+  signal?: AbortSignal
 ): Promise<DotLookupResult & { carrier: FmcsaApiCarrier | null }> {
   const base = 'https://mobile.fmcsa.dot.gov/qc/services/carriers';
   const url = `${base}/${encodeURIComponent(dot)}?webKey=${encodeURIComponent(webKey)}`;
-  const json = await fetchJson<Record<string, unknown>>(url);
+  const json = await fetchJson<Record<string, unknown>>(url, signal);
   const classified = classifyDotLookupResponse(dot, json);
   return {
     ...classified,
@@ -112,20 +116,22 @@ export async function lookupCarrierByDot(
 
 export async function fetchCarrierByDot(
   dot: string,
-  webKey: string
+  webKey: string,
+  signal?: AbortSignal
 ): Promise<FmcsaApiCarrier | null> {
-  const result = await lookupCarrierByDot(dot, webKey);
+  const result = await lookupCarrierByDot(dot, webKey, signal);
   return result.carrier;
 }
 
 async function fetchCarrierByMc(
   mc: string,
-  webKey: string
+  webKey: string,
+  signal?: AbortSignal
 ): Promise<FmcsaApiCarrier | null> {
   const base = 'https://mobile.fmcsa.dot.gov/qc/services/carriers';
   const digits = mc.replace(/\D/g, '');
   const url = `${base}/docket-number/MC${encodeURIComponent(digits)}?webKey=${encodeURIComponent(webKey)}`;
-  const json = await fetchJson<{ content?: { carrier?: FmcsaApiCarrier } }>(url);
+  const json = await fetchJson<{ content?: { carrier?: FmcsaApiCarrier } }>(url, signal);
   return json?.content?.carrier ?? null;
 }
 
@@ -144,18 +150,20 @@ function extractContentArray(json: Record<string, unknown> | null, keys: string[
 
 async function fetchSupplementalCarrierData(
   dot: string,
-  webKey: string
+  webKey: string,
+  signal?: AbortSignal
 ): Promise<FmcsaApiCarrier['_supplemental']> {
   const base = 'https://mobile.fmcsa.dot.gov/qc/services/carriers';
   const key = `webKey=${encodeURIComponent(webKey)}`;
 
   const [cargoJson, opJson, authorityJson, oosJson] = await Promise.all([
-    fetchJson<Record<string, unknown>>(`${base}/${encodeURIComponent(dot)}/cargo-carried?${key}`),
+    fetchJson<Record<string, unknown>>(`${base}/${encodeURIComponent(dot)}/cargo-carried?${key}`, signal),
     fetchJson<Record<string, unknown>>(
-      `${base}/${encodeURIComponent(dot)}/operation-classification?${key}`
+      `${base}/${encodeURIComponent(dot)}/operation-classification?${key}`,
+      signal
     ),
-    fetchJson<Record<string, unknown>>(`${base}/${encodeURIComponent(dot)}/authority?${key}`),
-    fetchJson<Record<string, unknown>>(`${base}/${encodeURIComponent(dot)}/oos?${key}`),
+    fetchJson<Record<string, unknown>>(`${base}/${encodeURIComponent(dot)}/authority?${key}`, signal),
+    fetchJson<Record<string, unknown>>(`${base}/${encodeURIComponent(dot)}/oos?${key}`, signal),
   ]);
 
   return {
@@ -175,13 +183,17 @@ async function fetchSupplementalCarrierData(
   };
 }
 
-async function fetchComplaintsByDot(dot: string, webKey: string): Promise<number | null> {
+async function fetchComplaintsByDot(
+  dot: string,
+  webKey: string,
+  signal?: AbortSignal
+): Promise<number | null> {
   const base = 'https://mobile.fmcsa.dot.gov/qc/services/carriers';
   const url = `${base}/${encodeURIComponent(dot)}/complaints?webKey=${encodeURIComponent(webKey)}`;
   const json = await fetchJson<{
     content?: { complaints?: { complaintCount?: number; total?: number }[] };
     complaintCount?: number;
-  }>(url);
+  }>(url, signal);
 
   if (typeof json?.complaintCount === 'number') return json.complaintCount;
 
@@ -238,14 +250,15 @@ export async function snapshotFromResolvedCarrier(params: {
   dot: string;
   mcNumber?: string;
   webKey: string;
+  signal?: AbortSignal;
 }): Promise<FmcsaCarrierSnapshot | null> {
   let complaints = params.carrier.totalComplaints ?? params.carrier.complaintCount ?? 0;
-  const complaintFetch = await fetchComplaintsByDot(params.dot, params.webKey);
+  const complaintFetch = await fetchComplaintsByDot(params.dot, params.webKey, params.signal);
   if (complaintFetch !== null) {
     complaints = complaintFetch;
   }
 
-  const supplemental = await fetchSupplementalCarrierData(params.dot, params.webKey);
+  const supplemental = await fetchSupplementalCarrierData(params.dot, params.webKey, params.signal);
   await sleep(FMCSA_REFRESH_CONFIG.requestDelayMs);
 
   const enrichedCarrier: FmcsaApiCarrier = {
@@ -263,7 +276,8 @@ export async function snapshotFromResolvedCarrier(params: {
 
 /** Fetch FMCSA snapshot by parsed USDOT or MC docket (primary lookup for suggest/verify flows). */
 export async function fetchFmcsaCarrierByParsed(
-  parsed: ParsedCarrierNumber
+  parsed: ParsedCarrierNumber,
+  signal?: AbortSignal
 ): Promise<FmcsaCarrierSnapshot | null> {
   const webKey = process.env.FMCSA_WEB_KEY?.trim();
   if (!webKey) return null;
@@ -277,7 +291,7 @@ export async function fetchFmcsaCarrierByParsed(
 
     try {
       if (parsed.type === 'MC') {
-        const carrier = await fetchCarrierByMc(parsed.value, webKey);
+        const carrier = await fetchCarrierByMc(parsed.value, webKey, signal);
         if (!carrier?.legalName) {
           lastError = new Error(`No carrier data for MC ${parsed.value}`);
           continue;
@@ -292,11 +306,12 @@ export async function fetchFmcsaCarrierByParsed(
           dot,
           mcNumber: parsed.value,
           webKey,
+          signal,
         });
       }
 
       const dot = parsed.value.replace(/\D/g, '');
-      const lookup = await lookupCarrierByDot(dot, webKey);
+      const lookup = await lookupCarrierByDot(dot, webKey, signal);
       const carrier = lookup.carrier;
       if (!carrier?.legalName) {
         lastError = new Error(
@@ -311,8 +326,10 @@ export async function fetchFmcsaCarrierByParsed(
         dot,
         mcNumber: mcDigits,
         webKey,
+        signal,
       });
     } catch (err) {
+      if (isFetchAbortError(err)) throw err;
       lastError = err;
     }
   }
@@ -328,7 +345,8 @@ export async function fetchFmcsaCarrierByParsed(
 /** Fetch FMCSA carrier snapshot by USDOT with retries and rate limiting. */
 export async function fetchFmcsaCarrierSnapshot(
   usdot: string,
-  mcNumber?: string | null
+  mcNumber?: string | null,
+  signal?: AbortSignal
 ): Promise<FmcsaCarrierSnapshot | null> {
   const dot = usdot.replace(/\D/g, '');
   if (!dot) return null;
@@ -339,7 +357,7 @@ export async function fetchFmcsaCarrierSnapshot(
     display: `DOT ${dot}`,
   };
 
-  const snapshot = await fetchFmcsaCarrierByParsed(parsed);
+  const snapshot = await fetchFmcsaCarrierByParsed(parsed, signal);
   if (!snapshot) return null;
 
   if (mcNumber?.replace(/\D/g, '')) {
