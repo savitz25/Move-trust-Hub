@@ -76,8 +76,15 @@ export type RefreshOptions = {
   mode: RefreshMode;
   triggeredBy: RefreshTrigger;
   limit?: number;
-  /** Force re-run even if idempotency key exists */
+  /** Re-run when the idempotency holder is already terminal. Never overlaps a live run. */
   force?: boolean;
+  /**
+   * Bounded post-deploy canary. Requires an integer limit from 1 to 10,
+   * incremental mode, and the step A pause to be off. Admin or cron auth only.
+   */
+  canary?: boolean;
+  /** Override the invocation time budget in milliseconds. Production default is 240s. */
+  runBudgetMs?: number;
 };
 
 export type BatchRefreshOptions = {

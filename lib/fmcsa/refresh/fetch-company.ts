@@ -70,13 +70,14 @@ function attachLookupMeta(
 async function snapshotFromNameMatch(
   match: FmcsaNameMatchMeta & { candidateCarrier: Record<string, unknown> },
   mcNumber?: string | null,
-  extraMeta?: Record<string, unknown>
+  extraMeta?: Record<string, unknown>,
+  signal?: AbortSignal
 ): Promise<FmcsaCarrierSnapshot | null> {
   const webKey = process.env.FMCSA_WEB_KEY?.trim();
   if (!webKey) return null;
 
   const dot = match.matchedDot;
-  const lookup = await lookupCarrierByDot(dot, webKey);
+  const lookup = await lookupCarrierByDot(dot, webKey, signal);
   const carrier = lookup.carrier ?? (match.candidateCarrier as typeof lookup.carrier);
 
   if (!carrier?.legalName) return null;
@@ -93,6 +94,7 @@ async function snapshotFromNameMatch(
     dot,
     mcNumber: mcDigits || undefined,
     webKey,
+    signal,
   });
 
   if (!snapshot) return null;
@@ -105,6 +107,7 @@ async function tryNameSearchFallback(params: {
   mcNumber?: string | null;
   previousDot: string;
   inactiveSaferMessage?: string | null;
+  signal?: AbortSignal;
 }): Promise<FmcsaCompanyFetchResult> {
   const { city, state } = parseHeadquarters(params.headquarters);
   const nameMatch = await searchFmcsaCarrierByName({
@@ -112,6 +115,7 @@ async function tryNameSearchFallback(params: {
     city,
     state,
     mcNumber: params.mcNumber,
+    signal: params.signal,
   });
 
   if (!nameMatch) {
@@ -154,7 +158,8 @@ async function tryNameSearchFallback(params: {
       previousDot: params.previousDot,
       inactiveSaferMessage: params.inactiveSaferMessage,
       dotCorrected: meta.matchedDot !== params.previousDot,
-    }
+    },
+    params.signal
   );
 
   if (!snapshot) {
@@ -193,6 +198,8 @@ export async function fetchFmcsaCarrierForCompany(params: {
   fmcsaRaw?: Record<string, unknown> | null;
   /** Enables inactive DOT → name search → remove-if-no-match during batch refresh. */
   batchMode?: boolean;
+  /** Aborts DOT lookup, name search, and enrich calls when the run deadline is near. */
+  signal?: AbortSignal;
 }): Promise<FmcsaCompanyFetchResult> {
   const dot = params.usdot.replace(/\D/g, '');
   if (!dot) {
@@ -206,7 +213,7 @@ export async function fetchFmcsaCarrierForCompany(params: {
   const webKey = process.env.FMCSA_WEB_KEY?.trim();
 
   if (params.batchMode && webKey) {
-    const lookup = await lookupCarrierByDot(dot, webKey);
+    const lookup = await lookupCarrierByDot(dot, webKey, params.signal);
     if (lookup.inactiveInSafer) {
       return tryNameSearchFallback({
         companyName: params.companyName,
@@ -214,6 +221,7 @@ export async function fetchFmcsaCarrierForCompany(params: {
         mcNumber: params.mcNumber,
         previousDot: dot,
         inactiveSaferMessage: lookup.saferMessage,
+        signal: params.signal,
       });
     }
 
@@ -227,6 +235,7 @@ export async function fetchFmcsaCarrierForCompany(params: {
         dot,
         mcNumber: mcDigits || undefined,
         webKey,
+        signal: params.signal,
       });
       if (snapshot?.legalName) {
         return { snapshot, lookupMethod: 'dot' };
@@ -234,7 +243,7 @@ export async function fetchFmcsaCarrierForCompany(params: {
     }
   }
 
-  const dotSnapshot = await fetchFmcsaCarrierSnapshot(dot, params.mcNumber);
+  const dotSnapshot = await fetchFmcsaCarrierSnapshot(dot, params.mcNumber, params.signal);
   if (dotSnapshot?.legalName) {
     return { snapshot: dotSnapshot, lookupMethod: 'dot' };
   }
@@ -253,6 +262,7 @@ export async function fetchFmcsaCarrierForCompany(params: {
     city,
     state,
     mcNumber: params.mcNumber,
+    signal: params.signal,
   });
 
   if (!nameMatch) {
@@ -288,7 +298,9 @@ export async function fetchFmcsaCarrierForCompany(params: {
 
   const snapshot = await snapshotFromNameMatch(
     { ...meta, candidateCarrier: nameMatch.candidate.carrier },
-    params.mcNumber
+    params.mcNumber,
+    undefined,
+    params.signal
   );
 
   if (!snapshot) {

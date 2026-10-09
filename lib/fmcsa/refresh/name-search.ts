@@ -1,4 +1,5 @@
 import { normalizePlace } from '@/lib/fmcsa/refresh/parse-headquarters';
+import { isFetchAbortError } from '@/lib/fmcsa/refresh/budget';
 import { FMCSA_REFRESH_CONFIG, sleep } from '@/lib/fmcsa/refresh/rate-limit';
 
 export type FmcsaNameSearchCandidate = {
@@ -155,15 +156,17 @@ function scoreCandidate(params: {
   return { total, base };
 }
 
-async function fetchJson<T>(url: string): Promise<T | null> {
+async function fetchJson<T>(url: string, signal?: AbortSignal): Promise<T | null> {
   try {
     const res = await fetch(url, {
       cache: 'no-store',
       headers: { Accept: 'application/json' },
+      signal,
     });
     if (!res.ok) return null;
     return (await res.json()) as T;
-  } catch {
+  } catch (error) {
+    if (isFetchAbortError(error)) throw error;
     return null;
   }
 }
@@ -172,13 +175,14 @@ async function fetchNameSearchPage(
   query: string,
   webKey: string,
   start: number,
-  size: number
+  size: number,
+  signal?: AbortSignal
 ): Promise<FmcsaNameSearchCandidate[]> {
   const base = 'https://mobile.fmcsa.dot.gov/qc/services/carriers/name';
   const url = `${base}/${encodeURIComponent(query)}?webKey=${encodeURIComponent(webKey)}&start=${start}&size=${size}`;
   const json = await fetchJson<{
     content?: Array<{ carrier?: Record<string, unknown> }>;
-  }>(url);
+  }>(url, signal);
 
   const rows = json?.content ?? [];
   const candidates: FmcsaNameSearchCandidate[] = [];
@@ -207,7 +211,8 @@ async function fetchNameSearchPage(
 
 async function collectCandidatesForQuery(
   query: string,
-  webKey: string
+  webKey: string,
+  signal?: AbortSignal
 ): Promise<FmcsaNameSearchCandidate[]> {
   const seen = new Set<string>();
   const all: FmcsaNameSearchCandidate[] = [];
@@ -216,7 +221,7 @@ async function collectCandidatesForQuery(
 
   for (let page = 0; page < maxPages; page++) {
     const start = page * pageSize;
-    const pageResults = await fetchNameSearchPage(query, webKey, start, pageSize);
+    const pageResults = await fetchNameSearchPage(query, webKey, start, pageSize, signal);
     await sleep(FMCSA_REFRESH_CONFIG.requestDelayMs);
 
     if (!pageResults.length) break;
@@ -276,6 +281,7 @@ export async function searchFmcsaCarrierByName(params: {
   state?: string | null;
   mcNumber?: string | null;
   webKey?: string;
+  signal?: AbortSignal;
 }): Promise<FmcsaNameMatchResult | null> {
   const webKey = params.webKey?.trim() || process.env.FMCSA_WEB_KEY?.trim();
   if (!webKey || !params.companyName.trim()) return null;
@@ -283,7 +289,7 @@ export async function searchFmcsaCarrierByName(params: {
   const queries = buildNameSearchQueries(params.companyName);
 
   for (const query of queries) {
-    const candidates = await collectCandidatesForQuery(query, webKey);
+    const candidates = await collectCandidatesForQuery(query, webKey, params.signal);
     const picked = pickBestNameMatch({
       companyName: params.companyName,
       candidates,

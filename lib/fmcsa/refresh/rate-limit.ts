@@ -3,8 +3,17 @@ export const FMCSA_REFRESH_CONFIG = {
   requestDelayMs: 250,
   /** Max carriers per incremental cron invocation */
   incrementalBatchSize: 80,
-  /** Max carriers per full weekly run (0 = unlimited) */
+  /**
+   * Historical SQL batch size for a full run. 0 means no batch-size cap here.
+   * One invocation is bounded by `fullInvocationCap` instead.
+   */
   fullBatchSize: 0,
+  /**
+   * Companies one full-mode invocation may refresh (about 120 of ~5,957).
+   * Weekly full mode is a bounded best-effort sweep. The incremental daily
+   * run is the main freshness path.
+   */
+  fullInvocationCap: 120,
   /** Stale threshold for incremental refresh */
   staleAfterHours: 24,
   /** Retry failed carrier lookups */
