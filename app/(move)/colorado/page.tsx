@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { ColoradoMoveIntelligence } from '@/components/intelligence/ColoradoMoveIntelligence';
 import { getColoradoMoveIntelligence } from '@/lib/colorado-intelligence/load';
@@ -21,5 +22,10 @@ export default async function ColoradoMoveIntelligencePage({
 }) {
   const sp = await searchParams;
   const payload = await getColoradoMoveIntelligence(sp.permit);
-  return <ColoradoMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <ColoradoMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="colorado" stateName="Colorado" />
+    </>
+  );
 }

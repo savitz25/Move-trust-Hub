@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { existsSync, readFileSync } from 'node:fs';
@@ -97,7 +98,7 @@ test('Kentucky rankings fail closed, with no city publication', () => {
   for (const city of ['louisville', 'lexington', 'jefferson']) {
     assert.equal(existsSync(`app/(move)/kentucky/${city}`), false);
   }
-  assert.equal((readFileSync('app/sitemap.ts', 'utf8').match(/'\/kentucky'/g) ?? []).length, 2);
+  assert.equal(STATEWIDE_ROUTES.filter((path) => path === '/kentucky').length, 1);
 });
 
 test('Kentucky routing does not capture Louisiana or a labeled federal identifier', () => {

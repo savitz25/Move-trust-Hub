@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { IDAHO_MOVE_SNAPSHOT as s } from '@/lib/idaho-intelligence/snapshot';
@@ -106,6 +107,7 @@ export default function IdahoMovePage() {
           <li><Official href={s.protectYourMoveUrl}>FMCSA Protect Your Move</Official></li>
         </ul>
       </section>
+    <StateCountyLinks stateSlug="idaho" stateName="Idaho" />
     </main>
   );
 }

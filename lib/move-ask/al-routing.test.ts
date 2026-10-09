@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { existsSync, readFileSync } from 'node:fs';
@@ -78,7 +79,7 @@ test('Alabama rankings fail closed, with no city publication', () => {
   assert.equal(normalizedPublishedStatePath('/Alabama'), '/alabama');
   assert.equal(normalizedPublishedStatePath('/alabama/birmingham'), null);
   for (const city of ['birmingham', 'montgomery', 'huntsville', 'mobile']) assert.equal(existsSync(`app/(move)/alabama/${city}`), false);
-  assert.equal((readFileSync('app/sitemap.ts', 'utf8').match(/'\/alabama'/g) ?? []).length, 2);
+  assert.equal(STATEWIDE_ROUTES.filter((path) => path === '/alabama').length, 1);
 });
 
 test('Alabama routing does not capture Indiana or a labeled federal identifier', () => {

@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { TennesseeMoveIntelligence } from '@/components/intelligence/TennesseeMoveIntelligence';
 import { getTennesseeMoveIntelligence } from '@/lib/tennessee-intelligence/load';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function TennesseeMoveIntelligencePage() {
   const payload = await getTennesseeMoveIntelligence();
-  return <TennesseeMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <TennesseeMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="tennessee" stateName="Tennessee" />
+    </>
+  );
 }

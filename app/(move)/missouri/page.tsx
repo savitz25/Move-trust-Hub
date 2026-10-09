@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
@@ -48,5 +49,6 @@ export default function MissouriMovePage() {
         <li>No city or county research is published here.</li>
       </ul>
     </section>
-  </main>;
+  <StateCountyLinks stateSlug="missouri" stateName="Missouri" />
+    </main>;
 }

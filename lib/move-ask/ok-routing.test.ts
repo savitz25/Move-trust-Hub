@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { existsSync, readFileSync } from 'node:fs';
@@ -77,7 +78,7 @@ test('Oklahoma rankings fail closed, with no city publication', () => {
   assert.equal(normalizedPublishedStatePath('/Oklahoma'), '/oklahoma');
   assert.equal(normalizedPublishedStatePath('/oklahoma/tulsa'), null);
   for (const city of ['tulsa', 'oklahoma-city', 'norman']) assert.equal(existsSync(`app/(move)/oklahoma/${city}`), false);
-  assert.equal((readFileSync('app/sitemap.ts', 'utf8').match(/'\/oklahoma'/g) ?? []).length, 2);
+  assert.equal(STATEWIDE_ROUTES.filter((path) => path === '/oklahoma').length, 1);
 });
 
 test('Oklahoma routing does not capture Arkansas, Missouri, Utah, or Mississippi', () => {

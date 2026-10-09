@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { NEBRASKA_MOVE_SNAPSHOT as s } from '@/lib/nebraska-intelligence/snapshot';
@@ -72,5 +73,6 @@ export default function NebraskaMovePage() {
         </tbody>
       </table>
     </section>
-  </main>;
+  <StateCountyLinks stateSlug="nebraska" stateName="Nebraska" />
+    </main>;
 }

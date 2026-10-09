@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { existsSync, readFileSync } from 'node:fs';
@@ -64,7 +65,7 @@ test('Arkansas rankings fail closed and do not capture Oklahoma or Arizona', () 
   assert.equal(normalizedPublishedStatePath('/Arkansas'), '/arkansas');
   assert.equal(normalizedPublishedStatePath('/arkansas/little-rock'), null);
   for (const city of ['little-rock', 'fayetteville', 'fort-smith']) assert.equal(existsSync(`app/(move)/arkansas/${city}`), false);
-  assert.equal((readFileSync('app/sitemap.ts', 'utf8').match(/'\/arkansas'/g) ?? []).length, 2);
+  assert.equal(STATEWIDE_ROUTES.filter((path) => path === '/arkansas').length, 1);
   assert.match(plan('mover Oklahoma').failReason ?? '', /Oklahoma Corporation Commission/);
   assert.doesNotMatch(plan('mover in Arizona').failReason ?? '', /Arkansas Department of Transportation/);
   assert.doesNotMatch(plan('mover Fayetteville').failReason ?? '', /Arkansas Department of Transportation/);

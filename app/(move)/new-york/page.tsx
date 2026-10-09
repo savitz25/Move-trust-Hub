@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { NewYorkMoveIntelligence } from '@/components/intelligence/NewYorkMoveIntelligence';
 import { getNewYorkMoveIntelligence } from '@/lib/new-york-intelligence/load';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function NewYorkMoveIntelligencePage() {
   const payload = await getNewYorkMoveIntelligence();
-  return <NewYorkMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <NewYorkMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="new-york" stateName="New York" />
+    </>
+  );
 }

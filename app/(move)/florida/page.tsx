@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { FloridaMoveIntelligence } from '@/components/intelligence/FloridaMoveIntelligence';
 import { getFloridaMoveIntelligenceSnapshot } from '@/lib/intelligence/florida-snapshot';
@@ -22,5 +23,10 @@ export function generateMetadata(): Metadata {
  */
 export default async function FloridaMoveIntelligencePage() {
   const payload = await getFloridaMoveIntelligenceSnapshot();
-  return <FloridaMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <FloridaMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="florida" stateName="Florida" />
+    </>
+  );
 }

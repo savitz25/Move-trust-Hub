@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { existsSync, readFileSync } from 'node:fs';
@@ -104,7 +105,7 @@ test('South Carolina rankings fail closed, with no city publication', () => {
   for (const city of ['charleston', 'columbia', 'greenville']) {
     assert.equal(existsSync(`app/(move)/south-carolina/${city}`), false);
   }
-  assert.equal((readFileSync('app/sitemap.ts', 'utf8').match(/'\/south-carolina'/g) ?? []).length, 2);
+  assert.equal(STATEWIDE_ROUTES.filter((path) => path === '/south-carolina').length, 1);
 });
 
 test('South Carolina routing does not capture Kentucky or a labeled federal identifier', () => {

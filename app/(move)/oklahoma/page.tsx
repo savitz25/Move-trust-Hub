@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { OKLAHOMA_MOVE_SNAPSHOT as s } from '@/lib/oklahoma-intelligence/snapshot';
@@ -56,5 +57,6 @@ export default function OklahomaMovePage() {
         <li>Oklahoma City, Tulsa, Norman, Lawton, Edmond, and Broken Arrow are search context only. This page publishes no city or county research routes.</li>
       </ul>
     </section>
-  </main>;
+  <StateCountyLinks stateSlug="oklahoma" stateName="Oklahoma" />
+    </main>;
 }

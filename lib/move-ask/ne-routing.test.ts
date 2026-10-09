@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { existsSync, readFileSync } from 'node:fs';
@@ -55,7 +56,7 @@ test('Nebraska Move routing keeps grains apart and leaves other states alone', (
   assert.doesNotMatch(plan('mover Iowa').failReason ?? '', /Nebraska Public Service Commission/);
   assert.doesNotMatch(plan('mover Kansas').failReason ?? '', /Nebraska Public Service Commission/);
   assert.doesNotMatch(plan('mover Arkansas').failReason ?? '', /Nebraska Public Service Commission/);
-  assert.equal((readFileSync('app/sitemap.ts', 'utf8').match(/'\/nebraska'/g) ?? []).length, 2);
+  assert.equal(STATEWIDE_ROUTES.filter((path) => path === '/nebraska').length, 1);
   assert.equal(normalizedPublishedStatePath('/Nebraska'), '/nebraska');
   assert.equal(normalizedPublishedStatePath('/nebraska/omaha'), null);
   assert.equal(existsSync('app/(move)/nebraska/omaha'), false);

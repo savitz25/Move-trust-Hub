@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { existsSync, readFileSync } from 'node:fs';
@@ -77,7 +78,7 @@ test('Louisiana rankings fail closed, with no city or parish publication', () =>
   for (const city of ['new-orleans', 'baton-rouge', 'shreveport', 'lafayette', 'orleans']) {
     assert.equal(existsSync(`app/(move)/louisiana/${city}`), false);
   }
-  assert.equal((readFileSync('app/sitemap.ts', 'utf8').match(/'\/louisiana'/g) ?? []).length, 2);
+  assert.equal(STATEWIDE_ROUTES.filter((path) => path === '/louisiana').length, 1);
 });
 
 test('Louisiana routing does not capture Alabama or a labeled federal identifier', () => {

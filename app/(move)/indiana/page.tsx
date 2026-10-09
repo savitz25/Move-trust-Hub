@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { INDIANA_MOVE_SNAPSHOT as s } from '@/lib/indiana-intelligence/snapshot';
@@ -56,5 +57,6 @@ export default function IndianaMovePage() {
         <li>Indianapolis, Fort Wayne, Evansville and South Bend are search context only. This page publishes no city or county research routes.</li>
       </ul>
     </section>
-  </main>;
+  <StateCountyLinks stateSlug="indiana" stateName="Indiana" />
+    </main>;
 }

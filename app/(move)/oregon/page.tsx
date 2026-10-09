@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { OregonMoveIntelligence } from '@/components/intelligence/OregonMoveIntelligence';
 import { getOregonMoveIntelligence } from '@/lib/oregon-intelligence/load';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function OregonMoveIntelligencePage() {
   const payload = await getOregonMoveIntelligence();
-  return <OregonMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <OregonMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="oregon" stateName="Oregon" />
+    </>
+  );
 }

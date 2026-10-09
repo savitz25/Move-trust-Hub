@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { existsSync, readFileSync } from 'node:fs';
@@ -112,7 +113,7 @@ test('New Mexico rankings fail closed and do not capture other states', () => {
   for (const city of ['albuquerque', 'santa-fe', 'las-cruces', 'rio-rancho', 'roswell', 'farmington']) {
     assert.equal(existsSync(`app/(move)/new-mexico/${city}`), false, city);
   }
-  assert.equal((readFileSync('app/sitemap.ts', 'utf8').match(/'\/new-mexico'/g) ?? []).length, 2);
+  assert.equal(STATEWIDE_ROUTES.filter((path) => path === '/new-mexico').length, 1);
   assert.match(plan('mover Oklahoma').failReason ?? '', /Oklahoma Corporation Commission/);
   assert.doesNotMatch(plan('mover Oklahoma').failReason ?? '', /New Mexico Public Regulation Commission/);
   assert.match(plan('mover in ok').failReason ?? '', /Oklahoma Corporation Commission/);

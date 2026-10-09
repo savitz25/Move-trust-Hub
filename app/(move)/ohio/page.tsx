@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { OhioMoveIntelligence } from '@/components/intelligence/OhioMoveIntelligence';
 import { getOhioMoveIntelligence } from '@/lib/ohio-intelligence/load';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function OhioMoveIntelligencePage() {
   const payload = await getOhioMoveIntelligence();
-  return <OhioMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <OhioMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="ohio" stateName="Ohio" />
+    </>
+  );
 }

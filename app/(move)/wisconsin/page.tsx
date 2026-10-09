@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { WISCONSIN_MOVE_SNAPSHOT as s } from '@/lib/wisconsin-intelligence/snapshot';
@@ -38,5 +39,6 @@ export default function WisconsinMovePage() {
       <h2 className="text-lg font-semibold text-foreground">Coverage and source clocks</h2>
       <ul className="list-disc pl-5"><li>LC roster rows, distinct LC numbers, status labels and dates, and household-goods-specific rows: NOT_ACQUIRED. No LC count or household-goods count is shown.</li><li>Rows with printed USDOT or MC, distinct federal identifiers, exact federal bridges and unmatched state rows: NOT_ACQUIRED. No name-only links or combined state and federal total.</li><li>New canonical organizations: {s.newCanonicalOrganizations}; graph writes: {s.graphWrites}; claim eligibility changes: {s.claimEligibilityChanges}.</li><li>WisDOT authority, insurance and DATCP pages retrieved {s.retrievedAt}; MV2843 form dated {s.applicationFormDate}; page data generated {s.generatedAt}. No roster, individual status, insurance or enforcement as-of date was available. These are separate clocks.</li><li>Milwaukee, Madison, Green Bay and Kenosha are geographic search context only; there are no city intelligence pages or mover rankings.</li></ul>
     </section>
-  </main>;
+  <StateCountyLinks stateSlug="wisconsin" stateName="Wisconsin" />
+    </main>;
 }

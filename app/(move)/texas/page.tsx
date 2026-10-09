@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { TexasMoveIntelligence } from '@/components/intelligence/TexasMoveIntelligence';
 import { getTexasMoveIntelligenceSnapshot } from '@/lib/texas-intelligence/load';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function TexasMoveIntelligencePage() {
   const payload = await getTexasMoveIntelligenceSnapshot();
-  return <TexasMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <TexasMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="texas" stateName="Texas" />
+    </>
+  );
 }

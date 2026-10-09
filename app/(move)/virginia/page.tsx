@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { VirginiaMoveIntelligence } from '@/components/intelligence/VirginiaMoveIntelligence';
 import { getVirginiaMoveIntelligence } from '@/lib/virginia-intelligence/load';
@@ -21,5 +22,10 @@ export default async function VirginiaMoveIntelligencePage({
 }) {
   const sp = await searchParams;
   const payload = await getVirginiaMoveIntelligence(sp.authority);
-  return <VirginiaMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <VirginiaMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="virginia" stateName="Virginia" />
+    </>
+  );
 }

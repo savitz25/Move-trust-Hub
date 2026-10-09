@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { ARKANSAS_MOVE_SNAPSHOT as s } from '@/lib/arkansas-intelligence/snapshot';
@@ -53,5 +54,6 @@ export default function ArkansasMovePage() {
         <li>Little Rock, Fayetteville, and Fort Smith are search context only. This page publishes no city or county research routes.</li>
       </ul>
     </section>
-  </main>;
+  <StateCountyLinks stateSlug="arkansas" stateName="Arkansas" />
+    </main>;
 }

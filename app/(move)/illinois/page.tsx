@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { IllinoisMoveIntelligence } from '@/components/intelligence/IllinoisMoveIntelligence';
 import { getIllinoisMoveIntelligence } from '@/lib/illinois-intelligence/load';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function IllinoisMoveIntelligencePage() {
   const payload = await getIllinoisMoveIntelligence();
-  return <IllinoisMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <IllinoisMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="illinois" stateName="Illinois" />
+    </>
+  );
 }

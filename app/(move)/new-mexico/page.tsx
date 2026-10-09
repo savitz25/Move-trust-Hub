@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { NEW_MEXICO_MOVE_SNAPSHOT as s } from '@/lib/new-mexico-intelligence/snapshot';
@@ -97,6 +98,7 @@ export default function NewMexicoMovePage() {
           <li><Official href={s.protectYourMoveUrl}>FMCSA Protect Your Move</Official></li>
         </ul>
       </section>
+    <StateCountyLinks stateSlug="new-mexico" stateName="New Mexico" />
     </main>
   );
 }

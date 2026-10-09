@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { CONNECTICUT_MOVE_SNAPSHOT as s } from '@/lib/connecticut-intelligence/snapshot';
@@ -68,6 +69,7 @@ export default function ConnecticutMovePage() {
           </table>
         </div>
       </section>
+    <StateCountyLinks stateSlug="connecticut" stateName="Connecticut" />
     </main>
   );
 }

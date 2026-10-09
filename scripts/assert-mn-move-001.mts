@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { assertMinnesotaMoveSnapshot } from '../lib/minnesota-intelligence/snapshot';
@@ -16,7 +17,7 @@ if (JSON.stringify(sources).match(/\(?\b\d{3}\)?[-.\s]\d{3}-\d{4}\b/g)?.some((p:
 
 const page = readFileSync('components/intelligence/MinnesotaMoveIntelligence.tsx', 'utf8');
 const sitemap = readFileSync('app/sitemap.ts', 'utf8');
-if ((sitemap.match(/^\s*'\/minnesota',\s*$/gm) || []).length !== 1) throw new Error('sitemap route list has /minnesota once');
+if (STATEWIDE_ROUTES.filter((path) => path === '/minnesota').length !== 1) throw new Error('sitemap route list has /minnesota once');
 if (sitemap.includes("'/minnesota/")) throw new Error('local route');
 if (!page.includes('is not a USDOT or MC')) throw new Error('state vs federal identity');
 if (!page.includes('A tariff is not a quote')) throw new Error('tariff is not a quote');

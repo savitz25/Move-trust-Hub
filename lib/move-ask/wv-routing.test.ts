@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { existsSync, readFileSync } from 'node:fs';
@@ -47,8 +48,8 @@ test('West Virginia page does not invent a mover count', () => {
   assert.doesNotMatch(page, /AggregateRating|ratingValue|Trust Score/);
   assert.doesNotMatch(page, /0 movers|0 companies|0 certificates|zero movers/i);
   assert.doesNotMatch(page, /\/west-virginia\/charleston/);
-  assert.equal((sitemap.match(/'\/west-virginia'/g) || []).length, 2);
-  assert.match(sitemap, /'\/kansas'/);
+  assert.equal(STATEWIDE_ROUTES.filter((path) => path === '/west-virginia').length, 1);
+  assert.ok(STATEWIDE_ROUTES.includes('/kansas'));
   assert.match(sitemap, /'\/idaho'/);
   assert.equal(existsSync('app/(move)/west-virginia/charleston'), false);
   assert.equal(normalizedPublishedStatePath('/West-Virginia'), '/west-virginia');

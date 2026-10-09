@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { existsSync, readFileSync } from 'node:fs';
@@ -87,7 +88,7 @@ test('Mississippi rankings fail closed, with no city publication', () => {
   assert.equal(normalizedPublishedStatePath('/Mississippi'), '/mississippi');
   assert.equal(normalizedPublishedStatePath('/mississippi/jackson'), null);
   for (const city of ['jackson', 'gulfport', 'biloxi']) assert.equal(existsSync(`app/(move)/mississippi/${city}`), false);
-  assert.equal((readFileSync('app/sitemap.ts', 'utf8').match(/'\/mississippi'/g) ?? []).length, 2);
+  assert.equal(STATEWIDE_ROUTES.filter((path) => path === '/mississippi').length, 1);
 });
 
 test('Mississippi routing does not capture South Carolina, Indiana, or Missouri wording', () => {

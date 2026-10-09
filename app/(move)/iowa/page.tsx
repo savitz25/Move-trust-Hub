@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { buildMovePageMetadata } from '@/lib/seo/move-metadata';
@@ -44,5 +45,6 @@ export default function IowaMovePage() {
         <li>No city or county research was added in this sprint.</li>
       </ul>
     </section>
-  </main>;
+  <StateCountyLinks stateSlug="iowa" stateName="Iowa" />
+    </main>;
 }
