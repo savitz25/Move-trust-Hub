@@ -13,8 +13,10 @@ import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { test } from 'node:test';
 import { fileURLToPath } from 'node:url';
+import { FMCSA_REFRESH_BUDGET } from '@/lib/fmcsa/refresh/budget';
 import { evaluateCanaryRequest } from '@/lib/fmcsa/refresh/canary';
 import { FMCSA_REFRESH_PAUSE_REASON, fmcsaRefreshPause } from '@/lib/fmcsa/refresh/pause';
+import { FMCSA_REFRESH_CONFIG } from '@/lib/fmcsa/refresh/rate-limit';
 import { runFmcsaRefresh, type FmcsaRefreshDb } from '@/lib/fmcsa/refresh/runner';
 import type { CompanyRefreshRow, FmcsaCarrierSnapshot, RefreshOptions } from '@/lib/fmcsa/refresh/types';
 
@@ -628,7 +630,7 @@ test('a fresh heartbeat still blocks the next run', async () => {
   assert.equal(harness.runs[0]?.companies_processed, 3);
 });
 
-test('a stale heartbeat abandons a run still inside the maxDuration window', async () => {
+test('a 6-minute-old row with a heartbeat older than 90s still blocks', async () => {
   const start = Date.parse('2026-10-09T16:30:00.000Z');
   const clock = clockFrom(start);
   const harness = createHarness({
@@ -648,14 +650,86 @@ test('a stale heartbeat abandons a run still inside the maxDuration window', asy
     budget: quietBudget,
     revalidate() {},
     notify: async () => ({ emailSent: false, smsSent: false }),
+    fetchCompany: async () => {
+      throw new Error('should not fetch');
+    },
+  });
+
+  const live = harness.runs.find((row) => row.id === 'stale-beat');
+  assert.equal(result.skipped, true);
+  assert.equal(result.status, 'running');
+  assert.equal(result.runId, 'stale-beat');
+  assert.equal(harness.runs.length, 1);
+  assert.equal(live?.status, 'running');
+  assert.equal(live?.companies_processed, 11);
+  assert.equal(live?.companies_updated, 11);
+  assert.equal(live?.finished_at, null);
+});
+
+test('a 2-minute-old row with a 120s-stale heartbeat still blocks', async () => {
+  const start = Date.parse('2026-10-09T16:40:00.000Z');
+  const clock = clockFrom(start);
+  const harness = createHarness({
+    companies: [company(1)],
+    runs: [
+      blankRun('young', 'running', new Date(start - 2 * 60 * 1000).toISOString(), {
+        companies_processed: 4,
+        companies_updated: 4,
+        metadata: { last_heartbeat_at: new Date(start - 120_000).toISOString() },
+      }),
+    ],
+  });
+
+  const result = await runFmcsaRefresh(baseOptions({ limit: 1 }), {
+    supabase: harness.supabase,
+    now: clock.now,
+    budget: quietBudget,
+    revalidate() {},
+    notify: async () => ({ emailSent: false, smsSent: false }),
+    fetchCompany: async () => {
+      throw new Error('should not fetch');
+    },
+  });
+
+  const live = harness.runs.find((row) => row.id === 'young');
+  assert.equal(result.skipped, true);
+  assert.equal(result.status, 'running');
+  assert.equal(result.runId, 'young');
+  assert.equal(harness.runs.length, 1);
+  assert.equal(live?.status, 'running');
+  assert.equal(live?.companies_processed, 4);
+  assert.equal(live?.finished_at, null);
+});
+
+test('a 16-minute-old running row is abandoned', async () => {
+  const start = Date.parse('2026-10-09T16:50:00.000Z');
+  const clock = clockFrom(start);
+  const harness = createHarness({
+    companies: [company(1)],
+    runs: [
+      blankRun('old', 'running', new Date(start - 16 * 60 * 1000).toISOString(), {
+        companies_processed: 8,
+        companies_updated: 6,
+        metadata: { last_heartbeat_at: new Date(start).toISOString() },
+      }),
+    ],
+  });
+
+  const result = await runFmcsaRefresh(baseOptions({ limit: 1 }), {
+    supabase: harness.supabase,
+    now: clock.now,
+    budget: quietBudget,
+    revalidate() {},
+    notify: async () => ({ emailSent: false, smsSent: false }),
     fetchCompany: async (input) => ({ snapshot: snapshot(input.usdot), lookupMethod: 'dot' }),
   });
 
-  const abandoned = harness.runs.find((row) => row.id === 'stale-beat');
+  const abandoned = harness.runs.find((row) => row.id === 'old');
   assert.equal(result.skipped, undefined);
+  assert.notEqual(result.runId, 'old');
   assert.equal(abandoned?.status, 'failed');
-  assert.equal(abandoned?.companies_processed, 11);
-  assert.equal(abandoned?.companies_updated, 11);
+  assert.equal(abandoned?.companies_processed, 8);
+  assert.equal(abandoned?.companies_updated, 6);
   assert.ok(abandoned?.finished_at);
   assert.equal((abandoned?.metadata as { exit_reason?: string } | null)?.exit_reason, 'abandoned_detected_by_guard');
 });
@@ -765,6 +839,9 @@ test('a notify throw still leaves the run terminal', async () => {
 });
 
 test('full mode stops at the invocation cap and a later same-day run is not blocked', async () => {
+  assert.equal(FMCSA_REFRESH_CONFIG.fullInvocationCap, 120);
+  assert.equal(FMCSA_REFRESH_BUDGET.fullInvocationCap, FMCSA_REFRESH_CONFIG.fullInvocationCap);
+
   const start = Date.parse('2026-10-09T20:00:00.000Z');
   const clock = clockFrom(start);
   const harness = createHarness({
