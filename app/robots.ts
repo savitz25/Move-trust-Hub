@@ -19,7 +19,6 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
             '/admin',
             '/api/',
             '/insurance/admin',
-            '/_next/',
             '/lender',
             '/local-movers',
             '/companies',
@@ -51,7 +50,6 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
           // Monorepo admin surfaces only (not public specialist prefixes).
           '/insurance/admin',
           '/lender/admin',
-          '/_next/',
         ],
       },
     ],
