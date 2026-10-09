@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { verifyRefreshAuth } from '@/lib/fmcsa/refresh/auth';
+import { fmcsaRefreshPause } from '@/lib/fmcsa/refresh/pause';
 import { runFmcsaRefresh } from '@/lib/fmcsa/refresh/runner';
 import type { RefreshMode } from '@/lib/fmcsa/refresh/types';
 
@@ -47,6 +48,21 @@ async function handleRefresh(request: Request) {
   const mode = body.mode ?? parseMode(request);
   const force = body.force ?? parseForce(request);
   const limit = body.limit ?? parseLimit(request);
+
+  // TH-DPR-001 R2: pause before any run row read or insert. `force` does not bypass.
+  const pause = fmcsaRefreshPause(mode);
+  if (pause.paused) {
+    return NextResponse.json(
+      {
+        skipped: true,
+        paused: true,
+        mode,
+        status: 'paused',
+        skipReason: pause.reason,
+      },
+      { status: 200 }
+    );
+  }
 
   const result = await runFmcsaRefresh({
     mode,
