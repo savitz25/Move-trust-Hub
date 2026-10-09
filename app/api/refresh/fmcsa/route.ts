@@ -75,7 +75,7 @@ async function handleRefresh(request: Request) {
   const canary = parseCanary(request, body);
   const triggeredBy = source === 'admin' ? 'admin' : request.headers.get('x-github-action') ? 'github' : 'cron';
 
-  // TH-DPR-001 R2 step A: pause before any run row read or insert. Canary does not bypass.
+  // TH-DPR-001 R2 step A: pause before any run row read or insert. `force` and canary do not bypass.
   const pause = fmcsaRefreshPause(mode);
   if (pause.paused) {
     return NextResponse.json(
@@ -110,21 +110,6 @@ async function handleRefresh(request: Request) {
     return NextResponse.json(result, {
       status: result.status === 'failed' ? 500 : 200,
     });
-  }
-
-  // TH-DPR-001 R2: pause before any run row read or insert. `force` does not bypass.
-  const pause = fmcsaRefreshPause(mode);
-  if (pause.paused) {
-    return NextResponse.json(
-      {
-        skipped: true,
-        paused: true,
-        mode,
-        status: 'paused',
-        skipReason: pause.reason,
-      },
-      { status: 200 }
-    );
   }
 
   const result = await runFmcsaRefresh({
