@@ -14,7 +14,7 @@ export const FMCSA_REFRESH_PAUSE_REASON =
 
 const PAUSED_BY_MODE: Record<RefreshMode, boolean> = {
   full: FMCSA_REFRESH_PAUSED,
-  incremental: FMCSA_REFRESH_PAUSED,
+  incremental: false,
 };
 
 export function fmcsaRefreshPause(mode: RefreshMode): { paused: boolean; reason: string } {
