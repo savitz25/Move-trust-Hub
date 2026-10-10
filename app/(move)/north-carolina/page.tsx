@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { NorthCarolinaMoveIntelligence } from '@/components/intelligence/NorthCarolinaMoveIntelligence';
 import { getNorthCarolinaMoveIntelligence } from '@/lib/north-carolina-intelligence/load';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function NorthCarolinaMoveIntelligencePage() {
   const payload = await getNorthCarolinaMoveIntelligence();
-  return <NorthCarolinaMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <NorthCarolinaMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="north-carolina" stateName="North Carolina" />
+    </>
+  );
 }

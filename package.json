@@ -62,6 +62,8 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "typecheck": "tsc --noEmit",
+    "test:state-county-links": "tsx --test lib/local-movers/state-county-links.test.tsx",
+    "check:state-county-links": "tsx scripts/check-state-county-links.mts",
     "check:my-trusthub-production": "tsx --test lib/my-trusthub/production-pair.test.ts lib/my-trusthub/composition.test.ts lib/my-trusthub/profile-save-adapter.test.ts lib/my-trusthub/postgres-transfer-store.test.ts",
     "check:save-control": "tsx --test lib/save-my-move/save-control.test.ts lib/my-trusthub/direct-save.test.ts",
     "check:my-trusthub-widening": "tsx --require ./scripts/stub-server-only.cjs --test lib/my-trusthub/publication-source.test.ts",

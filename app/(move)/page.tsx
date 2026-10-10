@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { HomePage } from '@/components/home-page';
 
 import { LocalMoversMapLoader } from '@/components/map/local-movers-map-loader';
@@ -49,6 +50,9 @@ export default async function Page() {
     <>
       <JsonLd data={buildHomepageSchemaGraph()} />
       <HomePage payload={payload} mapSection={<LocalMoversMapLoader />} />
+      <p className="mx-auto max-w-6xl px-4 pb-8 sm:px-6">
+        <Link prefetch={false} href="/states" className="underline underline-offset-4">All states →</Link>
+      </p>
     </>
   );
 }

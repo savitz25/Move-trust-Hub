@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { GeorgiaMoveIntelligence } from '@/components/intelligence/GeorgiaMoveIntelligence';
 import { getGeorgiaMoveIntelligence } from '@/lib/georgia-intelligence/load';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function GeorgiaMoveIntelligencePage() {
   const payload = await getGeorgiaMoveIntelligence();
-  return <GeorgiaMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <GeorgiaMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="georgia" stateName="Georgia" />
+    </>
+  );
 }

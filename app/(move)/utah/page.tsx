@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { UTAH_MOVE_SNAPSHOT as s } from '@/lib/utah-intelligence/snapshot';
@@ -100,6 +101,7 @@ export default function UtahMovePage() {
           <li><Official href={s.links.operatingAuthority}>UDOT motor-carrier operating authority</Official></li>
         </ul>
       </section>
+    <StateCountyLinks stateSlug="utah" stateName="Utah" />
     </main>
   );
 }

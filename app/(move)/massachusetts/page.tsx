@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { MassachusettsMoveIntelligence } from '@/components/intelligence/MassachusettsMoveIntelligence';
 import { getMassachusettsMoveIntelligence } from '@/lib/massachusetts-intelligence/load';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function MassachusettsMoveIntelligencePage() {
   const payload = await getMassachusettsMoveIntelligence();
-  return <MassachusettsMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <MassachusettsMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="massachusetts" stateName="Massachusetts" />
+    </>
+  );
 }

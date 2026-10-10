@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from "next";
 import { LocalMoversBreadcrumbs } from "@/components/local-movers/local-movers-breadcrumbs";
 import { KANSAS_MOVE_SNAPSHOT as s } from "@/lib/kansas-intelligence/snapshot";
@@ -252,6 +253,7 @@ export default function KansasMovePage() {
           </li>
         </ul>
       </section>
+    <StateCountyLinks stateSlug="kansas" stateName="Kansas" />
     </main>
   );
 }

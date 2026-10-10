@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { CaliforniaMoveIntelligence } from '@/components/intelligence/CaliforniaMoveIntelligence';
 import { getCaliforniaMoveIntelligenceSnapshot } from '@/lib/california-intelligence/load';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function CaliforniaMoveIntelligencePage() {
   const payload = await getCaliforniaMoveIntelligenceSnapshot();
-  return <CaliforniaMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <CaliforniaMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="california" stateName="California" />
+    </>
+  );
 }

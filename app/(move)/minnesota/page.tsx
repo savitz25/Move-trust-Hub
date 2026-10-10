@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { MinnesotaMoveIntelligence } from '@/components/intelligence/MinnesotaMoveIntelligence';
 import { getMinnesotaMoveIntelligence } from '@/lib/minnesota-intelligence/load';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function MinnesotaMoveIntelligencePage() {
   const payload = await getMinnesotaMoveIntelligence();
-  return <MinnesotaMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <MinnesotaMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="minnesota" stateName="Minnesota" />
+    </>
+  );
 }

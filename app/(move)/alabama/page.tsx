@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { ALABAMA_MOVE_SNAPSHOT as s } from '@/lib/alabama-intelligence/snapshot';
@@ -57,5 +58,6 @@ export default function AlabamaMovePage() {
         <li>Birmingham, Montgomery, Huntsville and Mobile are search context only. This page publishes no city or county research routes.</li>
       </ul>
     </section>
-  </main>;
+  <StateCountyLinks stateSlug="alabama" stateName="Alabama" />
+    </main>;
 }

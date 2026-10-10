@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { MARYLAND_MOVE_SNAPSHOT as s } from '@/lib/maryland-intelligence/snapshot';
@@ -38,5 +39,6 @@ export default function MarylandMovePage() {
       <h2 className="text-lg font-semibold text-foreground">Coverage and source clocks</h2>
       <ul className="list-disc pl-5"><li>Official statewide roster rows, distinct registration numbers, company names, exact status labels, issue/expiration dates and business locations: NOT_ACQUIRED. The public query is verification only.</li><li>Rows with USDOT or MC, distinct federal identifiers, exact state-to-federal bridges and rows without federal IDs: NOT_ACQUIRED. No name-only joins or combined state and federal total.</li><li>New canonical organizations: 0; graph writes: 0; claim eligibility changes: 0.</li><li>Public query footer updated {s.queryUpdatedAt}; sources retrieved {s.retrievedAt}; page data generated {s.generatedAt}. Neither source clock is a universal Maryland registration as-of date. No individual expiration or enforcement date was acquired.</li><li>Baltimore, Annapolis, Frederick and Rockville are geographic search context only; no city intelligence pages or mover ranking.</li></ul>
     </section>
-  </main>;
+  <StateCountyLinks stateSlug="maryland" stateName="Maryland" />
+    </main>;
 }

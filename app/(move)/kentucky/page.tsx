@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { KENTUCKY_MOVE_SNAPSHOT as s } from '@/lib/kentucky-intelligence/snapshot';
@@ -62,5 +63,6 @@ export default function KentuckyMovePage() {
         <li>Louisville and Lexington are search context only. This page publishes no city or county research routes.</li>
       </ul>
     </section>
-  </main>;
+  <StateCountyLinks stateSlug="kentucky" stateName="Kentucky" />
+    </main>;
 }

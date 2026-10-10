@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { PennsylvaniaMoveIntelligence } from '@/components/intelligence/PennsylvaniaMoveIntelligence';
 import { getPennsylvaniaMoveIntelligence } from '@/lib/pennsylvania-intelligence/load';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function PennsylvaniaMoveIntelligencePage() {
   const payload = await getPennsylvaniaMoveIntelligence();
-  return <PennsylvaniaMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <PennsylvaniaMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="pennsylvania" stateName="Pennsylvania" />
+    </>
+  );
 }

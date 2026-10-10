@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { existsSync, readFileSync } from 'node:fs';
@@ -104,7 +105,7 @@ test('Idaho rankings fail closed and do not capture other states', () => {
   for (const city of ['boise', 'meridian', 'nampa', 'pocatello', 'idaho-falls', 'twin-falls', 'coeur-d-alene']) {
     assert.equal(existsSync(`app/(move)/idaho/${city}`), false, city);
   }
-  assert.equal((readFileSync('app/sitemap.ts', 'utf8').match(/'\/idaho'/g) ?? []).length, 2);
+  assert.equal(STATEWIDE_ROUTES.filter((path) => path === '/idaho').length, 1);
   assert.match(plan('mover Nebraska').failReason ?? '', /Nebraska Public Service Commission/);
   assert.doesNotMatch(plan('mover Nebraska').failReason ?? '', /Idaho State Police/);
   assert.match(plan('mover New Mexico').failReason ?? '', /New Mexico Public Regulation Commission/);

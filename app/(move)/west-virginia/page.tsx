@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { WEST_VIRGINIA_MOVE_SNAPSHOT as s } from '@/lib/west-virginia-intelligence/snapshot';
@@ -87,6 +88,7 @@ export default function WestVirginiaMovePage() {
           <li>No ranking and no combined mover count are published from these sources.</li>
         </ul>
       </section>
+    <StateCountyLinks stateSlug="west-virginia" stateName="West Virginia" />
     </main>
   );
 }

@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { NevadaMoveIntelligence } from '@/components/intelligence/NevadaMoveIntelligence';
 import { getNevadaMoveIntelligence } from '@/lib/nevada-intelligence/load';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function NevadaMoveIntelligencePage() {
   const payload = await getNevadaMoveIntelligence();
-  return <NevadaMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <NevadaMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="nevada" stateName="Nevada" />
+    </>
+  );
 }

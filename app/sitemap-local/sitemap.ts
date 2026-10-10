@@ -57,7 +57,7 @@ import { evaluateCountyIndexabilityFromResult } from '@/lib/local-movers/county-
 import { sitemapPriorityForCountyTier } from '@/lib/local-movers/county-quality-score';
 import { getMoversForCounty } from '@/lib/local-movers/index';
 import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
-import { getCountiesForState } from '@/lib/local-movers/geography/index';
+import { getIndexableCounties } from '@/lib/local-movers/indexable-counties';
 import { localStates } from '@/lib/local-movers/states';
 
 const SITE_URL = 'https://www.movetrusthub.com';
@@ -658,12 +658,7 @@ export default async function sitemap({
   id: string;
 }): Promise<MetadataRoute.Sitemap> {
   // Sync seed catalog only — do not hit Supabase while generating ~50 state sitemaps at build.
-  const counties = getCountiesForState(id);
-  const indexableCounties = counties.filter((county) => {
-    const result = getMoversForCounty(id, county.slug);
-    const decision = evaluateCountyIndexabilityFromResult(id, county.slug, result);
-    return decision.tier === 'index';
-  });
+  const indexableCounties = getIndexableCounties(id);
 
   const lastModified =
     id === 'california'

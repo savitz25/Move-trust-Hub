@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
@@ -15,7 +16,7 @@ if (sources.roster_search.TN_INTRASTATE_AUTHORITY_BULK !== 'NOT_ACQUIRED') throw
 
 const page = readFileSync('components/intelligence/TennesseeMoveIntelligence.tsx', 'utf8');
 const sitemap = readFileSync('app/sitemap.ts', 'utf8');
-if ((sitemap.match(/^\s*'\/tennessee',\s*$/gm) || []).length !== 1) throw new Error('sitemap route list has /tennessee once');
+if (STATEWIDE_ROUTES.filter((path) => path === '/tennessee').length !== 1) throw new Error('sitemap route list has /tennessee once');
 if (sitemap.includes("'/tennessee/")) throw new Error('local route');
 if (!page.includes('not a USDOT or MC number')) throw new Error('state vs federal identity');
 if (!page.includes('Form H')) throw new Error('Form H');

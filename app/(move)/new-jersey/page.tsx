@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { NewJerseyMoveIntelligence } from '@/components/intelligence/NewJerseyMoveIntelligence';
 import { getNjMoveIntelligenceSnapshot } from '@/lib/intelligence/nj-snapshot';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function NewJerseyMoveIntelligencePage() {
   const payload = await getNjMoveIntelligenceSnapshot();
-  return <NewJerseyMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <NewJerseyMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="new-jersey" stateName="New Jersey" />
+    </>
+  );
 }

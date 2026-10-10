@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { assertNevadaMoveSnapshot } from '../lib/nevada-intelligence/snapshot';
@@ -22,7 +23,7 @@ if (new Set(roster.map((row) => String(row.cpcn).split('.')[0])).size !== snap.c
 
 const page = readFileSync('components/intelligence/NevadaMoveIntelligence.tsx', 'utf8');
 const sitemap = readFileSync('app/sitemap.ts', 'utf8');
-if ((sitemap.match(/^\s*'\/nevada',\s*$/gm) || []).length !== 1) throw new Error('sitemap route list has /nevada once');
+if (STATEWIDE_ROUTES.filter((path) => path === '/nevada').length !== 1) throw new Error('sitemap route list has /nevada once');
 if (sitemap.includes("'/nevada/")) throw new Error('local route');
 if (!page.includes('is not a USDOT or MC number')) throw new Error('state vs federal identity');
 if (!page.includes('A tariff is not a quote')) throw new Error('tariff is not a quote');

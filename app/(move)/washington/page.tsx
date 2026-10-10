@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { WashingtonMoveIntelligence } from '@/components/intelligence/WashingtonMoveIntelligence';
 import { getWashingtonMoveIntelligenceSnapshot } from '@/lib/washington-intelligence/load';
@@ -16,5 +17,10 @@ export function generateMetadata(): Metadata {
 
 export default async function WashingtonMoveIntelligencePage() {
   const payload = await getWashingtonMoveIntelligenceSnapshot();
-  return <WashingtonMoveIntelligence payload={payload} />;
+  return (
+    <>
+      <WashingtonMoveIntelligence payload={payload} />
+      <StateCountyLinks stateSlug="washington" stateName="Washington" />
+    </>
+  );
 }

@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { MICHIGAN_MOVE_SNAPSHOT as s } from '@/lib/michigan-intelligence/snapshot';
@@ -62,6 +63,7 @@ export default function MichiganMoveIntelligencePage() {
           <li>No ratings or recommendations.</li>
         </ul>
       </section>
+    <StateCountyLinks stateSlug="michigan" stateName="Michigan" />
     </main>
   );
 }

@@ -1,3 +1,4 @@
+import { StateCountyLinks } from '@/components/local-movers/state-county-links';
 import type { Metadata } from 'next';
 import { LocalMoversBreadcrumbs } from '@/components/local-movers/local-movers-breadcrumbs';
 import { LOUISIANA_MOVE_SNAPSHOT as s } from '@/lib/louisiana-intelligence/snapshot';
@@ -57,5 +58,6 @@ export default function LouisianaMovePage() {
         <li>New Orleans, Baton Rouge, Shreveport, and Lafayette are search context only. This page publishes no city or parish research routes.</li>
       </ul>
     </section>
-  </main>;
+  <StateCountyLinks stateSlug="louisiana" stateName="Louisiana" />
+    </main>;
 }

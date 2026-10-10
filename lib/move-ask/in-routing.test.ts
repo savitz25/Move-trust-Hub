@@ -1,3 +1,4 @@
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { existsSync, readFileSync } from 'node:fs';
@@ -66,7 +67,7 @@ test('Indiana rankings fail closed, with no city publication', () => {
   assert.equal(normalizedPublishedStatePath('/Indiana'), '/indiana');
   assert.equal(normalizedPublishedStatePath('/indiana/indianapolis'), null);
   for (const city of ['indianapolis', 'fort-wayne', 'evansville', 'south-bend']) assert.equal(existsSync(`app/(move)/indiana/${city}`), false);
-  assert.equal((readFileSync('app/sitemap.ts', 'utf8').match(/'\/indiana'/g) ?? []).length, 2);
+  assert.equal(STATEWIDE_ROUTES.filter((path) => path === '/indiana').length, 1);
 });
 
 test('Wisconsin, Maryland, Connecticut and Michigan routes retain their meaning', () => {
