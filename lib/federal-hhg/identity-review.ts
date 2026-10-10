@@ -67,7 +67,11 @@ export function classifyIdentityReview(input: {
       autoMerge: false,
     };
   }
-  if (reason.includes('mc matches but usdot differs')) {
+  if (
+    reason.includes('mc matches but usdot differs') ||
+    reason.includes('usdot matches but mc differs') ||
+    reason.includes('literal usdot equality')
+  ) {
     return {
       category: 'EXISTING_PUBLIC_PROFILE_CONFLICT',
       risk: 'HIGH',
