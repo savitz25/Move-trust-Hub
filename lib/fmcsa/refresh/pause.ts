@@ -13,7 +13,7 @@ export const FMCSA_REFRESH_PAUSE_REASON =
   'FMCSA refresh paused: TH-DPR-001 R2 stuck-run fix pending';
 
 const PAUSED_BY_MODE: Record<RefreshMode, boolean> = {
-  full: FMCSA_REFRESH_PAUSED,
+  full: false,
   incremental: false,
 };
 
