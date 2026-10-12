@@ -215,6 +215,28 @@ export default function DelawareClusterPage() {
           </section>
         ))}
 
+        <section className="py-10 border-b" aria-labelledby="delaware-carrier-rules">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 id="delaware-carrier-rules" className="text-xl font-semibold tracking-tight mb-3">
+              Delaware moving carrier rules and source limits
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              The Delaware public-carrier certificate in Title 2, Chapter 18 covers the passenger-service classes named in that chapter, including taxicab, limousine, and bus service. It is not evidence of a household-goods mover certificate. The official sources reviewed did not identify a separate Delaware household-goods authority or a public mover-license roster, so this page publishes no state mover census.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Delaware DMV Motor Carrier Services describes IRP, IFTA, UCR, and heavy-highway-use-tax administration. Its new-carrier packet requires an active federal USDOT number marked interstate and for-hire for that account process. Those registration, tax, and federal identity requirements are distinct from state household-goods authority. Delaware motor-carrier safety rules, FMCSA interstate authority and USDOT status, insurance, consumer complaints, and tariffs each have separate scopes; none is presented here as a mover roster or proof of observed compliance.
+            </p>
+            <ul className="list-disc pl-6 text-sm text-muted-foreground space-y-1">
+              <li><a className="underline" href="https://delcode.delaware.gov/title2/c018/index.html" target="_blank" rel="noreferrer">Delaware Code, Title 2, Chapter 18</a> · state passenger public-carrier certificate scope.</li>
+              <li><a className="underline" href="https://dmv.de.gov/VehicleServices/MC/index.shtml" target="_blank" rel="noreferrer">Delaware DMV Motor Carrier Services</a> · IRP, IFTA, UCR, and tax administration.</li>
+              <li><a className="underline" href="https://dmv.de.gov/VehicleServices/MC/docs/irp/pdfs/Motor_Carrier_New_Application_Package.pdf" target="_blank" rel="noreferrer">New carrier application packet</a> · source requirements for a motor-carrier account.</li>
+              <li><a className="underline" href="https://delcode.delaware.gov/title21/c047/" target="_blank" rel="noreferrer">Delaware Code, Title 21, Chapter 47</a> · state motor-carrier safety requirements.</li>
+              <li><a className="underline" href="https://www.fmcsa.dot.gov/registration/do-i-need-usdot-number" target="_blank" rel="noreferrer">FMCSA USDOT registration guidance</a> · federal number requirements and state-agency referrals.</li>
+            </ul>
+            <p className="text-xs text-muted-foreground mt-4">Official Delaware and FMCSA sources checked October 12, 2026. Current state HHG authority rows, a mover complaint extract, and a Delaware HHG tariff roster were NOT_ACQUIRED. No Maine-address or Delaware-address FMCSA query is substituted for state authority.</p>
+          </div>
+        </section>
+
         {otherDelawareCities.length > 0 && (
           <section className="py-12 md:py-16 bg-muted/20">
             <div className="container mx-auto px-4 max-w-6xl">
