@@ -111,6 +111,26 @@ export default function NewHampshireClusterPage() {
         )}
       />
       <div className="min-h-screen">
+        <section className="container mx-auto max-w-6xl border-b px-4 py-10" aria-labelledby="nh-hhg-authority">
+          <p className="text-xs font-semibold uppercase tracking-wide text-primary">New Hampshire household-goods regulation</p>
+          <h2 id="nh-hhg-authority" className="mt-2 text-2xl font-semibold">Intrastate mover authority and what this page verifies</h2>
+          <p className="mt-3 max-w-4xl text-muted-foreground">
+            New Hampshire does require state authority for household-goods carriers transporting for hire between points within the state. RSA 359-T:2 requires a Department of Safety certificate; RSA 359-T:4 separately provides a contract-carrier permit. The Department of Safety Bureau of Road Toll Operations administers these authorities under Saf-C 4600.
+          </p>
+          <p className="mt-3 max-w-4xl text-muted-foreground">
+            That intrastate authority is separate from FMCSA interstate operating authority and USDOT identity. General motor-carrier safety rules, household-goods insurance filings, annual vehicle registration, complaint investigations, hearings or orders, and rates or tariffs are separate regulatory records. This route's existing local mover listings are destination information; they are not confirmed certificate or permit holders.
+          </p>
+          <p className="mt-3 max-w-4xl text-muted-foreground">
+            The Bureau publishes application and annual-report forms, but a current public certificate-holder roster and dated certificate rows were not acquired in this pass. Current holder count: NOT_ACQUIRED, not zero. No New Hampshire-address FMCSA list is substituted for state authority.
+          </p>
+          <ul className="mt-4 list-disc space-y-2 pl-6 text-sm">
+            <li><a className="underline" href="https://gc.nh.gov/RSA/html/XXXI/359-T/359-T-mrg.htm" rel="noopener noreferrer" target="_blank">RSA 359-T: household-goods carrier certificates, permits, insurance, vehicles, complaints and hearings</a></li>
+            <li><a className="underline" href="https://gc.nh.gov/rules/state_agencies/saf-c4600.html" rel="noopener noreferrer" target="_blank">Saf-C 4600 household-goods carrier rules and required annual report</a></li>
+            <li><a className="underline" href="https://www.nh.gov/safety/divisions/administration/roadtoll/documents/NewOperationsHouseholdGoodsCarrierApplicationChecklist-2023-10-05-INTERIMRULES.pdf" rel="noopener noreferrer" target="_blank">Bureau of Road Toll Operations intrastate authority application checklist</a></li>
+            <li><a className="underline" href="https://www.nh.gov/safety/divisions/administration/roadtoll/documents/DSAD5-HARHouseholdGoodsCarrierAnnualReport-2023-12.pdf" rel="noopener noreferrer" target="_blank">Household Goods Carrier Annual Report form (DSAD 5-HAR)</a></li>
+          </ul>
+          <p className="mt-4 text-sm text-muted-foreground">Official statutory and agency sources checked October 12, 2026. Application and annual-report forms revised December 2023. Current certificate-holder rows, carrier-specific insurance filings, filed tariff records, complaints and enforcement orders: NOT_ACQUIRED.</p>
+        </section>
         <section className="relative border-b bg-gradient-to-b from-primary/5 to-background py-12 md:py-20">
           <div className="container mx-auto px-4 max-w-6xl">
             <LocalMoversBreadcrumbs
