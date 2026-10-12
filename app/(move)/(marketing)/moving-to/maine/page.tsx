@@ -111,6 +111,69 @@ export default function MaineClusterPage() {
         )}
       />
       <div className="min-h-screen">
+        <section
+          className="container mx-auto max-w-6xl px-4 py-10"
+          aria-labelledby="maine-regulatory-model"
+        >
+          <h2 id="maine-regulatory-model" className="text-2xl font-semibold">
+            Maine moving regulation: what the state sources establish
+          </h2>
+          <p className="mt-3 max-w-4xl text-muted-foreground">
+            Maine&apos;s current motor-carrier framework is not a statewide household-goods mover
+            certificate roster. The former operating-authority license provision, 29-A M.R.S.
+            §552, is repealed. Maine still adopts federal motor-carrier safety rules and administers
+            vehicle, USDOT-number and UCR requirements for applicable carriers. Those requirements
+            are not a mover-specific license census, and some intrastate USDOT exemptions apply.
+          </p>
+          <p className="mt-3 max-w-4xl text-muted-foreground">
+            The Maine Attorney General explains federal consumer rules for interstate household
+            moves and says those federal rules do not apply to moves wholly within Maine. This page
+            does not substitute Maine-address FMCSA records for state authority, or treat insurance,
+            tariffs, complaints, USDOT numbers, or general motor-carrier registration as a Maine
+            mover license. No current mover-specific statewide roster was identified in the cited
+            state sources; no Maine intrastate license count is asserted.
+          </p>
+          <ul className="mt-4 list-disc space-y-2 pl-6">
+            <li>
+              <a
+                className="underline"
+                href="https://legislature.maine.gov/statutes/29-A/title29-Ach5sec0.html"
+              >
+                Maine Title 29-A, Chapter 5
+              </a>{" "}
+              (including repealed §552).
+            </li>
+            <li>
+              <a
+                className="underline"
+                href="https://www.maine.gov/sos/bmv/vehicles/commercial-vehicles-motor-carrier-services/united-states-department-of-transportation-number"
+              >
+                Maine BMV USDOT-number requirements and intrastate exceptions
+              </a>.
+            </li>
+            <li>
+              <a
+                className="underline"
+                href="https://www.maine.gov/sos/bmv/vehicles/commercial-vehicles-motor-carrier-services/unified-carrier-registration"
+              >
+                Maine BMV Unified Carrier Registration
+              </a>.
+            </li>
+            <li>
+              <a
+                className="underline"
+                href="https://www.maine.gov/ag/consumer-protection/consumer-help-topics/housing/movers-and-self-service-storage"
+              >
+                Maine Attorney General: movers and self-service storage
+              </a>.
+            </li>
+          </ul>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Source review checked October 12, 2026. State HHG roster: NOT_ACQUIRED / not identified
+            in the reviewed official framework. Interstate FMCSA authority remains a separate
+            federal population.
+          </p>
+        </section>
         <section className="relative border-b bg-gradient-to-b from-primary/5 to-background py-12 md:py-20">
           <div className="container mx-auto px-4 max-w-6xl">
             <LocalMoversBreadcrumbs
