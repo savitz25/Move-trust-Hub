@@ -29,12 +29,9 @@ function readRaw(): LocalSavedMover[] {
 }
 
 function writeRaw(rows: LocalSavedMover[]) {
-  if (typeof window === 'undefined') return;
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(rows));
-  } catch {
-    // private mode / quota
-  }
+  if (typeof window === 'undefined') throw new Error('Device storage is unavailable');
+  // Let callers distinguish persistence failure from a completed device change.
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(rows));
 }
 
 export function listLocalSavedMovers(): LocalSavedMover[] {

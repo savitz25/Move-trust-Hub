@@ -159,9 +159,11 @@ export function SaveMoverButton({
     const plan = planSave({ saved, busy, auth });
     if (plan.kind === 'skip') return;
     setBusy('save');
+    let deviceSaved = false;
     try {
-      // Always persist on device first — never leave the user with only a red toast
+      // Confirm persistence before changing state or attempting account sync.
       const row = addLocalSavedMover({ companySlug, companyName });
+      deviceSaved = true;
       setLocalSaved(true);
       markMoverSaved(companySlug);
       trackSaveMyMoveMover({ company_slug: companySlug });
@@ -220,7 +222,13 @@ export function SaveMoverButton({
     } catch (err) {
       console.error('[SaveMoverButton]', err);
       setSyncing(null);
-      // Local already written above; still treat as soft success
+      if (!deviceSaved) {
+        toast.error(`Could not save ${companyName} on this device`, {
+          description: 'Your shortlist was not updated. Check browser storage and try again.',
+        });
+        return;
+      }
+      // The device write succeeded; only the optional sync failed.
       toast.success(`${companyName} saved on this device`, {
         description: 'Cloud sync failed — shortlist kept on this device.',
       });
@@ -234,10 +242,12 @@ export function SaveMoverButton({
     const plan = planUnsave({ saved, busy, auth });
     if (plan.kind === 'skip') return;
     setBusy('unsave');
+    let deviceRemoved = false;
     try {
       const reachParent = unsaveReachesParent({ direct, parentSync: direct ? parentSync(localStorage, companySlug) : null });
       // Device row and Keep ticket are cleared immediately, regardless of auth state.
       removeLocalSavedMover(companySlug);
+      deviceRemoved = true;
       setLocalSaved(false);
       markMoverUnsaved(companySlug);
       try {
@@ -271,6 +281,12 @@ export function SaveMoverButton({
     } catch (err) {
       console.error('[SaveMoverButton] unsave', err);
       setSyncing(null);
+      if (!deviceRemoved) {
+        toast.error(`Could not remove ${companyName} from this device`, {
+          description: 'Your shortlist was not updated. Check browser storage and try again.',
+        });
+        return;
+      }
       toast.success(`${companyName} removed from this device`);
     } finally {
       setBusy(null);
