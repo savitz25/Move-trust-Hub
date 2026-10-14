@@ -16,9 +16,9 @@ export const rhodeIslandStateResourceHub: StateResourceHubPack = {
   "heroSubhead": "The independent planning hub for Rhode Island moves in 2026 — typical costs, DPUC vs FMCSA rules, Providence-to-South County guides, and tools to compare certificated movers without paid placements.",
   "trustBar": [
     "5 County Guides",
-    "Verified Movers",
-    "RI DPUC & FMCSA Checked",
-    "Updated 2026"
+    "DPUC roster snapshot: Dec. 17, 2025",
+    "Intrastate DPUC authority ≠ interstate FMCSA authority",
+    "Current DPUC status roster: not acquired"
   ],
   "intents": [
     {
@@ -62,7 +62,7 @@ export const rhodeIslandStateResourceHub: StateResourceHubPack = {
     "title": "Why moving in Rhode Island is different",
     "paragraphs": [
       "Rhode Island is not one moving market. Providence multi-unit elevators and tight streets, East Bay and Kent County suburbs, Newport tourism congestion, and South County coastal access produce different labor profiles under one state name — with only five counties but dense border pressure from Massachusetts and Connecticut.",
-      "Intrastate household goods movers must hold a certificate from the Rhode Island Division of Public Utilities and Carriers (DPUC). Interstate jobs need FMCSA authority. Winter ice, college peaks, and short hops into Massachusetts and Connecticut are planning inputs — then open the region and county that match your addresses."
+      "Intrastate household goods movers must hold a certificate from the Rhode Island Division of Public Utilities and Carriers (DPUC). Its public licensed-mover PDF dated December 17, 2025 contains 43 carrier entries and 43 distinct certificate numbers. It is a dated snapshot, not a real-time status feed, so current status is not established here. Interstate jobs need separate FMCSA authority."
     ]
   },
   "snapshot": {
@@ -111,7 +111,7 @@ export const rhodeIslandStateResourceHub: StateResourceHubPack = {
     },
     "intrastate": {
       "title": "Intrastate (entirely within Rhode Island)",
-      "body": "To receive a certificate to transport household goods, applicants must prove fitness, willingness, and ability to provide the proposed service under DPUC Motor Carriers Division jurisdiction. DPUC publishes licensed moving company lists and moving information for consumers. Carriers must provide a Bill of Lading as receipt and contract for household goods transportation."
+      "body": "To receive a certificate to transport household goods, applicants must prove fitness, willingness, and ability to provide the proposed service under DPUC Motor Carriers Division jurisdiction. DPUC's public licensed-mover PDF dated December 17, 2025 contains 43 carrier entries and 43 distinct certificate numbers; it is not real-time and current status is NOT_ACQUIRED. Carriers must provide a Bill of Lading as receipt and contract for household goods transportation."
     },
     "verifySteps": [
       "Classify the job: entirely in Rhode Island (DPUC certificate) vs any out-of-state leg (FMCSA / USDOT).",
