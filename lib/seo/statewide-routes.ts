@@ -8,6 +8,7 @@ export const STATEWIDE_ROUTES = [
   '/new-mexico',
   '/idaho',
   '/west-virginia',
+  '/montana',
   '/indiana',
   '/alabama',
   '/louisiana',
