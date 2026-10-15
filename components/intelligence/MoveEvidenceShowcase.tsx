@@ -27,8 +27,14 @@ function MeasureTrace({ measure }: { measure: MoveHomepageMeasure }) {
 export function MoveEvidenceShowcase() {
   const inventory = buildMoveHomepageEvidenceInventory(loadMoveNetworkMetrics());
   const highlights = inventory.filter((m) => ['federal_publishable_directory_profiles', 'federal_directory_authority_active', 'federal_mc_identities_in_directory', 'published_state_intelligence_pages'].includes(m.key));
-  // Cards are listed in publication order, so the newest states are last.
-  const recentStates = [...MOVE_HOMEPAGE_STATE_CARDS].slice(-6).reverse();
+  const featuredStates: MoveHomepageMeasure[] = [];
+  const featuredDestinations = new Set<string>();
+  for (const measure of inventory.filter((m) => m.family === 'STATE_AUTHORITY' && m.publicationStatus === 'PUBLIC' && typeof m.value === 'number' && m.destination.startsWith('/') && !m.key.includes('property_carrier')).sort((a, b) => (b.value ?? 0) - (a.value ?? 0))) {
+    if (featuredDestinations.has(measure.destination)) continue;
+    featuredDestinations.add(measure.destination);
+    featuredStates.push(measure);
+    if (featuredStates.length === 4) break;
+  }
   return <>
     <section className="move-section border-b border-border/60 bg-[#0A2540] text-white" aria-labelledby="moat-heading"><div className="move-section-inner">
       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-orange-300">Official evidence · separate grains</p>
@@ -36,8 +42,11 @@ export function MoveEvidenceShowcase() {
       <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-200 sm:text-base">MoveTrustHub connects federal mover identity with authority, operating role, state household-goods systems, regulatory evidence, and consumer rules. Incompatible evidence families are never added together.</p>
       <ul className="mt-7 grid gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/15 sm:grid-cols-2 lg:grid-cols-4">{highlights.map((m) => <li key={m.key} className="bg-[#0A2540] p-5"><p className="break-words text-3xl font-semibold tabular-nums">{m.value === null ? 'Unknown' : number.format(m.value)}</p><p className="mt-1 text-sm font-medium text-slate-100">{m.label}</p><p className="mt-2 text-xs leading-relaxed text-slate-300">{m.description}</p></li>)}</ul>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-        <p className="text-sm font-semibold text-white">Recently added states:</p>
-        <ul className="flex flex-wrap gap-2">{recentStates.map((card) => <li key={card.href}><Link href={card.href} data-intel-event="move_intel_state_click" className="inline-flex min-h-9 items-center rounded-full border border-white/25 px-3 text-sm font-medium text-white no-underline hover:border-orange-300 hover:text-orange-200">{card.state}</Link></li>)}</ul>
+        <div className="w-full">
+          <p className="text-sm font-semibold text-white">Featured state authority</p>
+          <p className="mt-1 max-w-3xl text-xs leading-relaxed text-slate-300">Chosen for published household-goods roster depth. These counts are not unique companies and are not added to the directory above. States without an acquired roster stay in the full list and are not shown as zero.</p>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">{featuredStates.map((measure) => <li key={measure.key} className="rounded-2xl border border-white/15 bg-white/5 p-4"><p className="text-2xl font-semibold tabular-nums">{number.format(measure.value ?? 0)}</p><p className="mt-1 text-sm font-medium text-slate-100">{measure.label}</p><p className="mt-1 text-xs text-slate-300">{measure.grain.replaceAll('_', ' ')}</p>{(measure.sourceAsOf || measure.snapshotAsOf) ? <p className="mt-1 text-xs text-slate-300">{measure.sourceAsOf ? 'Source as of' : 'Snapshot'} {(measure.sourceAsOf ?? measure.snapshotAsOf ?? '').slice(0, 10)}</p> : null}<p className="mt-1 text-xs text-slate-300">Does not count: {measure.trace.doesNotCount}</p><Link href={measure.destination} data-intel-event="move_intel_state_click" className="mt-3 inline-flex min-h-9 items-center text-sm font-semibold text-orange-300 no-underline hover:underline">Review the published evidence</Link></li>)}</ul>
+        </div>
         <a href="#state-intelligence" className="inline-flex min-h-10 items-center font-semibold text-orange-300 hover:underline">Explore all {MOVE_HOMEPAGE_STATE_CARDS.length} states →</a>
       </div>
     </div></section>
