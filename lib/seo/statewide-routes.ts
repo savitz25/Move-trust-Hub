@@ -39,4 +39,11 @@ export const STATEWIDE_ROUTES = [
   '/pennsylvania',
   '/north-carolina',
   '/ohio',
+  '/alaska',
+  '/hawaii',
+  '/north-dakota',
+  '/rhode-island',
+  '/south-dakota',
+  '/vermont',
+  '/wyoming',
 ] as const;

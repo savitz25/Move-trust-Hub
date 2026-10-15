@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { loadMoveNetworkMetrics } from '@/lib/metrics/load-network-metrics';
+import { localStates } from '@/lib/local-movers/states';
 import { buildMoveHomepageEvidenceInventory, MOVE_CONSUMER_RULES, MOVE_EVIDENCE_FAMILY_LABELS, MOVE_HOMEPAGE_STATE_CARDS, type MoveHomepageMeasure } from '@/lib/intelligence/move-home-evidence-inventory';
+import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 
 const number = new Intl.NumberFormat('en-US');
 
@@ -35,6 +37,12 @@ export function MoveEvidenceShowcase() {
     featuredStates.push(measure);
     if (featuredStates.length === 4) break;
   }
+  const cardHrefs = new Set(MOVE_HOMEPAGE_STATE_CARDS.map((card) => card.href));
+  const additionalResearch = STATEWIDE_ROUTES.flatMap((path) => {
+    if (cardHrefs.has(path)) return [];
+    const name = localStates.find((state) => `/${state.slug}` === path)?.name;
+    return name ? [{ path, name }] : [];
+  }).sort((a, b) => a.name.localeCompare(b.name));
   return <>
     <section className="move-section border-b border-border/60 bg-[#0A2540] text-white" aria-labelledby="moat-heading"><div className="move-section-inner">
       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-orange-300">Official evidence · separate grains</p>
@@ -47,7 +55,8 @@ export function MoveEvidenceShowcase() {
           <p className="mt-1 max-w-3xl text-xs leading-relaxed text-slate-300">Chosen for published household-goods roster depth. These counts are not unique companies and are not added to the directory above. States without an acquired roster stay in the full list and are not shown as zero.</p>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">{featuredStates.map((measure) => <li key={measure.key} className="rounded-2xl border border-white/15 bg-white/5 p-4"><p className="text-2xl font-semibold tabular-nums">{number.format(measure.value ?? 0)}</p><p className="mt-1 text-sm font-medium text-slate-100">{measure.label}</p><p className="mt-1 text-xs text-slate-300">{measure.grain.replaceAll('_', ' ')}</p>{(measure.sourceAsOf || measure.snapshotAsOf) ? <p className="mt-1 text-xs text-slate-300">{measure.sourceAsOf ? 'Source as of' : 'Snapshot'} {(measure.sourceAsOf ?? measure.snapshotAsOf ?? '').slice(0, 10)}</p> : null}<p className="mt-1 text-xs text-slate-300">Does not count: {measure.trace.doesNotCount}</p><Link href={measure.destination} data-intel-event="move_intel_state_click" className="mt-3 inline-flex min-h-9 items-center text-sm font-semibold text-orange-300 no-underline hover:underline">Review the published evidence</Link></li>)}</ul>
         </div>
-        <a href="#state-intelligence" className="inline-flex min-h-10 items-center font-semibold text-orange-300 hover:underline">Explore all {MOVE_HOMEPAGE_STATE_CARDS.length} states →</a>
+        <a href="#state-intelligence" className="inline-flex min-h-10 items-center font-semibold text-orange-300 hover:underline">Explore the {MOVE_HOMEPAGE_STATE_CARDS.length} intelligence profiles →</a>
+        <Link href="/states" className="inline-flex min-h-10 items-center font-semibold text-orange-300 hover:underline">Browse all {STATEWIDE_ROUTES.length} published state research destinations →</Link>
       </div>
     </div></section>
 
@@ -61,8 +70,13 @@ export function MoveEvidenceShowcase() {
     <section id="state-intelligence" className="move-section border-y border-border/60 bg-muted/20" aria-labelledby="state-intel-heading"><div className="move-section-inner">
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">{MOVE_HOMEPAGE_STATE_CARDS.length} states with published moving intelligence</p>
       <h2 id="state-intel-heading" className="mt-2 text-3xl font-semibold tracking-tight text-[#0A2540] sm:text-4xl">State authority changes the research question.</h2>
-      <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">These cards explain research coverage, not mover quality. State permits, registrations, and certificates remain separate from FMCSA interstate operating authority.</p>
+      <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">These {MOVE_HOMEPAGE_STATE_CARDS.length} cards explain research coverage, not mover quality. State permits, registrations, and certificates remain separate from FMCSA interstate operating authority. The {STATEWIDE_ROUTES.length} count is every published state research destination. A destination outside these cards is not a populated license roster.</p>
       <ul className="mt-7 grid gap-4 lg:grid-cols-2">{MOVE_HOMEPAGE_STATE_CARDS.map((card) => <li key={card.href} className="rounded-2xl border border-border bg-card p-5"><p className="text-xs font-semibold uppercase tracking-wide text-primary">{card.regulator}</p><h3 className="mt-1 text-xl font-semibold text-[#0A2540]">{card.state}</h3><p className="mt-3 text-sm"><strong>State authority:</strong> {card.authority}</p><p className="mt-2 text-sm"><strong>Roster coverage:</strong> {card.roster}</p><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{card.evidence}</p><p className="mt-3 text-xs text-muted-foreground">{card.sourceClock}</p><Link href={card.href} data-intel-event="move_intel_state_click" className="mt-4 inline-flex min-h-10 items-center font-semibold text-primary hover:underline">Explore {card.state} intelligence →</Link></li>)}</ul>
+      <div className="mt-8">
+        <h3 className="text-lg font-semibold text-[#0A2540]">Also published</h3>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">These {additionalResearch.length} destinations are already published and sit outside the intelligence profiles. Each page states its own roster limits. A link is not a populated license roster.</p>
+        <ul className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">{additionalResearch.map((state) => <li key={state.path}><Link href={state.path} data-intel-event="move_intel_state_click" className="inline-flex min-h-10 items-center font-semibold text-primary hover:underline">Explore {state.name} research →</Link></li>)}</ul>
+      </div>
       <p className="mt-5 rounded-xl border border-border bg-white p-4 text-sm text-muted-foreground"><strong className="text-foreground">Arizona coverage:</strong> National FMCSA research remains available. Arizona does not have a comparable state household-goods licensing universe, so no Arizona specialist state page is implied.</p>
     </div></section>
 
