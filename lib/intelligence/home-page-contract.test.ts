@@ -118,3 +118,12 @@ test('homepage section order puts sources and FAQ before network, without review
   assert.ok(sourcesAt > 0 && faqAt > sourcesAt && networkAt > faqAt);
   assert.ok(home.indexOf('HomeBelowFoldReviews') === -1);
 });
+
+test('upper homepage features public state-authority rosters instead of recency', () => {
+  const showcase = read('components/intelligence/MoveEvidenceShowcase.tsx');
+  assert.match(showcase, /family === 'STATE_AUTHORITY'/);
+  assert.match(showcase, /publicationStatus === 'PUBLIC'/);
+  assert.match(showcase, /property_carrier/);
+  assert.match(showcase, /Review the published evidence/);
+  assert.doesNotMatch(showcase, /Recently added states/);
+});
