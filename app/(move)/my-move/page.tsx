@@ -118,7 +118,9 @@ export default async function MyMovePage({ searchParams }: PageProps) {
         <p className="mt-2 text-muted-foreground leading-relaxed max-w-2xl">
           {process.env.NEXT_PUBLIC_MOVE_PARENT_SAVE_ENABLED === '1' && !(process.env.NEXT_PUBLIC_MOVE_PARENT_SAVE_CANARY_SLUGS ?? '').trim()
             ? 'Your Move workspace — plans, inventories, reports, and comparisons. Your account is My TrustHub, one sign-in across every TrustHub site. Every tool here works without signing in.'
-            : 'Your independent command center — inventories, shortlists, and comparisons synced across devices. Every tool on Move Trust Hub still works without signing in.'}
+            : user
+              ? 'Your independent command center — inventories, shortlists, and comparisons. Every tool on Move Trust Hub still works without signing in.'
+              : 'Your independent command center — inventories, shortlists, and comparisons stay on this device. Every tool on Move Trust Hub still works without signing in.'}
         </p>
       </header>
       <Suspense fallback={null}>
