@@ -57,11 +57,14 @@ const MY_MOVE_RESEARCH: ResearchNextLink[] = [
   },
 ];
 
-export const metadata = buildResourceMetadata(
-  '/my-move',
-  'My Move — Move HQ Dashboard',
-  'Your Move HQ — saved inventories, mover shortlists, comparisons, and move readiness in one independent dashboard.'
-);
+export const metadata = {
+  ...buildResourceMetadata(
+    '/my-move',
+    'My Move — Move HQ Dashboard',
+    'Your Move HQ — saved inventories, mover shortlists, comparisons, and move readiness in one independent dashboard.'
+  ),
+  robots: { index: false, follow: false },
+};
 
 type PageProps = {
   searchParams: Promise<{ demo?: string }>;

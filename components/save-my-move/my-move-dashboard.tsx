@@ -44,6 +44,7 @@ import type { MyMoveDashboardPayload } from '@/lib/save-my-move/dashboard-types'
 import {
   listLocalSavedMovers,
   removeLocalSavedMover,
+  type LocalSavedMover,
 } from '@/lib/save-my-move/local-shortlist';
 import { useCompareStore } from '@/store/compare-store';
 import { trackPdfDownloaded } from '@/components/ga-events';
@@ -76,7 +77,7 @@ export function MyMoveDashboard({
   demo = false,
   passwordEnabled = false,
 }: Props) {
-  const { user, loading, openSaveModal } = useSaveMyMove();
+  const { user, loading, openSaveModal, markMoverUnsaved } = useSaveMyMove();
   const myTrustHubHref = useMyTrustHubHref('/my');
   const [data, setData] = useState(initialData);
   const [dataLoading, setDataLoading] = useState(false);
@@ -96,10 +97,20 @@ export function MyMoveDashboard({
   const compareHydrated = useCompareStore((s) => s.hasHydrated);
   const plansPrimary = planCount > 0;
 
-  // Device shortlist (guest + cloud soft-fallback) — re-read after tick
-  const localMovers = useMemo(() => {
-    void localMoversTick;
-    return listLocalSavedMovers();
+  // Hydrate after mount so SSR and the first client render agree. Refresh when
+  // returning to this workspace or when another tab changes device persistence.
+  const [localMovers, setLocalMovers] = useState<LocalSavedMover[]>([]);
+  useEffect(() => {
+    const refresh = () => setLocalMovers(listLocalSavedMovers());
+    refresh();
+    window.addEventListener('storage', refresh);
+    window.addEventListener('pageshow', refresh);
+    window.addEventListener('focus', refresh);
+    return () => {
+      window.removeEventListener('storage', refresh);
+      window.removeEventListener('pageshow', refresh);
+      window.removeEventListener('focus', refresh);
+    };
   }, [localMoversTick]);
 
   const handleSignOut = async () => {
@@ -255,11 +266,47 @@ export function MyMoveDashboard({
     );
   }
 
+  // A device Save is independent of both a move plan and an account. Both
+  // signed-out layouts must expose the same shortlist written by the profile.
+  const guestShortlist = (
+    <section aria-labelledby="guest-movers-heading" className="space-y-4">
+      <h2 id="guest-movers-heading" className="text-lg font-semibold">Saved movers on this device</h2>
+      {localMovers.length === 0 ? (
+        <MoveHqEmptyState icon={Heart} title="No saved movers"
+          description="Save a mover from its profile to keep it here without signing in."
+          ctaLabel="Browse movers" ctaHref="/companies" />
+      ) : (
+        <ul className="space-y-3">
+          {localMovers.map((mover) => (
+            <li key={mover.companySlug} className="flex items-center justify-between gap-4 rounded-xl border p-4">
+              <Link href={`/companies/${mover.companySlug}`} className="font-medium hover:underline">
+                {mover.companyName || mover.companySlug}
+              </Link>
+              <Button type="button" variant="outline" size="sm"
+                aria-label={`Remove ${mover.companyName || mover.companySlug} from this device`}
+                onClick={() => {
+                  try {
+                    removeLocalSavedMover(mover.companySlug);
+                    markMoverUnsaved(mover.companySlug);
+                    setLocalMoversTick((n) => n + 1);
+                    toast.success('Removed from this device');
+                  } catch {
+                    toast.error('Could not remove this mover. Check browser storage and try again.');
+                  }
+                }}>Remove</Button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  );
+
   // --- Signed out, one-account mode: My Move is the Move workspace; the account is My TrustHub ---
   if (!user && ONE_ACCOUNT_ENABLED) {
     return (
       <div className="space-y-6">
         <MyMoveReports compact onPlanCount={setPlanCount} />
+        {guestShortlist}
         <div
           className="flex flex-col gap-3 rounded-2xl border border-primary/20 bg-primary/5 px-4 py-4 sm:flex-row sm:items-center sm:justify-between"
           data-mth-one-account="true"
@@ -294,6 +341,7 @@ export function MyMoveDashboard({
     return (
       <div className="space-y-6">
         <MyMoveReports compact onPlanCount={setPlanCount} />
+        {guestShortlist}
         <div className="flex flex-col gap-3 rounded-2xl border border-primary/20 bg-primary/5 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium text-foreground">Sign in (optional)</p>
