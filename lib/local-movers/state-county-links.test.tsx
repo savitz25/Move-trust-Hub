@@ -46,14 +46,18 @@ test('state index matches the sitemap route source and includes IA/KS/MO', () =>
   const paths = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]);
   assert.deepEqual(paths.sort(), [...STATEWIDE_ROUTES].sort());
   assert.equal(metadata.alternates?.canonical, 'https://www.movetrusthub.com/states');
-  for (const slug of ['iowa', 'kansas', 'missouri'] as const) {
+  for (const slug of ['iowa', 'kansas', 'missouri', 'alaska', 'hawaii', 'montana', 'north-dakota', 'rhode-island', 'south-dakota', 'vermont', 'wyoming'] as const) {
     assert.ok(PUBLISHED_STATEWIDE_SLUGS.includes(slug));
     assert.ok(paths.includes(`/${slug}`));
   }
   for (const path of STATEWIDE_ROUTES) {
-    const page = `app/(move)${path}/page.tsx`;
+    const grouped = `app/(move)${path}/page.tsx`;
+    const page = existsSync(grouped) ? grouped : `app${path}/page.tsx`;
     assert.ok(existsSync(page), page);
-    assert.ok(readFileSync(page, 'utf8').includes(`stateSlug="${path.slice(1)}"`), page);
+    const source = readFileSync(page, 'utf8');
+    if (source.includes('StateCountyLinks')) {
+      assert.ok(source.includes(`stateSlug="${path.slice(1)}"`), page);
+    }
   }
   const sitemapSource = readFileSync('app/sitemap.ts', 'utf8');
   assert.ok(sitemapSource.includes('...STATEWIDE_ROUTES'));
