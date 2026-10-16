@@ -11,6 +11,7 @@ import {
   commitAuthorized,
   evidenceRows,
   identityGate,
+  maskSample,
   parseCsv,
   selectCandidates,
   summarize,
@@ -90,6 +91,16 @@ test("observations preserve tier and skip blank fields", () => {
   assert.equal(evidence[0].batch, BATCH);
   assert.equal(evidence[0].prior_existed, "false");
   assert.equal(JSON.stringify(evidence).includes("@"), false);
+});
+
+test("mask keeps only the first email domain", () => {
+  const masked = maskSample({
+    kind: "email",
+    rawValue: "one@example.com | two@example.com",
+    normalizedValue: "one@example.com | two@example.com",
+  });
+  assert.equal(masked, "email:o***@example.com");
+  assert.equal(masked.includes("two@"), false);
 });
 
 test("rollback script cannot commit and requires the exact go phrase", () => {

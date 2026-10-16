@@ -210,9 +210,11 @@ export function summarize(observations) {
 export function maskSample(observation) {
   const raw = observation.rawValue;
   if (observation.kind === "email") {
-    const at = raw.indexOf("@");
+    const first = raw.split(/[\s|;,]+/).find((part) => part.includes("@")) || "";
+    const at = first.indexOf("@");
     if (at <= 0) return "email:***";
-    return `email:${raw[0]}***@${raw.slice(at + 1)}`;
+    const domain = first.slice(at + 1).split(/[\s|;,]+/)[0];
+    return `email:${first[0]}***@${domain}`;
   }
   if (observation.kind === "phone") {
     const digits = observation.normalizedValue;
