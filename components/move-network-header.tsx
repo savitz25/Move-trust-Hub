@@ -3,14 +3,55 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useId, useRef, useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, ShieldCheck, X } from 'lucide-react';
 import { MoveBrandLockup } from '@/components/move-brand-lockup';
 import { MoveMegaMenu } from '@/components/nav/move-mega-menu';
-import { MyTrustHubAccountLink } from '@/components/my-trusthub/my-trusthub-account-link';
+import { useMyTrustHubHref } from '@/components/my-trusthub/my-trusthub-origin';
 import { MyMoveNavLink } from '@/components/save-my-move/my-move-nav-link';
 import { SwitchHubMenu } from '@/components/switch-hub-menu';
 import { MOVE_HEADER_CTA } from '@/lib/design/move-design-system';
 import { MOVE_MEGA_NAV } from '@/lib/nav/move-mega-menu-config';
+
+/**
+ * Always-on consumer account entry. My Move stays the local workspace.
+ * This control is the only header account link, including when the
+ * one-account presentation flag is already on, so the flag cannot add a
+ * second account destination.
+ */
+function MoveCanonicalAccountEntry({
+  variant,
+  onNavigate,
+}: {
+  variant: 'desktop' | 'mobile-header' | 'drawer';
+  onNavigate?: () => void;
+}) {
+  const href = useMyTrustHubHref('/my/sign-in');
+  const title = 'My TrustHub — sign in to your account';
+
+  if (variant === 'mobile-header') {
+    return (
+      <a href={href} className="th-btn-icon" aria-label="My TrustHub" title={title} data-mth-account-entry="sign-in">
+        <ShieldCheck className="h-5 w-5" aria-hidden="true" />
+      </a>
+    );
+  }
+
+  if (variant === 'drawer') {
+    return (
+      <a href={href} className="th-drawer-link" title={title} data-mth-account-entry="sign-in" onClick={onNavigate}>
+        <ShieldCheck className="mr-2 h-4 w-4" aria-hidden="true" />
+        My TrustHub
+      </a>
+    );
+  }
+
+  return (
+    <a href={href} className="th-btn-secondary !h-11 !text-sm" title={title} data-mth-account-entry="sign-in">
+      <ShieldCheck className="h-4 w-4" aria-hidden="true" />
+      My TrustHub
+    </a>
+  );
+}
 
 /**
  * VISUAL-006 Move global product header — 69 / 65 / 57.
@@ -62,13 +103,13 @@ export function MoveNetworkHeader() {
         </nav>
 
         <div className="th-header-actions">
-          <MyTrustHubAccountLink variant="desktop" />
+          <MoveCanonicalAccountEntry variant="desktop" />
           <MyMoveNavLink variant="desktop" className="th-btn-secondary !h-11 !text-sm" />
           <SwitchHubMenu currentHubId="move" />
         </div>
 
         <div className="th-header-mobile-actions">
-          <MyTrustHubAccountLink variant="mobile-header" />
+          <MoveCanonicalAccountEntry variant="mobile-header" />
           <MyMoveNavLink variant="mobile-header" />
           <button
             ref={menuRef}
@@ -119,7 +160,7 @@ export function MoveNetworkHeader() {
               >
                 {MOVE_HEADER_CTA.label}
               </Link>
-              <MyTrustHubAccountLink variant="drawer" onNavigate={() => setOpen(false)} />
+              <MoveCanonicalAccountEntry variant="drawer" onNavigate={() => setOpen(false)} />
               <Link prefetch={false} href="/my-move" className="th-drawer-link" onClick={() => setOpen(false)}>
                 My Move
               </Link>
