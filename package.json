@@ -67,6 +67,7 @@
     "check:state-county-links": "tsx scripts/check-state-county-links.mts",
     "check:my-trusthub-production": "tsx --test lib/my-trusthub/production-pair.test.ts lib/my-trusthub/composition.test.ts lib/my-trusthub/profile-save-adapter.test.ts lib/my-trusthub/postgres-transfer-store.test.ts",
     "check:save-control": "tsx --test lib/save-my-move/save-control.test.ts lib/my-trusthub/direct-save.test.ts",
+    "check:gb1-account-link": "tsx --test components/my-trusthub/my-trusthub-account-link.test.tsx lib/save-my-move/save-control.test.ts",
     "check:my-trusthub-widening": "tsx --require ./scripts/stub-server-only.cjs --test lib/my-trusthub/publication-source.test.ts",
     "test:v2-3-move": "tsx --require ./scripts/stub-server-only.cjs --test lib/my-trusthub/profile-save-adapter.test.ts lib/my-trusthub/postgres-transfer-store.test.ts lib/my-trusthub/source-pool.test.ts lib/my-trusthub/composition.test.ts lib/my-trusthub/hosted-runtime.test.ts",
     "test:v2-3-parent": "tsx scripts/test-v2-3-parent-integration.mjs",
