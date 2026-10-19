@@ -22,7 +22,7 @@ const PROFILE_CONTRACT_FILES = [
   'components/company/external-reputation-header.tsx',
   'components/reviews/attributed-reviews-panel.tsx',
   'components/verification/google-reviews-section.tsx',
-  'components/reviews/legacy-company-user-reviews.tsx',
+  'components/reviews/move-trust-hub-community-reviews.tsx',
   'app/(move)/companies/[slug]/page.tsx',
   'app/(move)/auto-transport/[slug]/page.tsx',
   // Feeds a public <meta name="description"> on auto-transport/[slug]'s
@@ -68,6 +68,25 @@ test('retired legacy labels do not appear in the V3 profile contract files', () 
 test('the retired CompanyProfileReviewSources component is gone, not merely unused', () => {
   const abs = path.join(ROOT, 'components/company/company-profile-review-sources.tsx');
   assert.ok(!fs.existsSync(abs), 'company-profile-review-sources.tsx should be deleted, not left as dead code');
+});
+
+test('MOVE-PROFILE-V3-001F (acceptance-contract item 7): LegacyCompanyUserReviews name does not resurface', () => {
+  // Builder 2's V3 acceptance contract flagged the component's own name as
+  // "a defect marker" independent of its (already-correct) rendered
+  // behavior -- renamed to MoveTrustHubCommunityReviews. The legacyId PROP
+  // is intentionally untouched: it bridges to lib/reviews/bridge.ts's real
+  // legacy_company_id column, a genuine ID-mapping concept, not naming debt.
+  const oldPath = path.join(ROOT, 'components/reviews/legacy-company-user-reviews.tsx');
+  assert.ok(!fs.existsSync(oldPath), 'the old file path should be gone, not left as dead code');
+  const newPath = path.join(ROOT, 'components/reviews/move-trust-hub-community-reviews.tsx');
+  assert.ok(fs.existsSync(newPath), 'the renamed component should exist');
+  for (const relPath of PROFILE_CONTRACT_FILES) {
+    const source = fs.readFileSync(path.join(ROOT, relPath), 'utf8');
+    assert.ok(
+      !source.includes('LegacyCompanyUserReviews'),
+      `${relPath} must not reference the retired component name LegacyCompanyUserReviews`
+    );
+  }
 });
 
 test('CompanyProfileStats no longer imports reputationScore/price display-quality gates', () => {

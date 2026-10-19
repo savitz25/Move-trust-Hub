@@ -11,13 +11,20 @@ import { buildReviewPageUrl } from '@/lib/reviews/review-url';
 import { slugFromCarrier } from '@/lib/reviews/schema';
 
 type Props = {
+  /** Bridges to lib/reviews/bridge.ts's legacy_company_id lookup -- a real, distinct ID-mapping concept, not a naming leftover. */
   legacyId: string;
   companyName: string;
   usdotNumber?: string;
   mcNumber?: string;
 };
 
-export async function LegacyCompanyUserReviews({
+/**
+ * MOVE-PROFILE-V3-001F (acceptance-contract item 7): the component's former
+ * name read as a deprecation marker even though its behavior was already
+ * correct and well-separated from external reputation snapshots. Renamed
+ * only -- no behavior changed.
+ */
+export async function MoveTrustHubCommunityReviews({
   legacyId,
   companyName,
   usdotNumber,
