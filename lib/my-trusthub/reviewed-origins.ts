@@ -1,7 +1,7 @@
 /** Reviewed origin pairs for V2-3 composition.
  * These are transport origins, not database connection targets.
  */
-export const ASK_PREVIEW = 'https://conumers-trust-hub-git-mth-v2-3-pare-3127df-savitz25-s-projects.vercel.app';
+export const ASK_PREVIEW = 'https://conumers-trust-hub-git-b4-lender-ask-710157-savitz25-s-projects.vercel.app';
 export const MOVE_PREVIEW = 'https://move-trust-hub-git-mth-v2-3-move-cur-0a05f1-savitz25-s-projects.vercel.app';
 export const ASK_PRODUCTION = 'https://www.asktrusthub.com';
 export const MOVE_PRODUCTION = 'https://www.movetrusthub.com';
