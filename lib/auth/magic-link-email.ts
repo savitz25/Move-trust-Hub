@@ -56,7 +56,7 @@ export async function sendMagicLinkEmail(params: {
       ok: false,
       code: 'resend_not_configured',
       error:
-        'Email delivery is not configured. Please try again later or contact info@movetrusthub.com.',
+        'Email delivery is not configured. Please try again later or contact hello@asktrusthub.com.',
     };
   }
 
@@ -75,7 +75,7 @@ export async function sendMagicLinkEmail(params: {
       ok: false,
       code: 'resend_failed',
       error:
-        'We could not deliver the sign-in email. Check the address and try again, or contact info@movetrusthub.com.',
+        'We could not deliver the sign-in email. Check the address and try again, or contact hello@asktrusthub.com.',
     };
   }
 

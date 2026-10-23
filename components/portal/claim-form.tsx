@@ -82,7 +82,7 @@ export function ClaimForm({ companySlug, companyName, usdotNumber, defaultEmail 
       } catch (err) {
         console.error('[portal] claim form error', err);
         setError(
-          'Something went wrong submitting your claim. Please try again, or email info@movetrusthub.com with your USDOT.'
+          'Something went wrong submitting your claim. Please try again, or email hello@asktrusthub.com with your USDOT.'
         );
       }
     });

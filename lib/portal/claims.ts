@@ -187,7 +187,7 @@ export async function submitCompanyClaim(
     return {
       success: false,
       error:
-        'Claim system is not configured yet. Email info@movetrusthub.com with your company name and USDOT to claim your profile.',
+        'Claim system is not configured yet. Email hello@asktrusthub.com with your company name and USDOT to claim your profile.',
     };
   }
 

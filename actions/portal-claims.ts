@@ -58,7 +58,7 @@ export async function submitClaimAction(input: SubmitClaimInput) {
     return {
       success: false as const,
       error:
-        'Unexpected error submitting claim. Please try again or email info@movetrusthub.com with your USDOT.',
+        'Unexpected error submitting claim. Please try again or email hello@asktrusthub.com with your USDOT.',
     };
   }
 }
