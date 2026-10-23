@@ -4,7 +4,7 @@ import { Resend } from 'resend';
 import type { FieldChange } from '@/lib/fmcsa/refresh/types';
 import type { RefreshRunResult } from '@/lib/fmcsa/refresh/types';
 
-const DEFAULT_ALERT_EMAIL = 'savitz25@gmail.com';
+const DEFAULT_ALERT_EMAIL = 'hello@asktrusthub.com';
 
 function escapeHtml(text: string): string {
   return String(text)
