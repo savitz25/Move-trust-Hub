@@ -4,8 +4,8 @@ import { Badge } from '@/components/ui/badge';
 import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import type { LocalMover } from '@/lib/local-movers/types';
 import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
+import { canonicalProfileSlugForMover } from '@/lib/local-movers/canonical-profile-slug';
 import { CompanyProfileLink } from '@/components/directory/company-profile-link';
-import { predictCompanyProfileSlug } from '@/lib/directory/slug-resolution';
 import { getLicenseDisplay } from '@/lib/trust/company-display-policy';
 import { assessLicense } from '@/lib/trust/license-verification';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
@@ -35,19 +35,15 @@ export function LocalMoverCard({
   /** When set, profile links return to this page (e.g. county directory). */
   profileReturnPath?: string;
 }) {
-  const hasDirectoryProfile =
-    Boolean(mover.profileSlug) ||
-    assessLicense(mover.usdotNumber, mover.mcNumber).isDisplayable;
-  const profileSlug =
-    mover.profileSlug ||
-    (hasDirectoryProfile
-      ? predictCompanyProfileSlug({ name: mover.name, usdot: mover.usdotNumber })
-      : '');
+  const profileSlug = canonicalProfileSlugForMover(mover);
   const profileHref = profileSlug
     ? buildCompanyProfileHref(profileSlug, profileReturnPath)
     : null;
 
-  const license = getLicenseDisplay(mover);
+  const license = getLicenseDisplay({
+    usdotNumber: mover.usdotNumber ?? '',
+    mcNumber: mover.mcNumber ?? '',
+  });
   const hqState = mover.headquartersState?.toUpperCase();
   // Never stamp the page county's state onto an out-of-state HQ city.
   const locationLine = [
