@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { resolvePublishedCompanySlugForMover } from './canonical-profile-slug';
+import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
 
 const publicCompanies = [
   { slug: 'canonical-moving-company', usdotNumber: '1234567', publicationState: 'VERIFIED' as const },
@@ -22,23 +23,21 @@ test('replaces a stored duplicate-suffix slug with the canonical USDOT identity'
 });
 
 test('resolves a redirect alias to its live canonical company before rendering the link', () => {
-  assert.equal(
-    resolvePublishedCompanySlugForMover(
-      { profileSlug: 'old-company-name-2', usdotNumber: '1234567' },
-      publicCompanies,
-    ),
-    'canonical-moving-company',
+  const slug = resolvePublishedCompanySlugForMover(
+    { profileSlug: 'old-company-name-2', usdotNumber: '1234567' },
+    publicCompanies,
   );
+  assert.equal(slug, 'canonical-moving-company');
+  assert.equal(buildCompanyProfileHref(slug ?? ''), '/companies/canonical-moving-company');
 });
 
 test('preserves a legitimate company identity whose canonical slug ends in -2', () => {
-  assert.equal(
-    resolvePublishedCompanySlugForMover(
-      { profileSlug: 'genuine-moving-company-2', usdotNumber: '7654321' },
-      [{ slug: 'genuine-moving-company-2', usdotNumber: '7654321', publicationState: 'VERIFIED' }],
-    ),
-    'genuine-moving-company-2',
+  const slug = resolvePublishedCompanySlugForMover(
+    { profileSlug: 'genuine-moving-company-2', usdotNumber: '7654321' },
+    [{ slug: 'genuine-moving-company-2', usdotNumber: '7654321', publicationState: 'VERIFIED' }],
   );
+  assert.equal(slug, 'genuine-moving-company-2');
+  assert.equal(buildCompanyProfileHref(slug ?? ''), '/companies/genuine-moving-company-2');
 });
 
 test('omits unknown, malformed, ambiguous, and nonpublic profile identities', () => {
