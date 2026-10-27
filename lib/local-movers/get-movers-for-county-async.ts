@@ -12,9 +12,20 @@ import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
 import { isProductionBuildPhase } from '@/lib/ssg/ssg-params';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 import { logger } from '@/lib/logging/logger';
+import { getCompaniesCached } from '@/lib/supabase/queries/companies';
+import { resolvePublishedCompanySlugForMover } from '@/lib/local-movers/canonical-profile-slug';
 
 const MAX_MOVERS_PER_COUNTY = 10;
 const LARGE_MARKET_MAX_MOVERS = 40;
+
+async function resolveCountyMoverProfileSlugs(movers: LocalMover[]): Promise<LocalMover[]> {
+  if (movers.length === 0) return movers;
+  const companies = await getCompaniesCached();
+  return movers.map((mover) => ({
+    ...mover,
+    profileSlug: resolvePublishedCompanySlugForMover(mover, companies) ?? undefined,
+  }));
+}
 
 export type MoverSourceMode = 'db' | 'seed' | 'hybrid' | 'degraded';
 
@@ -56,6 +67,7 @@ export async function getMoversForCountyAsync(
   if (skipApproved) {
     return {
       ...base,
+      movers: await resolveCountyMoverProfileSlugs(base.movers),
       sourceMode: 'seed',
       approvedCount: 0,
       catalogCount: base.movers.length,
@@ -98,6 +110,7 @@ export async function getMoversForCountyAsync(
         : 'seed';
     return {
       ...base,
+      movers: await resolveCountyMoverProfileSlugs(base.movers),
       sourceMode,
       approvedCount: 0,
       catalogCount: base.movers.length,
@@ -127,7 +140,9 @@ export async function getMoversForCountyAsync(
   return {
     ...base,
     isRegionalFallback: base.isRegionalFallback && directoryCount === 0,
-    movers: segmentCountyMovers(enriched, base.county).ordered,
+    movers: await resolveCountyMoverProfileSlugs(
+      segmentCountyMovers(enriched, base.county).ordered,
+    ),
     sourceMode,
     approvedCount: directoryCount,
     catalogCount: base.movers.length,
