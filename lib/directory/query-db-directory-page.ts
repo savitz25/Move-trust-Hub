@@ -24,6 +24,10 @@ import { SEARCH_ALL_CANDIDATE_LIMIT } from '@/lib/search/types';
 import { logger } from '@/lib/logging/logger';
 import { getSupabaseAnonKey, getSupabaseUrl, isSupabaseConfigured } from '@/lib/supabase/config';
 import {
+  isPlainReputationListing,
+  PLAIN_REPUTATION_LISTING_SQL,
+} from '@/lib/directory/listing-rank';
+import {
   companyListProjectionCandidates,
   mapCompanyRow,
 } from '@/lib/supabase/queries/companies';
@@ -365,6 +369,20 @@ async function queryViaPg(options: {
     });
     await client.connect();
     try {
+      if (isPlainReputationListing({ filters, excludeLocal, usdot, mc })) {
+        const narrow = await client.query<{ company_id: string; total_count: number | string }>(
+          PLAIN_REPUTATION_LISTING_SQL,
+          [offset, limit]
+        );
+        const rows = narrow.rows;
+        const total = rows.length ? Number(rows[0]!.total_count) : 0;
+        return {
+          total,
+          ids: rows.map((row) => row.company_id).filter(Boolean),
+          path: 'pg',
+        };
+      }
+
       const result = await client.query<RpcRow>(
         `SELECT total_count, company_id, row_offset
            FROM public.directory_query_page(
@@ -420,6 +438,14 @@ async function queryViaRpc(options: {
   // Prefer direct SQL when available (scripts / local / Preview with DATABASE_URL).
   const viaPg = await queryViaPg(options);
   if (viaPg) return viaPg;
+
+  // Default browse does not need directory_query_page. That function selects
+  // every companies column, including google_data and public_scrape_data,
+  // before sorting by reputation. The narrow id query preserves the page.
+  if (isPlainReputationListing(options)) {
+    const narrow = await queryViaPostgrest(options);
+    if (narrow) return narrow;
+  }
 
   const supabase = createAnonClient();
   if (!supabase) return null;
@@ -491,7 +517,8 @@ async function queryViaPostgrest(options: {
     );
 
   if (excludeLocal) {
-    query = query.or('service_scope.is.null,service_scope.eq.interstate');
+    // Match `service_scope IS DISTINCT FROM 'intrastate'`, including null and other scopes.
+    query = query.or('service_scope.is.null,service_scope.neq.intrastate');
   }
 
   if (usdot) {
@@ -543,7 +570,9 @@ async function queryViaPostgrest(options: {
       query = query.order('fmcsa_complaints', { ascending: true }).order('id', { ascending: true });
       break;
     default:
-      query = query.order('reputation_score', { ascending: false }).order('id', { ascending: true });
+      query = query
+        .order('reputation_score', { ascending: false, nullsFirst: false })
+        .order('id', { ascending: true });
   }
 
   const isTextSearch = Boolean(filters.search?.trim()) && !usdot && !mc;

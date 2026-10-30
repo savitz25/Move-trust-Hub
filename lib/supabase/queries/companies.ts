@@ -504,7 +504,9 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
     return [...seedCompanies];
   }
 
-  const projections = companyListProjectionCandidates();
+  // The paged reputation sort is the public listing. Legacy JSON blobs are not
+  // displayed there; verification_sources still supplies Google and BBB snapshots.
+  const projections = companyListProjectionCandidates(false);
 
   let data: unknown[] | null = null;
   let error: { code?: string; message?: string } | null = null;
