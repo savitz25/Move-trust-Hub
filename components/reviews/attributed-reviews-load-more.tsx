@@ -11,12 +11,17 @@ import { StarRating } from '@/components/ui/star-rating';
 import { getAllReviewsForCompany } from '@/lib/data';
 import { isAttributableReview } from '@/lib/trust/verified-reviews';
 import { buildGoogleAttributionSearchUrl } from '@/lib/trust/review-display-policy';
+import {
+  isVerifiedGoogleEvidence,
+  type RatingProvenance,
+} from '@/lib/verification/rating-provenance';
 
 type Props = {
   companyId: string;
   companyName: string;
   initialCount: number;
   total: number;
+  provenance?: RatingProvenance | null;
 };
 
 /** Client island — only hydrates when the user loads additional external references. */
@@ -25,6 +30,7 @@ export function AttributedReviewsLoadMore({
   companyName,
   initialCount,
   total,
+  provenance,
 }: Props) {
   const [expanded, setExpanded] = useState(false);
   const [extraReviews, setExtraReviews] = useState<Review[]>([]);
@@ -34,7 +40,11 @@ export function AttributedReviewsLoadMore({
   const loadAll = async () => {
     setLoading(true);
     const all = await getAllReviewsForCompany(companyId);
-    const attributable = all.filter(isAttributableReview);
+    const attributable = all.filter((review) => {
+      if (!isAttributableReview(review)) return false;
+      if (provenance == null) return true;
+      return review.source === 'Google' && isVerifiedGoogleEvidence(provenance);
+    });
     setExtraReviews(attributable.slice(initialCount));
     setExpanded(true);
     setLoading(false);

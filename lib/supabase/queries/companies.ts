@@ -34,7 +34,11 @@ import { isMissingEnrichmentColumnError } from '@/lib/suggestions/jsonb-payload'
 import { finalizeCompanyEnrichmentForDisplay } from '@/lib/verification/company-display-enrichment';
 import {
   applyRatingProvenance,
+  hasSharedLocationEvidence,
   isRejectedGoogleListing,
+  PLACE_HOLDER_READ_LIMIT,
+  type HolderEnumeration,
+  type PlaceHolder,
 } from '@/lib/verification/rating-provenance';
 import { isSeoIndexableCompany } from '@/lib/provider/publication';
 import type { PublicationState } from '@/lib/provider/types';
@@ -223,7 +227,13 @@ function noteProjectionOutcome(columns: string, error: { message?: string; code?
 }
 
 /** Map a public.companies row → Company display model. Shared by list + DB directory engine. */
-export function mapCompanyRow(row: Record<string, unknown>): Company {
+export function mapCompanyRow(
+  row: Record<string, unknown>,
+  options?: {
+    samePlaceHolders?: PlaceHolder[];
+    holderEnumeration?: HolderEnumeration;
+  }
+): Company {
   const baseServices = (row.services as Company['services']) || [];
   const rawMatchesCanonical = fmcsaRawBelongsToCanonicalUsdot(
     row.fmcsa_raw,
@@ -398,10 +408,22 @@ export function mapCompanyRow(row: Record<string, unknown>): Company {
     googleData,
     publicScrapeData,
   });
-  return applyRatingProvenance(finalizeCompanyEnrichmentForDisplay(mapped), {
+  const withHolders =
+    options?.samePlaceHolders && options.holderEnumeration
+      ? {
+          ...mapped,
+          placeAssociationContext: {
+            holders: options.samePlaceHolders,
+            enumeration: options.holderEnumeration,
+          },
+        }
+      : mapped;
+  return applyRatingProvenance(finalizeCompanyEnrichmentForDisplay(withHolders), {
     storedRating: dbRating,
     storedReviewCount: dbReviews,
     realBusiness: true,
+    samePlaceHolders: options?.samePlaceHolders,
+    holderEnumeration: options?.holderEnumeration,
   });
 }
 
@@ -630,6 +652,93 @@ export const getIndexableCompanySitemapEntries = unstable_cache(
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 
+function holderFromProfileRow(row: Record<string, unknown>, placeId: string): PlaceHolder | null {
+  const id = typeof row.id === 'string' ? row.id : '';
+  if (!id) return null;
+  const google = resolveGoogleDataFromRow(row);
+  return {
+    companyId: id,
+    companyName: typeof row.name === 'string' ? row.name : '',
+    legalName: typeof row.fmcsa_legal_name === 'string' ? row.fmcsa_legal_name : null,
+    usdotNumber: typeof row.usdot_number === 'string' ? row.usdot_number : null,
+    website: typeof row.website === 'string' ? row.website : null,
+    headquarters: typeof row.headquarters === 'string' ? row.headquarters : null,
+    placeId,
+    placeName: google?.name ?? null,
+    formattedAddress: google?.formatted_address ?? null,
+    sharedLocationEvidence: hasSharedLocationEvidence(google)
+      ? google?.shared_location_evidence ?? null
+      : null,
+  };
+}
+
+/**
+ * One profile read of rows that already store this place id.
+ * A failed, ambiguous, or capped read is not treated as an empty claim.
+ * This does not reserve the place id.
+ */
+async function loadProfilePlaceAssociation(
+  supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,
+  row: Record<string, unknown>
+): Promise<{ holders?: PlaceHolder[]; enumeration?: HolderEnumeration }> {
+  const google = resolveGoogleDataFromRow(row);
+  const placeId = google?.place_id?.trim() || '';
+  if (!placeId) return {};
+  const columns =
+    'id, name, usdot_number, fmcsa_legal_name, headquarters, website, google_data, verification_sources';
+  try {
+    const [fromSources, fromColumn] = await Promise.all([
+      supabase
+        .from('companies')
+        .select(columns)
+        .filter('verification_sources->google->>place_id', 'eq', placeId)
+        .limit(PLACE_HOLDER_READ_LIMIT),
+      supabase
+        .from('companies')
+        .select(columns)
+        .filter('google_data->>place_id', 'eq', placeId)
+        .limit(PLACE_HOLDER_READ_LIMIT),
+    ]);
+    if (fromSources.error || fromColumn.error) {
+      return { holders: [], enumeration: 'failed' };
+    }
+    if (!Array.isArray(fromSources.data) || !Array.isArray(fromColumn.data)) {
+      return { holders: [], enumeration: 'ambiguous' };
+    }
+    const capped =
+      fromSources.data.length >= PLACE_HOLDER_READ_LIMIT ||
+      fromColumn.data.length >= PLACE_HOLDER_READ_LIMIT;
+    const seen = new Set<string>();
+    const holders: PlaceHolder[] = [];
+    const rows = [...fromSources.data, ...fromColumn.data] as unknown as Record<string, unknown>[];
+    for (const raw of rows) {
+      const holder = holderFromProfileRow(raw, placeId);
+      if (!holder || seen.has(holder.companyId)) continue;
+      seen.add(holder.companyId);
+      holders.push(holder);
+    }
+    const selfId = typeof row.id === 'string' ? row.id : '';
+    if (selfId && !seen.has(selfId)) {
+      const self = holderFromProfileRow(row, placeId);
+      if (self) holders.push(self);
+    }
+    return { holders, enumeration: capped ? 'incomplete' : 'complete' };
+  } catch {
+    return { holders: [], enumeration: 'failed' };
+  }
+}
+
+async function mapProfileCompanyRow(
+  supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,
+  row: Record<string, unknown>
+): Promise<Company> {
+  const association = await loadProfilePlaceAssociation(supabase, row);
+  return mapCompanyRow(row, {
+    samePlaceHolders: association.holders,
+    holderEnumeration: association.enumeration,
+  });
+}
+
 /**
  * Direct DB lookup for a company profile — bypasses directory list cache.
  * Resolves by canonical slug, id alias, or USDOT (raw digits / dot-{n}).
@@ -687,7 +796,7 @@ async function resolveCompanyBySlugOrUsdotInner(
   }
 
   if (!slugError && bySlugOrId) {
-    const mapped = mapCompanyRow(bySlugOrId as Record<string, unknown>);
+    const mapped = await mapProfileCompanyRow(supabase, bySlugOrId as Record<string, unknown>);
     // Phase 2: collision suffixes (-2) → prefer canonical USDOT peer without numeric suffix
     return (await preferCanonicalUsdotPeer(supabase, mapped, projections)) ?? mapped;
   }
@@ -695,7 +804,7 @@ async function resolveCompanyBySlugOrUsdotInner(
   if (slugError && isCompaniesTableUnavailableError(slugError.message, slugError.code)) {
     const viaRpc = await getDirectoryCompanyViaRpc(supabase, input);
     if (viaRpc) {
-      return mapCompanyRow(viaRpc);
+      return mapProfileCompanyRow(supabase, viaRpc);
     }
   }
 
@@ -721,21 +830,21 @@ async function resolveCompanyBySlugOrUsdotInner(
     const byUsdot = await selectOne((cols) =>
       supabase.from('companies').select(cols).eq('usdot_number', usdot).maybeSingle()
     );
-    if (byUsdot) return mapCompanyRow(byUsdot);
+    if (byUsdot) return mapProfileCompanyRow(supabase, byUsdot);
   }
 
   const nameFromSlug = input.includes('-') ? input.replace(/-/g, ' ') : input;
   const byName = await selectOne((cols) =>
     supabase.from('companies').select(cols).ilike('name', nameFromSlug).limit(1).maybeSingle()
   );
-  if (byName) return mapCompanyRow(byName);
+  if (byName) return mapProfileCompanyRow(supabase, byName);
 
   const predictedSlug = buildCompanySlugBase({ name: nameFromSlug, usdot: null });
   if (predictedSlug && predictedSlug !== input) {
     const byPredicted = await selectOne((cols) =>
       supabase.from('companies').select(cols).eq('slug', predictedSlug).maybeSingle()
     );
-    if (byPredicted) return mapCompanyRow(byPredicted);
+    if (byPredicted) return mapProfileCompanyRow(supabase, byPredicted);
   }
 
   const collapsedSlug = slugifyCompanyName(nameFromSlug);
@@ -743,12 +852,12 @@ async function resolveCompanyBySlugOrUsdotInner(
     const byCollapsed = await selectOne((cols) =>
       supabase.from('companies').select(cols).eq('slug', collapsedSlug).maybeSingle()
     );
-    if (byCollapsed) return mapCompanyRow(byCollapsed);
+    if (byCollapsed) return mapProfileCompanyRow(supabase, byCollapsed);
   }
 
   const viaRpc = await getDirectoryCompanyViaRpc(supabase, input);
   if (viaRpc) {
-    return mapCompanyRow(viaRpc);
+    return mapProfileCompanyRow(supabase, viaRpc);
   }
 
   return undefined;
@@ -776,7 +885,9 @@ async function preferCanonicalUsdotPeer(
     if (error && isSchemaColumnError(error)) continue;
     if (error || !data?.length) return undefined;
 
-    const peers = (data as Record<string, unknown>[]).map((row) => mapCompanyRow(row));
+    const peers = await Promise.all(
+      (data as Record<string, unknown>[]).map((row) => mapProfileCompanyRow(supabase, row))
+    );
     const preferred =
       peers.find((p) => p.slug && !/-\d+$/.test(p.slug)) ??
       peers.sort((a, b) => a.slug.length - b.slug.length)[0];

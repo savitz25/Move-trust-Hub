@@ -531,7 +531,7 @@ export default async function CompanyProfilePage({ params }: Props) {
           </Card>
 
           {/* C. External Reputation Snapshots — one coherent, clearly-labeled section */}
-          <ExternalReputationHeader googleData={googlePlaces} reviews={reviews} />
+          <ExternalReputationHeader googleData={googlePlaces} reviews={reviews} provenance={displayCompany.ratingProvenance} />
 
           {displayCompany.ratingProvenance?.withheldReason ? (
             <p className="text-sm text-muted-foreground mb-4">
@@ -550,6 +550,7 @@ export default async function CompanyProfilePage({ params }: Props) {
             companyId={company.id}
             companyName={company.name}
             initialReviews={reviews}
+            provenance={displayCompany.ratingProvenance}
           />
 
           {/* D. Move Trust Hub Community Reviews — completely separate from external snapshots above */}
