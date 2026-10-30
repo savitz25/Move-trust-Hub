@@ -21,6 +21,7 @@ import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { getLicenseDisplay, LICENSE_PENDING_MESSAGE } from '@/lib/trust/company-display-policy';
 import { SaveComparisonButton } from '@/components/save-my-move/save-comparison-button';
 import { resolveYearsInBusiness } from '@/lib/directory/normalize-company';
+import { displayedRatingValue } from '@/lib/verification/rating-provenance';
 import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
 
 interface Props {
@@ -224,20 +225,29 @@ export function CompareClient({ allCompanies }: Props) {
     {
       label: 'Customer Rating',
       get: (c) => {
-        const g = c.googleData;
-        const googleOk =
-          g?.status === 'ok' && g.rating != null && g.rating > 0;
-        const rating = googleOk
-          ? Number(g!.rating)
-          : Number(c.overallRating) > 0
-            ? Number(c.overallRating)
-            : 0;
-        if (rating <= 0) return '—';
+        if (c.ratingProvenance?.withheldReason) {
+          return (
+            <span className="text-xs text-muted-foreground">
+              Rating withheld · {c.ratingProvenance.withheldReason}
+            </span>
+          );
+        }
+        const stars = displayedRatingValue(c);
+        if (stars == null) return '—';
+        const verifiedGoogle =
+          c.ratingProvenance?.source === 'google_places_api' &&
+          c.ratingProvenance.applicable === true;
         return (
           <span className="inline-flex flex-col gap-0.5">
-            <StarRating rating={rating} />
-            {googleOk ? (
-              <span className="text-[10px] text-muted-foreground">Google Places</span>
+            <StarRating rating={stars} />
+            {verifiedGoogle ? (
+              <span className="text-[10px] text-muted-foreground">
+                {c.ratingProvenance?.sourceLabel} · {c.ratingProvenance?.scopeLabel}
+              </span>
+            ) : c.ratingProvenance ? (
+              <span className="text-[10px] text-muted-foreground">
+                {c.ratingProvenance.sourceLabel} · {c.ratingProvenance.scopeLabel}
+              </span>
             ) : null}
           </span>
         );

@@ -6,7 +6,7 @@ import {
 } from '@/lib/verification/display-enrichment';
 import {
   applyRatingProvenance,
-  googleIdentityScore,
+  nameIdentityScore,
   hasSharedLocationEvidence,
 } from '@/lib/verification/rating-provenance';
 import { GOOGLE_PLACES_MIN_ACCEPT_SCORE } from '@/lib/verification/google-places-name-queries';
@@ -72,12 +72,22 @@ export function mergeEnrichmentOntoProfile(base: Company, enrichment: Company): 
     if (!candidate?.name?.trim()) return false;
     return (
       hasSharedLocationEvidence(candidate) ||
-      googleIdentityScore(candidate, provider) >= GOOGLE_PLACES_MIN_ACCEPT_SCORE
+      nameIdentityScore(candidate.name, candidate.formatted_address, provider) >=
+        GOOGLE_PLACES_MIN_ACCEPT_SCORE
     );
   };
+  const namelessLegacy = (candidate: GooglePlacesData | null) =>
+    Boolean(
+      candidate &&
+        !candidate.name?.trim() &&
+        (candidate.rating ?? 0) > 0 &&
+        (candidate.review_count ?? 0) > 0
+    );
   const google =
     (applicableGoogle(enrichG) ? enrichG : null) ??
     (applicableGoogle(baseG) ? baseG : null) ??
+    (namelessLegacy(enrichG) ? enrichG : null) ??
+    (namelessLegacy(baseG) ? baseG : null) ??
     (!applicableGoogle(enrichG) && enrichG?.name?.trim() ? enrichG : null) ??
     (!applicableGoogle(baseG) && baseG?.name?.trim() ? baseG : null);
 

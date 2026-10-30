@@ -29,13 +29,20 @@ export type GooglePlacesData = {
   last_fetched: string;
   status: SourceFetchStatus;
   /**
-   * Location is the normal Places listing. shared_location is kept only with
-   * shared_location_evidence. Absent on legacy snapshots.
+   * Location is the normal Places listing. shared_location is honored only
+   * when shared_location_evidence has an allowlisted relationship and a
+   * source system plus record id. A premise note and a date are not enough.
+   * Absent on legacy snapshots.
    */
   association_scope?: 'location' | 'shared_location';
   shared_location_evidence?: {
-    observed_at: string;
-    premise: string;
+    observed_at?: string;
+    premise?: string;
+    relationship?: string;
+    source?: {
+      system?: string;
+      record_id?: string;
+    } | null;
   } | null;
   error?: string;
   /** Trimmed API payload for audit — not shown raw to users */

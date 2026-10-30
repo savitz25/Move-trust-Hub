@@ -45,10 +45,15 @@ export type PlaceHolder = {
   legalName?: string | null;
   usdotNumber?: string | null;
   website?: string | null;
+  phone?: string | null;
   placeId: string;
   placeName?: string | null;
   formattedAddress?: string | null;
-  sharedLocationEvidence?: boolean;
+  /**
+   * Raw evidence copied from the holder row. A boolean or a prose note is
+   * not evidence; only an auditable relationship and source qualify.
+   */
+  sharedLocationEvidence?: unknown;
 };
 
 export type PlaceAttachmentDecision = {
@@ -67,17 +72,58 @@ export type RatingReview = {
 };
 
 const CONFLICT_REASON = 'Google listing does not match this business identity';
+const USDOT_CONFLICT_REASON =
+  'Unresolved identity conflict between distinct USDOT records; listing was not attached';
+const LOOKUP_FAILED_REASON = 'Place association lookup failed; listing was not attached';
+
+/** Relationship classes that may bypass a place conflict. Free text is not a class. */
+export const SHARED_LOCATION_RELATIONSHIPS = [
+  'same_premise',
+  'co_located_office',
+  'shared_terminal',
+] as const;
+
+export type SharedLocationRelationship = (typeof SHARED_LOCATION_RELATIONSHIPS)[number];
+
+const SOURCE_SYSTEM = /^[a-z][a-z0-9_]{1,40}$/;
+const SOURCE_RECORD_ID = /^[A-Za-z0-9][A-Za-z0-9._:-]{0,80}$/;
+
+/**
+ * A premise sentence and a date do not identify who established the
+ * relationship or where that record can be audited.
+ */
+export function isAuditableSharedLocationEvidence(
+  evidence: unknown,
+  scope?: string | null
+): boolean {
+  if (scope != null && scope !== 'shared_location') return false;
+  if (!evidence || typeof evidence !== 'object') return false;
+  const row = evidence as {
+    observed_at?: unknown;
+    premise?: unknown;
+    relationship?: unknown;
+    source?: { system?: unknown; record_id?: unknown } | null;
+  };
+  const relationship = typeof row.relationship === 'string' ? row.relationship : '';
+  const system = typeof row.source?.system === 'string' ? row.source.system : '';
+  const recordId = typeof row.source?.record_id === 'string' ? row.source.record_id.trim() : '';
+  return (
+    (SHARED_LOCATION_RELATIONSHIPS as readonly string[]).includes(relationship) &&
+    SOURCE_SYSTEM.test(system) &&
+    SOURCE_RECORD_ID.test(recordId) &&
+    typeof row.premise === 'string' &&
+    row.premise.trim().length > 0 &&
+    typeof row.observed_at === 'string' &&
+    Number.isFinite(Date.parse(row.observed_at))
+  );
+}
 
 export function hasSharedLocationEvidence(
   data: GooglePlacesData | null | undefined
 ): boolean {
-  const evidence = data?.shared_location_evidence;
-  return (
-    data?.association_scope === 'shared_location' &&
-    typeof evidence?.premise === 'string' &&
-    evidence.premise.trim().length > 0 &&
-    typeof evidence.observed_at === 'string' &&
-    Number.isFinite(Date.parse(evidence.observed_at))
+  return isAuditableSharedLocationEvidence(
+    data?.shared_location_evidence,
+    data?.association_scope
   );
 }
 
@@ -111,14 +157,42 @@ export function googleIdentityScore(
   return best;
 }
 
-/** A named listing that fails identity and has no shared-location evidence. */
+/**
+ * Name and location agreement only. Website and phone are excluded because
+ * a copied listing contact must not make two businesses the same identity.
+ */
+export function nameIdentityScore(
+  placeName: string | null | undefined,
+  formattedAddress: string | null | undefined,
+  provider: ProviderIdentity
+): number {
+  return googleIdentityScore(
+    {
+      name: placeName ?? null,
+      formatted_address: formattedAddress ?? null,
+      phone: null,
+      website_url: null,
+    },
+    { ...provider, phone: null, website: null }
+  );
+}
+
+function usdotKey(value: string | null | undefined): string {
+  const digits = (value ?? '').replace(/\D/g, '');
+  return digits.length >= 5 ? digits : '';
+}
+
+/** A named listing that fails name identity and has no auditable shared-location evidence. */
 export function isRejectedGoogleListing(
   google: GooglePlacesData | null | undefined,
   provider: ProviderIdentity
 ): boolean {
   if (!google?.name?.trim()) return false;
   if (hasSharedLocationEvidence(google)) return false;
-  return googleIdentityScore(google, provider) < GOOGLE_PLACES_MIN_ACCEPT_SCORE;
+  return (
+    nameIdentityScore(google.name, google.formatted_address, provider) <
+    GOOGLE_PLACES_MIN_ACCEPT_SCORE
+  );
 }
 
 function googleHasDisplayNumbers(google: GooglePlacesData): boolean {
@@ -135,20 +209,19 @@ function googleHasDisplayNumbers(google: GooglePlacesData): boolean {
 }
 
 function sameBusiness(left: ProviderIdentity, right: ProviderIdentity): boolean {
-  const leftDot = (left.usdotNumber ?? '').replace(/\D/g, '');
-  const rightDot = (right.usdotNumber ?? '').replace(/\D/g, '');
-  if (leftDot.length >= 5 && leftDot === rightDot) return true;
+  const leftDot = usdotKey(left.usdotNumber);
+  const rightDot = usdotKey(right.usdotNumber);
+  if (leftDot && rightDot && leftDot === rightDot) return true;
+  // Distinct USDOT values are an unresolved conflict. Name, website, or
+  // phone similarity must not close it.
+  if (leftDot && rightDot && leftDot !== rightDot) return false;
   return (
-    googleIdentityScore(
-      {
-        name: right.name,
-        formatted_address: right.headquarters ?? null,
-        phone: right.phone ?? null,
-        website_url: right.website ?? null,
-      },
-      left
-    ) >= GOOGLE_PLACES_MIN_ACCEPT_SCORE
+    nameIdentityScore(right.name, right.headquarters, left) >= GOOGLE_PLACES_MIN_ACCEPT_SCORE
   );
+}
+
+function holderSharesLocation(holder: PlaceHolder): boolean {
+  return isAuditableSharedLocationEvidence(holder.sharedLocationEvidence, 'shared_location');
 }
 
 function locationLabel(google: GooglePlacesData): string {
@@ -208,7 +281,7 @@ export function selectRatingProvenance(input: {
     const full = hasGoogleReputationSnapshot(google);
     const scope = shared ? 'shared_location' : named ? 'location' : 'unverified';
     const scopeLabel = shared
-      ? `Shared location · ${google.shared_location_evidence?.premise?.trim()}`
+      ? `Shared location · ${google.shared_location_evidence?.relationship} · ${google.shared_location_evidence?.premise?.trim()}`
       : named
         ? locationLabel(google)
         : 'Listing identity is not on this snapshot';
@@ -292,6 +365,19 @@ export function applyRatingProvenance(
     seedReviewCount: input?.seedReviewCount,
     realBusiness: input?.realBusiness,
   });
+  if (company.ratingProvenance?.withheldReason && !selected.provenance.applicable) {
+    return {
+      ...company,
+      overallRating: 0,
+      reviewCount: 0,
+      googleData: null,
+      ratingProvenance: {
+        ...company.ratingProvenance,
+        rating: null,
+        reviewCount: null,
+      },
+    };
+  }
   return {
     ...company,
     overallRating: selected.provenance.rating ?? 0,
@@ -302,14 +388,34 @@ export function applyRatingProvenance(
 }
 
 /**
+ * Number to pass to a star widget. A withheld rating and a missing rating
+ * are both absent, so neither becomes a zero-star display.
+ */
+export function displayedRatingValue(company: {
+  overallRating?: number | null;
+  ratingProvenance?: RatingProvenance | null;
+}): number | null {
+  if (company.ratingProvenance?.withheldReason) return null;
+  const value = Number(company.overallRating) || 0;
+  return value > 0 ? value : null;
+}
+
+/**
  * Decide whether an enrichment write may store this Google listing.
  * Ambiguous and conflicting listings are review records. Existing holders
  * are never deleted, including evidenced shared-location rows.
+ *
+ * A failed holder lookup is not an empty claim set. Two writers can still
+ * both observe a successful empty read and both attach before either row
+ * commits; this function has no lock or unique place constraint, so that
+ * race remains open. The holder read is also capped at 25 rows.
  */
 export function decidePlaceAttachment(input: {
   target: ProviderIdentity;
   incoming: GooglePlacesData;
   holders?: PlaceHolder[];
+  /** `failed` must not be treated as proof that no other company holds the place. */
+  holderLookup?: 'succeeded' | 'failed';
 }): PlaceAttachmentDecision & { review: RatingReview | null } {
   const holders = input.holders ?? [];
   const placeId = input.incoming.place_id?.trim() || null;
@@ -323,18 +429,41 @@ export function decidePlaceAttachment(input: {
     };
   }
 
+  if (input.holderLookup === 'failed') {
+    return {
+      action: 'review',
+      scope: null,
+      reason: LOOKUP_FAILED_REASON,
+      deleteHolderIds: [],
+      review: {
+        providerId: input.target.id,
+        placeId,
+        reason: LOOKUP_FAILED_REASON,
+        holderIds: [],
+      },
+    };
+  }
+
   const shared = hasSharedLocationEvidence(input.incoming);
   const identityOk =
-    googleIdentityScore(input.incoming, input.target) >= GOOGLE_PLACES_MIN_ACCEPT_SCORE;
+    nameIdentityScore(input.incoming.name, input.incoming.formatted_address, input.target) >=
+    GOOGLE_PLACES_MIN_ACCEPT_SCORE;
   const foreignHolders = holders.filter((holder) => holder.companyId !== input.target.id && holder.placeId === placeId);
+  const unresolvedUsdotHolders = foreignHolders.filter((holder) => {
+    if (holderSharesLocation(holder)) return false;
+    const leftDot = usdotKey(input.target.usdotNumber);
+    const rightDot = usdotKey(holder.usdotNumber);
+    return Boolean(leftDot && rightDot && leftDot !== rightDot);
+  });
   const conflictingHolders = foreignHolders.filter((holder) => {
-    if (holder.sharedLocationEvidence) return false;
+    if (holderSharesLocation(holder)) return false;
     return !sameBusiness(input.target, {
       id: holder.companyId,
       name: holder.companyName,
       legalName: holder.legalName,
       usdotNumber: holder.usdotNumber,
       website: holder.website,
+      phone: holder.phone,
       headquarters: holder.formattedAddress,
     });
   });
@@ -349,10 +478,17 @@ export function decidePlaceAttachment(input: {
     };
   }
 
-  if (!identityOk || conflictingHolders.length > 0) {
-    const reason = !identityOk
-      ? CONFLICT_REASON
-      : 'Google listing is already associated with a different business';
+  if (!identityOk || conflictingHolders.length > 0 || unresolvedUsdotHolders.length > 0) {
+    const reason = unresolvedUsdotHolders.length > 0
+      ? USDOT_CONFLICT_REASON
+      : !identityOk
+        ? CONFLICT_REASON
+        : 'Google listing is already associated with a different business';
+    const holderIds = [
+      ...new Set(
+        [...conflictingHolders, ...unresolvedUsdotHolders].map((holder) => holder.companyId)
+      ),
+    ];
     return {
       action: 'review',
       scope: null,
@@ -362,7 +498,7 @@ export function decidePlaceAttachment(input: {
         providerId: input.target.id,
         placeId,
         reason,
-        holderIds: conflictingHolders.map((holder) => holder.companyId),
+        holderIds,
       },
     };
   }

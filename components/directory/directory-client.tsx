@@ -45,6 +45,7 @@ import {
   shouldShowReputationScore,
 } from '@/lib/data-quality/metrics';
 import { getAutoTransportEvidence } from '@/lib/directory/auto-transport-evidence';
+import { displayedRatingValue } from '@/lib/verification/rating-provenance';
 import { parseDirectoryResearchQuery, queryPlanServices } from '@/lib/directory/parse-directory-research-query';
 import { stateCodeToName } from '@/lib/directory/coverage-filter';
 
@@ -772,8 +773,7 @@ export function DirectoryClient({
                     reviewCount: Number(c.reviewCount) || 0,
                     overallRating: Number(c.overallRating) || 0,
                   });
-                  const showRating =
-                    (Number(c.overallRating) || 0) > 0 && (Number(c.reviewCount) || 0) > 0;
+                  const showRating = displayedRatingValue(c) != null && (Number(c.reviewCount) || 0) > 0;
                   const selected = compareStore.isSelected(c.slug);
                   return (
                     <tr key={c.id || c.slug} className="hover:bg-muted/40 border-b last:border-0">
@@ -816,7 +816,7 @@ export function DirectoryClient({
                           </span>
                         ) : showRating ? (
                           <div>
-                            <StarRating rating={Number(c.overallRating) || 0} size="sm" showNumber />
+                            <StarRating rating={displayedRatingValue(c) ?? 0} size="sm" showNumber />
                             {c.ratingProvenance ? (
                               <div className="text-[11px] text-muted-foreground mt-1">
                                 {c.ratingProvenance.sourceLabel} · {c.ratingProvenance.scopeLabel}

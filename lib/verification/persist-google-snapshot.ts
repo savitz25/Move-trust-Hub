@@ -28,7 +28,10 @@ export async function loadOtherPlaceHolders(
 ): Promise<{ holders: PlaceHolder[]; error: string | null }> {
   const columns =
     'id, name, usdot_number, fmcsa_legal_name, website, google_data, verification_sources';
-  const [fromSources, fromColumn] = await Promise.all([
+  let fromSources: { data: unknown[] | null; error: { message?: string } | null };
+  let fromColumn: { data: unknown[] | null; error: { message?: string } | null };
+  try {
+    [fromSources, fromColumn] = await Promise.all([
     admin
       .from('companies')
       .select(columns)
@@ -41,7 +44,13 @@ export async function loadOtherPlaceHolders(
       .neq('id', exceptCompanyId)
       .filter('google_data->>place_id', 'eq', placeId)
       .limit(25),
-  ]);
+    ]);
+  } catch (error) {
+    return {
+      holders: [],
+      error: error instanceof Error ? error.message : 'lookup failed',
+    };
+  }
   if (fromSources.error || fromColumn.error) {
     return {
       holders: [],
@@ -68,7 +77,10 @@ export async function loadOtherPlaceHolders(
       placeId,
       placeName: google?.name ?? null,
       formattedAddress: google?.formatted_address ?? null,
-      sharedLocationEvidence: hasSharedLocationEvidence(google),
+      phone: typeof row.phone === 'string' ? row.phone : null,
+      sharedLocationEvidence: hasSharedLocationEvidence(google)
+        ? google?.shared_location_evidence ?? null
+        : null,
     });
   }
   return { holders, error: null };

@@ -2,10 +2,17 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { describe, it } from 'node:test';
 import { mergeDirectoryCompanies, mergeEnrichmentOntoProfile } from '@/lib/directory/merge-directory';
+import { buildCompanyDirectorySchemaGraph } from '@/lib/seo/build-company-directory-schema';
 import { mapCompanyRow } from '@/lib/supabase/queries/companies';
+import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
 import { buildVerificationBackfillUpdate } from '@/lib/verification/backfill-helpers';
+import { scoreGooglePlaceMatch } from '@/lib/verification/google-places-name-queries';
+import { persistGoogleSnapshot } from '@/lib/verification/persist-google-snapshot';
 import {
+  applyRatingProvenance,
   decidePlaceAttachment,
+  displayedRatingValue,
+  nameIdentityScore,
   selectRatingProvenance,
   type PlaceHolder,
 } from '@/lib/verification/rating-provenance';
@@ -245,7 +252,7 @@ describe('rating provenance fixtures', () => {
     assert.equal(decision.action, 'review');
     assert.deepEqual(decision.deleteHolderIds, []);
     assert.deepEqual(decision.review?.holderIds, ['co-other']);
-    assert.match(decision.reason, /different business/);
+    assert.match(decision.reason, /Unresolved identity conflict/);
 
     const planned = buildVerificationBackfillUpdate(
       {
@@ -282,6 +289,8 @@ describe('rating provenance fixtures', () => {
       shared_location_evidence: {
         premise: 'Warehouse bay 4',
         observed_at: '2026-04-02T00:00:00.000Z',
+        relationship: 'same_premise',
+        source: { system: 'field_inspection', record_id: 'obs-2026-04-02' },
       },
     });
     const decision = decidePlaceAttachment({
@@ -292,7 +301,16 @@ describe('rating provenance fixtures', () => {
         headquarters: 'Savannah, GA',
       },
       incoming,
-      holders: [holder({ sharedLocationEvidence: true })],
+      holders: [
+        holder({
+          sharedLocationEvidence: {
+            premise: 'Warehouse bay 4',
+            observed_at: '2026-04-02T00:00:00.000Z',
+            relationship: 'same_premise',
+            source: { system: 'field_inspection', record_id: 'obs-2026-04-02' },
+          },
+        }),
+      ],
     });
     assert.equal(decision.action, 'attach');
     assert.equal(decision.scope, 'shared_location');
@@ -355,6 +373,573 @@ describe('rating provenance fixtures', () => {
     assert.equal(merged?.overallRating, 0);
     assert.equal(merged?.googleData ?? null, null);
     assert.match(merged?.ratingProvenance?.withheldReason ?? '', /does not match/);
+  });
+});
+
+const copiedWebsite = 'https://copied-listing.example';
+const copiedPhone = '4045550199';
+
+function auditableEvidence(recordId = 'obs-2026-04-02') {
+  return {
+    premise: 'Warehouse bay 4',
+    observed_at: '2026-04-02T00:00:00.000Z',
+    relationship: 'same_premise',
+    source: { system: 'field_inspection', record_id: recordId },
+  };
+}
+
+describe('identity boundaries', () => {
+  it('does not let a copied website or phone validate a different business', () => {
+    const listing = google({
+      place_id: 'place-northline',
+      name: 'Northline Van Lines',
+      formatted_address: '900 Market Street, Dallas, TX 75201',
+      website_url: copiedWebsite,
+      phone: copiedPhone,
+      rating: 4.9,
+      review_count: 400,
+    });
+    const harbor = {
+      id: 'co-harbor',
+      name: 'Harbor Gate Movers',
+      usdotNumber: '1002003',
+      headquarters: 'Savannah, GA',
+      website: copiedWebsite,
+      phone: copiedPhone,
+    };
+    const contaminatedScore = scoreGooglePlaceMatch(
+      {
+        displayName: listing.name,
+        formattedAddress: listing.formatted_address,
+        phone: listing.phone,
+        websiteUri: listing.website_url,
+      },
+      harbor.name,
+      'Savannah',
+      'GA',
+      copiedPhone,
+      copiedWebsite
+    );
+    assert.ok(contaminatedScore >= 52);
+    assert.ok(nameIdentityScore(listing.name, listing.formatted_address, harbor) < 52);
+
+    const selected = selectRatingProvenance({
+      provider: harbor,
+      google: listing,
+      storedRating: 4.9,
+      storedReviewCount: 400,
+      seedRating: 4.8,
+      realBusiness: true,
+    });
+    assert.equal(selected.displayGoogle, null);
+    assert.equal(selected.provenance.rating, null);
+    assert.equal(selected.provenance.source, 'none');
+    assert.match(selected.provenance.withheldReason ?? '', /does not match/);
+
+    const northlineHolder = holder({
+      companyId: 'co-northline',
+      companyName: 'Northline Van Lines',
+      usdotNumber: '3004005',
+      website: copiedWebsite,
+      phone: copiedPhone,
+      placeId: 'place-northline',
+    });
+    const decision = decidePlaceAttachment({
+      target: harbor,
+      incoming: listing,
+      holders: [northlineHolder],
+    });
+    assert.equal(decision.action, 'review');
+    assert.deepEqual(decision.deleteHolderIds, []);
+    assert.equal(decision.review?.holderIds.includes('co-northline'), true);
+  });
+
+  it('routes distinct USDOT records to review when only the name and copied contacts agree', () => {
+    const incoming = google({
+      place_id: 'place-shared',
+      name: 'Harbor Gate Movers',
+      website_url: copiedWebsite,
+      phone: copiedPhone,
+      rating: 4.4,
+      review_count: 30,
+    });
+    const decision = decidePlaceAttachment({
+      target: {
+        id: 'co-harbor',
+        name: 'Harbor Gate Movers',
+        usdotNumber: '1002003',
+        headquarters: 'Savannah, GA',
+        website: copiedWebsite,
+        phone: copiedPhone,
+      },
+      incoming,
+      holders: [
+        holder({
+          companyId: 'co-other-dot',
+          companyName: 'Harbor Gate Movers',
+          usdotNumber: '3004005',
+          website: copiedWebsite,
+          phone: copiedPhone,
+          placeId: 'place-shared',
+          placeName: 'Harbor Gate Movers',
+        }),
+      ],
+    });
+    assert.equal(decision.action, 'review');
+    assert.match(decision.reason, /Unresolved identity conflict/);
+    assert.doesNotMatch(decision.reason, /different business/);
+    assert.deepEqual(decision.deleteHolderIds, []);
+    assert.deepEqual(decision.review?.holderIds, ['co-other-dot']);
+
+    const planned = buildVerificationBackfillUpdate(
+      {
+        id: 'co-harbor',
+        slug: 'harbor-gate-movers',
+        name: 'Harbor Gate Movers',
+        headquarters: 'Savannah, GA',
+        usdotNumber: '1002003',
+        website: copiedWebsite,
+        verification_sources: {},
+        verification_last_synced_at: null,
+        overall_rating: 4.4,
+        review_count: 30,
+      },
+      { google: incoming, publicScrape: null, fetchedAt: '2026-08-01T00:00:00.000Z' },
+      true,
+      false,
+      { holders: decision.review ? [
+        holder({
+          companyId: 'co-other-dot',
+          companyName: 'Harbor Gate Movers',
+          usdotNumber: '3004005',
+          website: copiedWebsite,
+          phone: copiedPhone,
+          placeId: 'place-shared',
+        }),
+      ] : [] }
+    );
+    assert.equal(planned.updates, null);
+    assert.match(planned.review?.reason ?? '', /Unresolved identity conflict/);
+  });
+
+  it('rejects a shared-location note that has only an explanation and a date', () => {
+    const incoming = google({
+      place_id: 'place-shared',
+      name: 'Northline Van Lines',
+      formatted_address: '900 Market Street, Dallas, TX 75201',
+      website_url: 'https://northline.example',
+      rating: 3.6,
+      review_count: 14,
+      association_scope: 'shared_location',
+      shared_location_evidence: {
+        premise: 'An old note says these companies once used the same dock',
+        observed_at: '2026-04-02T00:00:00.000Z',
+      },
+    });
+    const decision = decidePlaceAttachment({
+      target: {
+        id: 'co-harbor',
+        name: 'Harbor Gate Movers',
+        usdotNumber: '1002003',
+        headquarters: 'Savannah, GA',
+      },
+      incoming,
+      holders: [holder()],
+    });
+    assert.equal(decision.action, 'review');
+    assert.notEqual(decision.scope, 'shared_location');
+    assert.deepEqual(decision.deleteHolderIds, []);
+
+    const selected = selectRatingProvenance({
+      provider: {
+        id: 'co-harbor',
+        name: 'Harbor Gate Movers',
+        usdotNumber: '1002003',
+        headquarters: 'Savannah, GA',
+      },
+      google: incoming,
+      storedRating: 3.6,
+      storedReviewCount: 14,
+      realBusiness: true,
+    });
+    assert.equal(selected.displayGoogle, null);
+    assert.equal(selected.provenance.scope, 'none');
+    assert.notEqual(selected.provenance.source, 'google_places_api');
+  });
+
+  it('honors auditable shared-location evidence on the incoming snapshot and on an existing holder', () => {
+    const incoming = google({
+      place_id: 'place-shared',
+      name: 'Northline Van Lines',
+      formatted_address: '900 Market Street, Dallas, TX 75201',
+      website_url: 'https://northline.example',
+      rating: 3.6,
+      review_count: 14,
+      association_scope: 'shared_location',
+      shared_location_evidence: auditableEvidence(),
+    });
+    const incomingDecision = decidePlaceAttachment({
+      target: {
+        id: 'co-harbor',
+        name: 'Harbor Gate Movers',
+        usdotNumber: '1002003',
+        headquarters: 'Savannah, GA',
+      },
+      incoming,
+      holders: [holder({ usdotNumber: '3004005' })],
+    });
+    assert.equal(incomingDecision.action, 'attach');
+    assert.equal(incomingDecision.scope, 'shared_location');
+    assert.deepEqual(incomingDecision.deleteHolderIds, []);
+
+    const holderDecision = decidePlaceAttachment({
+      target: {
+        id: 'co-harbor',
+        name: 'Harbor Gate Movers',
+        usdotNumber: '1002003',
+        headquarters: 'Savannah, GA',
+        website: 'https://harborgate.example',
+      },
+      incoming: google({ place_id: 'place-shared', name: 'Harbor Gate Movers' }),
+      holders: [
+        holder({
+          usdotNumber: '3004005',
+          sharedLocationEvidence: auditableEvidence('holder-obs-14'),
+        }),
+      ],
+    });
+    assert.equal(holderDecision.action, 'attach');
+    assert.equal(holderDecision.scope, 'location');
+    assert.deepEqual(holderDecision.deleteHolderIds, []);
+    assert.equal(holderDecision.review, null);
+
+    const weakHolder = decidePlaceAttachment({
+      target: {
+        id: 'co-harbor',
+        name: 'Harbor Gate Movers',
+        usdotNumber: '1002003',
+        headquarters: 'Savannah, GA',
+      },
+      incoming: google({ place_id: 'place-shared', name: 'Harbor Gate Movers' }),
+      holders: [
+        holder({
+          usdotNumber: '3004005',
+          companyName: 'Harbor Gate Movers',
+          sharedLocationEvidence: true,
+        }),
+      ],
+    });
+    assert.equal(weakHolder.action, 'review');
+    assert.match(weakHolder.reason, /Unresolved identity conflict/);
+    assert.deepEqual(weakHolder.deleteHolderIds, []);
+  });
+
+  it('does not revive a withheld rating as a scalar, zero stars, or verified Google metadata', () => {
+    const conflicting = google({
+      place_id: 'place-northline',
+      name: 'Northline Van Lines',
+      formatted_address: '900 Market Street, Dallas, TX 75201',
+      website_url: copiedWebsite,
+      phone: copiedPhone,
+      rating: 4.9,
+      review_count: 80,
+    });
+    const withheld = applyRatingProvenance(
+      company({
+        name: 'Harbor Gate Movers',
+        website: copiedWebsite,
+        phone: copiedPhone,
+        overallRating: 4.9,
+        reviewCount: 80,
+        googleData: conflicting,
+      }),
+      { storedRating: 4.9, storedReviewCount: 80, seedRating: 4.8, seedReviewCount: 10, realBusiness: true }
+    );
+    assert.equal(withheld.overallRating, 0);
+    assert.equal(withheld.reviewCount, 0);
+    assert.equal(withheld.googleData ?? null, null);
+    assert.equal(displayedRatingValue(withheld), null);
+    assert.match(withheld.ratingProvenance?.withheldReason ?? '', /does not match/);
+
+    const revived = applyRatingProvenance(
+      { ...withheld, overallRating: 4.9, reviewCount: 80, googleData: null },
+      { storedRating: 4.9, storedReviewCount: 80, seedRating: 4.8, realBusiness: true }
+    );
+    assert.equal(revived.overallRating, 0);
+    assert.equal(revived.reviewCount, 0);
+    assert.equal(revived.googleData ?? null, null);
+    assert.equal(displayedRatingValue(revived), null);
+    assert.equal(revived.ratingProvenance?.source, 'none');
+    assert.match(revived.ratingProvenance?.withheldReason ?? '', /does not match/);
+
+    const schema = JSON.stringify(buildCompanyDirectorySchemaGraph(revived));
+    assert.equal(schema.includes('AggregateRating'), false);
+    assert.equal(schema.includes('ratingValue'), false);
+    assert.equal(schema.includes('4.9'), false);
+    const meta = companyProfileReviewMeta({
+      companyId: revived.id,
+      editorialReviewCount: revived.reviewCount,
+      editorialRating: revived.overallRating,
+    });
+    assert.equal(meta.headline, 'Not reported');
+    assert.equal(`${meta.headline} ${meta.detail}`.includes('4.9'), false);
+    assert.equal(`${meta.headline} ${meta.detail}`.includes('verified Google'), false);
+  });
+
+  it('keeps brand, location, missing dates, and nameless legacy data aligned on the card and profile', () => {
+    const locationGoogle = {
+      source: 'google_places_api',
+      status: 'ok',
+      place_id: 'place-cedar-boise',
+      name: 'Cedar Bin Storage',
+      rating: 3.4,
+      review_count: 11,
+      formatted_address: '400 River Road, Boise, ID 83702',
+      website_url: 'https://cedarbin.example',
+      review_snippets: [],
+      last_fetched: '2026-07-15T12:00:00.000Z',
+    };
+    const card = mapCompanyRow({
+      id: 'co-cedar',
+      slug: 'cedar-bin-storage',
+      name: 'Cedar Bin Storage',
+      headquarters: 'Boise, ID',
+      usdot_number: '5006007',
+      website: 'https://cedarbin.example',
+      service_scope: 'interstate',
+      publication_state: 'PUBLISHABLE',
+      overall_rating: 4.8,
+      review_count: 220,
+      verification_sources: { google: locationGoogle },
+    });
+    const profile = mergeEnrichmentOntoProfile(
+      company({
+        id: 'seed-cedar',
+        name: 'Cedar Bin Storage',
+        headquarters: 'Boise, ID',
+        usdotNumber: '5006007',
+        website: 'https://cedarbin.example',
+        overallRating: 4.8,
+        reviewCount: 220,
+      }),
+      card
+    );
+    assert.equal(card.overallRating, 3.4);
+    assert.equal(profile.overallRating, 3.4);
+    assert.equal(card.ratingProvenance?.scope, 'location');
+    assert.equal(profile.ratingProvenance?.scope, 'location');
+    assert.match(card.ratingProvenance?.scopeLabel ?? '', /400 River Road/);
+    assert.equal(card.ratingProvenance?.observedAt, profile.ratingProvenance?.observedAt);
+    assert.equal(card.ratingProvenance?.source, profile.ratingProvenance?.source);
+
+    const undated = { ...locationGoogle };
+    delete (undated as { last_fetched?: string }).last_fetched;
+    const undatedCard = mapCompanyRow({
+      id: 'co-cedar',
+      slug: 'cedar-bin-storage',
+      name: 'Cedar Bin Storage',
+      headquarters: 'Boise, ID',
+      usdot_number: '5006007',
+      website: 'https://cedarbin.example',
+      service_scope: 'interstate',
+      publication_state: 'PUBLISHABLE',
+      overall_rating: 4.8,
+      review_count: 220,
+      verification_sources: { google: undated },
+    });
+    const undatedProfile = mergeEnrichmentOntoProfile(
+      company({
+        id: 'seed-cedar',
+        name: 'Cedar Bin Storage',
+        headquarters: 'Boise, ID',
+        usdotNumber: '5006007',
+        overallRating: 4.8,
+        reviewCount: 220,
+      }),
+      undatedCard
+    );
+    assert.equal(undatedCard.ratingProvenance?.observedAt ?? null, null);
+    assert.equal(undatedProfile.ratingProvenance?.observedAt ?? null, null);
+    assert.equal(undatedCard.ratingProvenance?.applicable, false);
+    assert.equal(undatedCard.overallRating, undatedProfile.overallRating);
+    assert.equal(undatedCard.overallRating, 3.4);
+
+    const namelessCard = mapCompanyRow({
+      id: 'legacy-1',
+      slug: 'legacy-mover',
+      name: 'Legacy Mover',
+      headquarters: 'Austin, TX',
+      usdot_number: '2222222',
+      service_scope: 'interstate',
+      publication_state: 'PUBLISHABLE',
+      overall_rating: 4.9,
+      review_count: 50,
+      google_data: {
+        source: 'google_places_api',
+        status: 'ok',
+        rating: 4.2,
+        review_count: 8,
+      },
+    });
+    const namelessProfile = mergeEnrichmentOntoProfile(
+      company({
+        id: 'seed-legacy',
+        name: 'Legacy Mover',
+        headquarters: 'Austin, TX',
+        usdotNumber: '2222222',
+        overallRating: 4.9,
+        reviewCount: 50,
+      }),
+      namelessCard
+    );
+    assert.equal(namelessCard.overallRating, 4.2);
+    assert.equal(namelessProfile.overallRating, 4.2);
+    assert.equal(namelessCard.ratingProvenance?.scope, 'unverified');
+    assert.equal(namelessProfile.ratingProvenance?.scope, 'unverified');
+    assert.equal(namelessCard.ratingProvenance?.sourceLabel, namelessProfile.ratingProvenance?.sourceLabel);
+  });
+
+  it('does not treat a failed holder lookup as an unclaimed place', async () => {
+    const incoming = google({
+      place_id: 'place-shared',
+      name: 'Harbor Gate Movers',
+      rating: 4.4,
+      review_count: 30,
+    });
+    const failed = decidePlaceAttachment({
+      target: {
+        id: 'co-harbor',
+        name: 'Harbor Gate Movers',
+        usdotNumber: '1002003',
+        headquarters: 'Savannah, GA',
+        website: 'https://harborgate.example',
+      },
+      incoming,
+      holders: [],
+      holderLookup: 'failed',
+    });
+    assert.equal(failed.action, 'review');
+    assert.match(failed.reason, /lookup failed/);
+    assert.deepEqual(failed.deleteHolderIds, []);
+
+    const succeeded = decidePlaceAttachment({
+      target: {
+        id: 'co-harbor',
+        name: 'Harbor Gate Movers',
+        usdotNumber: '1002003',
+        headquarters: 'Savannah, GA',
+        website: 'https://harborgate.example',
+      },
+      incoming,
+      holders: [],
+      holderLookup: 'succeeded',
+    });
+    assert.equal(succeeded.action, 'attach');
+
+    const planned = buildVerificationBackfillUpdate(
+      {
+        id: 'co-harbor',
+        slug: 'harbor-gate-movers',
+        name: 'Harbor Gate Movers',
+        headquarters: 'Savannah, GA',
+        usdotNumber: '1002003',
+        website: 'https://harborgate.example',
+        verification_sources: {},
+        verification_last_synced_at: null,
+        overall_rating: 4.4,
+        review_count: 30,
+      },
+      { google: incoming, publicScrape: null, fetchedAt: '2026-08-01T00:00:00.000Z' },
+      true,
+      false,
+      { holders: [], holderLookup: 'failed' }
+    );
+    assert.equal(planned.updates, null);
+    assert.match(planned.review?.reason ?? '', /lookup failed/);
+
+    const updates: unknown[] = [];
+    const admin = {
+      from() {
+        const chain = {
+          select() {
+            return chain;
+          },
+          neq() {
+            return chain;
+          },
+          filter() {
+            return chain;
+          },
+          limit() {
+            return Promise.resolve({ data: null, error: { message: 'holder lookup failed' } });
+          },
+          update(payload: unknown) {
+            updates.push(payload);
+            return Promise.resolve({ error: null });
+          },
+        };
+        return chain;
+      },
+    };
+    const persisted = await persistGoogleSnapshot(
+      admin as never,
+      'co-harbor',
+      incoming,
+      {
+        existingRow: {
+          id: 'co-harbor',
+          name: 'Harbor Gate Movers',
+          headquarters: 'Savannah, GA',
+          usdot_number: '1002003',
+          website: 'https://harborgate.example',
+          verification_sources: {},
+          google_data: null,
+        },
+      }
+    );
+    assert.equal(persisted.applied, false);
+    assert.match(persisted.review?.reason ?? '', /lookup failed/);
+    assert.equal(updates.length, 0);
+
+    const thrown = await persistGoogleSnapshot(
+      {
+        from() {
+          const chain = {
+            select() {
+              return chain;
+            },
+            neq() {
+              return chain;
+            },
+            filter() {
+              return chain;
+            },
+            limit() {
+              return Promise.reject(new Error('connection reset'));
+            },
+            update(payload: unknown) {
+              updates.push(payload);
+              return Promise.resolve({ error: null });
+            },
+          };
+          return chain;
+        },
+      } as never,
+      'co-harbor',
+      incoming,
+      {
+        existingRow: {
+          id: 'co-harbor',
+          name: 'Harbor Gate Movers',
+          headquarters: 'Savannah, GA',
+          usdot_number: '1002003',
+          verification_sources: {},
+        },
+      }
+    );
+    assert.equal(thrown.applied, false);
+    assert.match(thrown.review?.reason ?? '', /connection reset|lookup failed/);
+    assert.equal(updates.length, 0);
   });
 });
 

@@ -126,7 +126,7 @@ export function buildVerificationBackfillUpdate(
   enrichment: CompanyEnrichmentResult,
   refreshGoogle: boolean,
   refreshScrape: boolean,
-  options?: { holders?: PlaceHolder[] }
+  options?: { holders?: PlaceHolder[]; holderLookup?: 'succeeded' | 'failed' }
 ): { updates: Record<string, unknown> | null; review: RatingReview | null } {
   const updates: Record<string, unknown> = {};
   const nextSources: VerificationSources = { ...row.verification_sources };
@@ -147,6 +147,7 @@ export function buildVerificationBackfillUpdate(
       },
       incoming,
       holders: options?.holders,
+      holderLookup: options?.holderLookup,
     });
 
     if (decision.action === 'review') {

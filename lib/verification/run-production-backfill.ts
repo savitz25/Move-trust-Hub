@@ -321,27 +321,28 @@ export async function runProductionBackfill(
       const enrichment = await fetchEnrichment(input, plan.needsGoogle, plan.needsScrape);
       let holders: PlaceHolder[] = [];
       let refreshGoogle = plan.needsGoogle;
+      let holderLookup: 'succeeded' | 'failed' = 'succeeded';
       const placeId = enrichment.google?.place_id?.trim();
       if (refreshGoogle && placeId) {
-        const loaded = await loadOtherPlaceHolders(admin, placeId, target.supabaseId ?? target.id);
-        if (loaded.error) {
-          reviews.push({
-            providerId: target.id,
-            placeId,
-            reason: 'Place association lookup failed; listing was not attached',
-            holderIds: [],
-          });
+        try {
+          const loaded = await loadOtherPlaceHolders(admin, placeId, target.supabaseId ?? target.id);
+          if (loaded.error) {
+            holderLookup = 'failed';
+            refreshGoogle = false;
+          } else {
+            holders = loaded.holders;
+          }
+        } catch {
+          holderLookup = 'failed';
           refreshGoogle = false;
-        } else {
-          holders = loaded.holders;
         }
       }
       const planned = buildVerificationBackfillUpdate(
         toMoverRow(target),
         enrichment,
-        refreshGoogle,
+        refreshGoogle || holderLookup === 'failed',
         plan.needsScrape,
-        { holders }
+        { holders, holderLookup }
       );
       if (planned.review) {
         reviews.push(planned.review);

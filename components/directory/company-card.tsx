@@ -22,6 +22,7 @@ import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { CompanyCardActions } from '@/components/directory/company-card-actions';
 import { CompanyProfileLink } from '@/components/directory/company-profile-link';
 import { getAutoTransportEvidence } from '@/lib/directory/auto-transport-evidence';
+import { displayedRatingValue } from '@/lib/verification/rating-provenance';
 
 type CompareStore = {
   isSelected: (slug: string) => boolean;
@@ -116,9 +117,9 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
             <span className="text-xs text-muted-foreground">
               Rating withheld · {company.ratingProvenance.withheldReason}
             </span>
-          ) : company.overallRating > 0 ? (
+          ) : displayedRatingValue(company) != null ? (
             <>
-              <StarRating rating={company.overallRating} />
+              <StarRating rating={displayedRatingValue(company)!} />
               <span
                 className="text-xs text-muted-foreground"
                 title="This count belongs to the labeled source and scope. It is not an on-site review count."
