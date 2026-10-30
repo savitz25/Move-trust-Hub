@@ -100,6 +100,14 @@ export interface Company {
   reputationScore: number; // 0-100 composite (weighted)
   /** Selected display rating. Does not change directory sort or eligibility. */
   ratingProvenance?: import('@/lib/verification/rating-provenance').RatingProvenance;
+  /**
+   * Profile co-holder read for one place id. Listing SQL does not populate
+   * this, and it is not a place reservation.
+   */
+  placeAssociationContext?: {
+    holders: import('@/lib/verification/rating-provenance').PlaceHolder[];
+    enumeration: import('@/lib/verification/rating-provenance').HolderEnumeration;
+  };
 
   // Business
   yearsInBusiness: number;

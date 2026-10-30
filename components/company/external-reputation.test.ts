@@ -84,6 +84,56 @@ test('empty or unattributable references render no section', () => {
   assert.equal(header(null, [{ ...reference, verified: false }]), '');
 });
 
+test('withheld provenance does not render unverified Google cards or the Google section', () => {
+  const provenance = {
+    providerId: 'amerisafe',
+    source: 'none' as const,
+    sourceLabel: 'No verified rating source',
+    scope: 'none' as const,
+    scopeLabel: 'No applicable scope',
+    observedAt: null,
+    rating: null,
+    reviewCount: null,
+    placeId: null,
+    placeName: null,
+    applicable: false,
+    withheldReason: 'Google listing does not match this business identity',
+  };
+  const reviews = seedReviews.filter((review) => review.companyId === 'amerisafe');
+  const html = renderToStaticMarkup(
+    React.createElement(AttributedReviewsPanel, {
+      companyId: 'amerisafe',
+      companyName: 'Amerisafe Van Lines',
+      initialReviews: reviews,
+      provenance,
+    })
+  );
+  assert.equal(html.includes('5.0'), false);
+  assert.equal(html.includes('on Google'), false);
+  assert.equal(html.includes('Robert H.'), false);
+  assert.equal(reviews.filter((review) => review.source === 'Google').length, 2);
+  assert.equal(
+    renderToStaticMarkup(
+      React.createElement(GoogleReviewsSection, {
+        data: snapshot,
+        companyName: 'Amerisafe Van Lines',
+        provenance,
+      })
+    ),
+    ''
+  );
+  assert.equal(
+    renderToStaticMarkup(
+      React.createElement(ExternalReputationHeader, {
+        googleData: snapshot,
+        reviews,
+        provenance,
+      })
+    ),
+    ''
+  );
+});
+
 test('actual attributed references can render without a Google snapshot', () => {
   const html = references([reference]);
   assert.match(html, /id="attributed-reviews"/);

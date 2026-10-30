@@ -150,6 +150,8 @@ export function mergeEnrichmentOntoProfile(base: Company, enrichment: Company): 
     seedRating: base.overallRating,
     seedReviewCount: base.reviewCount,
     realBusiness: Boolean(enrichment.id),
+    samePlaceHolders: enrichment.placeAssociationContext?.holders,
+    holderEnumeration: enrichment.placeAssociationContext?.enumeration,
   });
 }
 

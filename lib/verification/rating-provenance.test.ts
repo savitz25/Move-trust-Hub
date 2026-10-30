@@ -3,17 +3,21 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { describe, it } from 'node:test';
 import { pathToFileURL } from 'node:url';
+import { seedReviews } from '@/data/seed-reviews';
 import { mergeDirectoryCompanies, mergeEnrichmentOntoProfile } from '@/lib/directory/merge-directory';
 import { buildCompanyDirectorySchemaGraph } from '@/lib/seo/build-company-directory-schema';
 import { mapCompanyRow } from '@/lib/supabase/queries/companies';
 import { companyProfileReviewMeta } from '@/lib/trust/review-display-policy';
-import { buildVerificationBackfillUpdate } from '@/lib/verification/backfill-helpers';
+import { buildVerificationBackfillUpdate, type MoverCompanyRow } from '@/lib/verification/backfill-helpers';
 import { scoreGooglePlaceMatch } from '@/lib/verification/google-places-name-queries';
 import { persistGoogleSnapshot } from '@/lib/verification/persist-google-snapshot';
 import {
   applyRatingProvenance,
+  classifySharedPlaceHolders,
   decidePlaceAttachment,
   displayedRatingValue,
+  googleReviewCardsForProvenance,
+  isVerifiedGoogleEvidence,
   nameIdentityScore,
   PLACE_HOLDER_READ_LIMIT,
   selectRatingProvenance,
@@ -23,15 +27,16 @@ import type { CompanyEnrichmentResult, GooglePlacesData } from '@/lib/verificati
 import type { Company } from '@/types';
 
 function company(partial: Partial<Company>): Company {
-  return {
-    id: partial.id ?? 'co-harbor',
-    slug: partial.slug ?? 'harbor-gate-movers',
-    name: partial.name ?? 'Harbor Gate Movers',
+  const base: Company = {
+    id: 'co-harbor',
+    slug: 'harbor-gate-movers',
+    name: 'Harbor Gate Movers',
     shortDescription: '',
     description: '',
-    headquarters: partial.headquarters ?? 'Savannah, GA',
-    website: partial.website ?? 'https://harborgate.example',
-    usdotNumber: partial.usdotNumber ?? '1002003',
+    foundedYear: 0,
+    headquarters: 'Savannah, GA',
+    website: 'https://harborgate.example',
+    usdotNumber: '1002003',
     mcNumber: '',
     fmcsaSafetyRating: 'Not Rated',
     fmcsaComplaints: 0,
@@ -44,7 +49,7 @@ function company(partial: Partial<Company>): Company {
     yearsInBusiness: 0,
     avgPricePerMove: 0,
     priceRange: '',
-    coverage: 'Interstate household-goods authority — confirm origin and destination with this company',
+    coverage: 'Continental US',
     services: ['Carrier'],
     specialties: [],
     ratingBreakdown: { fiveStar: 0, fourStar: 0, threeStar: 0, twoStar: 0, oneStar: 0 },
@@ -54,8 +59,8 @@ function company(partial: Partial<Company>): Company {
     outOfService: false,
     entityType: 'Carrier',
     serviceScope: 'interstate',
-    ...partial,
   };
+  return Object.assign(base, partial);
 }
 
 function google(partial: Partial<GooglePlacesData> = {}): GooglePlacesData {
@@ -1140,14 +1145,12 @@ describe('write safety', () => {
       rating: 4.1,
       review_count: 12,
     });
-    const stored = {
-      source: 'google_places_api' as const,
-      status: 'ok' as const,
+    const stored = google({
       place_id: 'place-shared',
       name: 'Harbor Gate Movers',
       rating: 4.1,
       review_count: 12,
-    };
+    });
     const refresh = decidePlaceAttachment({
       target: harborTarget,
       incoming,
@@ -1159,7 +1162,7 @@ describe('write safety', () => {
     assert.equal(refresh.reason, 'existing_association');
     assert.deepEqual(refresh.deleteHolderIds, []);
 
-    const row = {
+    const row: MoverCompanyRow = {
       id: 'co-harbor',
       slug: 'harbor-gate-movers',
       name: 'Harbor Gate Movers',
@@ -1180,8 +1183,10 @@ describe('write safety', () => {
     );
     assert.equal(blocked.updates, null);
     assert.match(blocked.review?.reason ?? '', /enumeration is incomplete/);
-    assert.equal(row.verification_sources.google.place_id, 'place-shared');
-    assert.equal(row.verification_sources.google.rating, 4.1);
+    const storedGoogle = row.verification_sources.google;
+    assert.ok(storedGoogle);
+    assert.equal(storedGoogle.place_id, 'place-shared');
+    assert.equal(storedGoogle.rating, 4.1);
 
     const kept = buildVerificationBackfillUpdate(
       row,
@@ -1220,9 +1225,9 @@ describe('write safety', () => {
         holderEnumeration: 'complete',
         holderLookup: 'succeeded',
       });
+      assert.equal(decision.action === 'attach', false);
       assert.equal(decision.action, 'review');
       assert.match(decision.reason, /cannot be reserved atomically/);
-      assert.equal(decision.action === 'attach', false);
       return decision;
     }
     await Promise.all([
@@ -1463,6 +1468,608 @@ async function openDisposableClaimDatabase(): Promise<DisposableClaimDatabase | 
     return null;
   }
 }
+
+describe('live rating identity correction', () => {
+  const savannahAddress = '10 Dock Street, Savannah, GA 31401';
+  const savannahGoogle = google({
+    place_id: 'place-shared-harbor',
+    name: 'Harbor Gate Movers',
+    formatted_address: savannahAddress,
+    rating: 4.8,
+    review_count: 40,
+  });
+  const savannahHolder = holder({
+    companyId: 'co-savannah',
+    companyName: 'Harbor Gate Movers',
+    usdotNumber: '1002003',
+    headquarters: 'Savannah, GA',
+    placeId: 'place-shared-harbor',
+    placeName: 'Harbor Gate Movers',
+    formattedAddress: savannahAddress,
+  });
+  const dallasHolder = holder({
+    companyId: 'co-dallas',
+    companyName: 'Harbor Gate Movers',
+    usdotNumber: '3004005',
+    headquarters: 'Dallas, TX',
+    placeId: 'place-shared-harbor',
+    placeName: 'Harbor Gate Movers',
+    formattedAddress: savannahAddress,
+  });
+
+  it('keeps the rightful shared-place owner and withholds the other holder', () => {
+    const classified = classifySharedPlaceHolders([savannahHolder, dallasHolder]);
+    const owner = classified.find((row) => row.companyId === 'co-savannah');
+    const other = classified.find((row) => row.companyId === 'co-dallas');
+    assert.equal(owner?.associationClass, 'rightful_owner');
+    assert.equal(owner?.displayRating, true);
+    assert.equal(other?.displayRating, false);
+    assert.equal(other?.associationClass, 'distinct_unresolved');
+
+    const kept = selectRatingProvenance({
+      provider: {
+        id: 'co-savannah',
+        name: 'Harbor Gate Movers',
+        usdotNumber: '1002003',
+        headquarters: 'Savannah, GA',
+      },
+      google: savannahGoogle,
+      samePlaceHolders: [savannahHolder, dallasHolder],
+      holderEnumeration: 'complete',
+      storedRating: 4.8,
+      storedReviewCount: 40,
+      realBusiness: true,
+    });
+    assert.equal(kept.provenance.applicable, true);
+    assert.equal(kept.provenance.rating, 4.8);
+    assert.equal(kept.provenance.source, 'google_places_api');
+
+    const dropped = selectRatingProvenance({
+      provider: {
+        id: 'co-dallas',
+        name: 'Harbor Gate Movers',
+        usdotNumber: '3004005',
+        headquarters: 'Dallas, TX',
+      },
+      google: savannahGoogle,
+      samePlaceHolders: [savannahHolder, dallasHolder],
+      holderEnumeration: 'complete',
+      storedRating: 4.8,
+      storedReviewCount: 40,
+      realBusiness: true,
+    });
+    assert.equal(dropped.displayGoogle, null);
+    assert.equal(dropped.provenance.applicable, false);
+    assert.match(dropped.provenance.withheldReason ?? '', /does not match this business identity/);
+    assert.equal(displayedRatingValue({ overallRating: 0, ratingProvenance: dropped.provenance }), null);
+
+    const omitted = selectRatingProvenance({
+      provider: {
+        id: 'co-dallas',
+        name: 'Harbor Gate Movers',
+        usdotNumber: '3004005',
+        headquarters: 'Dallas, TX',
+      },
+      google: savannahGoogle,
+      storedRating: 4.8,
+      storedReviewCount: 40,
+      realBusiness: true,
+    });
+    assert.equal(omitted.provenance.applicable, true);
+
+    const failedRead = selectRatingProvenance({
+      provider: {
+        id: 'co-savannah',
+        name: 'Harbor Gate Movers',
+        usdotNumber: '1002003',
+        headquarters: 'Savannah, GA',
+      },
+      google: savannahGoogle,
+      samePlaceHolders: [dallasHolder],
+      holderEnumeration: 'failed',
+      realBusiness: true,
+    });
+    assert.equal(failedRead.provenance.applicable, true);
+    const incomplete = selectRatingProvenance({
+      provider: {
+        id: 'co-savannah',
+        name: 'Harbor Gate Movers',
+        usdotNumber: '1002003',
+        headquarters: 'Savannah, GA',
+      },
+      google: savannahGoogle,
+      samePlaceHolders: Array.from({ length: PLACE_HOLDER_READ_LIMIT }, (_, index) =>
+        holder({ companyId: `co-${index}`, placeId: 'place-shared-harbor' })
+      ),
+      realBusiness: true,
+    });
+    assert.equal(incomplete.provenance.applicable, true);
+  });
+
+  it('does not let a seed merge restore a withheld shared-place rating', () => {
+    const dallas = applyRatingProvenance(
+      company({
+        id: 'co-dallas',
+        name: 'Harbor Gate Movers',
+        headquarters: 'Dallas, TX',
+        usdotNumber: '3004005',
+        googleData: savannahGoogle,
+        placeAssociationContext: {
+          holders: [savannahHolder, dallasHolder],
+          enumeration: 'complete',
+        },
+      }),
+      { storedRating: 4.8, storedReviewCount: 40, realBusiness: true }
+    );
+    assert.equal(dallas.googleData ?? null, null);
+    const merged = mergeEnrichmentOntoProfile(
+      company({
+        id: 'co-dallas',
+        name: 'Harbor Gate Movers',
+        headquarters: 'Dallas, TX',
+        usdotNumber: '3004005',
+        googleData: savannahGoogle,
+        overallRating: 4.8,
+        reviewCount: 40,
+      }),
+      dallas
+    );
+    assert.equal(merged.googleData ?? null, null);
+    assert.equal(displayedRatingValue(merged), null);
+    assert.equal(isVerifiedGoogleEvidence(merged.ratingProvenance), false);
+  });
+
+  it('preserves American Van Lines when it is the independent name match', () => {
+    const address = '1351 NW 22nd St, Pompano Beach, FL 33069, USA';
+    const placeId = 'place-avl';
+    const avl = holder({
+      companyId: 'american-van-lines',
+      companyName: 'American Van Lines',
+      legalName: 'AMERICAN VAN LINES INC',
+      usdotNumber: '614506',
+      headquarters: 'Davie, FL',
+      placeId,
+      placeName: 'American Van Lines',
+      formattedAddress: address,
+    });
+    const amerisafe = holder({
+      companyId: 'amerisafe-van-lines',
+      companyName: 'Amerisafe Van Lines',
+      legalName: 'AMS MOVING INC',
+      usdotNumber: '3341650',
+      headquarters: 'Boynton Beach, FL',
+      placeId,
+      placeName: 'American Van Lines',
+      formattedAddress: address,
+    });
+    const classified = classifySharedPlaceHolders([avl, amerisafe]);
+    assert.equal(classified.find((row) => row.companyId === 'american-van-lines')?.displayRating, true);
+    assert.equal(classified.find((row) => row.companyId === 'american-van-lines')?.associationClass, 'rightful_owner');
+    assert.equal(classified.find((row) => row.companyId === 'amerisafe-van-lines')?.displayRating, false);
+    const listing = google({
+      place_id: placeId,
+      name: 'American Van Lines',
+      formatted_address: address,
+      rating: 4.2,
+      review_count: 2150,
+    });
+    const kept = selectRatingProvenance({
+      provider: {
+        id: avl.companyId,
+        name: avl.companyName,
+        legalName: avl.legalName,
+        usdotNumber: avl.usdotNumber,
+        headquarters: avl.headquarters,
+      },
+      google: listing,
+      samePlaceHolders: [avl, amerisafe],
+      holderEnumeration: 'complete',
+      realBusiness: true,
+    });
+    assert.equal(kept.provenance.applicable, true);
+    assert.equal(kept.provenance.rating, 4.2);
+    assert.equal(kept.provenance.scope, 'location');
+    const dropped = selectRatingProvenance({
+      provider: {
+        id: amerisafe.companyId,
+        name: amerisafe.companyName,
+        legalName: amerisafe.legalName,
+        usdotNumber: amerisafe.usdotNumber,
+        headquarters: amerisafe.headquarters,
+      },
+      google: listing,
+      samePlaceHolders: [avl, amerisafe],
+      holderEnumeration: 'complete',
+      realBusiness: true,
+    });
+    assert.equal(dropped.provenance.applicable, false);
+    assert.equal(isVerifiedGoogleEvidence(dropped.provenance), false);
+  });
+
+  it('preserves a Dumbo rating only for the independently higher identity score', () => {
+    const address = '15 N Oxford St, Brooklyn, NY 11205, USA';
+    const placeId = 'place-dumbo';
+    const storage = holder({
+      companyId: 'dumbo-moving-storage',
+      companyName: 'Dumbo Moving & Storage',
+      legalName: '2001-31 REALTY LLC',
+      usdotNumber: '2458910',
+      headquarters: '545 N ARLINGTON AVE, EAST ORANGE, NJ, 07017',
+      placeId,
+      placeName: 'Dumbo Moving and Storage NYC',
+      formattedAddress: address,
+    });
+    const movers = holder({
+      companyId: 'dumbo-movers-inc',
+      companyName: 'Dumbo Movers INC',
+      legalName: 'DUMBO MOVERS INC',
+      usdotNumber: '4411535',
+      headquarters: '528 FERRY ST STE 2, NEWARK, NJ, 07105-4489',
+      placeId,
+      placeName: 'Dumbo Moving and Storage NYC',
+      formattedAddress: address,
+    });
+    const classified = classifySharedPlaceHolders([storage, movers]);
+    const displayed = classified.filter((row) => row.displayRating);
+    const storageScore = classified.find((row) => row.companyId === storage.companyId)!;
+    const moversScore = classified.find((row) => row.companyId === movers.companyId)!;
+    assert.notEqual(storage.usdotNumber, movers.usdotNumber);
+    if (storageScore.score === moversScore.score) {
+      assert.equal(displayed.length, 0);
+      assert.equal(storageScore.associationClass, 'distinct_unresolved');
+      assert.equal(moversScore.associationClass, 'distinct_unresolved');
+    } else {
+      const winner = storageScore.score > moversScore.score ? storageScore : moversScore;
+      const loser = winner === storageScore ? moversScore : storageScore;
+      assert.deepEqual(displayed.map((row) => row.companyId), [winner.companyId]);
+      assert.equal(winner.associationClass, 'rightful_owner');
+      assert.equal(loser.displayRating, false);
+      const winnerHolder = winner.companyId === storage.companyId ? storage : movers;
+      const selected = selectRatingProvenance({
+        provider: {
+          id: winnerHolder.companyId,
+          name: winnerHolder.companyName,
+          legalName: winnerHolder.legalName,
+          usdotNumber: winnerHolder.usdotNumber,
+          headquarters: winnerHolder.headquarters,
+        },
+        google: google({
+          place_id: placeId,
+          name: 'Dumbo Moving and Storage NYC',
+          formatted_address: address,
+          rating: 4.6,
+          review_count: 4437,
+        }),
+        samePlaceHolders: [storage, movers],
+        holderEnumeration: 'complete',
+        realBusiness: true,
+      });
+      assert.equal(selected.provenance.applicable, true);
+      assert.equal(selected.provenance.rating, 4.6);
+    }
+    for (const row of classified) {
+      assert.equal(row.displayRating, row.score === Math.max(storageScore.score, moversScore.score) && displayed.length === 1);
+    }
+  });
+
+  it('keeps a franchise rating when the headquarters city is on the listing', () => {
+    const address = '3430 Lorna Ln, Hoover, AL 35216';
+    const listing = google({
+      place_id: 'place-franchise',
+      name: 'All My Sons Moving & Storage',
+      formatted_address: address,
+      rating: 4.6,
+      review_count: 2510,
+    });
+    const selected = selectRatingProvenance({
+      provider: {
+        id: 'all-my-sons-birmingham',
+        name: 'All My Sons Moving & Storage Birmingham',
+        legalName: 'ALL MY SONS MOVING AND STORAGE OF BIRMINGHAM LLC',
+        usdotNumber: '1605569',
+        headquarters: 'Hoover',
+      },
+      google: listing,
+      realBusiness: true,
+    });
+    assert.equal(selected.provenance.applicable, true);
+    assert.equal(selected.provenance.rating, 4.6);
+    assert.equal(selected.provenance.scope, 'location');
+
+    const otherState = selectRatingProvenance({
+      provider: {
+        id: 'cedar-branch-austin',
+        name: 'Cedar Branch Movers Savannah',
+        legalName: 'CEDAR BRANCH MOVERS OF AUSTIN LLC',
+        usdotNumber: '5006007',
+        headquarters: 'Austin, TX',
+      },
+      google: google({
+        place_id: 'place-cedar-savannah',
+        name: 'Cedar Branch Movers',
+        formatted_address: '18 River Street, Savannah, GA 31401',
+        rating: 4.4,
+        review_count: 20,
+      }),
+      realBusiness: true,
+    });
+    assert.equal(otherState.provenance.applicable, false);
+  });
+
+  it('does not give a different brand the listing of the same city', () => {
+    const selected = selectRatingProvenance({
+      provider: {
+        id: 'spyder-moving-kalamazoo',
+        name: 'Spyder Moving Kalamazoo',
+        legalName: 'RELIABLE RUSH LOGISTICS LLC',
+        usdotNumber: '4474403',
+        headquarters: 'Portage',
+      },
+      google: google({
+        place_id: 'place-college-hunks-kalamazoo',
+        name: 'College Hunks Hauling Junk and Moving Kalamazoo',
+        formatted_address: '2927 Millcork St, Kalamazoo, MI 49001',
+        rating: 5,
+        review_count: 4923,
+      }),
+      storedRating: 5,
+      storedReviewCount: 4923,
+      realBusiness: true,
+    });
+    assert.equal(selected.provenance.applicable, false);
+    assert.equal(selected.displayGoogle, null);
+    assert.equal(isVerifiedGoogleEvidence(selected.provenance), false);
+    assert.match(selected.provenance.withheldReason ?? '', /does not match this business identity/);
+  });
+
+  it('withholds a same-brand listing whose headquarters city is a different place', () => {
+    const address = '139 Donelson Pike, Nashville, TN 37214, USA';
+    const listing = google({
+      place_id: 'place-nashville-hunks',
+      name: 'College Hunks Hauling Junk and Moving Nashville',
+      formatted_address: address,
+      rating: 4.7,
+      review_count: 2396,
+    });
+    const knoxville = holder({
+      companyId: 'college-hunks-knoxville',
+      companyName: 'College Hunks Hauling Junk',
+      headquarters: '6219 Riverview Crossing Dr, Knoxville, TN 37924',
+      placeId: 'place-nashville-hunks',
+      placeName: listing.name,
+      formattedAddress: address,
+    });
+    const nashville = holder({
+      companyId: 'college-hunks-nashville',
+      companyName: 'College Hunks Hauling Junk & Moving Nashville',
+      legalName: 'NORTHERN VOLUNTEER ENTERPRISES LLC',
+      usdotNumber: '2533629',
+      headquarters: 'Nashville',
+      placeId: 'place-nashville-hunks',
+      placeName: listing.name,
+      formattedAddress: address,
+    });
+    const classified = classifySharedPlaceHolders([knoxville, nashville]);
+    assert.equal(classified.find((row) => row.companyId === 'college-hunks-nashville')?.displayRating, true);
+    assert.equal(classified.find((row) => row.companyId === 'college-hunks-knoxville')?.displayRating, false);
+    const hidden = selectRatingProvenance({
+      provider: {
+        id: knoxville.companyId,
+        name: knoxville.companyName,
+        headquarters: knoxville.headquarters,
+      },
+      google: listing,
+      samePlaceHolders: [knoxville, nashville],
+      holderEnumeration: 'complete',
+      realBusiness: true,
+    });
+    assert.equal(hidden.provenance.applicable, false);
+    const kept = selectRatingProvenance({
+      provider: {
+        id: nashville.companyId,
+        name: nashville.companyName,
+        legalName: nashville.legalName,
+        usdotNumber: nashville.usdotNumber,
+        headquarters: nashville.headquarters,
+      },
+      google: listing,
+      samePlaceHolders: [knoxville, nashville],
+      holderEnumeration: 'complete',
+      realBusiness: true,
+    });
+    assert.equal(kept.provenance.applicable, true);
+    assert.equal(kept.provenance.rating, 4.7);
+  });
+
+  it('treats duplicate slugs as one business and leaves a missing profile undisplayed', () => {
+    const address = '1743 US-9, Howell Township, NJ 07731';
+    const duplicates = ['1st-moving-corp', '1st-moving-corp-2', '1st-moving-corp-3'].map((id, index) =>
+      holder({
+        companyId: id,
+        companyName: index === 0 ? '1st Moving Corp.' : '1st Moving Corp',
+        usdotNumber: null,
+        headquarters: address,
+        placeId: 'place-1st',
+        placeName: '1st Moving Corp.',
+        formattedAddress: address,
+      })
+    );
+    const classified = classifySharedPlaceHolders(duplicates);
+    assert.equal(classified.every((row) => row.displayRating), true);
+    assert.equal(classified.every((row) => row.associationClass === 'same_legal_business'), true);
+    const missing = classifySharedPlaceHolders([
+      holder({
+        companyId: 'missing-row',
+        companyName: '',
+        placeId: 'place-1st',
+        placeName: '',
+        formattedAddress: '',
+      }),
+    ]);
+    assert.equal(missing[0]?.associationClass, 'missing_profile');
+    assert.equal(missing[0]?.displayRating, false);
+
+    const spring = '22026 Mossy Oaks Rd, Spring, TX 77389';
+    const incorporated = classifySharedPlaceHolders(
+      ['finest', 'finest-2', 'finest-inc'].map((id, index) =>
+        holder({
+          companyId: id,
+          companyName:
+            index === 2
+              ? "Firefighting's Finest Moving & Storage INC"
+              : "Firefighting's Finest Moving & Storage",
+          usdotNumber: null,
+          headquarters: spring,
+          placeId: 'place-finest',
+          placeName: "Firefighting's Finest Moving & Storage",
+          formattedAddress: spring,
+        })
+      )
+    );
+    assert.equal(incorporated.every((row) => row.displayRating), true);
+    assert.equal(incorporated.every((row) => row.associationClass === 'same_legal_business'), true);
+
+    const memphis = '3264 Democrat Rd #5, Memphis, TN 38118';
+    const cord = classifySharedPlaceHolders([
+      holder({
+        companyId: 'cord',
+        companyName: 'Cord Moving & Storage',
+        usdotNumber: null,
+        headquarters: memphis,
+        placeId: 'place-cord',
+        placeName: 'Cord Moving Company and Storage - Movers Memphis',
+        formattedAddress: memphis,
+      }),
+      holder({
+        companyId: 'cord-memphis',
+        companyName: 'Cord Moving & Storage Memphis',
+        legalName: 'CORD MOVING AND STORAGE COMPANY',
+        usdotNumber: '181102',
+        headquarters: 'Memphis',
+        placeId: 'place-cord',
+        placeName: 'Cord Moving Company and Storage - Movers Memphis',
+        formattedAddress: memphis,
+      }),
+    ]);
+    assert.equal(cord.every((row) => row.displayRating), true);
+  });
+
+  it('keeps an evidenced shared location and does not display a different business on that place', () => {
+    const evidence = {
+      premise: 'Warehouse bay 4',
+      observed_at: '2026-04-02T00:00:00.000Z',
+      relationship: 'same_premise',
+      source: { system: 'field_inspection', record_id: 'obs-2026-04-02' },
+    };
+    const shared = holder({
+      companyId: 'co-shared',
+      companyName: 'Harbor Gate Movers',
+      usdotNumber: '1002003',
+      headquarters: 'Savannah, GA',
+      placeId: 'place-shared',
+      placeName: 'Northline Van Lines',
+      formattedAddress: '900 Market Street, Dallas, TX 75201',
+      sharedLocationEvidence: evidence,
+    });
+    const other = holder({
+      companyId: 'co-other',
+      companyName: 'Cedar Bin Storage',
+      usdotNumber: '5006007',
+      headquarters: 'Boise, ID',
+      placeId: 'place-shared',
+      placeName: 'Northline Van Lines',
+      formattedAddress: '900 Market Street, Dallas, TX 75201',
+    });
+    const classified = classifySharedPlaceHolders([shared, other]);
+    assert.equal(classified.find((row) => row.companyId === 'co-shared')?.associationClass, 'shared_location');
+    assert.equal(classified.find((row) => row.companyId === 'co-shared')?.displayRating, true);
+    assert.equal(classified.find((row) => row.companyId === 'co-other')?.displayRating, false);
+  });
+
+  it('does not present seed Google cards or unverified snapshots as verified Google evidence', () => {
+    const amerisafeCards = seedReviews.filter(
+      (review) => review.companyId === 'amerisafe' && review.source === 'Google'
+    );
+    assert.equal(amerisafeCards.length, 2);
+    assert.equal(amerisafeCards.every((review) => review.rating === 5 && review.verified), true);
+    const withheld = selectRatingProvenance({
+      provider: {
+        id: 'amerisafe',
+        name: 'Amerisafe Van Lines',
+        legalName: 'AMS MOVING INC',
+        usdotNumber: '3341650',
+        headquarters: 'Boynton Beach, FL',
+      },
+      google: google({
+        place_id: 'place-avl',
+        name: 'American Van Lines',
+        formatted_address: '1351 NW 22nd St, Pompano Beach, FL 33069, USA',
+        rating: 4.2,
+        review_count: 2150,
+      }),
+      seedRating: 4.7,
+      seedReviewCount: 1650,
+      realBusiness: true,
+    });
+    const shown = googleReviewCardsForProvenance(amerisafeCards, withheld.provenance);
+    assert.equal(shown.length, 0);
+    assert.equal(amerisafeCards.length, 2);
+    assert.equal(amerisafeCards[0]?.id, 'r-amerisafe-1');
+    assert.equal(amerisafeCards[1]?.id, 'r-amerisafe-5');
+    const unknown = googleReviewCardsForProvenance(
+      [{ source: 'Unknown', verified: true }],
+      withheld.provenance
+    );
+    assert.equal(unknown.length, 0);
+    const nameless = selectRatingProvenance({
+      provider: { id: 'legacy-1', name: 'Legacy Mover', headquarters: 'Austin, TX', usdotNumber: '2222222' },
+      google: google({
+        name: null,
+        place_id: null,
+        formatted_address: null,
+        rating: 4.2,
+        review_count: 8,
+      }),
+      realBusiness: true,
+    });
+    assert.equal(nameless.provenance.sourceLabel, 'Google Places');
+    assert.equal(nameless.provenance.scope, 'unverified');
+    assert.equal(nameless.provenance.applicable, false);
+    assert.equal(isVerifiedGoogleEvidence(nameless.provenance), false);
+    assert.equal(googleReviewCardsForProvenance(amerisafeCards, nameless.provenance).length, 0);
+    const stored = selectRatingProvenance({
+      provider: { id: 'co-harbor', name: 'Harbor Gate Movers', headquarters: 'Savannah, GA' },
+      google: null,
+      storedRating: 3.1,
+      storedReviewCount: 9,
+      realBusiness: true,
+    });
+    assert.equal(stored.provenance.sourceLabel, 'Stored rating');
+    assert.equal(stored.provenance.source, 'stored_column');
+    assert.equal(isVerifiedGoogleEvidence(stored.provenance), false);
+    const schema = JSON.stringify(
+      buildCompanyDirectorySchemaGraph(
+        applyRatingProvenance(
+          company({
+            name: 'Amerisafe Van Lines',
+            usdotNumber: '3341650',
+            headquarters: 'Boynton Beach, FL',
+            googleData: google({
+              place_id: 'place-avl',
+              name: 'American Van Lines',
+              formatted_address: '1351 NW 22nd St, Pompano Beach, FL 33069, USA',
+              rating: 4.2,
+              review_count: 2150,
+            }),
+          }),
+          { storedRating: 4.2, storedReviewCount: 2150, seedRating: 4.7, realBusiness: true }
+        )
+      )
+    );
+    assert.equal(schema.includes('AggregateRating'), false);
+    assert.equal(schema.includes('Review'), false);
+  });
+});
 
 describe('rating provenance surfaces', () => {
   it('labels source and scope on the card, table, and profile panel', () => {

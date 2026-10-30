@@ -6,7 +6,10 @@ import { MetricLabel } from '@/components/trust/metric-label';
 import { googleMapsProfileUrl } from '@/lib/verification/google-profile-url';
 import { PROFILE_METRIC_TOOLTIPS } from '@/lib/trust/profile-metrics';
 import { hasGoogleReputationSnapshot } from '@/lib/verification/google-reputation-snapshot';
-import type { RatingProvenance } from '@/lib/verification/rating-provenance';
+import {
+  isVerifiedGoogleEvidence,
+  type RatingProvenance,
+} from '@/lib/verification/rating-provenance';
 import type { GooglePlacesData } from '@/lib/verification/types';
 
 function GoogleWordmark({ className }: { className?: string }) {
@@ -39,6 +42,7 @@ export function GoogleReviewsSection({
   attributableOnSiteCount = 0,
 }: Props) {
   if (!hasGoogleReputationSnapshot(data)) return null;
+  if (provenance && !isVerifiedGoogleEvidence(provenance)) return null;
   const profileUrl = googleMapsProfileUrl(data)!;
 
   return (

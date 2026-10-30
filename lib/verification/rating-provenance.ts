@@ -1,8 +1,10 @@
 import type { Company } from '@/types';
 import {
   GOOGLE_PLACES_MIN_ACCEPT_SCORE,
+  normalizeNameForMatch,
   parseCityStateFromHeadquarters,
   scoreGooglePlaceMatch,
+  stripLegalEntitySuffixes,
 } from '@/lib/verification/google-places-name-queries';
 import { hasGoogleReputationSnapshot } from '@/lib/verification/google-reputation-snapshot';
 import type { GooglePlacesData } from '@/lib/verification/types';
@@ -46,6 +48,8 @@ export type PlaceHolder = {
   usdotNumber?: string | null;
   website?: string | null;
   phone?: string | null;
+  /** Company headquarters, not the Google formatted address. */
+  headquarters?: string | null;
   placeId: string;
   placeName?: string | null;
   formattedAddress?: string | null;
@@ -171,24 +175,92 @@ export function googleIdentityScore(
   return best;
 }
 
+function addressHasStreetNumber(address: string | null | undefined): boolean {
+  return /\d/.test(address ?? '');
+}
+
+function headquartersCityInAddress(
+  headquarters: string | null | undefined,
+  formattedAddress: string | null | undefined
+): boolean {
+  const city = parseCityStateFromHeadquarters(headquarters).city.trim();
+  return city.length >= 4 && (formattedAddress ?? '').toUpperCase().includes(city.toUpperCase());
+}
+
+/**
+ * A trailing market token ("Birmingham") or "of {place}" can name the
+ * franchise territory while the listing address names the headquarters city.
+ * Only a street address is eligible, so a headquarters-to-headquarters
+ * comparison does not become a looser write-guard match. One trailing token
+ * is removed. An earlier brand token that the place name lacks still fails.
+ */
+function locationScopedSearchNames(
+  name: string | null | undefined,
+  formattedAddress: string | null | undefined,
+  headquarters: string | null | undefined
+): string[] {
+  if (!addressHasStreetNumber(formattedAddress)) return [];
+  if (!headquartersCityInAddress(headquarters, formattedAddress)) return [];
+  const base = stripLegalEntitySuffixes(name ?? '').trim();
+  if (!base) return [];
+  const names: string[] = [];
+  const ofStripped = base.replace(/\s+of\s+\S+(?:\s+\S+){0,2}$/i, '').trim();
+  if (ofStripped && ofStripped !== base && ofStripped.split(/\s+/).length >= 2) {
+    names.push(ofStripped);
+  }
+  const parts = base.split(/\s+/);
+  if (parts.length >= 3) {
+    const dropped = parts.slice(0, -1).join(' ');
+    if (dropped.split(/\s+/).length >= 2) names.push(dropped);
+  }
+  return names;
+}
+
 /**
  * Name and location agreement only. Website and phone are excluded because
  * a copied listing contact must not make two businesses the same identity.
+ * The returned score is the best of the given names and a location-scoped
+ * variant, so an existing exact match cannot get worse.
  */
 export function nameIdentityScore(
   placeName: string | null | undefined,
   formattedAddress: string | null | undefined,
   provider: ProviderIdentity
 ): number {
-  return googleIdentityScore(
+  const providerNoContact = { ...provider, phone: null, website: null };
+  let best = googleIdentityScore(
     {
       name: placeName ?? null,
       formatted_address: formattedAddress ?? null,
       phone: null,
       website_url: null,
     },
-    { ...provider, phone: null, website: null }
+    providerNoContact
   );
+  const geo = parseCityStateFromHeadquarters(provider.headquarters);
+  const extras = [
+    ...locationScopedSearchNames(provider.name, formattedAddress, provider.headquarters),
+    ...locationScopedSearchNames(provider.legalName, formattedAddress, provider.headquarters),
+  ];
+  for (const name of extras) {
+    best = Math.max(
+      best,
+      scoreGooglePlaceMatch(
+        {
+          displayName: placeName ?? null,
+          formattedAddress: formattedAddress ?? null,
+          phone: null,
+          websiteUri: null,
+        },
+        name,
+        geo.city,
+        geo.state,
+        null,
+        null
+      )
+    );
+  }
+  return best;
 }
 
 function usdotKey(value: string | null | undefined): string {
@@ -238,6 +310,172 @@ function holderSharesLocation(holder: PlaceHolder): boolean {
   return isAuditableSharedLocationEvidence(holder.sharedLocationEvidence, 'shared_location');
 }
 
+export type PlaceAssociationClass =
+  | 'rightful_owner'
+  | 'same_legal_business'
+  | 'shared_location'
+  | 'distinct_unresolved'
+  | 'missing_profile';
+
+export type ClassifiedPlaceAssociation = {
+  companyId: string;
+  associationClass: PlaceAssociationClass;
+  displayRating: boolean;
+  score: number;
+};
+
+function identityName(holder: PlaceHolder): string {
+  return normalizeNameForMatch(stripLegalEntitySuffixes(holder.companyName));
+}
+
+function sameNormalizedName(left: PlaceHolder, right: PlaceHolder): boolean {
+  const a = identityName(left);
+  const b = identityName(right);
+  return Boolean(a) && a === b;
+}
+
+/** One trade name contains the other, so "Cord … Memphis" can match "Cord …". */
+function namesContain(left: PlaceHolder, right: PlaceHolder): boolean {
+  const a = identityName(left);
+  const b = identityName(right);
+  if (!a || !b) return false;
+  const shorter = a.length <= b.length ? a : b;
+  const longer = a.length <= b.length ? b : a;
+  if (shorter.split(' ').length < 2) return false;
+  return ` ${longer} `.includes(` ${shorter} `);
+}
+
+function usdotConflicts(left: PlaceHolder, right: PlaceHolder): boolean {
+  const a = usdotKey(left.usdotNumber);
+  const b = usdotKey(right.usdotNumber);
+  return Boolean(a && b && a !== b);
+}
+
+function sameUsdot(left: PlaceHolder, right: PlaceHolder): boolean {
+  const a = usdotKey(left.usdotNumber);
+  const b = usdotKey(right.usdotNumber);
+  return Boolean(a) && a === b;
+}
+
+function holdersShareIdentity(group: PlaceHolder[]): boolean {
+  if (group.length <= 1) return true;
+  const first = group[0]!;
+  return group.every((holder) => sameUsdot(first, holder) || sameNormalizedName(first, holder));
+}
+
+/**
+ * Classify companies that already store one Google place id.
+ * This does not reserve the place and does not delete an association.
+ * A failed or incomplete holder read must not call this with a partial page
+ * and then withhold the rightful owner; callers omit the list in that case.
+ */
+export function classifySharedPlaceHolders(holders: PlaceHolder[]): ClassifiedPlaceAssociation[] {
+  const drafts = holders.map((holder) => {
+    const missing = !holder.companyName?.trim() || !holder.placeName?.trim() || !holder.placeId?.trim();
+    const shared = !missing && holderSharesLocation(holder);
+    const score = missing
+      ? 0
+      : nameIdentityScore(holder.placeName, holder.formattedAddress, {
+          id: holder.companyId,
+          name: holder.companyName,
+          legalName: holder.legalName,
+          usdotNumber: holder.usdotNumber,
+          headquarters: holder.headquarters,
+          phone: null,
+          website: null,
+        });
+    return {
+      holder,
+      score,
+      missing,
+      shared,
+      locationAgrees: headquartersCityInAddress(holder.headquarters, holder.formattedAddress),
+    };
+  });
+
+  const competitive = drafts.filter(
+    (draft) => !draft.missing && !draft.shared && draft.score >= GOOGLE_PLACES_MIN_ACCEPT_SCORE
+  );
+  const agreeing = competitive.filter((draft) => draft.locationAgrees);
+  const pool = agreeing.length > 0 ? agreeing : competitive;
+  const topScore = pool.reduce((max, draft) => Math.max(max, draft.score), 0);
+  const tops = pool.filter((draft) => draft.score === topScore);
+  const topHolders = tops.map((draft) => draft.holder);
+  const topIds = new Set(topHolders.map((holder) => holder.companyId));
+  const sharedTopIdentity = tops.length > 1 && holdersShareIdentity(topHolders);
+  const unresolvedTie = tops.length > 1 && !sharedTopIdentity;
+
+  const sameAsWinner = (holder: PlaceHolder) => topHolders.some((top) => sameUsdot(holder, top));
+
+  return drafts.map((draft) => {
+    const companyId = draft.holder.companyId;
+    if (draft.missing) {
+      return { companyId, associationClass: 'missing_profile', displayRating: false, score: 0 };
+    }
+    if (draft.shared) {
+      return {
+        companyId,
+        associationClass: 'shared_location',
+        displayRating: true,
+        score: draft.score,
+      };
+    }
+    if (unresolvedTie && topIds.has(companyId)) {
+      return {
+        companyId,
+        associationClass: 'distinct_unresolved',
+        displayRating: false,
+        score: draft.score,
+      };
+    }
+    if (tops.length === 1 && companyId === tops[0]!.holder.companyId) {
+      return { companyId, associationClass: 'rightful_owner', displayRating: true, score: draft.score };
+    }
+    if (sharedTopIdentity && topIds.has(companyId)) {
+      return {
+        companyId,
+        associationClass: 'same_legal_business',
+        displayRating: true,
+        score: draft.score,
+      };
+    }
+    const containedLegalSlug =
+      draft.locationAgrees &&
+      topHolders.some(
+        (top) => !usdotConflicts(draft.holder, top) && namesContain(draft.holder, top)
+      );
+    if (
+      !unresolvedTie &&
+      draft.score >= GOOGLE_PLACES_MIN_ACCEPT_SCORE &&
+      (sameAsWinner(draft.holder) || containedLegalSlug)
+    ) {
+      return {
+        companyId,
+        associationClass: 'same_legal_business',
+        displayRating: true,
+        score: draft.score,
+      };
+    }
+    return {
+      companyId,
+      associationClass: 'distinct_unresolved',
+      displayRating: false,
+      score: draft.score,
+    };
+  });
+}
+
+function completeHolderRead(
+  holders: PlaceHolder[] | undefined,
+  enumeration: HolderEnumeration | undefined
+): PlaceHolder[] | null {
+  if (!holders) return null;
+  const status =
+    enumeration ?? (holders.length >= PLACE_HOLDER_READ_LIMIT ? 'incomplete' : 'complete');
+  if (status !== 'complete') return null;
+  return holders;
+}
+
 function locationLabel(google: GooglePlacesData): string {
   const place = google.name?.trim() || 'Google listing';
   const address = google.formatted_address?.trim();
@@ -270,13 +508,42 @@ export function selectRatingProvenance(input: {
   seedRating?: number | null;
   seedReviewCount?: number | null;
   realBusiness?: boolean;
+  /**
+   * Other rows that store this place id, including this provider.
+   * Omit the list when the read failed, was ambiguous, or hit the row cap.
+   * A partial list must not withhold a rightful owner.
+   */
+  samePlaceHolders?: PlaceHolder[];
+  holderEnumeration?: HolderEnumeration;
 }): { provenance: RatingProvenance; displayGoogle: GooglePlacesData | null; review: RatingReview | null } {
   const google = input.google ?? null;
   const providerId = input.provider.id;
   const seedOffered = (input.seedRating ?? 0) > 0;
   void input.seedReviewCount;
+  const holders = completeHolderRead(input.samePlaceHolders, input.holderEnumeration);
+  let classifiedMine: ClassifiedPlaceAssociation | undefined;
+  if (holders && google?.place_id) {
+    const classified = classifySharedPlaceHolders(
+      holders.filter((holder) => holder.placeId === google.place_id)
+    );
+    classifiedMine = classified.find((row) => row.companyId === providerId);
+    if (classifiedMine && !classifiedMine.displayRating) {
+      return {
+        displayGoogle: null,
+        review: {
+          providerId,
+          placeId: google.place_id,
+          reason: CONFLICT_REASON,
+          holderIds: holders
+            .filter((holder) => holder.companyId !== providerId)
+            .map((holder) => holder.companyId),
+        },
+        provenance: emptyProvenance(providerId, CONFLICT_REASON),
+      };
+    }
+  }
 
-  if (google && isRejectedGoogleListing(google, input.provider)) {
+  if (google && isRejectedGoogleListing(google, input.provider) && !classifiedMine?.displayRating) {
     return {
       displayGoogle: null,
       review: {
@@ -290,7 +557,8 @@ export function selectRatingProvenance(input: {
   }
 
   if (google && (hasGoogleReputationSnapshot(google) || googleHasDisplayNumbers(google))) {
-    const shared = hasSharedLocationEvidence(google);
+    const shared =
+      hasSharedLocationEvidence(google) || classifiedMine?.associationClass === 'shared_location';
     const named = Boolean(google.name?.trim());
     const full = hasGoogleReputationSnapshot(google);
     const scope = shared ? 'shared_location' : named ? 'location' : 'unverified';
@@ -360,8 +628,11 @@ export function applyRatingProvenance(
     seedRating?: number | null;
     seedReviewCount?: number | null;
     realBusiness?: boolean;
+    samePlaceHolders?: PlaceHolder[];
+    holderEnumeration?: HolderEnumeration;
   }
 ): Company {
+  const holderContext = company.placeAssociationContext;
   const selected = selectRatingProvenance({
     provider: {
       id: company.id,
@@ -378,6 +649,8 @@ export function applyRatingProvenance(
     seedRating: input?.seedRating,
     seedReviewCount: input?.seedReviewCount,
     realBusiness: input?.realBusiness,
+    samePlaceHolders: input?.samePlaceHolders ?? holderContext?.holders,
+    holderEnumeration: input?.holderEnumeration ?? holderContext?.enumeration,
   });
   if (company.ratingProvenance?.withheldReason && !selected.provenance.applicable) {
     return {
@@ -412,6 +685,29 @@ export function displayedRatingValue(company: {
   if (company.ratingProvenance?.withheldReason) return null;
   const value = Number(company.overallRating) || 0;
   return value > 0 ? value : null;
+}
+
+/** Applicable Google Places observation for this business. Not a stored scalar. */
+export function isVerifiedGoogleEvidence(
+  provenance: RatingProvenance | null | undefined
+): boolean {
+  if (!provenance?.applicable || provenance.withheldReason) return false;
+  return (
+    provenance.source === 'google_places_api' &&
+    (provenance.scope === 'location' || provenance.scope === 'shared_location')
+  );
+}
+
+/**
+ * Google review cards follow the same decision as the aggregate.
+ * The input array is not mutated. Non-Google sources are not labeled Google.
+ */
+export function googleReviewCardsForProvenance<T extends { source: string; verified?: boolean }>(
+  reviews: readonly T[],
+  provenance: RatingProvenance | null | undefined
+): T[] {
+  if (!isVerifiedGoogleEvidence(provenance)) return [];
+  return reviews.filter((review) => review.verified === true && review.source === 'Google');
 }
 
 function resolveHolderEnumeration(input: {

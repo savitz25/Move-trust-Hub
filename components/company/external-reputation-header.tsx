@@ -1,5 +1,6 @@
 import { hasGoogleReputationSnapshot } from '@/lib/verification/google-reputation-snapshot';
 import { isAttributableReview } from '@/lib/trust/verified-reviews';
+import { isVerifiedGoogleEvidence, type RatingProvenance } from '@/lib/verification/rating-provenance';
 import type { GooglePlacesData } from '@/lib/verification/types';
 import type { Review } from '@/types';
 
@@ -19,12 +20,18 @@ import type { Review } from '@/types';
 export function ExternalReputationHeader({
   googleData,
   reviews = [],
+  provenance,
 }: {
   googleData: GooglePlacesData | null | undefined;
   reviews?: Review[];
+  provenance?: RatingProvenance | null;
 }) {
+  const googleVerified = provenance == null || isVerifiedGoogleEvidence(provenance);
+  const showGoogle = googleVerified && hasGoogleReputationSnapshot(googleData);
+  const showReviews =
+    googleVerified && reviews.some((review) => isAttributableReview(review) && review.source === 'Google');
   // BBB remains in Regulatory & Trust Evidence; only count items rendered here.
-  if (!hasGoogleReputationSnapshot(googleData) && !reviews.some(isAttributableReview)) {
+  if (!showGoogle && !showReviews) {
     return null;
   }
 

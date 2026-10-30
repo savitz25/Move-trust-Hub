@@ -12,19 +12,29 @@ import {
   formatAttributableReviewCount,
 } from '@/lib/trust/review-display-policy';
 import { PROFILE_METRIC_TOOLTIPS } from '@/lib/trust/profile-metrics';
+import {
+  isVerifiedGoogleEvidence,
+  type RatingProvenance,
+} from '@/lib/verification/rating-provenance';
 
 type Props = {
   companyId: string;
   companyName: string;
   initialReviews: Review[];
+  /** When set, Google cards follow the same decision as the aggregate rating. */
+  provenance?: RatingProvenance | null;
 };
 
 /**
  * Third-party attributed references as short cards with outbound links.
  * Never republish full review body text; never emit schema.org Review for these.
  */
-export function AttributedReviewsPanel({ companyName, initialReviews }: Props) {
-  const attributable = initialReviews.filter(isAttributableReview);
+export function AttributedReviewsPanel({ companyName, initialReviews, provenance }: Props) {
+  const attributable = initialReviews.filter((review) => {
+    if (!isAttributableReview(review)) return false;
+    if (provenance == null) return true;
+    return review.source === 'Google' && isVerifiedGoogleEvidence(provenance);
+  });
   if (attributable.length === 0) return null;
 
   const headline = formatAttributableReviewCount(attributable.length);
