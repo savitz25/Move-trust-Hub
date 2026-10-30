@@ -16,6 +16,7 @@ import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { resolveYearsInBusiness } from '@/lib/directory/normalize-company';
+import { displayedRatingValue } from '@/lib/verification/rating-provenance';
 import {
   EmptyCoveragePanel,
   FMCSA_SAFER_SEARCH_URL,
@@ -275,10 +276,20 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
                     </div>
                   </div>
                   <div className="text-right">
-                    <StarRating rating={company.overallRating} />
-                    <div className="text-xs text-muted-foreground mt-0.5">
-                      (<EditorialReviewVolume count={company.reviewCount} />)
-                    </div>
+                    {company.ratingProvenance?.withheldReason ? (
+                      <span className="text-xs text-muted-foreground">
+                        Rating withheld · {company.ratingProvenance.withheldReason}
+                      </span>
+                    ) : displayedRatingValue(company) != null ? (
+                      <>
+                        <StarRating rating={displayedRatingValue(company)!} />
+                        <div className="text-xs text-muted-foreground mt-0.5">
+                          (<EditorialReviewVolume count={company.reviewCount} />)
+                        </div>
+                      </>
+                    ) : (
+                      <span className="text-xs text-muted-foreground">Rating not available yet</span>
+                    )}
                   </div>
                 </div>
 
@@ -378,8 +389,18 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
                     </div>
                   </td>
                   <td className="p-3">
-                    <StarRating rating={c.overallRating} size="sm" />{' '}
-                    <span className="text-xs">(<EditorialReviewVolume count={c.reviewCount} />)</span>
+                    {c.ratingProvenance?.withheldReason ? (
+                      <span className="text-xs text-muted-foreground">
+                        Rating withheld · {c.ratingProvenance.withheldReason}
+                      </span>
+                    ) : displayedRatingValue(c) != null ? (
+                      <>
+                        <StarRating rating={displayedRatingValue(c)!} size="sm" />{' '}
+                        <span className="text-xs">(<EditorialReviewVolume count={c.reviewCount} />)</span>
+                      </>
+                    ) : (
+                      <span className="text-muted-foreground">—</span>
+                    )}
                   </td>
                   <td className="p-3 font-semibold text-primary">{c.reputationScore}</td>
                   <td className="p-3">${c.avgPricePerMove.toLocaleString()}</td>

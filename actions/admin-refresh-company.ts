@@ -118,9 +118,11 @@ export async function refreshCompanyGoogleAction(companyId: string): Promise<Adm
   return {
     success: true,
     fieldsUpdated,
-    message: persisted.applied
-      ? `Google data refreshed — ${google.review_count ?? 0} reviews (rating ${google.rating ?? '—'})`
-      : `Kept existing Google snapshot (incoming status: ${google.status})`,
+    message: persisted.review
+      ? `Google listing was not attached (${persisted.review.reason})`
+      : persisted.applied
+        ? `Google data refreshed — ${google.review_count ?? 0} reviews (rating ${google.rating ?? '—'})`
+        : `Kept existing Google snapshot (incoming status: ${google.status})`,
     company: refreshed ? mapAdminListItem(refreshed) : undefined,
   };
 }

@@ -4,6 +4,13 @@ import {
   isDisplayableGoogleForUi,
   sanitizeGooglePlacesForDisplay,
 } from '@/lib/verification/display-enrichment';
+import {
+  applyRatingProvenance,
+  nameIdentityScore,
+  hasSharedLocationEvidence,
+} from '@/lib/verification/rating-provenance';
+import { GOOGLE_PLACES_MIN_ACCEPT_SCORE } from '@/lib/verification/google-places-name-queries';
+import type { GooglePlacesData } from '@/lib/verification/types';
 import type { Company } from '@/types';
 
 function dedupeKey(company: Company): string {
@@ -52,23 +59,37 @@ export function mergeEnrichmentOntoProfile(base: Company, enrichment: Company): 
   // Prefer any usable Google snapshot from either side (DB often has it; catalog rarely).
   const baseG = sanitizeGooglePlacesForDisplay(base.googleData);
   const enrichG = sanitizeGooglePlacesForDisplay(enrichment.googleData);
+  const provider = {
+    id: enrichment.id || base.id,
+    name: enrichment.name || base.name,
+    legalName: enrichment.fmcsaLegalName || base.fmcsaLegalName,
+    usdotNumber: enrichment.usdotNumber || base.usdotNumber,
+    website: enrichment.website || base.website,
+    phone: enrichment.phone || base.phone,
+    headquarters: enrichment.headquarters || base.headquarters,
+  };
+  const applicableGoogle = (candidate: GooglePlacesData | null) => {
+    if (!candidate?.name?.trim()) return false;
+    return (
+      hasSharedLocationEvidence(candidate) ||
+      nameIdentityScore(candidate.name, candidate.formatted_address, provider) >=
+        GOOGLE_PLACES_MIN_ACCEPT_SCORE
+    );
+  };
+  const namelessLegacy = (candidate: GooglePlacesData | null) =>
+    Boolean(
+      candidate &&
+        !candidate.name?.trim() &&
+        (candidate.rating ?? 0) > 0 &&
+        (candidate.review_count ?? 0) > 0
+    );
   const google =
-    (isDisplayableGoogleForUi(baseG) ? baseG : null) ??
-    (isDisplayableGoogleForUi(enrichG) ? enrichG : null) ??
-    enrichG ??
-    baseG;
-  const useGoogleRating =
-    isDisplayableGoogleForUi(google) && google!.rating != null && google!.rating > 0;
-  const baseRating = base.overallRating > 0 ? base.overallRating : 0;
-  const enrichRating = enrichment.overallRating > 0 ? enrichment.overallRating : 0;
-  // Keep industry-reported editorial ratings separate from the Google Places snapshot.
-  // Only fall back to Places for overallRating when both sides have no editorial value
-  // (local movers with empty columns). Never replace seed industry volume with Places count.
-  const editorialRating = Math.max(baseRating, enrichRating);
-  const editorialCount = Math.max(
-    base.reviewCount > 0 ? base.reviewCount : 0,
-    enrichment.reviewCount > 0 ? enrichment.reviewCount : 0
-  );
+    (applicableGoogle(enrichG) ? enrichG : null) ??
+    (applicableGoogle(baseG) ? baseG : null) ??
+    (namelessLegacy(enrichG) ? enrichG : null) ??
+    (namelessLegacy(baseG) ? baseG : null) ??
+    (!applicableGoogle(enrichG) && enrichG?.name?.trim() ? enrichG : null) ??
+    (!applicableGoogle(baseG) && baseG?.name?.trim() ? baseG : null);
 
   const googleAddr =
     isDisplayableGoogleForUi(google) && google?.formatted_address?.trim()
@@ -86,7 +107,7 @@ export function mergeEnrichmentOntoProfile(base: Company, enrichment: Company): 
     base.physicalAddress ||
     enrichment.physicalAddress;
 
-  return normalizeCompanyForDisplay({
+  const mergedWithoutRating = normalizeCompanyForDisplay({
     ...base,
     // Live directory/DB identity must win over static catalog/seed stubs.
     id: enrichment.id || base.id,
@@ -95,18 +116,8 @@ export function mergeEnrichmentOntoProfile(base: Company, enrichment: Company): 
     mcNumber: enrichment.mcNumber || base.mcNumber,
     googleData: google,
     publicScrapeData: enrichment.publicScrapeData ?? base.publicScrapeData,
-    overallRating:
-      editorialRating > 0
-        ? editorialRating
-        : useGoogleRating
-          ? google.rating!
-          : 0,
-    reviewCount:
-      editorialCount > 0
-        ? editorialCount
-        : useGoogleRating && google.review_count != null
-          ? google.review_count
-          : 0,
+    overallRating: 0,
+    reviewCount: 0,
     physicalAddress: physicalAddress || base.physicalAddress,
     phone:
       base.phone?.trim() ||
@@ -131,6 +142,15 @@ export function mergeEnrichmentOntoProfile(base: Company, enrichment: Company): 
       ? enrichment.services
       : base.services,
   });
+  // Second argument is the live company. Catalog/seed ratings stay on `base`
+  // and are not eligible when this business has its own row.
+  return applyRatingProvenance(mergedWithoutRating, {
+    storedRating: enrichment.overallRating,
+    storedReviewCount: enrichment.reviewCount,
+    seedRating: base.overallRating,
+    seedReviewCount: base.reviewCount,
+    realBusiness: Boolean(enrichment.id),
+  });
 }
 
 function pickMergedProfile(directory: Company, catalog: Company): Company {
@@ -151,7 +171,7 @@ function pickMergedProfile(directory: Company, catalog: Company): Company {
     merged = base;
   }
 
-  return normalizeCompanyForDisplay({
+  const identity = normalizeCompanyForDisplay({
     ...merged,
     // Live DB identity always wins. Catalog snapshots may still carry Task 002-era
     // copied USDOTs or names; never let those overwrite a canonical company.
@@ -168,6 +188,19 @@ function pickMergedProfile(directory: Company, catalog: Company): Company {
     publicationState:
       directory.publicationState ?? catalog.publicationState ?? merged.publicationState,
     indexable: directory.indexable ?? catalog.indexable ?? merged.indexable,
+    googleData: merged.ratingProvenance
+      ? merged.googleData ?? null
+      : directory.googleData ?? catalog.googleData ?? merged.googleData,
+  });
+  if (merged.ratingProvenance?.withheldReason) {
+    return identity;
+  }
+  return applyRatingProvenance(identity, {
+    storedRating: directory.overallRating,
+    storedReviewCount: directory.reviewCount,
+    seedRating: catalog.overallRating,
+    seedReviewCount: catalog.reviewCount,
+    realBusiness: true,
   });
 }
 

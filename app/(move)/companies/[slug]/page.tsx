@@ -533,9 +533,16 @@ export default async function CompanyProfilePage({ params }: Props) {
           {/* C. External Reputation Snapshots — one coherent, clearly-labeled section */}
           <ExternalReputationHeader googleData={googlePlaces} reviews={reviews} />
 
+          {displayCompany.ratingProvenance?.withheldReason ? (
+            <p className="text-sm text-muted-foreground mb-4">
+              Rating withheld · {displayCompany.ratingProvenance.withheldReason}
+            </p>
+          ) : null}
+
           <GoogleReviewsSection
             data={googlePlaces}
             companyName={company.name}
+            provenance={displayCompany.ratingProvenance}
             attributableOnSiteCount={attributableOnSiteCount}
           />
 

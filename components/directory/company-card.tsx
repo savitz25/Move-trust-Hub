@@ -22,6 +22,7 @@ import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { CompanyCardActions } from '@/components/directory/company-card-actions';
 import { CompanyProfileLink } from '@/components/directory/company-profile-link';
 import { getAutoTransportEvidence } from '@/lib/directory/auto-transport-evidence';
+import { displayedRatingValue } from '@/lib/verification/rating-provenance';
 
 type CompareStore = {
   isSelected: (slug: string) => boolean;
@@ -111,16 +112,28 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
 
         <div className="text-sm text-muted-foreground mt-1">{locationLine}</div>
 
-        <div className="mt-3 flex items-baseline gap-2">
-          {company.overallRating > 0 ? (
+        <div className="mt-3 flex flex-wrap items-baseline gap-2">
+          {company.ratingProvenance?.withheldReason ? (
+            <span className="text-xs text-muted-foreground">
+              Rating withheld · {company.ratingProvenance.withheldReason}
+            </span>
+          ) : displayedRatingValue(company) != null ? (
             <>
-              <StarRating rating={company.overallRating} />
+              <StarRating rating={displayedRatingValue(company)!} />
               <span
                 className="text-xs text-muted-foreground"
-                title="Industry-reported volume from third-party platforms (e.g. Google). Not the same as on-site attributable reviews."
+                title="This count belongs to the labeled source and scope. It is not an on-site review count."
               >
                 (<EditorialReviewVolume count={company.reviewCount} />)
               </span>
+              {company.ratingProvenance ? (
+                <span className="text-xs text-muted-foreground basis-full">
+                  {company.ratingProvenance.sourceLabel} · {company.ratingProvenance.scopeLabel}
+                  {company.ratingProvenance.observedAt
+                    ? ` · observed ${company.ratingProvenance.observedAt.slice(0, 10)}`
+                    : ''}
+                </span>
+              ) : null}
             </>
           ) : (
             <span className="text-xs text-muted-foreground">Rating not available yet</span>

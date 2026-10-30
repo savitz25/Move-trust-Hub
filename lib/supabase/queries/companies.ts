@@ -32,6 +32,10 @@ import { normalizeCompanyWebsiteUrl } from '@/lib/verification/normalize-website
 import type { Company } from '@/types';
 import { isMissingEnrichmentColumnError } from '@/lib/suggestions/jsonb-payload';
 import { finalizeCompanyEnrichmentForDisplay } from '@/lib/verification/company-display-enrichment';
+import {
+  applyRatingProvenance,
+  isRejectedGoogleListing,
+} from '@/lib/verification/rating-provenance';
 import { isSeoIndexableCompany } from '@/lib/provider/publication';
 import type { PublicationState } from '@/lib/provider/types';
 
@@ -255,54 +259,17 @@ export function mapCompanyRow(row: Record<string, unknown>): Company {
     '';
   const websiteResolved = normalizeCompanyWebsiteUrl(websiteRaw) || websiteRaw;
 
-  // Prefer explicit overall_rating; fall back to Google Places snapshot when
-  // onboard wrote google_data / verification_sources.google but left ratings at 0.
-  let googleData = resolveGoogleDataFromRow(row);
+  // Keep the stored Google snapshot intact. Do not copy overall_rating
+  // into a synthetic Places record; card and profile select one observation later.
+  const googleData = resolveGoogleDataFromRow(row);
   const publicScrapeData = resolvePublicScrapeFromRow(row);
   const dbRating = Number(row.overall_rating) || 0;
   const dbReviews = Number(row.review_count) || 0;
-  let googleOk =
+  const googleOk =
     (googleData?.status === 'ok' || googleData?.status == null) &&
     googleData != null &&
     ((googleData.rating != null && googleData.rating > 0) ||
       (googleData.review_count != null && googleData.review_count > 0));
-
-  // Columns may hold Places-derived ratings while verification_sources.google was
-  // never written. Synthesize a minimal ok snapshot only when denormalized numbers
-  // exist so profile/compare Google panels are not empty (finalize also labels derived).
-  if (!googleOk && dbRating > 0 && dbReviews > 0) {
-    googleData = {
-      source: 'google_places_api',
-      place_id: googleData?.place_id ?? null,
-      name: (row.name as string) || null,
-      rating: dbRating,
-      review_count: dbReviews,
-      formatted_address: googleData?.formatted_address ?? null,
-      website_url: googleData?.website_url ?? null,
-      phone: googleData?.phone ?? null,
-      review_snippets: googleData?.review_snippets ?? [],
-      last_fetched:
-        googleData?.last_fetched ??
-        (typeof row.last_updated === 'string' && row.last_updated
-          ? row.last_updated
-          : new Date().toISOString()),
-      status: 'ok',
-    };
-    googleOk = true;
-  }
-
-  const overallRating =
-    dbRating > 0
-      ? dbRating
-      : googleOk && googleData!.rating != null && googleData!.rating > 0
-        ? googleData!.rating
-        : 0;
-  const reviewCount =
-    dbReviews > 0
-      ? dbReviews
-      : googleOk && googleData!.review_count != null
-        ? googleData!.review_count
-        : 0;
   // Strict BBB: never surface letter grades from companies.bbb_rating alone
   // when public scrape did not confirm a real bbb.org profile match.
   const bbbRating = resolveDisplayBbbRating(
@@ -343,7 +310,17 @@ export function mapCompanyRow(row: Record<string, unknown>): Company {
   // Prefer street-level Places address when FMCSA/physical is empty or city-only.
   const fmcsaAddr = (fmcsaFields.physicalAddress || '').trim();
   const googleAddr =
-    googleOk && googleData?.formatted_address?.trim()
+    googleOk &&
+    googleData?.formatted_address?.trim() &&
+    !isRejectedGoogleListing(googleData, {
+      id: String(row.id ?? ''),
+      name: publicNames.publicName,
+      legalName: publicNames.legalName,
+      usdotNumber: typeof row.usdot_number === 'string' ? row.usdot_number : '',
+      website: websiteResolved,
+      phone: phoneResolved,
+      headquarters: typeof row.headquarters === 'string' ? row.headquarters : '',
+    })
       ? googleData.formatted_address.trim()
       : '';
   const physicalAddressResolved =
@@ -397,8 +374,8 @@ export function mapCompanyRow(row: Record<string, unknown>): Company {
     bbbDataHash: (row.bbb_data_hash as string) || null,
     bbbBusinessId: (row.bbb_business_id as string) || null,
     bbbAlertCount: (row.bbb_alert_count as number) ?? 0,
-    overallRating,
-    reviewCount,
+    overallRating: 0,
+    reviewCount: 0,
     reputationScore: (row.reputation_score as number) || 0,
     yearsInBusiness: (row.years_in_business as number) || 0,
     avgPricePerMove: (row.avg_price_per_move as number) || 0,
@@ -421,8 +398,11 @@ export function mapCompanyRow(row: Record<string, unknown>): Company {
     googleData,
     publicScrapeData,
   });
-  // Final pass: attach displayable Google snapshot when columns have ratings
-  return finalizeCompanyEnrichmentForDisplay(mapped);
+  return applyRatingProvenance(finalizeCompanyEnrichmentForDisplay(mapped), {
+    storedRating: dbRating,
+    storedReviewCount: dbReviews,
+    realBusiness: true,
+  });
 }
 
 const COMPANIES_FETCH_TIMEOUT_MS = 20_000;

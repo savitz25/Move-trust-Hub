@@ -4,6 +4,12 @@ import type {
   PublicScrapeData,
 } from '@/lib/verification/types';
 import { isUsableGoogleSnapshot } from '@/lib/verification/google-places';
+import {
+  decidePlaceAttachment,
+  type HolderEnumeration,
+  type PlaceHolder,
+  type RatingReview,
+} from '@/lib/verification/rating-provenance';
 
 /** Only refresh enrichment when missing or older than this many days. */
 export const ENRICHMENT_STALE_DAYS = 30;
@@ -27,6 +33,9 @@ export type MoverCompanyRow = {
   verification_last_synced_at: string | null;
   overall_rating: number | null;
   review_count: number | null;
+  usdotNumber?: string | null;
+  website?: string | null;
+  legalName?: string | null;
 };
 
 export function parseVerificationSources(raw: unknown): VerificationSources {
@@ -117,37 +126,65 @@ export function buildVerificationBackfillUpdate(
   row: MoverCompanyRow,
   enrichment: CompanyEnrichmentResult,
   refreshGoogle: boolean,
-  refreshScrape: boolean
-): Record<string, unknown> | null {
+  refreshScrape: boolean,
+  options?: {
+    holders?: PlaceHolder[];
+    holderLookup?: 'succeeded' | 'failed';
+    holderEnumeration?: HolderEnumeration;
+  }
+): { updates: Record<string, unknown> | null; review: RatingReview | null } {
   const updates: Record<string, unknown> = {};
   const nextSources: VerificationSources = { ...row.verification_sources };
   let changed = false;
+  let review: RatingReview | null = null;
 
   if (refreshGoogle && enrichment.google) {
     const existing = googleFromVerificationSources(row.verification_sources);
-    const incoming = enrichment.google;
+    let incoming = enrichment.google;
+    const decision = decidePlaceAttachment({
+      target: {
+        id: row.id,
+        name: row.name,
+        legalName: row.legalName,
+        usdotNumber: row.usdotNumber,
+        website: row.website,
+        headquarters: row.headquarters,
+      },
+      incoming,
+      holders: options?.holders,
+      holderLookup: options?.holderLookup,
+      holderEnumeration: options?.holderEnumeration,
+      existingPlaceId: existing?.place_id ?? null,
+    });
 
-    // Never overwrite a usable Google snapshot with a failed / empty fetch.
-    const shouldApply =
-      isUsableGoogleSnapshot(incoming) ||
-      (!isUsableGoogleSnapshot(existing) &&
-        (incoming.status === 'not_found' ||
-          incoming.status === 'error' ||
-          incoming.status === 'skipped' ||
-          !existing));
+    if (decision.action === 'review') {
+      review = decision.review;
+    } else {
+      if (decision.scope) {
+        incoming = { ...incoming, association_scope: incoming.association_scope ?? decision.scope };
+      }
+      // Never overwrite a usable Google snapshot with a failed / empty fetch.
+      const shouldApply =
+        isUsableGoogleSnapshot(incoming) ||
+        (!isUsableGoogleSnapshot(existing) &&
+          (incoming.status === 'not_found' ||
+            incoming.status === 'error' ||
+            incoming.status === 'skipped' ||
+            !existing));
 
-    if (shouldApply) {
-      nextSources.google = isUsableGoogleSnapshot(incoming)
-        ? incoming
-        : existing && isUsableGoogleSnapshot(existing)
-          ? existing
-          : incoming;
-      changed = true;
+      if (shouldApply) {
+        nextSources.google = isUsableGoogleSnapshot(incoming)
+          ? incoming
+          : existing && isUsableGoogleSnapshot(existing)
+            ? existing
+            : incoming;
+        changed = true;
 
-      if (isUsableGoogleSnapshot(incoming) && incoming.rating != null && incoming.rating > 0) {
-        updates.overall_rating = incoming.rating;
-        if (incoming.review_count != null) {
-          updates.review_count = incoming.review_count;
+        if (isUsableGoogleSnapshot(incoming) && incoming.rating != null && incoming.rating > 0) {
+          updates.overall_rating = incoming.rating;
+          if (incoming.review_count != null) {
+            updates.review_count = incoming.review_count;
+          }
         }
       }
     }
@@ -158,12 +195,12 @@ export function buildVerificationBackfillUpdate(
     changed = true;
   }
 
-  if (!changed) return null;
+  if (!changed) return { updates: null, review };
 
   updates.verification_sources = nextSources;
   updates.verification_last_synced_at = new Date().toISOString();
   updates.last_updated = new Date().toISOString().slice(0, 10);
-  return updates;
+  return { updates, review };
 }
 
 /** FMCSA + authority fields — explicitly excluded from backfill updates. */

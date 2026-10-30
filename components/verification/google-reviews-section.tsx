@@ -6,6 +6,7 @@ import { MetricLabel } from '@/components/trust/metric-label';
 import { googleMapsProfileUrl } from '@/lib/verification/google-profile-url';
 import { PROFILE_METRIC_TOOLTIPS } from '@/lib/trust/profile-metrics';
 import { hasGoogleReputationSnapshot } from '@/lib/verification/google-reputation-snapshot';
+import type { RatingProvenance } from '@/lib/verification/rating-provenance';
 import type { GooglePlacesData } from '@/lib/verification/types';
 
 function GoogleWordmark({ className }: { className?: string }) {
@@ -24,6 +25,7 @@ function GoogleWordmark({ className }: { className?: string }) {
 type Props = {
   data: GooglePlacesData | null | undefined;
   companyName: string;
+  provenance?: RatingProvenance | null;
   attributableOnSiteCount?: number;
 };
 
@@ -33,6 +35,7 @@ type Props = {
  */
 export function GoogleReviewsSection({
   data,
+  provenance,
   attributableOnSiteCount = 0,
 }: Props) {
   if (!hasGoogleReputationSnapshot(data)) return null;
@@ -67,6 +70,12 @@ export function GoogleReviewsSection({
               {`${data.rating.toFixed(1)} on Google — view on Google for full reviews.`}{' '}
               Move Trust Hub does not republish Google review body text.
             </p>
+            {provenance ? (
+              <p className="text-xs text-muted-foreground mt-1">
+                {provenance.sourceLabel} · {provenance.scopeLabel}
+                {provenance.observedAt ? ` · observed ${provenance.observedAt.slice(0, 10)}` : ''}
+              </p>
+            ) : null}
             {data.name ? (
               <p className="text-xs text-muted-foreground mt-1">{data.name}</p>
             ) : null}
