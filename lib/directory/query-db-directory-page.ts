@@ -24,6 +24,13 @@ import { SEARCH_ALL_CANDIDATE_LIMIT } from '@/lib/search/types';
 import { logger } from '@/lib/logging/logger';
 import { getSupabaseAnonKey, getSupabaseUrl, isSupabaseConfigured } from '@/lib/supabase/config';
 import {
+  hydrateListingPage,
+  isPlainReputationListing,
+  pageReputationListing,
+  PLAIN_REPUTATION_LISTING_SQL,
+  readPlainListingPage,
+} from '@/lib/directory/listing-rank';
+import {
   companyListProjectionCandidates,
   mapCompanyRow,
 } from '@/lib/supabase/queries/companies';
@@ -195,7 +202,10 @@ async function fetchCompaniesByIds(
   const supabase = createAnonClient();
   if (!supabase) return [];
 
-  const projections = companyListProjectionCandidates(false);
+  // The page is already bounded. Include legacy JSON here so a Google or BBB
+  // snapshot that exists only in those columns still reaches the card.
+  // The ranking query does not select them.
+  const projections = companyListProjectionCandidates(true);
   let rows: Record<string, unknown>[] | null = null;
 
   for (const columns of projections) {
@@ -236,8 +246,7 @@ async function fetchCompaniesByIds(
     }
   }
 
-  // Preserve RPC/page order
-  return ids.map((id) => byId.get(id)).filter((c): c is Company => Boolean(c));
+  return hydrateListingPage(ids, [...byId.values()]);
 }
 
 async function queryRecordedHqPage(options: {
@@ -365,6 +374,19 @@ async function queryViaPg(options: {
     });
     await client.connect();
     try {
+      if (isPlainReputationListing({ filters, excludeLocal, usdot, mc })) {
+        const narrow = await client.query<{
+          company_id: string | null;
+          total_count: number | string | null;
+        }>(PLAIN_REPUTATION_LISTING_SQL, [offset, limit]);
+        const page = readPlainListingPage(narrow.rows);
+        return {
+          total: page.total,
+          ids: page.ids,
+          path: 'pg',
+        };
+      }
+
       const result = await client.query<RpcRow>(
         `SELECT total_count, company_id, row_offset
            FROM public.directory_query_page(
@@ -421,6 +443,14 @@ async function queryViaRpc(options: {
   const viaPg = await queryViaPg(options);
   if (viaPg) return viaPg;
 
+  // Default browse does not need directory_query_page. That function selects
+  // every companies column, including google_data and public_scrape_data,
+  // before sorting by reputation. The narrow id scan preserves the page.
+  if (isPlainReputationListing(options)) {
+    const narrow = await queryPlainReputationViaPostgrest(options);
+    if (narrow) return narrow;
+  }
+
   const supabase = createAnonClient();
   if (!supabase) return null;
 
@@ -467,6 +497,78 @@ async function queryViaRpc(options: {
 }
 
 /**
+ * Plain reputation browse without a direct Postgres connection.
+ * PostgREST cannot ORDER BY COALESCE(reputation_score, 0), and NULLS LAST
+ * puts a null score after zero. Scan id + score only, then use the SQL order.
+ * An incomplete scan returns null so directory_query_page remains the fallback.
+ */
+async function queryPlainReputationViaPostgrest(options: {
+  offset: number;
+  limit: number;
+}): Promise<DirectoryIdPage | null> {
+  const supabase = createAnonClient();
+  if (!supabase) return null;
+
+  const pageSize = 1000;
+  const maxRows = 20_000;
+  const collected: { id: string; reputationScore: number | null }[] = [];
+  const seen = new Set<string>();
+  let from = 0;
+  let total: number | null = null;
+
+  while (from < maxRows) {
+    const { data, error, count } = await supabase
+      .from('companies')
+      .select('id, reputation_score', { count: from === 0 ? 'exact' : undefined })
+      .or('publication_state.is.null,publication_state.in.(PUBLISHABLE,INDEXABLE,VERIFIED)')
+      .or('service_scope.is.null,service_scope.neq.intrastate')
+      .order('id', { ascending: true })
+      .range(from, from + pageSize - 1);
+
+    if (error) {
+      logger.warn('directory.db_engine.plain_postgrest_failed', {
+        message: error.message,
+        code: error.code,
+      });
+      return null;
+    }
+
+    if (from === 0 && typeof count === 'number') total = count;
+    const batch = (data ?? []) as { id?: string; reputation_score?: number | string | null }[];
+    for (const row of batch) {
+      if (!row.id || seen.has(row.id)) continue;
+      seen.add(row.id);
+      const numeric = row.reputation_score == null ? null : Number(row.reputation_score);
+      collected.push({
+        id: row.id,
+        reputationScore: numeric == null || Number.isNaN(numeric) ? null : numeric,
+      });
+    }
+
+    if (batch.length < pageSize) break;
+    from += pageSize;
+  }
+
+  if (total != null && collected.length < total) return null;
+  const ranked = pageReputationListing(
+    collected.map((row) => ({
+      id: row.id,
+      reputationScore: row.reputationScore,
+      publicationState: 'PUBLISHABLE',
+      serviceScope: 'interstate',
+    })),
+    options.offset,
+    options.limit,
+    () => true
+  );
+  return {
+    total: total ?? ranked.total,
+    ids: ranked.ids,
+    path: 'postgrest',
+  };
+}
+
+/**
  * PostgREST fallback when RPC is not yet migrated.
  * Handles default browse + simple filters; price/complaint sparse sorts are best-effort.
  */
@@ -491,7 +593,8 @@ async function queryViaPostgrest(options: {
     );
 
   if (excludeLocal) {
-    query = query.or('service_scope.is.null,service_scope.eq.interstate');
+    // Match `service_scope IS DISTINCT FROM 'intrastate'`, including null and other scopes.
+    query = query.or('service_scope.is.null,service_scope.neq.intrastate');
   }
 
   if (usdot) {
@@ -543,6 +646,8 @@ async function queryViaPostgrest(options: {
       query = query.order('fmcsa_complaints', { ascending: true }).order('id', { ascending: true });
       break;
     default:
+      // Non-plain fallback keeps the pre-existing column order. The plain
+      // listing path sorts null scores with zero in queryPlainReputationViaPostgrest.
       query = query.order('reputation_score', { ascending: false }).order('id', { ascending: true });
   }
 
