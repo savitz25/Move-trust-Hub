@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import path from 'node:path';
 import { describe, it } from 'node:test';
+import { pathToFileURL } from 'node:url';
 import { mergeDirectoryCompanies, mergeEnrichmentOntoProfile } from '@/lib/directory/merge-directory';
 import { buildCompanyDirectorySchemaGraph } from '@/lib/seo/build-company-directory-schema';
 import { mapCompanyRow } from '@/lib/supabase/queries/companies';
@@ -13,6 +15,7 @@ import {
   decidePlaceAttachment,
   displayedRatingValue,
   nameIdentityScore,
+  PLACE_HOLDER_READ_LIMIT,
   selectRatingProvenance,
   type PlaceHolder,
 } from '@/lib/verification/rating-provenance';
@@ -834,7 +837,10 @@ describe('identity boundaries', () => {
       holders: [],
       holderLookup: 'succeeded',
     });
-    assert.equal(succeeded.action, 'attach');
+    assert.equal(succeeded.action, 'review');
+    assert.match(succeeded.reason, /cannot be reserved atomically/);
+    assert.doesNotMatch(succeeded.reason, /lookup failed/);
+    assert.deepEqual(succeeded.deleteHolderIds, []);
 
     const planned = buildVerificationBackfillUpdate(
       {
@@ -942,6 +948,521 @@ describe('identity boundaries', () => {
     assert.equal(updates.length, 0);
   });
 });
+
+const harborTarget = {
+  id: 'co-harbor',
+  name: 'Harbor Gate Movers',
+  usdotNumber: '1002003',
+  headquarters: 'Savannah, GA',
+  website: 'https://harborgate.example',
+};
+
+function sameBusinessPage(): PlaceHolder[] {
+  return Array.from({ length: PLACE_HOLDER_READ_LIMIT }, (_, index) =>
+    holder({
+      companyId: `co-same-${index}`,
+      companyName: 'Harbor Gate Movers',
+      usdotNumber: '1002003',
+      placeId: 'place-shared',
+      placeName: 'Harbor Gate Movers',
+      formattedAddress: '10 Dock Street, Savannah, GA 31401',
+    })
+  );
+}
+
+function holderAdmin(limitResult: { data: unknown; error: { message?: string } | null }) {
+  const updates: unknown[] = [];
+  const admin = {
+    from() {
+      const chain = {
+        select() {
+          return chain;
+        },
+        neq() {
+          return chain;
+        },
+        filter() {
+          return chain;
+        },
+        limit() {
+          return Promise.resolve(limitResult);
+        },
+        update(payload: unknown) {
+          updates.push(payload);
+          return Promise.resolve({ error: null });
+        },
+      };
+      return chain;
+    },
+  };
+  return { admin, updates };
+}
+
+describe('write safety', () => {
+  it('does not treat a capped holder page as proof that no conflict exists', () => {
+    const visible = sameBusinessPage();
+    const hidden = holder({
+      companyId: 'co-beyond-cap',
+      companyName: 'Northline Van Lines',
+      usdotNumber: '3004005',
+      placeId: 'place-shared',
+      placeName: 'Northline Van Lines',
+    });
+    const incoming = google({
+      place_id: 'place-shared',
+      name: 'Harbor Gate Movers',
+      rating: 4.4,
+      review_count: 30,
+    });
+    const capped = decidePlaceAttachment({
+      target: harborTarget,
+      incoming,
+      holders: visible,
+      holderEnumeration: 'incomplete',
+      holderLookup: 'succeeded',
+    });
+    assert.equal(capped.action, 'review');
+    assert.match(capped.reason, /enumeration is incomplete/);
+    assert.doesNotMatch(capped.reason, /unclaimed|identity_match|no conflicting/i);
+    assert.equal(capped.review?.holderIds.includes('co-beyond-cap'), false);
+    assert.deepEqual(capped.deleteHolderIds, []);
+
+    const seen = decidePlaceAttachment({
+      target: harborTarget,
+      incoming,
+      holders: [...visible, hidden],
+      holderEnumeration: 'complete',
+    });
+    assert.equal(seen.action, 'review');
+    assert.match(seen.reason, /Unresolved identity conflict/);
+    assert.deepEqual(seen.review?.holderIds, ['co-beyond-cap']);
+    assert.deepEqual(seen.deleteHolderIds, []);
+  });
+
+  it('fails closed when holder enumeration is incomplete, failed, or ambiguous', async () => {
+    const incoming = google({
+      place_id: 'place-shared',
+      name: 'Harbor Gate Movers',
+      rating: 4.4,
+      review_count: 30,
+    });
+    const ambiguous = decidePlaceAttachment({
+      target: harborTarget,
+      incoming,
+      holders: [],
+      holderEnumeration: 'ambiguous',
+    });
+    assert.equal(ambiguous.action, 'review');
+    assert.match(ambiguous.reason, /enumeration is ambiguous/);
+
+    const sharedButCapped = decidePlaceAttachment({
+      target: harborTarget,
+      incoming: google({
+        place_id: 'place-shared',
+        name: 'Harbor Gate Movers',
+        association_scope: 'shared_location',
+        shared_location_evidence: auditableEvidence(),
+      }),
+      holders: [],
+      holderEnumeration: 'incomplete',
+    });
+    assert.equal(sharedButCapped.action, 'review');
+    assert.notEqual(sharedButCapped.scope, 'shared_location');
+    assert.match(sharedButCapped.reason, /enumeration is incomplete/);
+
+    const rows = sameBusinessPage().map((item) => ({
+      id: item.companyId,
+      name: item.companyName,
+      usdot_number: item.usdotNumber,
+      fmcsa_legal_name: null,
+      website: 'https://harborgate.example',
+      google_data: {
+        source: 'google_places_api',
+        status: 'ok',
+        place_id: 'place-shared',
+        name: 'Harbor Gate Movers',
+      },
+      verification_sources: {
+        google: {
+          source: 'google_places_api',
+          status: 'ok',
+          place_id: 'place-shared',
+          name: 'Harbor Gate Movers',
+        },
+      },
+    }));
+    const cappedAdmin = holderAdmin({ data: rows, error: null });
+    const cappedWrite = await persistGoogleSnapshot(
+      cappedAdmin.admin as never,
+      'co-harbor',
+      incoming,
+      {
+        existingRow: {
+          id: 'co-harbor',
+          name: 'Harbor Gate Movers',
+          headquarters: 'Savannah, GA',
+          usdot_number: '1002003',
+          website: 'https://harborgate.example',
+          verification_sources: {},
+          google_data: null,
+        },
+      }
+    );
+    assert.equal(cappedWrite.applied, false);
+    assert.match(cappedWrite.review?.reason ?? '', /enumeration is incomplete/);
+    assert.equal(cappedAdmin.updates.length, 0);
+
+    const ambiguousAdmin = holderAdmin({ data: null, error: null });
+    const ambiguousWrite = await persistGoogleSnapshot(
+      ambiguousAdmin.admin as never,
+      'co-harbor',
+      incoming,
+      {
+        existingRow: {
+          id: 'co-harbor',
+          name: 'Harbor Gate Movers',
+          headquarters: 'Savannah, GA',
+          usdot_number: '1002003',
+          verification_sources: {},
+          google_data: null,
+        },
+      }
+    );
+    assert.equal(ambiguousWrite.applied, false);
+    assert.match(ambiguousWrite.review?.reason ?? '', /enumeration is ambiguous/);
+    assert.equal(ambiguousAdmin.updates.length, 0);
+  });
+
+  it('refreshes an association this company already holds and does not clear it on an incomplete read', () => {
+    const incoming = google({
+      place_id: 'place-shared',
+      name: 'Harbor Gate Movers',
+      rating: 4.1,
+      review_count: 12,
+    });
+    const stored = {
+      source: 'google_places_api' as const,
+      status: 'ok' as const,
+      place_id: 'place-shared',
+      name: 'Harbor Gate Movers',
+      rating: 4.1,
+      review_count: 12,
+    };
+    const refresh = decidePlaceAttachment({
+      target: harborTarget,
+      incoming,
+      holders: [],
+      holderEnumeration: 'complete',
+      existingPlaceId: 'place-shared',
+    });
+    assert.equal(refresh.action, 'attach');
+    assert.equal(refresh.reason, 'existing_association');
+    assert.deepEqual(refresh.deleteHolderIds, []);
+
+    const row = {
+      id: 'co-harbor',
+      slug: 'harbor-gate-movers',
+      name: 'Harbor Gate Movers',
+      headquarters: 'Savannah, GA',
+      usdotNumber: '1002003',
+      website: 'https://harborgate.example',
+      verification_sources: { google: stored },
+      verification_last_synced_at: '2026-04-02T00:00:00.000Z',
+      overall_rating: 4.1,
+      review_count: 12,
+    };
+    const blocked = buildVerificationBackfillUpdate(
+      row,
+      { google: incoming, publicScrape: null, fetchedAt: '2026-08-01T00:00:00.000Z' },
+      true,
+      false,
+      { holders: [], holderEnumeration: 'incomplete', holderLookup: 'succeeded' }
+    );
+    assert.equal(blocked.updates, null);
+    assert.match(blocked.review?.reason ?? '', /enumeration is incomplete/);
+    assert.equal(row.verification_sources.google.place_id, 'place-shared');
+    assert.equal(row.verification_sources.google.rating, 4.1);
+
+    const kept = buildVerificationBackfillUpdate(
+      row,
+      { google: incoming, publicScrape: null, fetchedAt: '2026-08-01T00:00:00.000Z' },
+      true,
+      false,
+      { holders: [], holderEnumeration: 'complete', holderLookup: 'succeeded' }
+    );
+    const next = kept.updates?.verification_sources as { google?: GooglePlacesData };
+    assert.equal(next.google?.place_id, 'place-shared');
+    assert.equal(kept.review, null);
+  });
+
+  it('refuses two competing automatic attachments in a simulated fixture', async () => {
+    const table = new Map<string, string | null>([
+      ['co-harbor', null],
+      ['co-second', null],
+    ]);
+    const evidence = { kind: 'simulated' as const, databaseExecuted: false, guardedWrites: 0 };
+    async function guarded(companyId: string, usdotNumber: string) {
+      const holders = [...table.entries()]
+        .filter(([id, place]) => id !== companyId && place === 'place-shared')
+        .map(([id]) =>
+          holder({
+            companyId: id,
+            companyName: 'Harbor Gate Movers',
+            usdotNumber: id === 'co-harbor' ? '1002003' : '3004005',
+            placeId: 'place-shared',
+            placeName: 'Harbor Gate Movers',
+          })
+        );
+      const decision = decidePlaceAttachment({
+        target: { ...harborTarget, id: companyId, usdotNumber },
+        incoming: google({ place_id: 'place-shared', name: 'Harbor Gate Movers' }),
+        holders,
+        holderEnumeration: 'complete',
+        holderLookup: 'succeeded',
+      });
+      assert.equal(decision.action, 'review');
+      assert.match(decision.reason, /cannot be reserved atomically/);
+      assert.equal(decision.action === 'attach', false);
+      return decision;
+    }
+    await Promise.all([
+      guarded('co-harbor', '1002003'),
+      guarded('co-second', '3004005'),
+    ]);
+    assert.equal([...table.values()].every((place) => place == null), true);
+    assert.equal(evidence.databaseExecuted, false);
+    assert.equal(evidence.guardedWrites, 0);
+
+    const seen: number[] = [];
+    let reads = 0;
+    let openWrites: (() => void) | null = null;
+    const bothRead = new Promise<void>((resolve) => {
+      openWrites = resolve;
+    });
+    async function unguarded(companyId: string) {
+      seen.push([...table.values()].filter((place) => place === 'place-shared').length);
+      reads += 1;
+      if (reads === 2) openWrites?.();
+      await bothRead;
+      table.set(companyId, 'place-shared');
+    }
+    await Promise.all([unguarded('co-harbor'), unguarded('co-second')]);
+    assert.deepEqual(seen, [0, 0]);
+    assert.equal([...table.values()].filter((place) => place === 'place-shared').length, 2);
+    assert.equal(evidence.kind, 'simulated');
+  });
+
+  it('keeps the place-claim dependency out of the migration runner', () => {
+    const sql = readFileSync('docs/move-pr227-write-safety-003-place-claim.sql', 'utf8');
+    assert.match(sql, /DO NOT APPLY/);
+    assert.match(sql, /pg_advisory_xact_lock/);
+    assert.match(sql, /same_premise/);
+    assert.match(sql, /co_located_office/);
+    assert.match(sql, /shared_terminal/);
+    assert.match(sql, /REVOKE ALL ON FUNCTION/);
+    assert.match(sql, /BEGIN ROLLBACK/);
+    assert.match(sql, /DROP FUNCTION IF EXISTS public\.claim_google_place_association/);
+    assert.doesNotMatch(sql, /LIMIT\s+25/i);
+    assert.doesNotMatch(sql, /DELETE FROM/i);
+    assert.doesNotMatch(sql, /GRANT /);
+    assert.equal(
+      existsSync('supabase/migrations/20261030_move_pr227_place_claim.sql'),
+      false
+    );
+  });
+
+  it('distinguishes a disposable database claim from the simulated race', async (t) => {
+    const opened = await openDisposableClaimDatabase();
+    if (!opened) {
+      t.skip(
+        'no loopback Postgres or PGlite available; competing writers above are simulated only'
+      );
+      return;
+    }
+    const schema = 'move_pr227_ws003';
+    try {
+      await opened.exec(`DROP SCHEMA IF EXISTS ${schema} CASCADE`);
+      await opened.exec(`CREATE SCHEMA ${schema}`);
+      await opened.exec(`
+        CREATE TABLE ${schema}.companies (
+          id text PRIMARY KEY,
+          verification_sources jsonb,
+          google_data jsonb,
+          verification_last_synced_at timestamptz,
+          updated_at timestamptz
+        )
+      `);
+      await opened.exec(`
+        INSERT INTO ${schema}.companies (id) VALUES ('co-harbor'), ('co-second')
+      `);
+      const raw = readFileSync('docs/move-pr227-write-safety-003-place-claim.sql', 'utf8');
+      const apply = raw.split('-- BEGIN APPLY')[1]?.split('-- END APPLY')[0] ?? '';
+      await opened.exec(apply.replaceAll('public.', `${schema}.`));
+      const payload = JSON.stringify({
+        source: 'google_places_api',
+        status: 'ok',
+        place_id: 'place-shared',
+        name: 'Harbor Gate Movers',
+        rating: 4.4,
+        review_count: 12,
+      });
+      if (opened.concurrent) {
+        const [left, right] = await Promise.all([
+          opened.claim('co-harbor', payload),
+          opened.claim('co-second', payload),
+        ]);
+        const applied = [left, right].filter((row) => row.applied === true);
+        assert.equal(applied.length, 1);
+        assert.equal([left, right].some((row) => row.action === 'review'), true);
+      } else {
+        const first = await opened.claim('co-harbor', payload);
+        const second = await opened.claim('co-second', payload);
+        assert.equal(first.applied, true);
+        assert.equal(second.applied, false);
+        assert.equal(second.action, 'review');
+        assert.equal(opened.concurrent, false);
+      }
+      const holders = await opened.query(
+        `SELECT id FROM ${schema}.companies
+          WHERE google_data->>'place_id' = 'place-shared'
+          ORDER BY id`
+      );
+      assert.equal(holders.rows.length, 1);
+
+      await opened.exec(`
+        UPDATE ${schema}.companies
+           SET google_data = NULL,
+               verification_sources = NULL
+      `);
+      await opened.exec(`
+        UPDATE ${schema}.companies
+           SET google_data = jsonb_build_object(
+                 'status', 'ok',
+                 'place_id', 'place-shared',
+                 'association_scope', 'shared_location',
+                 'name', 'Harbor Gate Movers',
+                 'shared_location_evidence', jsonb_build_object(
+                   'relationship', 'same_premise',
+                   'premise', 'Warehouse bay 4',
+                   'observed_at', '2026-04-02T00:00:00Z',
+                   'source', jsonb_build_object('system', 'field_inspection', 'record_id', 'obs-14')
+                 )
+               ),
+               verification_sources = jsonb_build_object(
+                 'google',
+                 jsonb_build_object(
+                   'status', 'ok',
+                   'place_id', 'place-shared',
+                   'association_scope', 'shared_location',
+                   'name', 'Harbor Gate Movers',
+                   'shared_location_evidence', jsonb_build_object(
+                     'relationship', 'same_premise',
+                     'premise', 'Warehouse bay 4',
+                     'observed_at', '2026-04-02T00:00:00Z',
+                     'source', jsonb_build_object('system', 'field_inspection', 'record_id', 'obs-14')
+                   )
+                 )
+               )
+         WHERE id = 'co-harbor'
+      `);
+      const shared = await opened.claim('co-second', payload);
+      assert.equal(shared.applied, true);
+      assert.equal(shared.shared, true);
+      const both = await opened.query(
+        `SELECT id FROM ${schema}.companies WHERE google_data->>'place_id' = 'place-shared'`
+      );
+      assert.equal(both.rows.length, 2);
+    } finally {
+      await opened.exec(`DROP SCHEMA IF EXISTS ${schema} CASCADE`);
+      await opened.close();
+    }
+  });
+});
+
+type ClaimRow = {
+  applied?: boolean;
+  action?: string;
+  shared?: boolean;
+};
+
+type DisposableClaimDatabase = {
+  concurrent: boolean;
+  exec: (sql: string) => Promise<void>;
+  query: (sql: string) => Promise<{ rows: Record<string, unknown>[] }>;
+  claim: (companyId: string, payload: string) => Promise<ClaimRow>;
+  close: () => Promise<void>;
+};
+
+async function openDisposableClaimDatabase(): Promise<DisposableClaimDatabase | null> {
+  const raw = process.env.MOVE_LISTING_FIXTURE_DATABASE_URL?.trim();
+  if (raw) {
+    let host = '';
+    try {
+      host = new URL(raw.replace(/^postgres(?:ql)?:\/\//i, 'http://')).hostname;
+    } catch {
+      throw new Error('MOVE_LISTING_FIXTURE_DATABASE_URL is not a database URL');
+    }
+    if (host !== '127.0.0.1' && host !== 'localhost') {
+      throw new Error('place-claim fixture database must be loopback');
+    }
+    const pg = await import('pg');
+    const left = new pg.Client({ connectionString: raw, connectionTimeoutMillis: 5_000 });
+    const right = new pg.Client({ connectionString: raw, connectionTimeoutMillis: 5_000 });
+    await left.connect();
+    await right.connect();
+    return {
+      concurrent: true,
+      exec: async (sql) => {
+        await left.query(sql);
+      },
+      query: async (sql) => left.query(sql),
+      claim: async (companyId, payload) => {
+        const client = companyId === 'co-harbor' ? left : right;
+        const result = await client.query(
+          'SELECT move_pr227_ws003.claim_google_place_association($1, $2::jsonb) AS claim',
+          [companyId, payload]
+        );
+        return (result.rows[0]?.claim ?? {}) as ClaimRow;
+      },
+      close: async () => {
+        await left.end();
+        await right.end();
+      },
+    };
+  }
+
+  const specifier = path.isAbsolute('@electric-sql/pglite')
+    ? pathToFileURL(path.join('@electric-sql/pglite', 'dist', 'index.js')).href
+    : '@electric-sql/pglite';
+  try {
+    const loaded = (await import(specifier)) as {
+      PGlite: new () => {
+        query: (sql: string, params?: unknown[]) => Promise<{ rows: Record<string, unknown>[] }>;
+        exec: (sql: string) => Promise<unknown>;
+        close: () => Promise<void>;
+      };
+    };
+    const db = new loaded.PGlite();
+    return {
+      concurrent: false,
+      exec: (sql) => db.exec(sql).then(() => undefined),
+      query: async (sql) => {
+        const result = await db.query(sql);
+        return { rows: result.rows ?? [] };
+      },
+      claim: async (companyId, payload) => {
+        const result = await db.query(
+          'SELECT move_pr227_ws003.claim_google_place_association($1, $2::jsonb) AS claim',
+          [companyId, payload]
+        );
+        return (result.rows[0]?.claim ?? {}) as ClaimRow;
+      },
+      close: () => db.close(),
+    };
+  } catch {
+    return null;
+  }
+}
 
 describe('rating provenance surfaces', () => {
   it('labels source and scope on the card, table, and profile panel', () => {

@@ -75,6 +75,20 @@ const CONFLICT_REASON = 'Google listing does not match this business identity';
 const USDOT_CONFLICT_REASON =
   'Unresolved identity conflict between distinct USDOT records; listing was not attached';
 const LOOKUP_FAILED_REASON = 'Place association lookup failed; listing was not attached';
+const INCOMPLETE_ENUMERATION_REASON =
+  'Holder enumeration is incomplete; listing was not attached';
+const AMBIGUOUS_ENUMERATION_REASON =
+  'Holder enumeration is ambiguous; listing was not attached';
+const UNRESERVED_REASON =
+  'Place association cannot be reserved atomically; listing was not attached';
+
+/**
+ * Each PostgREST holder query stops at this many rows. A full page is not
+ * proof that a later row is absent.
+ */
+export const PLACE_HOLDER_READ_LIMIT = 25;
+
+export type HolderEnumeration = 'complete' | 'incomplete' | 'failed' | 'ambiguous';
 
 /** Relationship classes that may bypass a place conflict. Free text is not a class. */
 export const SHARED_LOCATION_RELATIONSHIPS = [
@@ -400,15 +414,50 @@ export function displayedRatingValue(company: {
   return value > 0 ? value : null;
 }
 
+function resolveHolderEnumeration(input: {
+  holders?: PlaceHolder[];
+  holderLookup?: 'succeeded' | 'failed';
+  holderEnumeration?: HolderEnumeration;
+}): HolderEnumeration {
+  if (input.holderLookup === 'failed' || input.holderEnumeration === 'failed') return 'failed';
+  if (input.holderEnumeration === 'ambiguous' || input.holderEnumeration === 'incomplete') {
+    return input.holderEnumeration;
+  }
+  if (input.holderEnumeration === 'complete') return 'complete';
+  if (input.holders == null) return 'ambiguous';
+  if (input.holders.length >= PLACE_HOLDER_READ_LIMIT) return 'incomplete';
+  return 'complete';
+}
+
+function reviewDecision(
+  providerId: string,
+  placeId: string,
+  reason: string,
+  holderIds: string[]
+): PlaceAttachmentDecision & { review: RatingReview } {
+  return {
+    action: 'review',
+    scope: null,
+    reason,
+    deleteHolderIds: [],
+    review: { providerId, placeId, reason, holderIds },
+  };
+}
+
 /**
  * Decide whether an enrichment write may store this Google listing.
- * Ambiguous and conflicting listings are review records. Existing holders
- * are never deleted, including evidenced shared-location rows.
+ * Existing holders are never deleted.
  *
- * A failed holder lookup is not an empty claim set. Two writers can still
- * both observe a successful empty read and both attach before either row
- * commits; this function has no lock or unique place constraint, so that
- * race remains open. The holder read is also capped at 25 rows.
+ * This function does not reserve a place_id. It has no transaction and no
+ * unique constraint. Refusing a write here does not stop another writer that
+ * skips this guard. A complete holder array is not a lock. A result of
+ * PLACE_HOLDER_READ_LIMIT rows is incomplete, not proof that no conflicting
+ * holder exists. Failed, incomplete, and ambiguous enumeration is review.
+ *
+ * A new exclusive association stays in review until the unapplied function
+ * claim_google_place_association is approved and used. Auditable shared-location
+ * evidence can still attach when enumeration is complete. A company that
+ * already stores this place_id may refresh that association.
  */
 export function decidePlaceAttachment(input: {
   target: ProviderIdentity;
@@ -416,6 +465,10 @@ export function decidePlaceAttachment(input: {
   holders?: PlaceHolder[];
   /** `failed` must not be treated as proof that no other company holds the place. */
   holderLookup?: 'succeeded' | 'failed';
+  /** Omitted means the caller did not prove the holder read was complete. */
+  holderEnumeration?: HolderEnumeration;
+  /** Place id already stored for this company. A match is a refresh, not a new claim. */
+  existingPlaceId?: string | null;
 }): PlaceAttachmentDecision & { review: RatingReview | null } {
   const holders = input.holders ?? [];
   const placeId = input.incoming.place_id?.trim() || null;
@@ -429,19 +482,12 @@ export function decidePlaceAttachment(input: {
     };
   }
 
-  if (input.holderLookup === 'failed') {
-    return {
-      action: 'review',
-      scope: null,
-      reason: LOOKUP_FAILED_REASON,
-      deleteHolderIds: [],
-      review: {
-        providerId: input.target.id,
-        placeId,
-        reason: LOOKUP_FAILED_REASON,
-        holderIds: [],
-      },
-    };
+  const enumeration = resolveHolderEnumeration(input);
+  if (enumeration === 'failed') {
+    return reviewDecision(input.target.id, placeId, LOOKUP_FAILED_REASON, []);
+  }
+  if (enumeration === 'ambiguous') {
+    return reviewDecision(input.target.id, placeId, AMBIGUOUS_ENUMERATION_REASON, []);
   }
 
   const shared = hasSharedLocationEvidence(input.incoming);
@@ -467,8 +513,13 @@ export function decidePlaceAttachment(input: {
       headquarters: holder.formattedAddress,
     });
   });
+  const conflictIds = [
+    ...new Set(
+      [...conflictingHolders, ...unresolvedUsdotHolders].map((holder) => holder.companyId)
+    ),
+  ];
 
-  if (shared) {
+  if (shared && enumeration === 'complete') {
     return {
       action: 'attach',
       scope: 'shared_location',
@@ -484,30 +535,34 @@ export function decidePlaceAttachment(input: {
       : !identityOk
         ? CONFLICT_REASON
         : 'Google listing is already associated with a different business';
-    const holderIds = [
-      ...new Set(
-        [...conflictingHolders, ...unresolvedUsdotHolders].map((holder) => holder.companyId)
-      ),
-    ];
+    return reviewDecision(input.target.id, placeId, reason, conflictIds);
+  }
+
+  if (enumeration === 'incomplete') {
+    return reviewDecision(input.target.id, placeId, INCOMPLETE_ENUMERATION_REASON, []);
+  }
+
+  const alreadyHeld = (input.existingPlaceId?.trim() || '') === placeId;
+  if (alreadyHeld) {
     return {
-      action: 'review',
-      scope: null,
-      reason,
+      action: 'attach',
+      scope: 'location',
+      reason: 'existing_association',
       deleteHolderIds: [],
-      review: {
-        providerId: input.target.id,
-        placeId,
-        reason,
-        holderIds,
-      },
+      review: null,
     };
   }
 
-  return {
-    action: 'attach',
-    scope: 'location',
-    reason: 'identity_match',
-    deleteHolderIds: [],
-    review: null,
-  };
+  const evidencedForeign = foreignHolders.filter((holder) => holderSharesLocation(holder));
+  if (foreignHolders.length > 0 && evidencedForeign.length === foreignHolders.length) {
+    return {
+      action: 'attach',
+      scope: 'location',
+      reason: 'evidenced_holder_shared_location',
+      deleteHolderIds: [],
+      review: null,
+    };
+  }
+
+  return reviewDecision(input.target.id, placeId, UNRESERVED_REASON, []);
 }

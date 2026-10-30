@@ -6,6 +6,7 @@ import type {
 import { isUsableGoogleSnapshot } from '@/lib/verification/google-places';
 import {
   decidePlaceAttachment,
+  type HolderEnumeration,
   type PlaceHolder,
   type RatingReview,
 } from '@/lib/verification/rating-provenance';
@@ -126,7 +127,11 @@ export function buildVerificationBackfillUpdate(
   enrichment: CompanyEnrichmentResult,
   refreshGoogle: boolean,
   refreshScrape: boolean,
-  options?: { holders?: PlaceHolder[]; holderLookup?: 'succeeded' | 'failed' }
+  options?: {
+    holders?: PlaceHolder[];
+    holderLookup?: 'succeeded' | 'failed';
+    holderEnumeration?: HolderEnumeration;
+  }
 ): { updates: Record<string, unknown> | null; review: RatingReview | null } {
   const updates: Record<string, unknown> = {};
   const nextSources: VerificationSources = { ...row.verification_sources };
@@ -148,6 +153,8 @@ export function buildVerificationBackfillUpdate(
       incoming,
       holders: options?.holders,
       holderLookup: options?.holderLookup,
+      holderEnumeration: options?.holderEnumeration,
+      existingPlaceId: existing?.place_id ?? null,
     });
 
     if (decision.action === 'review') {

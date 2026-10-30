@@ -13,6 +13,8 @@ import {
 import {
   decidePlaceAttachment,
   hasSharedLocationEvidence,
+  PLACE_HOLDER_READ_LIMIT,
+  type HolderEnumeration,
   type PlaceHolder,
   type RatingReview,
 } from '@/lib/verification/rating-provenance';
@@ -25,7 +27,7 @@ export async function loadOtherPlaceHolders(
   admin: SupabaseClient<Database>,
   placeId: string,
   exceptCompanyId: string
-): Promise<{ holders: PlaceHolder[]; error: string | null }> {
+): Promise<{ holders: PlaceHolder[]; error: string | null; enumeration: HolderEnumeration }> {
   const columns =
     'id, name, usdot_number, fmcsa_legal_name, website, google_data, verification_sources';
   let fromSources: { data: unknown[] | null; error: { message?: string } | null };
@@ -37,29 +39,37 @@ export async function loadOtherPlaceHolders(
       .select(columns)
       .neq('id', exceptCompanyId)
       .filter('verification_sources->google->>place_id', 'eq', placeId)
-      .limit(25),
+      .limit(PLACE_HOLDER_READ_LIMIT),
     admin
       .from('companies')
       .select(columns)
       .neq('id', exceptCompanyId)
       .filter('google_data->>place_id', 'eq', placeId)
-      .limit(25),
+      .limit(PLACE_HOLDER_READ_LIMIT),
     ]);
   } catch (error) {
     return {
       holders: [],
       error: error instanceof Error ? error.message : 'lookup failed',
+      enumeration: 'failed',
     };
   }
   if (fromSources.error || fromColumn.error) {
     return {
       holders: [],
       error: fromSources.error?.message || fromColumn.error?.message || 'lookup failed',
+      enumeration: 'failed',
     };
   }
-  const rows = [...(fromSources.data ?? []), ...(fromColumn.data ?? [])] as Array<
-    Record<string, unknown>
-  >;
+  const sourcesRows = Array.isArray(fromSources.data) ? fromSources.data : null;
+  const columnRows = Array.isArray(fromColumn.data) ? fromColumn.data : null;
+  if (!sourcesRows || !columnRows) {
+    return { holders: [], error: null, enumeration: 'ambiguous' };
+  }
+  const capped =
+    sourcesRows.length >= PLACE_HOLDER_READ_LIMIT ||
+    columnRows.length >= PLACE_HOLDER_READ_LIMIT;
+  const rows = [...sourcesRows, ...columnRows] as Array<Record<string, unknown>>;
   const seen = new Set<string>();
   const holders: PlaceHolder[] = [];
   for (const row of rows) {
@@ -83,7 +93,11 @@ export async function loadOtherPlaceHolders(
         : null,
     });
   }
-  return { holders, error: null };
+  return {
+    holders,
+    error: null,
+    enumeration: capped ? 'incomplete' : 'complete',
+  };
 }
 
 /**
@@ -96,7 +110,11 @@ export async function persistGoogleSnapshot(
   admin: SupabaseClient<Database>,
   companyId: string,
   incoming: GooglePlacesData,
-  options?: { existingRow?: Record<string, unknown> | null; holders?: PlaceHolder[] }
+  options?: {
+    existingRow?: Record<string, unknown> | null;
+    holders?: PlaceHolder[];
+    holderEnumeration?: HolderEnumeration;
+  }
 ): Promise<{
   ok: boolean;
   applied: boolean;
@@ -134,9 +152,11 @@ export async function persistGoogleSnapshot(
     headquarters: typeof row.headquarters === 'string' ? row.headquarters : null,
   };
   let holders = options?.holders;
+  let holderEnumeration: HolderEnumeration | undefined = options?.holderEnumeration;
   if (!holders && incoming.place_id && incoming.status === 'ok') {
     const loaded = await loadOtherPlaceHolders(admin, incoming.place_id, companyId);
-    if (loaded.error) {
+    holderEnumeration = loaded.enumeration;
+    if (loaded.enumeration === 'failed' || loaded.error) {
       const review: RatingReview = {
         providerId: companyId,
         placeId: incoming.place_id,
@@ -157,6 +177,8 @@ export async function persistGoogleSnapshot(
     target: identity,
     incoming,
     holders,
+    holderEnumeration,
+    existingPlaceId: existing?.place_id ?? null,
   });
   if (decision.action === 'review') {
     logger.info('google_places.association_review', {

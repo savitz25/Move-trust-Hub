@@ -22,7 +22,7 @@ import type {
   PublicScrapeData,
   GooglePlacesData,
 } from '@/lib/verification/types';
-import type { PlaceHolder, RatingReview } from '@/lib/verification/rating-provenance';
+import type { HolderEnumeration, PlaceHolder, RatingReview } from '@/lib/verification/rating-provenance';
 import { loadOtherPlaceHolders } from '@/lib/verification/persist-google-snapshot';
 
 export type ProductionBackfillOptions = {
@@ -321,28 +321,30 @@ export async function runProductionBackfill(
       const enrichment = await fetchEnrichment(input, plan.needsGoogle, plan.needsScrape);
       let holders: PlaceHolder[] = [];
       let refreshGoogle = plan.needsGoogle;
-      let holderLookup: 'succeeded' | 'failed' = 'succeeded';
+      let holderEnumeration: HolderEnumeration = 'complete';
       const placeId = enrichment.google?.place_id?.trim();
       if (refreshGoogle && placeId) {
         try {
           const loaded = await loadOtherPlaceHolders(admin, placeId, target.supabaseId ?? target.id);
-          if (loaded.error) {
-            holderLookup = 'failed';
+          holderEnumeration = loaded.enumeration;
+          if (loaded.error || loaded.enumeration === 'failed') {
+            holderEnumeration = 'failed';
             refreshGoogle = false;
           } else {
             holders = loaded.holders;
           }
         } catch {
-          holderLookup = 'failed';
+          holderEnumeration = 'failed';
           refreshGoogle = false;
         }
       }
+      const holderLookup = holderEnumeration === 'failed' ? 'failed' : 'succeeded';
       const planned = buildVerificationBackfillUpdate(
         toMoverRow(target),
         enrichment,
-        refreshGoogle || holderLookup === 'failed',
+        refreshGoogle || holderEnumeration !== 'complete',
         plan.needsScrape,
-        { holders, holderLookup }
+        { holders, holderLookup, holderEnumeration }
       );
       if (planned.review) {
         reviews.push(planned.review);

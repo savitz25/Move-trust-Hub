@@ -31,6 +31,8 @@ These indexes do not change directory sort, pagination, `minRating` eligibility,
 
 ## Simultaneous writers
 
-The holder check is a read followed later by an update. It is not a transaction and there is no unique constraint on a Google `place_id`. Two enrichment writers can both receive a successful empty holder read and both attach the same listing before either update commits. A failed lookup does not take that path: failure stays a review and is not treated as proof that the place is unclaimed. A successful empty read still means "no holder was visible," which is not the same as a lock.
+The holder check is a read followed later by an update. It is not a transaction and there is no unique constraint on a Google `place_id`. Code that only checks the read cannot prevent two writers from storing the same place. A failed, incomplete, or ambiguous read is not proof that the place is unclaimed.
 
-The read also stops at 25 rows from each JSON location. A conflicting holder past that cap is not seen. Closing either gap requires a database constraint or a single-writer lock. That is a separate schema change and is not applied here.
+Each JSON lookup stops at 25 rows. A full page does not prove that a conflicting holder is absent. The application treats that page as incomplete and does not attach a new exclusive association from it.
+
+The enforceable reservation is the separate, unapplied function in `docs/move-pr227-write-safety-003-place-claim.sql`. It takes a transaction advisory lock, reads every holder with no row cap, keeps an existing association, allows an auditable shared location, and does not delete other holders. Its rollback drops only those functions. Do not apply it to Production from this proposal. Until it is approved and every writer uses it, the application refuses a new exclusive attachment instead of taking the known race. That refusal is not a lock. A writer that skips the guard can still conflict.
