@@ -102,6 +102,7 @@ export function prepareCompaniesForDirectoryClient(companies: Company[]): Compan
           bbbAccredited: c.bbbAccredited,
           overallRating: c.overallRating,
           reviewCount: c.reviewCount,
+          ratingProvenance: c.ratingProvenance,
           reputationScore: c.reputationScore,
           yearsInBusiness: c.yearsInBusiness,
           avgPricePerMove: c.avgPricePerMove,

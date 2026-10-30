@@ -810,8 +810,19 @@ export function DirectoryClient({
                         {showReputation ? c.reputationScore : '—'}
                       </td>
                       <td>
-                        {showRating ? (
-                          <StarRating rating={Number(c.overallRating) || 0} size="sm" showNumber />
+                        {c.ratingProvenance?.withheldReason ? (
+                          <span className="text-xs text-muted-foreground">
+                            Rating withheld · {c.ratingProvenance.withheldReason}
+                          </span>
+                        ) : showRating ? (
+                          <div>
+                            <StarRating rating={Number(c.overallRating) || 0} size="sm" showNumber />
+                            {c.ratingProvenance ? (
+                              <div className="text-[11px] text-muted-foreground mt-1">
+                                {c.ratingProvenance.sourceLabel} · {c.ratingProvenance.scopeLabel}
+                              </div>
+                            ) : null}
+                          </div>
                         ) : (
                           <span className="text-muted-foreground">—</span>
                         )}

@@ -3,6 +3,7 @@ import { resolve } from 'path';
 import type { Company } from '@/types';
 import type { GooglePlacesData } from '@/lib/verification/types';
 import { isDisplayableGooglePlacesRating } from '@/lib/verification/google-places';
+import { selectRatingProvenance } from '@/lib/verification/rating-provenance';
 
 type EnrichmentFileRow = {
   slug: string;
@@ -51,10 +52,37 @@ export function applyAutoTransportGoogleEnrichment(company: Company): Company {
     return company;
   }
 
+  const selected = selectRatingProvenance({
+    provider: {
+      id: company.id,
+      name: company.name,
+      legalName: company.fmcsaLegalName,
+      usdotNumber: company.usdotNumber,
+      website: company.website,
+      phone: company.phone,
+      headquarters: company.headquarters,
+    },
+    google,
+    storedRating: company.overallRating,
+    storedReviewCount: company.reviewCount,
+    realBusiness: Boolean(company.id),
+  });
+  if (google.name?.trim() && selected.provenance.withheldReason) {
+    return company;
+  }
+  if (selected.provenance.applicable && selected.displayGoogle) {
+    return {
+      ...company,
+      googleData: selected.displayGoogle,
+      overallRating: selected.provenance.rating ?? 0,
+      reviewCount: selected.provenance.reviewCount ?? 0,
+      ratingProvenance: selected.provenance,
+    };
+  }
+
   return {
     ...company,
     googleData: google,
-    // Keep editorial industry fields untouched
     overallRating: company.overallRating,
     reviewCount: company.reviewCount,
   };

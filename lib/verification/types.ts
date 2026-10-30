@@ -28,6 +28,15 @@ export type GooglePlacesData = {
   }>;
   last_fetched: string;
   status: SourceFetchStatus;
+  /**
+   * Location is the normal Places listing. shared_location is kept only with
+   * shared_location_evidence. Absent on legacy snapshots.
+   */
+  association_scope?: 'location' | 'shared_location';
+  shared_location_evidence?: {
+    observed_at: string;
+    premise: string;
+  } | null;
   error?: string;
   /** Trimmed API payload for audit — not shown raw to users */
   raw_response?: Record<string, unknown>;

@@ -111,16 +111,28 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
 
         <div className="text-sm text-muted-foreground mt-1">{locationLine}</div>
 
-        <div className="mt-3 flex items-baseline gap-2">
-          {company.overallRating > 0 ? (
+        <div className="mt-3 flex flex-wrap items-baseline gap-2">
+          {company.ratingProvenance?.withheldReason ? (
+            <span className="text-xs text-muted-foreground">
+              Rating withheld · {company.ratingProvenance.withheldReason}
+            </span>
+          ) : company.overallRating > 0 ? (
             <>
               <StarRating rating={company.overallRating} />
               <span
                 className="text-xs text-muted-foreground"
-                title="Industry-reported volume from third-party platforms (e.g. Google). Not the same as on-site attributable reviews."
+                title="This count belongs to the labeled source and scope. It is not an on-site review count."
               >
                 (<EditorialReviewVolume count={company.reviewCount} />)
               </span>
+              {company.ratingProvenance ? (
+                <span className="text-xs text-muted-foreground basis-full">
+                  {company.ratingProvenance.sourceLabel} · {company.ratingProvenance.scopeLabel}
+                  {company.ratingProvenance.observedAt
+                    ? ` · observed ${company.ratingProvenance.observedAt.slice(0, 10)}`
+                    : ''}
+                </span>
+              ) : null}
             </>
           ) : (
             <span className="text-xs text-muted-foreground">Rating not available yet</span>

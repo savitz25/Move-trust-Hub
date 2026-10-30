@@ -98,6 +98,8 @@ export interface Company {
   overallRating: number; // 0-5
   reviewCount: number;
   reputationScore: number; // 0-100 composite (weighted)
+  /** Selected display rating. Does not change directory sort or eligibility. */
+  ratingProvenance?: import('@/lib/verification/rating-provenance').RatingProvenance;
 
   // Business
   yearsInBusiness: number;

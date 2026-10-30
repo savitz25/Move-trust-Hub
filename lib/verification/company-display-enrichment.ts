@@ -5,9 +5,10 @@ import { projectCompanyAssociation } from '@/lib/fmcsa/association-integrity';
  *
  * Resolve order for Google:
  * 1. Existing usable googleData (verification_sources.google / google_data via mapRow)
- * 2. Synthesize from denormalized overall_rating + review_count when both > 0
- *    (common when Places was written to columns but snapshot JSON was lost)
- * 3. null — UI shows empty Google panel (honest)
+ * 2. null — do not invent a Places snapshot from overall_rating
+ *
+ * Card and profile scalars go through rating-provenance so a stored column
+ * cannot outrank a different location listing.
  *
  * BBB: never invent grades; only pass through publicScrapeData / bbbRating as mapped.
  */
@@ -50,27 +51,11 @@ export function googleMapsSearchUrl(
   return null;
 }
 
+/** Retired. Column numbers are not a Google Places observation. */
 export function synthesizeGoogleFromRatingColumns(
-  company: Pick<Company, 'name' | 'overallRating' | 'reviewCount' | 'lastUpdated' | 'googleData'>
+  _company: Pick<Company, 'name' | 'overallRating' | 'reviewCount' | 'lastUpdated' | 'googleData'>
 ): GooglePlacesData | null {
-  const rating = Number(company.overallRating);
-  const reviewCount = Number(company.reviewCount);
-  if (!(rating > 0 && reviewCount > 0)) return null;
-
-  const existing = company.googleData;
-  return {
-    source: 'google_places_api',
-    place_id: existing?.place_id ?? null,
-    name: existing?.name ?? company.name ?? null,
-    rating,
-    review_count: reviewCount,
-    formatted_address: existing?.formatted_address ?? null,
-    website_url: existing?.website_url ?? null,
-    phone: existing?.phone ?? null,
-    review_snippets: existing?.review_snippets ?? [],
-    last_fetched: existing?.last_fetched || company.lastUpdated || new Date().toISOString(),
-    status: 'ok',
-  };
+  return null;
 }
 
 /**
@@ -81,14 +66,6 @@ export function finalizeCompanyEnrichmentForDisplay(company: Company): Company {
   company = projectCompanyAssociation(company);
   try {
     let googleData = company.googleData ?? null;
-
-    if (!isDisplayableGooglePlacesRating(googleData)) {
-      const synth = synthesizeGoogleFromRatingColumns({
-        ...company,
-        googleData,
-      });
-      if (synth) googleData = synth;
-    }
 
     // Normalize status for legacy snapshots missing status but having rating
     if (

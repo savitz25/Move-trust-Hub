@@ -22,6 +22,8 @@ import type {
   PublicScrapeData,
   GooglePlacesData,
 } from '@/lib/verification/types';
+import type { PlaceHolder, RatingReview } from '@/lib/verification/rating-provenance';
+import { loadOtherPlaceHolders } from '@/lib/verification/persist-google-snapshot';
 
 export type ProductionBackfillOptions = {
   batch: number;
@@ -125,6 +127,7 @@ function toMoverRow(target: BackfillTarget): MoverCompanyRow {
     verification_last_synced_at: target.verification_last_synced_at,
     overall_rating: target.overall_rating,
     review_count: target.review_count,
+    usdotNumber: target.usdotNumber,
   };
 }
 
@@ -157,7 +160,8 @@ async function recordBatchAudit(
   candidatesTotal: number,
   stats: ProductionBackfillStats,
   updatedSlugs: string[],
-  errorLog: Array<{ slug: string; error: string }>
+  errorLog: Array<{ slug: string; error: string }>,
+  reviews: RatingReview[]
 ): Promise<void> {
   if (opts.dryRun) return;
 
@@ -176,6 +180,7 @@ async function recordBatchAudit(
       force: opts.force,
       updated_slugs: updatedSlugs,
       errors: errorLog,
+      rating_reviews: reviews,
     },
   });
 
@@ -295,6 +300,7 @@ export async function runProductionBackfill(
   };
   const updatedSlugs: string[] = [];
   const errorLog: Array<{ slug: string; error: string }> = [];
+  const reviews: RatingReview[] = [];
 
   for (let i = 0; i < slice.length; i++) {
     const { target, plan } = slice[i]!;
@@ -313,12 +319,35 @@ export async function runProductionBackfill(
       }
 
       const enrichment = await fetchEnrichment(input, plan.needsGoogle, plan.needsScrape);
-      const updates = buildVerificationBackfillUpdate(
+      let holders: PlaceHolder[] = [];
+      let refreshGoogle = plan.needsGoogle;
+      const placeId = enrichment.google?.place_id?.trim();
+      if (refreshGoogle && placeId) {
+        const loaded = await loadOtherPlaceHolders(admin, placeId, target.supabaseId ?? target.id);
+        if (loaded.error) {
+          reviews.push({
+            providerId: target.id,
+            placeId,
+            reason: 'Place association lookup failed; listing was not attached',
+            holderIds: [],
+          });
+          refreshGoogle = false;
+        } else {
+          holders = loaded.holders;
+        }
+      }
+      const planned = buildVerificationBackfillUpdate(
         toMoverRow(target),
         enrichment,
-        plan.needsGoogle,
-        plan.needsScrape
+        refreshGoogle,
+        plan.needsScrape,
+        { holders }
       );
+      if (planned.review) {
+        reviews.push(planned.review);
+        console.log(`    → REVIEW ${planned.review.reason}`);
+      }
+      const updates = planned.updates;
 
       if (enrichment.google?.status === 'ok') stats.googleOk++;
       if (
@@ -400,7 +429,7 @@ export async function runProductionBackfill(
   }
 
   if (!opts.dryRun) {
-    await recordBatchAudit(admin, opts, candidates.length, stats, updatedSlugs, errorLog);
+    await recordBatchAudit(admin, opts, candidates.length, stats, updatedSlugs, errorLog, reviews);
   }
 
   if (!opts.dryRun && stats.updated > 0) {
