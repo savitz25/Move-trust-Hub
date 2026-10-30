@@ -1,12 +1,16 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import { performance } from 'node:perf_hooks';
+import { directoryFiltersFromSearchParams } from '@/lib/directory/build-directory-api-query';
+import { prepareCompaniesForDirectoryClient } from '@/lib/directory/directory-client-payload';
 import {
   PLAIN_REPUTATION_LISTING_SQL,
   compareReputationListing,
+  hydrateListingPage,
   isPlainReputationListing,
   listingSqlOmitsHeavyJson,
   pageReputationListing,
+  readPlainListingPage,
   type ListingRankRow,
 } from '@/lib/directory/listing-rank';
 import {
@@ -66,12 +70,55 @@ describe('listing field projection', () => {
     assert.equal(company.bbbRating, 'A+');
     assert.equal(company.id, 'co-1');
   });
+
+  it('Google and BBB that exist only in legacy JSON stay on the directory card', () => {
+    const company = mapCompanyRow({
+      id: 'legacy-1',
+      slug: 'legacy-mover',
+      name: 'Legacy Mover',
+      headquarters: 'Austin, TX',
+      usdot_number: '2222222',
+      service_scope: 'interstate',
+      publication_state: 'PUBLISHABLE',
+      reputation_score: 12,
+      overall_rating: 0,
+      review_count: 0,
+      google_data: {
+        source: 'google_places_api',
+        status: 'ok',
+        rating: 4.2,
+        review_count: 8,
+      },
+      public_scrape_data: {
+        confidence: 'public',
+        bbb_rating: 'A',
+        bbb_profile_url: 'https://www.bbb.org/us/tx/austin/profile/movers/legacy-mover',
+        sources: { bbb: { status: 'ok', method: 'profile' } },
+      },
+    });
+    assert.equal(company.overallRating, 4.2);
+    assert.equal(company.reviewCount, 8);
+    assert.equal(company.bbbRating, 'A');
+    assert.equal(company.googleData?.rating, 4.2);
+    const [card] = prepareCompaniesForDirectoryClient([company]);
+    assert.ok(card);
+    assert.equal(card?.overallRating, 4.2);
+    assert.equal(card?.reviewCount, 8);
+    assert.equal(card?.bbbRating, 'A');
+    assert.equal(card?.publicScrapeData?.bbb_rating, 'A');
+    const hydration = companyListProjectionCandidates(true)[0] ?? '';
+    assert.equal(hydration.includes('google_data'), true);
+    assert.equal(hydration.includes('public_scrape_data'), true);
+  });
 });
 
 describe('listing reputation rank', () => {
   it('default listing SQL does not read google_data or public_scrape_data', () => {
     assert.equal(listingSqlOmitsHeavyJson(PLAIN_REPUTATION_LISTING_SQL), true);
-    assert.match(PLAIN_REPUTATION_LISTING_SQL, /COALESCE\(c\.reputation_score, 0\) DESC, c\.id ASC/);
+    assert.match(PLAIN_REPUTATION_LISTING_SQL, /COALESCE\(c\.reputation_score, 0\)/);
+    assert.match(PLAIN_REPUTATION_LISTING_SQL, /ORDER BY v\.reputation_key DESC, v\.id ASC/);
+    assert.match(PLAIN_REPUTATION_LISTING_SQL, /SELECT count\(\*\)::bigint AS total_count/);
+    assert.match(PLAIN_REPUTATION_LISTING_SQL, /LEFT JOIN paged p ON true/);
     assert.match(PLAIN_REPUTATION_LISTING_SQL, /service_scope IS DISTINCT FROM 'intrastate'/);
     assert.match(PLAIN_REPUTATION_LISTING_SQL, /PUBLISHABLE', 'INDEXABLE', 'VERIFIED'/);
     assert.doesNotMatch(PLAIN_REPUTATION_LISTING_SQL, /select c\.\*/i);
@@ -88,8 +135,77 @@ describe('listing reputation rank', () => {
     assert.equal(isPlainReputationListing({ ...plain, filters: { sort: 'complaints' } }), false);
     assert.equal(isPlainReputationListing({ ...plain, filters: { state: 'TX' } }), false);
     assert.equal(isPlainReputationListing({ ...plain, filters: { services: ['Carrier'] } }), false);
+    assert.equal(isPlainReputationListing({ ...plain, filters: { services: ['Storage'] } }), false);
+    assert.equal(isPlainReputationListing({ ...plain, filters: { specialties: ['piano'] } }), false);
+    assert.equal(isPlainReputationListing({ ...plain, filters: { scope: { stateCode: 'TX' } } }), false);
+    assert.equal(isPlainReputationListing({ ...plain, filters: { coverage: 'National' } }), false);
+    assert.equal(
+      isPlainReputationListing({
+        ...plain,
+        filters: { coverageFilter: { mode: 'state', stateCode: 'TX' } },
+      }),
+      false
+    );
     assert.equal(isPlainReputationListing({ ...plain, filters: { minRating: 4 } }), false);
+    assert.equal(isPlainReputationListing({ ...plain, filters: { maxPrice: 4000 } }), false);
+    assert.equal(isPlainReputationListing({ ...plain, filters: { bbbMin: 'A' } }), false);
+    assert.equal(isPlainReputationListing({ ...plain, filters: { onlyFullService: true } }), false);
+    assert.equal(isPlainReputationListing({ ...plain, filters: { onlyVerified: true } }), false);
+    assert.equal(isPlainReputationListing({ ...plain, filters: { counties: ['miami-dade'] } }), false);
+    assert.equal(isPlainReputationListing({ ...plain, filters: { recordedHqState: 'TX' } }), false);
+    assert.equal(isPlainReputationListing({ ...plain, filters: { recordedHqCity: 'DALLAS' } }), false);
+    assert.equal(isPlainReputationListing({ ...plain, filters: { search: 'atlas' } }), false);
+    assert.equal(
+      isPlainReputationListing({
+        ...plain,
+        filters: { unexpected: 'on' } as never,
+      }),
+      false
+    );
     assert.equal(isPlainReputationListing({ ...plain, excludeLocal: false }), false);
+    assert.equal(isPlainReputationListing({ ...plain, usdot: '76235' }), false);
+    assert.equal(
+      isPlainReputationListing({
+        ...plain,
+        filters: {
+          search: ' ',
+          sort: 'reputation',
+          minRating: 0,
+          maxPrice: 12000,
+          services: [],
+          coverage: 'Any',
+          coverageFilter: { mode: 'any' },
+          bbbMin: '',
+          onlyFullService: false,
+          onlyVerified: false,
+          specialties: [],
+          scope: {},
+          state: null,
+          counties: [],
+          recordedHqState: null,
+          recordedHqCity: ' ',
+        },
+      }),
+      true
+    );
+    assert.equal(
+      isPlainReputationListing({
+        excludeLocal: true,
+        usdot: null,
+        mc: null,
+        filters: directoryFiltersFromSearchParams({}),
+      }),
+      true
+    );
+    assert.equal(
+      isPlainReputationListing({
+        excludeLocal: true,
+        usdot: null,
+        mc: null,
+        filters: directoryFiltersFromSearchParams({ services: 'Storage' }),
+      }),
+      false
+    );
   });
 
   it('keeps publication and interstate eligibility', () => {
@@ -130,6 +246,31 @@ describe('listing reputation rank', () => {
     assert.equal(first.hasMore, true);
     assert.equal(second.hasMore, false);
     assert.equal(new Set([...first.ids, ...second.ids]).size, 4);
+    const past = pageReputationListing(rows, 50, 2);
+    assert.deepEqual(past.ids, []);
+    assert.equal(past.total, 4);
+  });
+
+  it('an empty SQL page keeps the count and hydration does not reshuffle it', () => {
+    const page = readPlainListingPage([{ company_id: null, total_count: '17' }]);
+    assert.deepEqual(page.ids, []);
+    assert.equal(page.total, 17);
+
+    const shuffled = [
+      { id: 'm', label: 'm' },
+      { id: 'm', label: 'duplicate' },
+      { id: 'z', label: 'z' },
+      { id: 'extra', label: 'extra' },
+      { id: 'b', label: 'b' },
+    ];
+    const hydrated = hydrateListingPage(['b', 'a', 'm', 'b'], shuffled);
+    assert.deepEqual(
+      hydrated.map((item) => item.id),
+      ['b', 'm']
+    );
+    assert.equal(hydrated.length, new Set(hydrated.map((item) => item.id)).size);
+    assert.equal(hydrated.some((item) => item.id === 'extra'), false);
+    assert.equal(hydrated.some((item) => item.label === 'duplicate'), false);
   });
 
   it('narrow sort payload is much smaller than rows that carry both JSON blobs', () => {
