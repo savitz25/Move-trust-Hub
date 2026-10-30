@@ -92,6 +92,25 @@ const UNRESERVED_REASON =
  */
 export const PLACE_HOLDER_READ_LIMIT = 25;
 
+/**
+ * A directory page may look up co-holders only for a small set of place ids.
+ * A show-all or full-catalog read stays above this and fails closed.
+ */
+export const DIRECTORY_HOLDER_PLACE_CAP = 48;
+
+/** Named Google snapshot whose co-holder read does not prove an owner. */
+export const OWNERSHIP_UNPROVEN_REASON =
+  'Google listing ownership is not established for this business';
+
+/** Skip the co-holder query when the place-id set is empty or too large. */
+export function directoryHolderLookupBound(
+  uniquePlaceCount: number
+): 'query' | 'fail_closed' {
+  if (!Number.isInteger(uniquePlaceCount) || uniquePlaceCount < 1) return 'fail_closed';
+  if (uniquePlaceCount > DIRECTORY_HOLDER_PLACE_CAP) return 'fail_closed';
+  return 'query';
+}
+
 export type HolderEnumeration = 'complete' | 'incomplete' | 'failed' | 'ambiguous';
 
 /** Relationship classes that may bypass a place conflict. Free text is not a class. */
@@ -363,11 +382,30 @@ function holdersShareIdentity(group: PlaceHolder[]): boolean {
   return group.every((holder) => sameUsdot(first, holder) || sameNormalizedName(first, holder));
 }
 
+function exactPlaceIdentity(holder: PlaceHolder): boolean {
+  const place = normalizeNameForMatch(stripLegalEntitySuffixes(holder.placeName ?? ''));
+  if (!place) return false;
+  return [holder.companyName, holder.legalName].some((value) => {
+    const name = normalizeNameForMatch(stripLegalEntitySuffixes(value ?? ''));
+    return Boolean(name) && name === place;
+  });
+}
+
+/**
+ * A second business is competing when it is not the same USDOT, the same
+ * trade name, or a longer legal slug of that name. Fuzzy score is not identity.
+ */
+function competingIdentity(left: PlaceHolder, right: PlaceHolder): boolean {
+  if (sameUsdot(left, right) || sameNormalizedName(left, right)) return false;
+  if (namesContain(left, right) && !usdotConflicts(left, right)) return false;
+  return true;
+}
+
 /**
  * Classify companies that already store one Google place id.
  * This does not reserve the place and does not delete an association.
- * A failed or incomplete holder read must not call this with a partial page
- * and then withhold the rightful owner; callers omit the list in that case.
+ * Callers must pass a complete holder read. An incomplete read is not
+ * evidence that the score leader owns the listing.
  */
 export function classifySharedPlaceHolders(holders: PlaceHolder[]): ClassifiedPlaceAssociation[] {
   const drafts = holders.map((holder) => {
@@ -406,6 +444,21 @@ export function classifySharedPlaceHolders(holders: PlaceHolder[]): ClassifiedPl
   const unresolvedTie = tops.length > 1 && !sharedTopIdentity;
 
   const sameAsWinner = (holder: PlaceHolder) => topHolders.some((top) => sameUsdot(holder, top));
+  const uniqueTop = tops.length === 1 ? tops[0] : null;
+  // A higher name score does not pick an owner when another business holds the
+  // place. Exact place-name equality or the headquarters city does.
+  const fuzzyContest = Boolean(
+    uniqueTop &&
+      !uniqueTop.locationAgrees &&
+      !exactPlaceIdentity(uniqueTop.holder) &&
+      drafts.some(
+        (draft) =>
+          draft.holder.companyId !== uniqueTop.holder.companyId &&
+          !draft.missing &&
+          !draft.shared &&
+          competingIdentity(draft.holder, uniqueTop.holder)
+      )
+  );
 
   return drafts.map((draft) => {
     const companyId = draft.holder.companyId;
@@ -417,6 +470,14 @@ export function classifySharedPlaceHolders(holders: PlaceHolder[]): ClassifiedPl
         companyId,
         associationClass: 'shared_location',
         displayRating: true,
+        score: draft.score,
+      };
+    }
+    if (fuzzyContest) {
+      return {
+        companyId,
+        associationClass: 'distinct_unresolved',
+        displayRating: false,
         score: draft.score,
       };
     }
@@ -465,15 +526,15 @@ export function classifySharedPlaceHolders(holders: PlaceHolder[]): ClassifiedPl
   });
 }
 
-function completeHolderRead(
+function holderReadStatus(
   holders: PlaceHolder[] | undefined,
   enumeration: HolderEnumeration | undefined
-): PlaceHolder[] | null {
-  if (!holders) return null;
-  const status =
-    enumeration ?? (holders.length >= PLACE_HOLDER_READ_LIMIT ? 'incomplete' : 'complete');
-  if (status !== 'complete') return null;
-  return holders;
+): HolderEnumeration | 'omitted' {
+  if (!holders) return 'omitted';
+  // A caller cannot turn a capped page into a complete census.
+  if (holders.length >= PLACE_HOLDER_READ_LIMIT) return 'incomplete';
+  if (enumeration && enumeration !== 'complete') return enumeration;
+  return 'complete';
 }
 
 function locationLabel(google: GooglePlacesData): string {
@@ -510,8 +571,7 @@ export function selectRatingProvenance(input: {
   realBusiness?: boolean;
   /**
    * Other rows that store this place id, including this provider.
-   * Omit the list when the read failed, was ambiguous, or hit the row cap.
-   * A partial list must not withhold a rightful owner.
+   * An omitted, failed, incomplete, or capped read does not prove ownership.
    */
   samePlaceHolders?: PlaceHolder[];
   holderEnumeration?: HolderEnumeration;
@@ -520,30 +580,9 @@ export function selectRatingProvenance(input: {
   const providerId = input.provider.id;
   const seedOffered = (input.seedRating ?? 0) > 0;
   void input.seedReviewCount;
-  const holders = completeHolderRead(input.samePlaceHolders, input.holderEnumeration);
+  const namedListing = Boolean(google?.name?.trim());
   let classifiedMine: ClassifiedPlaceAssociation | undefined;
-  if (holders && google?.place_id) {
-    const classified = classifySharedPlaceHolders(
-      holders.filter((holder) => holder.placeId === google.place_id)
-    );
-    classifiedMine = classified.find((row) => row.companyId === providerId);
-    if (classifiedMine && !classifiedMine.displayRating) {
-      return {
-        displayGoogle: null,
-        review: {
-          providerId,
-          placeId: google.place_id,
-          reason: CONFLICT_REASON,
-          holderIds: holders
-            .filter((holder) => holder.companyId !== providerId)
-            .map((holder) => holder.companyId),
-        },
-        provenance: emptyProvenance(providerId, CONFLICT_REASON),
-      };
-    }
-  }
-
-  if (google && isRejectedGoogleListing(google, input.provider) && !classifiedMine?.displayRating) {
+  if (namedListing && google && isRejectedGoogleListing(google, input.provider)) {
     return {
       displayGoogle: null,
       review: {
@@ -554,6 +593,35 @@ export function selectRatingProvenance(input: {
       },
       provenance: emptyProvenance(providerId, CONFLICT_REASON),
     };
+  }
+  if (namedListing && google) {
+    const status = holderReadStatus(input.samePlaceHolders, input.holderEnumeration);
+    const holders = status === 'complete' ? input.samePlaceHolders ?? null : null;
+    const placeHolders = holders?.filter((holder) => holder.placeId === google.place_id) ?? [];
+    const included = placeHolders.some((holder) => holder.companyId === providerId);
+    if (!holders || !included) {
+      return {
+        displayGoogle: null,
+        review: null,
+        provenance: emptyProvenance(providerId, OWNERSHIP_UNPROVEN_REASON),
+      };
+    }
+    const classified = classifySharedPlaceHolders(placeHolders);
+    classifiedMine = classified.find((row) => row.companyId === providerId);
+    if (!classifiedMine?.displayRating) {
+      return {
+        displayGoogle: null,
+        review: {
+          providerId,
+          placeId: google.place_id,
+          reason: CONFLICT_REASON,
+          holderIds: placeHolders
+            .filter((holder) => holder.companyId !== providerId)
+            .map((holder) => holder.companyId),
+        },
+        provenance: emptyProvenance(providerId, CONFLICT_REASON),
+      };
+    }
   }
 
   if (google && (hasGoogleReputationSnapshot(google) || googleHasDisplayNumbers(google))) {
@@ -652,6 +720,30 @@ export function applyRatingProvenance(
     samePlaceHolders: input?.samePlaceHolders ?? holderContext?.holders,
     holderEnumeration: input?.holderEnumeration ?? holderContext?.enumeration,
   });
+  // An unproven read keeps the snapshot so a later complete read can upgrade it.
+  // The number stays off the card because withheldReason is set.
+  if (selected.provenance.withheldReason === OWNERSHIP_UNPROVEN_REASON) {
+    return {
+      ...company,
+      overallRating: 0,
+      reviewCount: 0,
+      googleData: company.googleData ?? null,
+      ratingProvenance: selected.provenance,
+    };
+  }
+  if (selected.provenance.withheldReason) {
+    return {
+      ...company,
+      overallRating: 0,
+      reviewCount: 0,
+      googleData: null,
+      ratingProvenance: {
+        ...selected.provenance,
+        rating: null,
+        reviewCount: null,
+      },
+    };
+  }
   if (company.ratingProvenance?.withheldReason && !selected.provenance.applicable) {
     return {
       ...company,
@@ -672,6 +764,68 @@ export function applyRatingProvenance(
     googleData: selected.displayGoogle,
     ratingProvenance: selected.provenance,
   };
+}
+
+function holderFromListedCompany(company: Company): PlaceHolder | null {
+  const placeId = company.googleData?.place_id?.trim() || '';
+  if (!placeId || !company.id || !company.googleData?.name?.trim()) return null;
+  return {
+    companyId: company.id,
+    companyName: company.name,
+    legalName: company.fmcsaLegalName,
+    usdotNumber: company.usdotNumber,
+    website: company.website,
+    headquarters: company.headquarters,
+    placeId,
+    placeName: company.googleData.name,
+    formattedAddress: company.googleData.formatted_address,
+    sharedLocationEvidence: hasSharedLocationEvidence(company.googleData)
+      ? company.googleData.shared_location_evidence ?? null
+      : null,
+  };
+}
+
+/**
+ * Apply one holder read to cards that already passed listing rank.
+ * Nameless and stored-column rows are left as mapped. This does not sort.
+ */
+export function attributeListedCompanies(
+  companies: Company[],
+  read: { holders: PlaceHolder[]; enumeration: HolderEnumeration }
+): Company[] {
+  const byPlace = new Map<string, PlaceHolder[]>();
+  for (const holder of read.holders) {
+    const placeId = holder.placeId?.trim() || '';
+    if (!placeId) continue;
+    const group = byPlace.get(placeId) ?? [];
+    if (!group.some((row) => row.companyId === holder.companyId)) group.push(holder);
+    byPlace.set(placeId, group);
+  }
+  return companies.map((company) => {
+    const placeId = company.googleData?.place_id?.trim() || '';
+    if (!placeId || !company.googleData?.name?.trim()) return company;
+    const queried = byPlace.get(placeId) ?? [];
+    let placeStatus: HolderEnumeration =
+      read.enumeration !== 'complete'
+        ? read.enumeration
+        : queried.length >= PLACE_HOLDER_READ_LIMIT
+          ? 'incomplete'
+          : 'complete';
+    let holders = queried;
+    if (placeStatus === 'complete' && !holders.some((holder) => holder.companyId === company.id)) {
+      const self = holderFromListedCompany(company);
+      if (self) holders = [...holders, self];
+    }
+    const attributed = applyRatingProvenance(company, {
+      realBusiness: true,
+      samePlaceHolders: holders,
+      holderEnumeration: placeStatus,
+    });
+    return {
+      ...attributed,
+      placeAssociationContext: { holders, enumeration: placeStatus },
+    };
+  });
 }
 
 /**

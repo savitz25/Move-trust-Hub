@@ -31,6 +31,7 @@ import {
   readPlainListingPage,
 } from '@/lib/directory/listing-rank';
 import {
+  attributeDirectoryPageCompanies,
   companyListProjectionCandidates,
   mapCompanyRow,
 } from '@/lib/supabase/queries/companies';
@@ -159,7 +160,7 @@ async function fetchSourceBackedAutoTransportCompanies(): Promise<Company[]> {
         });
       }
     }
-    return [...unique.values()];
+    return attributeDirectoryPageCompanies([...unique.values()]);
   }
 
   return [];
@@ -246,7 +247,7 @@ async function fetchCompaniesByIds(
     }
   }
 
-  return hydrateListingPage(ids, [...byId.values()]);
+  return attributeDirectoryPageCompanies(hydrateListingPage(ids, [...byId.values()]));
 }
 
 async function queryRecordedHqPage(options: {

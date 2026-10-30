@@ -24,7 +24,11 @@ import {
   type SearchCompanyHit,
 } from '@/lib/search/types';
 import { getSupabaseAnonKey, getSupabaseUrl } from '@/lib/supabase/config';
-import { companyListProjectionCandidates, mapCompanyRow } from '@/lib/supabase/queries/companies';
+import {
+  attributeDirectoryPageCompanies,
+  companyListProjectionCandidates,
+  mapCompanyRow,
+} from '@/lib/supabase/queries/companies';
 import { isConsumerVisibleCompany } from '@/lib/provider/publication';
 import type { Company } from '@/types';
 import type { Database } from '@/types/supabase';
@@ -103,7 +107,8 @@ async function fetchByIds(ids: string[]): Promise<Company[]> {
         /* skip unmappable */
       }
     }
-    return ids.map((id) => byId.get(id)).filter((c): c is Company => Boolean(c));
+    const listed = ids.map((id) => byId.get(id)).filter((c): c is Company => Boolean(c));
+    return attributeDirectoryPageCompanies(listed);
   }
   return [];
 }

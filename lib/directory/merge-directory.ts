@@ -197,12 +197,18 @@ function pickMergedProfile(directory: Company, catalog: Company): Company {
   if (merged.ratingProvenance?.withheldReason) {
     return identity;
   }
+  const holderContext =
+    directory.placeAssociationContext ??
+    merged.placeAssociationContext ??
+    catalog.placeAssociationContext;
   return applyRatingProvenance(identity, {
     storedRating: directory.overallRating,
     storedReviewCount: directory.reviewCount,
     seedRating: catalog.overallRating,
     seedReviewCount: catalog.reviewCount,
     realBusiness: true,
+    samePlaceHolders: holderContext?.holders,
+    holderEnumeration: holderContext?.enumeration,
   });
 }
 
