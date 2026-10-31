@@ -109,28 +109,34 @@ export const OWNERSHIP_UNPROVEN_REASON =
 export const IDENTITY_INCOMPLETE_REASON =
   'Independent legal identity is not established for this shared listing';
 
-/** Parseable Google last_fetched. There is no separate holder-evidence column. */
+/**
+ * Google last_fetched is the time this application stored the Places response.
+ * It is not the time a co-holder read was checked, and it does not mean a later
+ * request saw the same holder set.
+ */
 export function googleObservationTimestamp(value: string | null | undefined): string | null {
   if (typeof value !== 'string' || !Number.isFinite(Date.parse(value))) return null;
   return value;
 }
 
+/** Application fetch date for a Google snapshot. Not an evidence-verification time. */
+export function googleFetchLabel(value: string | null | undefined): string | null {
+  const fetched = googleObservationTimestamp(value);
+  return fetched ? `Google listing fetched ${fetched.slice(0, 10)}` : null;
+}
+
 /**
- * Consumers date a snapshot with ratingProvenance.observedAt, copied from
- * Google last_fetched. placeAssociationContext.evidenceObservedAt carries the
- * same timestamp after a holder read. A failed or incomplete read stays
- * OWNERSHIP_UNPROVEN_REASON. A complete read that still lacks legal identity
- * stays IDENTITY_INCOMPLETE_REASON. Neither is a verified Google rating.
+ * Withheld copy names the reason and, when present, the application fetch date.
+ * A failed or incomplete read stays OWNERSHIP_UNPROVEN_REASON. A complete read
+ * that still lacks legal identity stays IDENTITY_INCOMPLETE_REASON.
  */
 export function withheldRatingLabel(provenance: {
   withheldReason?: string | null;
   observedAt?: string | null;
 }): string {
   const reason = provenance.withheldReason ?? '';
-  const observed = googleObservationTimestamp(provenance.observedAt);
-  return observed
-    ? `Rating withheld · ${reason} · observed ${observed.slice(0, 10)}`
-    : `Rating withheld · ${reason}`;
+  const fetched = googleFetchLabel(provenance.observedAt);
+  return fetched ? `Rating withheld · ${reason} · ${fetched}` : `Rating withheld · ${reason}`;
 }
 
 /** Skip the co-holder query when the place-id set is empty or too large. */
@@ -373,32 +379,11 @@ export type ClassifiedPlaceAssociation = {
   displayRating: boolean;
   score: number;
   /**
-   * True when display is withheld because this row lacks a USDOT or legal
-   * name that an identified sibling holds. The caller keeps the raw snapshot.
+   * True when display is withheld because this row has no USDOT and no legal
+   * name. The caller keeps the raw snapshot. A trade name is not that evidence.
    */
   observationPreserved?: boolean;
 };
-
-function identityName(holder: PlaceHolder): string {
-  return normalizeNameForMatch(stripLegalEntitySuffixes(holder.companyName));
-}
-
-function sameNormalizedName(left: PlaceHolder, right: PlaceHolder): boolean {
-  const a = identityName(left);
-  const b = identityName(right);
-  return Boolean(a) && a === b;
-}
-
-/** One trade name contains the other. Containment is not legal identity. */
-function namesContain(left: PlaceHolder, right: PlaceHolder): boolean {
-  const a = identityName(left);
-  const b = identityName(right);
-  if (!a || !b) return false;
-  const shorter = a.length <= b.length ? a : b;
-  const longer = a.length <= b.length ? b : a;
-  if (shorter.split(' ').length < 2) return false;
-  return ` ${longer} `.includes(` ${shorter} `);
-}
 
 function usdotConflicts(left: PlaceHolder, right: PlaceHolder): boolean {
   const a = usdotKey(left.usdotNumber);
@@ -410,12 +395,6 @@ function sameUsdot(left: PlaceHolder, right: PlaceHolder): boolean {
   const a = usdotKey(left.usdotNumber);
   const b = usdotKey(right.usdotNumber);
   return Boolean(a) && a === b;
-}
-
-function holdersShareIdentity(group: PlaceHolder[]): boolean {
-  if (group.length <= 1) return true;
-  const first = group[0]!;
-  return group.every((holder) => sameUsdot(first, holder) || sameNormalizedName(first, holder));
 }
 
 function legalNameKey(holder: PlaceHolder): string {
@@ -439,21 +418,6 @@ function sharesIndependentLegalIdentity(left: PlaceHolder, right: PlaceHolder): 
   return Boolean(leftLegal) && leftLegal === rightLegal;
 }
 
-function supportedListingClaim(draft: {
-  missing: boolean;
-  shared: boolean;
-  score: number;
-  locationAgrees: boolean;
-  holder: PlaceHolder;
-}): boolean {
-  return (
-    !draft.missing &&
-    !draft.shared &&
-    draft.score >= GOOGLE_PLACES_MIN_ACCEPT_SCORE &&
-    (draft.locationAgrees || exactPlaceIdentity(draft.holder))
-  );
-}
-
 function exactPlaceIdentity(holder: PlaceHolder): boolean {
   const place = normalizeNameForMatch(stripLegalEntitySuffixes(holder.placeName ?? ''));
   if (!place) return false;
@@ -464,20 +428,15 @@ function exactPlaceIdentity(holder: PlaceHolder): boolean {
 }
 
 /**
- * A second business is competing when it is not the same USDOT, the same
- * trade name, or a longer legal slug of that name. Fuzzy score is not identity.
- */
-function competingIdentity(left: PlaceHolder, right: PlaceHolder): boolean {
-  if (sameUsdot(left, right) || sameNormalizedName(left, right)) return false;
-  if (namesContain(left, right) && !usdotConflicts(left, right)) return false;
-  return true;
-}
-
-/**
  * Classify companies that already store one Google place id.
  * This does not reserve the place and does not delete an association.
  * Callers must pass a complete holder read. An incomplete read is not
  * evidence that the score leader owns the listing.
+ *
+ * A matching trade name is not a legal identity. Two supported holders
+ * display together only when their USDOT or legal name actually agrees.
+ * One Google last_fetched value is not a check that the holder set is stable
+ * from request to request.
  */
 export function classifySharedPlaceHolders(holders: PlaceHolder[]): ClassifiedPlaceAssociation[] {
   const drafts = holders.map((holder) => {
@@ -503,36 +462,47 @@ export function classifySharedPlaceHolders(holders: PlaceHolder[]): ClassifiedPl
     };
   });
 
-  const competitive = drafts.filter(
-    (draft) => !draft.missing && !draft.shared && draft.score >= GOOGLE_PLACES_MIN_ACCEPT_SCORE
+  const identified = drafts.filter(
+    (draft) =>
+      !draft.missing &&
+      !draft.shared &&
+      hasIndependentLegalIdentity(draft.holder) &&
+      draft.score >= GOOGLE_PLACES_MIN_ACCEPT_SCORE
   );
-  const agreeing = competitive.filter((draft) => draft.locationAgrees);
-  const pool = agreeing.length > 0 ? agreeing : competitive;
-  const topScore = pool.reduce((max, draft) => Math.max(max, draft.score), 0);
-  const tops = pool.filter((draft) => draft.score === topScore);
-  const topHolders = tops.map((draft) => draft.holder);
-  const topIds = new Set(topHolders.map((holder) => holder.companyId));
-  const sharedTopIdentity = tops.length > 1 && holdersShareIdentity(topHolders);
-  const unresolvedTie = tops.length > 1 && !sharedTopIdentity;
-
-  const sameAsWinner = (holder: PlaceHolder) => topHolders.some((top) => sameUsdot(holder, top));
-  const uniqueTop = tops.length === 1 ? tops[0] : null;
-  // A higher name score does not pick an owner when another business holds the
-  // place. Exact place-name equality or the headquarters city does.
-  const fuzzyContest = Boolean(
-    uniqueTop &&
-      !uniqueTop.locationAgrees &&
-      !exactPlaceIdentity(uniqueTop.holder) &&
-      drafts.some(
-        (draft) =>
-          draft.holder.companyId !== uniqueTop.holder.companyId &&
-          !draft.missing &&
-          !draft.shared &&
-          competingIdentity(draft.holder, uniqueTop.holder)
+  const located = identified.filter((draft) => draft.locationAgrees);
+  // City agreement narrows the pool first. Exact place-name equality is used
+  // only when no identified holder is in the listing's city, so a remote
+  // exact name cannot take the rating from the local business.
+  const supported = located.length > 0 ? located : identified.filter((draft) => exactPlaceIdentity(draft.holder));
+  const sharesSupportedPool = (holder: PlaceHolder) =>
+    supported.every(
+      (peer) =>
+        peer.holder.companyId === holder.companyId ||
+        sharesIndependentLegalIdentity(holder, peer.holder)
+    );
+  const displayed = supported.filter((draft) => {
+    if (sharesSupportedPool(draft.holder)) return true;
+    if (!exactPlaceIdentity(draft.holder)) return false;
+    const conflictingExactPeer = supported.some(
+      (peer) =>
+        peer.holder.companyId !== draft.holder.companyId &&
+        !sharesIndependentLegalIdentity(draft.holder, peer.holder) &&
+        exactPlaceIdentity(peer.holder)
+    );
+    return !conflictingExactPeer;
+  });
+  const displayedIds = new Set(displayed.map((draft) => draft.holder.companyId));
+  const sharedLegalIdentity =
+    displayed.length > 1 &&
+    displayed.every((draft) =>
+      displayed.every(
+        (peer) =>
+          peer.holder.companyId === draft.holder.companyId ||
+          sharesIndependentLegalIdentity(draft.holder, peer.holder)
       )
-  );
+    );
 
-  const classified: ClassifiedPlaceAssociation[] = drafts.map((draft): ClassifiedPlaceAssociation => {
+  return drafts.map((draft): ClassifiedPlaceAssociation => {
     const companyId = draft.holder.companyId;
     if (draft.missing) {
       return { companyId, associationClass: 'missing_profile', displayRating: false, score: 0 };
@@ -545,46 +515,10 @@ export function classifySharedPlaceHolders(holders: PlaceHolder[]): ClassifiedPl
         score: draft.score,
       };
     }
-    if (fuzzyContest) {
+    if (displayedIds.has(companyId)) {
       return {
         companyId,
-        associationClass: 'distinct_unresolved',
-        displayRating: false,
-        score: draft.score,
-      };
-    }
-    if (unresolvedTie && topIds.has(companyId)) {
-      return {
-        companyId,
-        associationClass: 'distinct_unresolved',
-        displayRating: false,
-        score: draft.score,
-      };
-    }
-    if (tops.length === 1 && companyId === tops[0]!.holder.companyId) {
-      return { companyId, associationClass: 'rightful_owner', displayRating: true, score: draft.score };
-    }
-    if (sharedTopIdentity && topIds.has(companyId)) {
-      return {
-        companyId,
-        associationClass: 'same_legal_business',
-        displayRating: true,
-        score: draft.score,
-      };
-    }
-    const containedLegalSlug =
-      draft.locationAgrees &&
-      topHolders.some(
-        (top) => !usdotConflicts(draft.holder, top) && namesContain(draft.holder, top)
-      );
-    if (
-      !unresolvedTie &&
-      draft.score >= GOOGLE_PLACES_MIN_ACCEPT_SCORE &&
-      (sameAsWinner(draft.holder) || containedLegalSlug)
-    ) {
-      return {
-        companyId,
-        associationClass: 'same_legal_business',
+        associationClass: sharedLegalIdentity ? 'same_legal_business' : 'rightful_owner',
         displayRating: true,
         score: draft.score,
       };
@@ -594,30 +528,7 @@ export function classifySharedPlaceHolders(holders: PlaceHolder[]): ClassifiedPl
       associationClass: 'distinct_unresolved',
       displayRating: false,
       score: draft.score,
-    };
-  });
-
-  // A higher trade-name score must not take a listing from a sibling that
-  // has a USDOT or legal name, an acceptable score, and place or city evidence.
-  const blockingOwners = drafts.filter(
-    (draft) => supportedListingClaim(draft) && hasIndependentLegalIdentity(draft.holder)
-  );
-  return classified.map((row, index): ClassifiedPlaceAssociation => {
-    const draft = drafts[index]!;
-    if (!row.displayRating || draft.missing || draft.shared) return row;
-    if (hasIndependentLegalIdentity(draft.holder)) return row;
-    const blocked = blockingOwners.some(
-      (owner) =>
-        owner.holder.companyId !== draft.holder.companyId &&
-        !sharesIndependentLegalIdentity(draft.holder, owner.holder)
-    );
-    if (!blocked) return row;
-    return {
-      companyId: row.companyId,
-      associationClass: 'distinct_unresolved',
-      displayRating: false,
-      score: row.score,
-      observationPreserved: true,
+      observationPreserved: !hasIndependentLegalIdentity(draft.holder),
     };
   });
 }
@@ -934,7 +845,7 @@ export function attributeListedCompanies(
       const self = holderFromListedCompany(company);
       if (self) holders = [...holders, self];
     }
-    const evidenceObservedAt = googleObservationTimestamp(company.googleData?.last_fetched);
+    const googleFetchedAt = googleObservationTimestamp(company.googleData?.last_fetched);
     const attributed = applyRatingProvenance(company, {
       realBusiness: true,
       samePlaceHolders: holders,
@@ -945,7 +856,7 @@ export function attributeListedCompanies(
       placeAssociationContext: {
         holders,
         enumeration: placeStatus,
-        ...(evidenceObservedAt ? { evidenceObservedAt } : {}),
+        ...(googleFetchedAt ? { googleFetchedAt } : {}),
       },
     };
   });

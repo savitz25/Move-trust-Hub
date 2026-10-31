@@ -419,7 +419,7 @@ export function mapCompanyRow(
             holders: options.samePlaceHolders,
             enumeration: options.holderEnumeration,
             ...(googleObservationTimestamp(googleData?.last_fetched)
-              ? { evidenceObservedAt: googleObservationTimestamp(googleData?.last_fetched) }
+              ? { googleFetchedAt: googleObservationTimestamp(googleData?.last_fetched) }
               : {}),
           },
         }

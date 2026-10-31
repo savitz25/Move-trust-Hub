@@ -107,8 +107,11 @@ export interface Company {
   placeAssociationContext?: {
     holders: import('@/lib/verification/rating-provenance').PlaceHolder[];
     enumeration: import('@/lib/verification/rating-provenance').HolderEnumeration;
-    /** Google last_fetched for this row. Not a stored evidence-version column. */
-    evidenceObservedAt?: string | null;
+    /**
+     * Application fetch time copied from Google last_fetched.
+     * Not a co-holder check and not a stored evidence-version column.
+     */
+    googleFetchedAt?: string | null;
   };
 
   // Business

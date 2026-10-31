@@ -64,7 +64,7 @@ test('real Google snapshot retains stored values, provenance, checked date and l
   assert.match(html, /Google rating \(external\)/);
   assert.match(html, /4\.8/);
   assert.match(html, /135 Google reviews/);
-  assert.match(html, /Snapshot checked Jul 26, 2026/);
+  assert.match(html, /Google listing fetched Jul 26, 2026/);
   assert.match(html, /Source: Google Places/);
   assert.ok(html.includes(`query_place_id=${snapshot.place_id}`));
   assert.doesNotMatch(html, /Search Google for|live Google|application\/ld\+json/);
