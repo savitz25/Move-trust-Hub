@@ -11,7 +11,7 @@ import {
   findOrCreateMovingCompany,
 } from '@/lib/reviews/companies';
 import { resolveCarrierPreview } from '@/lib/verify-dot/fmcsa';
-import { getAllCompanies } from '@/lib/data-server';
+import { getCompanyByCarrierFromDb, getCompanySlugById } from '@/lib/supabase/queries/companies';
 import { checkReviewRateLimit } from '@/lib/reviews/rate-limit';
 import { hashEmail } from '@/lib/reviews/hash';
 import { uploadReviewPhotos } from '@/lib/reviews/photos';
@@ -97,20 +97,13 @@ export async function lookupCarrierForReview(
         avgRating: Number(existing.avg_rating),
         approvedReviewCount: existing.approved_review_count,
         legacyProfileSlug: existing.legacy_company_id
-          ? (
-              await getAllCompanies()
-            ).find((c) => c.id === existing.legacy_company_id)?.slug ?? null
+          ? await getCompanySlugById(existing.legacy_company_id)
           : null,
       },
     };
   }
 
-  const legacy = (await getAllCompanies()).find((c) => {
-    const norm = (v: string) => v.replace(/\D/g, '');
-    return parsed.type === 'DOT'
-      ? norm(c.usdotNumber || '') === parsed.value
-      : norm(c.mcNumber || '') === parsed.value;
-  });
+  const legacy = await getCompanyByCarrierFromDb(parsed);
 
   const { preview: fmcsaPreview } = await resolveCarrierPreview(parsed, null);
   const slug = `${parsed.type.toLowerCase()}-${parsed.value}`;

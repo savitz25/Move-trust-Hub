@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, ShieldCheck } from 'lucide-react';
 import { getMovingCompanyBySlug } from '@/lib/reviews/companies';
-import { getAllCompanies } from '@/lib/data-server';
+import { getCompanySlugById } from '@/lib/supabase/queries/companies';
 import { getApprovedReviews } from '@/lib/reviews/queries';
 import { buildAggregateRatingSchema } from '@/lib/reviews/aggregate-rating';
 import { PublicReviewList } from '@/components/reviews/public-review-list';
@@ -194,14 +194,14 @@ export default async function CompanyReviewProfilePage({ params }: Props) {
 }
 
 async function LegacyDirectoryLink({ legacyId }: { legacyId: string }) {
-  const legacyById = (await getAllCompanies()).find((c) => c.id === legacyId);
-  if (!legacyById) return null;
+  const legacySlug = await getCompanySlugById(legacyId);
+  if (!legacySlug) return null;
 
   return (
     <Card className="mb-8 p-4 bg-primary/5 border-primary/20 text-sm">
       This carrier is also in our{' '}
       <Link
-        href={`/companies/${legacyById.slug}`}
+        href={`/companies/${legacySlug}`}
         className="text-primary font-medium underline"
       >
         full directory profile

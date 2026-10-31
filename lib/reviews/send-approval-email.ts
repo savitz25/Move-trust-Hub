@@ -10,7 +10,7 @@ import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import { SITE_URL } from '@/lib/seo/site-metadata';
 import { logger } from '@/lib/logging/logger';
-import { getAllCompanies } from '@/lib/data-server';
+import { getCompanyByCarrierFromDb } from '@/lib/supabase/queries/companies';
 
 const VERIFIED_FROM_FALLBACK = 'Move Trust Hub <notifications@movetrusthub.com>';
 
@@ -77,18 +77,12 @@ export async function resolveReviewProfileUrl(movingCompanyId: string): Promise<
 
   if (!directorySlug && (dot || moving.mc_number)) {
     try {
-      const all = await getAllCompanies();
       const mc = normalizeDigits(moving.mc_number);
-      for (const c of all) {
-        if (dot && normalizeDigits(c.usdotNumber) === dot) {
-          directorySlug = c.slug;
-          break;
-        }
-        if (mc && normalizeDigits(c.mcNumber) === mc) {
-          directorySlug = c.slug;
-          break;
-        }
-      }
+      const parsed = dot
+        ? { type: 'DOT' as const, value: dot, display: `DOT ${dot}` }
+        : { type: 'MC' as const, value: mc, display: `MC ${mc}` };
+      const match = parsed.value ? await getCompanyByCarrierFromDb(parsed) : undefined;
+      if (match?.slug) directorySlug = match.slug;
     } catch {
       // ignore
     }
