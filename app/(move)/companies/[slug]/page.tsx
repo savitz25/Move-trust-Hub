@@ -31,6 +31,7 @@ import {
   isValidCompanyProfileHref,
 } from '@/lib/directory/profile-back-link';
 import { MetricLabel } from '@/components/trust/metric-label';
+import { withheldRatingLabel } from '@/lib/verification/rating-provenance';
 import { FmcsaLastVerified } from '@/components/fmcsa/fmcsa-last-verified';
 
 import { directoryVerifiedLabel } from '@/lib/trust/company-display-policy';
@@ -535,7 +536,7 @@ export default async function CompanyProfilePage({ params }: Props) {
 
           {displayCompany.ratingProvenance?.withheldReason ? (
             <p className="text-sm text-muted-foreground mb-4">
-              Rating withheld · {displayCompany.ratingProvenance.withheldReason}
+              {withheldRatingLabel(displayCompany.ratingProvenance)}
             </p>
           ) : null}
 

@@ -21,7 +21,7 @@ import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { getLicenseDisplay, LICENSE_PENDING_MESSAGE } from '@/lib/trust/company-display-policy';
 import { SaveComparisonButton } from '@/components/save-my-move/save-comparison-button';
 import { resolveYearsInBusiness } from '@/lib/directory/normalize-company';
-import { displayedRatingValue } from '@/lib/verification/rating-provenance';
+import { displayedRatingValue, withheldRatingLabel } from '@/lib/verification/rating-provenance';
 import { BeforeYouReachOut } from '@/components/research/before-you-reach-out';
 
 interface Props {
@@ -228,7 +228,7 @@ export function CompareClient({ allCompanies }: Props) {
         if (c.ratingProvenance?.withheldReason) {
           return (
             <span className="text-xs text-muted-foreground">
-              Rating withheld · {c.ratingProvenance.withheldReason}
+              {withheldRatingLabel(c.ratingProvenance)}
             </span>
           );
         }

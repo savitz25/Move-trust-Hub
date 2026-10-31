@@ -36,6 +36,7 @@ import {
   applyRatingProvenance,
   attributeListedCompanies,
   directoryHolderLookupBound,
+  googleObservationTimestamp,
   hasSharedLocationEvidence,
   isRejectedGoogleListing,
   PLACE_HOLDER_READ_LIMIT,
@@ -417,6 +418,9 @@ export function mapCompanyRow(
           placeAssociationContext: {
             holders: options.samePlaceHolders,
             enumeration: options.holderEnumeration,
+            ...(googleObservationTimestamp(googleData?.last_fetched)
+              ? { evidenceObservedAt: googleObservationTimestamp(googleData?.last_fetched) }
+              : {}),
           },
         }
       : mapped;

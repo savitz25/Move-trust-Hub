@@ -22,7 +22,7 @@ import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { CompanyCardActions } from '@/components/directory/company-card-actions';
 import { CompanyProfileLink } from '@/components/directory/company-profile-link';
 import { getAutoTransportEvidence } from '@/lib/directory/auto-transport-evidence';
-import { displayedRatingValue } from '@/lib/verification/rating-provenance';
+import { displayedRatingValue, withheldRatingLabel } from '@/lib/verification/rating-provenance';
 
 type CompareStore = {
   isSelected: (slug: string) => boolean;
@@ -115,7 +115,7 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
         <div className="mt-3 flex flex-wrap items-baseline gap-2">
           {company.ratingProvenance?.withheldReason ? (
             <span className="text-xs text-muted-foreground">
-              Rating withheld · {company.ratingProvenance.withheldReason}
+              {withheldRatingLabel(company.ratingProvenance)}
             </span>
           ) : displayedRatingValue(company) != null ? (
             <>

@@ -20,9 +20,11 @@ import {
   directoryHolderLookupBound,
   displayedRatingValue,
   googleReviewCardsForProvenance,
+  IDENTITY_INCOMPLETE_REASON,
   isVerifiedGoogleEvidence,
   nameIdentityScore,
   OWNERSHIP_UNPROVEN_REASON,
+  withheldRatingLabel,
   PLACE_HOLDER_READ_LIMIT,
   selectRatingProvenance,
   type PlaceHolder,
@@ -2119,7 +2121,9 @@ describe('live rating identity correction', () => {
         formattedAddress: memphis,
       }),
     ]);
-    assert.equal(cord.every((row) => row.displayRating), true);
+    assert.equal(cord.find((row) => row.companyId === 'cord')?.displayRating, false);
+    assert.equal(cord.find((row) => row.companyId === 'cord')?.observationPreserved, true);
+    assert.equal(cord.find((row) => row.companyId === 'cord-memphis')?.displayRating, true);
   });
 
   it('keeps an evidenced shared location and does not display a different business on that place', () => {
@@ -2362,6 +2366,160 @@ describe('live rating identity correction', () => {
     assert.equal(blocked[0]?.googleData?.rating, 4.8);
   });
 
+  it('withholds a no-USDOT duplicate and keeps the identified sibling rating', () => {
+    const cases = [
+      {
+        placeId: 'ChIJdSNcKkyGf4gRY85b_MW7hbU',
+        placeName: 'Cord Moving Company and Storage - Movers Memphis',
+        address: '3264 Democrat Rd #5, Memphis, TN 38118, USA',
+        duplicate: {
+          id: 'cord-moving-storage',
+          name: 'Cord Moving & Storage',
+          legalName: null,
+          usdot: null,
+          headquarters: '3264 Democrat Rd #5, Memphis, TN 38118',
+          rating: 4.7,
+          reviewCount: 252,
+        },
+        owner: {
+          id: 'cord-moving-storage-memphis',
+          name: 'Cord Moving & Storage Memphis',
+          legalName: 'CORD MOVING AND STORAGE COMPANY',
+          usdot: '181102',
+          headquarters: 'Memphis',
+          rating: 4.7,
+          reviewCount: 251,
+        },
+      },
+      {
+        placeId: 'ChIJWRU_s6A8XIgRgCGfCzOVwq4',
+        placeName: 'Gouffon Moving & Storage',
+        address: '1520 Amherst Rd, Knoxville, TN 37909, USA',
+        duplicate: {
+          id: 'gouffon-moving-storage-2',
+          name: 'Gouffon Moving & Storage',
+          legalName: null,
+          usdot: null,
+          headquarters: '1520 Amherst Rd, Knoxville, TN 37909',
+          rating: 4.7,
+          reviewCount: 950,
+        },
+        owner: {
+          id: 'gouffon-moving-storage',
+          name: 'Gouffon Moving & Storage',
+          legalName: 'GOUFFON MOVING AND STORAGE CO',
+          usdot: '553340',
+          headquarters: 'Knoxville',
+          rating: 4.7,
+          reviewCount: 948,
+        },
+      },
+    ];
+    for (const item of cases) {
+      const holders = [item.duplicate, item.owner].map((member) =>
+        holder({
+          companyId: member.id,
+          companyName: member.name,
+          legalName: member.legalName,
+          usdotNumber: member.usdot,
+          headquarters: member.headquarters,
+          placeId: item.placeId,
+          placeName: item.placeName,
+          formattedAddress: item.address,
+        })
+      );
+      const classified = classifySharedPlaceHolders(holders);
+      assert.equal(classified.find((row) => row.companyId === item.duplicate.id)?.displayRating, false, item.duplicate.id);
+      assert.equal(
+        classified.find((row) => row.companyId === item.duplicate.id)?.observationPreserved,
+        true,
+        item.duplicate.id
+      );
+      assert.equal(classified.find((row) => row.companyId === item.owner.id)?.displayRating, true, item.owner.id);
+      const rows = [item.duplicate, item.owner].map((member) =>
+        company({
+          id: member.id,
+          slug: member.id,
+          name: member.name,
+          fmcsaLegalName: member.legalName,
+          usdotNumber: member.usdot ?? '',
+          headquarters: member.headquarters,
+          googleData: google({
+            place_id: item.placeId,
+            name: item.placeName,
+            formatted_address: item.address,
+            rating: member.rating,
+            review_count: member.reviewCount,
+            last_fetched: '2026-10-30T12:00:00.000Z',
+          }),
+          reputationScore: 17,
+        })
+      );
+      const cards = attributeListedCompanies(rows, { holders, enumeration: 'complete' });
+      const duplicateCard = cards.find((card) => card.id === item.duplicate.id);
+      const ownerCard = cards.find((card) => card.id === item.owner.id);
+      assert.equal(duplicateCard?.googleData?.review_count, item.duplicate.reviewCount, item.duplicate.id);
+      assert.equal(duplicateCard?.googleData?.rating, item.duplicate.rating, item.duplicate.id);
+      assert.equal(duplicateCard?.ratingProvenance?.withheldReason, IDENTITY_INCOMPLETE_REASON, item.duplicate.id);
+      assert.equal(duplicateCard?.ratingProvenance?.observedAt, '2026-10-30T12:00:00.000Z', item.duplicate.id);
+      assert.equal(duplicateCard?.placeAssociationContext?.evidenceObservedAt, '2026-10-30T12:00:00.000Z');
+      assert.equal(displayedRatingValue(duplicateCard!), null, item.duplicate.id);
+      assert.equal(isVerifiedGoogleEvidence(duplicateCard?.ratingProvenance), false, item.duplicate.id);
+      assert.equal(
+        googleReviewCardsForProvenance([{ source: 'Google', verified: true }], duplicateCard?.ratingProvenance).length,
+        0,
+        item.duplicate.id
+      );
+      assert.equal(ownerCard?.overallRating, item.owner.rating, item.owner.id);
+      assert.equal(ownerCard?.reviewCount, item.owner.reviewCount, item.owner.id);
+      assert.equal(isVerifiedGoogleEvidence(ownerCard?.ratingProvenance), true, item.owner.id);
+      assert.equal(ownerCard?.ratingProvenance?.observedAt, '2026-10-30T12:00:00.000Z', item.owner.id);
+      const ownerProfile = selectRatingProvenance({
+        provider: {
+          id: item.owner.id,
+          name: item.owner.name,
+          legalName: item.owner.legalName,
+          usdotNumber: item.owner.usdot,
+          headquarters: item.owner.headquarters,
+        },
+        google: ownerCard?.googleData,
+        samePlaceHolders: holders,
+        holderEnumeration: 'complete',
+        realBusiness: true,
+      });
+      const duplicateProfile = selectRatingProvenance({
+        provider: {
+          id: item.duplicate.id,
+          name: item.duplicate.name,
+          legalName: item.duplicate.legalName,
+          usdotNumber: item.duplicate.usdot,
+          headquarters: item.duplicate.headquarters,
+        },
+        google: duplicateCard?.googleData,
+        samePlaceHolders: holders,
+        holderEnumeration: 'complete',
+        realBusiness: true,
+      });
+      assert.equal(isVerifiedGoogleEvidence(ownerProfile.provenance), true, item.owner.id);
+      assert.equal(ownerProfile.provenance.rating, item.owner.rating, item.owner.id);
+      assert.equal(duplicateProfile.provenance.withheldReason, IDENTITY_INCOMPLETE_REASON, item.duplicate.id);
+      assert.equal(isVerifiedGoogleEvidence(duplicateProfile.provenance), false, item.duplicate.id);
+      assert.equal(
+        displayedRatingValue({
+          overallRating: duplicateProfile.provenance.rating ?? 0,
+          ratingProvenance: duplicateProfile.provenance,
+        }),
+        null,
+        item.duplicate.id
+      );
+      const schema = JSON.stringify(buildCompanyDirectorySchemaGraph(duplicateCard!));
+      assert.equal(schema.includes('AggregateRating'), false, item.duplicate.id);
+      assert.equal(schema.includes('"@type":"Review"'), false, item.duplicate.id);
+      assert.equal(duplicateCard?.reputationScore, 17, item.duplicate.id);
+      assert.equal(ownerCard?.reputationScore, 17, item.owner.id);
+    }
+  });
+
   it('applies the recorded 23 shared-place patterns on cards and profiles together', () => {
     type Member = {
       id: string;
@@ -2376,13 +2534,30 @@ describe('live rating identity correction', () => {
         placeId: 'ChIJURdZ2sR_wYkR29Tw8bqxa-Q',
         placeName: '1st Moving Corp.',
         address: '1743 US-9, Howell Township, NJ 07731',
-        members: ['1st-moving-corp', '1st-moving-corp-2', '1st-moving-corp-3'].map((id, index) => ({
-          id,
-          name: index === 0 ? '1st Moving Corp.' : '1st Moving Corp',
-          usdot: null,
-          headquarters: '1743 US-9, Howell Township, NJ 07731',
-          display: true,
-        })),
+        members: [
+          {
+            id: '1st-moving-corp',
+            name: '1st Moving Corp.',
+            legalName: '1st Moving Corp.',
+            usdot: null,
+            headquarters: '1743 US-9, Howell Township, NJ 07731',
+            display: true,
+          },
+          {
+            id: '1st-moving-corp-2',
+            name: '1st Moving Corp',
+            usdot: null,
+            headquarters: '1743 US-9, Howell Township, NJ 07731',
+            display: false,
+          },
+          {
+            id: '1st-moving-corp-3',
+            name: '1st Moving Corp',
+            usdot: null,
+            headquarters: '1743 US-9, Howell Township, NJ 07731',
+            display: false,
+          },
+        ],
       },
       {
         placeId: 'ChIJtw2-vDNawokRd10kH3ot4xs',
@@ -2549,7 +2724,7 @@ describe('live rating identity correction', () => {
             name: 'Cord Moving & Storage',
             usdot: null,
             headquarters: '3264 Democrat Rd #5, Memphis, TN 38118',
-            display: true,
+            display: false,
           },
           {
             id: 'cord-moving-storage-memphis',
@@ -2644,15 +2819,25 @@ describe('live rating identity correction', () => {
       },
       {
         placeId: 'ChIJWRU_s6A8XIgRgCGfCzOVwq4',
-        placeName: 'Gouffon Moving',
-        address: '8 King St, Charleston, SC 29401',
-        members: ['gouffon', 'gouffon-2'].map((id) => ({
-          id,
-          name: 'Gouffon Moving',
-          usdot: '8888001',
-          headquarters: 'Charleston, SC',
-          display: true,
-        })),
+        placeName: 'Gouffon Moving & Storage',
+        address: '1520 Amherst Rd, Knoxville, TN 37909, USA',
+        members: [
+          {
+            id: 'gouffon-moving-storage',
+            name: 'Gouffon Moving & Storage',
+            legalName: 'GOUFFON MOVING AND STORAGE CO',
+            usdot: '553340',
+            headquarters: 'Knoxville',
+            display: true,
+          },
+          {
+            id: 'gouffon-moving-storage-2',
+            name: 'Gouffon Moving & Storage',
+            usdot: null,
+            headquarters: '1520 Amherst Rd, Knoxville, TN 37909',
+            display: false,
+          },
+        ],
       },
       {
         placeId: 'ChIJSY8H7YjdQIYRU1Cw8Hnnmm8',
@@ -2815,6 +3000,18 @@ describe('live rating identity correction', () => {
       );
       for (const card of cards) {
         assert.equal(card.reputationScore, 17, card.id);
+        assert.equal(
+          card.ratingProvenance?.observedAt ?? card.placeAssociationContext?.evidenceObservedAt,
+          listing.last_fetched,
+          card.id
+        );
+        const member = group.members.find((item) => item.id === card.id);
+        if (member && !member.display && card.ratingProvenance?.withheldReason === IDENTITY_INCOMPLETE_REASON) {
+          assert.equal(card.googleData?.place_id, group.placeId, card.id);
+          assert.equal(card.googleData?.rating, 4.4, card.id);
+          assert.equal(card.ratingProvenance.observedAt, listing.last_fetched, card.id);
+          assert.match(withheldRatingLabel(card.ratingProvenance), /observed 2026-06-01/);
+        }
         const profile = selectRatingProvenance({
           provider: {
             id: card.id,
@@ -2892,7 +3089,15 @@ describe('rating provenance surfaces', () => {
     assert.match(panel, /scopeLabel/);
     assert.match(panel, /provenance/);
     assert.match(card, /withheldReason/);
+    assert.match(card, /withheldRatingLabel/);
     assert.match(table, /withheldReason/);
+    assert.match(table, /withheldRatingLabel/);
+    const compare = readFileSync('components/compare/compare-client.tsx', 'utf8');
+    const profilePage = readFileSync('app/(move)/companies/[slug]/page.tsx', 'utf8');
+    const autoTransport = readFileSync('components/directory/auto-transport-directory-client.tsx', 'utf8');
+    assert.match(compare, /withheldRatingLabel/);
+    assert.match(profilePage, /withheldRatingLabel/);
+    assert.match(autoTransport, /withheldRatingLabel/);
     assert.match(backfill, /rating_reviews/);
     assert.match(persist, /decidePlaceAttachment/);
     assert.doesNotMatch(persist, /\.delete\(/);
