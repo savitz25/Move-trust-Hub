@@ -16,7 +16,7 @@ import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import { CompanyVerificationBadges } from '@/components/trust/company-verification-badges';
 import { EditorialReviewVolume } from '@/components/trust/editorial-review-volume';
 import { resolveYearsInBusiness } from '@/lib/directory/normalize-company';
-import { displayedRatingValue } from '@/lib/verification/rating-provenance';
+import { displayedRatingValue, withheldRatingLabel } from '@/lib/verification/rating-provenance';
 import {
   EmptyCoveragePanel,
   FMCSA_SAFER_SEARCH_URL,
@@ -278,7 +278,7 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
                   <div className="text-right">
                     {company.ratingProvenance?.withheldReason ? (
                       <span className="text-xs text-muted-foreground">
-                        Rating withheld · {company.ratingProvenance.withheldReason}
+                        {withheldRatingLabel(company.ratingProvenance)}
                       </span>
                     ) : displayedRatingValue(company) != null ? (
                       <>
@@ -391,7 +391,7 @@ export function AutoTransportDirectoryClient({ initialCompanies }: Props) {
                   <td className="p-3">
                     {c.ratingProvenance?.withheldReason ? (
                       <span className="text-xs text-muted-foreground">
-                        Rating withheld · {c.ratingProvenance.withheldReason}
+                        {withheldRatingLabel(c.ratingProvenance)}
                       </span>
                     ) : displayedRatingValue(c) != null ? (
                       <>

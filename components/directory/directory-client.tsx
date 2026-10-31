@@ -45,7 +45,7 @@ import {
   shouldShowReputationScore,
 } from '@/lib/data-quality/metrics';
 import { getAutoTransportEvidence } from '@/lib/directory/auto-transport-evidence';
-import { displayedRatingValue } from '@/lib/verification/rating-provenance';
+import { displayedRatingValue, withheldRatingLabel } from '@/lib/verification/rating-provenance';
 import { parseDirectoryResearchQuery, queryPlanServices } from '@/lib/directory/parse-directory-research-query';
 import { stateCodeToName } from '@/lib/directory/coverage-filter';
 
@@ -812,7 +812,7 @@ export function DirectoryClient({
                       <td>
                         {c.ratingProvenance?.withheldReason ? (
                           <span className="text-xs text-muted-foreground">
-                            Rating withheld · {c.ratingProvenance.withheldReason}
+                            {withheldRatingLabel(c.ratingProvenance)}
                           </span>
                         ) : showRating ? (
                           <div>
