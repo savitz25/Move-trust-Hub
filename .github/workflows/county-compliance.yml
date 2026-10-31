@@ -28,6 +28,9 @@ jobs:
 
       - run: npm ci
 
+      - name: Canonical county mover profile links
+        run: npx tsx --test lib/local-movers/canonical-profile-slug.test.ts
+
       - name: Circuit breaker (Tier 1 <= 400)
         run: npx tsx scripts/lib/tier1-circuit-breaker.ts
 
