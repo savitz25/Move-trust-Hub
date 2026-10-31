@@ -100,9 +100,10 @@ async function main() {
       deepCountyTarget: 150,
       deepCountyTotal: DEEP_COUNTY_TOTAL,
       deepCountyPass: DEEP_COUNTY_TOTAL >= 150,
-      tier1Max: MAX_TIER1_COUNT,
-      tier1Current: circuitBreaker.tier1,
-      tier1Pass: circuitBreaker.pass,
+      premiumMax: MAX_TIER1_COUNT,
+      premiumCurrent: circuitBreaker.premium,
+      standardCurrent: circuitBreaker.standard,
+      premiumPass: circuitBreaker.premium <= MAX_TIER1_COUNT && circuitBreaker.unclassified === 0,
     },
     enrichment: {
       deepCountiesInCatalog: deepCount,

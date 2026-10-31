@@ -142,8 +142,10 @@ async function main() {
       tier1,
       tier2,
       tier1Enriched,
-      maxTier1Allowed: MAX_TIER1_COUNT,
-      tier1WithinLimit: tier1 <= MAX_TIER1_COUNT,
+      maxPremiumAllowed: MAX_TIER1_COUNT,
+      premiumCount: circuitBreaker.premium,
+      standardCount: circuitBreaker.standard,
+      premiumWithinLimit: circuitBreaker.pass,
       sample: tierClassificationSample,
     },
     probePlan: {

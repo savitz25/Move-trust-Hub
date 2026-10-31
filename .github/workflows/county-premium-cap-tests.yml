@@ -1,0 +1,27 @@
+name: County Premium Cap Tests
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/lib/tier1-circuit-breaker.ts'
+      - 'scripts/lib/tier1-circuit-breaker.test.ts'
+      - '.github/workflows/county-premium-cap-tests.yml'
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  premium-cap-classification:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Premium cap classification tests
+        run: npx tsx --test scripts/lib/tier1-circuit-breaker.test.ts
