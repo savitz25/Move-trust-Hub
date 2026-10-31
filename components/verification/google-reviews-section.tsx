@@ -7,6 +7,7 @@ import { googleMapsProfileUrl } from '@/lib/verification/google-profile-url';
 import { PROFILE_METRIC_TOOLTIPS } from '@/lib/trust/profile-metrics';
 import { hasGoogleReputationSnapshot } from '@/lib/verification/google-reputation-snapshot';
 import {
+  googleFetchLabel,
   isVerifiedGoogleEvidence,
   type RatingProvenance,
 } from '@/lib/verification/rating-provenance';
@@ -44,6 +45,7 @@ export function GoogleReviewsSection({
   if (!hasGoogleReputationSnapshot(data)) return null;
   if (provenance && !isVerifiedGoogleEvidence(provenance)) return null;
   const profileUrl = googleMapsProfileUrl(data)!;
+  const googleFetchedLabel = googleFetchLabel(provenance?.observedAt);
 
   return (
     <Card className="overflow-hidden border-l-4 border-l-[#4285F4] bg-gradient-to-br from-white to-[#f8faff] dark:from-background dark:to-[#0d1117] mb-8">
@@ -77,7 +79,7 @@ export function GoogleReviewsSection({
             {provenance ? (
               <p className="text-xs text-muted-foreground mt-1">
                 {provenance.sourceLabel} · {provenance.scopeLabel}
-                {provenance.observedAt ? ` · observed ${provenance.observedAt.slice(0, 10)}` : ''}
+                {googleFetchedLabel ? ` · ${googleFetchedLabel}` : ''}
               </p>
             ) : null}
             {data.name ? (
@@ -95,7 +97,7 @@ export function GoogleReviewsSection({
           </Link>
         </div>
         <p className="text-[11px] text-muted-foreground border-t pt-3 leading-relaxed">
-          {`Snapshot checked ${new Date(data.last_fetched).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })} (UTC). Source: Google Places. `}
+          {`Google listing fetched ${new Date(data.last_fetched).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })} (UTC). Source: Google Places. `}
           External rating only — not mixed into moderated Move Trust Hub review schema.
           {attributableOnSiteCount > 0
             ? ' Historical attributed references may appear below as short cards with outbound links.'

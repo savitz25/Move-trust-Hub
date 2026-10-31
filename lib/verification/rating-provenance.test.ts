@@ -24,6 +24,7 @@ import {
   isVerifiedGoogleEvidence,
   nameIdentityScore,
   OWNERSHIP_UNPROVEN_REASON,
+  googleFetchLabel,
   withheldRatingLabel,
   PLACE_HOLDER_READ_LIMIT,
   selectRatingProvenance,
@@ -2051,12 +2052,13 @@ describe('live rating identity correction', () => {
     assert.equal(kept.provenance.rating, 4.7);
   });
 
-  it('treats duplicate slugs as one business and leaves a missing profile undisplayed', () => {
+  it('withholds duplicate slugs that have no legal identity and leaves a missing profile undisplayed', () => {
     const address = '1743 US-9, Howell Township, NJ 07731';
     const duplicates = ['1st-moving-corp', '1st-moving-corp-2', '1st-moving-corp-3'].map((id, index) =>
       holder({
         companyId: id,
         companyName: index === 0 ? '1st Moving Corp.' : '1st Moving Corp',
+        legalName: null,
         usdotNumber: null,
         headquarters: address,
         placeId: 'place-1st',
@@ -2065,8 +2067,9 @@ describe('live rating identity correction', () => {
       })
     );
     const classified = classifySharedPlaceHolders(duplicates);
-    assert.equal(classified.every((row) => row.displayRating), true);
-    assert.equal(classified.every((row) => row.associationClass === 'same_legal_business'), true);
+    assert.equal(classified.every((row) => row.displayRating), false);
+    assert.equal(classified.every((row) => row.associationClass === 'distinct_unresolved'), true);
+    assert.equal(classified.every((row) => row.observationPreserved), true);
     const missing = classifySharedPlaceHolders([
       holder({
         companyId: 'missing-row',
@@ -2088,6 +2091,7 @@ describe('live rating identity correction', () => {
             index === 2
               ? "Firefighting's Finest Moving & Storage INC"
               : "Firefighting's Finest Moving & Storage",
+          legalName: null,
           usdotNumber: null,
           headquarters: spring,
           placeId: 'place-finest',
@@ -2096,8 +2100,9 @@ describe('live rating identity correction', () => {
         })
       )
     );
-    assert.equal(incorporated.every((row) => row.displayRating), true);
-    assert.equal(incorporated.every((row) => row.associationClass === 'same_legal_business'), true);
+    assert.equal(incorporated.every((row) => row.displayRating), false);
+    assert.equal(incorporated.every((row) => row.associationClass === 'distinct_unresolved'), true);
+    assert.equal(incorporated.every((row) => row.observationPreserved), true);
 
     const memphis = '3264 Democrat Rd #5, Memphis, TN 38118';
     const cord = classifySharedPlaceHolders([
@@ -2462,7 +2467,7 @@ describe('live rating identity correction', () => {
       assert.equal(duplicateCard?.googleData?.rating, item.duplicate.rating, item.duplicate.id);
       assert.equal(duplicateCard?.ratingProvenance?.withheldReason, IDENTITY_INCOMPLETE_REASON, item.duplicate.id);
       assert.equal(duplicateCard?.ratingProvenance?.observedAt, '2026-10-30T12:00:00.000Z', item.duplicate.id);
-      assert.equal(duplicateCard?.placeAssociationContext?.evidenceObservedAt, '2026-10-30T12:00:00.000Z');
+      assert.equal(duplicateCard?.placeAssociationContext?.googleFetchedAt, '2026-10-30T12:00:00.000Z');
       assert.equal(displayedRatingValue(duplicateCard!), null, item.duplicate.id);
       assert.equal(isVerifiedGoogleEvidence(duplicateCard?.ratingProvenance), false, item.duplicate.id);
       assert.equal(
@@ -2518,6 +2523,188 @@ describe('live rating identity correction', () => {
       assert.equal(duplicateCard?.reputationScore, 17, item.duplicate.id);
       assert.equal(ownerCard?.reputationScore, 17, item.owner.id);
     }
+  });
+
+  it('separates conflicting legal identities and keeps documented same-business aliases', () => {
+    const dallas = '900 Market Street, Dallas, TX 75201';
+    const conflict = classifySharedPlaceHolders([
+      holder({
+        companyId: 'northline-a',
+        companyName: 'Northline Van Lines',
+        legalName: 'NORTHLINE VAN LINES LLC',
+        usdotNumber: '1111101',
+        headquarters: 'Dallas, TX',
+        placeId: 'place-northline',
+        placeName: 'Northline Van Lines',
+        formattedAddress: dallas,
+      }),
+      holder({
+        companyId: 'northline-b',
+        companyName: 'Northline Van Lines',
+        legalName: 'CEDAR BIN HOLDINGS INC',
+        usdotNumber: '2222202',
+        headquarters: 'Dallas, TX',
+        placeId: 'place-northline',
+        placeName: 'Northline Van Lines',
+        formattedAddress: dallas,
+      }),
+    ]);
+    assert.equal(conflict.every((row) => row.displayRating), false);
+    assert.equal(conflict.every((row) => row.associationClass === 'distinct_unresolved'), true);
+    assert.equal(conflict.some((row) => row.associationClass === 'same_legal_business'), false);
+    assert.equal(conflict.every((row) => row.observationPreserved !== true), true);
+
+    const sameLegalDifferentDot = classifySharedPlaceHolders([
+      holder({
+        companyId: 'alias-dot-a',
+        companyName: 'Northline Van Lines',
+        legalName: 'NORTHLINE VAN LINES LLC',
+        usdotNumber: '1111101',
+        headquarters: 'Dallas, TX',
+        placeId: 'place-northline',
+        placeName: 'Northline Van Lines',
+        formattedAddress: dallas,
+      }),
+      holder({
+        companyId: 'alias-dot-b',
+        companyName: 'Northline Van Lines',
+        legalName: 'NORTHLINE VAN LINES LLC',
+        usdotNumber: '2222202',
+        headquarters: 'Dallas, TX',
+        placeId: 'place-northline',
+        placeName: 'Northline Van Lines',
+        formattedAddress: dallas,
+      }),
+    ]);
+    assert.equal(sameLegalDifferentDot.every((row) => row.displayRating), false);
+    assert.equal(
+      sameLegalDifferentDot.some((row) => row.associationClass === 'same_legal_business'),
+      false
+    );
+
+    const philadelphia = '12 Pike St, Philadelphia, PA 19101';
+    const sole = holder({
+      companyId: 'big-g-sole',
+      companyName: 'Big G Moving',
+      legalName: null,
+      usdotNumber: null,
+      headquarters: 'Philadelphia, PA',
+      placeId: 'place-big-g',
+      placeName: 'Big G Moving',
+      formattedAddress: philadelphia,
+    });
+    const unidentified = classifySharedPlaceHolders([sole]);
+    assert.notEqual(unidentified[0]?.associationClass, 'rightful_owner');
+    assert.equal(unidentified[0]?.displayRating, false);
+    assert.equal(unidentified[0]?.observationPreserved, true);
+    const unidentifiedCard = applyRatingProvenance(
+      company({
+        id: 'big-g-sole',
+        slug: 'big-g-sole',
+        name: 'Big G Moving',
+        fmcsaLegalName: null,
+        usdotNumber: '',
+        headquarters: 'Philadelphia, PA',
+        googleData: google({
+          place_id: 'place-big-g',
+          name: 'Big G Moving',
+          formatted_address: philadelphia,
+          rating: 4.9,
+          review_count: 80,
+          last_fetched: '2026-10-30T12:00:00.000Z',
+        }),
+      }),
+      { realBusiness: true, samePlaceHolders: [sole], holderEnumeration: 'complete' }
+    );
+    assert.equal(unidentifiedCard.ratingProvenance?.withheldReason, IDENTITY_INCOMPLETE_REASON);
+    assert.equal(isVerifiedGoogleEvidence(unidentifiedCard.ratingProvenance), false);
+    assert.equal(unidentifiedCard.googleData?.rating, 4.9);
+    assert.equal(displayedRatingValue(unidentifiedCard), null);
+    assert.equal(googleFetchLabel('2026-10-30T12:00:00.000Z'), 'Google listing fetched 2026-10-30');
+    assert.equal(googleFetchLabel('not-a-date'), null);
+    assert.match(
+      withheldRatingLabel(unidentifiedCard.ratingProvenance!),
+      /Google listing fetched 2026-10-30/
+    );
+    assert.doesNotMatch(withheldRatingLabel(unidentifiedCard.ratingProvenance!), /observed|evidence checked|verified at/);
+
+    const savannah = '10 Dock Street, Savannah, GA 31401';
+    const sharedDot = classifySharedPlaceHolders([
+      holder({
+        companyId: 'shared-dot-a',
+        companyName: 'Harbor Gate Movers',
+        legalName: 'HARBOR GATE MOVERS LLC',
+        usdotNumber: '1002003',
+        headquarters: 'Savannah, GA',
+        placeId: 'place-shared-dot',
+        placeName: 'Harbor Gate Movers',
+        formattedAddress: savannah,
+      }),
+      holder({
+        companyId: 'shared-dot-b',
+        companyName: 'Harbor Gate Movers',
+        legalName: 'HARBOR GATE HOLDINGS INC',
+        usdotNumber: '1002003',
+        headquarters: 'Savannah, GA',
+        placeId: 'place-shared-dot',
+        placeName: 'Harbor Gate Movers',
+        formattedAddress: savannah,
+      }),
+    ]);
+    assert.equal(sharedDot.every((row) => row.displayRating), true);
+    assert.equal(sharedDot.every((row) => row.associationClass === 'same_legal_business'), true);
+
+    const legalAlias = classifySharedPlaceHolders([
+      holder({
+        companyId: 'legal-alias-a',
+        companyName: 'Family Affair Moving',
+        legalName: 'FAMILY AFFAIR MOVING INC',
+        usdotNumber: null,
+        headquarters: 'Chicago, IL',
+        placeId: 'place-family',
+        placeName: 'Family Affair Moving',
+        formattedAddress: '15 Lake St, Chicago, IL 60601',
+      }),
+      holder({
+        companyId: 'legal-alias-b',
+        companyName: 'Family Affair Moving',
+        legalName: 'Family Affair Moving INC',
+        usdotNumber: '1002003',
+        headquarters: 'Chicago, IL',
+        placeId: 'place-family',
+        placeName: 'Family Affair Moving',
+        formattedAddress: '15 Lake St, Chicago, IL 60601',
+      }),
+    ]);
+    assert.equal(legalAlias.every((row) => row.displayRating), true);
+    assert.equal(legalAlias.every((row) => row.associationClass === 'same_legal_business'), true);
+
+    const franchise = classifySharedPlaceHolders([
+      holder({
+        companyId: 'franchise-local',
+        companyName: 'Harbor Gate Movers',
+        legalName: 'HARBOR GATE OF SAVANNAH LLC',
+        usdotNumber: '1002003',
+        headquarters: 'Savannah, GA',
+        placeId: 'place-franchise-harbor',
+        placeName: 'Harbor Gate Movers',
+        formattedAddress: savannah,
+      }),
+      holder({
+        companyId: 'franchise-remote',
+        companyName: 'Harbor Gate Movers',
+        legalName: 'HARBOR GATE OF DALLAS LLC',
+        usdotNumber: '3004005',
+        headquarters: 'Dallas, TX',
+        placeId: 'place-franchise-harbor',
+        placeName: 'Harbor Gate Movers',
+        formattedAddress: savannah,
+      }),
+    ]);
+    assert.equal(franchise.find((row) => row.companyId === 'franchise-local')?.associationClass, 'rightful_owner');
+    assert.equal(franchise.find((row) => row.companyId === 'franchise-local')?.displayRating, true);
+    assert.equal(franchise.find((row) => row.companyId === 'franchise-remote')?.displayRating, false);
+    assert.equal(franchise.find((row) => row.companyId === 'franchise-remote')?.associationClass, 'distinct_unresolved');
   });
 
   it('applies the recorded 23 shared-place patterns on cards and profiles together', () => {
@@ -2677,7 +2864,7 @@ describe('live rating identity correction', () => {
           name: 'Big G Moving',
           usdot: null,
           headquarters: 'Philadelphia, PA',
-          display: true,
+          display: false,
         })),
       },
       {
@@ -2755,6 +2942,7 @@ describe('live rating identity correction', () => {
         members: ['family-affair', 'family-affair-2'].map((id) => ({
           id,
           name: 'Family Affair Moving',
+          legalName: 'Family Affair Moving INC',
           usdot: null,
           headquarters: 'Chicago, IL',
           display: true,
@@ -2772,7 +2960,7 @@ describe('live rating identity correction', () => {
               : "Firefighting's Finest Moving & Storage",
           usdot: null,
           headquarters: '22026 Mossy Oaks Rd, Spring, TX 77389',
-          display: true,
+          display: false,
         })),
       },
       {
@@ -2848,7 +3036,7 @@ describe('live rating identity correction', () => {
           name: 'H-Town Movers',
           usdot: null,
           headquarters: 'Houston, TX',
-          display: true,
+          display: false,
         })),
       },
       {
@@ -2906,7 +3094,7 @@ describe('live rating identity correction', () => {
           name: 'Razorback Moving',
           usdot: null,
           headquarters: 'Fayetteville, AR',
-          display: true,
+          display: false,
         })),
       },
       {
@@ -3001,7 +3189,7 @@ describe('live rating identity correction', () => {
       for (const card of cards) {
         assert.equal(card.reputationScore, 17, card.id);
         assert.equal(
-          card.ratingProvenance?.observedAt ?? card.placeAssociationContext?.evidenceObservedAt,
+          card.ratingProvenance?.observedAt ?? card.placeAssociationContext?.googleFetchedAt,
           listing.last_fetched,
           card.id
         );
@@ -3010,7 +3198,8 @@ describe('live rating identity correction', () => {
           assert.equal(card.googleData?.place_id, group.placeId, card.id);
           assert.equal(card.googleData?.rating, 4.4, card.id);
           assert.equal(card.ratingProvenance.observedAt, listing.last_fetched, card.id);
-          assert.match(withheldRatingLabel(card.ratingProvenance), /observed 2026-06-01/);
+          assert.match(withheldRatingLabel(card.ratingProvenance), /Google listing fetched 2026-06-01/);
+          assert.doesNotMatch(withheldRatingLabel(card.ratingProvenance), /observed/);
         }
         const profile = selectRatingProvenance({
           provider: {
@@ -3090,6 +3279,12 @@ describe('rating provenance surfaces', () => {
     assert.match(panel, /provenance/);
     assert.match(card, /withheldReason/);
     assert.match(card, /withheldRatingLabel/);
+    assert.match(card, /googleFetchLabel/);
+    assert.doesNotMatch(card, /observed \$\{/);
+    assert.match(panel, /googleFetchLabel/);
+    assert.match(panel, /Google listing fetched/);
+    assert.doesNotMatch(panel, /Snapshot checked/);
+    assert.doesNotMatch(panel, /observed \$\{/);
     assert.match(table, /withheldReason/);
     assert.match(table, /withheldRatingLabel/);
     const compare = readFileSync('components/compare/compare-client.tsx', 'utf8');
@@ -3106,6 +3301,10 @@ describe('rating provenance surfaces', () => {
     const directoryPage = readFileSync('lib/directory/query-db-directory-page.ts', 'utf8');
     const rank = readFileSync('lib/directory/listing-rank.ts', 'utf8');
     assert.equal(provenance.includes('claim_google_place_association('), false);
+    assert.match(companies, /googleFetchedAt/);
+    assert.doesNotMatch(companies, /evidenceObservedAt/);
+    assert.match(provenance, /does not mean a later/);
+    assert.equal(provenance.includes('sameNormalizedName'), false);
     assert.match(companies, /companies-directory-v20-wave3/);
     assert.match(companies, /revalidate: 300/);
     assert.match(directoryPage, /attributeDirectoryPageCompanies\(hydrateListingPage/);

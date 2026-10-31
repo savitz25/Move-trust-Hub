@@ -22,7 +22,11 @@ import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { CompanyCardActions } from '@/components/directory/company-card-actions';
 import { CompanyProfileLink } from '@/components/directory/company-profile-link';
 import { getAutoTransportEvidence } from '@/lib/directory/auto-transport-evidence';
-import { displayedRatingValue, withheldRatingLabel } from '@/lib/verification/rating-provenance';
+import {
+  displayedRatingValue,
+  googleFetchLabel,
+  withheldRatingLabel,
+} from '@/lib/verification/rating-provenance';
 
 type CompareStore = {
   isSelected: (slug: string) => boolean;
@@ -60,6 +64,7 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
   const services = company.services.slice(0, 2);
   const specialties = company.specialties.slice(0, 1);
   const autoTransportEvidence = getAutoTransportEvidence(company.usdotNumber);
+  const googleFetchedLabel = googleFetchLabel(company.ratingProvenance?.observedAt);
 
   const reviewHref = reviewUrlForDirectoryCompany({
     usdotNumber: company.usdotNumber,
@@ -129,9 +134,7 @@ export function CompanyCard({ company: rawCompany, compareStore, profileReturnPa
               {company.ratingProvenance ? (
                 <span className="text-xs text-muted-foreground basis-full">
                   {company.ratingProvenance.sourceLabel} · {company.ratingProvenance.scopeLabel}
-                  {company.ratingProvenance.observedAt
-                    ? ` · observed ${company.ratingProvenance.observedAt.slice(0, 10)}`
-                    : ''}
+                  {googleFetchedLabel ? ` · ${googleFetchedLabel}` : ''}
                 </span>
               ) : null}
             </>
