@@ -34,6 +34,8 @@ import { isMissingEnrichmentColumnError } from '@/lib/suggestions/jsonb-payload'
 import { finalizeCompanyEnrichmentForDisplay } from '@/lib/verification/company-display-enrichment';
 import {
   applyRatingProvenance,
+  attributeListedCompanies,
+  directoryHolderLookupBound,
   hasSharedLocationEvidence,
   isRejectedGoogleListing,
   PLACE_HOLDER_READ_LIMIT,
@@ -725,6 +727,90 @@ async function loadProfilePlaceAssociation(
     return { holders, enumeration: capped ? 'incomplete' : 'complete' };
   } catch {
     return { holders: [], enumeration: 'failed' };
+  }
+}
+
+const HOLDER_PLACE_ID_TOKEN = /^[A-Za-z0-9_-]+$/;
+/** PostgREST's common response cap. A full page at this size is not complete. */
+const HOLDER_RESPONSE_CAP = 1000;
+
+/**
+ * One co-holder read for place ids already chosen on a bounded page.
+ * This is not the ranking query and it does not scan the company table.
+ * A large place-id set, a failed read, or a capped read fails closed.
+ */
+export async function attributeDirectoryPageCompanies(companies: Company[]): Promise<Company[]> {
+  const placeIds = [
+    ...new Set(
+      companies.flatMap((company) => {
+        const placeId = company.googleData?.place_id?.trim() || '';
+        if (!placeId || !company.googleData?.name?.trim()) return [];
+        return [placeId];
+      })
+    ),
+  ];
+  if (placeIds.length === 0) return companies;
+  if (
+    directoryHolderLookupBound(placeIds.length) !== 'query' ||
+    placeIds.some((placeId) => !HOLDER_PLACE_ID_TOKEN.test(placeId))
+  ) {
+    return attributeListedCompanies(companies, { holders: [], enumeration: 'incomplete' });
+  }
+
+  const supabase = createAnonSupabaseClient();
+  if (!supabase) {
+    return attributeListedCompanies(companies, { holders: [], enumeration: 'failed' });
+  }
+
+  const cap = placeIds.length * PLACE_HOLDER_READ_LIMIT;
+  const limit = Math.min(cap, HOLDER_RESPONSE_CAP);
+  const list = `(${placeIds.map((placeId) => `"${placeId}"`).join(',')})`;
+  const columns =
+    'id, name, usdot_number, fmcsa_legal_name, headquarters, website, google_data, verification_sources';
+  try {
+    const [fromSources, fromColumn] = await Promise.all([
+      supabase
+        .from('companies')
+        .select(columns)
+        .filter('verification_sources->google->>place_id', 'in', list)
+        .limit(limit),
+      supabase
+        .from('companies')
+        .select(columns)
+        .filter('google_data->>place_id', 'in', list)
+        .limit(limit),
+    ]);
+    if (fromSources.error || fromColumn.error) {
+      logger.warn('directory.place_holders.fetch_failed', {
+        code: fromSources.error?.code ?? fromColumn.error?.code,
+        message: fromSources.error?.message ?? fromColumn.error?.message,
+      });
+      return attributeListedCompanies(companies, { holders: [], enumeration: 'failed' });
+    }
+    if (!Array.isArray(fromSources.data) || !Array.isArray(fromColumn.data)) {
+      return attributeListedCompanies(companies, { holders: [], enumeration: 'ambiguous' });
+    }
+    if (fromSources.data.length >= limit || fromColumn.data.length >= limit) {
+      return attributeListedCompanies(companies, { holders: [], enumeration: 'incomplete' });
+    }
+    const seen = new Set<string>();
+    const holders: PlaceHolder[] = [];
+    const rows = [...fromSources.data, ...fromColumn.data] as unknown as Record<string, unknown>[];
+    for (const raw of rows) {
+      const google = resolveGoogleDataFromRow(raw);
+      const placeId = google?.place_id?.trim() || '';
+      if (!placeId || !placeIds.includes(placeId)) continue;
+      const holder = holderFromProfileRow(raw, placeId);
+      if (!holder || seen.has(holder.companyId)) continue;
+      seen.add(holder.companyId);
+      holders.push(holder);
+    }
+    return attributeListedCompanies(companies, { holders, enumeration: 'complete' });
+  } catch (error) {
+    logger.warn('directory.place_holders.fetch_failed', {
+      message: error instanceof Error ? error.message : String(error),
+    });
+    return attributeListedCompanies(companies, { holders: [], enumeration: 'failed' });
   }
 }
 
