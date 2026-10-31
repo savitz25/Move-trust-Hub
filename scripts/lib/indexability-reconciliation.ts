@@ -13,7 +13,7 @@ export const INDEXABILITY_RECONCILIATION = {
   phase11CorrectedTier1: 97,
   phase11Evaluator: 'evaluateCountyIndexabilityFromResult() — canonical for pages, metadata, and sitemap',
   phase11RuleSummary:
-    '3+ explicit county movers, no regional pool, non-batch cited research, deep-county or premium-metro coverage wave only. MAX_TIER1_COUNT=400 circuit breaker.',
+    'Phase 3 indexes qualifying Premium Tier 1 and Standard Tier 2 counties. The MAX_TIER1_COUNT=400 circuit breaker applies only to Premium Tier 1.',
   liveSitemapEvaluator:
     'app/sitemap-local/sitemap.ts → evaluateCountyIndexabilityFromResult() with getMoversForCountyAsync()',
   whichNumberIsCanonicalToday: 'evaluateCountyIndexabilityFromResult() — used by county page metadata, robots, and sitemap',

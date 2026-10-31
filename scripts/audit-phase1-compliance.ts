@@ -104,7 +104,10 @@ async function main() {
     counties: {
       total: getAllCountyParams().length,
       minExplicitMoversToIndex: MIN_EXPLICIT_MOVERS_TO_INDEX,
-      maxTier1Allowed: MAX_TIER1_COUNT,
+      maxPremiumAllowed: MAX_TIER1_COUNT,
+      premium: circuitBreaker.premium,
+      standard: circuitBreaker.standard,
+      unclassified: circuitBreaker.unclassified,
       tier1: circuitBreaker.tier1,
       tier2: circuitBreaker.tier2,
       tier1Reasons: circuitBreaker.tier1Reasons,
