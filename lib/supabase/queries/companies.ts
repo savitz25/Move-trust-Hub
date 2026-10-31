@@ -496,6 +496,91 @@ function isSchemaColumnError(error: { code?: string; message?: string } | null):
   );
 }
 
+/**
+ * Legacy Google/BBB blobs are not part of the reputation-ordered catalog scan.
+ * Postgres was spilling those toasted values while sorting every company.
+ * This read is ordered by primary key and returns only rows that actually
+ * store one of the blobs. A missing column, or a failed read, leaves
+ * verification_sources in place and does not invent a rating.
+ *
+ * No index is added here. Filtering `google_data` / `public_scrape_data`
+ * IS NOT NULL can still scan the heap. An index for that predicate is an
+ * unapplied dependency, not part of this change.
+ */
+const LEGACY_LIST_SNAPSHOT_SELECT = 'id, google_data, public_scrape_data';
+
+function legacySnapshotColumnError(error: { code?: string; message?: string } | null): boolean {
+  if (!error) return false;
+  return (
+    isSchemaColumnError(error) ||
+    /google_data|public_scrape_data/i.test(error.message ?? '')
+  );
+}
+
+async function readLegacyListSnapshots(
+  supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>
+): Promise<Map<string, { google_data: unknown; public_scrape_data: unknown }> | null> {
+  if (enrichmentColumnState === 'missing') return new Map();
+  const snapshots = new Map<string, { google_data: unknown; public_scrape_data: unknown }>();
+  let from = 0;
+  while (from < 20_000) {
+    const to = from + COMPANIES_LIST_PAGE_SIZE - 1;
+    const page = await supabase
+      .from('companies')
+      .select(LEGACY_LIST_SNAPSHOT_SELECT)
+      .or('google_data.not.is.null,public_scrape_data.not.is.null')
+      .order('id', { ascending: true })
+      .range(from, to);
+    if (page.error) {
+      if (legacySnapshotColumnError(page.error)) {
+        markEnrichmentColumnsMissing();
+        return new Map();
+      }
+      logger.warn('companies.legacy_snapshot_read_failed', {
+        code: page.error.code,
+        message: page.error.message,
+      });
+      return null;
+    }
+    const data = page.data ?? [];
+    for (const row of data as Array<{
+      id?: string;
+      google_data?: unknown;
+      public_scrape_data?: unknown;
+    }>) {
+      if (!row.id) continue;
+      snapshots.set(row.id, {
+        google_data: row.google_data ?? null,
+        public_scrape_data: row.public_scrape_data ?? null,
+      });
+    }
+    if (data.length < COMPANIES_LIST_PAGE_SIZE) {
+      markEnrichmentColumnsAvailable();
+      return snapshots;
+    }
+    from += COMPANIES_LIST_PAGE_SIZE;
+  }
+  markEnrichmentColumnsAvailable();
+  return snapshots;
+}
+
+export function applyLegacyListSnapshots(
+  rows: Record<string, unknown>[],
+  snapshots: ReadonlyMap<string, { google_data: unknown; public_scrape_data: unknown }>
+): Record<string, unknown>[] {
+  if (snapshots.size === 0) return rows;
+  return rows.map((row) => {
+    const id = typeof row.id === 'string' ? row.id : '';
+    const extra = id ? snapshots.get(id) : undefined;
+    if (!extra) return row;
+    return {
+      ...row,
+      google_data: extra.google_data,
+      public_scrape_data: extra.public_scrape_data,
+    };
+  });
+}
+
 async function fetchCompaniesFromDatabase(): Promise<Company[]> {
   if (!isSupabaseConfigured()) {
     return [...seedCompanies];
@@ -512,7 +597,7 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
     return [...seedCompanies];
   }
 
-  const projections = companyListProjectionCandidates();
+  const projections = companyListProjectionCandidates(false);
 
   let data: unknown[] | null = null;
   let error: { code?: string; message?: string } | null = null;
@@ -571,10 +656,14 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
     return [...seedCompanies];
   }
 
-  return data
+  const records = (data as Record<string, unknown>[]).map((row) => ({ ...row }));
+  const snapshots = await readLegacyListSnapshots(supabase);
+  const hydrated = snapshots ? applyLegacyListSnapshots(records, snapshots) : records;
+
+  return hydrated
     .map((row) => {
       try {
-        return mapCompanyRow(row as Record<string, unknown>);
+        return mapCompanyRow(row);
       } catch (err) {
         logger.warn('companies.map_row_failed', {
           id: (row as Record<string, unknown>).id,
@@ -598,6 +687,19 @@ export const getCompaniesCached = cache(async (): Promise<Company[]> => {
   // Re-project cache hits too: a pre-release cached Company must not restore a reviewed MC.
   return (await getCompaniesDataCached()).map(projectCompanyAssociation);
 });
+
+/** One slug for a directory id. Does not load the catalog or Google JSON. */
+export async function getCompanySlugById(companyId: string): Promise<string | null> {
+  const id = companyId.trim();
+  if (!id) return null;
+  const fromSeed = () => seedCompanies.find((company) => company.id === id)?.slug ?? null;
+  if (!isSupabaseConfigured()) return fromSeed();
+  const supabase = createAnonSupabaseClient();
+  if (!supabase) return fromSeed();
+  const { data, error } = await supabase.from('companies').select('slug').eq('id', id).maybeSingle();
+  if (!error && data?.slug) return data.slug;
+  return null;
+}
 
 export type CompanySitemapEntry = {
   slug: string;

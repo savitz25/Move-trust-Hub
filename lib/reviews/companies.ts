@@ -2,7 +2,7 @@ import 'server-only';
 
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
-import { getAllCompanies } from '@/lib/data-server';
+import { getCompanyByCarrierFromDb } from '@/lib/supabase/queries/companies';
 import type { ParsedCarrierNumber } from '@/lib/verify-dot/schema';
 import { slugFromCarrier } from '@/lib/reviews/schema';
 import { resolveCarrierPreview } from '@/lib/verify-dot/fmcsa';
@@ -25,18 +25,8 @@ export type MovingCompanyRecord = {
   legacy_company_id: string | null;
 };
 
-function normalizeDigits(value: string) {
-  return value.replace(/\D/g, '');
-}
-
 async function lookupLegacyCompany(parsed: ParsedCarrierNumber) {
-  const companies = await getAllCompanies();
-  return companies.find((c) => {
-    if (parsed.type === 'DOT') {
-      return normalizeDigits(c.usdotNumber || '') === parsed.value;
-    }
-    return normalizeDigits(c.mcNumber || '') === parsed.value;
-  });
+  return (await getCompanyByCarrierFromDb(parsed)) ?? null;
 }
 
 export async function findMovingCompanyByCarrier(

@@ -1,7 +1,9 @@
 import 'server-only';
 
 import { resolveCompanyFromList } from '@/lib/directory/slug-resolution';
-import { getCompaniesCached, getCompanyByCarrierFromDb } from '@/lib/supabase/queries/companies';
+import { seedCompanies } from '@/data/seed-companies';
+import { isSupabaseConfigured } from '@/lib/supabase/config';
+import { getCompanyByCarrierFromDb } from '@/lib/supabase/queries/companies';
 import { normalizeMc, normalizeUsdot } from '@/lib/trust/license-verification';
 import type { FmcsaPreview } from '@/lib/verify-dot/fmcsa';
 import type { ParsedCarrierNumber } from '@/lib/verify-dot/schema';
@@ -64,8 +66,9 @@ export async function findCompanyByCarrierNumber(
     };
   }
 
-  const companies = await getCompaniesCached();
-  const fromList = companyFromListMatch(companies, parsed);
+  const fromList = isSupabaseConfigured()
+    ? undefined
+    : companyFromListMatch(seedCompanies, parsed);
   if (!fromList) return { preview: null };
 
   return {

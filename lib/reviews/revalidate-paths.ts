@@ -3,7 +3,7 @@ import 'server-only';
 import { revalidatePath } from 'next/cache';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
-import { getAllCompanies } from '@/lib/data-server';
+import { getCompanyByCarrierFromDb } from '@/lib/supabase/queries/companies';
 
 function normalizeDigits(value: string | null | undefined) {
   return (value || '').replace(/\D/g, '');
@@ -57,15 +57,11 @@ export async function revalidatePathsForMovingCompany(movingCompanyId: string): 
   // Fallback: seed/unified directory (when companies table row missing or slug differs)
   if (directorySlugs.size === 0 && (dot || mc)) {
     try {
-      const all = await getAllCompanies();
-      for (const c of all) {
-        if (dot && normalizeDigits(c.usdotNumber) === dot) {
-          directorySlugs.add(c.slug);
-        }
-        if (mc && normalizeDigits(c.mcNumber) === mc) {
-          directorySlugs.add(c.slug);
-        }
-      }
+      const parsed = dot
+        ? { type: 'DOT' as const, value: dot, display: `DOT ${dot}` }
+        : { type: 'MC' as const, value: normalizeDigits(mc), display: `MC ${normalizeDigits(mc)}` };
+      const match = parsed.value ? await getCompanyByCarrierFromDb(parsed) : undefined;
+      if (match?.slug) directorySlugs.add(match.slug);
     } catch {
       // ignore directory load failures
     }

@@ -2,7 +2,7 @@ import 'server-only';
 
 import { lookupCarrierForReview, type LookupCarrierResult } from '@/actions/reviews';
 import { getMovingCompanyBySlug } from '@/lib/reviews/companies';
-import { getAllCompanies } from '@/lib/data-server';
+import { getCompanySlugById } from '@/lib/supabase/queries/companies';
 
 export type ReviewDeepLinkParams = {
   slug?: string;
@@ -29,8 +29,7 @@ export async function resolveInitialReviewCarrier(
     const company = await getMovingCompanyBySlug(slug);
     if (company) {
       const legacyProfileSlug = company.legacy_company_id
-        ? (await getAllCompanies()).find((c) => c.id === company.legacy_company_id)?.slug ??
-          null
+        ? await getCompanySlugById(company.legacy_company_id)
         : null;
 
       return {
