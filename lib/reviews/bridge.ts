@@ -2,6 +2,7 @@ import 'server-only';
 
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
+import { logger } from '@/lib/logging/logger';
 import type { MovingCompanyRecord } from '@/lib/reviews/companies';
 import { buildReviewPageUrl } from '@/lib/reviews/review-url';
 import { slugFromCarrier } from '@/lib/reviews/schema';
@@ -101,16 +102,51 @@ export function reviewPageUrlForCarrier(parsed: ParsedCarrierNumber): string {
   return buildReviewPageUrl({ slug, carrier: parsed.display });
 }
 
+const SITEMAP_REVIEW_SLUG_TIMEOUT_MS = 20_000;
+
 export async function getMovingCompanySlugsForSitemap(): Promise<
   Array<{ slug: string; updated_at: string }>
 > {
   if (!isSupabaseAdminConfigured()) return [];
   const admin = createAdminClient();
-  const { data } = await admin
-    .from('moving_companies')
-    .select('slug, updated_at')
-    .gt('approved_review_count', 0)
-    .order('updated_at', { ascending: false })
-    .limit(500);
-  return (data as Array<{ slug: string; updated_at: string }>) ?? [];
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const pending = Promise.resolve(
+    admin
+      .from('moving_companies')
+      .select('slug, updated_at')
+      .gt('approved_review_count', 0)
+      .order('updated_at', { ascending: false })
+      .limit(500)
+  ).then(
+    (value) => ({ kind: 'ok' as const, value }),
+    (error: unknown) => ({ kind: 'error' as const, error })
+  );
+  try {
+    const result = await Promise.race([
+      pending,
+      new Promise<{ kind: 'timeout' }>((resolve) => {
+        timer = setTimeout(() => resolve({ kind: 'timeout' }), SITEMAP_REVIEW_SLUG_TIMEOUT_MS);
+      }),
+    ]);
+    if (result.kind === 'timeout') {
+      logger.warn('reviews.sitemap_slug_timeout', { ms: SITEMAP_REVIEW_SLUG_TIMEOUT_MS });
+      return [];
+    }
+    if (result.kind === 'error') {
+      logger.warn('reviews.sitemap_slug_failed', {
+        message: result.error instanceof Error ? result.error.message : String(result.error),
+      });
+      return [];
+    }
+    if (result.value.error && !result.value.data) {
+      logger.warn('reviews.sitemap_slug_failed', {
+        code: result.value.error.code,
+        message: result.value.error.message,
+      });
+      return [];
+    }
+    return (result.value.data as Array<{ slug: string; updated_at: string }>) ?? [];
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
 }

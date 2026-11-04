@@ -5,8 +5,11 @@ import { createClient } from '@/lib/supabase/server';
 import {
   getCompaniesCached,
   getCompanyBySlugOrUsdotFromDb,
+  getCompanySitemapRowsBySlug,
   getIndexableCompanySitemapEntries,
 } from '@/lib/supabase/queries/companies';
+import { isSeoIndexableCompany } from '@/lib/provider/publication';
+import type { PublicationState } from '@/lib/provider/types';
 import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory';
 import { isSupabaseConfigured } from '@/lib/supabase/config';
 import { resolveCompanyBySlug } from '@/lib/directory/resolve-company';
@@ -131,6 +134,42 @@ export const getAllAutoTransportCompanies = cache(async (): Promise<Company[]> =
   );
   return enriched;
 });
+
+/**
+ * Sitemap rows for the auto-transport seeds. One narrow slug lookup.
+ * A timeout or error keeps the indexable seeds. Profile enrichment stays on
+ * getAllAutoTransportCompanies for the auto-transport pages.
+ */
+export async function getAutoTransportSitemapEntries(): Promise<
+  Array<{ slug: string; lastUpdated: string }>
+> {
+  const seeds = seedAutoTransportCompanies
+    .filter(isPubliclyDisplayableCompany)
+    .filter((company) => isSeoIndexableCompany(company));
+  const fallback = seeds.map((company) => ({
+    slug: company.slug,
+    lastUpdated: company.lastUpdated,
+  }));
+  if (!isSupabaseConfigured()) return fallback;
+
+  const rows = await getCompanySitemapRowsBySlug(seeds.map((company) => company.slug));
+  if (!rows) return fallback;
+
+  const bySlug = new Map(rows.map((row) => [row.slug, row]));
+  return seeds.flatMap((seed) => {
+    const row = bySlug.get(seed.slug);
+    if (!row) return [{ slug: seed.slug, lastUpdated: seed.lastUpdated }];
+    if (
+      !isSeoIndexableCompany({
+        indexable: row.indexable,
+        publicationState: row.publicationState as PublicationState | null,
+      })
+    ) {
+      return [];
+    }
+    return [{ slug: row.slug, lastUpdated: row.lastUpdated || seed.lastUpdated }];
+  });
+}
 
 export async function getAutoTransportBySlugAsync(
   slug: string

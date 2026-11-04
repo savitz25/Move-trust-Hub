@@ -37,3 +37,7 @@ test('sitemap source no longer contains the dead insurance-standalone-host gener
   assert.doesNotMatch(source, /isInsuranceStandaloneHost/);
   assert.doesNotMatch(source, /generateInsuranceSitemap/);
 });
+
+test('sitemap source does not fan out a profile lookup per auto-transport seed', () => {
+  assert.doesNotMatch(source, /getAllAutoTransportCompanies/);
+});

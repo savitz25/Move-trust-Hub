@@ -2,6 +2,7 @@ import 'server-only';
 
 import { unstable_cache } from 'next/cache';
 import { createClient } from '@supabase/supabase-js';
+import { logger } from '@/lib/logging/logger';
 import { COMPANIES_DIRECTORY_TAG } from '@/lib/directory/revalidate-company';
 import {
   getSupabaseAnonKey,
@@ -70,6 +71,9 @@ export function countAttributedReviewsAcrossCompanies(companies: Company[]): num
  * Production stores Google snippets under verification_sources.google.review_snippets
  * (legacy google_data column may not exist yet).
  */
+const SNIPPET_PAGE_TIMEOUT_MS = 20_000;
+const SNIPPET_SCAN_BUDGET_MS = 40_000;
+
 async function fetchAttributedSnippetTotalUncached(): Promise<number> {
   if (!isSupabaseConfigured()) return 0;
 
@@ -79,10 +83,21 @@ async function fetchAttributedSnippetTotalUncached(): Promise<number> {
 
   const supabase = createClient(url, anonKey, {
     auth: { persistSession: false, autoRefreshToken: false },
+    global: {
+      fetch: (input: RequestInfo | URL, init?: RequestInit) => {
+        const timeoutSignal = AbortSignal.timeout(SNIPPET_PAGE_TIMEOUT_MS);
+        const signal =
+          init?.signal && typeof AbortSignal.any === 'function'
+            ? AbortSignal.any([init.signal, timeoutSignal])
+            : timeoutSignal;
+        return fetch(input, { ...init, signal });
+      },
+    },
   });
 
   let total = 0;
   const pageSize = 500;
+  const started = Date.now();
 
   // Prefer verification_sources (present in production). Fall back to google_data if available.
   for (const column of ['verification_sources', 'google_data'] as const) {
@@ -90,10 +105,33 @@ async function fetchAttributedSnippetTotalUncached(): Promise<number> {
     let ok = true;
 
     for (let from = 0; ; from += pageSize) {
-      const { data, error } = await supabase
-        .from('companies')
-        .select(`id, ${column}`)
-        .range(from, from + pageSize - 1);
+      if (Date.now() - started >= SNIPPET_SCAN_BUDGET_MS) {
+        logger.warn('trust.snippet_scan_budget', {
+          column,
+          from,
+          total,
+          ms: SNIPPET_SCAN_BUDGET_MS,
+        });
+        return total;
+      }
+
+      let data: Record<string, unknown>[] | null = null;
+      let error: { message?: string } | null = null;
+      try {
+        const page = await supabase
+          .from('companies')
+          .select(`id, ${column}`)
+          .range(from, from + pageSize - 1);
+        data = (page.data as Record<string, unknown>[] | null) ?? null;
+        error = page.error;
+      } catch (err) {
+        logger.warn('trust.snippet_scan_failed', {
+          column,
+          from,
+          message: err instanceof Error ? err.message : String(err),
+        });
+        return total;
+      }
 
       if (error) {
         ok = false;

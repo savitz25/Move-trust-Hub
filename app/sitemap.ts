@@ -1,6 +1,6 @@
 import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import { MetadataRoute } from 'next';
-import { getAllAutoTransportCompanies, getIndexableCompanySitemapEntries } from '@/lib/data-server';
+import { getAutoTransportSitemapEntries, getIndexableCompanySitemapEntries } from '@/lib/data-server';
 import { getPublishedCityHubSlugs } from '@/lib/destinations/content';
 import {
   getClusterParentMarkets,
@@ -21,7 +21,6 @@ import {
   getCityHubSitemapPriority,
   getRouteGuideSitemapPriority,
 } from '@/lib/seo/sitemap-priority';
-import { isSeoIndexableCompany } from '@/lib/provider/publication';
 
 const SITE = 'https://www.movetrusthub.com';
 
@@ -51,16 +50,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const extendedRouteSlugs = new Set(getExtendedRouteSlugs());
   // Never fail the whole sitemap (or CI prerender) on a bad local Supabase URL.
   let companySitemap: Awaited<ReturnType<typeof getIndexableCompanySitemapEntries>> = [];
-  let autoTransportCompanies: Awaited<ReturnType<typeof getAllAutoTransportCompanies>> = [];
+  let autoTransportEntries: Awaited<ReturnType<typeof getAutoTransportSitemapEntries>> = [];
   try {
     companySitemap = await getIndexableCompanySitemapEntries();
   } catch {
     companySitemap = [];
   }
   try {
-    autoTransportCompanies = await getAllAutoTransportCompanies();
+    autoTransportEntries = await getAutoTransportSitemapEntries();
   } catch {
-    autoTransportCompanies = [];
+    autoTransportEntries = [];
   }
 
   const clusterRoutes = getClusterParentMarkets().map(
@@ -155,9 +154,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: getCityHubSitemapPriority(market.priority, market.slug),
     }));
 
-  const autoTransportPages = autoTransportCompanies
-    .filter((company) => isSeoIndexableCompany(company))
-    .map((company) => ({
+  const autoTransportPages = autoTransportEntries.map((company) => ({
     url: `${SITE}/auto-transport/${company.slug}`,
     lastModified: new Date(company.lastUpdated),
     changeFrequency: 'monthly' as const,

@@ -4,6 +4,7 @@
  */
 import 'server-only';
 
+import { logger } from '@/lib/logging/logger';
 import { getLiveAttributedReviewCount } from '@/lib/trust/attributed-review-count';
 import { isPubliclyDisplayableCompany } from '@/lib/trust/company-display-policy';
 import { getUnifiedDirectoryCompanies } from '@/lib/directory/unified-directory';
@@ -72,21 +73,39 @@ export function getDirectoryTrustStats(): DirectoryTrustStats {
   );
 }
 
+const DIRECTORY_TRUST_STATS_BUDGET_MS = 45_000;
+
 /**
  * Live directory metrics for trust badges, methodology, homepage.
  * Revalidated with the companies directory cache (~5 min + tag on publish).
+ * The budget stays under staticPageGenerationTimeout so a slow companies scan
+ * falls back to the seed stats instead of failing the build.
  */
 export async function getDirectoryTrustStatsAsync(): Promise<DirectoryTrustStats> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const live = Promise.all([
+    getUnifiedDirectoryCompanies().then((rows) => rows.filter(isPubliclyDisplayableCompany)),
+    getLiveAttributedReviewCount(),
+  ]).then(
+    (value) => ({ timeout: false as const, value }),
+    () => ({ timeout: false as const, value: null })
+  );
   try {
-    const [companies, attributableReviews] = await Promise.all([
-      getUnifiedDirectoryCompanies().then((rows) => rows.filter(isPubliclyDisplayableCompany)),
-      getLiveAttributedReviewCount(),
+    const result = await Promise.race([
+      live,
+      new Promise<{ timeout: true }>((resolve) => {
+        timer = setTimeout(() => resolve({ timeout: true }), DIRECTORY_TRUST_STATS_BUDGET_MS);
+      }),
     ]);
-    if (companies.length > 0) {
-      return buildStatsFromCompanies(companies, attributableReviews);
+    if (result.timeout) {
+      logger.warn('trust.stats_timeout', { ms: DIRECTORY_TRUST_STATS_BUDGET_MS });
+      return getDirectoryTrustStats();
     }
-  } catch {
-    // fall through
+    if (result.value && result.value[0].length > 0) {
+      return buildStatsFromCompanies(result.value[0], result.value[1]);
+    }
+  } finally {
+    if (timer) clearTimeout(timer);
   }
   return getDirectoryTrustStats();
 }

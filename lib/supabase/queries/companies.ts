@@ -46,13 +46,27 @@ import {
 import { isSeoIndexableCompany } from '@/lib/provider/publication';
 import type { PublicationState } from '@/lib/provider/types';
 
-function createAnonSupabaseClient() {
+function createAnonSupabaseClient(fetchTimeoutMs?: number) {
   const url = getSupabaseUrl();
   const anonKey = getSupabaseAnonKey();
   if (!url || !anonKey) return null;
   try {
     return createSupabaseClient<Database>(url, anonKey, {
       auth: { persistSession: false, autoRefreshToken: false },
+      ...(fetchTimeoutMs
+        ? {
+            global: {
+              fetch: (input: RequestInfo | URL, init?: RequestInit) => {
+                const timeoutSignal = AbortSignal.timeout(fetchTimeoutMs);
+                const signal =
+                  init?.signal && typeof AbortSignal.any === 'function'
+                    ? AbortSignal.any([init.signal, timeoutSignal])
+                    : timeoutSignal;
+                return fetch(input, { ...init, signal });
+              },
+            },
+          }
+        : {}),
     });
   } catch (err) {
     logger.warn('companies.supabase_client_init_failed', {
@@ -434,6 +448,7 @@ export function mapCompanyRow(
 }
 
 const COMPANIES_FETCH_TIMEOUT_MS = 20_000;
+const SITEMAP_COMPANY_BUDGET_MS = 60_000;
 
 async function selectCompanyList(
   supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,
@@ -472,16 +487,34 @@ async function withTimeout<T>(
   label: string
 ): Promise<T | null> {
   let timer: ReturnType<typeof setTimeout> | undefined;
+  // Capture a late rejection so a timed-out PostgREST call cannot crash the build.
+  const guarded = promise.then(
+    (value) => ({ status: 'ok' as const, value }),
+    (error: unknown) => ({ status: 'error' as const, error })
+  );
   try {
-    return await Promise.race([
-      promise,
-      new Promise<null>((resolve) => {
+    const result = await Promise.race([
+      guarded,
+      new Promise<{ status: 'timeout' }>((resolve) => {
         timer = setTimeout(() => {
           logger.warn('companies.fetch_timeout', { label, ms });
-          resolve(null);
+          resolve({ status: 'timeout' });
         }, ms);
       }),
     ]);
+    if (result.status === 'ok') return result.value;
+    if (result.status === 'timeout') {
+      void guarded.then((late) => {
+        if (late.status === 'error') {
+          logger.warn('companies.fetch_late_rejection', {
+            label,
+            message: late.error instanceof Error ? late.error.message : String(late.error),
+          });
+        }
+      });
+      return null;
+    }
+    throw result.error;
   } finally {
     if (timer) clearTimeout(timer);
   }
@@ -706,28 +739,98 @@ export type CompanySitemapEntry = {
   lastUpdated: string;
 };
 
+type SitemapColumnRow = {
+  slug: string | null;
+  last_updated: string | null;
+  publication_state: string | null;
+  indexable: boolean | null;
+};
+
+type SitemapColumnPage = {
+  data: SitemapColumnRow[] | null;
+  error: { code?: string; message?: string } | null;
+};
+
+async function readSitemapColumnPage(
+  supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,
+  from: number,
+  to: number
+): Promise<SitemapColumnPage> {
+  const result = await supabase
+    .from('companies')
+    .select('slug, last_updated, publication_state, indexable')
+    .order('id', { ascending: true })
+    .range(from, to);
+  return {
+    data: (result.data as unknown as SitemapColumnRow[] | null) ?? null,
+    error: result.error ? { code: result.error.code, message: result.error.message } : null,
+  };
+}
+
+async function readSitemapRowsForSlugs(
+  supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,
+  slugs: string[]
+): Promise<SitemapColumnPage> {
+  const result = await supabase
+    .from('companies')
+    .select('slug, last_updated, publication_state, indexable')
+    .in('slug', slugs);
+  return {
+    data: (result.data as unknown as SitemapColumnRow[] | null) ?? null,
+    error: result.error ? { code: result.error.code, message: result.error.message } : null,
+  };
+}
+
 async function fetchIndexableCompanySitemapEntries(): Promise<CompanySitemapEntry[]> {
   if (!isSupabaseConfigured()) {
     return seedCompanies
       .filter((company) => isSeoIndexableCompany(company))
       .map((company) => ({ slug: company.slug, lastUpdated: company.lastUpdated }));
   }
-  const supabase = createAnonSupabaseClient();
+  const supabase = createAnonSupabaseClient(COMPANIES_FETCH_TIMEOUT_MS);
   if (!supabase) {
     return seedCompanies
       .filter((company) => isSeoIndexableCompany(company))
       .map((company) => ({ slug: company.slug, lastUpdated: company.lastUpdated }));
   }
   const entries: CompanySitemapEntry[] = [];
+  const started = Date.now();
   let from = 0;
   while (from < 20_000) {
+    if (Date.now() - started >= SITEMAP_COMPANY_BUDGET_MS) {
+      logger.warn('companies.sitemap_budget_exceeded', {
+        from,
+        collected: entries.length,
+        ms: SITEMAP_COMPANY_BUDGET_MS,
+      });
+      break;
+    }
     const to = from + COMPANIES_LIST_PAGE_SIZE - 1;
-    const page = await supabase
-      .from('companies')
-      .select('slug, last_updated, publication_state, indexable')
-      .order('id', { ascending: true })
-      .range(from, to);
-    if (page.error || !page.data) break;
+    let page: SitemapColumnPage | null = null;
+    try {
+      page = await withTimeout(
+        readSitemapColumnPage(supabase, from, to),
+        COMPANIES_FETCH_TIMEOUT_MS,
+        'sitemap-companies-page'
+      );
+    } catch (error) {
+      logger.warn('companies.sitemap_page_failed', {
+        from,
+        message: error instanceof Error ? error.message : String(error),
+      });
+      break;
+    }
+    if (!page) break;
+    if (page.error || !page.data) {
+      if (page.error) {
+        logger.warn('companies.sitemap_page_failed', {
+          from,
+          code: page.error.code,
+          message: page.error.message,
+        });
+      }
+      break;
+    }
     for (const row of page.data as Array<{
       slug: string;
       last_updated: string | null;
@@ -759,6 +862,57 @@ export const getIndexableCompanySitemapEntries = unstable_cache(
   ['company-sitemap-entries-v2-wave3'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
+
+export type CompanySitemapSlugRow = {
+  slug: string;
+  lastUpdated: string;
+  publicationState: string | null;
+  indexable: boolean | null;
+};
+
+/** One narrow companies read for a known slug list. Null means timeout or error. */
+export async function getCompanySitemapRowsBySlug(
+  slugs: string[]
+): Promise<CompanySitemapSlugRow[] | null> {
+  const unique = [...new Set(slugs.map((slug) => slug.trim()).filter(Boolean))];
+  if (unique.length === 0) return [];
+  if (!isSupabaseConfigured()) return null;
+  const supabase = createAnonSupabaseClient(COMPANIES_FETCH_TIMEOUT_MS);
+  if (!supabase) return null;
+  try {
+    const result = await withTimeout(
+      readSitemapRowsForSlugs(supabase, unique),
+      COMPANIES_FETCH_TIMEOUT_MS,
+      'sitemap-auto-transport'
+    );
+    if (!result) return null;
+    if (result.error) {
+      logger.warn('companies.sitemap_slug_lookup_failed', {
+        code: result.error.code,
+        message: result.error.message,
+      });
+      return null;
+    }
+    return (result.data ?? []).flatMap((row) => {
+      const slug = typeof row.slug === 'string' ? row.slug.trim() : '';
+      if (!slug) return [];
+      const rawUpdated = typeof row.last_updated === 'string' ? row.last_updated : '';
+      return [
+        {
+          slug,
+          lastUpdated: rawUpdated.length >= 10 ? rawUpdated.slice(0, 10) : new Date().toISOString().slice(0, 10),
+          publicationState: typeof row.publication_state === 'string' ? row.publication_state : null,
+          indexable: typeof row.indexable === 'boolean' ? row.indexable : null,
+        },
+      ];
+    });
+  } catch (error) {
+    logger.warn('companies.sitemap_slug_lookup_failed', {
+      message: error instanceof Error ? error.message : String(error),
+    });
+    return null;
+  }
+}
 
 function holderFromProfileRow(row: Record<string, unknown>, placeId: string): PlaceHolder | null {
   const id = typeof row.id === 'string' ? row.id : '';
