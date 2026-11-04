@@ -14,6 +14,7 @@ import { isBatchTemplateCountyResearch } from '@/lib/local-movers/county-content
 import { hasCitedCountyResearchContent } from '@/lib/local-movers/county-research-citations';
 import { getCountyResearch, hasCountyResearch } from '@/lib/local-movers/county-research';
 import { getCountyPopularRoutes } from '@/lib/local-movers/county-popular-routes';
+import { FOUNDER_PREMIUM_TO_STANDARD } from '@/lib/local-movers/founder-premium-demotions';
 import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
 import { countExplicitCountyMovers } from '@/lib/local-movers/index';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
@@ -249,6 +250,13 @@ export function scoreCountyQuality(params: {
     tierLabel = 'Development';
     indexable = false;
     reason = hardBlock;
+  }
+
+  if (tier === 1 && FOUNDER_PREMIUM_TO_STANDARD.has(`${stateSlug}/${countySlug}`)) {
+    tier = 2;
+    tierLabel = 'Standard';
+    indexable = true;
+    reason = 'founder_demoted_to_standard';
   }
 
   const promoteEligible =

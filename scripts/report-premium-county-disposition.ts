@@ -1,5 +1,6 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+import { FOUNDER_PREMIUM_TO_STANDARD } from '../lib/local-movers/founder-premium-demotions';
 import { evaluateCountyIndexability } from '../lib/local-movers/county-indexability';
 import { scoreCountyQuality } from '../lib/local-movers/county-quality-score';
 import { getAllCountyParams } from '../lib/local-movers/geography/index';
@@ -8,6 +9,7 @@ import { getMoversForCounty } from '../lib/local-movers/index';
 const candidates = getAllCountyParams()
   .flatMap(({ stateSlug, countySlug }) => {
     const decision = evaluateCountyIndexability(stateSlug, countySlug);
+    if (FOUNDER_PREMIUM_TO_STANDARD.has(`${stateSlug}/${countySlug}`)) return [];
     if (decision.tier !== 'index' || decision.seoTier !== 1) return [];
     if (typeof decision.qualityScore !== 'number') {
       throw new Error(`Missing quality score for Premium candidate ${stateSlug}/${countySlug}`);
@@ -43,8 +45,8 @@ const candidates = getAllCountyParams()
       a.countySlug.localeCompare(b.countySlug)
   );
 
-if (candidates.length !== 408) {
-  throw new Error(`Expected the reviewed 408-candidate baseline, got ${candidates.length}`);
+if (candidates.length !== 400) {
+  throw new Error(`Expected 400 Premium counties after the eight-county demotion, got ${candidates.length}`);
 }
 
 const escapeCsv = (value: string) => `"${value.replaceAll('"', '""')}"`;

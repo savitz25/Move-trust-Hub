@@ -38,6 +38,10 @@ The approved policy fixes the cap at 400 Premium pages. Premium currently has 40
 
 Until that decision and any separately reviewed content/indexability changes are complete, the guard must report Premium 408 / cap 400 and remain failing. No sitemap or Production publication change is made here.
 
+## Founder decision MOVE-PREMIUM-DEMOTE-002
+
+Broome, Cayuga, Chautauqua, Chemung, Clinton, Jefferson, Oneida, and Ontario move from Premium to indexable Standard. Oswego, St. Lawrence, Steuben, Sullivan, Tompkins, Ulster, and Warren stay Premium. Evidence columns on the eight rows are unchanged. The cap check now expects 400 Premium counties. This change is not deployed.
+
 ## PR #224 relationship
 
 PR #224 changes county-profile slug resolution and adds a canonical-profile-slug test. This PR does not change those files or profile-link behavior. #224 changes `.github/workflows/county-compliance.yml`; this PR adds a separate focused test workflow, so the workflows can integrate without mixing the link correction into this change. #224's link test does not count toward this Premium cap.
