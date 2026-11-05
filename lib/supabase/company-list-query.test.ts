@@ -48,8 +48,13 @@ describe('legacy company list query shape', () => {
     );
     assert.match(fetchBody, /companyListProjectionCandidates\(false\)/);
     assert.match(fetchBody, /selectCompanyList\(supabase, cols\)/);
-    assert.match(fetchBody, /readLegacyListSnapshots\(supabase\)/);
-    assert.match(fetchBody, /snapshots \? applyLegacyListSnapshots\(records, snapshots\) : records/);
+    assert.equal(fetchBody.includes('readLegacyListSnapshots'), false);
+    assert.equal(fetchBody.includes('applyLegacyListSnapshots'), false);
+    assert.equal(companiesSource.includes('async function readLegacyListSnapshots'), false);
+    assert.equal(
+      companiesSource.includes('google_data.not.is.null,public_scrape_data.not.is.null'),
+      false
+    );
     assert.equal(fetchBody.includes('google_data'), false);
     assert.equal(fetchBody.includes('public_scrape_data'), false);
     assert.equal(fetchBody.includes('place_id'), false);
@@ -64,22 +69,6 @@ describe('legacy company list query shape', () => {
     assert.match(scan, /\.order\('reputation_score', \{ ascending: false \}\)/);
     assert.match(scan, /\.order\('id', \{ ascending: true \}\)/);
     assert.equal(scan.includes('google_data'), false);
-
-    const snapshot = functionBody(
-      companiesSource,
-      'async function readLegacyListSnapshots',
-      'export function applyLegacyListSnapshots'
-    );
-    assert.match(
-      companiesSource,
-      /const LEGACY_LIST_SNAPSHOT_SELECT = 'id, google_data, public_scrape_data';/
-    );
-    assert.match(snapshot, /LEGACY_LIST_SNAPSHOT_SELECT/);
-    assert.match(snapshot, /google_data\.not\.is\.null,public_scrape_data\.not\.is\.null/);
-    assert.match(snapshot, /\.order\('id', \{ ascending: true \}\)/);
-    assert.equal(snapshot.includes('reputation_score'), false);
-    assert.match(snapshot, /markEnrichmentColumnsMissing\(\)/);
-    assert.match(snapshot, /return null/);
 
     const cache = companiesSource.slice(
       companiesSource.indexOf('const getCompaniesDataCached'),
@@ -205,7 +194,7 @@ describe('legacy list payload and rating parity', () => {
       columnsAfterSort: narrowColumns.length,
       snapshotColumns: 3,
       queriesBefore: sortedPages,
-      queriesAfterUpperBound: sortedPages * 2,
+      queriesAfterUpperBound: sortedPages,
       sortBytesBeforePerThousand: wideBytes,
       sortBytesAfterPerThousand: narrowBytes,
       snapshotBytesPerThousandNonNull: snapshotBytes,

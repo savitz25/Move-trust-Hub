@@ -497,74 +497,6 @@ function isSchemaColumnError(error: { code?: string; message?: string } | null):
   );
 }
 
-/**
- * Legacy Google/BBB blobs are not part of the reputation-ordered catalog scan.
- * Postgres was spilling those toasted values while sorting every company.
- * This read is ordered by primary key and returns only rows that actually
- * store one of the blobs. A missing column, or a failed read, leaves
- * verification_sources in place and does not invent a rating.
- *
- * No index is added here. Filtering `google_data` / `public_scrape_data`
- * IS NOT NULL can still scan the heap. An index for that predicate is an
- * unapplied dependency, not part of this change.
- */
-const LEGACY_LIST_SNAPSHOT_SELECT = 'id, google_data, public_scrape_data';
-
-function legacySnapshotColumnError(error: { code?: string; message?: string } | null): boolean {
-  if (!error) return false;
-  return (
-    isSchemaColumnError(error) ||
-    /google_data|public_scrape_data/i.test(error.message ?? '')
-  );
-}
-
-async function readLegacyListSnapshots(
-  supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>
-): Promise<Map<string, { google_data: unknown; public_scrape_data: unknown }> | null> {
-  if (enrichmentColumnState === 'missing') return new Map();
-  const snapshots = new Map<string, { google_data: unknown; public_scrape_data: unknown }>();
-  let from = 0;
-  while (from < 20_000) {
-    const to = from + COMPANIES_LIST_PAGE_SIZE - 1;
-    const page = await supabase
-      .from('companies')
-      .select(LEGACY_LIST_SNAPSHOT_SELECT)
-      .or('google_data.not.is.null,public_scrape_data.not.is.null')
-      .order('id', { ascending: true })
-      .range(from, to);
-    if (page.error) {
-      if (legacySnapshotColumnError(page.error)) {
-        markEnrichmentColumnsMissing();
-        return new Map();
-      }
-      logger.warn('companies.legacy_snapshot_read_failed', {
-        code: page.error.code,
-        message: page.error.message,
-      });
-      return null;
-    }
-    const data = page.data ?? [];
-    for (const row of data as Array<{
-      id?: string;
-      google_data?: unknown;
-      public_scrape_data?: unknown;
-    }>) {
-      if (!row.id) continue;
-      snapshots.set(row.id, {
-        google_data: row.google_data ?? null,
-        public_scrape_data: row.public_scrape_data ?? null,
-      });
-    }
-    if (data.length < COMPANIES_LIST_PAGE_SIZE) {
-      markEnrichmentColumnsAvailable();
-      return snapshots;
-    }
-    from += COMPANIES_LIST_PAGE_SIZE;
-  }
-  markEnrichmentColumnsAvailable();
-  return snapshots;
-}
-
 export function applyLegacyListSnapshots(
   rows: Record<string, unknown>[],
   snapshots: ReadonlyMap<string, { google_data: unknown; public_scrape_data: unknown }>
@@ -658,10 +590,9 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
   }
 
   const records = (data as Record<string, unknown>[]).map((row) => ({ ...row }));
-  const snapshots = await readLegacyListSnapshots(supabase);
-  const hydrated = snapshots ? applyLegacyListSnapshots(records, snapshots) : records;
-
-  return hydrated
+  // The not-null blob follow-up still runs when those two rows are empty.
+  // The catalog fetch does not issue it.
+  return records
     .map((row) => {
       try {
         return mapCompanyRow(row);
