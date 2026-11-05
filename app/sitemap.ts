@@ -176,7 +176,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const reviewCompanyPages = (await getMovingCompanySlugsForSitemap()).map((row) => ({
     url: `${SITE}/company/${row.slug}`,
-    lastModified: new Date(row.updated_at),
+    lastModified: row.updated_at,
     changeFrequency: 'weekly' as const,
     priority: 0.75,
   }));
