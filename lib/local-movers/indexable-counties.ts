@@ -5,7 +5,7 @@ import type { LocalCounty } from '@/lib/local-movers/types';
 
 const countyCache = new Map<string, readonly LocalCounty[]>();
 
-/** Static seed catalog only: shared by the local sitemap and server-rendered links. */
+/** Static seed catalog for server-rendered county links. The county sitemap uses getMoversForCountyAsync. */
 export function getIndexableCounties(stateSlug: string): readonly LocalCounty[] {
   const cached = countyCache.get(stateSlug);
   if (cached) return cached;

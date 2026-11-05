@@ -1,63 +1,11 @@
 import type { MetadataRoute } from 'next';
-import {
-  COUNTY_INDEX_POLICY_UPDATED,
-  CALIFORNIA_COUNTY_CONTENT_UPDATED,
-  FLORIDA_COUNTY_CONTENT_UPDATED,
-  GEORGIA_COUNTY_CONTENT_UPDATED,
-  SOUTH_CAROLINA_COUNTY_CONTENT_UPDATED,
-  NORTH_CAROLINA_COUNTY_CONTENT_UPDATED,
-  TENNESSEE_COUNTY_CONTENT_UPDATED,
-  ALABAMA_COUNTY_CONTENT_UPDATED,
-  MISSISSIPPI_COUNTY_CONTENT_UPDATED,
-  LOUISIANA_COUNTY_CONTENT_UPDATED,
-  OKLAHOMA_COUNTY_CONTENT_UPDATED,
-  ARKANSAS_COUNTY_CONTENT_UPDATED,
-  KANSAS_COUNTY_CONTENT_UPDATED,
-  MISSOURI_COUNTY_CONTENT_UPDATED,
-  ILLINOIS_COUNTY_CONTENT_UPDATED,
-  MICHIGAN_COUNTY_CONTENT_UPDATED,
-  INDIANA_COUNTY_CONTENT_UPDATED,
-  OHIO_COUNTY_CONTENT_UPDATED,
-  KENTUCKY_COUNTY_CONTENT_UPDATED,
-  WEST_VIRGINIA_COUNTY_CONTENT_UPDATED,
-  VIRGINIA_COUNTY_CONTENT_UPDATED,
-  DISTRICT_OF_COLUMBIA_COUNTY_CONTENT_UPDATED,
-  DELAWARE_COUNTY_CONTENT_UPDATED,
-  MARYLAND_COUNTY_CONTENT_UPDATED,
-  PENNSYLVANIA_COUNTY_CONTENT_UPDATED,
-  CONNECTICUT_COUNTY_CONTENT_UPDATED,
-  MASSACHUSETTS_COUNTY_CONTENT_UPDATED,
-  RHODE_ISLAND_COUNTY_CONTENT_UPDATED,
-  VERMONT_COUNTY_CONTENT_UPDATED,
-  NEW_HAMPSHIRE_COUNTY_CONTENT_UPDATED,
-  MAINE_COUNTY_CONTENT_UPDATED,
-  HAWAII_COUNTY_CONTENT_UPDATED,
-  ALASKA_COUNTY_CONTENT_UPDATED,
-  WASHINGTON_COUNTY_CONTENT_UPDATED,
-  OREGON_COUNTY_CONTENT_UPDATED,
-  NEVADA_COUNTY_CONTENT_UPDATED,
-  ARIZONA_COUNTY_CONTENT_UPDATED,
-  NEW_MEXICO_COUNTY_CONTENT_UPDATED,
-  UTAH_COUNTY_CONTENT_UPDATED,
-  COLORADO_COUNTY_CONTENT_UPDATED,
-  IDAHO_COUNTY_CONTENT_UPDATED,
-  MONTANA_COUNTY_CONTENT_UPDATED,
-  WYOMING_COUNTY_CONTENT_UPDATED,
-  NORTH_DAKOTA_COUNTY_CONTENT_UPDATED,
-  SOUTH_DAKOTA_COUNTY_CONTENT_UPDATED,
-  NEBRASKA_COUNTY_CONTENT_UPDATED,
-  IOWA_COUNTY_CONTENT_UPDATED,
-  MINNESOTA_COUNTY_CONTENT_UPDATED,
-  WISCONSIN_COUNTY_CONTENT_UPDATED,
-  NEW_JERSEY_COUNTY_CONTENT_UPDATED,
-  NEW_YORK_COUNTY_CONTENT_UPDATED,
-  TEXAS_COUNTY_CONTENT_UPDATED,
-} from '@/components/local-movers/county-editorial-trust';
+import { latestRowLastModified } from '@/lib/seo/sitemap-lastmod';
+
 import { evaluateCountyIndexabilityFromResult } from '@/lib/local-movers/county-indexability';
 import { sitemapPriorityForCountyTier } from '@/lib/local-movers/county-quality-score';
-import { getMoversForCounty } from '@/lib/local-movers/index';
+import { getMoversForCountyAsync } from '@/lib/local-movers/get-movers-for-county-async';
+import { getCountiesForState } from '@/lib/local-movers/geography/index';
 import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
-import { getIndexableCounties } from '@/lib/local-movers/indexable-counties';
 import { localStates } from '@/lib/local-movers/states';
 
 const SITE_URL = 'https://www.movetrusthub.com';
@@ -652,130 +600,38 @@ export async function generateSitemaps() {
   return localStates.map((state) => ({ id: state.slug }));
 }
 
+// Build-time rendering calls this once per state. That fan-out times out
+// Supabase and the error pages exceed Vercel's build log limit.
+export const dynamic = 'force-dynamic';
+
 export default async function sitemap({
   id,
 }: {
   id: string;
 }): Promise<MetadataRoute.Sitemap> {
-  // Sync seed catalog only — do not hit Supabase while generating ~50 state sitemaps at build.
-  const indexableCounties = getIndexableCounties(id);
-
-  const lastModified =
-    id === 'california'
-      ? new Date(CALIFORNIA_COUNTY_CONTENT_UPDATED)
-      : id === 'florida'
-        ? new Date(FLORIDA_COUNTY_CONTENT_UPDATED)
-        : id === 'new-jersey'
-          ? new Date(NEW_JERSEY_COUNTY_CONTENT_UPDATED)
-          : id === 'new-york'
-            ? new Date(NEW_YORK_COUNTY_CONTENT_UPDATED)
-            : id === 'texas'
-              ? new Date(TEXAS_COUNTY_CONTENT_UPDATED)
-              : id === 'georgia'
-                ? new Date(GEORGIA_COUNTY_CONTENT_UPDATED)
-                : id === 'south-carolina'
-                  ? new Date(SOUTH_CAROLINA_COUNTY_CONTENT_UPDATED)
-                  : id === 'north-carolina'
-                    ? new Date(NORTH_CAROLINA_COUNTY_CONTENT_UPDATED)
-                    : id === 'tennessee'
-                      ? new Date(TENNESSEE_COUNTY_CONTENT_UPDATED)
-                      : id === 'alabama'
-                        ? new Date(ALABAMA_COUNTY_CONTENT_UPDATED)
-                        : id === 'mississippi'
-                          ? new Date(MISSISSIPPI_COUNTY_CONTENT_UPDATED)
-                          : id === 'louisiana'
-                            ? new Date(LOUISIANA_COUNTY_CONTENT_UPDATED)
-                            : id === 'oklahoma'
-                              ? new Date(OKLAHOMA_COUNTY_CONTENT_UPDATED)
-                              : id === 'arkansas'
-                                ? new Date(ARKANSAS_COUNTY_CONTENT_UPDATED)
-                                : id === 'kansas'
-                                  ? new Date(KANSAS_COUNTY_CONTENT_UPDATED)
-                                  : id === 'missouri'
-                                    ? new Date(MISSOURI_COUNTY_CONTENT_UPDATED)
-                                    : id === 'illinois'
-                                      ? new Date(ILLINOIS_COUNTY_CONTENT_UPDATED)
-                                      : id === 'michigan'
-                                        ? new Date(MICHIGAN_COUNTY_CONTENT_UPDATED)
-                                        : id === 'indiana'
-                                          ? new Date(INDIANA_COUNTY_CONTENT_UPDATED)
-                                          : id === 'ohio'
-                                            ? new Date(OHIO_COUNTY_CONTENT_UPDATED)
-                                            : id === 'kentucky'
-                                              ? new Date(KENTUCKY_COUNTY_CONTENT_UPDATED)
-                                              : id === 'west-virginia'
-                                                ? new Date(WEST_VIRGINIA_COUNTY_CONTENT_UPDATED)
-                                                : id === 'virginia'
-                                                  ? new Date(VIRGINIA_COUNTY_CONTENT_UPDATED)
-                                                  : id === 'district-of-columbia'
-                                                    ? new Date(DISTRICT_OF_COLUMBIA_COUNTY_CONTENT_UPDATED)
-                                                    : id === 'delaware'
-                                                      ? new Date(DELAWARE_COUNTY_CONTENT_UPDATED)
-                                                      : id === 'maryland'
-                                                        ? new Date(MARYLAND_COUNTY_CONTENT_UPDATED)
-                                                        : id === 'pennsylvania'
-                                                          ? new Date(PENNSYLVANIA_COUNTY_CONTENT_UPDATED)
-                                                          : id === 'connecticut'
-                                                            ? new Date(CONNECTICUT_COUNTY_CONTENT_UPDATED)
-                                                            : id === 'massachusetts'
-                                                              ? new Date(MASSACHUSETTS_COUNTY_CONTENT_UPDATED)
-                                                              : id === 'rhode-island'
-                                                                ? new Date(RHODE_ISLAND_COUNTY_CONTENT_UPDATED)
-                                                                : id === 'vermont'
-                                                                  ? new Date(VERMONT_COUNTY_CONTENT_UPDATED)
-                                                                  : id === 'new-hampshire'
-                                                                    ? new Date(NEW_HAMPSHIRE_COUNTY_CONTENT_UPDATED)
-                                                                    : id === 'maine'
-                                                                      ? new Date(MAINE_COUNTY_CONTENT_UPDATED)
-                                                                      : id === 'hawaii'
-                                                                        ? new Date(HAWAII_COUNTY_CONTENT_UPDATED)
-                                                                        : id === 'alaska'
-                                                                          ? new Date(ALASKA_COUNTY_CONTENT_UPDATED)
-                                                                          : id === 'washington'
-                                                                            ? new Date(WASHINGTON_COUNTY_CONTENT_UPDATED)
-                                                                            : id === 'oregon'
-                                                                              ? new Date(OREGON_COUNTY_CONTENT_UPDATED)
-                                                                              : id === 'nevada'
-                                                                                ? new Date(NEVADA_COUNTY_CONTENT_UPDATED)
-                                                                                : id === 'arizona'
-                                                                                  ? new Date(ARIZONA_COUNTY_CONTENT_UPDATED)
-                                                                                  : id === 'new-mexico'
-                                                                                    ? new Date(NEW_MEXICO_COUNTY_CONTENT_UPDATED)
-                                                                                    : id === 'utah'
-                                                                                      ? new Date(UTAH_COUNTY_CONTENT_UPDATED)
-                                                                                      : id === 'colorado'
-                                                                                        ? new Date(COLORADO_COUNTY_CONTENT_UPDATED)
-                                                                                        : id === 'idaho'
-                                                                                          ? new Date(IDAHO_COUNTY_CONTENT_UPDATED)
-                                                                                          : id === 'montana'
-                                                                                            ? new Date(MONTANA_COUNTY_CONTENT_UPDATED)
-                                                                                            : id === 'wyoming'
-                                                                                              ? new Date(WYOMING_COUNTY_CONTENT_UPDATED)
-                                                                                              : id === 'north-dakota'
-                                                                                                ? new Date(NORTH_DAKOTA_COUNTY_CONTENT_UPDATED)
-                                                                                                : id === 'south-dakota'
-                                                                                                  ? new Date(SOUTH_DAKOTA_COUNTY_CONTENT_UPDATED)
-                                                                                                  : id === 'nebraska'
-                                                                                                    ? new Date(NEBRASKA_COUNTY_CONTENT_UPDATED)
-                                                                                                    : id === 'iowa'
-                                                                                                      ? new Date(IOWA_COUNTY_CONTENT_UPDATED)
-                                                                                                      : id === 'minnesota'
-                                                                                                        ? new Date(MINNESOTA_COUNTY_CONTENT_UPDATED)
-                                                                                                        : id === 'wisconsin'
-                                                                                                          ? new Date(WISCONSIN_COUNTY_CONTENT_UPDATED)
-                                                                                                          : new Date(COUNTY_INDEX_POLICY_UPDATED);
+  // Same mover source and evaluator as resolveCountyPageSeo.
+  const evaluated = await Promise.all(
+    getCountiesForState(id).map(async (county) => {
+      const result = await getMoversForCountyAsync(id, county.slug);
+      const decision = evaluateCountyIndexabilityFromResult(id, county.slug, result);
+      return { county, result, decision };
+    })
+  );
+  const countyEntries = evaluated.filter((entry) => entry.decision.tier === 'index');
+  const stateLastModified = latestRowLastModified(
+    countyEntries.flatMap(({ result }) => (result?.movers ?? []).map((mover) => mover.lastUpdated))
+  );
 
   return [
     {
       url: `${SITE_URL}/local-movers/${id}`,
-      lastModified,
+      ...(stateLastModified ? { lastModified: stateLastModified } : {}),
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     },
-    ...indexableCounties.map((county) => {
-      const result = getMoversForCounty(id, county.slug);
-      const decision = evaluateCountyIndexabilityFromResult(id, county.slug, result);
+    ...countyEntries.map(({ county, result, decision }) => {
       const seoTier = decision.seoTier ?? 2;
+      const lastModified = latestRowLastModified((result?.movers ?? []).map((mover) => mover.lastUpdated));
       const highTraffic =
         county.slug === 'miami-dade' ||
         county.slug === 'broward' ||
@@ -799,8 +655,7 @@ export default async function sitemap({
 
       return {
         url: `${SITE_URL}/local-movers/${id}/${county.slug}`,
-        // Meaningful editorial lastmod — state content wave dates, not deploy time
-        lastModified,
+        ...(lastModified ? { lastModified } : {}),
         changeFrequency: 'weekly' as const,
         // Tier 3 never appears here (filtered by indexable). Priority reflects Premium vs Standard.
         priority: sitemapPriorityForCountyTier(seoTier === 3 ? 2 : seoTier, highTraffic),

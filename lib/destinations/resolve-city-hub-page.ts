@@ -5,6 +5,7 @@ import {
 import { resolveCityHubSlug } from '@/lib/destinations/city-hub-slug-aliases';
 import { getMarketBySlug, getMarketPath } from '@/lib/destinations/markets';
 import { buildCityHubMetadata } from '@/lib/seo/destination-seo';
+import { evaluateCityHubIndexability } from '@/lib/seo/city-indexability';
 import type { CityHubContent, Market } from '@/lib/destinations/types';
 
 /** Metadata when a city hub slug is unknown — never inherit root ZIP Planner title. */
@@ -70,5 +71,11 @@ export function cityHubMetadataForSlug(slug: string): Metadata {
   const content = getCityHubContent(slug);
   const market = getMarketBySlug(slug);
   if (!content || !market) return CITY_HUB_NOT_FOUND_METADATA;
-  return buildCityHubMetadata(content);
+  const metadata = buildCityHubMetadata(content);
+  if (market.isClusterParent) return metadata;
+  if (evaluateCityHubIndexability(market).tier === 'index') return metadata;
+  return {
+    ...metadata,
+    robots: { index: false, follow: true },
+  };
 }

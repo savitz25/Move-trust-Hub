@@ -22,6 +22,7 @@ import {
   getRouteGuideSitemapPriority,
 } from '@/lib/seo/sitemap-priority';
 import { isSeoIndexableCompany } from '@/lib/provider/publication';
+import { evaluateCityHubIndexability } from '@/lib/seo/city-indexability';
 
 const SITE = 'https://www.movetrusthub.com';
 
@@ -46,6 +47,11 @@ const PRIORITY_ROUTE_SLUGS = new Set([
   'san-francisco-to-austin',
   'san-diego-to-houston',
 ]);
+
+// Next prerenders this metadata route during `next build`. The company and
+// review reads can hang on Supabase and fail the deploy. Same URLs are built
+// on request.
+export const dynamic = 'force-dynamic';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const extendedRouteSlugs = new Set(getExtendedRouteSlugs());
@@ -148,6 +154,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const destinationPages = getPublishedCityHubSlugs()
     .map((slug) => getMarketBySlug(slug))
     .filter((market): market is NonNullable<typeof market> => Boolean(market))
+    .filter((market) => market.isClusterParent || evaluateCityHubIndexability(market).tier === 'index')
     .map((market) => ({
       url: `${SITE}${getMarketPath(market)}`,
       lastModified: CITY_HUBS_CONTENT_UPDATED,
