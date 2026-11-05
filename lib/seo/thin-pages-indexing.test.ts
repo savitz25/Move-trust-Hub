@@ -62,6 +62,7 @@ test('county sitemap and live county page share the async mover source', () => {
   assert.match(local, /getMoversForCountyAsync\(id, county\.slug\)/);
   assert.match(local, /evaluateCountyIndexabilityFromResult\(id, county\.slug, result\)/);
   assert.match(local, /entry\.decision\.tier === 'index'/);
+  assert.match(local, /export const dynamic = 'force-dynamic'/);
   assert.doesNotMatch(local, /getIndexableCounties/);
   assert.doesNotMatch(local, /getMoversForCounty\(/);
 

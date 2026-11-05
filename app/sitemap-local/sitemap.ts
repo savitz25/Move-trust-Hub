@@ -600,6 +600,10 @@ export async function generateSitemaps() {
   return localStates.map((state) => ({ id: state.slug }));
 }
 
+// Build-time rendering calls this once per state. That fan-out times out
+// Supabase and the error pages exceed Vercel's build log limit.
+export const dynamic = 'force-dynamic';
+
 export default async function sitemap({
   id,
 }: {
