@@ -17,7 +17,9 @@ import {
 import { buildCountyFaqItems } from '@/lib/local-movers/county-seo';
 import { getIndexableCounties } from '@/lib/local-movers/indexable-counties';
 import { getMoversForCounty } from '@/lib/local-movers';
+import { evaluateCountyIndexability } from '@/lib/local-movers/county-indexability';
 import { buildCountyPageMetadata } from '@/lib/local-movers/seo-metadata';
+import { isSitemapExcludedHoldProfile } from '@/lib/seo/sitemap-hold-profiles';
 import { localStates } from '@/lib/local-movers/states';
 import { cityIndexRollup, countyIndexRollup } from '@/lib/seo/thin-pages-inventory';
 import {
@@ -238,4 +240,60 @@ test('a county with zero listed movers does not claim those listings exist', () 
   const laDescription = String(laMeta.description ?? '');
   assert.match(laDescription, /No movers are listed for this county/);
   assert.doesNotMatch(laDescription, /\d+ movers/);
+
+  const baldwinDecision = evaluateCountyIndexability('alabama', 'baldwin');
+  const laDecision = evaluateCountyIndexability('california', 'los-angeles');
+  assert.equal(baldwinDecision.tier, 'noindex');
+  assert.equal(baldwinDecision.reason, 'no_listed_movers');
+  assert.equal(laDecision.tier, 'noindex');
+  assert.equal(laDecision.reason, 'no_listed_movers');
+  assert.equal(robotsIndex(metadata), false);
+  assert.equal(robotsIndex(laMeta), false);
+  assert.equal(
+    getIndexableCounties('alabama').some((county) => county.slug === 'baldwin'),
+    false
+  );
+  assert.equal(
+    getIndexableCounties('california').some((county) => county.slug === 'los-angeles'),
+    false
+  );
+});
+
+function robotsIndex(metadata: { robots?: unknown }): boolean | undefined {
+  const robots = metadata.robots;
+  if (!robots || typeof robots === 'string' || Array.isArray(robots)) return undefined;
+  return (robots as { index?: boolean }).index;
+}
+
+test('indexable county sitemap pages list at least one mover', () => {
+  let indexable = 0;
+  const empty: string[] = [];
+  for (const state of localStates) {
+    for (const county of getIndexableCounties(state.slug)) {
+      indexable += 1;
+      const result = getMoversForCounty(state.slug, county.slug);
+      const listed = result ? listedCountyMovers(result.movers, result.county).length : 0;
+      const decision = evaluateCountyIndexability(state.slug, county.slug);
+      if (listed === 0 || decision.tier !== 'index') {
+        empty.push(`/local-movers/${state.slug}/${county.slug}`);
+      }
+    }
+  }
+  assert.ok(indexable > 0);
+  assert.deepEqual(empty, []);
+});
+
+test('hold profiles stay out of sitemap.xml and identified profiles stay eligible', () => {
+  assert.equal(isSitemapExcludedHoldProfile('cord-moving-storage'), true);
+  assert.equal(isSitemapExcludedHoldProfile('gouffon-moving-storage-2'), true);
+  assert.equal(isSitemapExcludedHoldProfile('cord-moving-storage-memphis'), false);
+  assert.equal(isSitemapExcludedHoldProfile('gouffon-moving-storage'), false);
+
+  const sitemap = readFileSync(join(root, 'app/sitemap.ts'), 'utf8');
+  const companies = readFileSync(join(root, 'lib/supabase/queries/companies.ts'), 'utf8');
+  assert.match(sitemap, /isSitemapExcludedHoldProfile\(company\.slug\)/);
+  assert.match(companies, /isSitemapExcludedHoldProfile\(company\.slug\)/);
+  assert.match(companies, /isSitemapExcludedHoldProfile\(row\.slug\)/);
+  assert.match(companies, /company-sitemap-entries-v3-hold-exclusions/);
+  assert.doesNotMatch(sitemap, /cord-moving-storage-memphis|gouffon-moving-storage'/);
 });

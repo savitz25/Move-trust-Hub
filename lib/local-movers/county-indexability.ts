@@ -6,6 +6,7 @@ import {
 import {
   MIN_LOCAL_OR_LICENSED_MOVERS,
   countQualifyingCountyMovers,
+  listedCountyMovers,
 } from '@/lib/seo/unique-local-movers';
 import { hasAttributableCountyReviews } from '@/lib/trust/verified-reviews';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
@@ -71,6 +72,17 @@ export function evaluateCountyIndexabilityFromResult(
     return {
       tier: 'noindex',
       reason: quality.reason,
+      seoTier: quality.tier,
+      qualityScore: quality.score,
+    };
+  }
+
+  // Kept by the 3-mover rule, but the county page lists nobody after the
+  // out-of-state filter. Those pages stay up and stay noindex.
+  if (listedCountyMovers(result.movers, result.county).length === 0) {
+    return {
+      tier: 'noindex',
+      reason: 'no_listed_movers',
       seoTier: quality.tier,
       qualityScore: quality.score,
     };

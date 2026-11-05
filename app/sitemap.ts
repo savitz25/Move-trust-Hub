@@ -23,6 +23,7 @@ import {
 } from '@/lib/seo/sitemap-priority';
 import { isSeoIndexableCompany } from '@/lib/provider/publication';
 import { evaluateCityHubIndexability } from '@/lib/seo/city-indexability';
+import { isSitemapExcludedHoldProfile } from '@/lib/seo/sitemap-hold-profiles';
 
 const SITE = 'https://www.movetrusthub.com';
 
@@ -144,7 +145,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  const companyPages = companySitemap.map((company) => ({
+  const companyPages = companySitemap
+    .filter((company) => !isSitemapExcludedHoldProfile(company.slug))
+    .map((company) => ({
     url: `${SITE}/companies/${company.slug}`,
     lastModified: new Date(company.lastUpdated),
     changeFrequency: 'monthly' as const,
