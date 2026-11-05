@@ -3,6 +3,7 @@ import 'server-only';
 import { createAdminClient } from '@/lib/supabase/admin';
 import { isSupabaseAdminConfigured } from '@/lib/supabase/config';
 import type { MovingCompanyRecord } from '@/lib/reviews/companies';
+import { collectReviewSitemapPages } from '@/lib/reviews/review-sitemap-page';
 import { buildReviewPageUrl } from '@/lib/reviews/review-url';
 import { slugFromCarrier } from '@/lib/reviews/schema';
 import type { ParsedCarrierNumber } from '@/lib/verify-dot/schema';
@@ -106,11 +107,20 @@ export async function getMovingCompanySlugsForSitemap(): Promise<
 > {
   if (!isSupabaseAdminConfigured()) return [];
   const admin = createAdminClient();
-  const { data } = await admin
-    .from('moving_companies')
-    .select('slug, updated_at')
-    .gt('approved_review_count', 0)
-    .order('updated_at', { ascending: false })
-    .limit(500);
-  return (data as Array<{ slug: string; updated_at: string }>) ?? [];
+  return collectReviewSitemapPages(async (from, to) => {
+    try {
+      const { data, error } = await admin
+        .from('moving_companies')
+        .select('slug, updated_at')
+        .gt('approved_review_count', 0)
+        .order('id', { ascending: true })
+        .range(from, to);
+      return {
+        data: (data as Array<{ slug: string; updated_at: string }> | null) ?? null,
+        error,
+      };
+    } catch (error) {
+      return { data: null, error };
+    }
+  });
 }
