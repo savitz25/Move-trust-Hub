@@ -3,7 +3,7 @@ import 'server-only';
 import { Resend } from 'resend';
 import type { FieldChange, RefreshRunResult } from '@/lib/bbb/refresh/types';
 
-const DEFAULT_ALERT_EMAIL = 'savitz25@gmail.com';
+const DEFAULT_ALERT_EMAIL = 'hello@asktrusthub.com';
 
 function escapeHtml(text: string): string {
   return String(text)

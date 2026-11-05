@@ -73,7 +73,7 @@ export function mapClaimDbError(error: {
   const lower = msg.toLowerCase();
 
   if (isMissingRelationError(error)) {
-    return 'Portal claim tables are not set up yet. Please try again in a few minutes, or email info@movetrusthub.com with your company name and USDOT.';
+    return 'Portal claim tables are not set up yet. Please try again in a few minutes, or email hello@asktrusthub.com with your company name and USDOT.';
   }
 
   if (code === '23505' || lower.includes('duplicate') || lower.includes('unique')) {
@@ -81,11 +81,11 @@ export function mapClaimDbError(error: {
   }
 
   if (code === '23503' || lower.includes('foreign key')) {
-    return 'This company profile is missing from the claim database. Email info@movetrusthub.com with the listing URL and USDOT.';
+    return 'This company profile is missing from the claim database. Email hello@asktrusthub.com with the listing URL and USDOT.';
   }
 
   if (code === '42501' || lower.includes('permission') || lower.includes('row-level security')) {
-    return 'Claim service permission error. Please contact info@movetrusthub.com.';
+    return 'Claim service permission error. Please contact hello@asktrusthub.com.';
   }
 
   if (lower.includes('rate') || lower.includes('too many')) {

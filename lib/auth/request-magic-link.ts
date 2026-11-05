@@ -75,7 +75,7 @@ function mapSupabaseOtpError(message: string): { status: number; error: string }
     return {
       status: 429,
       error:
-        'Too many sign-in emails were sent recently (provider limit). Wait about an hour, or try again later. If this keeps happening, contact info@movetrusthub.com.',
+        'Too many sign-in emails were sent recently (provider limit). Wait about an hour, or try again later. If this keeps happening, contact hello@asktrusthub.com.',
     };
   }
 
@@ -83,21 +83,21 @@ function mapSupabaseOtpError(message: string): { status: number; error: string }
     return {
       status: 500,
       error:
-        'Sign-in redirect is misconfigured. Please contact info@movetrusthub.com so we can fix Auth URL settings.',
+        'Sign-in redirect is misconfigured. Please contact hello@asktrusthub.com so we can fix Auth URL settings.',
     };
   }
 
   if (lower.includes('signups not allowed') || lower.includes('signup is disabled')) {
     return {
       status: 403,
-      error: 'New sign-ups are currently disabled. Contact info@movetrusthub.com for help.',
+      error: 'New sign-ups are currently disabled. Contact hello@asktrusthub.com for help.',
     };
   }
 
   return {
     status: 500,
     error:
-      'Could not send the sign-in link. Please try again in a few minutes. If it continues, contact info@movetrusthub.com.',
+      'Could not send the sign-in link. Please try again in a few minutes. If it continues, contact hello@asktrusthub.com.',
   };
 }
 
@@ -148,7 +148,7 @@ async function sendViaResend(
       ok: false,
       status: 500,
       error:
-        'Could not create a sign-in link. Please try again. If it continues, contact info@movetrusthub.com.',
+        'Could not create a sign-in link. Please try again. If it continues, contact hello@asktrusthub.com.',
     };
   }
 
