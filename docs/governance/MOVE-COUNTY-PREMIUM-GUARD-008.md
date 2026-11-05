@@ -32,11 +32,9 @@ Priority order is deterministic: lowest existing quality score, then fewer expli
 
 These are a review queue, not a recommendation to downgrade them. The first eight tie on every quality measure used above; alphabetical slug order makes the review queue reproducible but does not establish that these counties are uniquely less deserving than tied candidates. There are 15 candidates in this lowest-evidence tuple. No county is automatically downgraded or removed by this patch.
 
-## Founder decision required
+## Founder decision MOVE-PREMIUM-DEMOTE-002
 
-The approved policy fixes the cap at 400 Premium pages. Premium currently has 408 candidates, so the current inventory cannot satisfy both that cap and the current set of Premium indexability decisions. Founder must decide which evidence-backed tie-break policy selects the eight Premium counties to move below Premium/indexing eligibility, or direct a new review of the tied candidates. This PR does not make that product or publication decision. Standard Tier 2 eligibility must remain independent of Premium capacity.
-
-Until that decision and any separately reviewed content/indexability changes are complete, the guard must report Premium 408 / cap 400 and remain failing. No sitemap or Production publication change is made here.
+The cap stays 400. Broome, Cayuga, Chautauqua, Chemung, Clinton, Jefferson, Oneida, and Ontario move from Premium Tier 1 to indexable Standard. Oswego, St. Lawrence, Steuben, Sullivan, Tompkins, Ulster, and Warren stay Premium. Evidence columns on the eight rows are unchanged. Premium Tier 1 is 400 after this demotion. Standard Tier 2 stays indexable and does not count toward the cap. This change is not deployed.
 
 ## PR #224 relationship
 
