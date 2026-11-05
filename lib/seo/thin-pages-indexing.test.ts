@@ -16,6 +16,7 @@ import { localStates } from '@/lib/local-movers/states';
 import { cityIndexRollup, countyIndexRollup } from '@/lib/seo/thin-pages-inventory';
 import {
   isBasedInOrLicensedForCounty,
+  isCountyListOutOfState,
   isOutOfStateCarrier,
   listedCountyMovers,
 } from '@/lib/seo/unique-local-movers';
@@ -77,26 +78,44 @@ test('county sitemap and live county page share the async mover source', () => {
   assert.doesNotMatch(main, /isEnrichedCompanyProfile|isGates014HeldSlug|isForbiddenMoveSitemapPath/);
 });
 
-test('listed county movers exclude confirmed out-of-state carriers', () => {
+test('listed county movers exclude out-of-state and unconfirmed blank headquarters', () => {
+  const county = {
+    slug: 'fulton',
+    name: 'Fulton',
+    stateCode: 'GA',
+    stateSlug: 'georgia',
+    seat: 'Atlanta',
+  };
   const outsider = {
     id: 'out',
     name: 'Out',
     headquartersState: 'TX',
+    city: 'Dallas',
   } as LocalMover;
   const local = {
     id: 'in',
     name: 'In',
     headquartersState: 'GA',
+    city: 'Atlanta',
   } as LocalMover;
   const unknown = {
     id: 'unknown',
     name: 'Unknown',
     headquartersState: '',
+    city: '21-00 MORLOT AVE',
   } as LocalMover;
-  const listed = listedCountyMovers([outsider, local, unknown], 'GA');
-  assert.deepEqual(listed.map((mover) => mover.id), ['in', 'unknown']);
+  const confirmedBlank = {
+    id: 'blank-local',
+    name: 'Blank Local',
+    headquartersState: '',
+    city: 'Fulton',
+  } as LocalMover;
+  const listed = listedCountyMovers([outsider, local, unknown, confirmedBlank], county);
+  assert.deepEqual(listed.map((mover) => mover.id), ['in', 'blank-local']);
   assert.equal(isOutOfStateCarrier(outsider, 'GA'), true);
-  assert.equal(listed.some((mover) => isOutOfStateCarrier(mover, 'GA')), false);
+  assert.equal(isCountyListOutOfState(unknown, county), true);
+  assert.equal(isCountyListOutOfState(confirmedBlank, county), false);
+  assert.equal(listed.some((mover) => isCountyListOutOfState(mover, county)), false);
 
   const losAngeles = getMoversForCounty('california', 'los-angeles');
   assert.ok(losAngeles);
@@ -117,8 +136,8 @@ test('listed county movers exclude confirmed out-of-state carriers', () => {
     if (!county) continue;
     const result = getMoversForCounty(state.slug, county.slug);
     if (!result) continue;
-    for (const mover of listedCountyMovers(result.movers, result.county.stateCode)) {
-      assert.equal(isOutOfStateCarrier(mover, result.county.stateCode), false);
+    for (const mover of listedCountyMovers(result.movers, result.county)) {
+      assert.equal(isCountyListOutOfState(mover, result.county), false);
     }
     checked += 1;
     if (checked >= 8) break;

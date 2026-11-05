@@ -210,7 +210,7 @@ import { SdRegulatoryClarity } from '@/components/local-movers/sd-regulatory-cla
 import { WyRegulatoryClarity } from '@/components/local-movers/wy-regulatory-clarity';
 import { getCountyPopularRoutes } from '@/lib/local-movers/county-popular-routes';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
-import { isOutOfStateCarrier, listedCountyMovers } from '@/lib/seo/unique-local-movers';
+import { isCountyListOutOfState, listedCountyMovers } from '@/lib/seo/unique-local-movers';
 import { buildCountyReviewBlock } from '@/lib/trust/verified-reviews';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
 import { DirectorySearchEmbed } from '@/components/directory/directory-search-embed';
@@ -294,8 +294,8 @@ export default async function LocalMoversCountyPage({ params }: Props) {
     stateSlug === 'florida' && isFloridaResearchCounty(countySlug)
       ? await getFloridaCountyIntelligenceSnapshot(countySlug)
       : null;
-  const listedMovers = listedCountyMovers(movers, county.stateCode);
-  const removedOutOfState = movers.some((mover) => isOutOfStateCarrier(mover, county.stateCode));
+  const listedMovers = listedCountyMovers(movers, county);
+  const removedOutOfState = movers.some((mover) => isCountyListOutOfState(mover, county));
   const faqItems = buildCountyFaqItems(county, state.name, listedMovers);
   const costs = buildCountyCostGuide(county, state.name);
   const tips = buildCountyTips(county, state.name);

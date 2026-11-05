@@ -36,7 +36,30 @@ export function countQualifyingCountyMovers(county: LocalCounty, movers: LocalMo
   return qualifyingCountyMovers(county, movers).length;
 }
 
-/** Carriers that may be listed on the county page. Drops confirmed out-of-state filler. */
-export function listedCountyMovers(movers: LocalMover[], stateCode: string): LocalMover[] {
-  return movers.filter((mover) => !isOutOfStateCarrier(mover, stateCode));
+/**
+ * Blank headquarters counts as local or regional only with a real locality signal.
+ * The unknown-headquarters fallback is not that confirmation.
+ */
+function isConfirmedLocalOrRegional(mover: LocalMover, county: LocalCounty): boolean {
+  const verdict = classifyMoverLocality(mover, county);
+  if (verdict.reason === 'insufficient_local_signals') return false;
+  return verdict.class === 'local' || verdict.class === 'regional';
+}
+
+/**
+ * Out of state on a county mover list when headquarters is another state,
+ * or blank and not confirmed local or regional for this county.
+ * Index counts still use isOutOfStateCarrier, which ignores blank headquarters.
+ */
+export function isCountyListOutOfState(mover: LocalMover, county: LocalCounty): boolean {
+  const hq = (mover.headquartersState ?? '').trim().toUpperCase();
+  const page = county.stateCode.trim().toUpperCase();
+  if (hq && page && hq !== page) return true;
+  if (!hq) return !isConfirmedLocalOrRegional(mover, county);
+  return false;
+}
+
+/** Carriers that may be listed on the county page. */
+export function listedCountyMovers(movers: LocalMover[], county: LocalCounty): LocalMover[] {
+  return movers.filter((mover) => !isCountyListOutOfState(mover, county));
 }
