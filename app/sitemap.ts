@@ -48,6 +48,11 @@ const PRIORITY_ROUTE_SLUGS = new Set([
   'san-diego-to-houston',
 ]);
 
+// Next prerenders this metadata route during `next build`. The company and
+// review reads can hang on Supabase and fail the deploy. Same URLs are built
+// on request.
+export const dynamic = 'force-dynamic';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const extendedRouteSlugs = new Set(getExtendedRouteSlugs());
   // Never fail the whole sitemap (or CI prerender) on a bad local Supabase URL.

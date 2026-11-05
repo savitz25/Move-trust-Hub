@@ -72,6 +72,7 @@ test('county sitemap and live county page share the async mover source', () => {
     main,
     /market\.isClusterParent \|\| evaluateCityHubIndexability\(market\)\.tier === 'index'/
   );
+  assert.match(main, /export const dynamic = 'force-dynamic'/);
   assert.match(main, /isSeoIndexableCompany/);
   assert.doesNotMatch(main, /isEnrichedCompanyProfile|isGates014HeldSlug|isForbiddenMoveSitemapPath/);
 });
