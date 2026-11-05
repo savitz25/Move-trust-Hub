@@ -19,6 +19,13 @@ import {
   shouldApplyMiddlewareHtmlCache,
 } from '@/lib/cache/control';
 import { DEFAULT_PERFORMANCE_FLAGS } from '@/lib/edge-config/types';
+import {
+  cleanCanonicalUrl,
+  isCompareOrVerifyResult,
+  urlHasTrackingParam,
+} from '@/lib/seo/crawl-variants';
+import { dispositionForDeletedSlug } from '@/lib/seo/company-slug-disposition';
+import { moveLenderLegacyDecision } from '@/lib/seo/move-lender-legacy';
 import { normalizedPublishedStatePath } from '@/lib/seo/published-state-path';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
@@ -28,6 +35,18 @@ function applyPublicCacheHeaders(response: NextResponse, sMaxAge: number) {
   response.headers.set('Cache-Control', cache);
   response.headers.set('CDN-Cache-Control', cdnCacheControl(sMaxAge));
   response.headers.set('Vary', 'Accept-Encoding');
+}
+
+function applyCrawlVariantHeaders(response: NextResponse, request: NextRequest) {
+  const url = request.nextUrl;
+  if (urlHasTrackingParam(url)) {
+    response.headers.set('Link', `<${cleanCanonicalUrl(url)}>; rel="canonical"`);
+  }
+  if (isCompareOrVerifyResult(url.pathname, url.search)) {
+    response.headers.set('X-Robots-Tag', 'noindex, follow');
+    response.headers.set('Cache-Control', PRIVATE_NO_STORE);
+    response.headers.set('CDN-Cache-Control', 'no-store');
+  }
 }
 
 export async function middleware(request: NextRequest) {
@@ -130,32 +149,51 @@ export async function middleware(request: NextRequest) {
       );
     }
 
-    // movetrusthub.com: send /lender/* to standalone LenderTrustHub (strip prefix)
-    const isLenderPrefixed =
-      pathname === '/lender' || pathname.startsWith('/lender/');
-    if (!isInsuranceStandaloneHost(host) && isLenderPrefixed) {
-      const bare =
-        pathname === '/lender' || pathname === '/lender/'
-          ? '/'
-          : pathname.slice('/lender'.length) || '/';
-      return NextResponse.redirect(
-        new URL(bare + request.nextUrl.search, LENDER_SITE_URL),
-        301
-      );
+    // movetrusthub.com: 308 /lender and /local-lenders when Lender has that path. Otherwise 410.
+    const lenderLegacy = moveLenderLegacyDecision(pathname);
+    if (!isInsuranceStandaloneHost(host) && lenderLegacy) {
+      if (lenderLegacy.status === 410) {
+        return new NextResponse('Gone', {
+          status: 410,
+          headers: { 'X-Robots-Tag': 'noindex', 'Cache-Control': 'public, max-age=3600' },
+        });
+      }
+      const destination = new URL(lenderLegacy.destination);
+      destination.search = request.nextUrl.search;
+      return NextResponse.redirect(destination, 308);
+    }
+
+    const companySlugMatch = pathname.match(/^\/companies\/([^/]+)\/?$/);
+    if (companySlugMatch) {
+      const disposition = dispositionForDeletedSlug(decodeURIComponent(companySlugMatch[1] || ''));
+      if (disposition?.status === 410) {
+        return new NextResponse('Gone', {
+          status: 410,
+          headers: { 'X-Robots-Tag': 'noindex' },
+        });
+      }
+      if (disposition?.status === 301) {
+        return NextResponse.redirect(new URL(disposition.to, request.url), 301);
+      }
     }
 
     // insurancetrusthub.com: insurance IA only — never render Move/lender verticals.
     if (isInsuranceStandaloneHost(host)) {
       // Move-only paths → permanent redirect to Move (or lender) apex.
       if (isMoveOnlyPath(pathname)) {
-        const target =
-          pathname === '/lender' || pathname.startsWith('/lender/')
-            ? `${LENDER_SITE_URL}${
-                pathname === '/lender' || pathname === '/lender/'
-                  ? '/'
-                  : pathname.slice('/lender'.length) || '/'
-              }${request.nextUrl.search}`
-            : moveAbsoluteUrl(pathname, request.nextUrl.search);
+        if (pathname === '/lender' || pathname.startsWith('/lender/') || pathname.startsWith('/local-lenders')) {
+          const legacy = moveLenderLegacyDecision(pathname);
+          if (!legacy || legacy.status === 410) {
+            return new NextResponse('Gone', {
+              status: 410,
+              headers: { 'X-Robots-Tag': 'noindex' },
+            });
+          }
+          const destination = new URL(legacy.destination);
+          destination.search = request.nextUrl.search;
+          return NextResponse.redirect(destination, 308);
+        }
+        const target = moveAbsoluteUrl(pathname, request.nextUrl.search);
         return NextResponse.redirect(target, 301);
       }
 
@@ -242,12 +280,13 @@ export async function middleware(request: NextRequest) {
 
     const baseTtl =
       DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds ?? 86400;
-    if (shouldApplyMiddlewareHtmlCache(pathname)) {
+    if (shouldApplyMiddlewareHtmlCache(pathname) && !isCompareOrVerifyResult(pathname, request.nextUrl.search)) {
       applyPublicCacheHeaders(
         response,
         htmlCacheSecondsForPath(pathname, baseTtl)
       );
     }
+    applyCrawlVariantHeaders(response, request);
     return response;
   } catch (err) {
     console.error('[middleware] MIDDLEWARE_INVOCATION_FAILED', {
@@ -264,7 +303,9 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(loginUrl);
     }
 
-    return NextResponse.next();
+    const fallback = NextResponse.next();
+    applyCrawlVariantHeaders(fallback, request);
+    return fallback;
   }
 }
 

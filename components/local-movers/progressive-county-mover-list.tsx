@@ -10,6 +10,7 @@ import {
 } from '@/lib/local-movers/rank-county-movers';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 import { LOCALITY_POLICY } from '@/lib/local-movers/locality-rules';
+import { isOutOfStateCarrier } from '@/lib/seo/unique-local-movers';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import {
@@ -169,7 +170,10 @@ export function SegmentedCountyMoverLists({
   listKey = 'all',
   developmentTier = false,
 }: SegmentedProps) {
-  if (localInState.length === 0 && national.length === 0) {
+  const local = localInState.filter((mover) => !isOutOfStateCarrier(mover, stateCode));
+  const regional = national.filter((mover) => !isOutOfStateCarrier(mover, stateCode));
+
+  if (local.length === 0 && regional.length === 0) {
     return (
       <EmptyCoveragePanel
         variant="unmapped"
@@ -200,16 +204,16 @@ export function SegmentedCountyMoverLists({
 
   return (
     <div className="space-y-10">
-      {localInState.length > 0 ? (
+      {local.length > 0 ? (
         <ProgressiveCountyMoverList
-          movers={localInState}
+          movers={local}
           countyLabel={countyLabel}
           stateCode={stateCode}
           county={county}
           profileReturnPath={profileReturnPath}
           listKey={`${listKey}-local`}
           developmentTier={developmentTier}
-          heading={`Local movers near ${countyLabel} (${localInState.length})`}
+          heading={`Local movers near ${countyLabel} (${local.length})`}
           headingHint={`HQ within ~${LOCALITY_POLICY.localMaxMiles} miles of ${countyLabel}, seat/name match, or true intrastate specialists. Distant same-state HQs are labeled Regional — never Local.`}
         />
       ) : (
@@ -232,26 +236,18 @@ export function SegmentedCountyMoverLists({
         </div>
       )}
 
-      {national.length > 0 ? (
+      {regional.length > 0 ? (
         <ProgressiveCountyMoverList
-          movers={national}
+          movers={regional}
           countyLabel={countyLabel}
           stateCode={stateCode}
           county={county}
           profileReturnPath={profileReturnPath}
-          listKey={`${listKey}-national`}
-          rankOffset={localInState.length}
+          listKey={`${listKey}-regional`}
+          rankOffset={local.length}
           developmentTier={developmentTier}
-          heading={
-            localInState.length === 0
-              ? `Regional & out-of-area companies serving ${countyLabel} (${national.length})`
-              : `Regional & out-of-area companies serving ${countyLabel} (${national.length})`
-          }
-          headingHint={
-            developmentTier
-              ? 'Concise regional/out-of-area listings — confirm licensing before booking. Not labeled as local movers.'
-              : 'Regional (same-state but not local HQ) or out-of-state companies. Entity badges show Interstate Carrier vs Broker separately — brokers arrange transportation; they do not haul as the motor carrier unless they also hold carrier authority. We do not re-label them as local movers.'
-          }
+          heading={`Same-state regional companies serving ${countyLabel} (${regional.length})`}
+          headingHint="Same-state companies that are not local to this county. Confirmed out-of-state carriers are not listed on this page."
         />
       ) : null}
     </div>

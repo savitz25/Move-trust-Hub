@@ -210,6 +210,7 @@ import { SdRegulatoryClarity } from '@/components/local-movers/sd-regulatory-cla
 import { WyRegulatoryClarity } from '@/components/local-movers/wy-regulatory-clarity';
 import { getCountyPopularRoutes } from '@/lib/local-movers/county-popular-routes';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
+import { isOutOfStateCarrier, listedCountyMovers } from '@/lib/seo/unique-local-movers';
 import { buildCountyReviewBlock } from '@/lib/trust/verified-reviews';
 import { LocalMoversCta } from '@/components/local-movers/local-movers-cta';
 import { DirectorySearchEmbed } from '@/components/directory/directory-search-embed';
@@ -293,11 +294,13 @@ export default async function LocalMoversCountyPage({ params }: Props) {
     stateSlug === 'florida' && isFloridaResearchCounty(countySlug)
       ? await getFloridaCountyIntelligenceSnapshot(countySlug)
       : null;
-  const faqItems = buildCountyFaqItems(county, state.name, movers);
+  const listedMovers = listedCountyMovers(movers, county.stateCode);
+  const removedOutOfState = movers.some((mover) => isOutOfStateCarrier(mover, county.stateCode));
+  const faqItems = buildCountyFaqItems(county, state.name, listedMovers);
   const costs = buildCountyCostGuide(county, state.name);
   const tips = buildCountyTips(county, state.name);
-  const segments = segmentCountyMovers(movers, county);
-  const reviewBlock = buildCountyReviewBlock(movers, 3, {
+  const segments = segmentCountyMovers(listedMovers, county);
+  const reviewBlock = buildCountyReviewBlock(listedMovers, 3, {
     preferLocalMovers: segments.localInState,
     countyLabel,
     marketTokens: [
@@ -316,18 +319,18 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   // Suppress review quotes unless at least one local/in-state source contributed
   // (avoids out-of-area reviews under county-local social proof).
   const visibleTestimonials =
-    shouldUseCuratedTestimonials(movers) &&
+    shouldUseCuratedTestimonials(listedMovers) &&
     reviewBlock.hasLocalSource &&
     reviewBlock.reviews.length > 0
       ? reviewBlock.reviews
       : [];
   const marketNotes = buildCountyMarketNotes(county);
-  const marketInsights = buildCountyMarketInsights(stateSlug, countySlug, county, movers);
+  const marketInsights = buildCountyMarketInsights(stateSlug, countySlug, county, listedMovers);
   const outboundRoutes = getOutboundRouteLinksForState(county.stateCode);
   const inboundRoutes = getInboundRouteLinksForState(county.stateCode);
   const popularRoutes = getCountyPopularRoutes(stateSlug, countySlug);
   const movingSnapshot = buildCountyMovingSnapshot(intelligence, popularRoutes, countyLabel);
-  const usdotCount = movers.filter((m) => Boolean(m.usdotNumber?.trim())).length;
+  const usdotCount = listedMovers.filter((m) => Boolean(m.usdotNumber?.trim())).length;
   const nearbyCounties =
     stateSlug === 'california'
       ? getCaliforniaNearbyCounties(countySlug)
@@ -490,7 +493,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           { name: state.name, path: getStatePath(state.slug) },
           { name: countyLabel, path },
         ]}
-        movers={movers}
+        movers={listedMovers}
         county={county}
         stateName={state.name}
         faqItems={faqItems}
@@ -522,11 +525,11 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           <p className="text-muted-foreground leading-relaxed">
             {buildCountyHeroIntro(
               countyLabel,
-              movers.length,
+              listedMovers.length,
               isRegionalFallback,
               intelligence?.heroOpener
             )}{' '}
-            {movers.length > 0 && !intelligence ? (
+            {listedMovers.length > 0 && !intelligence && !removedOutOfState ? (
               <>
                 Full profiles are in our{' '}
                 <Link href="/companies" className="text-primary font-medium hover:underline">
@@ -585,10 +588,10 @@ export default async function LocalMoversCountyPage({ params }: Props) {
               .
             </p>
           )}
-          {movers.length > 0 ? (
+          {listedMovers.length > 0 ? (
             <CountyCompactStats
               countyLabel={countyLabel}
-              moverCount={movers.length}
+              moverCount={listedMovers.length}
               usdotCount={usdotCount}
               localCount={segments.localInState.length}
               nationalCount={segments.national.length}
@@ -604,7 +607,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           <div className="mt-6">
             <CountyJumpToMovers
               countyLabel={countyLabel}
-              moverCount={movers.length}
+              moverCount={listedMovers.length}
               targetId="movers"
             />
           </div>
@@ -625,12 +628,12 @@ export default async function LocalMoversCountyPage({ params }: Props) {
           aria-labelledby="movers-heading"
         >
           <h2 id="movers-heading" className="text-2xl font-semibold tracking-tight mb-4">
-            {buildMoversSectionHeading(countyLabel, movers.length)}
+            {buildMoversSectionHeading(countyLabel, listedMovers.length)}
           </h2>
-          {movers.length > 0 ? (
+          {listedMovers.length > 0 ? (
             intelligence ? (
               <CountyZoneMoverFilter
-                movers={movers}
+                movers={listedMovers}
                 zones={intelligence.zones}
                 countyLabel={countyLabel}
                 stateCode={county.stateCode}
@@ -664,6 +667,13 @@ export default async function LocalMoversCountyPage({ params }: Props) {
               in the meantime.
             </div>
           )}
+          {removedOutOfState && listedMovers.length > 0 ? (
+            <p className="mt-4 text-sm text-muted-foreground">
+              <Link href="/companies" className="font-medium text-primary hover:underline">
+                Interstate movers
+              </Link>
+            </p>
+          ) : null}
         </section>
 
         <div className="mb-8">
@@ -682,7 +692,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
               stateCode: county.stateCode,
               stateName: state.name,
               countyLabel,
-              preferredMoverIds: movers.map((m) => m.id),
+              preferredMoverIds: listedMovers.map((m) => m.id),
             }}
             heading="Search the full mover directory"
             description={`Find any licensed mover nationwide — same search as /companies. Prefer listings serving ${countyLabel}.`}
@@ -708,7 +718,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
               : []),
             // When an intelligence pack exists it already covers zones, costs, seasonal,
             // and relocation — skip market-insights to avoid duplicate major sections.
-            ...(!intelligence && indexDecision.tier === 'index' && movers.length > 0
+            ...(!intelligence && indexDecision.tier === 'index' && listedMovers.length > 0
               ? [
                   {
                     id: 'market-insights',

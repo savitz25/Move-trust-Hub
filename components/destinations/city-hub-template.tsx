@@ -5,7 +5,6 @@ import { LocalMoverCard } from '@/components/local-movers/local-mover-card';
 import { DestinationCalculatorEmbed } from '@/components/destinations/destination-calculator-embed';
 import { DestinationMapSnippet } from '@/components/destinations/destination-map-snippet';
 import { DestinationQuoteCta } from '@/components/destinations/destination-quote-cta';
-import { DestinationInterstateCard } from '@/components/destinations/destination-interstate-card';
 import { DestinationCostVisual } from '@/components/destinations/destination-cost-visual';
 import {
   getEnrichedMoversForCaHub,
@@ -33,31 +32,12 @@ import { journeyGeoFromMarket } from '@/lib/network/journey-context';
 
 import type { CityHubContent } from '@/lib/destinations/types';
 import type { Market } from '@/lib/destinations/types';
-import type { Company } from '@/types';
-import { getCompanyBySlugAsync } from '@/lib/data-server';
-import { getCompanyBySlug as getSeedCompanyBySlug } from '@/data/seed-companies';
+import { isOutOfStateCarrier } from '@/lib/seo/unique-local-movers';
 
 type Props = {
   market: Market;
   content: CityHubContent;
 };
-
-/** Soft-resolve featured interstate cards — never throw (seed fallback). */
-async function resolveFeaturedCompanies(slugs: string[] | undefined): Promise<Company[]> {
-  const list = Array.isArray(slugs) ? slugs : [];
-  const resolved = await Promise.all(
-    list.map(async (slug) => {
-      try {
-        const live = await getCompanyBySlugAsync(slug);
-        if (live) return live;
-      } catch {
-        // DB/directory timeout or projection error — fall through to seed
-      }
-      return getSeedCompanyBySlug(slug);
-    })
-  );
-  return resolved.filter((c): c is Company => Boolean(c));
-}
 
 export async function CityHubTemplate({ market, content }: Props) {
   const destinationLabel = `${market.displayName}, ${market.stateCode}`;
@@ -68,39 +48,33 @@ export async function CityHubTemplate({ market, content }: Props) {
   const featuredSlugs = content.featuredInterstateSlugs ?? [];
 
   let marketMovers = getMoversForMarket(market, 100);
-  let totalMovers = marketMovers.length;
-  let featuredCompanies: Company[] = [];
 
   try {
     if (useCaEnrichment) {
       try {
         const enriched = await getEnrichedMoversForCaHub(market, featuredSlugs);
         marketMovers = enriched.movers;
-        totalMovers = enriched.totalAvailable;
       } catch {
         // keep sync seed movers
       }
-      featuredCompanies = [];
     } else {
       try {
         marketMovers = await getMoversForMarketAsync(market, 100);
-        totalMovers = marketMovers.length;
       } catch {
         marketMovers = getMoversForMarket(market, 100);
-        totalMovers = marketMovers.length;
       }
-      featuredCompanies = await resolveFeaturedCompanies(featuredSlugs);
     }
   } catch {
     marketMovers = getMoversForMarket(market, 100);
-    totalMovers = marketMovers.length;
-    if (!useCaEnrichment) {
-      featuredCompanies = featuredSlugs
-        .map((slug) => getSeedCompanyBySlug(slug))
-        .filter((c): c is Company => Boolean(c));
-    }
   }
 
+  const removedOutOfState =
+    featuredSlugs.length > 0 ||
+    marketMovers.some((entry) => isOutOfStateCarrier(entry.mover, market.stateCode));
+  marketMovers = marketMovers.filter(
+    (entry) => !isOutOfStateCarrier(entry.mover, market.stateCode)
+  );
+  const totalMovers = marketMovers.length;
   const localMovers = marketMovers.slice(0, useCaEnrichment ? 9 : 6);
 
   const clusterParent = market.clusterParent
@@ -248,9 +222,7 @@ export async function CityHubTemplate({ market, content }: Props) {
                 Top Movers Serving {destinationLabel}
               </h2>
               <p className="text-muted-foreground text-sm max-w-2xl">
-                {useCaEnrichment
-                  ? `Local movers from ${countyLabels.join(', ')} and nearby counties, plus strong statewide carriers that serve the area. Up to nine featured options — confirm current licensing before booking.`
-                  : `Featured FMCSA-licensed interstate carriers plus vetted local movers from ${countyLabels.join(', ')}. Confirm current licensing before booking.`}
+                {`Movers based in or licensed for ${countyLabels.join(', ') || destinationLabel}. Confirm current licensing before booking.`}
               </p>
             </div>
             <Link
@@ -277,6 +249,14 @@ export async function CityHubTemplate({ market, content }: Props) {
             </div>
           ) : null}
 
+          {removedOutOfState ? (
+            <p className="mb-8 text-sm text-muted-foreground">
+              <Link href="/companies" className="font-medium text-primary hover:underline">
+                Interstate movers
+              </Link>
+            </p>
+          ) : null}
+
           {useCaEnrichment && localMovers.length > 0 ? (
             <div
               className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
@@ -296,23 +276,6 @@ export async function CityHubTemplate({ market, content }: Props) {
             </div>
           ) : (
             <>
-              {featuredCompanies.length > 0 && (
-                <div
-                  className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8"
-                  role="list"
-                >
-                  {featuredCompanies.map((company, index) => (
-                    <DestinationInterstateCard
-                      key={company.slug}
-                      company={company}
-                      rank={index + 1}
-                      areaLabel={countyLabels[index] ?? destinationLabel}
-                      profileReturnPath={canonicalPath}
-                    />
-                  ))}
-                </div>
-              )}
-
               {localMovers.length > 0 && (
                 <>
                   <h3 className="text-lg font-semibold mb-4">

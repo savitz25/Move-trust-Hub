@@ -136,17 +136,8 @@ const nextConfig: NextConfig = {
         destination: 'https://www.lendertrusthub.com/',
         permanent: true,
       },
-      {
-        source: '/lender/lender/:path*',
-        destination: 'https://www.lendertrusthub.com/:path*',
-        permanent: true,
-      },
-      {
-        source: '/lender/first-time-homebuyer-programs',
-        destination: 'https://www.lendertrusthub.com/resources/first-time-homebuyer-programs',
-        permanent: true,
-      },
-      // Monorepo /lender → standalone Lender Trust Hub (301)
+      // Exact lender homes stay 308. Other /lender/* paths are decided in
+      // middleware: 308 when the Lender sitemap has the path, otherwise 410.
       {
         source: '/lender',
         destination: 'https://www.lendertrusthub.com/',
@@ -155,11 +146,6 @@ const nextConfig: NextConfig = {
       {
         source: '/lender/',
         destination: 'https://www.lendertrusthub.com/',
-        permanent: true,
-      },
-      {
-        source: '/lender/:path*',
-        destination: 'https://www.lendertrusthub.com/:path*',
         permanent: true,
       },
       // Monorepo /insurance → standalone Insurance Trust Hub (301)

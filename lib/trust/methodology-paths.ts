@@ -29,26 +29,16 @@ export type MethodologyReturnContext = {
 };
 
 /**
- * Canonical methodology URL with optional return context for back-navigation.
- * Query params sit before the hash: `/about/how-we-score-movers?from=...#section`
+ * Canonical methodology URL. Return context is not written into the query
+ * string: crawlable links stay on the clean path. Back navigation uses the
+ * referrer when a visitor arrived from another Move page.
  */
 export function methodologyHref(
   anchor?: keyof typeof METHODOLOGY_ANCHORS,
-  opts?: MethodologyReturnContext
+  _opts?: MethodologyReturnContext
 ): string {
   const hash = anchor ? `#${METHODOLOGY_ANCHORS[anchor]}` : '';
-  const path = METHODOLOGY_PAGE_PATH;
-
-  if (!opts?.returnPath || !opts.returnPath.startsWith('/') || opts.returnPath.startsWith('//')) {
-    return `${path}${hash}`;
-  }
-
-  const params = new URLSearchParams();
-  params.set('from', opts.returnPath);
-  if (opts.returnLabel?.trim()) {
-    params.set('fromLabel', opts.returnLabel.trim().slice(0, 80));
-  }
-  return `${path}?${params.toString()}${hash}`;
+  return `${METHODOLOGY_PAGE_PATH}${hash}`;
 }
 
 export function badgeLegendHref(badgeId: string, onProfile = false): string {

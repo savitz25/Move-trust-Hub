@@ -3,6 +3,10 @@ import {
   countExplicitCountyMovers,
   getMoversForCounty,
 } from '@/lib/local-movers/index';
+import {
+  MIN_LOCAL_OR_LICENSED_MOVERS,
+  countQualifyingCountyMovers,
+} from '@/lib/seo/unique-local-movers';
 import { hasAttributableCountyReviews } from '@/lib/trust/verified-reviews';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -16,8 +20,11 @@ export type CountyIndexDecision = {
   qualityScore?: number;
 };
 
-/** Counties need 3+ explicitly assigned movers — regional metro pools do not qualify. */
-export const MIN_EXPLICIT_MOVERS_TO_INDEX = 3;
+/**
+ * Counties need 3+ movers based in or licensed for that county.
+ * Confirmed out-of-state carriers do not count. Regional metro fallback pools do not qualify.
+ */
+export const MIN_EXPLICIT_MOVERS_TO_INDEX = MIN_LOCAL_OR_LICENSED_MOVERS;
 
 /** Hard deploy stop — see scripts/lib/tier1-circuit-breaker.ts */
 export const MAX_TIER1_COUNT = 400;
@@ -49,6 +56,16 @@ export function evaluateCountyIndexabilityFromResult(
     movers: result.movers,
     isRegionalFallback: result.isRegionalFallback,
   });
+
+  const qualifyingMovers = countQualifyingCountyMovers(result.county, result.movers);
+  if (qualifyingMovers < MIN_LOCAL_OR_LICENSED_MOVERS) {
+    return {
+      tier: 'noindex',
+      reason: 'insufficient_local_or_licensed_movers',
+      seoTier: 3,
+      qualityScore: quality.score,
+    };
+  }
 
   if (!quality.indexable) {
     return {
