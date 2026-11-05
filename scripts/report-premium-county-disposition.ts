@@ -43,8 +43,8 @@ const candidates = getAllCountyParams()
       a.countySlug.localeCompare(b.countySlug)
   );
 
-if (candidates.length !== 408) {
-  throw new Error(`Expected the reviewed 408-candidate baseline, got ${candidates.length}`);
+if (candidates.length !== 400) {
+  throw new Error(`Expected 400 Premium counties after the eight-county demotion, got ${candidates.length}`);
 }
 
 const escapeCsv = (value: string) => `"${value.replaceAll('"', '""')}"`;
