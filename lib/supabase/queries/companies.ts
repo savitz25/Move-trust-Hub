@@ -44,6 +44,7 @@ import {
   type PlaceHolder,
 } from '@/lib/verification/rating-provenance';
 import { isSeoIndexableCompany } from '@/lib/provider/publication';
+import { isSitemapExcludedHoldProfile } from '@/lib/seo/sitemap-hold-profiles';
 import type { PublicationState } from '@/lib/provider/types';
 
 function createAnonSupabaseClient() {
@@ -709,13 +710,13 @@ export type CompanySitemapEntry = {
 async function fetchIndexableCompanySitemapEntries(): Promise<CompanySitemapEntry[]> {
   if (!isSupabaseConfigured()) {
     return seedCompanies
-      .filter((company) => isSeoIndexableCompany(company))
+      .filter((company) => isSeoIndexableCompany(company) && !isSitemapExcludedHoldProfile(company.slug))
       .map((company) => ({ slug: company.slug, lastUpdated: company.lastUpdated }));
   }
   const supabase = createAnonSupabaseClient();
   if (!supabase) {
     return seedCompanies
-      .filter((company) => isSeoIndexableCompany(company))
+      .filter((company) => isSeoIndexableCompany(company) && !isSitemapExcludedHoldProfile(company.slug))
       .map((company) => ({ slug: company.slug, lastUpdated: company.lastUpdated }));
   }
   const entries: CompanySitemapEntry[] = [];
@@ -742,7 +743,7 @@ async function fetchIndexableCompanySitemapEntries(): Promise<CompanySitemapEntr
       ) {
         continue;
       }
-      if (!row.slug?.trim()) continue;
+      if (!row.slug?.trim() || isSitemapExcludedHoldProfile(row.slug)) continue;
       entries.push({
         slug: row.slug,
         lastUpdated: row.last_updated?.slice?.(0, 10) || new Date().toISOString().slice(0, 10),
@@ -756,7 +757,7 @@ async function fetchIndexableCompanySitemapEntries(): Promise<CompanySitemapEntr
 
 export const getIndexableCompanySitemapEntries = unstable_cache(
   fetchIndexableCompanySitemapEntries,
-  ['company-sitemap-entries-v2-wave3'],
+  ['company-sitemap-entries-v3-hold-exclusions'],
   { tags: [COMPANIES_DIRECTORY_TAG], revalidate: 300 }
 );
 
