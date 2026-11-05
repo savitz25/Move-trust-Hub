@@ -116,7 +116,7 @@ export function buildCountyDescription(
   const listingLine =
     moverCount > 0
       ? `Compare ${moverCount} FMCSA-licensed movers serving ${countyLabel}`
-      : `Verified mover listings for ${countyLabel} are being expanded`;
+      : `No movers are listed for ${countyLabel}`;
   const marketSnippet = sanitizeCountyResearchText(buildCountyMarketNotes(county));
   const localContext = marketSnippet
     ? `${marketSnippet.split('.')[0]}. `
@@ -384,7 +384,9 @@ export function buildCountyFaqItems(
       ? `Among true local-HQ listings with real review volume near ${location}, stronger research options include ${topMoverList}. We use reputation composite signals (not star rating alone), exclude out-of-service / severe BBB F grades when known, and never label distant same-state HQs as local. Re-verify licensing before booking.`
       : topMovers.length === 1
         ? `Among true local-HQ listings with real review volume near ${location}, ${topMovers[0]!.name} currently shows ${topMovers[0]!.rating}★ from ${topMovers[0]!.reviewCount.toLocaleString()} industry-reported reviews. Compare full listings on this page, re-check authority status, and verify licensing before booking.`
-        : `${LOCALITY_POLICY.emptyLocalCopy} We do not invent “best local” winners from distant same-state or unsafe listings. Compare regional carriers on this page by licensing and review basis — then confirm credentials on FMCSA.gov (and ${stateCredPhrase}).`;
+        : movers.length === 0
+          ? `No movers are listed for ${countyLabel}. This page does not name a best local mover. Search the mover directory, or confirm credentials on FMCSA.gov (and ${stateCredPhrase}).`
+          : `${LOCALITY_POLICY.emptyLocalCopy} We do not invent “best local” winners from distant same-state or unsafe listings. Compare regional carriers on this page by licensing and review basis — then confirm credentials on FMCSA.gov (and ${stateCredPhrase}).`;
 
   const licensingAnswer =
     county.stateSlug === 'new-jersey'

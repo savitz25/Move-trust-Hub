@@ -19,6 +19,7 @@ import {
 } from '@/lib/seo/site-metadata';
 import { shareRouteOgImage } from '@/lib/seo/share-hub';
 import { absoluteDocumentTitle, formatDocumentTitle } from '@/lib/seo/document-title';
+import { listedCountyMovers } from '@/lib/seo/unique-local-movers';
 
 export function buildCountyPageMetadata(
   county: LocalCounty,
@@ -31,9 +32,13 @@ export function buildCountyPageMetadata(
   const title = intelligence?.h1
     ? `${intelligence.h1} | ${getSeoYear()}`
     : buildCountyPageTitle(county, getSeoYear());
+  // Index counts can stay above zero after carriers are removed from the list.
+  const listedCount = listedCountyMovers(movers, county).length;
   const descriptionFinal = intelligence
-    ? `Moving in ${county.name} County, ${stateName}? Zone-by-zone access tips, cost drivers, seasonal timing, parking/COI notes, and ${movers.length || 'verified'} movers — the ${intelligence.hubTitle}.`
-    : buildCountyDescription(county, stateName, movers.length);
+    ? listedCount === 0
+      ? `Moving in ${county.name} County, ${stateName}? Zone-by-zone access tips, cost drivers, seasonal timing, and parking/COI notes — the ${intelligence.hubTitle}. No movers are listed for this county.`
+      : `Moving in ${county.name} County, ${stateName}? Zone-by-zone access tips, cost drivers, seasonal timing, parking/COI notes, and ${movers.length || 'verified'} movers — the ${intelligence.hubTitle}.`
+    : buildCountyDescription(county, stateName, listedCount === 0 ? 0 : movers.length);
   const url = `${SITE_URL}${path}`;
   const documentTitle = formatDocumentTitle(title);
   const resolvedIndexDecision =

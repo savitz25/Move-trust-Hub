@@ -558,7 +558,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
             </p>
           ) : null}
           <DirectoryDegradedBanner show={sourceMode === 'degraded'} />
-          {isRegionalFallback && (
+          {isRegionalFallback && listedMovers.length > 0 && (
             <p className="mt-3 text-xs text-muted-foreground rounded-lg border bg-muted/30 px-3 py-2">
               Movers listed serve the greater {county.metro?.replace(/-/g, ' ')} region
               including {countyLabel}. Listings are regional providers verified for FMCSA
@@ -656,15 +656,15 @@ export default async function LocalMoversCountyPage({ params }: Props) {
             )
           ) : (
             <div className="rounded-2xl border bg-muted/30 p-6 text-sm text-muted-foreground">
-              Mover listings for this county are being added. Browse{' '}
+              No movers are listed for this county. Search{' '}
               <Link href="/companies" className="text-primary hover:underline">
                 licensed interstate movers
               </Link>{' '}
               or use the{' '}
               <Link href="/moving-calculator" className="text-primary hover:underline">
                 moving calculator
-              </Link>{' '}
-              in the meantime.
+              </Link>
+              .
             </div>
           )}
           {removedOutOfState && listedMovers.length > 0 ? (
@@ -695,7 +695,11 @@ export default async function LocalMoversCountyPage({ params }: Props) {
               preferredMoverIds: listedMovers.map((m) => m.id),
             }}
             heading="Search the full mover directory"
-            description={`Find any licensed mover nationwide — same search as /companies. Prefer listings serving ${countyLabel}.`}
+            description={
+              listedMovers.length > 0
+                ? `Find any licensed mover nationwide — same search as /companies. Prefer listings serving ${countyLabel}.`
+                : 'Find any licensed mover nationwide — same search as /companies.'
+            }
           />
         </div>
 
