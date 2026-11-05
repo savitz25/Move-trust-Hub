@@ -23,11 +23,11 @@ export function buildCountyHeroIntro(
     const base =
       moverCount > 0
         ? ` Below: ${moverCount} verified listing${moverCount === 1 ? '' : 's'} serving ${countyLabel}, plus zone tips, cost drivers, and practical resources.`
-        : ` We are still expanding verified listings for ${countyLabel} — use the intelligence sections and directory search while more local profiles are added.`;
+        : ` No movers are listed for ${countyLabel}. The sections below cover zone tips, cost drivers, and practical resources.`;
     return `${intelligenceOpener.trim()}${base}`;
   }
   if (moverCount === 0) {
-    return `We are building verified mover listings for ${countyLabel}. Use the directory search below or browse our interstate mover index while listings are added.`;
+    return `No movers are listed for ${countyLabel}. Search the mover directory or use the moving calculator on this page.`;
   }
   if (isRegionalFallback) {
     return `Compare ${moverCount} FMCSA-licensed movers serving ${countyLabel}. These regional providers are verified in our independent directory — headquarters may be outside the county.`;
@@ -37,7 +37,7 @@ export function buildCountyHeroIntro(
 
 export function buildMoversSectionHeading(countyLabel: string, moverCount: number): string {
   if (moverCount === 0) {
-    return `Verified movers serving ${countyLabel}`;
+    return `No movers listed for ${countyLabel}`;
   }
   return `Movers serving ${countyLabel}`;
 }

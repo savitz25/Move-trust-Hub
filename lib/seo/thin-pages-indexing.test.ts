@@ -10,8 +10,14 @@ import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
+import {
+  buildCountyHeroIntro,
+  buildMoversSectionHeading,
+} from '@/lib/local-movers/county-display-copy';
+import { buildCountyFaqItems } from '@/lib/local-movers/county-seo';
 import { getIndexableCounties } from '@/lib/local-movers/indexable-counties';
 import { getMoversForCounty } from '@/lib/local-movers';
+import { buildCountyPageMetadata } from '@/lib/local-movers/seo-metadata';
 import { localStates } from '@/lib/local-movers/states';
 import { cityIndexRollup, countyIndexRollup } from '@/lib/seo/thin-pages-inventory';
 import {
@@ -143,4 +149,93 @@ test('listed county movers exclude out-of-state and unconfirmed blank headquarte
     if (checked >= 8) break;
   }
   assert.ok(checked > 0);
+});
+
+test('a county with zero listed movers does not claim those listings exist', () => {
+  const page = readFileSync(
+    join(root, 'app/(move)/(marketing)/local-movers/[stateSlug]/[countySlug]/page.tsx'),
+    'utf8'
+  );
+  const jump = readFileSync(
+    join(root, 'components/local-movers/county-jump-to-movers.tsx'),
+    'utf8'
+  );
+  const baldwin = getMoversForCounty('alabama', 'baldwin');
+  assert.ok(baldwin);
+  if (!baldwin) return;
+  assert.equal(listedCountyMovers(baldwin.movers, baldwin.county).length, 0);
+
+  const countyLabel = 'Baldwin County';
+  const hero = buildCountyHeroIntro(countyLabel, 0, true);
+  const heroWithOpener = buildCountyHeroIntro(countyLabel, 0, true, 'Coastal access notes.');
+  const heading = buildMoversSectionHeading(countyLabel, 0);
+  const faqs = buildCountyFaqItems(baldwin.county, 'Alabama', []);
+  const best = faqs.find((item) => item.question.includes('best local movers'));
+  const metadata = buildCountyPageMetadata(
+    baldwin.county,
+    'Alabama',
+    baldwin.movers,
+    '/local-movers/alabama/baldwin'
+  );
+  const description = String(metadata.description ?? '');
+  const blob = [hero, heroWithOpener, heading, best?.answer ?? '', description].join('\n');
+  for (const phrase of [
+    'being added',
+    'being expanded',
+    'are building',
+    'still expanding',
+    'Carriers and brokers below',
+    'below serve',
+    'Compare regional carriers on this page',
+    'verified listings',
+    'View Local Movers',
+    'Movers listed serve',
+  ]) {
+    assert.equal(blob.includes(phrase), false, phrase);
+  }
+  assert.match(hero, /No movers are listed for Baldwin County/);
+  assert.match(heading, /No movers listed for Baldwin County/);
+  assert.match(description, /Moving in Baldwin County, Alabama/);
+  assert.match(description, /No movers are listed for this county/);
+  assert.doesNotMatch(description, /\d+ movers/);
+  assert.match(best?.answer ?? '', /No movers are listed for Baldwin County/);
+  assert.doesNotMatch(best?.answer ?? '', /below/);
+
+  const regional = {
+    id: 'regional-al',
+    name: 'Regional Haul',
+    headquartersState: 'AL',
+    city: 'Huntsville',
+    rating: 4.2,
+    reviewCount: 12,
+  } as LocalMover;
+  const listedFaqs = buildCountyFaqItems(baldwin.county, 'Alabama', [regional]);
+  const listedBest = listedFaqs.find((item) => item.question.includes('best local movers'));
+  assert.match(listedBest?.answer ?? '', /Carriers and brokers below serve it regionally/);
+
+  const withListings = buildCountyHeroIntro(countyLabel, 2, false);
+  assert.match(withListings, /Compare 2 FMCSA-licensed movers serving Baldwin County/);
+
+  assert.match(page, /isRegionalFallback && listedMovers\.length > 0/);
+  assert.match(page, /No movers are listed for this county\. Search/);
+  assert.doesNotMatch(page, /Mover listings for this county are being added/);
+  assert.match(page, /listedMovers\.length > 0\s*\?/);
+  assert.match(jump, /moverCount === 0/);
+  assert.match(jump, /No movers listed for \$\{countyLabel\}/);
+  assert.match(jump, /This county page does not list movers/);
+  assert.match(jump, /View Local Movers in \$\{countyLabel\}/);
+
+  const losAngeles = getMoversForCounty('california', 'los-angeles');
+  assert.ok(losAngeles);
+  if (!losAngeles) return;
+  assert.equal(listedCountyMovers(losAngeles.movers, losAngeles.county).length, 0);
+  const laMeta = buildCountyPageMetadata(
+    losAngeles.county,
+    'California',
+    losAngeles.movers,
+    '/local-movers/california/los-angeles'
+  );
+  const laDescription = String(laMeta.description ?? '');
+  assert.match(laDescription, /No movers are listed for this county/);
+  assert.doesNotMatch(laDescription, /\d+ movers/);
 });

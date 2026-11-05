@@ -67,13 +67,16 @@ export function CountyJumpToMovers({
     return () => observer.disconnect();
   }, [targetId]);
 
-  const label =
-    moverCount && moverCount > 0
+  const noneListed = moverCount === 0;
+  const label = noneListed
+    ? `No movers listed for ${countyLabel} ↓`
+    : moverCount && moverCount > 0
       ? `View Local Movers in ${countyLabel} (${moverCount}) ↓`
       : `View Local Movers in ${countyLabel} ↓`;
 
-  const shortLabel =
-    moverCount && moverCount > 0
+  const shortLabel = noneListed
+    ? 'No movers listed'
+    : moverCount && moverCount > 0
       ? `View ${moverCount} Local Movers ↓`
       : 'View Local Movers ↓';
 
@@ -96,7 +99,9 @@ export function CountyJumpToMovers({
           <ChevronDown className="h-4 w-4 shrink-0 opacity-90" aria-hidden="true" />
         </button>
         <p className="text-xs text-muted-foreground">
-          Jump straight to verified listings — county costs, tips, and local rules stay below.
+          {noneListed
+            ? 'This county page does not list movers. Costs, tips, and the directory search are further down.'
+            : 'Jump straight to verified listings — county costs, tips, and local rules stay below.'}
         </p>
       </div>
 
