@@ -115,6 +115,7 @@ test('accepted binding uses transfer:stage with a null session and the verified 
   const accepted = await fetchAcceptedBinding({ browser, key: { kid: 'move-test', pem: material.privatePem }, send });
   assert.deepEqual(accepted, { id: 'binding-1', networkEntityId: 'network-1', status: 'accepted' });
   assert.equal(captured.body?.action, 'binding');
+  assert.deepEqual(captured.body?.profile, { hub: 'move', nativeId: 'usdot-1002530', profileClass: 'mover' });
   assert.equal(captured.claims?.scope, 'transfer:stage');
   assert.equal(captured.claims?.session, null);
   assert.equal(captured.claims?.grant, null);

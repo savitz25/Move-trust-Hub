@@ -86,7 +86,10 @@ export async function fetchAcceptedBinding(input: {
 }): Promise<TrustedMoveRecord['binding'] | null> {
   const pair = input.pair ?? ISOLATED_PAIR;
   if (input.browser.csrfVerified !== true || input.browser.environment !== pair.kind || input.browser.origin !== pair.moveOrigin || !opaque(input.browser.binding)) return null;
-  const body = { action: 'binding' };
+  const body = {
+    action: 'binding',
+    profile: { hub: 'move', nativeId: CERTIFIED_NATIVE_ID, profileClass: CERTIFIED_CLASS },
+  };
   const bytes = Buffer.from(JSON.stringify(body));
   const target = pair.parentOrigin + GRANT_API_PATH;
   const response = await input.send(target, {
