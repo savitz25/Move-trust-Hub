@@ -4,8 +4,6 @@
  */
 
 import type { Company } from '@/types';
-import { isEnrichedCompanyProfile } from '@/lib/seo/company-index-eligibility';
-import { isGates014HeldSlug } from '@/lib/seo/gates-014-hold';
 import { assessLicense } from '@/lib/trust/license-verification';
 
 export type ProfileQuality = {
@@ -21,18 +19,6 @@ export type ProfileQuality = {
  * Intrastate locals without USDOT can still be usable but stay cautious on index.
  */
 export function assessProfileQuality(company: Company): ProfileQuality {
-  if (isGates014HeldSlug(company.slug)) {
-    return { indexable: false, reason: 'gates_014_hold', usable: true };
-  }
-
-  if (!isEnrichedCompanyProfile(company)) {
-    return {
-      indexable: false,
-      reason: 'thin_unenriched_profile',
-      usable: true,
-    };
-  }
-
   const license = assessLicense(company.usdotNumber, company.mcNumber);
   const hasDot = license.isDisplayable;
   const descLen =

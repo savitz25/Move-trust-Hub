@@ -3,9 +3,9 @@ import { latestRowLastModified } from '@/lib/seo/sitemap-lastmod';
 
 import { evaluateCountyIndexabilityFromResult } from '@/lib/local-movers/county-indexability';
 import { sitemapPriorityForCountyTier } from '@/lib/local-movers/county-quality-score';
-import { getMoversForCounty } from '@/lib/local-movers/index';
+import { getMoversForCountyAsync } from '@/lib/local-movers/get-movers-for-county-async';
+import { getCountiesForState } from '@/lib/local-movers/geography/index';
 import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
-import { getIndexableCounties } from '@/lib/local-movers/indexable-counties';
 import { localStates } from '@/lib/local-movers/states';
 
 const SITE_URL = 'https://www.movetrusthub.com';
@@ -605,13 +605,15 @@ export default async function sitemap({
 }: {
   id: string;
 }): Promise<MetadataRoute.Sitemap> {
-  // Sync seed catalog only — do not hit Supabase while generating ~50 state sitemaps at build.
-  const indexableCounties = getIndexableCounties(id);
-
-  const countyEntries = indexableCounties.map((county) => {
-    const result = getMoversForCounty(id, county.slug);
-    return { county, result };
-  });
+  // Same mover source and evaluator as resolveCountyPageSeo.
+  const evaluated = await Promise.all(
+    getCountiesForState(id).map(async (county) => {
+      const result = await getMoversForCountyAsync(id, county.slug);
+      const decision = evaluateCountyIndexabilityFromResult(id, county.slug, result);
+      return { county, result, decision };
+    })
+  );
+  const countyEntries = evaluated.filter((entry) => entry.decision.tier === 'index');
   const stateLastModified = latestRowLastModified(
     countyEntries.flatMap(({ result }) => (result?.movers ?? []).map((mover) => mover.lastUpdated))
   );
@@ -623,9 +625,7 @@ export default async function sitemap({
       changeFrequency: 'weekly' as const,
       priority: 0.85,
     },
-    ...countyEntries.flatMap(({ county, result }) => {
-      const decision = evaluateCountyIndexabilityFromResult(id, county.slug, result);
-      if (decision.tier !== 'index') return [];
+    ...countyEntries.map(({ county, result, decision }) => {
       const seoTier = decision.seoTier ?? 2;
       const lastModified = latestRowLastModified((result?.movers ?? []).map((mover) => mover.lastUpdated));
       const highTraffic =
@@ -649,13 +649,13 @@ export default async function sitemap({
         (id === 'colorado' && CO_HIGH_TRAFFIC_COUNTIES.has(county.slug)) ||
         isPremiumMetroCounty(id, county.slug);
 
-      return [{
+      return {
         url: `${SITE_URL}/local-movers/${id}/${county.slug}`,
         ...(lastModified ? { lastModified } : {}),
         changeFrequency: 'weekly' as const,
         // Tier 3 never appears here (filtered by indexable). Priority reflects Premium vs Standard.
         priority: sitemapPriorityForCountyTier(seoTier === 3 ? 2 : seoTier, highTraffic),
-      }];
+      };
     }),
   ];
 }

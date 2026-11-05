@@ -2163,6 +2163,28 @@
       ]
     },
     {
+      "source": "/lender/:path*",
+      "destination": "https://www.lendertrusthub.com/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.movetrusthub.com"
+        }
+      ]
+    },
+    {
+      "source": "/lender/:path*",
+      "destination": "https://www.lendertrusthub.com/:path*",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "movetrusthub.com"
+        }
+      ]
+    },
+    {
       "source": "/insurance",
       "destination": "https://www.insurancetrusthub.com/",
       "permanent": true,

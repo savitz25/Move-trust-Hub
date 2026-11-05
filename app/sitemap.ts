@@ -12,6 +12,7 @@ import { guides } from '@/lib/resources/guides';
 import { routeGuides } from '@/lib/resources/routes';
 import { getExtendedRouteSlugs } from '@/lib/resources/routes/content';
 import {
+  CITY_HUBS_CONTENT_UPDATED,
   DESTINATION_CLUSTERS_CONTENT_UPDATED,
   RESOURCES_CONTENT_UPDATED,
 } from '@/lib/seo/content-dates';
@@ -20,11 +21,8 @@ import {
   getCityHubSitemapPriority,
   getRouteGuideSitemapPriority,
 } from '@/lib/seo/sitemap-priority';
-import { isEnrichedCompanyProfile } from '@/lib/seo/company-index-eligibility';
-import { isGates014HeldSlug } from '@/lib/seo/gates-014-hold';
+import { isSeoIndexableCompany } from '@/lib/provider/publication';
 import { evaluateCityHubIndexability } from '@/lib/seo/city-indexability';
-import { isForbiddenMoveSitemapPath } from '@/lib/seo/move-sitemap-paths';
-import { rowLastModified } from '@/lib/seo/sitemap-lastmod';
 
 const SITE = 'https://www.movetrusthub.com';
 
@@ -101,21 +99,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...resourceRoutes,
   ];
 
-  const staticPages = coreStaticRoutes
-    .filter((route) => !isForbiddenMoveSitemapPath(route))
-    .map((route) => {
+  const staticPages = coreStaticRoutes.map((route) => {
     const isCluster = route.startsWith('/moving-to/') && route !== '/moving-to';
     const isResource =
       route.startsWith('/resources') || route === '/moving-calculator';
-    const lastModified = isCluster
-      ? DESTINATION_CLUSTERS_CONTENT_UPDATED
-      : isResource
-        ? RESOURCES_CONTENT_UPDATED
-        : undefined;
 
     return {
       url: `${SITE}${route}`,
-      ...(lastModified ? { lastModified } : {}),
+      lastModified: isCluster
+        ? DESTINATION_CLUSTERS_CONTENT_UPDATED
+        : isResource
+          ? RESOURCES_CONTENT_UPDATED
+          : new Date(),
       changeFrequency: 'weekly' as const,
       priority:
         route === ''
@@ -144,51 +139,39 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  const companyPages = companySitemap.flatMap((company) => {
-    if (isForbiddenMoveSitemapPath(`/companies/${company.slug}`)) return [];
-    const lastModified = rowLastModified(company.lastUpdated);
-    return [{
-      url: `${SITE}/companies/${company.slug}`,
-      ...(lastModified ? { lastModified } : {}),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    }];
-  });
+  const companyPages = companySitemap.map((company) => ({
+    url: `${SITE}/companies/${company.slug}`,
+    lastModified: new Date(company.lastUpdated),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
 
   const destinationPages = getPublishedCityHubSlugs()
     .map((slug) => getMarketBySlug(slug))
     .filter((market): market is NonNullable<typeof market> => Boolean(market))
-    .filter((market) => evaluateCityHubIndexability(market).tier === 'index')
-    .filter((market) => !isForbiddenMoveSitemapPath(getMarketPath(market)))
+    .filter((market) => market.isClusterParent || evaluateCityHubIndexability(market).tier === 'index')
     .map((market) => ({
       url: `${SITE}${getMarketPath(market)}`,
+      lastModified: CITY_HUBS_CONTENT_UPDATED,
       changeFrequency: 'weekly' as const,
       priority: getCityHubSitemapPriority(market.priority, market.slug),
     }));
 
   const autoTransportPages = autoTransportCompanies
-    .filter((company) => isEnrichedCompanyProfile(company))
-    .map((company) => {
-    const lastModified = rowLastModified(company.lastUpdated);
-    return {
+    .filter((company) => isSeoIndexableCompany(company))
+    .map((company) => ({
     url: `${SITE}/auto-transport/${company.slug}`,
-    ...(lastModified ? { lastModified } : {}),
+    lastModified: new Date(company.lastUpdated),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
-  };
-  });
+  }));
 
-  const reviewCompanyPages = (await getMovingCompanySlugsForSitemap()).flatMap((row) => {
-    const path = `/company/${row.slug}`;
-    if (isGates014HeldSlug(row.slug) || isForbiddenMoveSitemapPath(path)) return [];
-    const lastModified = rowLastModified(row.updated_at);
-    return [{
-      url: `${SITE}${path}`,
-      ...(lastModified ? { lastModified } : {}),
-      changeFrequency: 'weekly' as const,
-      priority: 0.75,
-    }];
-  });
+  const reviewCompanyPages = (await getMovingCompanySlugsForSitemap()).map((row) => ({
+    url: `${SITE}/company/${row.slug}`,
+    lastModified: new Date(row.updated_at),
+    changeFrequency: 'weekly' as const,
+    priority: 0.75,
+  }));
 
   return [
     ...staticPages,

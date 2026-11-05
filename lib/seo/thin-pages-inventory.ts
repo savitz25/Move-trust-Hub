@@ -10,7 +10,6 @@ import { getCountiesForState } from '@/lib/local-movers/geography/index';
 import { getMoversForCounty } from '@/lib/local-movers';
 import { localStates } from '@/lib/local-movers/states';
 import { evaluateCityHubIndexability } from '@/lib/seo/city-indexability';
-import { isForbiddenMoveSitemapPath } from '@/lib/seo/move-sitemap-paths';
 
 export type StateUrlRollup = {
   state: string;
@@ -58,13 +57,8 @@ export function cityIndexRollup(): StateUrlRollup[] {
 }
 
 export function collectMoveSitemapPaths(county: StateUrlRollup[], city: StateUrlRollup[]): string[] {
-  const paths = [
+  return [
     ...county.flatMap((row) => row.kept),
     ...city.flatMap((row) => row.kept),
   ];
-  return paths;
-}
-
-export function forbiddenSitemapPaths(paths: readonly string[]): string[] {
-  return paths.filter((path) => isForbiddenMoveSitemapPath(path));
 }

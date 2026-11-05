@@ -13,8 +13,7 @@ import {
   networkHubById,
   type NetworkHubId,
 } from '@/lib/network/ask-trust-hub';
-import { NetworkHandoffLink } from '@/components/network/network-handoff-link';
-import { networkHubHref, SSO_HANDOFF_HUBS, type HubLinkId } from '@/lib/network/handoff-href';
+import { networkHubHref, type HubLinkId } from '@/lib/network/handoff-href';
 import { cn } from '@/lib/utils';
 
 export function HubFooter({ hubId }: { hubId?: HubId }) {
@@ -166,28 +165,18 @@ export function HubFooter({ hubId }: { hubId?: HubId }) {
                 </a>
               </div>
               {NETWORK_HUBS.filter((h) => h.id !== networkId).map((h) => {
-                const id = h.id as HubLinkId;
-                const href = networkHubHref(id);
-                const className = cn(
-                  'transition-colors',
-                  isMove ? 'hover:text-white' : 'hover:text-foreground'
-                );
+                const href = networkHubHref(h.id as HubLinkId);
+                const sso = href.includes('/api/auth/network-handoff/start');
                 return (
                   <div key={h.id}>
-                    {SSO_HANDOFF_HUBS.has(id) ? (
-                      <NetworkHandoffLink
-                        href={href}
-                        toHub={id}
-                        className={className}
-                        rel="noopener noreferrer"
-                      >
-                        {h.proseName}
-                      </NetworkHandoffLink>
-                    ) : (
-                      <a href={href} className={className} rel="noopener noreferrer">
-                        {h.proseName}
-                      </a>
-                    )}
+                    <a
+                      href={href}
+                      className={cn('transition-colors', isMove ? 'hover:text-white' : 'hover:text-foreground')}
+                      rel="noopener noreferrer"
+                      data-network-handoff={sso ? 'start' : undefined}
+                    >
+                      {h.proseName}
+                    </a>
                   </div>
                 );
               })}
