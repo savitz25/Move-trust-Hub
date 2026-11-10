@@ -25,6 +25,23 @@ type CompanyMoverSource = {
 
 const RECENT_MS = 1000 * 60 * 60 * 24 * 30; // 30 days
 
+/**
+ * public.companies has no usdot_status column. Prefer an explicit label when a
+ * caller already has one. Otherwise derive the status the county safety gates
+ * already understand from columns that exist: out_of_service, authority_active,
+ * and usdot_number. A USDOT number without an authority flag is an identifier,
+ * not a status.
+ */
+function resolveUsdotStatus(company: CompanyMoverSource): string | null {
+  const explicit = company.usdot_status?.trim();
+  if (explicit) return explicit;
+  if (company.out_of_service === true) return 'OUT OF SERVICE';
+  if (company.authority_active === false) return 'INACTIVE';
+  const usdot = (company.usdot_number || '').replace(/\D/g, '');
+  if (company.authority_active === true && usdot) return 'ACTIVE';
+  return null;
+}
+
 function mapServices(services: unknown): string[] {
   if (!Array.isArray(services) || services.length === 0) return ['Long Distance'];
   return services.map((service) => {
@@ -76,6 +93,6 @@ export function companyToLocalMover(company: CompanyMoverSource): LocalMover {
     outOfService: Boolean(company.out_of_service),
     authorityActive:
       company.authority_active === undefined ? null : company.authority_active,
-    usdotStatus: company.usdot_status ?? null,
+    usdotStatus: resolveUsdotStatus(company),
   };
 }
