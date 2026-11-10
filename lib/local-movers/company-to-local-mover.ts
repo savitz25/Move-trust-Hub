@@ -1,5 +1,10 @@
+import {
+  deriveOperatingAuthorityStatus,
+  deriveUsdotRegistrationStatus,
+  hasFmcsaOutOfServiceOrder,
+} from '@/lib/fmcsa/carrier-fields';
 import { parseHeadquarters } from '@/lib/local-movers/parse-headquarters';
-import type { LocalMover } from '@/lib/local-movers/types';
+import type { LocalMover, RegulatoryStanding } from '@/lib/local-movers/types';
 
 type CompanyMoverSource = {
   slug: string;
@@ -20,25 +25,49 @@ type CompanyMoverSource = {
   updated_at?: string | null;
   out_of_service?: boolean | null;
   authority_active?: boolean | null;
+  /** Ignored. public.companies has no usdot_status column. */
   usdot_status?: string | null;
+  fmcsa_raw?: unknown;
 };
 
 const RECENT_MS = 1000 * 60 * 60 * 24 * 30; // 30 days
 
+function asCarrier(value: unknown): Record<string, unknown> | null {
+  return value && typeof value === 'object' && !Array.isArray(value)
+    ? (value as Record<string, unknown>)
+    : null;
+}
+
 /**
- * public.companies has no usdot_status column. Prefer an explicit label when a
- * caller already has one. Otherwise derive the status the county safety gates
- * already understand from columns that exist: out_of_service, authority_active,
- * and usdot_number. A USDOT number without an authority flag is an identifier,
- * not a status.
+ * public.companies has no usdot_status column.
+ * USDOT registration comes only from fmcsa_raw.statusCode.
+ * For-hire authority, out-of-service orders, missing evidence, and intrastate
+ * state licenses stay separate and are never collapsed into that label.
  */
-function resolveUsdotStatus(company: CompanyMoverSource): string | null {
-  const explicit = company.usdot_status?.trim();
-  if (explicit) return explicit;
-  if (company.out_of_service === true) return 'OUT OF SERVICE';
-  if (company.authority_active === false) return 'INACTIVE';
-  const usdot = (company.usdot_number || '').replace(/\D/g, '');
-  if (company.authority_active === true && usdot) return 'ACTIVE';
+export function resolveRegulatoryStanding(company: CompanyMoverSource): RegulatoryStanding {
+  const carrier = asCarrier(company.fmcsa_raw);
+  const registration = deriveUsdotRegistrationStatus(carrier);
+  const hasRegistrationEvidence =
+    carrier != null && Object.prototype.hasOwnProperty.call(carrier, 'statusCode');
+  const basis: RegulatoryStanding['basis'] = hasRegistrationEvidence
+    ? 'federal'
+    : company.service_scope === 'intrastate'
+      ? 'state_only'
+      : 'unknown';
+
+  return {
+    usdotRegistration: registration ?? 'UNKNOWN',
+    operatingAuthority: deriveOperatingAuthorityStatus(carrier),
+    outOfServiceOrder:
+      company.out_of_service === true || hasFmcsaOutOfServiceOrder(carrier),
+    basis,
+  };
+}
+
+function resolveUsdotStatus(standing: RegulatoryStanding): string | null {
+  if (standing.basis === 'state_only') return null;
+  if (standing.usdotRegistration === 'ACTIVE') return 'ACTIVE';
+  if (standing.usdotRegistration === 'INACTIVE') return 'INACTIVE';
   return null;
 }
 
@@ -69,6 +98,7 @@ export function companyToLocalMover(company: CompanyMoverSource): LocalMover {
   const isLocalOnly =
     company.service_scope === 'intrastate' ||
     (!usdot && company.service_scope !== 'interstate');
+  const regulatoryStanding = resolveRegulatoryStanding(company);
   return {
     id: `directory-${company.slug}`,
     name: company.name,
@@ -90,9 +120,10 @@ export function companyToLocalMover(company: CompanyMoverSource): LocalMover {
     entityType: company.entity_type ?? null,
     lastUpdated: lastUpdated || undefined,
     recentlyAdded: isRecentlyAdded(lastUpdated),
-    outOfService: Boolean(company.out_of_service),
+    outOfService: regulatoryStanding.outOfServiceOrder,
     authorityActive:
       company.authority_active === undefined ? null : company.authority_active,
-    usdotStatus: resolveUsdotStatus(company),
+    usdotStatus: resolveUsdotStatus(regulatoryStanding),
+    regulatoryStanding,
   };
 }

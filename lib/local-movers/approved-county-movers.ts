@@ -20,9 +20,9 @@ import { APPROVED_COUNTY_MOVERS_TAG } from '@/lib/local-movers/approved-county-m
 
 export { APPROVED_COUNTY_MOVERS_TAG };
 
-// public.companies has no usdot_status column (Postgres 42703). Authority
-// status is derived in companyToLocalMover from authority_active,
-// out_of_service, and usdot_number. Do not add usdot_status back here.
+// public.companies has no usdot_status column (Postgres 42703). Do not select it.
+// USDOT registration is read from fmcsa_raw.statusCode. For-hire authority and
+// out-of-service stay on their own columns.
 const COMPANY_MOVER_SELECT_FULL =
   'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, service_scope, entity_type, coverage_counties, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active';
 
@@ -616,8 +616,8 @@ async function loadAllApprovedMoversByCounty(
 
 const getAllApprovedMoversByCountyCached = unstable_cache(
   fetchAllApprovedMoversByCounty,
-  // v8: companies select omits missing usdot_status (do not cache empty failure)
-  ['approved-county-movers-all-v8-no-usdot-status'],
+  // v9: USDOT label is fmcsa_raw.statusCode, not authority_active
+  ['approved-county-movers-all-v9-census-status'],
   { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
 );
 
@@ -628,8 +628,8 @@ const getAllApprovedMoversByCountyCached = unstable_cache(
 function getApprovedMoversForCountyCached(stateSlug: string, countySlug: string) {
   return unstable_cache(
     () => fetchApprovedMoversForCountyUncached(stateSlug, countySlug),
-    // v8 per-county: companies select omits missing usdot_status
-    ['approved-county-movers-one-v8', stateSlug, countySlug],
+    // v9 per-county: USDOT label is fmcsa_raw.statusCode, not authority_active
+    ['approved-county-movers-one-v9', stateSlug, countySlug],
     { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
   )();
 }
