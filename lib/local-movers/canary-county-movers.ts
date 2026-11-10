@@ -1,16 +1,13 @@
 /**
  * Task 011D.3 — merge published local canary movers into county pages.
- * Uses SECURITY DEFINER RPC (SQL-gated). No radius. Google Places: 0.
+ * Server-only SECURITY DEFINER RPC (SQL-gated). No radius. Google Places: 0.
+ * Called with the service role so anon does not need EXECUTE.
  */
 import 'server-only';
 
 import { unstable_cache } from 'next/cache';
 import { createClient } from '@supabase/supabase-js';
-import {
-  getSupabaseAnonKey,
-  getSupabaseUrl,
-  isSupabaseConfigured,
-} from '@/lib/supabase/config';
+import { getServiceRoleSupabaseTarget } from '@/lib/supabase/config';
 import { companyToLocalMover } from '@/lib/local-movers/company-to-local-mover';
 import type { LocalMover } from '@/lib/local-movers/types';
 import {
@@ -50,16 +47,17 @@ async function fetchCanaryMoversForCounty(
   stateSlug: string,
   countySlug: string
 ): Promise<LocalMover[]> {
-  if (!isSupabaseConfigured()) return [];
   const stateCode = STATE_SLUG_TO_CODE[stateSlug];
   if (!stateCode) return [];
   const fips = resolveCountyFips(stateSlug, countySlug);
   if (!fips) return [];
 
-  const url = getSupabaseUrl();
-  const key = getSupabaseAnonKey();
-  if (!url || !key) return [];
-  const supabase = createClient(url, key, {
+  const target = getServiceRoleSupabaseTarget();
+  if (!target) {
+    logger.warn('canary_county.service_role_unconfigured', { stateSlug, countySlug });
+    return [];
+  }
+  const supabase = createClient(target.url, target.key, {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 

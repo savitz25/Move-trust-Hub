@@ -257,6 +257,14 @@ test('non-isolated magic link still allows signup and can use the admin path', a
   );
 });
 
+test('county canary RPC is server-only and uses the service role', () => {
+  const source = readFileSync(new URL('../local-movers/canary-county-movers.ts', import.meta.url), 'utf8');
+  assert.match(source, /import 'server-only'/);
+  assert.match(source, /getServiceRoleSupabaseTarget/);
+  assert.equal(source.includes('getSupabaseAnonKey'), false);
+  assert.match(source, /local_canary_movers_for_county/);
+});
+
 test('live server code does not pair the browser URL with the service-role key', () => {
   const root = fileURLToPath(new URL('../../', import.meta.url));
   const hits: string[] = [];
