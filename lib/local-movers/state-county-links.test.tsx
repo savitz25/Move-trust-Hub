@@ -3,9 +3,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { StateCountyLinks } from '@/components/local-movers/state-county-links';
-import { getIndexableCounties } from '@/lib/local-movers/indexable-counties';
-import { localStates } from '@/lib/local-movers/states';
+import { StateCountyLinkList } from '@/components/local-movers/state-county-links';
+import { getPublishedIndexableCounties } from '@/lib/local-movers/county-indexability-async';
 import { STATEWIDE_ROUTES } from '@/lib/seo/statewide-routes';
 import { PUBLISHED_STATEWIDE_SLUGS } from '@/lib/seo/published-state-path';
 import localSitemap from '@/app/sitemap-local/sitemap';
@@ -13,32 +12,32 @@ import StatesPage, { metadata } from '@/app/(move)/states/page';
 
 Object.assign(globalThis, { React });
 
-for (const [stateSlug, stateName, count] of [
-  ['new-jersey', 'New Jersey', 21],
-  ['florida', 'Florida', 67],
+for (const [stateSlug, stateName] of [
+  ['new-jersey', 'New Jersey'],
+  ['florida', 'Florida'],
 ] as const) {
-  test(`${stateName} server HTML links every indexable county`, async () => {
-    const counties = getIndexableCounties(stateSlug);
-    assert.equal(counties.length, count);
-    const html = renderToStaticMarkup(<StateCountyLinks stateSlug={stateSlug} stateName={stateName} />);
+  test(`${stateName} directory links match the sitemap decision`, async () => {
+    const counties = await getPublishedIndexableCounties(stateSlug);
+    const html = renderToStaticMarkup(
+      <StateCountyLinkList stateSlug={stateSlug} stateName={stateName} counties={counties} />
+    );
     const links = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]);
     const sitemapPaths = (await localSitemap({ id: stateSlug })).map(({ url }) => new URL(url).pathname);
     assert.deepEqual(links.sort(), sitemapPaths.sort());
     assert.ok(html.includes(`${stateName} counties`));
+    assert.equal(links.filter((href) => href === `/local-movers/${stateSlug}`).length, 1);
   });
 }
 
-test('all local sitemaps retain 1,746 URLs and share the same county selection', async () => {
-  let total = 0;
-  for (const state of localStates) {
-    const entries = await localSitemap({ id: state.slug });
-    total += entries.length;
-    assert.deepEqual(
-      entries.slice(1).map(({ url }) => new URL(url).pathname).sort(),
-      getIndexableCounties(state.slug).map((county) => `/local-movers/${state.slug}/${county.slug}`).sort(),
-    );
-  }
-  assert.equal(total, 1746);
+test('state directory source uses the published sitemap evaluator', () => {
+  const links = readFileSync('components/local-movers/state-county-links.tsx', 'utf8');
+  const sitemap = readFileSync('app/sitemap-local/sitemap.ts', 'utf8');
+  const page = readFileSync('lib/local-movers/county-page-seo.ts', 'utf8');
+  assert.match(links, /getPublishedIndexableCounties/);
+  assert.doesNotMatch(links, /getIndexableCounties/);
+  assert.match(sitemap, /evaluatePublishedStateCounties/);
+  assert.doesNotMatch(sitemap, /getIndexableCounties/);
+  assert.match(page, /publishedCountyIndexDecision/);
 });
 
 test('state index matches the sitemap route source and includes IA/KS/MO', () => {

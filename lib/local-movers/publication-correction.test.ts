@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { evaluateCountyIndexabilityFromResult } from '@/lib/local-movers/county-indexability';
 import { scoreCountyQuality } from '@/lib/local-movers/county-quality-score';
+import { listedCountyMovers } from '@/lib/seo/unique-local-movers';
 import { getMoversForCounty } from '@/lib/local-movers/index';
 import { seedMoverCountsForCounty } from '@/lib/local-movers/seed-county-coverage';
 import {
@@ -123,6 +124,63 @@ test('shown movers set the inventory score and one mover is not a hard block', (
   });
   assert.equal(empty.components.inventory, 0);
   assert.equal(empty.indexable, false);
+});
+
+test('a hidden out-of-state card does not change the quality tier', () => {
+  const county = {
+    slug: 'morris',
+    name: 'Morris',
+    stateCode: 'NJ',
+    stateSlug: 'new-jersey',
+  };
+  const listed: LocalMover = {
+    id: 'directory-local',
+    name: 'Morris Local',
+    profileSlug: 'morris-local',
+    listingSource: 'directory',
+    profilePublished: true,
+    rating: 4.8,
+    reviewCount: 12,
+    shortDescription: '',
+    services: ['Local Mover'],
+    city: 'Morristown',
+    headquartersState: 'NJ',
+    isLocalOnly: true,
+  };
+  const hidden: LocalMover = {
+    id: 'directory-hidden',
+    name: 'Out Of State',
+    profileSlug: 'out-of-state',
+    listingSource: 'directory',
+    profilePublished: true,
+    rating: 4.2,
+    reviewCount: 4,
+    shortDescription: '',
+    services: ['Long Distance'],
+    city: 'Dallas',
+    headquartersState: 'TX',
+  };
+  assert.equal(listedCountyMovers([listed, hidden], county).length, 1);
+  const withHidden = scoreCountyQuality({
+    stateSlug: 'new-jersey',
+    countySlug: 'morris',
+    county,
+    movers: [listed, hidden],
+    isRegionalFallback: false,
+  });
+  const alone = scoreCountyQuality({
+    stateSlug: 'new-jersey',
+    countySlug: 'morris',
+    county,
+    movers: [listed],
+    isRegionalFallback: false,
+  });
+  assert.equal(withHidden.components.inventory, alone.components.inventory);
+  assert.equal(withHidden.components.localInventory, alone.components.localInventory);
+  assert.equal(withHidden.components.utility, alone.components.utility);
+  assert.equal(withHidden.score, alone.score);
+  assert.equal(withHidden.tier, alone.tier);
+  assert.notEqual(withHidden.reason, 'insufficient_explicit_movers');
 });
 
 test('a street number is not resolved as a headquarters county', () => {

@@ -1,11 +1,8 @@
 import type { MetadataRoute } from 'next';
 import { latestRowLastModified } from '@/lib/seo/sitemap-lastmod';
 
-import { evaluateCountyIndexabilityFromResult } from '@/lib/local-movers/county-indexability';
-import { capCountyIndexDecision } from '@/lib/local-movers/runtime-premium-cap';
+import { evaluatePublishedStateCounties } from '@/lib/local-movers/county-indexability-async';
 import { sitemapPriorityForCountyTier } from '@/lib/local-movers/county-quality-score';
-import { getMoversForCountyAsync } from '@/lib/local-movers/get-movers-for-county-async';
-import { getCountiesForState } from '@/lib/local-movers/geography/index';
 import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
 import { localStates } from '@/lib/local-movers/states';
 
@@ -612,17 +609,7 @@ export default async function sitemap({
 }): Promise<MetadataRoute.Sitemap> {
   // Same mover source and evaluator as resolveCountyPageSeo.
   // The Premium cap is applied to that decision before a county can enter the sitemap.
-  const evaluated = await Promise.all(
-    getCountiesForState(id).map(async (county) => {
-      const result = await getMoversForCountyAsync(id, county.slug);
-      const decision = await capCountyIndexDecision(
-        id,
-        county.slug,
-        evaluateCountyIndexabilityFromResult(id, county.slug, result)
-      );
-      return { county, result, decision };
-    })
-  );
+  const evaluated = await evaluatePublishedStateCounties(id);
   const countyEntries = evaluated.filter((entry) => entry.decision.tier === 'index');
   const stateLastModified = latestRowLastModified(
     countyEntries.flatMap(({ result }) => (result?.movers ?? []).map((mover) => mover.lastUpdated))

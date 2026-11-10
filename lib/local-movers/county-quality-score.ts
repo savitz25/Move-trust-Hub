@@ -18,6 +18,7 @@ import { FOUNDER_PREMIUM_TO_STANDARD } from '@/lib/local-movers/founder-premium-
 import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
+import { listedCountyMovers } from '@/lib/seo/unique-local-movers';
 import { assessLicense } from '@/lib/trust/license-verification';
 
 /** Public SEO product tiers (Phase 3 brief). */
@@ -116,13 +117,11 @@ export function scoreCountyQuality(params: {
   isRegionalFallback: boolean;
 }): CountyQualityAssessment {
   const { stateSlug, countySlug, county, movers, isRegionalFallback } = params;
-  // Inventory used to call countExplicitCountyMovers. That counts the raw
-  // catalog assignment list, including hidden, unpublished, and statewide
-  // fill-ins the county page does not show, and then hard-blocked any county
-  // under minExplicitMovers (3) with reason insufficient_explicit_movers.
-  // That was a three-mover gate on the wrong list. Shown movers are the list
-  // passed in. The 1/3/5/8/12 steps are point bands only.
-  const shown = movers.length;
+  // Mover points use the cards the county page lists. Out-of-state and
+  // unconfirmed-headquarters cards are omitted by listedCountyMovers.
+  // The 1/3/5/8/12 steps are point bands, not a three-mover gate.
+  const displayed = county ? listedCountyMovers(movers, county) : [];
+  const shown = displayed.length;
   const research = getCountyResearch(stateSlug, countySlug);
   const hasResearch = hasCountyResearch(stateSlug, countySlug);
   const cited = hasCitedCountyResearchContent(research);
@@ -132,13 +131,13 @@ export function scoreCountyQuality(params: {
   const premium = isPremiumMetroCounty(stateSlug, countySlug);
   const routes = getCountyPopularRoutes(stateSlug, countySlug);
   const segments =
-    county && movers.length
-      ? segmentCountyMovers(movers, county)
-      : { localInState: [] as LocalMover[], national: movers, ordered: movers };
+    county && displayed.length
+      ? segmentCountyMovers(displayed, county)
+      : { localInState: [] as LocalMover[], national: displayed, ordered: displayed };
   const localN = segments.localInState.length;
   const regionalN = segments.national.length;
-  const listed = movers.length;
-  const share = usdotShare(movers);
+  const listed = displayed.length;
+  const share = usdotShare(displayed);
 
   // --- Component scores ---
   let inventory = 0;
@@ -215,7 +214,7 @@ export function scoreCountyQuality(params: {
   // --- Hard integrity gates (cannot index past these) ---
   let hardBlock: string | null = null;
   if (!county) hardBlock = 'missing_county';
-  else if (shown === 0) hardBlock = 'no_explicit_assignment';
+  else if (movers.length === 0) hardBlock = 'no_explicit_assignment';
   else if (isRegionalFallback) hardBlock = 'regional_metro_fallback';
   else if (!hasResearch) hardBlock = 'missing_county_research';
   else if (batch) hardBlock = 'batch_template_research';

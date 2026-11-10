@@ -73,21 +73,20 @@ export function evaluateCountyIndexabilityFromResult(
     };
   }
 
-  if (!quality.indexable) {
+  // Hidden out-of-state and unconfirmed cards do not count as a listing.
+  if (listedCountyMovers(result.movers, result.county).length === 0) {
     return {
       tier: 'noindex',
-      reason: quality.reason,
+      reason: 'no_listed_movers',
       seoTier: quality.tier,
       qualityScore: quality.score,
     };
   }
 
-  // A qualifying mover can still be hidden by the out-of-state list filter.
-  // Those pages stay noindex.
-  if (listedCountyMovers(result.movers, result.county).length === 0) {
+  if (!quality.indexable) {
     return {
       tier: 'noindex',
-      reason: 'no_listed_movers',
+      reason: quality.reason,
       seoTier: quality.tier,
       qualityScore: quality.score,
     };
