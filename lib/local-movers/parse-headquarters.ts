@@ -29,8 +29,13 @@ export function parseHeadquarters(raw: string | null | undefined): ParsedHeadqua
   let city = '';
   let stateCode: string | undefined;
 
-  // "City, ST" or "City, ST 12345" or "123 Main St, City, ST"
-  const commaParts = text.split(',').map((p) => p.trim()).filter(Boolean);
+  // "City, ST", "City, ST 12345", "City, ST 12345-6789", or "City, ST, 12345".
+  // A trailing bare ZIP is not a state. Drop it and read the state from the
+  // previous part. Unknown or missing pieces stay unknown — never guess a state.
+  let commaParts = text.split(',').map((p) => p.trim()).filter(Boolean);
+  if (commaParts.length >= 2 && /^\d{5}(?:-\d{4})?$/.test(commaParts[commaParts.length - 1]!)) {
+    commaParts = commaParts.slice(0, -1);
+  }
   if (commaParts.length >= 2) {
     const last = commaParts[commaParts.length - 1]!;
     const stateMatch = last.match(/^([A-Za-z]{2})(?:\s+\d{5}(?:-\d{4})?)?$/);
@@ -67,6 +72,16 @@ export function parseHeadquarters(raw: string | null | undefined): ParsedHeadqua
         city = trailing[1]!.trim();
         stateCode = code;
       }
+    }
+  }
+
+  if (!city && !stateCode && commaParts.length > 0) {
+    const last = commaParts[commaParts.length - 1]!;
+    const unknownStateToken = /^[A-Za-z]{2}$/.test(last) && !US_STATE_CODES.has(last.toUpperCase());
+    if (commaParts.length === 1) {
+      city = commaParts[0]!;
+    } else if (unknownStateToken) {
+      city = commaParts[commaParts.length - 2]!;
     }
   }
 

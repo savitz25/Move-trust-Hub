@@ -159,6 +159,35 @@ export function countExplicitCountyMovers(stateSlug: string, countySlug: string)
   return getExplicitAssignmentMovers(stateSlug, countySlug).length;
 }
 
+let seedCountyIndex: Map<string, Map<string, string[]>> | null = null;
+
+function ensureSeedCountyIndex(): Map<string, Map<string, string[]>> {
+  if (seedCountyIndex) return seedCountyIndex;
+  const index = new Map<string, Map<string, string[]>>();
+  for (const entry of allCountyAssignments) {
+    const seen = new Set<string>();
+    for (const moverId of entry.moverIds) {
+      if (!moverId || seen.has(moverId)) continue;
+      seen.add(moverId);
+      let byState = index.get(moverId);
+      if (!byState) {
+        byState = new Map();
+        index.set(moverId, byState);
+      }
+      const counties = byState.get(entry.stateSlug) ?? [];
+      if (!counties.includes(entry.countySlug)) counties.push(entry.countySlug);
+      byState.set(entry.stateSlug, counties);
+    }
+  }
+  seedCountyIndex = index;
+  return index;
+}
+
+/** Static catalog counties for one mover in one state. Empty when it is not a seed slot. */
+export function seedCountiesForMover(moverId: string, stateSlug: string): readonly string[] {
+  return ensureSeedCountyIndex().get(moverId)?.get(stateSlug) ?? [];
+}
+
 export function hasExplicitCountyAssignment(
   stateSlug: string,
   countySlug: string

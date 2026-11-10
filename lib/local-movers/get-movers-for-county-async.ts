@@ -1,6 +1,9 @@
 import 'server-only';
 
-import { getApprovedMoversForCounty } from '@/lib/local-movers/approved-county-movers';
+import {
+  applyProfilePublication,
+  getApprovedMoversForCounty,
+} from '@/lib/local-movers/approved-county-movers';
 import { getCanaryMoversForCounty } from '@/lib/local-movers/canary-county-movers';
 import {
   getMoversForCounty,
@@ -8,6 +11,7 @@ import {
 } from '@/lib/local-movers/index';
 import { mergeApprovedMovers } from '@/lib/local-movers/merge-approved-movers';
 import { enrichMoversLocations } from '@/lib/local-movers/enrich-mover-location';
+import { filterSeedMoversForCountyCoverage } from '@/lib/local-movers/seed-county-coverage';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
 import { isProductionBuildPhase } from '@/lib/ssg/ssg-params';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
@@ -42,8 +46,14 @@ export async function getMoversForCountyAsync(
   stateSlug: string,
   countySlug: string
 ): Promise<CountyMoversResult | null> {
-  const base = getMoversForCounty(stateSlug, countySlug);
-  if (!base) return null;
+  const raw = getMoversForCounty(stateSlug, countySlug);
+  if (!raw) return null;
+  const base = {
+    ...raw,
+    movers: await applyProfilePublication(
+      filterSeedMoversForCountyCoverage(raw.county, raw.movers)
+    ),
+  };
 
   // Bulk SSG without Supabase: seed catalog only (opt-in via BULK_SSG without FORCE).
   // Runtime / on-demand / revalidate always merges approved movers.

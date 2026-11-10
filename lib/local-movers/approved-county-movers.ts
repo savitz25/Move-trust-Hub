@@ -10,7 +10,17 @@ import {
   isSupabaseAdminConfigured,
   isSupabaseConfigured,
 } from '@/lib/supabase/config';
+import { isCountyAdjacent } from '@/lib/local-movers/county-adjacency';
+import {
+  BLANKET_SELF_SELECTED_COUNTY_THRESHOLD,
+  countyAssignmentCountsAsCoverage,
+  isOwnerSelectedAssignmentSource,
+} from '@/lib/local-movers/county-coverage-evidence';
+import { isPublishableCountyCompany } from '@/lib/local-movers/county-publication';
 import { companyToLocalMover } from '@/lib/local-movers/company-to-local-mover';
+import { parseHeadquarters } from '@/lib/local-movers/parse-headquarters';
+import { resolveCityToCounty } from '@/lib/local-movers/resolve-city-to-county';
+import { localStates } from '@/lib/local-movers/states';
 import type { LocalMover } from '@/lib/local-movers/types';
 import { normalizeSelectedCounties } from '@/lib/suggestions/service-scope';
 import { logger } from '@/lib/logging/logger';
@@ -24,10 +34,10 @@ export { APPROVED_COUNTY_MOVERS_TAG };
 // USDOT registration is read from fmcsa_raw.statusCode. For-hire authority and
 // out-of-service stay on their own columns.
 const COMPANY_MOVER_SELECT_FULL =
-  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, service_scope, entity_type, coverage_counties, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active';
+  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, service_scope, entity_type, coverage_counties, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active, publication_state';
 
 const COMPANY_MOVER_SELECT_CORE =
-  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active';
+  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active, publication_state';
 
 const PAGE_SIZE = 1000;
 const IN_CHUNK = 100;
@@ -75,7 +85,251 @@ type CompanyMoverRow = {
   fmcsa_raw?: unknown;
   out_of_service?: boolean | null;
   authority_active?: boolean | null;
+  publication_state?: string | null;
 };
+
+type CoverageEvidence = {
+  serviceArea: Set<string>;
+  discovery: Set<string>;
+  stateEvidence: Set<string>;
+  ownerCounts: Map<string, number>;
+};
+
+function evidenceKey(companyKey: string, stateSlug: string, countySlug?: string): string {
+  return countySlug ? `${companyKey}|${stateSlug}|${countySlug}` : `${companyKey}|${stateSlug}`;
+}
+
+function slugifyPlace(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/-county$/, '');
+}
+
+function headquartersPlacement(headquarters: string | null | undefined): {
+  known: boolean;
+  stateSlug: string | null;
+  countySlug: string | null;
+} {
+  const parsed = parseHeadquarters(headquarters);
+  if (!parsed.stateCode || !parsed.city) return { known: false, stateSlug: null, countySlug: null };
+  const stateSlug = localStates.find((state) => state.code === parsed.stateCode)?.slug ?? null;
+  if (!stateSlug) return { known: false, stateSlug: null, countySlug: null };
+  const county = resolveCityToCounty({
+    city: parsed.city,
+    stateCode: parsed.stateCode,
+    stateSlug,
+  });
+  if (!county) return { known: false, stateSlug, countySlug: null };
+  return { known: true, stateSlug: county.stateSlug, countySlug: county.countySlug };
+}
+
+function companyKeys(company: CompanyMoverRow): string[] {
+  return [...new Set([company.id, company.slug].filter(Boolean))] as string[];
+}
+
+function ownerSelectedCount(
+  evidence: CoverageEvidence,
+  company: CompanyMoverRow,
+  stateSlug: string
+): number {
+  let count = 0;
+  for (const key of companyKeys(company)) {
+    count = Math.max(count, evidence.ownerCounts.get(evidenceKey(key, stateSlug)) ?? 0);
+  }
+  return count;
+}
+
+function hasStateEvidence(
+  evidence: CoverageEvidence,
+  company: CompanyMoverRow,
+  stateSlug: string
+): boolean {
+  return companyKeys(company).some((key) => evidence.stateEvidence.has(evidenceKey(key, stateSlug)));
+}
+
+/** Publication plus coverage. Used everywhere a county mover row is accepted. */
+function countyCompanyCounts(
+  company: CompanyMoverRow,
+  source: string | null | undefined,
+  stateSlug: string,
+  countySlug: string,
+  evidence: CoverageEvidence
+): boolean {
+  if (!isPublishableCountyCompany(company.publication_state)) return false;
+  const hq = headquartersPlacement(company.headquarters);
+  const sameState = Boolean(hq.known && hq.stateSlug === stateSlug && hq.countySlug);
+  return countyAssignmentCountsAsCoverage({
+    source,
+    ownerSelectedCountyCountInState: ownerSelectedCount(evidence, company, stateSlug),
+    headquartersKnown: Boolean(hq.known),
+    headquartersCounty: Boolean(sameState && hq.countySlug === countySlug),
+    adjacentToHeadquarters: Boolean(
+      sameState && hq.countySlug && isCountyAdjacent(stateSlug, hq.countySlug, countySlug)
+    ),
+    serviceAreaForCounty: hasMarkedCounty(evidence.serviceArea, company, stateSlug, countySlug),
+    discoveryForCounty: hasMarkedCounty(evidence.discovery, company, stateSlug, countySlug),
+    stateLevelEvidence: hasStateEvidence(evidence, company, stateSlug),
+  }).counts;
+}
+
+function addOwnerCounty(
+  counts: Map<string, Set<string>>,
+  companyKey: string,
+  stateSlug: string,
+  countySlug: string
+) {
+  if (!companyKey || !stateSlug || !countySlug) return;
+  const key = evidenceKey(companyKey, stateSlug);
+  const set = counts.get(key) ?? new Set<string>();
+  set.add(countySlug);
+  counts.set(key, set);
+}
+
+function emptyEvidence(): CoverageEvidence {
+  return {
+    serviceArea: new Set(),
+    discovery: new Set(),
+    stateEvidence: new Set(),
+    ownerCounts: new Map(),
+  };
+}
+
+type LooseRow = Record<string, unknown>;
+
+async function selectEvidenceRows(
+  client: SupabaseClient<Database>,
+  table: string,
+  columns: string,
+  companyIds: string[]
+): Promise<LooseRow[]> {
+  const rows: LooseRow[] = [];
+  const loose = client as unknown as {
+    from: (name: string) => {
+      select: (cols: string) => {
+        in: (
+          column: string,
+          values: string[]
+        ) => Promise<{ data: LooseRow[] | null; error: { message: string } | null }>;
+      };
+    };
+  };
+  for (let i = 0; i < companyIds.length; i += IN_CHUNK) {
+    const chunk = companyIds.slice(i, i + IN_CHUNK);
+    const { data, error } = await loose.from(table).select(columns).in('company_id', chunk);
+    if (error) {
+      logger.warn('approved_movers.evidence_unavailable', { table, message: error.message });
+      return rows;
+    }
+    rows.push(...(data ?? []));
+  }
+  return rows;
+}
+
+function markCompanyCounty(
+  set: Set<string>,
+  companyId: string,
+  stateSlug: string,
+  countySlug: string
+) {
+  set.add(evidenceKey(companyId, stateSlug, countySlug));
+}
+
+function stateSlugFromCode(code: string): string | null {
+  return localStates.find((state) => state.code === code.trim().toUpperCase())?.slug ?? null;
+}
+
+async function loadExternalEvidence(
+  client: SupabaseClient<Database>,
+  companyIds: string[]
+): Promise<Pick<CoverageEvidence, 'serviceArea' | 'discovery' | 'stateEvidence'>> {
+  const serviceArea = new Set<string>();
+  const discovery = new Set<string>();
+  const stateEvidence = new Set<string>();
+  if (!companyIds.length) return { serviceArea, discovery, stateEvidence };
+
+  const [areas, discoveries, authorities] = await Promise.all([
+    selectEvidenceRows(client, 'provider_service_area', 'company_id, level, value', companyIds),
+    selectEvidenceRows(
+      client,
+      'provider_local_discovery_evidence',
+      'company_id, state_code, county_name, basis, verification_state',
+      companyIds
+    ),
+    selectEvidenceRows(
+      client,
+      'provider_state_authority',
+      'company_id, state_code, status, verification_state',
+      companyIds
+    ),
+  ]);
+
+  for (const row of areas) {
+    const companyId = String(row.company_id ?? '');
+    const level = String(row.level ?? '').toLowerCase();
+    const value = String(row.value ?? '');
+    if (!companyId || !value) continue;
+    if (level === 'state') {
+      const stateSlug = stateSlugFromCode(value) ?? (value.includes('-') ? value.toLowerCase() : null);
+      const fromName = localStates.find((state) => state.name.toLowerCase() === value.toLowerCase());
+      const slug = stateSlug ?? fromName?.slug ?? null;
+      if (slug) stateEvidence.add(evidenceKey(companyId, slug));
+      continue;
+    }
+    if (level === 'county') {
+      const countySlug = slugifyPlace(value);
+      // State is not on the row. Match later by county slug within the page state
+      // by storing a wildcard state marker and checking both forms in the gate.
+      serviceArea.add(evidenceKey(companyId, '*', countySlug));
+      continue;
+    }
+    if (level === 'city') {
+      const parsed = parseHeadquarters(value);
+      const stateCode = parsed.stateCode ?? value.split(',').pop()?.trim();
+      const city = parsed.city || value.split(',')[0]?.trim();
+      if (!city || !stateCode || stateCode.length !== 2) continue;
+      const county = resolveCityToCounty({ city, stateCode });
+      if (!county) continue;
+      markCompanyCounty(serviceArea, companyId, county.stateSlug, county.countySlug);
+    }
+  }
+
+  for (const row of discoveries) {
+    if (String(row.verification_state ?? '') !== 'VERIFIED') continue;
+    if (String(row.basis ?? '') === 'DERIVED_EXPERIMENTAL') continue;
+    const companyId = String(row.company_id ?? '');
+    const stateSlug = stateSlugFromCode(String(row.state_code ?? ''));
+    const countySlug = slugifyPlace(String(row.county_name ?? ''));
+    if (!companyId || !stateSlug || !countySlug) continue;
+    markCompanyCounty(discovery, companyId, stateSlug, countySlug);
+  }
+
+  for (const row of authorities) {
+    if (String(row.verification_state ?? '').toUpperCase() !== 'VERIFIED') continue;
+    if (String(row.status ?? '').toLowerCase() !== 'active') continue;
+    const companyId = String(row.company_id ?? '');
+    const stateSlug = stateSlugFromCode(String(row.state_code ?? ''));
+    if (!companyId || !stateSlug) continue;
+    stateEvidence.add(evidenceKey(companyId, stateSlug));
+  }
+
+  return { serviceArea, discovery, stateEvidence };
+}
+
+function hasMarkedCounty(
+  set: Set<string>,
+  company: CompanyMoverRow,
+  stateSlug: string,
+  countySlug: string
+): boolean {
+  return companyKeys(company).some(
+    (key) =>
+      set.has(evidenceKey(key, stateSlug, countySlug)) ||
+      set.has(evidenceKey(key, '*', countySlug))
+  );
+}
 
 /** Prefer service-role when available; otherwise public anon (assignments are public-readable). */
 function createPublicOrAdminClient(): SupabaseClient<Database> | null {
@@ -170,8 +424,14 @@ async function loadCompaniesByIds(
     const chunk = companyIds.slice(i, i + IN_CHUNK);
 
     // Prefer full columns (service_scope / coverage). Fall back to core if schema lags.
+    // publication_state is stripped only when that column is the error.
+    // Do not add usdot_status — public.companies has no such column.
     let select = COMPANY_MOVER_SELECT_FULL;
     let byId = await client.from('companies').select(select).in('id', chunk);
+    if (byId.error && /publication_state/i.test(byId.error.message)) {
+      select = select.replace(', publication_state', '');
+      byId = await client.from('companies').select(select).in('id', chunk);
+    }
     if (
       byId.error &&
       (byId.error.code === 'PGRST204' ||
@@ -180,6 +440,10 @@ async function loadCompaniesByIds(
     ) {
       select = COMPANY_MOVER_SELECT_CORE;
       byId = await client.from('companies').select(select).in('id', chunk);
+      if (byId.error && /publication_state/i.test(byId.error.message)) {
+        select = select.replace(', publication_state', '');
+        byId = await client.from('companies').select(select).in('id', chunk);
+      }
     }
 
     const bySlug = await client.from('companies').select(select).in('slug', chunk);
@@ -192,8 +456,8 @@ async function loadCompaniesByIds(
       continue;
     }
 
-    for (const row of (byId.data ?? []) as CompanyMoverRow[]) indexCompany(row);
-    for (const row of (bySlug.data ?? []) as CompanyMoverRow[]) indexCompany(row);
+    for (const row of (byId.data ?? []) as unknown as CompanyMoverRow[]) indexCompany(row);
+    for (const row of (bySlug.data ?? []) as unknown as CompanyMoverRow[]) indexCompany(row);
 
     for (const key of chunk) {
       if (companiesById.has(key)) continue;
@@ -202,16 +466,94 @@ async function loadCompaniesByIds(
         .select(select)
         .or(`id.eq.${key},slug.eq.${key}`)
         .maybeSingle();
-      if (data) indexCompany(data as CompanyMoverRow);
+      if (data) indexCompany(data as unknown as CompanyMoverRow);
     }
   }
 
   return companiesById;
 }
 
+async function pageAssignmentRows(
+  client: SupabaseClient<Database>,
+  stateSlug: string,
+  column: 'company_id' | 'company_slug',
+  ids: string[]
+): Promise<{ rows: AssignmentRow[]; failed: boolean }> {
+  const rows: AssignmentRow[] = [];
+  for (let i = 0; i < ids.length; i += IN_CHUNK) {
+    const chunk = ids.slice(i, i + IN_CHUNK);
+    for (let from = 0; ; from += PAGE_SIZE) {
+      const { data, error } = await client
+        .from('company_destination_assignments')
+        .select('company_id, company_slug, county_slug, source')
+        .eq('state_slug', stateSlug)
+        .in(column, chunk)
+        .range(from, from + PAGE_SIZE - 1);
+      if (error) return { rows, failed: true };
+      const page = (data ?? []) as AssignmentRow[];
+      rows.push(...page);
+      if (page.length < PAGE_SIZE) break;
+    }
+  }
+  return { rows, failed: false };
+}
+
+function countsFromSets(sets: Map<string, Set<string>>): Map<string, number> {
+  const counts = new Map<string, number>();
+  for (const [key, counties] of sets) counts.set(key, counties.size);
+  return counts;
+}
+
+function addCoverageJsonCounties(
+  sets: Map<string, Set<string>>,
+  companies: Iterable<CompanyMoverRow>,
+  stateSlug?: string
+) {
+  const seen = new Set<string>();
+  for (const company of companies) {
+    if (seen.has(company.id)) continue;
+    seen.add(company.id);
+    for (const county of normalizeSelectedCounties(company.coverage_counties)) {
+      if (stateSlug && county.stateSlug !== stateSlug) continue;
+      addOwnerCounty(sets, company.id, county.stateSlug, county.countySlug);
+      if (company.slug) addOwnerCounty(sets, company.slug, county.stateSlug, county.countySlug);
+    }
+  }
+}
+
+async function evidenceForCounty(
+  client: SupabaseClient<Database>,
+  stateSlug: string,
+  companyIds: string[],
+  companiesById: Map<string, CompanyMoverRow>
+): Promise<CoverageEvidence> {
+  const external = await loadExternalEvidence(client, companyIds);
+  const sets = new Map<string, Set<string>>();
+  const byId = await pageAssignmentRows(client, stateSlug, 'company_id', companyIds);
+  const bySlug = await pageAssignmentRows(client, stateSlug, 'company_slug', companyIds);
+  if (byId.failed || bySlug.failed) {
+    logger.warn('approved_movers.owner_count_failed', { stateSlug });
+    for (const id of companyIds) {
+      addOwnerCounty(sets, id, stateSlug, 'blanket-fail-closed');
+      for (let n = 1; n < BLANKET_SELF_SELECTED_COUNTY_THRESHOLD; n += 1) {
+        addOwnerCounty(sets, id, stateSlug, `blanket-fail-closed-${n}`);
+      }
+    }
+  } else {
+    for (const row of [...byId.rows, ...bySlug.rows]) {
+      if (!isOwnerSelectedAssignmentSource(row.source)) continue;
+      if (row.company_id) addOwnerCounty(sets, row.company_id, stateSlug, row.county_slug);
+      if (row.company_slug) addOwnerCounty(sets, row.company_slug, stateSlug, row.county_slug);
+    }
+  }
+  addCoverageJsonCounties(sets, companiesById.values(), stateSlug);
+  return { ...external, ownerCounts: countsFromSets(sets) };
+}
+
 function moversFromAssignments(
   assignments: AssignmentRow[],
   companiesById: Map<string, CompanyMoverRow>,
+  evidence: CoverageEvidence,
   extraLocalKeys?: Set<string>
 ): LocalMover[] {
   const localKeys = new Set<string>(extraLocalKeys);
@@ -233,6 +575,10 @@ function moversFromAssignments(
       companiesById.get(row.company_slug) ||
       companiesById.get(key);
     if (!company) continue;
+    // Publication gate: moversFromAssignments.
+    if (!countyCompanyCounts(company, row.source, row.state_slug, row.county_slug, evidence)) {
+      continue;
+    }
 
     const isIntrastate =
       company.service_scope === 'intrastate' ||
@@ -319,7 +665,8 @@ async function loadApprovedMoversForSingleCounty(
     if (link.company.slug) companiesById.set(link.company.slug, link.company);
   }
 
-  const movers = moversFromAssignments(assignments, companiesById);
+  const evidence = await evidenceForCounty(client, stateSlug, companyIds, companiesById);
+  const movers = moversFromAssignments(assignments, companiesById, evidence);
   logger.info('approved_movers.county_loaded', {
     stateSlug,
     countySlug,
@@ -355,8 +702,10 @@ async function loadIntrastateCoverageForCounty(
     return out;
   }
 
-  for (const company of (withScope.data ?? []) as CompanyMoverRow[]) {
+  for (const company of (withScope.data ?? []) as unknown as CompanyMoverRow[]) {
     const named = withPublicDisplayName(company);
+    // Publication gate: loadIntrastateCoverageForCounty.
+    if (!isPublishableCountyCompany(named.publication_state)) continue;
     const counties = normalizeSelectedCounties(named.coverage_counties);
     if (counties.some((c) => c.stateSlug === stateSlug && c.countySlug === countySlug)) {
       out.push({ company: named });
@@ -449,12 +798,14 @@ async function loadIntrastateCoverageCounties(
       return out;
     }
 
-    const rows = (withScope.data ?? []) as CompanyMoverRow[];
+    const rows = (withScope.data ?? []) as unknown as CompanyMoverRow[];
     if (!rows.length) break;
 
     for (const company of rows) {
       // Prefer verified, but still surface assigned locals (is_verified may lag).
       const named = withPublicDisplayName(company);
+      // Publication gate: loadIntrastateCoverageCounties.
+      if (!isPublishableCountyCompany(named.publication_state)) continue;
       const counties = normalizeSelectedCounties(named.coverage_counties);
       for (const c of counties) {
         out.push({
@@ -529,6 +880,24 @@ async function loadAllApprovedMoversByCounty(
     ];
     const companiesById = await loadCompaniesByIds(client, companyIds);
 
+    const sourceByPlacement = new Map<string, string | null>();
+    function notePlacement(
+      stateSlug: string,
+      countySlug: string,
+      companyKey: string,
+      source: string | null | undefined
+    ) {
+      if (!companyKey) return;
+      const key = `${countyKey(stateSlug, countySlug)}::${companyKey}`;
+      const prev = sourceByPlacement.get(key);
+      if (
+        prev === undefined ||
+        (isOwnerSelectedAssignmentSource(prev) && !isOwnerSelectedAssignmentSource(source))
+      ) {
+        sourceByPlacement.set(key, source ?? null);
+      }
+    }
+
     // Track which company keys are true locals via assignment source
     const localKeys = new Set<string>();
     for (const row of assignments) {
@@ -557,11 +926,36 @@ async function loadAllApprovedMoversByCounty(
     }
 
     for (const row of assignments) {
-      pushCountyCompany(row.state_slug, row.county_slug, row.company_id || row.company_slug);
+      const companyKey = row.company_id || row.company_slug;
+      pushCountyCompany(row.state_slug, row.county_slug, companyKey);
+      if (row.company_id) notePlacement(row.state_slug, row.county_slug, row.company_id, row.source);
+      if (row.company_slug) notePlacement(row.state_slug, row.county_slug, row.company_slug, row.source);
     }
     for (const link of coverageLinks) {
       pushCountyCompany(link.stateSlug, link.countySlug, link.company.id);
+      notePlacement(link.stateSlug, link.countySlug, link.company.id, 'local_intrastate');
+      if (link.company.slug) {
+        notePlacement(link.stateSlug, link.countySlug, link.company.slug, 'local_intrastate');
+      }
     }
+
+    const ownerSets = new Map<string, Set<string>>();
+    for (const row of assignments) {
+      if (!isOwnerSelectedAssignmentSource(row.source)) continue;
+      if (row.company_id) addOwnerCounty(ownerSets, row.company_id, row.state_slug, row.county_slug);
+      if (row.company_slug) addOwnerCounty(ownerSets, row.company_slug, row.state_slug, row.county_slug);
+    }
+    for (const link of coverageLinks) {
+      addOwnerCounty(ownerSets, link.company.id, link.stateSlug, link.countySlug);
+      if (link.company.slug) addOwnerCounty(ownerSets, link.company.slug, link.stateSlug, link.countySlug);
+    }
+    addCoverageJsonCounties(ownerSets, companiesById.values());
+    const evidenceIds = [...new Set([...companiesById.values()].map((company) => company.id))];
+    const external = await loadExternalEvidence(client, evidenceIds);
+    const evidence: CoverageEvidence = {
+      ...external,
+      ownerCounts: countsFromSets(ownerSets),
+    };
 
     const byCounty: Record<string, LocalMover[]> = {};
 
@@ -573,6 +967,16 @@ async function loadAllApprovedMoversByCounty(
         seen.add(id);
         const company = companiesById.get(id);
         if (!company) continue;
+
+        const [stateSlug, countySlug] = key.split('::');
+        const source =
+          sourceByPlacement.get(`${key}::${id}`) ??
+          sourceByPlacement.get(`${key}::${company.id}`) ??
+          (company.slug ? sourceByPlacement.get(`${key}::${company.slug}`) : undefined);
+        // Publication and coverage gate: loadAllApprovedMoversByCounty.
+        if (!stateSlug || !countySlug || !countyCompanyCounts(company, source, stateSlug, countySlug, evidence)) {
+          continue;
+        }
 
         // Never drop assigned locals. Only skip unverified *interstate* shells.
         const isIntrastate =
@@ -616,10 +1020,52 @@ async function loadAllApprovedMoversByCounty(
 
 const getAllApprovedMoversByCountyCached = unstable_cache(
   fetchAllApprovedMoversByCounty,
-  // v9: USDOT label is fmcsa_raw.statusCode, not authority_active
-  ['approved-county-movers-all-v9-census-status'],
+  // v10: publication gate and county-coverage evidence
+  ['approved-county-movers-all-v10-publication-coverage'],
   { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
 );
+
+export async function getCachedApprovedMoversByCounty(): Promise<Record<string, LocalMover[]>> {
+  return getAllApprovedMoversByCountyCached();
+}
+
+/** Drop seed cards whose profile would 404, and mark confirmed public profiles. */
+export async function applyProfilePublication(
+  movers: LocalMover[]
+): Promise<LocalMover[]> {
+  const slugs = [
+    ...new Set(movers.map((mover) => mover.profileSlug?.trim()).filter(Boolean) as string[]),
+  ];
+  if (!slugs.length) return movers;
+  const client = createPublicOrAdminClient();
+  if (!client) return movers;
+
+  const publication = new Map<string, string | null>();
+  for (let i = 0; i < slugs.length; i += IN_CHUNK) {
+    const chunk = slugs.slice(i, i + IN_CHUNK);
+    const { data, error } = await client
+      .from('companies')
+      .select('slug, publication_state')
+      .in('slug', chunk);
+    if (error) {
+      logger.warn('approved_movers.profile_publication_unavailable', { message: error.message });
+      continue;
+    }
+    for (const row of data ?? []) {
+      const slug = String((row as { slug?: string }).slug ?? '');
+      const state = (row as { publication_state?: string | null }).publication_state ?? null;
+      if (slug) publication.set(slug, state);
+    }
+  }
+
+  return movers.flatMap((mover) => {
+    if (mover.listingSource === 'directory') return [mover];
+    const slug = mover.profileSlug?.trim();
+    if (!slug || !publication.has(slug)) return [{ ...mover, profilePublished: false }];
+    if (!isPublishableCountyCompany(publication.get(slug))) return [];
+    return [{ ...mover, profilePublished: true }];
+  });
+}
 
 /**
  * Per-county cache — primary path for county pages and state hub badges.
@@ -628,8 +1074,8 @@ const getAllApprovedMoversByCountyCached = unstable_cache(
 function getApprovedMoversForCountyCached(stateSlug: string, countySlug: string) {
   return unstable_cache(
     () => fetchApprovedMoversForCountyUncached(stateSlug, countySlug),
-    // v9 per-county: USDOT label is fmcsa_raw.statusCode, not authority_active
-    ['approved-county-movers-one-v9', stateSlug, countySlug],
+    // v10 per-county: publication gate and county-coverage evidence
+    ['approved-county-movers-one-v10', stateSlug, countySlug],
     { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
   )();
 }

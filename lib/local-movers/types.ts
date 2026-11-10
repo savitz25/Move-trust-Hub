@@ -32,6 +32,8 @@ export type LocalMover = {
   website?: string;
   /** Onboarded directory company (vs seed/catalog). */
   listingSource?: 'directory' | 'catalog';
+  /** Profile slug is a consumer-visible company row. Unset means do not link. */
+  profilePublished?: boolean;
   /** Intrastate / local-only (county pages, not main interstate directory). */
   isLocalOnly?: boolean;
   /** FMCSA entity type when known (for Carrier/Broker badges on county lists). */

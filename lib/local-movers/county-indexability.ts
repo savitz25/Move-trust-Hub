@@ -59,6 +59,17 @@ export function evaluateCountyIndexabilityFromResult(
   });
 
   const qualifyingMovers = countQualifyingCountyMovers(result.county, result.movers);
+  // Fail closed when nothing publishable and evidenced qualifies.
+  // The existing qualifying threshold stays. There is no separate
+  // blanket minimum on how many movers a page must list.
+  if (qualifyingMovers === 0) {
+    return {
+      tier: 'noindex',
+      reason: 'no_qualifying_publishable_movers',
+      seoTier: 3,
+      qualityScore: quality.score,
+    };
+  }
   if (qualifyingMovers < MIN_LOCAL_OR_LICENSED_MOVERS) {
     return {
       tier: 'noindex',

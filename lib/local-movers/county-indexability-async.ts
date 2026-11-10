@@ -2,6 +2,7 @@ import 'server-only';
 
 import { evaluateCountyIndexabilityFromResult } from '@/lib/local-movers/county-indexability';
 import { getMoversForCountyAsync } from '@/lib/local-movers/get-movers-for-county-async';
+import { capCountyIndexDecision } from '@/lib/local-movers/runtime-premium-cap';
 
 /** Authoritative evaluator — matches live county page mover resolution. */
 export async function evaluateCountyIndexabilityAsync(
@@ -9,7 +10,11 @@ export async function evaluateCountyIndexabilityAsync(
   countySlug: string
 ) {
   const result = await getMoversForCountyAsync(stateSlug, countySlug);
-  return evaluateCountyIndexabilityFromResult(stateSlug, countySlug, result);
+  return capCountyIndexDecision(
+    stateSlug,
+    countySlug,
+    evaluateCountyIndexabilityFromResult(stateSlug, countySlug, result)
+  );
 }
 
 export async function shouldIndexCountyAsync(

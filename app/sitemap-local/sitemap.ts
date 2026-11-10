@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next';
 import { latestRowLastModified } from '@/lib/seo/sitemap-lastmod';
 
 import { evaluateCountyIndexabilityFromResult } from '@/lib/local-movers/county-indexability';
+import { applyPremiumCapToDecision } from '@/lib/local-movers/premium-index-cap';
+import { loadPremiumAllowance } from '@/lib/local-movers/runtime-premium-cap';
 import { sitemapPriorityForCountyTier } from '@/lib/local-movers/county-quality-score';
 import { getMoversForCountyAsync } from '@/lib/local-movers/get-movers-for-county-async';
 import { getCountiesForState } from '@/lib/local-movers/geography/index';
@@ -610,10 +612,17 @@ export default async function sitemap({
   id: string;
 }): Promise<MetadataRoute.Sitemap> {
   // Same mover source and evaluator as resolveCountyPageSeo.
+  // The Premium cap is applied to that decision before a county can enter the sitemap.
+  const premiumAllowance = await loadPremiumAllowance();
   const evaluated = await Promise.all(
     getCountiesForState(id).map(async (county) => {
       const result = await getMoversForCountyAsync(id, county.slug);
-      const decision = evaluateCountyIndexabilityFromResult(id, county.slug, result);
+      const decision = applyPremiumCapToDecision(
+        evaluateCountyIndexabilityFromResult(id, county.slug, result),
+        id,
+        county.slug,
+        premiumAllowance
+      );
       return { county, result, decision };
     })
   );
