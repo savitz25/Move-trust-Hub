@@ -16,7 +16,7 @@ import { getCountyResearch, hasCountyResearch } from '@/lib/local-movers/county-
 import { getCountyPopularRoutes } from '@/lib/local-movers/county-popular-routes';
 import { FOUNDER_PREMIUM_TO_STANDARD } from '@/lib/local-movers/founder-premium-demotions';
 import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
-import { countExplicitCountyMovers } from '@/lib/local-movers/index';
+import { hasCountyServiceEvidence } from '@/lib/local-movers/county-evidence';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 import { assessLicense } from '@/lib/trust/license-verification';
@@ -74,7 +74,7 @@ export const COUNTY_QUALITY_THRESHOLDS = {
   /** Standard — meaningful unique value */
   tier2MinScore: 48,
   /** Explicit assignment floor for any indexable tier */
-  minExplicitMovers: 3,
+  minExplicitMovers: 1,
   /** Prefer some true-local signal for Premium (not required if deep flagship) */
   tier1PreferLocalMin: 1,
 } as const;
@@ -113,7 +113,9 @@ export function scoreCountyQuality(params: {
   isRegionalFallback: boolean;
 }): CountyQualityAssessment {
   const { stateSlug, countySlug, county, movers, isRegionalFallback } = params;
-  const explicit = countExplicitCountyMovers(stateSlug, countySlug);
+  // Only the businesses that actually reached this page with county evidence
+  // count as inventory. Static blanket selections are not a quality signal.
+  const explicit = county ? movers.filter((mover) => hasCountyServiceEvidence(mover, county)).length : 0;
   const research = getCountyResearch(stateSlug, countySlug);
   const hasResearch = hasCountyResearch(stateSlug, countySlug);
   const cited = hasCitedCountyResearchContent(research);

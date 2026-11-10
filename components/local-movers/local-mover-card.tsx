@@ -38,16 +38,20 @@ export function LocalMoverCard({
   const hasDirectoryProfile =
     Boolean(mover.profileSlug) ||
     assessLicense(mover.usdotNumber, mover.mcNumber).isDisplayable;
-  const profileSlug =
-    mover.profileSlug ||
-    (hasDirectoryProfile
-      ? predictCompanyProfileSlug({ name: mover.name, usdot: mover.usdotNumber })
-      : '');
+  const profileSlug = mover.profileLinkAllowed === false
+    ? ''
+    : mover.profileSlug ||
+      (hasDirectoryProfile
+        ? predictCompanyProfileSlug({ name: mover.name, usdot: mover.usdotNumber })
+        : '');
   const profileHref = profileSlug
     ? buildCompanyProfileHref(profileSlug, profileReturnPath)
     : null;
 
-  const license = getLicenseDisplay(mover);
+  const license = getLicenseDisplay({
+    usdotNumber: mover.usdotNumber ?? '',
+    mcNumber: mover.mcNumber ?? '',
+  });
   const hqState = mover.headquartersState?.toUpperCase();
   // Never stamp the page county's state onto an out-of-state HQ city.
   const locationLine = [

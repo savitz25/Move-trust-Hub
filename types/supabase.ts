@@ -33,6 +33,7 @@ export type Database = {
           phone: string | null;
           email: string | null;
           service_scope: string;
+          entity_type: string | null;
           coverage_counties: Json;
           usdot_number: string | null;
           mc_number: string | null;
@@ -52,6 +53,8 @@ export type Database = {
           specialties: Json;
           rating_breakdown: Json | null;
           is_verified: boolean;
+          publication_state: string | null;
+          indexable: boolean | null;
           last_updated: string;
           fmcsa_last_checked: string | null;
           authority_active: boolean | null;

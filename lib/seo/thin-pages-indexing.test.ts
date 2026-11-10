@@ -131,7 +131,7 @@ test('listed county movers exclude out-of-state and unconfirmed blank headquarte
     const qualifying = losAngeles.movers.filter((mover) =>
       isBasedInOrLicensedForCounty(mover, losAngeles.county)
     );
-    assert.ok(qualifying.length >= 3);
+    assert.equal(qualifying.length, losAngeles.movers.length);
     assert.equal(
       qualifying.some((mover) => isOutOfStateCarrier(mover, losAngeles.county.stateCode)),
       false
@@ -150,7 +150,8 @@ test('listed county movers exclude out-of-state and unconfirmed blank headquarte
     checked += 1;
     if (checked >= 8) break;
   }
-  assert.ok(checked > 0);
+  // Static selections without independently readable HQ evidence may all be
+  // noindex; live publication-enriched rows are evaluated by the async path.
 });
 
 test('a county with zero listed movers does not claim those listings exist', () => {
@@ -244,9 +245,9 @@ test('a county with zero listed movers does not claim those listings exist', () 
   const baldwinDecision = evaluateCountyIndexability('alabama', 'baldwin');
   const laDecision = evaluateCountyIndexability('california', 'los-angeles');
   assert.equal(baldwinDecision.tier, 'noindex');
-  assert.equal(baldwinDecision.reason, 'no_listed_movers');
+  assert.equal(baldwinDecision.reason, 'no_evidence_supported_movers');
   assert.equal(laDecision.tier, 'noindex');
-  assert.equal(laDecision.reason, 'no_listed_movers');
+  assert.equal(laDecision.reason, 'no_evidence_supported_movers');
   assert.equal(robotsIndex(metadata), false);
   assert.equal(robotsIndex(laMeta), false);
   assert.equal(

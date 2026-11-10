@@ -13,6 +13,10 @@ export type LocalMover = {
   id: string;
   name: string;
   profileSlug?: string;
+  /** False prevents guessed links when live publication cannot be established. */
+  profileLinkAllowed?: boolean;
+  /** Set only by a separately verified, exact home-county publication source. */
+  countyEvidence?: 'verified_home_county';
   rating: number;
   reviewCount: number;
   shortDescription: string;
