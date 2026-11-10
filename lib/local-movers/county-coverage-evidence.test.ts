@@ -57,8 +57,8 @@ test('owner selections count only with headquarters, adjacency, or stronger evid
         adjacentToHeadquarters: false,
         stateLevelEvidence: true,
       })
-    ).counts,
-    true
+    ).reason,
+    'not_adjacent_to_headquarters'
   );
 
   const blanket = owner({

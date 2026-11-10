@@ -37,6 +37,18 @@ export function withCompanyHeadquarters(
   });
 }
 
+/** Same seed list the county page shows: company headquarters, then coverage. */
+export function pageSeedMovers(
+  county: LocalCounty,
+  movers: LocalMover[],
+  headquartersBySlug: Map<string, string | null>
+): LocalMover[] {
+  return filterSeedMoversForCountyCoverage(
+    county,
+    withCompanyHeadquarters(movers, headquartersBySlug)
+  );
+}
+
 export function filterSeedMoversForCountyCoverage(
   county: LocalCounty,
   movers: LocalMover[]

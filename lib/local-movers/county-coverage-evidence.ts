@@ -93,9 +93,9 @@ export function countyAssignmentCountsAsCoverage(
 
   if (blanket) return { counts: false, reason: 'blanket_owner_selection' };
 
-  if (knownNonAdjacent && facts.stateLevelEvidence) {
-    return { counts: true, reason: 'state_level_evidence' };
-  }
+  // Verified state operating authority is statewide. It is not proof that
+  // the company serves this county, including a county that is not adjacent
+  // to headquarters.
   if (knownNonAdjacent) return { counts: false, reason: 'not_adjacent_to_headquarters' };
 
   if (facts.adjacentToHeadquarters) {
@@ -107,7 +107,6 @@ export function countyAssignmentCountsAsCoverage(
     }
     return { counts: true, reason: 'in_state_headquarters_unresolved' };
   }
-  if (facts.stateLevelEvidence) return { counts: true, reason: 'state_level_evidence' };
   return { counts: false, reason: 'unsupported_owner_selection' };
 }
 

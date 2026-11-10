@@ -79,3 +79,23 @@ export function applyPremiumCapToDecision(
     reason: 'premium_cap_noindex',
   };
 }
+
+/**
+ * Used when the Premium allowance cannot be counted.
+ * Every Premium county is treated as past the cap. The page and the sitemap
+ * both call this, so an allowance error cannot leave one surface indexed
+ * and the other removed.
+ */
+export function closedPremiumCapDecision(
+  decision: CountyIndexDecision,
+  stateSlug: string,
+  countySlug: string
+): CountyIndexDecision {
+  return applyPremiumCapToDecision(
+    decision,
+    stateSlug,
+    countySlug,
+    new Set(),
+    PREMIUM_INDEX_CAP + 1
+  );
+}

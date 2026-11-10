@@ -3,6 +3,7 @@ import test from 'node:test';
 import { evaluateCountyIndexabilityFromResult } from '@/lib/local-movers/county-indexability';
 import {
   applyPremiumCapToDecision,
+  closedPremiumCapDecision,
   PREMIUM_INDEX_CAP,
   premiumAllowanceKeys,
   rankPremiumCandidates,
@@ -69,6 +70,28 @@ test('premium cap keeps 400 by score then slug and leaves standard uncapped', ()
   assert.equal(underCap.reason, 'premium_deep_research');
   assert.equal(belowStandard.tier, 'noindex');
   assert.equal(belowStandard.reason, 'premium_cap_noindex');
+
+  const closed = closedPremiumCapDecision(
+    { tier: 'index', seoTier: 1, qualityScore: 90, reason: 'premium_deep_research' },
+    'florida',
+    'collier'
+  );
+  assert.equal(closed.reason, 'premium_cap_fallback_standard');
+  assert.equal(closed.seoTier, 2);
+  const closedLow = closedPremiumCapDecision(
+    { tier: 'index', seoTier: 1, qualityScore: 10, reason: 'premium_deep_research' },
+    'florida',
+    'collier'
+  );
+  assert.equal(closedLow.tier, 'noindex');
+  assert.equal(closedLow.reason, 'premium_cap_noindex');
+  const closedStandard = closedPremiumCapDecision(
+    { tier: 'index', seoTier: 2, qualityScore: 50, reason: 'standard_quality_bar' },
+    'florida',
+    'collier'
+  );
+  assert.equal(closedStandard.seoTier, 2);
+  assert.equal(closedStandard.reason, 'standard_quality_bar');
 
   const standard = applyPremiumCapToDecision(
     { tier: 'index', seoTier: 2, qualityScore: 50, reason: 'standard_quality_bar' },

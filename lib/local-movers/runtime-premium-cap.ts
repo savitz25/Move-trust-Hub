@@ -12,17 +12,15 @@ import {
   type CountyIndexDecision,
 } from '@/lib/local-movers/county-indexability';
 import { getAllCountyParams } from '@/lib/local-movers/geography/index';
+import { assembleShownCountyMovers } from '@/lib/local-movers/county-listing';
 import { getMoversForCounty } from '@/lib/local-movers/index';
-import { mergeApprovedMovers } from '@/lib/local-movers/merge-approved-movers';
 import {
   applyPremiumCapToDecision,
+  closedPremiumCapDecision,
   premiumAllowanceKeys,
   type PremiumCapRow,
 } from '@/lib/local-movers/premium-index-cap';
-import {
-  filterSeedMoversForCountyCoverage,
-  withCompanyHeadquarters,
-} from '@/lib/local-movers/seed-county-coverage';
+import { pageSeedMovers } from '@/lib/local-movers/seed-county-coverage';
 import type { LocalMover } from '@/lib/local-movers/types';
 import { logger } from '@/lib/logging/logger';
 
@@ -59,7 +57,7 @@ async function computePremiumAllowance(): Promise<{ keys: string[]; premiumCount
   const profileSlugs: string[] = [];
   for (const entry of bases) {
     if (!entry.base) continue;
-    for (const mover of filterSeedMoversForCountyCoverage(entry.base.county, entry.base.movers)) {
+    for (const mover of entry.base.movers) {
       const slug = mover.profileSlug?.trim();
       if (slug) profileSlugs.push(slug);
     }
@@ -73,10 +71,7 @@ async function computePremiumAllowance(): Promise<{ keys: string[]; premiumCount
   for (const { stateSlug, countySlug, base } of bases) {
     if (!base) continue;
     const seeded = applyProfilePublicationMap(
-      filterSeedMoversForCountyCoverage(
-        base.county,
-        withCompanyHeadquarters(base.movers, headquartersBySlug)
-      ),
+      pageSeedMovers(base.county, base.movers, headquartersBySlug),
       profileFacts
     );
     const directory = approved[`${stateSlug}::${countySlug}`] ?? [];
@@ -92,14 +87,11 @@ async function computePremiumAllowance(): Promise<{ keys: string[]; premiumCount
         });
       }
     }
-    const directoryLocals = mergeApprovedMovers(directory, canary, 80);
-    const movers = directoryLocals.length
-      ? mergeApprovedMovers(seeded, directoryLocals, Math.max(80, seeded.length + directoryLocals.length))
-      : seeded;
+    const shown = assembleShownCountyMovers(base.county, seeded, directory, canary);
     const decision = evaluateCountyIndexabilityFromResult(stateSlug, countySlug, {
       county: base.county,
-      movers,
-      isRegionalFallback: base.isRegionalFallback && directoryLocals.length === 0,
+      movers: shown.movers,
+      isRegionalFallback: base.isRegionalFallback && shown.directoryCount === 0,
     });
     rows.push({
       stateSlug,
@@ -151,8 +143,7 @@ export async function capCountyIndexDecision(
       countySlug,
       message: err instanceof Error ? err.message : String(err),
     });
-    // Do not demote when the cap cannot be counted. It only applies above 400.
-    return decision;
+    return closedPremiumCapDecision(decision, stateSlug, countySlug);
   }
 }
 

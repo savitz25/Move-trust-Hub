@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { parseHeadquarters } from '@/lib/local-movers/parse-headquarters';
+import { parseHeadquarters, zipAfterStateCode } from '@/lib/local-movers/parse-headquarters';
 
 test('comma-separated ZIP formats keep the state and never invent one', () => {
   const cases: Array<[string, string, string | undefined]> = [
@@ -26,6 +26,22 @@ test('comma-separated ZIP formats keep the state and never invent one', () => {
   // "CITY, ST" is a state only when ST is a real code. ZZ is not.
   assert.equal(parseHeadquarters('CITY, ST, 12345').stateCode, undefined);
   assert.equal(parseHeadquarters('CITY, ZZ 12345').stateCode, undefined);
+});
+
+test('a ZIP counts only immediately after the state code', () => {
+  assert.equal(zipAfterStateCode('10049 HARRISON STE 500, ROMULUS, MI, 48174'), '48174');
+  assert.equal(zipAfterStateCode('18850 MASONIC BLVD, ROSEVILLE, MI, 48066-1296'), '48066');
+  assert.equal(zipAfterStateCode('1220 S Dale Mabry Hwy Ste 205, Tampa, FL 33629'), '33629');
+  assert.equal(zipAfterStateCode('Miami, FL 33101-1234'), '33101');
+  assert.equal(zipAfterStateCode('Miami, FL, 33101'), '33101');
+  assert.equal(zipAfterStateCode('  west palm beach  ,  fl  ,  33413  '), '33413');
+  assert.equal(zipAfterStateCode('11910 Research Blvd, TX'), null);
+  assert.equal(zipAfterStateCode('Suite 10049, Tampa, FL'), null);
+  assert.equal(zipAfterStateCode('Ste 500, Romulus, MI'), null);
+  assert.equal(zipAfterStateCode('Miami, 33101'), null);
+  assert.equal(zipAfterStateCode('CITY, ST, 12345'), null);
+  assert.equal(zipAfterStateCode('10049'), null);
+  assert.equal(zipAfterStateCode(''), null);
 });
 
 test('audit carrier headquarters strings parse to the right state', () => {

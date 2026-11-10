@@ -1,7 +1,19 @@
+import 'server-only';
+
 import zipToCounty from '@/data/zip-to-county.json';
-import { parseHeadquarters } from '@/lib/local-movers/parse-headquarters';
+import { parseHeadquarters, zipAfterStateCode } from '@/lib/local-movers/parse-headquarters';
 import { resolveCityToCounty } from '@/lib/local-movers/resolve-city-to-county';
 import { localStates } from '@/lib/local-movers/states';
+
+/**
+ * ZIP to county lookup.
+ * Source: Census 2020 ZCTA-county relationship file. The county is the
+ * ZCTA's primary county, the one with the largest land-area overlap.
+ * FIPS codes are mapped through this repo's county list. Territories and
+ * ZCTAs with no county match are omitted. A ZIP is used only after a
+ * parsed state code, and only when that ZIP's county is in the same state.
+ * An unknown state is left unknown.
+ */
 
 const ZIP_TO_COUNTY = zipToCounty as Record<string, string>;
 
@@ -15,11 +27,9 @@ export type HeadquartersCounty = {
 
 const PLACE_SUFFIX = /\s+(township|borough|city|town|village|parish|cdp)$/i;
 
-/** Last 5-digit ZIP in a headquarters string, including ZIP+4. */
+/** ZIP immediately after the state code. Street and suite numbers are ignored. */
 export function zipFromHeadquarters(raw: string | null | undefined): string | null {
-  const matches = String(raw ?? '').match(/\b(\d{5})(?:-\d{4})?\b/g);
-  if (!matches?.length) return null;
-  return matches[matches.length - 1]!.slice(0, 5);
+  return zipAfterStateCode(raw);
 }
 
 function stateSlugFromCode(code: string | undefined): string | null {
@@ -38,9 +48,9 @@ export function resolveHeadquartersCounty(
   const parsed = parseHeadquarters(headquarters);
   const stateSlug = stateSlugFromCode(parsed.stateCode);
   const zip = zipFromHeadquarters(headquarters);
-  if (zip && ZIP_TO_COUNTY[zip]) {
+  if (stateSlug && zip && ZIP_TO_COUNTY[zip]) {
     const [zipState, zipCounty] = ZIP_TO_COUNTY[zip]!.split('/');
-    if (zipState && zipCounty && (!stateSlug || zipState === stateSlug)) {
+    if (zipState && zipCounty && zipState === stateSlug) {
       return {
         stateSlug: zipState,
         countySlug: zipCounty,

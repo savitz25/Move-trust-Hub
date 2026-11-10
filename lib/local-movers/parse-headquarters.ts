@@ -3,12 +3,32 @@ import {
   sanitizeCityLocality,
 } from '@/lib/data-quality/location';
 
+export function isUsStateCode(code: string | null | undefined): boolean {
+  return Boolean(code && US_STATE_CODES.has(code.trim().toUpperCase()));
+}
+
 const US_STATE_CODES = new Set([
   'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA',
   'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ',
   'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT',
   'VA', 'WA', 'WV', 'WI', 'WY', 'DC',
 ]);
+
+/**
+ * A ZIP counts only when it sits immediately after a real state code.
+ * "FL 33413", "FL, 33413", and "MI 48066-1296" count. A street number,
+ * suite number, or bare 5-digit token does not.
+ */
+export function zipAfterStateCode(raw: string | null | undefined): string | null {
+  const text = String(raw ?? '');
+  const pattern = /\b([A-Za-z]{2})\b\s*,?\s*(\d{5})(?:-\d{4})?\b/g;
+  let zip: string | null = null;
+  for (const match of text.matchAll(pattern)) {
+    if (!isUsStateCode(match[1])) continue;
+    zip = match[2]!;
+  }
+  return zip;
+}
 
 export type ParsedHeadquarters = {
   city: string;

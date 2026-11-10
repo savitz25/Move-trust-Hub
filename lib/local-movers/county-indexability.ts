@@ -82,8 +82,8 @@ export function evaluateCountyIndexabilityFromResult(
     };
   }
 
-  // Kept by the 3-mover rule, but the county page lists nobody after the
-  // out-of-state filter. Those pages stay up and stay noindex.
+  // A qualifying mover can still be hidden by the out-of-state list filter.
+  // Those pages stay noindex.
   if (listedCountyMovers(result.movers, result.county).length === 0) {
     return {
       tier: 'noindex',

@@ -16,7 +16,6 @@ import { getCountyResearch, hasCountyResearch } from '@/lib/local-movers/county-
 import { getCountyPopularRoutes } from '@/lib/local-movers/county-popular-routes';
 import { FOUNDER_PREMIUM_TO_STANDARD } from '@/lib/local-movers/founder-premium-demotions';
 import { isPremiumMetroCounty } from '@/lib/local-movers/premium-metro-counties';
-import { countExplicitCountyMovers } from '@/lib/local-movers/index';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 import { assessLicense } from '@/lib/trust/license-verification';
@@ -73,7 +72,11 @@ export const COUNTY_QUALITY_THRESHOLDS = {
   tier1MinScore: 70,
   /** Standard — meaningful unique value */
   tier2MinScore: 48,
-  /** Explicit assignment floor for any indexable tier */
+  /**
+   * Historical catalog-count band. Not an indexability gate.
+   * Inventory points still step at 1, 3, 5, 8, and 12 shown movers.
+   * A county with one shown qualifying mover is not rejected for having fewer than three.
+   */
   minExplicitMovers: 3,
   /** Prefer some true-local signal for Premium (not required if deep flagship) */
   tier1PreferLocalMin: 1,
@@ -113,7 +116,13 @@ export function scoreCountyQuality(params: {
   isRegionalFallback: boolean;
 }): CountyQualityAssessment {
   const { stateSlug, countySlug, county, movers, isRegionalFallback } = params;
-  const explicit = countExplicitCountyMovers(stateSlug, countySlug);
+  // Inventory used to call countExplicitCountyMovers. That counts the raw
+  // catalog assignment list, including hidden, unpublished, and statewide
+  // fill-ins the county page does not show, and then hard-blocked any county
+  // under minExplicitMovers (3) with reason insufficient_explicit_movers.
+  // That was a three-mover gate on the wrong list. Shown movers are the list
+  // passed in. The 1/3/5/8/12 steps are point bands only.
+  const shown = movers.length;
   const research = getCountyResearch(stateSlug, countySlug);
   const hasResearch = hasCountyResearch(stateSlug, countySlug);
   const cited = hasCitedCountyResearchContent(research);
@@ -133,11 +142,11 @@ export function scoreCountyQuality(params: {
 
   // --- Component scores ---
   let inventory = 0;
-  if (explicit >= 12) inventory = 25;
-  else if (explicit >= 8) inventory = 20;
-  else if (explicit >= 5) inventory = 15;
-  else if (explicit >= 3) inventory = 10;
-  else if (explicit >= 1) inventory = 5;
+  if (shown >= 12) inventory = 25;
+  else if (shown >= 8) inventory = 20;
+  else if (shown >= 5) inventory = 15;
+  else if (shown >= 3) inventory = 10;
+  else if (shown >= 1) inventory = 5;
   if (isRegionalFallback) inventory = Math.min(inventory, 4);
   if (share >= 0.6) inventory = clamp(inventory + 3, 25);
   else if (share >= 0.35) inventory = clamp(inventory + 1, 25);
@@ -206,11 +215,9 @@ export function scoreCountyQuality(params: {
   // --- Hard integrity gates (cannot index past these) ---
   let hardBlock: string | null = null;
   if (!county) hardBlock = 'missing_county';
-  else if (explicit === 0) hardBlock = 'no_explicit_assignment';
+  else if (shown === 0) hardBlock = 'no_explicit_assignment';
   else if (isRegionalFallback) hardBlock = 'regional_metro_fallback';
-  else if (explicit < COUNTY_QUALITY_THRESHOLDS.minExplicitMovers) {
-    hardBlock = 'insufficient_explicit_movers';
-  } else if (!hasResearch) hardBlock = 'missing_county_research';
+  else if (!hasResearch) hardBlock = 'missing_county_research';
   else if (batch) hardBlock = 'batch_template_research';
   else if (!cited) hardBlock = 'uncited_research';
 
@@ -268,7 +275,7 @@ export function scoreCountyQuality(params: {
   const demoteRisk =
     indexable &&
     (batch ||
-      explicit < COUNTY_QUALITY_THRESHOLDS.minExplicitMovers + 1 ||
+      (shown > 0 && shown < 4) ||
       (tier === 1 && localN === 0 && !deep));
 
   return {
@@ -281,7 +288,7 @@ export function scoreCountyQuality(params: {
     promoteEligible,
     demoteRisk,
     metadata: {
-      explicitMovers: explicit,
+      explicitMovers: shown,
       listedMovers: listed,
       localMovers: localN,
       regionalMovers: regionalN,
@@ -320,7 +327,7 @@ export function sitemapPriorityForCountyTier(
  */
 export const COUNTY_TIER_MOVEMENT_POLICY = {
   promoteToStandard: [
-    'explicitMovers >= 3',
+    'at least one qualifying mover shown on the page',
     'cited research (not batch template)',
     'quality score >= 48',
     'not regional_metro_fallback only',
@@ -333,7 +340,7 @@ export const COUNTY_TIER_MOVEMENT_POLICY = {
   demoteToDevelopment: [
     'batch_template_research',
     'uncited_research',
-    'explicitMovers falls below 3',
+    'no qualifying mover remains on the page',
     'regional_metro_fallback',
     'score drops below 48',
   ],

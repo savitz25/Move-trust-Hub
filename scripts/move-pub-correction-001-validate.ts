@@ -11,13 +11,14 @@ import { companyToLocalMover } from '@/lib/local-movers/company-to-local-mover';
 import { isCountyAdjacent } from '@/lib/local-movers/county-adjacency';
 import { countyCardTypeScope } from '@/lib/local-movers/county-card-authority';
 import { evaluateCountyIndexabilityFromResult } from '@/lib/local-movers/county-indexability';
+import { scoreCountyQuality } from '@/lib/local-movers/county-quality-score';
 import {
   countyAssignmentCountsAsCoverage,
   isOwnerSelectedAssignmentSource,
 } from '@/lib/local-movers/county-coverage-evidence';
 import { isPublishableCountyCompany } from '@/lib/local-movers/county-publication';
 import { getAllCountyParams } from '@/lib/local-movers/geography/index';
-import { getMoversForCounty, seedCountiesForMover } from '@/lib/local-movers/index';
+import { countExplicitCountyMovers, getMoversForCounty, seedCountiesForMover } from '@/lib/local-movers/index';
 import { mergeApprovedMovers } from '@/lib/local-movers/merge-approved-movers';
 import {
   applyPremiumCapToDecision,
@@ -88,6 +89,7 @@ type PassFlags = {
   evidenceByCanonicalId: boolean;
   canaries: boolean;
   stampHeadquarters: boolean;
+  scoreAudit?: boolean;
 };
 
 const INTERNAL = new Set(['REVIEW_REQUIRED', 'INACTIVE', 'INGESTED', 'CLASSIFIED']);
@@ -302,6 +304,9 @@ function main() {
     deadLinks: number;
     blanketListed: number;
     stateOnlyFederal: number;
+    shown?: number;
+    catalogExplicit?: number;
+    inventory?: number;
   };
 
   function evaluatePass(flags: PassFlags): Map<string, EvalRow> {
@@ -400,6 +405,22 @@ function main() {
         deadLinks,
         blanketListed,
         stateOnlyFederal,
+        ...(flags.scoreAudit
+          ? (() => {
+              const quality = scoreCountyQuality({
+                stateSlug: params.stateSlug,
+                countySlug: params.countySlug,
+                county: base.county,
+                movers,
+                isRegionalFallback: base.isRegionalFallback && directoryLocals.length === 0,
+              });
+              return {
+                shown: movers.length,
+                catalogExplicit: countExplicitCountyMovers(params.stateSlug, params.countySlug),
+                inventory: quality.components.inventory,
+              };
+            })()
+          : {}),
       });
     }
     return out;
@@ -466,7 +487,7 @@ function main() {
     },
     {
       label: 'Premium cap only above 400',
-      flags: afterFlags,
+      flags: { ...afterFlags, scoreAudit: true },
       cap: true,
     },
   ];
@@ -573,6 +594,41 @@ function main() {
     return `| ${state} / ${county} | ${tier} | ${row?.qualityScore ?? '—'} | ${row?.qualifying ?? '—'} |`;
   });
 
+  function inventoryBand(count: number): number {
+    if (count >= 12) return 25;
+    if (count >= 8) return 20;
+    if (count >= 5) return 15;
+    if (count >= 3) return 10;
+    if (count >= 1) return 5;
+    return 0;
+  }
+  const scoreChanges: string[] = [];
+  const demotions = { premiumToStandard: 0, premiumToNoindex: 0, standardToNoindex: 0, other: 0 };
+  for (const row of after.values()) {
+    if (row.shown == null || row.catalogExplicit == null) continue;
+    if ((row.qualifying ?? 0) < 1 || row.listed < 1) continue;
+    if (row.shown === row.catalogExplicit) continue;
+    const bandDelta = inventoryBand(row.shown) - inventoryBand(row.catalogExplicit);
+    if (bandDelta === 0) continue;
+    const oldScore = (row.qualityScore ?? 0) - bandDelta;
+    const now = row.tier !== 'index' ? 'noindex' : row.seoTier === 1 ? 'Premium' : 'Standard';
+    const wasPremiumShape = row.seoTier === 1 || (now === 'Premium');
+    let from = oldScore >= 48 ? 'Standard' : 'Development';
+    if (oldScore >= 70 && wasPremiumShape) from = 'Premium';
+    else if (oldScore >= 70 && now === 'Standard') from = 'Premium';
+    if (from === now) continue;
+    if (from === 'Premium' && now === 'Standard') demotions.premiumToStandard += 1;
+    else if (from === 'Premium' && now === 'noindex') demotions.premiumToNoindex += 1;
+    else if (from === 'Standard' && now === 'noindex') demotions.standardToNoindex += 1;
+    else demotions.other += 1;
+    scoreChanges.push(
+      `- ${row.stateSlug}/${row.countySlug}: ${from} → ${now}; catalog assignments ${row.catalogExplicit}, shown ${row.shown}, qualifying ${row.qualifying}; score ${row.qualityScore}`
+    );
+  }
+
+  const countyTotal = getAllCountyParams().length;
+  const development = (premium: number, standard: number) => countyTotal - premium - standard;
+
   const waterfallLines = waterfall.map((row, index) => {
     const previous = index === 0 ? row.urls.size : waterfall[index - 1]!.urls.size;
     const delta = row.urls.size - previous;
@@ -588,16 +644,22 @@ Coverage JSON on company rows adds 0 counties beyond \`company_destination_assig
 
 ## Counts
 
-| Measure | Before (main rules) | After (this branch) |
-|---|---:|---:|
-| County pages with qualifying businesses | ${beforeSummary.qualifyingPages} | ${afterSummary.qualifyingPages} |
-| Indexable Premium counties | ${beforeSummary.premium} | ${afterSummary.premium} |
-| Indexable Standard counties | ${beforeSummary.standard} | ${afterSummary.standard} |
-| Unpublished companies displayed | ${beforeSummary.unpublished} | ${afterSummary.unpublished} |
-| Dead profile links | ${beforeSummary.deadLinks} | ${afterSummary.deadLinks} |
-| Unsupported blanket assignments counted as coverage | ${beforeSummary.blanketListed} | ${afterSummary.blanketListed} |
-| State-only movers shown as federally authorized | ${beforeSummary.stateOnlyFederal} | ${afterSummary.stateOnlyFederal} |
-| Sitemap URLs | ${beforeSummary.urls.size} | ${afterSummary.urls.size} |
+Live #243 is the main publication path, including the canary home-county RPC, with the historical catalog quality score. 4d7871ec is the measurement at that commit. The new head is this correction.
+
+| Measure | Live #243 | 4d7871ec | New head |
+|---|---:|---:|---:|
+| County pages with qualifying businesses | ${beforeSummary.qualifyingPages} | 585 | ${afterSummary.qualifyingPages} |
+| Indexable Premium counties | ${beforeSummary.premium} | 153 | ${afterSummary.premium} |
+| Indexable Standard counties | ${beforeSummary.standard} | 45 | ${afterSummary.standard} |
+| Development / noindex counties | ${development(beforeSummary.premium, beforeSummary.standard)} | ${development(153, 45)} | ${development(afterSummary.premium, afterSummary.standard)} |
+| Indexable county pages | ${beforeSummary.premium + beforeSummary.standard} | 198 | ${afterSummary.premium + afterSummary.standard} |
+| Unpublished companies displayed | ${beforeSummary.unpublished} | 0 | ${afterSummary.unpublished} |
+| Dead profile links | ${beforeSummary.deadLinks} | 0 | ${afterSummary.deadLinks} |
+| Unsupported blanket assignments counted as coverage | ${beforeSummary.blanketListed} | 0 | ${afterSummary.blanketListed} |
+| State-only movers shown as federally authorized | ${beforeSummary.stateOnlyFederal} | 0 | ${afterSummary.stateOnlyFederal} |
+| Sitemap URLs | ${beforeSummary.urls.size} | 249 | ${afterSummary.urls.size} |
+
+Development counts are county pages that are not Premium or Standard. There are ${countyTotal} scored counties. State hub URLs are in the sitemap total and are not a county tier.
 
 Premium after the cap is ${afterSummary.premium} (cap 400). The cap changes a county only when more than 400 counties qualify as Premium. Standard is not counted against the cap.
 
@@ -623,6 +685,49 @@ Premium qualifying counties are ${afterSummary.premium}, which is under 400, so 
 |---|---|---:|---:|
 ${namedLines.join('\n')}
 
+## Mover-dependent score changes
+
+Inventory points now use the movers on the page. The raw catalog assignment count is not a score input and is not a three-mover gate. \`countExplicitCountyMovers\` remains available for audits. \`minExplicitMovers\` is no longer a hard block. Research, citation, regulatory context, utility, and county content are unchanged.
+
+The measured change from 4d7871ec is 249 sitemap URLs to ${afterSummary.urls.size}, Premium 153 to ${afterSummary.premium}, and Standard 45 to ${afterSummary.standard}. That is 10 fewer county URLs, not the roughly 215-URL loss in the earlier estimate. The estimate counted counties whose catalog score looked indexable but that already had no qualifying mover on the page, so they were not in the sitemap. The band rows below are only counties that still have a qualifying mover. A Premium to Standard row stays in the sitemap. A Standard to noindex row is a real removal, and only when that county was actually Standard at 4d7871ec. The band math can mark a county Standard that 4d7871ec already kept noindex for a research or citation block. The count table is the published result.
+
+- Premium → Standard: ${demotions.premiumToStandard}
+- Premium → noindex: ${demotions.premiumToNoindex}
+- Standard → noindex: ${demotions.standardToNoindex}
+- Other tier changes: ${demotions.other}
+
+${scoreChanges.join('\n') || '- none'}
+
+These rows are counties whose catalog assignment count was higher than the evidenced, publishable list. Hidden, inactive, review-required, blanket, and statewide fill-ins no longer add inventory points. A county that still has one qualifying mover and still meets the Premium or Standard score stays in that tier. No separate three-mover minimum is applied.
+
+A page is incorrectly suppressed only if it still shows at least one evidenced qualifying mover, still meets the research and citation standards, and still clears the score floor after the shown-mover inventory. The rows that fall to noindex are below that floor once the catalog fill-ins are removed. Verified state operating authority does not put a company on a non-adjacent county, and state-only movers are still not labeled as federally authorized.
+
+## Street numbers read as ZIPs
+
+Seven catalog records had a 5-digit street number and no state. The previous ZIP rule treated that number as a ZCTA and invented a headquarters county. A ZIP is now accepted only immediately after a state code. The headquarters stays unresolved, so an in-state slot under 50 counties is not dropped for that reason. 23 seed slots change inclusion. No street address is listed.
+
+| Business | Before county resolution | After |
+|---|---|---|
+| Firefighting's Finest Moving & Storage | Prince William County, Virginia | unresolved |
+| express moving (58-county record) | Baltimore County, Maryland | unresolved |
+| Red Rover Moving & Storage | Delaware County, New York | unresolved |
+| Bull Moving | Albany County, New York | unresolved |
+| Northstar Moving Company | Montgomery County, Pennsylvania | unresolved |
+| express moving (2-county record) | Baltimore County, Maryland | unresolved |
+| Studio City Movers | Suffolk County, New York | unresolved |
+
+The 23 slots whose include/exclude changed are Red Rover (12), Bull Moving (5), Northstar (3), the smaller express moving record (2), and Studio City Movers (1). The two larger records were already excluded by the 50-county statewide rule, so their invented county did not keep extra slots.
+
+## Sitemap URL changes versus live main
+
+Added (${added.length}):
+
+${added.sort().map((url) => `- ${url}`).join('\n') || '- none'}
+
+Removed (${removed.length}):
+
+${removed.sort().map((url) => `- ${url}`).join('\n') || '- none'}
+
 ### Per state
 
 ${stateLines.join('\n') || '- none'}
@@ -645,7 +750,7 @@ ${duvalLines(after).join('\n') || '- none'}
 - Headquarters county comes from the ZIP when the ZIP's state agrees with the parsed state, otherwise from the city. An unresolved in-state headquarters does not by itself drop an owner selection or seed slot under 50 counties. A known other state still does. A known non-adjacent county still does.
 - Blanket threshold is 50 owner-selected counties in one state. Headquarters, discovery, and system assignment sources still count inside a blanket. State authority does not create statewide coverage. Statewide seed fills stay off the listing.
 - Evidence queries use companies.id. Assignment rows that store a slug are joined through the company row.
-- A county is indexable with at least one evidenced, publishable, qualifying mover. Zero stays noindex. Premium and Standard content scores are unchanged.
+- A county is indexable with at least one evidenced, publishable, qualifying mover. Zero stays noindex. Inventory points use that shown list. Research, citation, regulatory, utility, and county-content scores are unchanged. \`countExplicitCountyMovers\` and \`minExplicitMovers\` are not an indexability gate.
 - The Premium cap runs only when more than 400 counties qualify. The ranking includes canary movers and the same publication filter as the page, ordered by score then state and county.
 - Duval includes the published home-county canary from the read-only RPC fixture. No company is hard-coded.
 `;
