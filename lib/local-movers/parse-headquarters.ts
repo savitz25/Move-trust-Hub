@@ -29,32 +29,33 @@ export function parseHeadquarters(raw: string | null | undefined): ParsedHeadqua
   let city = '';
   let stateCode: string | undefined;
 
-  // "City, ST" or "City, ST 12345" or "123 Main St, City, ST"
+  // "City, ST", "City, ST, ZIP", or "123 Main St, City, ST, ZIP".
   const commaParts = text.split(',').map((p) => p.trim()).filter(Boolean);
   if (commaParts.length >= 2) {
     const last = commaParts[commaParts.length - 1]!;
-    const stateMatch = last.match(/^([A-Za-z]{2})(?:\s+\d{5}(?:-\d{4})?)?$/);
+    // A typo in a comma-delimited ZIP must not erase an otherwise clear city/state.
+    const hasSeparateZip = /^\d{2,5}[A-Za-z0-9-]{0,6}$/.test(last);
+    const statePart = hasSeparateZip ? commaParts[commaParts.length - 2]! : last;
+    const stateMatch = statePart.match(/^([A-Za-z]{2})(?:\s+\d{5}(?:-\d{4})?)?$/);
     if (stateMatch) {
       const code = stateMatch[1]!.toUpperCase();
       if (US_STATE_CODES.has(code)) {
         stateCode = code;
-        city =
-          commaParts.length >= 3
-            ? commaParts[commaParts.length - 2]!
-            : commaParts[0]!;
+        city = commaParts[commaParts.length - (hasSeparateZip ? 3 : 2)] ?? '';
       }
     }
     if (!stateCode) {
       // "City, Florida"
-      const stateName = last.replace(/\s+\d{5}(?:-\d{4})?$/, '').trim().toLowerCase();
+      const stateName = statePart.replace(/\s+\d{5}(?:-\d{4})?$/, '').trim().toLowerCase();
       const fromName = STATE_NAME_TO_CODE[stateName];
       if (fromName) {
         stateCode = fromName;
-        city =
-          commaParts.length >= 3
-            ? commaParts[commaParts.length - 2]!
-            : commaParts[0]!;
+        city = commaParts[commaParts.length - (hasSeparateZip ? 3 : 2)] ?? '';
       }
+    }
+    if (!stateCode && hasSeparateZip) {
+      // A bad/missing state must not turn the entire address into a fake city.
+      city = commaParts[commaParts.length - 3] ?? commaParts[commaParts.length - 2] ?? '';
     }
   }
 
@@ -71,7 +72,7 @@ export function parseHeadquarters(raw: string | null | undefined): ParsedHeadqua
   }
 
   if (!city && !stateCode) {
-    city = text;
+    city = commaParts.length > 1 ? commaParts[commaParts.length - 1]! : text;
   }
 
   // If multi-part address, prefer non-street segment for city

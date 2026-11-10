@@ -60,6 +60,7 @@ import { isCuratedMover } from '@/lib/trust/curated-listing-policy';
 import { filterAssignmentMoverIds } from '@/lib/trust/fabricated-mover-id';
 import { enrichMoversLocations } from '@/lib/local-movers/enrich-mover-location';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
+import { hasCountyServiceEvidence } from '@/lib/local-movers/county-evidence';
 
 const MAX_MOVERS_PER_COUNTY = 10;
 /** Explicit assignments may list more than 10 — show full curated set (CA uses ~20–30). */
@@ -144,15 +145,18 @@ function resolveMoverIds(county: LocalCounty): string[] {
 }
 
 function getExplicitAssignmentMovers(stateSlug: string, countySlug: string): LocalMover[] {
+  const county = getCounty(stateSlug, countySlug);
+  if (!county) return [];
   const entry = allCountyAssignments.find(
     (assignment) =>
       assignment.stateSlug === stateSlug && assignment.countySlug === countySlug
   );
   if (!entry?.moverIds.length) return [];
 
-  return filterAssignmentMoverIds(entry.moverIds)
+  const resolved = filterAssignmentMoverIds(entry.moverIds)
     .map((id) => fullMoversCatalog[id])
     .filter((mover): mover is LocalMover => Boolean(mover) && isCuratedMover(mover));
+  return enrichMoversLocations(resolved).filter((mover) => hasCountyServiceEvidence(mover, county));
 }
 
 export function countExplicitCountyMovers(stateSlug: string, countySlug: string): number {
@@ -168,7 +172,8 @@ export function hasExplicitCountyAssignment(
 
 export function getMoversForCounty(
   stateSlug: string,
-  countySlug: string
+  countySlug: string,
+  options?: { includeUnqualifiedSelections?: boolean }
 ): { county: LocalCounty; movers: LocalMover[]; isRegionalFallback: boolean } | null {
   const county = getCounty(stateSlug, countySlug);
   if (!county) return null;
@@ -187,19 +192,22 @@ export function getMoversForCounty(
     .map((id) => fullMoversCatalog[id])
     .filter((mover): mover is LocalMover => Boolean(mover))
     .filter(isCuratedMover);
+  const enriched = enrichMoversLocations(resolved);
+  const supported = options?.includeUnqualifiedSelections
+    ? enriched
+    : enriched.filter((mover) => hasCountyServiceEvidence(mover, county));
 
-  const displayLimit = hasExplicitAssignment
+  const displayLimit = (hasExplicitAssignment || options?.includeUnqualifiedSelections)
     ? Math.min(moverIds.length, LARGE_MARKET_MAX_MOVERS)
     : MAX_MOVERS_PER_COUNTY;
 
   const sliced = (hasExplicitAssignment
-    ? resolved
-    : resolved.sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount)
+    ? supported
+    : supported.sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount)
   ).slice(0, displayLimit);
 
-  // True HQ state enrichment, then local/in-state segmentation + quality ranking.
-  const enriched = enrichMoversLocations(sliced);
-  const movers = segmentCountyMovers(enriched, county).ordered;
+  // Only individually supportable county listings reach the page.
+  const movers = segmentCountyMovers(sliced, county).ordered;
 
   return {
     county,

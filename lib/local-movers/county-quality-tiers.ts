@@ -79,14 +79,14 @@ export function assessCountyQualityTier(
   return {
     tier: seoTierToLegacyLetter(indexDecision.seoTier ?? full.tier),
     label:
-      full.tier === 1
+      indexDecision.seoTier === 1
         ? 'Premium flagship guide'
-        : full.tier === 2
+        : indexDecision.seoTier === 2
           ? 'Standard indexable guide'
           : 'Development — limited coverage',
-    indexable: full.indexable,
+    indexable: indexDecision.tier === 'index',
     reason: indexDecision.reason || full.reason,
-    seoTier: full.tier,
+    seoTier: indexDecision.seoTier ?? full.tier,
     score: full.score,
   };
 }

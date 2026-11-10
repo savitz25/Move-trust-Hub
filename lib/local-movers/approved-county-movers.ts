@@ -11,10 +11,13 @@ import {
   isSupabaseConfigured,
 } from '@/lib/supabase/config';
 import { companyToLocalMover } from '@/lib/local-movers/company-to-local-mover';
-import type { LocalMover } from '@/lib/local-movers/types';
+import { hasCountyServiceEvidence, isPublishableCountyCompany } from '@/lib/local-movers/county-evidence';
+import { getCounty } from '@/lib/local-movers/geography/index';
+import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 import { normalizeSelectedCounties } from '@/lib/suggestions/service-scope';
 import { logger } from '@/lib/logging/logger';
 import type { Database } from '@/types/supabase';
+import { projectPublishedCatalogMovers } from '@/lib/local-movers/county-catalog-publication';
 
 import { APPROVED_COUNTY_MOVERS_TAG } from '@/lib/local-movers/approved-county-movers-tag';
 
@@ -24,10 +27,10 @@ export { APPROVED_COUNTY_MOVERS_TAG };
 // USDOT registration is read from fmcsa_raw.statusCode. For-hire authority and
 // out-of-service stay on their own columns.
 const COMPANY_MOVER_SELECT_FULL =
-  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, service_scope, entity_type, coverage_counties, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active';
+  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, service_scope, entity_type, coverage_counties, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active, publication_state';
 
 const COMPANY_MOVER_SELECT_CORE =
-  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active';
+  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active, publication_state';
 
 const PAGE_SIZE = 1000;
 const IN_CHUNK = 100;
@@ -75,6 +78,7 @@ type CompanyMoverRow = {
   fmcsa_raw?: unknown;
   out_of_service?: boolean | null;
   authority_active?: boolean | null;
+  publication_state?: string | null;
 };
 
 /** Prefer service-role when available; otherwise public anon (assignments are public-readable). */
@@ -132,6 +136,21 @@ function sortMoversForCounty(movers: LocalMover[]): LocalMover[] {
   });
 }
 
+/** Recheck catalog links against the current publication row, not an old seed snapshot. */
+export async function getPublishedCatalogMovers(movers: LocalMover[], county: LocalCounty): Promise<LocalMover[]> {
+  if (!movers.length) return [];
+  const client = createPublicOrAdminClient();
+  if (!client) throw new Error('county_catalog_no_supabase_client');
+  const slugs = [...new Set(movers.map((m) => m.profileSlug).filter((s): s is string => Boolean(s)))];
+  if (!slugs.length) return projectPublishedCatalogMovers(movers, county, []);
+  const { data, error } = await client
+    .from('companies')
+    .select('slug, headquarters, publication_state, service_scope, out_of_service, authority_active')
+    .in('slug', slugs);
+  if (error) throw new Error(`county_catalog_publication:${error.message}`);
+  return projectPublishedCatalogMovers(movers, county, data ?? []);
+}
+
 async function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise<T | null> {
   let timer: ReturnType<typeof setTimeout> | undefined;
   try {
@@ -161,6 +180,7 @@ async function loadCompaniesByIds(
   if (!companyIds.length) return companiesById;
 
   function indexCompany(company: CompanyMoverRow) {
+    if (!isPublishableCountyCompany(company)) return;
     const named = withPublicDisplayName(company);
     companiesById.set(named.id, named);
     if (named.slug) companiesById.set(named.slug, named);
@@ -192,8 +212,8 @@ async function loadCompaniesByIds(
       continue;
     }
 
-    for (const row of (byId.data ?? []) as CompanyMoverRow[]) indexCompany(row);
-    for (const row of (bySlug.data ?? []) as CompanyMoverRow[]) indexCompany(row);
+    for (const row of (byId.data ?? []) as unknown as CompanyMoverRow[]) indexCompany(row);
+    for (const row of (bySlug.data ?? []) as unknown as CompanyMoverRow[]) indexCompany(row);
 
     for (const key of chunk) {
       if (companiesById.has(key)) continue;
@@ -202,7 +222,7 @@ async function loadCompaniesByIds(
         .select(select)
         .or(`id.eq.${key},slug.eq.${key}`)
         .maybeSingle();
-      if (data) indexCompany(data as CompanyMoverRow);
+      if (data) indexCompany(data as unknown as CompanyMoverRow);
     }
   }
 
@@ -212,8 +232,12 @@ async function loadCompaniesByIds(
 function moversFromAssignments(
   assignments: AssignmentRow[],
   companiesById: Map<string, CompanyMoverRow>,
+  stateSlug: string,
+  countySlug: string,
   extraLocalKeys?: Set<string>
 ): LocalMover[] {
+  const county = getCounty(stateSlug, countySlug);
+  if (!county) return [];
   const localKeys = new Set<string>(extraLocalKeys);
   for (const row of assignments) {
     if (isLocalAssignmentSource(row.source)) {
@@ -242,6 +266,7 @@ function moversFromAssignments(
     if (!isIntrastate && company.is_verified === false) continue;
 
     const mover = companyToLocalMover(company);
+    if (!hasCountyServiceEvidence(mover, county)) continue;
     if (isIntrastate && !mover.isLocalOnly) mover.isLocalOnly = true;
     movers.push(mover);
   }
@@ -319,7 +344,7 @@ async function loadApprovedMoversForSingleCounty(
     if (link.company.slug) companiesById.set(link.company.slug, link.company);
   }
 
-  const movers = moversFromAssignments(assignments, companiesById);
+  const movers = moversFromAssignments(assignments, companiesById, stateSlug, countySlug);
   logger.info('approved_movers.county_loaded', {
     stateSlug,
     countySlug,
@@ -356,6 +381,7 @@ async function loadIntrastateCoverageForCounty(
   }
 
   for (const company of (withScope.data ?? []) as CompanyMoverRow[]) {
+    if (!isPublishableCountyCompany(company)) continue;
     const named = withPublicDisplayName(company);
     const counties = normalizeSelectedCounties(named.coverage_counties);
     if (counties.some((c) => c.stateSlug === stateSlug && c.countySlug === countySlug)) {
@@ -453,6 +479,7 @@ async function loadIntrastateCoverageCounties(
     if (!rows.length) break;
 
     for (const company of rows) {
+      if (!isPublishableCountyCompany(company)) continue;
       // Prefer verified, but still surface assigned locals (is_verified may lag).
       const named = withPublicDisplayName(company);
       const counties = normalizeSelectedCounties(named.coverage_counties);
@@ -566,6 +593,9 @@ async function loadAllApprovedMoversByCounty(
     const byCounty: Record<string, LocalMover[]> = {};
 
     for (const [key, orderedIds] of byCountyIds) {
+      const [stateSlug, countySlug] = key.split('::');
+      const county = getCounty(stateSlug!, countySlug!);
+      if (!county) continue;
       const seen = new Set<string>();
       const movers: LocalMover[] = [];
       for (const id of orderedIds) {
@@ -585,6 +615,7 @@ async function loadAllApprovedMoversByCounty(
         }
 
         const mover = companyToLocalMover(company);
+        if (!hasCountyServiceEvidence(mover, county)) continue;
         // Phase 1: assignment controls presence on the page, not the Local badge.
         // Local vs Regional is decided by locality-rules (distance / seat match).
         // Only honor explicit intrastate service_scope from the company row.
@@ -616,8 +647,8 @@ async function loadAllApprovedMoversByCounty(
 
 const getAllApprovedMoversByCountyCached = unstable_cache(
   fetchAllApprovedMoversByCounty,
-  // v9: USDOT label is fmcsa_raw.statusCode, not authority_active
-  ['approved-county-movers-all-v9-census-status'],
+  // v10: publication and exact-county evidence gates must invalidate old rows.
+  ['approved-county-movers-all-v10-publication-evidence'],
   { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
 );
 
@@ -628,8 +659,7 @@ const getAllApprovedMoversByCountyCached = unstable_cache(
 function getApprovedMoversForCountyCached(stateSlug: string, countySlug: string) {
   return unstable_cache(
     () => fetchApprovedMoversForCountyUncached(stateSlug, countySlug),
-    // v9 per-county: USDOT label is fmcsa_raw.statusCode, not authority_active
-    ['approved-county-movers-one-v9', stateSlug, countySlug],
+    ['approved-county-movers-one-v10-publication-evidence', stateSlug, countySlug],
     { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
   )();
 }

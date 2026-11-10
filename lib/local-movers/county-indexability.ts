@@ -1,13 +1,8 @@
 import { scoreCountyQuality } from '@/lib/local-movers/county-quality-score';
-import {
-  countExplicitCountyMovers,
-  getMoversForCounty,
-} from '@/lib/local-movers/index';
-import {
-  MIN_LOCAL_OR_LICENSED_MOVERS,
-  countQualifyingCountyMovers,
-  listedCountyMovers,
-} from '@/lib/seo/unique-local-movers';
+import { countExplicitCountyMovers, getMoversForCounty } from '@/lib/local-movers/index';
+import { listedCountyMovers } from '@/lib/seo/unique-local-movers';
+import { hasCountyServiceEvidence } from '@/lib/local-movers/county-evidence';
+import { isPremiumCountyWithinCap } from '@/lib/local-movers/premium-county-cap';
 import { hasAttributableCountyReviews } from '@/lib/trust/verified-reviews';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -22,10 +17,10 @@ export type CountyIndexDecision = {
 };
 
 /**
- * Counties need 3+ movers based in or licensed for that county.
- * Confirmed out-of-state carriers do not count. Regional metro fallback pools do not qualify.
+ * A county needs at least one publishable, evidence-supported business.
+ * Editorial quality gates still determine whether that inventory is enough to index.
  */
-export const MIN_EXPLICIT_MOVERS_TO_INDEX = MIN_LOCAL_OR_LICENSED_MOVERS;
+export const MIN_EXPLICIT_MOVERS_TO_INDEX = 1;
 
 /** Hard deploy stop — see scripts/lib/tier1-circuit-breaker.ts */
 export const MAX_TIER1_COUNT = 400;
@@ -34,6 +29,7 @@ type CountyMoverResult = {
   county: LocalCounty;
   movers: LocalMover[];
   isRegionalFallback: boolean;
+  sourceMode?: 'db' | 'seed' | 'hybrid' | 'degraded';
 };
 
 /**
@@ -58,11 +54,16 @@ export function evaluateCountyIndexabilityFromResult(
     isRegionalFallback: result.isRegionalFallback,
   });
 
-  const qualifyingMovers = countQualifyingCountyMovers(result.county, result.movers);
-  if (qualifyingMovers < MIN_LOCAL_OR_LICENSED_MOVERS) {
+  if (result.sourceMode === 'degraded') {
+    return { tier: 'noindex', reason: 'publication_lookup_degraded', seoTier: 3, qualityScore: quality.score };
+  }
+  const qualifyingMovers = result.movers.filter((mover) =>
+    hasCountyServiceEvidence(mover, result.county)
+  ).length;
+  if (qualifyingMovers === 0) {
     return {
       tier: 'noindex',
-      reason: 'insufficient_local_or_licensed_movers',
+      reason: 'no_evidence_supported_movers',
       seoTier: 3,
       qualityScore: quality.score,
     };
@@ -88,10 +89,15 @@ export function evaluateCountyIndexabilityFromResult(
     };
   }
 
+  const withinPremiumCap = quality.tier !== 1 || isPremiumCountyWithinCap(stateSlug, countySlug);
   return {
     tier: 'index',
-    reason: quality.reason,
-    seoTier: quality.tier,
+    reason: !withinPremiumCap
+      ? 'premium_cap_standard'
+      : quality.reason,
+    seoTier: !withinPremiumCap
+      ? 2
+      : quality.tier,
     qualityScore: quality.score,
   };
 }

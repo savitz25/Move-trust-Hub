@@ -76,8 +76,8 @@ async function fetchCanaryMoversForCounty(
   }
 
   const rows = (data ?? []) as RpcRow[];
-  return rows.map((row) =>
-    companyToLocalMover({
+  return rows.map((row) => ({
+    ...companyToLocalMover({
       slug: row.slug,
       name: row.name,
       short_description: row.home_county_name
@@ -98,8 +98,9 @@ async function fetchCanaryMoversForCounty(
       out_of_service: false,
       authority_active: true,
       usdot_status: null,
-    })
-  );
+    }),
+    countyEvidence: 'verified_home_county' as const,
+  }));
 }
 
 export const getCanaryMoversForCounty = unstable_cache(

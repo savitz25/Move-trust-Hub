@@ -1,6 +1,6 @@
 import 'server-only';
 
-import { getApprovedMoversForCounty } from '@/lib/local-movers/approved-county-movers';
+import { getApprovedMoversForCounty, getPublishedCatalogMovers } from '@/lib/local-movers/approved-county-movers';
 import { getCanaryMoversForCounty } from '@/lib/local-movers/canary-county-movers';
 import {
   getMoversForCounty,
@@ -9,6 +9,7 @@ import {
 import { mergeApprovedMovers } from '@/lib/local-movers/merge-approved-movers';
 import { enrichMoversLocations } from '@/lib/local-movers/enrich-mover-location';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
+import { hasCountyServiceEvidence } from '@/lib/local-movers/county-evidence';
 import { isProductionBuildPhase } from '@/lib/ssg/ssg-params';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 import { logger } from '@/lib/logging/logger';
@@ -42,7 +43,7 @@ export async function getMoversForCountyAsync(
   stateSlug: string,
   countySlug: string
 ): Promise<CountyMoversResult | null> {
-  const base = getMoversForCounty(stateSlug, countySlug);
+  const base = getMoversForCounty(stateSlug, countySlug, { includeUnqualifiedSelections: true });
   if (!base) return null;
 
   // Bulk SSG without Supabase: seed catalog only (opt-in via BULK_SSG without FORCE).
@@ -54,16 +55,31 @@ export async function getMoversForCountyAsync(
     process.env.FORCE_APPROVED_MOVERS !== '1';
 
   if (skipApproved) {
+    const supported = base.movers
+      .filter((mover) => hasCountyServiceEvidence(mover, base.county))
+      .map((mover) => ({ ...mover, profileLinkAllowed: false }));
     return {
       ...base,
-      sourceMode: 'seed',
+      movers: supported,
+      sourceMode: 'degraded',
       approvedCount: 0,
-      catalogCount: base.movers.length,
+      catalogCount: supported.length,
     };
   }
 
   let approved: LocalMover[] = [];
   let approvedFetchFailed = false;
+  let catalog: LocalMover[] = [];
+  try {
+    catalog = await getPublishedCatalogMovers(base.movers, base.county);
+  } catch (err) {
+    approvedFetchFailed = true;
+    logger.error('county_movers.catalog_publication_failed', {
+      stateSlug,
+      countySlug,
+      message: err instanceof Error ? err.message : String(err),
+    });
+  }
   try {
     approved = await getApprovedMoversForCounty(stateSlug, countySlug);
   } catch (err) {
@@ -98,9 +114,10 @@ export async function getMoversForCountyAsync(
         : 'seed';
     return {
       ...base,
+      movers: catalog,
       sourceMode,
       approvedCount: 0,
-      catalogCount: base.movers.length,
+      catalogCount: catalog.length,
     };
   }
 
@@ -108,12 +125,12 @@ export async function getMoversForCountyAsync(
   // Always room for every approved local + a healthy catalog fill for large markets.
   const displayLimit = Math.max(
     hasExplicitAssignment ? LARGE_MARKET_MAX_MOVERS : MAX_MOVERS_PER_COUNTY,
-    base.movers.length + directoryLocals.length,
+    catalog.length + directoryLocals.length,
     directoryLocals.length + 10,
     40
   );
 
-  const merged = mergeApprovedMovers(base.movers, directoryLocals, displayLimit);
+  const merged = mergeApprovedMovers(catalog, directoryLocals, displayLimit);
   const enriched = enrichMoversLocations(merged);
   const directoryCount = directoryLocals.length;
   const onlyApproved =
@@ -130,6 +147,6 @@ export async function getMoversForCountyAsync(
     movers: segmentCountyMovers(enriched, base.county).ordered,
     sourceMode,
     approvedCount: directoryCount,
-    catalogCount: base.movers.length,
+    catalogCount: catalog.length,
   };
 }
