@@ -20,11 +20,14 @@ import { APPROVED_COUNTY_MOVERS_TAG } from '@/lib/local-movers/approved-county-m
 
 export { APPROVED_COUNTY_MOVERS_TAG };
 
+// public.companies has no usdot_status column (Postgres 42703). Do not select it.
+// USDOT registration is read from fmcsa_raw.statusCode. For-hire authority and
+// out-of-service stay on their own columns.
 const COMPANY_MOVER_SELECT_FULL =
-  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, service_scope, entity_type, coverage_counties, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active, usdot_status';
+  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, service_scope, entity_type, coverage_counties, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active';
 
 const COMPANY_MOVER_SELECT_CORE =
-  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active, usdot_status';
+  'id, slug, name, short_description, headquarters, usdot_number, mc_number, fmcsa_safety_rating, bbb_rating, overall_rating, review_count, services, specialties, is_verified, last_updated, fmcsa_legal_name, fmcsa_raw, out_of_service, authority_active';
 
 const PAGE_SIZE = 1000;
 const IN_CHUNK = 100;
@@ -72,7 +75,6 @@ type CompanyMoverRow = {
   fmcsa_raw?: unknown;
   out_of_service?: boolean | null;
   authority_active?: boolean | null;
-  usdot_status?: string | null;
 };
 
 /** Prefer service-role when available; otherwise public anon (assignments are public-readable). */
@@ -614,8 +616,8 @@ async function loadAllApprovedMoversByCounty(
 
 const getAllApprovedMoversByCountyCached = unstable_cache(
   fetchAllApprovedMoversByCounty,
-  // v7: dual id/slug company resolve + throw on timeout (do not cache empty failure)
-  ['approved-county-movers-all-v7-dual-slug'],
+  // v9: USDOT label is fmcsa_raw.statusCode, not authority_active
+  ['approved-county-movers-all-v9-census-status'],
   { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
 );
 
@@ -626,8 +628,8 @@ const getAllApprovedMoversByCountyCached = unstable_cache(
 function getApprovedMoversForCountyCached(stateSlug: string, countySlug: string) {
   return unstable_cache(
     () => fetchApprovedMoversForCountyUncached(stateSlug, countySlug),
-    // v7 per-county
-    ['approved-county-movers-one-v7', stateSlug, countySlug],
+    // v9 per-county: USDOT label is fmcsa_raw.statusCode, not authority_active
+    ['approved-county-movers-one-v9', stateSlug, countySlug],
     { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
   )();
 }

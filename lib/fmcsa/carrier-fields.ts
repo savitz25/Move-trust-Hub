@@ -62,15 +62,36 @@ export function decodeAuthorityCode(code: string): string {
   return code;
 }
 
-export function deriveUsdotStatus(carrier: CarrierLike): UsdotStatusLabel {
+/** FMCSA out-of-service order on a QCMobile carrier payload. Not a USDOT registration status. */
+export function hasFmcsaOutOfServiceOrder(carrier: CarrierLike | null | undefined): boolean {
+  if (!carrier) return false;
   const supplemental = asRecord(carrier._supplemental);
   const oosRows = asArray(supplemental?.oos);
   const hasOosRow = oosRows.some((row) => {
     const oos = asRecord(asRecord(row)?.oos) ?? asRecord(row);
     return Boolean(oos?.oosDate ?? oos?.outOfServiceDate);
   });
+  return Boolean(carrier.oosDate) || carrier.outOfService === 'Y' || hasOosRow;
+}
 
-  if (carrier.oosDate || carrier.outOfService === 'Y' || hasOosRow) {
+/**
+ * Census USDOT registration from QCMobile `statusCode`.
+ * A = active registration, I = inactive registration.
+ * `allowedToOperate` and for-hire authority codes are different facts and are not read here.
+ * Any other value, including Pending or a missing field, is not active or inactive.
+ */
+export function deriveUsdotRegistrationStatus(
+  carrier: CarrierLike | null | undefined
+): 'ACTIVE' | 'INACTIVE' | null {
+  if (!carrier || !Object.prototype.hasOwnProperty.call(carrier, 'statusCode')) return null;
+  const code = String(carrier.statusCode ?? '').trim().toUpperCase();
+  if (code === 'A' || code === 'ACTIVE') return 'ACTIVE';
+  if (code === 'I' || code === 'INACTIVE') return 'INACTIVE';
+  return null;
+}
+
+export function deriveUsdotStatus(carrier: CarrierLike): UsdotStatusLabel {
+  if (hasFmcsaOutOfServiceOrder(carrier)) {
     return 'OUT OF SERVICE';
   }
 
@@ -84,6 +105,25 @@ function isActiveAuthorityCode(code: string | null | undefined): boolean {
   if (!code) return false;
   const normalized = code.trim().toUpperCase();
   return normalized === 'A' || normalized === 'ACTIVE';
+}
+
+export type OperatingAuthorityStatus = 'ACTIVE' | 'INACTIVE' | 'NONE';
+
+/** For-hire operating authority from common, contract, and broker authority codes. */
+export function deriveOperatingAuthorityStatus(
+  carrier: CarrierLike | null | undefined
+): OperatingAuthorityStatus {
+  if (!carrier) return 'NONE';
+  const codes = [
+    carrier.commonAuthorityStatus,
+    carrier.contractAuthorityStatus,
+    carrier.brokerAuthorityStatus,
+  ]
+    .map((value) => String(value ?? '').trim().toUpperCase())
+    .filter(Boolean);
+  if (codes.some((code) => isActiveAuthorityCode(code))) return 'ACTIVE';
+  if (codes.some((code) => code === 'I' || code === 'INACTIVE')) return 'INACTIVE';
+  return 'NONE';
 }
 
 /** Infer entity type from active FMCSA authority when census type is absent. */

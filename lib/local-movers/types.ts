@@ -1,3 +1,14 @@
+export type UsdotRegistrationStatus = 'ACTIVE' | 'INACTIVE' | 'UNKNOWN';
+export type ForHireAuthorityStatus = 'ACTIVE' | 'INACTIVE' | 'NONE';
+export type RegulatoryBasis = 'federal' | 'state_only' | 'unknown';
+
+export type RegulatoryStanding = {
+  usdotRegistration: UsdotRegistrationStatus;
+  operatingAuthority: ForHireAuthorityStatus;
+  outOfServiceOrder: boolean;
+  basis: RegulatoryBasis;
+};
+
 export type LocalMover = {
   id: string;
   name: string;
@@ -31,10 +42,15 @@ export type LocalMover = {
   recentlyAdded?: boolean;
   /** FMCSA out-of-service flag when known from directory sync. */
   outOfService?: boolean;
-  /** Active operating authority when known from directory sync. */
+  /** Stored for-hire authority flag. Not a USDOT registration status. */
   authorityActive?: boolean | null;
-  /** Raw USDOT status string when known (ACTIVE, OUT OF SERVICE, …). */
+  /**
+   * USDOT registration label from census evidence: ACTIVE, INACTIVE, or null.
+   * Null means unknown or state-only. It is not an operating-authority label.
+   */
   usdotStatus?: string | null;
+  /** Registration, for-hire authority, out-of-service, and state-only kept apart. */
+  regulatoryStanding?: RegulatoryStanding;
 };
 
 export type LocalCounty = {

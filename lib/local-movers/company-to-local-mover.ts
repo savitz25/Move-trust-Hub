@@ -1,5 +1,10 @@
+import {
+  deriveOperatingAuthorityStatus,
+  deriveUsdotRegistrationStatus,
+  hasFmcsaOutOfServiceOrder,
+} from '@/lib/fmcsa/carrier-fields';
 import { parseHeadquarters } from '@/lib/local-movers/parse-headquarters';
-import type { LocalMover } from '@/lib/local-movers/types';
+import type { LocalMover, RegulatoryStanding } from '@/lib/local-movers/types';
 
 type CompanyMoverSource = {
   slug: string;
@@ -20,10 +25,51 @@ type CompanyMoverSource = {
   updated_at?: string | null;
   out_of_service?: boolean | null;
   authority_active?: boolean | null;
+  /** Ignored. public.companies has no usdot_status column. */
   usdot_status?: string | null;
+  fmcsa_raw?: unknown;
 };
 
 const RECENT_MS = 1000 * 60 * 60 * 24 * 30; // 30 days
+
+function asCarrier(value: unknown): Record<string, unknown> | null {
+  return value && typeof value === 'object' && !Array.isArray(value)
+    ? (value as Record<string, unknown>)
+    : null;
+}
+
+/**
+ * public.companies has no usdot_status column.
+ * USDOT registration comes only from fmcsa_raw.statusCode.
+ * For-hire authority, out-of-service orders, missing evidence, and intrastate
+ * state licenses stay separate and are never collapsed into that label.
+ */
+export function resolveRegulatoryStanding(company: CompanyMoverSource): RegulatoryStanding {
+  const carrier = asCarrier(company.fmcsa_raw);
+  const registration = deriveUsdotRegistrationStatus(carrier);
+  const hasRegistrationEvidence =
+    carrier != null && Object.prototype.hasOwnProperty.call(carrier, 'statusCode');
+  const basis: RegulatoryStanding['basis'] = hasRegistrationEvidence
+    ? 'federal'
+    : company.service_scope === 'intrastate'
+      ? 'state_only'
+      : 'unknown';
+
+  return {
+    usdotRegistration: registration ?? 'UNKNOWN',
+    operatingAuthority: deriveOperatingAuthorityStatus(carrier),
+    outOfServiceOrder:
+      company.out_of_service === true || hasFmcsaOutOfServiceOrder(carrier),
+    basis,
+  };
+}
+
+function resolveUsdotStatus(standing: RegulatoryStanding): string | null {
+  if (standing.basis === 'state_only') return null;
+  if (standing.usdotRegistration === 'ACTIVE') return 'ACTIVE';
+  if (standing.usdotRegistration === 'INACTIVE') return 'INACTIVE';
+  return null;
+}
 
 function mapServices(services: unknown): string[] {
   if (!Array.isArray(services) || services.length === 0) return ['Long Distance'];
@@ -52,6 +98,7 @@ export function companyToLocalMover(company: CompanyMoverSource): LocalMover {
   const isLocalOnly =
     company.service_scope === 'intrastate' ||
     (!usdot && company.service_scope !== 'interstate');
+  const regulatoryStanding = resolveRegulatoryStanding(company);
   return {
     id: `directory-${company.slug}`,
     name: company.name,
@@ -73,9 +120,10 @@ export function companyToLocalMover(company: CompanyMoverSource): LocalMover {
     entityType: company.entity_type ?? null,
     lastUpdated: lastUpdated || undefined,
     recentlyAdded: isRecentlyAdded(lastUpdated),
-    outOfService: Boolean(company.out_of_service),
+    outOfService: regulatoryStanding.outOfServiceOrder,
     authorityActive:
       company.authority_active === undefined ? null : company.authority_active,
-    usdotStatus: company.usdot_status ?? null,
+    usdotStatus: resolveUsdotStatus(regulatoryStanding),
+    regulatoryStanding,
   };
 }
