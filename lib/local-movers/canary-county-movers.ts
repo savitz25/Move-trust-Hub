@@ -5,12 +5,7 @@
 import 'server-only';
 
 import { unstable_cache } from 'next/cache';
-import { createClient } from '@supabase/supabase-js';
-import {
-  getSupabaseAnonKey,
-  getSupabaseUrl,
-  isSupabaseConfigured,
-} from '@/lib/supabase/config';
+import { createAdminClient } from '@/lib/supabase/admin';
 import { companyToLocalMover } from '@/lib/local-movers/company-to-local-mover';
 import type { LocalMover } from '@/lib/local-movers/types';
 import {
@@ -46,39 +41,37 @@ function resolveCountyFips(
   return map.get(`${stateSlug}:${countySlug}`) ?? null;
 }
 
-async function fetchCanaryMoversForCounty(
+export async function fetchCanaryMoversForCounty(
   stateSlug: string,
   countySlug: string
 ): Promise<LocalMover[]> {
-  if (!isSupabaseConfigured()) return [];
   const stateCode = STATE_SLUG_TO_CODE[stateSlug];
   if (!stateCode) return [];
   const fips = resolveCountyFips(stateSlug, countySlug);
   if (!fips) return [];
 
-  const url = getSupabaseUrl();
-  const key = getSupabaseAnonKey();
-  if (!url || !key) return [];
-  const supabase = createClient(url, key, {
-    auth: { persistSession: false, autoRefreshToken: false },
-  });
-
-  const { data, error } = await supabase.rpc('local_canary_movers_for_county', {
-    p_state_code: stateCode,
-    p_county_fips: fips,
-    p_limit: 24,
-  });
-
-  if (error) {
-    logger.warn('canary_county.rpc_failed', {
-      stateSlug,
-      countySlug,
-      message: error.message,
+  let rows: RpcRow[] = [];
+  try {
+    const supabase = createAdminClient();
+    const result = await supabase.rpc('local_canary_movers_for_county', {
+      p_state_code: stateCode,
+      p_county_fips: fips,
+      p_limit: 24,
     });
+    if (result.error) {
+      logger.warn('canary_county.rpc_failed', {
+        stateSlug,
+        countySlug,
+        message: result.error.message,
+      });
+      return [];
+    }
+    rows = (result.data ?? []) as RpcRow[];
+  } catch {
+    // Missing server credentials or transport failures never publish canary rows.
     return [];
   }
 
-  const rows = (data ?? []) as RpcRow[];
   return rows.map((row) =>
     companyToLocalMover({
       slug: row.slug,

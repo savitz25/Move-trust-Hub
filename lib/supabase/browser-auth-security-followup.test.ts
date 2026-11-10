@@ -21,6 +21,7 @@ import {
   publicSupabaseClientBuilds,
   publicSupabasePrivilegedTarget,
 } from '../local-movers/public-supabase';
+import { fetchCanaryMoversForCounty } from '../local-movers/canary-county-movers';
 import { CANONICAL_SUPABASE_URL, ISOLATED_MOVE_BROWSER_SUPABASE_URL } from './canonical-project';
 
 const PROD = 'arepfylnilkjmyduhwbz';
@@ -86,6 +87,25 @@ test('isolated county reads do not build a service-role client or call productio
     });
     assert.deepEqual(rows, []);
     assert.equal(countyServiceClientBuilds.count, before);
+  });
+});
+
+test('canary county read fails closed without server credentials despite anon credentials', async () => {
+  await withEnv(
+    {
+      VERCEL_ENV: 'production',
+      NEXT_PUBLIC_SUPABASE_URL: CANONICAL_SUPABASE_URL,
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: jwt(PROD, 'anon'),
+    },
+    async () => {
+      assert.deepEqual(await fetchCanaryMoversForCounty('florida', 'miami-dade'), []);
+    }
+  );
+});
+
+test('isolated browser auth cannot make a canary service-role call', async () => {
+  await withEnv(isolated, async () => {
+    assert.deepEqual(await fetchCanaryMoversForCounty('florida', 'miami-dade'), []);
   });
 });
 

@@ -577,6 +577,25 @@ export type Database = {
       };
     };
     Functions: {
+      local_canary_movers_for_county: {
+        Args: {
+          p_state_code: string;
+          p_county_fips: string;
+          p_limit?: number;
+        };
+        Returns: {
+          company_id: string;
+          slug: string;
+          name: string;
+          authority_number: string | null;
+          regulator: string | null;
+          home_county_fips: string;
+          home_county_name: string | null;
+          phone: string | null;
+          publication_state: string;
+          indexable: boolean;
+        }[];
+      };
       admin_list_my_move_users: {
         Args: {
           p_search?: string;
