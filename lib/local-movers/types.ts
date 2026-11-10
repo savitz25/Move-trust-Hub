@@ -29,6 +29,12 @@ export type LocalMover = {
    * Must never be overwritten with the county page's state.
    */
   headquartersState?: string;
+  /**
+   * Full headquarters string used only to resolve a county.
+   * Display still uses `city`. Set when the catalog city is a street
+   * and the company row has a parseable address.
+   */
+  headquartersAddress?: string;
   website?: string;
   /** Onboarded directory company (vs seed/catalog). */
   listingSource?: 'directory' | 'catalog';

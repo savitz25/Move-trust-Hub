@@ -44,7 +44,8 @@ test('premium cap keeps 400 by score then slug and leaves standard uncapped', ()
     { tier: 'index', seoTier: 1, qualityScore: overflow.qualityScore, reason: 'premium_deep_research' },
     overflow.stateSlug,
     overflow.countySlug,
-    allowed
+    allowed,
+    401
   );
   assert.equal(demoted.tier, 'index');
   assert.equal(demoted.seoTier, 2);
@@ -54,8 +55,18 @@ test('premium cap keeps 400 by score then slug and leaves standard uncapped', ()
     { tier: 'index', seoTier: 1, qualityScore: 10, reason: 'premium_deep_research' },
     'texas',
     'not-in-the-set',
-    allowed
+    allowed,
+    401
   );
+  const underCap = applyPremiumCapToDecision(
+    { tier: 'index', seoTier: 1, qualityScore: 90, reason: 'premium_deep_research' },
+    'florida',
+    'collier',
+    new Set(),
+    7
+  );
+  assert.equal(underCap.seoTier, 1);
+  assert.equal(underCap.reason, 'premium_deep_research');
   assert.equal(belowStandard.tier, 'noindex');
   assert.equal(belowStandard.reason, 'premium_cap_noindex');
 

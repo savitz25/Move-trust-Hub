@@ -1,7 +1,12 @@
 import 'server-only';
 
 import { unstable_cache } from 'next/cache';
-import { getCachedApprovedMoversByCounty } from '@/lib/local-movers/approved-county-movers';
+import {
+  applyProfilePublicationMap,
+  getCachedApprovedMoversByCounty,
+  loadProfileFacts,
+} from '@/lib/local-movers/approved-county-movers';
+import { getCanaryMoversForCounty } from '@/lib/local-movers/canary-county-movers';
 import {
   evaluateCountyIndexabilityFromResult,
   type CountyIndexDecision,
@@ -14,22 +19,27 @@ import {
   premiumAllowanceKeys,
   type PremiumCapRow,
 } from '@/lib/local-movers/premium-index-cap';
-import { filterSeedMoversForCountyCoverage } from '@/lib/local-movers/seed-county-coverage';
+import {
+  filterSeedMoversForCountyCoverage,
+  withCompanyHeadquarters,
+} from '@/lib/local-movers/seed-county-coverage';
 import type { LocalMover } from '@/lib/local-movers/types';
 import { logger } from '@/lib/logging/logger';
 
 /**
  * Runtime Premium cap.
  *
- * Scores every county from the seed catalog (after the coverage filter) plus
- * the cached directory mover map, then keeps the top 400 Premium counties.
- * Standard is not capped. If the directory map cannot be loaded, the ranking
- * uses the filtered seed list only, which still enforces the cap.
+ * Scores every county from the same mover set as the page: filtered seed,
+ * profile publication, approved directory rows, and FL/WA canary movers.
+ * The cap changes a county only when more than 400 counties qualify as
+ * Premium. Ranking is score descending, then state and county. Standard is
+ * not capped. If the directory map cannot be loaded, the ranking uses the
+ * filtered seed list plus canaries.
  *
  * Over-cap Premium counties become Standard when they meet the Standard score
  * floor, and noindex otherwise. See premium-index-cap.ts.
  */
-async function computePremiumAllowanceKeys(): Promise<string[]> {
+async function computePremiumAllowance(): Promise<{ keys: string[]; premiumCount: number }> {
   let approved: Record<string, LocalMover[]> = {};
   try {
     approved = await getCachedApprovedMoversByCounty();
@@ -40,19 +50,56 @@ async function computePremiumAllowanceKeys(): Promise<string[]> {
     approved = {};
   }
 
+  const params = getAllCountyParams();
+  const bases = params.map(({ stateSlug, countySlug }) => ({
+    stateSlug,
+    countySlug,
+    base: getMoversForCounty(stateSlug, countySlug),
+  }));
+  const profileSlugs: string[] = [];
+  for (const entry of bases) {
+    if (!entry.base) continue;
+    for (const mover of filterSeedMoversForCountyCoverage(entry.base.county, entry.base.movers)) {
+      const slug = mover.profileSlug?.trim();
+      if (slug) profileSlugs.push(slug);
+    }
+  }
+  const profileFacts = await loadProfileFacts(profileSlugs);
+  const headquartersBySlug = new Map(
+    [...profileFacts].map(([slug, facts]) => [slug, facts.headquarters])
+  );
+
   const rows: PremiumCapRow[] = [];
-  for (const { stateSlug, countySlug } of getAllCountyParams()) {
-    const base = getMoversForCounty(stateSlug, countySlug);
+  for (const { stateSlug, countySlug, base } of bases) {
     if (!base) continue;
-    const seeded = filterSeedMoversForCountyCoverage(base.county, base.movers);
+    const seeded = applyProfilePublicationMap(
+      filterSeedMoversForCountyCoverage(
+        base.county,
+        withCompanyHeadquarters(base.movers, headquartersBySlug)
+      ),
+      profileFacts
+    );
     const directory = approved[`${stateSlug}::${countySlug}`] ?? [];
-    const movers = directory.length
-      ? mergeApprovedMovers(seeded, directory, Math.max(80, seeded.length + directory.length))
+    let canary: LocalMover[] = [];
+    if (stateSlug === 'florida' || stateSlug === 'washington') {
+      try {
+        canary = await getCanaryMoversForCounty(stateSlug, countySlug);
+      } catch (err) {
+        logger.warn('premium_cap.canary_unavailable', {
+          stateSlug,
+          countySlug,
+          message: err instanceof Error ? err.message : String(err),
+        });
+      }
+    }
+    const directoryLocals = mergeApprovedMovers(directory, canary, 80);
+    const movers = directoryLocals.length
+      ? mergeApprovedMovers(seeded, directoryLocals, Math.max(80, seeded.length + directoryLocals.length))
       : seeded;
     const decision = evaluateCountyIndexabilityFromResult(stateSlug, countySlug, {
       county: base.county,
       movers,
-      isRegionalFallback: base.isRegionalFallback && directory.length === 0,
+      isRegionalFallback: base.isRegionalFallback && directoryLocals.length === 0,
     });
     rows.push({
       stateSlug,
@@ -63,18 +110,24 @@ async function computePremiumAllowanceKeys(): Promise<string[]> {
     });
   }
 
-  return [...premiumAllowanceKeys(rows)];
+  const premiumCount = rows.filter((row) => row.tier === 'index' && row.seoTier === 1).length;
+  return { keys: [...premiumAllowanceKeys(rows)], premiumCount };
 }
 
-const loadPremiumAllowanceKeys = unstable_cache(
-  computePremiumAllowanceKeys,
-  ['premium-index-cap-v1'],
+const loadPremiumAllowanceCached = unstable_cache(
+  computePremiumAllowance,
+  ['premium-index-cap-v2-canary'],
   { revalidate: 60 }
 );
 
-export async function loadPremiumAllowance(): Promise<ReadonlySet<string>> {
-  const keys = await loadPremiumAllowanceKeys();
-  return new Set(keys);
+export type PremiumAllowance = {
+  keys: ReadonlySet<string>;
+  premiumCount: number;
+};
+
+export async function loadPremiumAllowance(): Promise<PremiumAllowance> {
+  const loaded = await loadPremiumAllowanceCached();
+  return { keys: new Set(loaded.keys), premiumCount: loaded.premiumCount };
 }
 
 export async function capCountyIndexDecision(
@@ -85,15 +138,21 @@ export async function capCountyIndexDecision(
   if (decision.tier !== 'index' || decision.seoTier !== 1) return decision;
   try {
     const allowed = await loadPremiumAllowance();
-    return applyPremiumCapToDecision(decision, stateSlug, countySlug, allowed);
+    return applyPremiumCapToDecision(
+      decision,
+      stateSlug,
+      countySlug,
+      allowed.keys,
+      allowed.premiumCount
+    );
   } catch (err) {
     logger.warn('premium_cap.allowance_failed', {
       stateSlug,
       countySlug,
       message: err instanceof Error ? err.message : String(err),
     });
-    // Fail closed under the cap: this Premium county is not proven to be inside it.
-    return applyPremiumCapToDecision(decision, stateSlug, countySlug, new Set());
+    // Do not demote when the cap cannot be counted. It only applies above 400.
+    return decision;
   }
 }
 

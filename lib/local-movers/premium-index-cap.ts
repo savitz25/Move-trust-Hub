@@ -10,9 +10,10 @@ import type { CountyIndexDecision } from '@/lib/local-movers/county-indexability
  * same 400 win on every run. Standard counties are not ranked and do not use
  * a slot.
  *
- * A Premium county past the cap falls back to Standard when it still meets
- * the Standard score floor (the existing content bar). Otherwise it is
- * noindex. The cap does not add a mover-count minimum.
+ * The cap changes a county only when more than 400 counties actually qualify
+ * as indexable Premium. At or under 400, every qualifying Premium county stays
+ * Premium. Past the cap, a county falls back to Standard when it still meets
+ * the Standard score floor, and noindex otherwise.
  */
 export const PREMIUM_INDEX_CAP = MAX_TIER1_COUNT;
 
@@ -54,9 +55,12 @@ export function applyPremiumCapToDecision(
   decision: CountyIndexDecision,
   stateSlug: string,
   countySlug: string,
-  allowedPremiumKeys: ReadonlySet<string>
+  allowedPremiumKeys: ReadonlySet<string>,
+  /** How many counties actually qualify as indexable Premium. */
+  premiumCount = allowedPremiumKeys.size
 ): CountyIndexDecision {
   if (decision.tier !== 'index' || decision.seoTier !== 1) return decision;
+  if (premiumCount <= PREMIUM_INDEX_CAP) return decision;
   if (allowedPremiumKeys.has(premiumCapKey(stateSlug, countySlug))) return decision;
 
   const meetsStandard = (decision.qualityScore ?? 0) >= COUNTY_QUALITY_THRESHOLDS.tier2MinScore;

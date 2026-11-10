@@ -13,6 +13,7 @@ import {
 import { isPublishableCountyCompany } from '@/lib/local-movers/county-publication';
 import { getMoversForCounty, seedCountiesForMover } from '@/lib/local-movers/index';
 import { seedMoverCountsForCounty } from '@/lib/local-movers/seed-county-coverage';
+import type { LocalMover } from '@/lib/local-movers/types';
 
 const root = dirname(fileURLToPath(import.meta.url));
 
@@ -90,23 +91,24 @@ test('owner selections count only with headquarters, adjacency, or stronger evid
       owner({
         ownerSelectedCountyCountInState: 49,
         headquartersKnown: false,
+        headquartersInState: true,
         adjacentToHeadquarters: false,
         headquartersCounty: false,
       })
-    ).counts,
-    false
+    ).reason,
+    'in_state_headquarters_unresolved'
   );
   assert.equal(
     countyAssignmentCountsAsCoverage(
       owner({
         ownerSelectedCountyCountInState: 8,
         headquartersKnown: false,
+        headquartersInState: false,
         adjacentToHeadquarters: false,
         headquartersCounty: false,
-        stateLevelEvidence: true,
       })
-    ).reason,
-    'state_level_evidence'
+    ).counts,
+    false
   );
   assert.equal(
     countyAssignmentCountsAsCoverage({
@@ -166,8 +168,9 @@ test('seed fills do not count without county evidence', () => {
       headquartersKnown: false,
       headquartersCounty: false,
       adjacentToHeadquarters: false,
+      headquartersInState: true,
     }).counts,
-    false
+    true
   );
 });
 
@@ -182,14 +185,23 @@ test('Duval is not adjacent to Hillsborough, and statewide seed slots stay off D
   const listedIds = new Set(
     duval!.movers.filter((mover) => seedMoverCountsForCounty(duval!.county, mover)).map((mover) => mover.id)
   );
-  for (const id of [
-    'directory-brothers-ez-moving-of-tampa',
-    'directory-flex-moving',
-    'amerisafe-van-lines',
-    'american-van-lines',
-  ]) {
+  for (const id of ['amerisafe-van-lines', 'american-van-lines']) {
     assert.equal(listedIds.has(id), false, id);
-    assert.ok(seedCountiesForMover(id, 'florida').length > 0, id);
+    assert.ok(seedCountiesForMover(id, 'florida').length >= 50, id);
+  }
+  // Catalog cards store a street and no ZIP, so the county is unresolved.
+  // An unresolved in-state slot under 50 counties stays.
+  for (const id of ['directory-brothers-ez-moving-of-tampa', 'directory-flex-moving']) {
+    assert.equal(listedIds.has(id), true, id);
+    const mover: LocalMover | undefined = duval!.movers.find((item) => item.id === id);
+    assert.ok(mover);
+    assert.equal(
+      seedMoverCountsForCounty(duval!.county, {
+        ...mover!,
+        headquartersAddress: '1220 S Dale Mabry Hwy Ste 205, Tampa, FL 33629',
+      }),
+      false
+    );
   }
 
   const palmBeach = getMoversForCounty('florida', 'palm-beach');
@@ -223,8 +235,9 @@ test('county loader selects publication_state and does not select usdot_status',
     assert.match(match![1]!, /publication_state/);
     assert.equal(match![1]!.includes('usdot_status'), false);
   }
-  assert.match(src, /approved-county-movers-all-v10-publication-coverage/);
-  assert.match(src, /approved-county-movers-one-v10/);
+  assert.match(src, /approved-county-movers-all-v11-canonical-evidence/);
+  assert.match(src, /approved-county-movers-one-v11/);
+  assert.match(src, /canonicalEvidenceCompanyIds/);
   assert.match(src, /Publication gate: moversFromAssignments/);
   assert.match(src, /Publication gate: loadIntrastateCoverageForCounty/);
   assert.match(src, /Publication gate: loadIntrastateCoverageCounties/);

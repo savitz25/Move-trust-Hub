@@ -621,7 +621,8 @@ export default async function sitemap({
         evaluateCountyIndexabilityFromResult(id, county.slug, result),
         id,
         county.slug,
-        premiumAllowance
+        premiumAllowance.keys,
+        premiumAllowance.premiumCount
       );
       return { county, result, decision };
     })

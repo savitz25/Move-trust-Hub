@@ -8,6 +8,8 @@ import {
   countQualifyingCountyMovers,
   listedCountyMovers,
 } from '@/lib/seo/unique-local-movers';
+// MIN_LOCAL_OR_LICENSED_MOVERS stays exported for older callers. Indexability
+// itself requires one qualifying mover, not three.
 import { hasAttributableCountyReviews } from '@/lib/trust/verified-reviews';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -59,21 +61,13 @@ export function evaluateCountyIndexabilityFromResult(
   });
 
   const qualifyingMovers = countQualifyingCountyMovers(result.county, result.movers);
-  // Fail closed when nothing publishable and evidenced qualifies.
-  // The existing qualifying threshold stays. There is no separate
-  // blanket minimum on how many movers a page must list.
-  if (qualifyingMovers === 0) {
+  // Index when at least one evidenced, publishable, qualifying mover remains.
+  // Zero stays noindex. The old three-mover qualifying gate is not reapplied
+  // after seed fills are removed. Premium and Standard content scores are unchanged.
+  if (qualifyingMovers < 1) {
     return {
       tier: 'noindex',
       reason: 'no_qualifying_publishable_movers',
-      seoTier: 3,
-      qualityScore: quality.score,
-    };
-  }
-  if (qualifyingMovers < MIN_LOCAL_OR_LICENSED_MOVERS) {
-    return {
-      tier: 'noindex',
-      reason: 'insufficient_local_or_licensed_movers',
       seoTier: 3,
       qualityScore: quality.score,
     };

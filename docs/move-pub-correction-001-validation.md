@@ -9,54 +9,78 @@ Coverage JSON on company rows adds 0 counties beyond `company_destination_assign
 
 | Measure | Before (main rules) | After (this branch) |
 |---|---:|---:|
-| County pages with qualifying businesses | 3143 | 141 |
-| Indexable Premium counties | 268 | 40 |
-| Indexable Standard counties | 549 | 1 |
-| Unpublished company listings | 725 | 0 |
+| County pages with qualifying businesses | 3143 | 585 |
+| Indexable Premium counties | 278 | 153 |
+| Indexable Standard counties | 551 | 45 |
+| Unpublished companies displayed | 725 | 0 |
 | Dead profile links | 463 | 0 |
-| Unsupported blanket assignments counted as coverage | 3665 | 0 |
+| Unsupported blanket assignments counted as coverage | 2981 | 0 |
 | State-only movers shown as federally authorized | 0 | 0 |
-| Sitemap URLs | 868 | 92 |
+| Sitemap URLs | 880 | 249 |
 
-Premium after the cap is 40 (cap 400). Standard is not counted against the cap.
+Premium after the cap is 153 (cap 400). The cap changes a county only when more than 400 counties qualify as Premium. Standard is not counted against the cap.
 
-The before sitemap in this harness is 868 URLs. The audited live sitemap was 880. This harness does not call the Florida/Washington home-county canary RPC. The dead-link count before the change, 463, matches that audit. Unpublished listings are company-county placements, not unique companies.
+In-state statewide seed slots removed (headquarters state matches the slot state, slot is not the headquarters county, footprint is 50 or more): 6397 across 61 mover/state pairs. Those fills stay off the listings.
 
-Sitemap URLs added: 0. Removed: 776.
+Sitemap URLs added: 0. Removed: 631.
+
+## Waterfall
+
+Each step adds one rule to the live main path. The URL delta is versus the previous step. State hub URLs stay in every total.
+
+| Step | Sitemap URLs | Premium | Standard | URL delta |
+|---|---:|---:|---:|---:|
+| 1. Live main (canary RPC, qualifying at least 3) | 880 | 278 | 551 | — |
+| 2. Publication gate | 870 | 269 | 550 | -10 |
+| 3. Blanket, known non-adjacent, and statewide seed fills | 182 | 104 | 27 | -688 |
+| 4. Evidence joined on companies.id | 182 | 104 | 27 | 0 |
+| 5. Index at one qualifying mover | 249 | 153 | 45 | 67 |
+| 6. Premium cap only above 400 | 249 | 153 | 45 | 0 |
+
+Evidence joined on `companies.id` does not change the URL count. All 4,048 assignment `company_id` values already equal `companies.id`, and those companies have no verified discovery rows. The 966 discovery rows belong to other company ids, including the canary set, where the id and the public slug differ. The loader queries `companies.id`, not the slug. Duval `a1ace-movers-inc` is company id `fl-im-1426` and is included through the canary RPC.
+
+### Counties the cap must not downgrade
+
+Premium qualifying counties are 153, which is under 400, so the cap does not change a tier.
+
+| County | Tier | Score | Qualifying movers |
+|---|---|---:|---:|
+| florida / collier | Premium | 91 | 3 |
+| florida / lake | Premium | 91 | 3 |
+| florida / leon | Premium | 95 | 3 |
+| florida / manatee | Premium | 91 | 3 |
+| washington / clark | Premium | 95 | 8 |
+| washington / king | Premium | 95 | 8 |
+| washington / thurston | Premium | 95 | 8 |
 
 ### Per state
 
 - arizona: added 0, removed 4
-- california: added 0, removed 46
+- california: added 0, removed 32
 - colorado: added 0, removed 60
 - district-of-columbia: added 0, removed 1
-- florida: added 0, removed 55
-- georgia: added 0, removed 158
-- hawaii: added 0, removed 1
+- florida: added 0, removed 23
+- georgia: added 0, removed 146
 - illinois: added 0, removed 13
 - indiana: added 0, removed 3
 - iowa: added 0, removed 1
 - maine: added 0, removed 1
-- massachusetts: added 0, removed 13
 - michigan: added 0, removed 26
 - minnesota: added 0, removed 2
 - mississippi: added 0, removed 4
 - missouri: added 0, removed 1
-- nevada: added 0, removed 2
 - new-hampshire: added 0, removed 1
-- new-jersey: added 0, removed 21
+- new-jersey: added 0, removed 2
 - new-mexico: added 0, removed 1
-- new-york: added 0, removed 15
+- new-york: added 0, removed 10
 - north-carolina: added 0, removed 3
 - ohio: added 0, removed 2
-- oklahoma: added 0, removed 2
-- rhode-island: added 0, removed 5
-- south-carolina: added 0, removed 41
-- tennessee: added 0, removed 19
-- texas: added 0, removed 249
+- oklahoma: added 0, removed 1
+- south-carolina: added 0, removed 22
+- tennessee: added 0, removed 16
+- texas: added 0, removed 236
 - vermont: added 0, removed 1
-- virginia: added 0, removed 20
-- washington: added 0, removed 3
+- virginia: added 0, removed 17
 - wisconsin: added 0, removed 1
 - wyoming: added 0, removed 1
 
@@ -66,23 +90,26 @@ The city hub takes Duval first, so this is the Duval county list.
 
 ### Before
 
-- Brothers EZ Moving of Tampa — publication PUBLISHABLE; headquarters county hillsborough; evidence not_adjacent_to_headquarters (not counted)
-- Flex Moving — publication PUBLISHABLE; headquarters county hillsborough; evidence not_adjacent_to_headquarters (not counted)
-- Flex Moving & Storage — publication PUBLISHABLE; headquarters county orange; evidence not_adjacent_to_headquarters (not counted)
-- Good Greek Moving & Storage Of Tampa — publication PUBLISHABLE; headquarters county unknown; evidence owner_selection_headquarters_unknown (not counted)
-- Razorback Moving Tampa — publication REVIEW_REQUIRED; headquarters county hillsborough; evidence blanket_owner_selection (not counted)
-- Solomon & Sons Relocation Services — publication PUBLISHABLE; headquarters county broward; evidence blanket_owner_selection (not counted)
-- Amerisafe Van Lines — publication PUBLISHABLE; headquarters county palm-beach; evidence seed catalog
-- American Van Lines — publication PUBLISHABLE; headquarters county broward; evidence seed catalog
+- a1ace-movers-inc (A1ACE MOVERS INC.) — publication PUBLISHABLE; headquarters county duval; evidence canary RPC
+- brothers-ez-moving-of-tampa (Brothers EZ Moving of Tampa) — publication PUBLISHABLE; headquarters county hillsborough; evidence not_adjacent_to_headquarters (not counted)
+- flex-moving (Flex Moving) — publication PUBLISHABLE; headquarters county hillsborough; evidence not_adjacent_to_headquarters (not counted)
+- flex-moving-storage (Flex Moving & Storage) — publication PUBLISHABLE; headquarters county orange; evidence not_adjacent_to_headquarters (not counted)
+- good-greek-moving-storage-of-tampa (Good Greek Moving & Storage Of Tampa) — publication PUBLISHABLE; headquarters county hillsborough; evidence not_adjacent_to_headquarters (not counted)
+- razorback-moving-tampa-2 (Razorback Moving Tampa) — publication REVIEW_REQUIRED; headquarters county hillsborough; evidence blanket_owner_selection (not counted)
+- solomon-sons-relocation-services (Solomon & Sons Relocation Services) — publication PUBLISHABLE; headquarters county broward; evidence blanket_owner_selection (not counted)
+- amerisafe-van-lines (Amerisafe Van Lines) — publication PUBLISHABLE; headquarters county palm-beach; evidence seed catalog
+- american-van-lines (American Van Lines) — publication PUBLISHABLE; headquarters county broward; evidence seed catalog
 
 ### After
 
-- none
+- a1ace-movers-inc (A1ACE MOVERS INC.) — publication PUBLISHABLE; headquarters county duval; evidence canary RPC
 
 ## Rules applied
 
 - Publication uses `isConsumerVisibleCompany`. `REVIEW_REQUIRED`, `INACTIVE`, `INGESTED`, and `CLASSIFIED` are excluded. Null stays visible. There is no `is_published` column.
-- Blanket threshold is 50 owner-selected counties in one state. A known headquarters that is not adjacent is the other blanket signal. Headquarters, discovery, and system assignment sources still count inside a blanket. State authority does not create statewide coverage.
-- Seed slots and owner selections without a resolved headquarters county do not count, unless the owner selection is under the blanket threshold and has verified state-level evidence. No company is hard-coded. The Duval list does not include the separate home-county canary RPC.
-- Over-cap Premium counties fall back to Standard when the score still meets the Standard floor (48). Otherwise they are noindex.
-- The existing qualifying threshold of 3 is unchanged. There is no new blanket minimum of 3 listed movers. Zero qualifying movers is noindex.
+- Headquarters county comes from the ZIP when the ZIP's state agrees with the parsed state, otherwise from the city. An unresolved in-state headquarters does not by itself drop an owner selection or seed slot under 50 counties. A known other state still does. A known non-adjacent county still does.
+- Blanket threshold is 50 owner-selected counties in one state. Headquarters, discovery, and system assignment sources still count inside a blanket. State authority does not create statewide coverage. Statewide seed fills stay off the listing.
+- Evidence queries use companies.id. Assignment rows that store a slug are joined through the company row.
+- A county is indexable with at least one evidenced, publishable, qualifying mover. Zero stays noindex. Premium and Standard content scores are unchanged.
+- The Premium cap runs only when more than 400 counties qualify. The ranking includes canary movers and the same publication filter as the page, ordered by score then state and county.
+- Duval includes the published home-county canary from the read-only RPC fixture. No company is hard-coded.

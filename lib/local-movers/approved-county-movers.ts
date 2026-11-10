@@ -18,7 +18,9 @@ import {
 } from '@/lib/local-movers/county-coverage-evidence';
 import { isPublishableCountyCompany } from '@/lib/local-movers/county-publication';
 import { companyToLocalMover } from '@/lib/local-movers/company-to-local-mover';
+import { canonicalEvidenceCompanyIds } from '@/lib/local-movers/evidence-company-ids';
 import { parseHeadquarters } from '@/lib/local-movers/parse-headquarters';
+import { resolveHeadquartersCounty } from '@/lib/local-movers/resolve-headquarters-county';
 import { resolveCityToCounty } from '@/lib/local-movers/resolve-city-to-county';
 import { localStates } from '@/lib/local-movers/states';
 import type { LocalMover } from '@/lib/local-movers/types';
@@ -112,18 +114,18 @@ function headquartersPlacement(headquarters: string | null | undefined): {
   known: boolean;
   stateSlug: string | null;
   countySlug: string | null;
+  inState: (selectionState: string) => boolean | null;
 } {
-  const parsed = parseHeadquarters(headquarters);
-  if (!parsed.stateCode || !parsed.city) return { known: false, stateSlug: null, countySlug: null };
-  const stateSlug = localStates.find((state) => state.code === parsed.stateCode)?.slug ?? null;
-  if (!stateSlug) return { known: false, stateSlug: null, countySlug: null };
-  const county = resolveCityToCounty({
-    city: parsed.city,
-    stateCode: parsed.stateCode,
-    stateSlug,
-  });
-  if (!county) return { known: false, stateSlug, countySlug: null };
-  return { known: true, stateSlug: county.stateSlug, countySlug: county.countySlug };
+  const resolved = resolveHeadquartersCounty(headquarters);
+  return {
+    known: resolved.countyResolved,
+    stateSlug: resolved.stateSlug,
+    countySlug: resolved.countySlug,
+    inState: (selectionState: string) => {
+      if (!resolved.stateKnown || !resolved.stateSlug) return null;
+      return resolved.stateSlug === selectionState;
+    },
+  };
 }
 
 function companyKeys(company: CompanyMoverRow): string[] {
@@ -160,11 +162,13 @@ function countyCompanyCounts(
 ): boolean {
   if (!isPublishableCountyCompany(company.publication_state)) return false;
   const hq = headquartersPlacement(company.headquarters);
-  const sameState = Boolean(hq.known && hq.stateSlug === stateSlug && hq.countySlug);
+  const inState = hq.inState(stateSlug);
+  const sameState = inState !== false && Boolean(hq.known && hq.countySlug);
   return countyAssignmentCountsAsCoverage({
     source,
     ownerSelectedCountyCountInState: ownerSelectedCount(evidence, company, stateSlug),
-    headquartersKnown: Boolean(hq.known),
+    headquartersKnown: Boolean(hq.known && inState !== false),
+    headquartersInState: inState,
     headquartersCounty: Boolean(sameState && hq.countySlug === countySlug),
     adjacentToHeadquarters: Boolean(
       sameState && hq.countySlug && isCountyAdjacent(stateSlug, hq.countySlug, countySlug)
@@ -527,7 +531,11 @@ async function evidenceForCounty(
   companyIds: string[],
   companiesById: Map<string, CompanyMoverRow>
 ): Promise<CoverageEvidence> {
-  const external = await loadExternalEvidence(client, companyIds);
+  const evidenceCompanies = [...companiesById.values()];
+  const external = await loadExternalEvidence(
+    client,
+    canonicalEvidenceCompanyIds(evidenceCompanies)
+  );
   const sets = new Map<string, Set<string>>();
   const byId = await pageAssignmentRows(client, stateSlug, 'company_id', companyIds);
   const bySlug = await pageAssignmentRows(client, stateSlug, 'company_slug', companyIds);
@@ -1021,7 +1029,7 @@ async function loadAllApprovedMoversByCounty(
 const getAllApprovedMoversByCountyCached = unstable_cache(
   fetchAllApprovedMoversByCounty,
   // v10: publication gate and county-coverage evidence
-  ['approved-county-movers-all-v10-publication-coverage'],
+  ['approved-county-movers-all-v11-canonical-evidence'],
   { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
 );
 
@@ -1030,22 +1038,22 @@ export async function getCachedApprovedMoversByCounty(): Promise<Record<string, 
 }
 
 /** Drop seed cards whose profile would 404, and mark confirmed public profiles. */
-export async function applyProfilePublication(
-  movers: LocalMover[]
-): Promise<LocalMover[]> {
-  const slugs = [
-    ...new Set(movers.map((mover) => mover.profileSlug?.trim()).filter(Boolean) as string[]),
-  ];
-  if (!slugs.length) return movers;
-  const client = createPublicOrAdminClient();
-  if (!client) return movers;
+export type ProfileFacts = {
+  publicationState: string | null;
+  headquarters: string | null;
+};
 
-  const publication = new Map<string, string | null>();
-  for (let i = 0; i < slugs.length; i += IN_CHUNK) {
-    const chunk = slugs.slice(i, i + IN_CHUNK);
+export async function loadProfileFacts(slugs: string[]): Promise<Map<string, ProfileFacts>> {
+  const facts = new Map<string, ProfileFacts>();
+  const unique = [...new Set(slugs.map((slug) => slug.trim()).filter(Boolean))];
+  if (!unique.length) return facts;
+  const client = createPublicOrAdminClient();
+  if (!client) return facts;
+  for (let i = 0; i < unique.length; i += IN_CHUNK) {
+    const chunk = unique.slice(i, i + IN_CHUNK);
     const { data, error } = await client
       .from('companies')
-      .select('slug, publication_state')
+      .select('slug, publication_state, headquarters')
       .in('slug', chunk);
     if (error) {
       logger.warn('approved_movers.profile_publication_unavailable', { message: error.message });
@@ -1053,18 +1061,49 @@ export async function applyProfilePublication(
     }
     for (const row of data ?? []) {
       const slug = String((row as { slug?: string }).slug ?? '');
-      const state = (row as { publication_state?: string | null }).publication_state ?? null;
-      if (slug) publication.set(slug, state);
+      if (!slug) continue;
+      facts.set(slug, {
+        publicationState: (row as { publication_state?: string | null }).publication_state ?? null,
+        headquarters: (row as { headquarters?: string | null }).headquarters ?? null,
+      });
     }
   }
+  return facts;
+}
 
+export async function loadProfilePublication(
+  slugs: string[]
+): Promise<Map<string, string | null>> {
+  const facts = await loadProfileFacts(slugs);
+  return new Map([...facts].map(([slug, row]) => [slug, row.publicationState]));
+}
+
+/** Drop seed cards whose profile would 404. Directory rows are already gated. */
+export function applyProfilePublicationMap(
+  movers: LocalMover[],
+  publication: Map<string, string | null> | Map<string, ProfileFacts>
+): LocalMover[] {
+  const stateFor = (slug: string): string | null | undefined => {
+    if (!publication.has(slug)) return undefined;
+    const value = publication.get(slug);
+    if (value && typeof value === 'object') return value.publicationState;
+    return value ?? null;
+  };
   return movers.flatMap((mover) => {
     if (mover.listingSource === 'directory') return [mover];
     const slug = mover.profileSlug?.trim();
-    if (!slug || !publication.has(slug)) return [{ ...mover, profilePublished: false }];
-    if (!isPublishableCountyCompany(publication.get(slug))) return [];
+    const state = slug ? stateFor(slug) : undefined;
+    if (!slug || state === undefined) return [{ ...mover, profilePublished: false }];
+    if (!isPublishableCountyCompany(state)) return [];
     return [{ ...mover, profilePublished: true }];
   });
+}
+
+export async function applyProfilePublication(
+  movers: LocalMover[]
+): Promise<LocalMover[]> {
+  const slugs = movers.map((mover) => mover.profileSlug?.trim() ?? '').filter(Boolean);
+  return applyProfilePublicationMap(movers, await loadProfilePublication(slugs));
 }
 
 /**
@@ -1075,7 +1114,7 @@ function getApprovedMoversForCountyCached(stateSlug: string, countySlug: string)
   return unstable_cache(
     () => fetchApprovedMoversForCountyUncached(stateSlug, countySlug),
     // v10 per-county: publication gate and county-coverage evidence
-    ['approved-county-movers-one-v10', stateSlug, countySlug],
+    ['approved-county-movers-one-v11', stateSlug, countySlug],
     { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
   )();
 }

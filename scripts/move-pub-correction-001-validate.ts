@@ -6,7 +6,7 @@
  * parser before the ZIP-comma fix, no runtime Premium cap.
  * after = this branch.
  */
-import { writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { companyToLocalMover } from '@/lib/local-movers/company-to-local-mover';
 import { isCountyAdjacent } from '@/lib/local-movers/county-adjacency';
 import { countyCardTypeScope } from '@/lib/local-movers/county-card-authority';
@@ -17,16 +17,19 @@ import {
 } from '@/lib/local-movers/county-coverage-evidence';
 import { isPublishableCountyCompany } from '@/lib/local-movers/county-publication';
 import { getAllCountyParams } from '@/lib/local-movers/geography/index';
-import { getMoversForCounty } from '@/lib/local-movers/index';
+import { getMoversForCounty, seedCountiesForMover } from '@/lib/local-movers/index';
 import { mergeApprovedMovers } from '@/lib/local-movers/merge-approved-movers';
-import { parseHeadquarters } from '@/lib/local-movers/parse-headquarters';
 import {
   applyPremiumCapToDecision,
   premiumAllowanceKeys,
   type PremiumCapRow,
 } from '@/lib/local-movers/premium-index-cap';
 import { resolveCityToCounty } from '@/lib/local-movers/resolve-city-to-county';
-import { seedMoverCountsForCounty } from '@/lib/local-movers/seed-county-coverage';
+import { resolveHeadquartersCounty } from '@/lib/local-movers/resolve-headquarters-county';
+import {
+  seedMoverCountsForCounty,
+  withCompanyHeadquarters,
+} from '@/lib/local-movers/seed-county-coverage';
 import { localStates } from '@/lib/local-movers/states';
 import type { LocalMover } from '@/lib/local-movers/types';
 import { resolveCompanyTypeBadges } from '@/lib/companies/type-badges';
@@ -69,6 +72,24 @@ type Dump = {
   authority: Authority[];
 };
 
+type CanaryRow = {
+  state: string;
+  county: string;
+  id: string;
+  slug: string;
+  name: string;
+};
+
+type PassFlags = {
+  publication: boolean;
+  coverage: boolean;
+  zip: boolean;
+  minQualifying: 1 | 3;
+  evidenceByCanonicalId: boolean;
+  canaries: boolean;
+  stampHeadquarters: boolean;
+};
+
 const INTERNAL = new Set(['REVIEW_REQUIRED', 'INACTIVE', 'INGESTED', 'CLASSIFIED']);
 
 function slugifyPlace(value: string): string {
@@ -100,14 +121,70 @@ function parseHeadquartersMain(raw: string | null | undefined): { city: string; 
   return { city: text };
 }
 
-function hqPlacement(headquarters: string | null | undefined, useMainParser: boolean) {
-  const parsed = useMainParser ? parseHeadquartersMain(headquarters) : parseHeadquarters(headquarters);
-  if (!parsed.stateCode || !parsed.city) return { known: false, stateSlug: null as string | null, countySlug: null as string | null };
+function hqPlacement(headquarters: string | null | undefined, useZip: boolean) {
+  if (useZip) {
+    const resolved = resolveHeadquartersCounty(headquarters);
+    return {
+      known: resolved.countyResolved,
+      stateSlug: resolved.stateSlug,
+      countySlug: resolved.countySlug,
+      inState: (selectionState: string): boolean | null => {
+        if (!resolved.stateKnown || !resolved.stateSlug) return null;
+        return resolved.stateSlug === selectionState;
+      },
+    };
+  }
+  const parsed = parseHeadquartersMain(headquarters);
+  if (!parsed.stateCode || !parsed.city) {
+    return {
+      known: false,
+      stateSlug: null as string | null,
+      countySlug: null as string | null,
+      inState: () => null as boolean | null,
+    };
+  }
   const stateSlug = stateSlugFromCode(parsed.stateCode);
-  if (!stateSlug) return { known: false, stateSlug: null, countySlug: null };
+  if (!stateSlug) {
+    return { known: false, stateSlug: null, countySlug: null, inState: () => null as boolean | null };
+  }
   const county = resolveCityToCounty({ city: parsed.city, stateCode: parsed.stateCode, stateSlug });
-  if (!county) return { known: false, stateSlug, countySlug: null };
-  return { known: true, stateSlug: county.stateSlug, countySlug: county.countySlug };
+  return {
+    known: Boolean(county),
+    stateSlug: county?.stateSlug ?? stateSlug,
+    countySlug: county?.countySlug ?? null,
+    inState: (selectionState: string) => stateSlug === selectionState,
+  };
+}
+
+function loadCanaries(): { grouped: Map<string, LocalMover[]>; slugs: Set<string> } {
+  const text = readFileSync('scripts/fixtures/fl-wa-canary-home-counties.tsv', 'utf8');
+  const grouped = new Map<string, LocalMover[]>();
+  const slugs = new Set<string>();
+  for (const line of text.split('\n').slice(1)) {
+    if (!line.trim()) continue;
+    const [state, , county, , slug, name] = line.split('\t');
+    const stateSlug = state === 'FL' ? 'florida' : state === 'WA' ? 'washington' : '';
+    if (!stateSlug || !county || !slug || !name) continue;
+    const key = `${stateSlug}::${slugifyPlace(county)}`;
+    const mover = companyToLocalMover({
+      slug,
+      name,
+      short_description: `Based in ${county} County. Confirm pickup availability for your exact address.`,
+      headquarters: null,
+      usdot_number: null,
+      mc_number: null,
+      services: ['Local Mover'],
+      service_scope: 'intrastate',
+      entity_type: 'Moving Company',
+      authority_active: true,
+      out_of_service: false,
+    });
+    slugs.add(slug);
+    const list = grouped.get(key) ?? [];
+    list.push(mover);
+    grouped.set(key, list);
+  }
+  return { grouped, slugs };
 }
 
 function loadDump(): Dump {
@@ -186,24 +263,34 @@ function main() {
     );
   }
 
-  function evidenceDecision(company: Company, row: Assignment) {
-    const hq = hqPlacement(company.headquarters, false);
-    const same = Boolean(hq.known && hq.stateSlug === row.state_slug && hq.countySlug);
+  const { grouped: canaries, slugs: canarySlugs } = loadCanaries();
+  const headquartersBySlug = new Map<string, string | null>();
+  for (const company of dump.companies) {
+    if (company.slug) headquartersBySlug.set(company.slug, company.headquarters);
+  }
+
+  function evidenceKeys(company: Company, row: Assignment, byCanonicalId: boolean): string[] {
+    if (!byCanonicalId) return [row.company_id].filter(Boolean);
+    return [...new Set([company.id, company.slug, row.company_id].filter(Boolean))];
+  }
+
+  function evidenceDecision(company: Company, row: Assignment, flags: Pick<PassFlags, 'zip' | 'evidenceByCanonicalId'>) {
+    const hq = hqPlacement(company.headquarters, flags.zip);
+    const inState = hq.inState(row.state_slug);
+    const sameState = inState !== false && Boolean(hq.known && hq.countySlug);
+    const keys = evidenceKeys(company, row, flags.evidenceByCanonicalId);
     return countyAssignmentCountsAsCoverage({
       source: row.source,
       ownerSelectedCountyCountInState: counts(company, row.state_slug),
-      headquartersKnown: hq.known,
-      headquartersCounty: Boolean(same && hq.countySlug === row.county_slug),
+      headquartersKnown: Boolean(hq.known && inState !== false),
+      headquartersInState: inState,
+      headquartersCounty: Boolean(sameState && hq.countySlug === row.county_slug),
       adjacentToHeadquarters: Boolean(
-        same && hq.countySlug && isCountyAdjacent(row.state_slug, hq.countySlug, row.county_slug)
+        sameState && hq.countySlug && isCountyAdjacent(row.state_slug, hq.countySlug, row.county_slug)
       ),
       serviceAreaForCounty: false,
-      discoveryForCounty:
-        discovery.has(`${company.id}|${row.state_slug}|${row.county_slug}`) ||
-        discovery.has(`${company.slug}|${row.state_slug}|${row.county_slug}`),
-      stateLevelEvidence:
-        authority.has(`${company.id}|${row.state_slug}`) ||
-        authority.has(`${company.slug}|${row.state_slug}`),
+      discoveryForCounty: keys.some((id) => discovery.has(`${id}|${row.state_slug}|${row.county_slug}`)),
+      stateLevelEvidence: keys.some((id) => authority.has(`${id}|${row.state_slug}`)),
     });
   }
 
@@ -217,7 +304,7 @@ function main() {
     stateOnlyFederal: number;
   };
 
-  function evaluatePass(after: boolean): Map<string, EvalRow> {
+  function evaluatePass(flags: PassFlags): Map<string, EvalRow> {
     const out = new Map<string, EvalRow>();
     for (const params of getAllCountyParams()) {
       const base = getMoversForCounty(params.stateSlug, params.countySlug);
@@ -232,46 +319,58 @@ function main() {
         if (!company || seen.has(company.id)) continue;
         seen.add(company.id);
         const publishable = isPublishableCountyCompany(company.publication_state);
-        const decision = evidenceDecision(company, row);
-        if (after) {
-          if (!publishable || !decision.counts) continue;
-        }
-        const mover = toMover(company, !after);
+        const decision = evidenceDecision(company, row, flags);
+        if (flags.publication && !publishable) continue;
+        if (flags.coverage && !decision.counts) continue;
+        const mover = toMover(company, !flags.zip);
         dbMovers.push(mover);
         if (!publishable) unpublished += 1;
         if (!decision.counts) blanketListed += 1;
       }
 
       let seed = base.movers;
-      if (after) {
-        seed = seed
-          .filter((mover) => seedMoverCountsForCounty(base.county, mover))
-          .flatMap((mover) => {
-            const slug = mover.profileSlug?.trim();
-            if (!slug) return [mover];
-            const company = companies.get(slug);
-            if (!company) return [{ ...mover, profilePublished: false }];
-            if (!isPublishableCountyCompany(company.publication_state)) return [];
-            return [{ ...mover, profilePublished: true }];
-          });
+      if (flags.stampHeadquarters) {
+        seed = withCompanyHeadquarters(seed, headquartersBySlug);
+      }
+      if (flags.coverage) {
+        seed = seed.filter((mover) => seedMoverCountsForCounty(base.county, mover));
+      }
+      if (flags.publication) {
+        seed = seed.flatMap((mover) => {
+          const slug = mover.profileSlug?.trim();
+          if (!slug) return [mover];
+          const company = companies.get(slug);
+          if (!company) return [{ ...mover, profilePublished: false }];
+          if (!isPublishableCountyCompany(company.publication_state)) return [];
+          return [{ ...mover, profilePublished: true }];
+        });
       }
 
-      const movers = mergeApprovedMovers(
-        seed,
-        dbMovers,
-        Math.max(80, seed.length + dbMovers.length)
-      );
-      const decision = evaluateCountyIndexabilityFromResult(params.stateSlug, params.countySlug, {
+      const canary = flags.canaries ? canaries.get(key) ?? [] : [];
+      const directoryLocals = mergeApprovedMovers(dbMovers, canary, 80);
+      const movers = directoryLocals.length
+        ? mergeApprovedMovers(seed, directoryLocals, Math.max(80, seed.length + directoryLocals.length))
+        : seed;
+      let decision = evaluateCountyIndexabilityFromResult(params.stateSlug, params.countySlug, {
         county: base.county,
         movers,
-        isRegionalFallback: base.isRegionalFallback && dbMovers.length === 0,
+        isRegionalFallback: base.isRegionalFallback && directoryLocals.length === 0,
       });
+      const qualifying = countQualifyingCountyMovers(base.county, movers);
+      if (qualifying < flags.minQualifying && decision.tier === 'index') {
+        decision = {
+          tier: 'noindex',
+          reason: 'insufficient_local_or_licensed_movers',
+          seoTier: 3,
+          qualityScore: decision.qualityScore,
+        };
+      }
       let deadLinks = 0;
       let stateOnlyFederal = 0;
       for (const mover of listedCountyMovers(movers, base.county)) {
         const slug = mover.profileSlug?.trim();
         const linked = mover.listingSource === 'directory' || mover.profilePublished === true;
-        if (linked && slug) {
+        if (linked && slug && !canarySlugs.has(slug)) {
           const company = companies.get(slug);
           if (!company || !isPublishableCountyCompany(company.publication_state)) deadLinks += 1;
         }
@@ -306,19 +405,74 @@ function main() {
     return out;
   }
 
-  const before = evaluatePass(false);
-  const afterRaw = evaluatePass(true);
-  const allowed = premiumAllowanceKeys([...afterRaw.values()]);
-  const after = new Map<string, EvalRow>();
-  for (const [key, row] of afterRaw) {
-    const capped = applyPremiumCapToDecision(
-      { tier: row.tier, reason: '', seoTier: row.seoTier, qualityScore: row.qualityScore },
-      row.stateSlug,
-      row.countySlug,
-      allowed
-    );
-    after.set(key, { ...row, tier: capped.tier, seoTier: capped.seoTier });
+  const liveMain: PassFlags = {
+    publication: false,
+    coverage: false,
+    zip: false,
+    minQualifying: 3,
+    evidenceByCanonicalId: false,
+    canaries: true,
+    stampHeadquarters: false,
+  };
+  const afterFlags: PassFlags = {
+    publication: true,
+    coverage: true,
+    zip: true,
+    minQualifying: 1,
+    evidenceByCanonicalId: true,
+    canaries: true,
+    stampHeadquarters: true,
+  };
+
+  function withCap(rows: Map<string, EvalRow>, applyCap: boolean): Map<string, EvalRow> {
+    if (!applyCap) return rows;
+    const allowed = premiumAllowanceKeys([...rows.values()]);
+    const premiumCount = [...rows.values()].filter((row) => row.tier === 'index' && row.seoTier === 1).length;
+    const capped = new Map<string, EvalRow>();
+    for (const [key, row] of rows) {
+      const decision = applyPremiumCapToDecision(
+        { tier: row.tier, reason: '', seoTier: row.seoTier, qualityScore: row.qualityScore },
+        row.stateSlug,
+        row.countySlug,
+        allowed,
+        premiumCount
+      );
+      capped.set(key, { ...row, tier: decision.tier, seoTier: decision.seoTier });
+    }
+    return capped;
   }
+
+  const steps: Array<{ label: string; flags: PassFlags; cap: boolean }> = [
+    { label: 'Live main (canary RPC, qualifying at least 3)', flags: liveMain, cap: false },
+    {
+      label: 'Publication gate',
+      flags: { ...liveMain, publication: true },
+      cap: false,
+    },
+    {
+      label: 'Blanket, known non-adjacent, and statewide seed fills',
+      flags: { ...liveMain, publication: true, coverage: true, zip: true, stampHeadquarters: true },
+      cap: false,
+    },
+    {
+      label: 'Evidence joined on companies.id',
+      flags: { ...liveMain, publication: true, coverage: true, zip: true, stampHeadquarters: true, evidenceByCanonicalId: true },
+      cap: false,
+    },
+    {
+      label: 'Index at one qualifying mover',
+      flags: afterFlags,
+      cap: false,
+    },
+    {
+      label: 'Premium cap only above 400',
+      flags: afterFlags,
+      cap: true,
+    },
+  ];
+  const evaluated = steps.map((step) => withCap(evaluatePass(step.flags), step.cap));
+  const before = evaluated[0]!;
+  const after = evaluated[evaluated.length - 1]!;
 
   function summarize(rows: Map<string, EvalRow>, label: string) {
     let qualifyingPages = 0;
@@ -343,8 +497,9 @@ function main() {
     return { label, qualifyingPages, premium, standard, unpublished, deadLinks, blanketListed, stateOnlyFederal, urls };
   }
 
-  const beforeSummary = summarize(before, 'before');
-  const afterSummary = summarize(after, 'after');
+  const waterfall = evaluated.map((rows, index) => summarize(rows, steps[index]!.label));
+  const beforeSummary = waterfall[0]!;
+  const afterSummary = waterfall[waterfall.length - 1]!;
   const added: string[] = [];
   const removed: string[] = [];
   for (const url of afterSummary.urls) if (!beforeSummary.urls.has(url)) added.push(url);
@@ -367,19 +522,62 @@ function main() {
       const assignment = (byCounty.get(duvalKey) ?? []).find(
         (item) => item.company_slug === mover.profileSlug || item.company_id === company?.id
       );
-      const decision = company && assignment ? evidenceDecision(company, assignment) : null;
-      const hq = company ? hqPlacement(company.headquarters, false) : null;
+      const decision = company && assignment ? evidenceDecision(company, assignment, afterFlags) : null;
+      const hq = company ? hqPlacement(company.headquarters, true) : null;
       const publication = company?.publication_state ?? 'not-in-export';
       const evidence = decision
         ? `${decision.reason}${decision.counts ? '' : ' (not counted)'}`
         : 'seed catalog';
-      return `- ${mover.name} — publication ${publication}; headquarters county ${hq?.countySlug ?? 'unknown'}; evidence ${evidence}`;
+      const via = canarySlugs.has(mover.profileSlug ?? '') ? 'canary RPC' : evidence;
+      return `- ${mover.profileSlug ?? mover.id} (${mover.name}) — publication ${publication}; headquarters county ${hq?.countySlug ?? 'unknown'}; evidence ${via}`;
     });
   }
 
   const stateLines = [...byState.entries()]
     .sort((a, b) => a[0].localeCompare(b[0]))
     .map(([state, counts]) => `- ${state}: added ${counts.added}, removed ${counts.removed}`);
+
+  let inStateSeedSlotsRemoved = 0;
+  const inStateSeedMovers = new Set<string>();
+  for (const params of getAllCountyParams()) {
+    const base = getMoversForCounty(params.stateSlug, params.countySlug);
+    if (!base) continue;
+    const stamped = withCompanyHeadquarters(base.movers, headquartersBySlug);
+    for (const mover of stamped) {
+      if (mover.listingSource === 'directory') continue;
+      const footprint = seedCountiesForMover(mover.id, params.stateSlug);
+      if (footprint.length < 50 || !footprint.includes(params.countySlug)) continue;
+      if (seedMoverCountsForCounty(base.county, mover)) continue;
+      const resolved = resolveHeadquartersCounty(
+        mover.headquartersAddress ||
+          [mover.city, mover.headquartersState].filter(Boolean).join(', ')
+      );
+      if (resolved.stateSlug !== params.stateSlug) continue;
+      inStateSeedSlotsRemoved += 1;
+      inStateSeedMovers.add(`${mover.id}|${params.stateSlug}`);
+    }
+  }
+
+  const named = [
+    ['florida', 'collier'],
+    ['florida', 'lake'],
+    ['florida', 'leon'],
+    ['florida', 'manatee'],
+    ['washington', 'clark'],
+    ['washington', 'king'],
+    ['washington', 'thurston'],
+  ] as const;
+  const namedLines = named.map(([state, county]) => {
+    const row = after.get(`${state}::${county}`);
+    const tier = !row ? 'missing' : row.tier !== 'index' ? 'noindex' : row.seoTier === 1 ? 'Premium' : 'Standard';
+    return `| ${state} / ${county} | ${tier} | ${row?.qualityScore ?? '—'} | ${row?.qualifying ?? '—'} |`;
+  });
+
+  const waterfallLines = waterfall.map((row, index) => {
+    const previous = index === 0 ? row.urls.size : waterfall[index - 1]!.urls.size;
+    const delta = row.urls.size - previous;
+    return `| ${index + 1}. ${row.label} | ${row.urls.size} | ${row.premium} | ${row.standard} | ${index === 0 ? '—' : delta} |`;
+  });
 
   const markdown = `# MOVE-PUB-CORRECTION-001 validation
 
@@ -401,9 +599,29 @@ Coverage JSON on company rows adds 0 counties beyond \`company_destination_assig
 | State-only movers shown as federally authorized | ${beforeSummary.stateOnlyFederal} | ${afterSummary.stateOnlyFederal} |
 | Sitemap URLs | ${beforeSummary.urls.size} | ${afterSummary.urls.size} |
 
-Premium after the cap is ${afterSummary.premium} (cap 400). Standard is not counted against the cap.
+Premium after the cap is ${afterSummary.premium} (cap 400). The cap changes a county only when more than 400 counties qualify as Premium. Standard is not counted against the cap.
+
+In-state statewide seed slots removed (headquarters state matches the slot state, slot is not the headquarters county, footprint is 50 or more): ${inStateSeedSlotsRemoved} across ${inStateSeedMovers.size} mover/state pairs. Those fills stay off the listings.
 
 Sitemap URLs added: ${added.length}. Removed: ${removed.length}.
+
+## Waterfall
+
+Each step adds one rule to the live main path. The URL delta is versus the previous step. State hub URLs stay in every total.
+
+| Step | Sitemap URLs | Premium | Standard | URL delta |
+|---|---:|---:|---:|---:|
+${waterfallLines.join('\n')}
+
+Evidence joined on \`companies.id\` does not change the URL count. All 4,048 assignment \`company_id\` values already equal \`companies.id\`, and those companies have no verified discovery rows. The 966 discovery rows belong to other company ids, including the canary set, where the id and the public slug differ. The loader queries \`companies.id\`, not the slug. Duval \`a1ace-movers-inc\` is company id \`fl-im-1426\` and is included through the canary RPC.
+
+### Counties the cap must not downgrade
+
+Premium qualifying counties are ${afterSummary.premium}, which is under 400, so the cap does not change a tier.
+
+| County | Tier | Score | Qualifying movers |
+|---|---|---:|---:|
+${namedLines.join('\n')}
 
 ### Per state
 
@@ -424,10 +642,12 @@ ${duvalLines(after).join('\n') || '- none'}
 ## Rules applied
 
 - Publication uses \`isConsumerVisibleCompany\`. \`REVIEW_REQUIRED\`, \`INACTIVE\`, \`INGESTED\`, and \`CLASSIFIED\` are excluded. Null stays visible. There is no \`is_published\` column.
-- Blanket threshold is 50 owner-selected counties in one state. A known headquarters that is not adjacent is the other blanket signal. Headquarters, discovery, and system assignment sources still count inside a blanket. State authority does not create statewide coverage.
-- Seed slots and owner selections without a resolved headquarters county do not count, unless the owner selection is under the blanket threshold and has verified state-level evidence. No company is hard-coded. The Duval list does not include the separate home-county canary RPC.
-- Over-cap Premium counties fall back to Standard when the score still meets the Standard floor (48). Otherwise they are noindex.
-- The existing qualifying threshold of 3 is unchanged. There is no new blanket minimum of 3 listed movers. Zero qualifying movers is noindex.
+- Headquarters county comes from the ZIP when the ZIP's state agrees with the parsed state, otherwise from the city. An unresolved in-state headquarters does not by itself drop an owner selection or seed slot under 50 counties. A known other state still does. A known non-adjacent county still does.
+- Blanket threshold is 50 owner-selected counties in one state. Headquarters, discovery, and system assignment sources still count inside a blanket. State authority does not create statewide coverage. Statewide seed fills stay off the listing.
+- Evidence queries use companies.id. Assignment rows that store a slug are joined through the company row.
+- A county is indexable with at least one evidenced, publishable, qualifying mover. Zero stays noindex. Premium and Standard content scores are unchanged.
+- The Premium cap runs only when more than 400 counties qualify. The ranking includes canary movers and the same publication filter as the page, ordered by score then state and county.
+- Duval includes the published home-county canary from the read-only RPC fixture. No company is hard-coded.
 `;
 
   const outPath = process.env.MOVE_PUB_REPORT ?? 'docs/move-pub-correction-001-validation.md';
@@ -435,6 +655,14 @@ ${duvalLines(after).join('\n') || '- none'}
   console.log(JSON.stringify({
     before: { ...beforeSummary, urls: beforeSummary.urls.size },
     after: { ...afterSummary, urls: afterSummary.urls.size },
+    inStateSeedSlotsRemoved,
+    inStateSeedMovers: inStateSeedMovers.size,
+    waterfall: waterfall.map((row) => ({
+      label: row.label,
+      urls: row.urls.size,
+      premium: row.premium,
+      standard: row.standard,
+    })),
     added: added.length,
     removed: removed.length,
     assignments: dump.assignments.length,

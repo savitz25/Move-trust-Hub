@@ -22,10 +22,10 @@
  * may operate in the state. It is not county evidence. It keeps an
  * owner-selected county only when the company is under the blanket threshold.
  *
- * When the headquarters county cannot be resolved, the selection is not
- * treated as adjacent or as the headquarters county. It does not count
- * unless verified state-level evidence exists and the selection is under
- * the blanket threshold.
+ * An unresolved headquarters county does not, by itself, drop an in-state
+ * selection under the blanket threshold, or a seed slot under that threshold.
+ * A known headquarters in another county that is not adjacent still does not
+ * count. A 50-plus selection still does not count without individual evidence.
  *
  * Individually evidenced counties are kept when a company serves many
  * counties. Unsupported selections do not count toward listing or indexability.
@@ -46,7 +46,13 @@ const SYSTEM_ASSIGNMENT_SOURCES = new Set(['onboarding_approval', 'onboarding_co
 export type CountyCoverageFacts = {
   source?: string | null;
   ownerSelectedCountyCountInState: number;
+  /** True when the headquarters county itself was resolved. */
   headquartersKnown: boolean;
+  /**
+   * True when the headquarters state matches this selection.
+   * False when it is a different state. Null when the state is unknown.
+   */
+  headquartersInState?: boolean | null;
   headquartersCounty: boolean;
   adjacentToHeadquarters: boolean;
   serviceAreaForCounty: boolean;
@@ -96,8 +102,10 @@ export function countyAssignmentCountsAsCoverage(
     return { counts: true, reason: 'adjacent_to_headquarters' };
   }
   if (!facts.headquartersKnown) {
-    if (facts.stateLevelEvidence) return { counts: true, reason: 'state_level_evidence' };
-    return { counts: false, reason: 'owner_selection_headquarters_unknown' };
+    if (facts.headquartersInState === false) {
+      return { counts: false, reason: 'out_of_state_headquarters' };
+    }
+    return { counts: true, reason: 'in_state_headquarters_unresolved' };
   }
   if (facts.stateLevelEvidence) return { counts: true, reason: 'state_level_evidence' };
   return { counts: false, reason: 'unsupported_owner_selection' };
@@ -114,10 +122,15 @@ export function seedSlotCountsAsCoverage(facts: {
   headquartersKnown: boolean;
   headquartersCounty: boolean;
   adjacentToHeadquarters: boolean;
+  /** Null when the headquarters state is unknown. */
+  headquartersInState?: boolean | null;
 }): CountyCoverageDecision {
   if (facts.headquartersCounty) return { counts: true, reason: 'headquarters_county' };
   if (facts.countiesInState >= BLANKET_SELF_SELECTED_COUNTY_THRESHOLD) {
     return { counts: false, reason: 'blanket_seed_fill' };
+  }
+  if (facts.headquartersInState === false) {
+    return { counts: false, reason: 'seed_out_of_state' };
   }
   if (facts.headquartersKnown && !facts.adjacentToHeadquarters) {
     return { counts: false, reason: 'seed_not_adjacent_to_headquarters' };
@@ -125,7 +138,6 @@ export function seedSlotCountsAsCoverage(facts: {
   if (facts.adjacentToHeadquarters) {
     return { counts: true, reason: 'adjacent_to_headquarters' };
   }
-  // A seed slot with no resolved headquarters county is not county evidence.
-  // Catalog rows often store a street fragment in the city field.
-  return { counts: false, reason: 'seed_headquarters_unknown' };
+  // Unresolved headquarters does not by itself drop a below-threshold seed slot.
+  return { counts: true, reason: 'seed_headquarters_unresolved' };
 }

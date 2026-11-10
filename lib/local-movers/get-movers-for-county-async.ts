@@ -1,8 +1,9 @@
 import 'server-only';
 
 import {
-  applyProfilePublication,
+  applyProfilePublicationMap,
   getApprovedMoversForCounty,
+  loadProfileFacts,
 } from '@/lib/local-movers/approved-county-movers';
 import { getCanaryMoversForCounty } from '@/lib/local-movers/canary-county-movers';
 import {
@@ -11,7 +12,10 @@ import {
 } from '@/lib/local-movers/index';
 import { mergeApprovedMovers } from '@/lib/local-movers/merge-approved-movers';
 import { enrichMoversLocations } from '@/lib/local-movers/enrich-mover-location';
-import { filterSeedMoversForCountyCoverage } from '@/lib/local-movers/seed-county-coverage';
+import {
+  filterSeedMoversForCountyCoverage,
+  withCompanyHeadquarters,
+} from '@/lib/local-movers/seed-county-coverage';
 import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
 import { isProductionBuildPhase } from '@/lib/ssg/ssg-params';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
@@ -48,10 +52,21 @@ export async function getMoversForCountyAsync(
 ): Promise<CountyMoversResult | null> {
   const raw = getMoversForCounty(stateSlug, countySlug);
   if (!raw) return null;
+  const profileSlugs = raw.movers
+    .map((mover) => mover.profileSlug?.trim() ?? '')
+    .filter(Boolean);
+  const profileFacts = await loadProfileFacts(profileSlugs);
+  const headquartersBySlug = new Map(
+    [...profileFacts].map(([slug, facts]) => [slug, facts.headquarters])
+  );
   const base = {
     ...raw,
-    movers: await applyProfilePublication(
-      filterSeedMoversForCountyCoverage(raw.county, raw.movers)
+    movers: applyProfilePublicationMap(
+      filterSeedMoversForCountyCoverage(
+        raw.county,
+        withCompanyHeadquarters(raw.movers, headquartersBySlug)
+      ),
+      profileFacts
     ),
   };
 

@@ -1,7 +1,7 @@
 import { isCountyAdjacent } from '@/lib/local-movers/county-adjacency';
 import { seedSlotCountsAsCoverage } from '@/lib/local-movers/county-coverage-evidence';
 import { seedCountiesForMover } from '@/lib/local-movers/index';
-import { resolveCityToCounty } from '@/lib/local-movers/resolve-city-to-county';
+import { resolveHeadquartersCounty } from '@/lib/local-movers/resolve-headquarters-county';
 import { localStates } from '@/lib/local-movers/states';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -14,6 +14,29 @@ function stateSlugForCode(code: string | undefined): string | null {
  * Drop static catalog slots that are a statewide paste or a known
  * non-adjacent fill. Directory rows are not seed slots.
  */
+/**
+ * When the catalog city is only a street, use the company headquarters
+ * string so a known county can be resolved. Unresolved addresses are left
+ * alone and do not, by themselves, drop an in-state slot under 50 counties.
+ */
+export function withCompanyHeadquarters(
+  movers: LocalMover[],
+  headquartersBySlug: Map<string, string | null>
+): LocalMover[] {
+  return movers.map((mover) => {
+    const slug = mover.profileSlug?.trim();
+    const headquarters = slug ? headquartersBySlug.get(slug) : undefined;
+    if (!headquarters) return mover;
+    const current = resolveHeadquartersCounty(
+      [mover.city, mover.headquartersState].filter(Boolean).join(', ')
+    );
+    if (current.countyResolved) return mover;
+    const resolved = resolveHeadquartersCounty(headquarters);
+    if (!resolved.countyResolved && !resolved.stateKnown) return mover;
+    return { ...mover, headquartersAddress: headquarters };
+  });
+}
+
 export function filterSeedMoversForCountyCoverage(
   county: LocalCounty,
   movers: LocalMover[]
@@ -27,28 +50,34 @@ export function seedMoverCountsForCounty(county: LocalCounty, mover: LocalMover)
   if (!counties.length) return true;
 
   const hqStateSlug = stateSlugForCode(mover.headquartersState);
-  const otherState = Boolean(hqStateSlug && hqStateSlug !== county.stateSlug);
-  const hq = otherState
-    ? null
-    : resolveCityToCounty({
-        city: mover.city,
-        stateCode: mover.headquartersState,
-        stateSlug: county.stateSlug,
-      });
+  const fromCatalog = resolveHeadquartersCounty(
+    [mover.city, mover.headquartersState].filter(Boolean).join(', ')
+  );
+  const fromAddress = mover.headquartersAddress
+    ? resolveHeadquartersCounty(mover.headquartersAddress)
+    : null;
+  const fromParts =
+    fromAddress && (fromAddress.countyResolved || fromAddress.stateKnown)
+      ? fromAddress
+      : fromCatalog;
+  const hqState = fromParts.stateSlug ?? hqStateSlug;
+  const inState = hqState ? hqState === county.stateSlug : null;
+  const countyResolved = Boolean(fromParts.countyResolved && inState !== false);
   const headquartersCounty = Boolean(
-    hq && hq.stateSlug === county.stateSlug && hq.countySlug === county.slug
+    countyResolved && fromParts.countySlug === county.slug && fromParts.stateSlug === county.stateSlug
   );
   const adjacentToHeadquarters = Boolean(
-    hq &&
-      hq.stateSlug === county.stateSlug &&
-      isCountyAdjacent(county.stateSlug, hq.countySlug, county.slug)
+    countyResolved &&
+      fromParts.countySlug &&
+      fromParts.stateSlug === county.stateSlug &&
+      isCountyAdjacent(county.stateSlug, fromParts.countySlug, county.slug)
   );
-  const headquartersKnown = Boolean(otherState || hq);
 
   return seedSlotCountsAsCoverage({
     countiesInState: counties.length,
-    headquartersKnown,
+    headquartersKnown: countyResolved,
     headquartersCounty,
     adjacentToHeadquarters,
+    headquartersInState: inState,
   }).counts;
 }
