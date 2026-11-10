@@ -69,6 +69,8 @@ expect_fail authenticated-email "set role authenticated; select reviewer_email f
 echo "=== service_role publish ==="
 psql_db -c "select set_config('request.jwt.claim.role', 'service_role', false); set role service_role; select public.mth_publish_directory_company('{\"id\":\"sec-p1-proof\",\"slug\":\"sec-p1-proof\",\"name\":\"SEC P1 Proof Movers\",\"usdot_number\":\"9990001\",\"is_verified\":true,\"overall_rating\":4.5}'::jsonb);" >"$OUT/service-publish.log"
 grep -q 'sec-p1-proof' "$OUT/service-publish.log"
+psql_db -tA -c "select verification_sources::text from public.companies where id = 'sec-p1-proof';" >"$OUT/service-verification.log"
+grep -q '{}' "$OUT/service-verification.log"
 grep -q '"existing"[[:space:]]*:[[:space:]]*false' "$OUT/service-publish.log" || grep -q 'existing.: false\|"existing": false' "$OUT/service-publish.log"
 echo "PASS service_role publish"
 

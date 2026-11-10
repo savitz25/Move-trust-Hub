@@ -46,7 +46,9 @@ create table public.companies (
   fmcsa_legal_name text,
   fmcsa_raw jsonb,
   google_data jsonb,
-  public_scrape_data jsonb
+  public_scrape_data jsonb,
+  verification_sources jsonb,
+  verification_last_synced_at timestamptz
 );
 
 insert into public.companies (id, slug, name, headquarters, usdot_number, is_verified, overall_rating, review_count)

@@ -137,10 +137,13 @@ begin
     coalesce((payload->>'last_updated')::timestamptz, now())
   );
 
+  -- Same enrichment write as 20260710120000. The nested handler keeps
+  -- publishes working if those columns are absent. Rollback restores the
+  -- body captured from production on 2026-11-10, which did not set them.
   begin
     update public.companies set
-      fmcsa_last_checked = (payload->>'fmcsa_last_checked')::timestamptz,
-      authority_active = (payload->>'authority_active')::boolean,
+      fmcsa_last_checked = nullif(payload->>'fmcsa_last_checked', '')::timestamptz,
+      authority_active = nullif(payload->>'authority_active', '')::boolean,
       out_of_service = coalesce((payload->>'out_of_service')::boolean, false),
       complaints_last_12m = coalesce((payload->>'complaints_last_12m')::int, 0),
       revocation_date = nullif(payload->>'revocation_date', '')::date,
@@ -148,11 +151,26 @@ begin
       fmcsa_legal_name = nullif(payload->>'fmcsa_legal_name', ''),
       fmcsa_raw = payload->'fmcsa_raw',
       google_data = payload->'google_data',
-      public_scrape_data = payload->'public_scrape_data'
+      public_scrape_data = payload->'public_scrape_data',
+      verification_sources = coalesce(payload->'verification_sources', '{}'::jsonb),
+      verification_last_synced_at = nullif(payload->>'verification_last_synced_at', '')::timestamptz
     where id = v_id;
   exception
     when undefined_column then
-      null;
+      begin
+        update public.companies set
+          fmcsa_last_checked = nullif(payload->>'fmcsa_last_checked', '')::timestamptz,
+          authority_active = nullif(payload->>'authority_active', '')::boolean,
+          out_of_service = coalesce((payload->>'out_of_service')::boolean, false),
+          fmcsa_legal_name = nullif(payload->>'fmcsa_legal_name', ''),
+          fmcsa_raw = payload->'fmcsa_raw',
+          google_data = payload->'google_data',
+          public_scrape_data = payload->'public_scrape_data'
+        where id = v_id;
+      exception
+        when undefined_column then
+          null;
+      end;
   end;
 
   return jsonb_build_object('company_id', v_id, 'slug', v_slug, 'existing', false);
