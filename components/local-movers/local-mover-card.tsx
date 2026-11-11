@@ -5,9 +5,11 @@ import { CompanyTypeBadges } from '@/components/company/company-type-badges';
 import type { LocalMover } from '@/lib/local-movers/types';
 import { buildCompanyProfileHref } from '@/lib/directory/profile-back-link';
 import { CompanyProfileLink } from '@/components/directory/company-profile-link';
-import { predictCompanyProfileSlug } from '@/lib/directory/slug-resolution';
+import {
+  countyCardTypeScope,
+  listedMoverProfileSlug,
+} from '@/lib/local-movers/county-card-authority';
 import { getLicenseDisplay } from '@/lib/trust/company-display-policy';
-import { assessLicense } from '@/lib/trust/license-verification';
 import { reviewUrlForDirectoryCompany } from '@/lib/reviews/review-url';
 import { sanitizeMoverDescription } from '@/lib/local-movers/sanitize-mover-description';
 import { classifyMoverLocality } from '@/lib/local-movers/locality-rules';
@@ -35,19 +37,15 @@ export function LocalMoverCard({
   /** When set, profile links return to this page (e.g. county directory). */
   profileReturnPath?: string;
 }) {
-  const hasDirectoryProfile =
-    Boolean(mover.profileSlug) ||
-    assessLicense(mover.usdotNumber, mover.mcNumber).isDisplayable;
-  const profileSlug =
-    mover.profileSlug ||
-    (hasDirectoryProfile
-      ? predictCompanyProfileSlug({ name: mover.name, usdot: mover.usdotNumber })
-      : '');
+  const profileSlug = listedMoverProfileSlug(mover);
   const profileHref = profileSlug
     ? buildCompanyProfileHref(profileSlug, profileReturnPath)
     : null;
-
-  const license = getLicenseDisplay(mover);
+  const typeScope = countyCardTypeScope(mover);
+  const stateOnly = mover.regulatoryStanding?.basis === 'state_only';
+  const license = stateOnly
+    ? { status: 'pending' as const, pendingMessage: 'State authority only' }
+    : getLicenseDisplay(mover);
   const hqState = mover.headquartersState?.toUpperCase();
   // Never stamp the page county's state onto an out-of-state HQ city.
   const locationLine = [
@@ -145,20 +143,13 @@ export function LocalMoverCard({
                 size="compact"
                 input={{
                   // Geography badge (Local / Regional) is separate above.
-                  // Type badges = entity role only — never blur carrier vs broker.
-                  isLocalOnly: county ? false : Boolean(mover.isLocalOnly),
-                  serviceScope: county
-                    ? mover.usdotNumber
-                      ? 'interstate'
-                      : undefined
-                    : mover.isLocalOnly
-                      ? 'intrastate'
-                      : mover.usdotNumber
-                        ? 'interstate'
-                        : undefined,
-                  entityType: mover.entityType,
-                  usdotNumber: mover.usdotNumber,
-                  mcNumber: mover.mcNumber,
+                  // State-only movers stay intrastate and are not labeled as
+                  // federally authorized interstate carriers.
+                  isLocalOnly: typeScope.isLocalOnly,
+                  serviceScope: typeScope.serviceScope,
+                  entityType: stateOnly ? null : mover.entityType,
+                  usdotNumber: stateOnly ? undefined : mover.usdotNumber,
+                  mcNumber: stateOnly ? undefined : mover.mcNumber,
                   services: mover.services,
                 }}
               />

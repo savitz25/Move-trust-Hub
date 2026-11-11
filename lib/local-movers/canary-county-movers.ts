@@ -8,6 +8,7 @@ import { unstable_cache } from 'next/cache';
 import { createClient } from '@supabase/supabase-js';
 import { getServiceRoleSupabaseTarget } from '@/lib/supabase/config';
 import { companyToLocalMover } from '@/lib/local-movers/company-to-local-mover';
+import { isPublishableCountyCompany } from '@/lib/local-movers/county-publication';
 import type { LocalMover } from '@/lib/local-movers/types';
 import {
   buildCountySlugToFips,
@@ -76,7 +77,7 @@ async function fetchCanaryMoversForCounty(
   }
 
   const rows = (data ?? []) as RpcRow[];
-  return rows.map((row) =>
+  return rows.filter((row) => isPublishableCountyCompany(row.publication_state)).map((row) =>
     companyToLocalMover({
       slug: row.slug,
       name: row.name,

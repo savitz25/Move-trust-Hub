@@ -1,9 +1,7 @@
 import 'server-only';
 
-import {
-  evaluateCountyIndexabilityFromResult,
-  type CountyIndexDecision,
-} from '@/lib/local-movers/county-indexability';
+import { type CountyIndexDecision } from '@/lib/local-movers/county-indexability';
+import { publishedCountyIndexDecision } from '@/lib/local-movers/county-indexability-async';
 import { buildCountyPageMetadata } from '@/lib/local-movers/seo-metadata';
 import { getCountyPath } from '@/lib/local-movers/index';
 import { getMoversForCountyAsync } from '@/lib/local-movers/get-movers-for-county-async';
@@ -37,11 +35,7 @@ export async function resolveCountyPageSeo(
   if (!state || !result) return null;
 
   const path = getCountyPath(stateSlug, countySlug);
-  const indexDecision = evaluateCountyIndexabilityFromResult(
-    stateSlug,
-    countySlug,
-    result
-  );
+  const indexDecision = await publishedCountyIndexDecision(stateSlug, countySlug, result);
   const metadata = buildCountyPageMetadata(
     result.county,
     state.name,

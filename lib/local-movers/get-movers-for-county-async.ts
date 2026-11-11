@@ -1,20 +1,17 @@
 import 'server-only';
 
-import { getApprovedMoversForCounty } from '@/lib/local-movers/approved-county-movers';
-import { getCanaryMoversForCounty } from '@/lib/local-movers/canary-county-movers';
 import {
-  getMoversForCounty,
-  hasExplicitCountyAssignment,
-} from '@/lib/local-movers/index';
-import { mergeApprovedMovers } from '@/lib/local-movers/merge-approved-movers';
-import { enrichMoversLocations } from '@/lib/local-movers/enrich-mover-location';
-import { segmentCountyMovers } from '@/lib/local-movers/segment-county-movers';
+  applyProfilePublicationMap,
+  getApprovedMoversForCounty,
+  loadProfileFacts,
+} from '@/lib/local-movers/approved-county-movers';
+import { getCanaryMoversForCounty } from '@/lib/local-movers/canary-county-movers';
+import { assembleShownCountyMovers } from '@/lib/local-movers/county-listing';
+import { getMoversForCounty } from '@/lib/local-movers/index';
+import { pageSeedMovers } from '@/lib/local-movers/seed-county-coverage';
 import { isProductionBuildPhase } from '@/lib/ssg/ssg-params';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 import { logger } from '@/lib/logging/logger';
-
-const MAX_MOVERS_PER_COUNTY = 10;
-const LARGE_MARKET_MAX_MOVERS = 40;
 
 export type MoverSourceMode = 'db' | 'seed' | 'hybrid' | 'degraded';
 
@@ -42,8 +39,22 @@ export async function getMoversForCountyAsync(
   stateSlug: string,
   countySlug: string
 ): Promise<CountyMoversResult | null> {
-  const base = getMoversForCounty(stateSlug, countySlug);
-  if (!base) return null;
+  const raw = getMoversForCounty(stateSlug, countySlug);
+  if (!raw) return null;
+  const profileSlugs = raw.movers
+    .map((mover) => mover.profileSlug?.trim() ?? '')
+    .filter(Boolean);
+  const profileFacts = await loadProfileFacts(profileSlugs);
+  const headquartersBySlug = new Map(
+    [...profileFacts].map(([slug, facts]) => [slug, facts.headquarters])
+  );
+  const base = {
+    ...raw,
+    movers: applyProfilePublicationMap(
+      pageSeedMovers(raw.county, raw.movers, headquartersBySlug),
+      profileFacts
+    ),
+  };
 
   // Bulk SSG without Supabase: seed catalog only (opt-in via BULK_SSG without FORCE).
   // Runtime / on-demand / revalidate always merges approved movers.
@@ -87,49 +98,23 @@ export async function getMoversForCountyAsync(
     });
   }
 
-  // Canary first (exact home-county evidence), then other approved directory locals.
-  const directoryLocals = mergeApprovedMovers(approved, canary, 80);
-
-  if (!directoryLocals.length) {
-    const sourceMode: MoverSourceMode = approvedFetchFailed
-      ? 'degraded'
-      : base.movers.length
-        ? 'seed'
-        : 'seed';
-    return {
-      ...base,
-      sourceMode,
-      approvedCount: 0,
-      catalogCount: base.movers.length,
-    };
-  }
-
-  const hasExplicitAssignment = hasExplicitCountyAssignment(stateSlug, countySlug);
-  // Always room for every approved local + a healthy catalog fill for large markets.
-  const displayLimit = Math.max(
-    hasExplicitAssignment ? LARGE_MARKET_MAX_MOVERS : MAX_MOVERS_PER_COUNTY,
-    base.movers.length + directoryLocals.length,
-    directoryLocals.length + 10,
-    40
-  );
-
-  const merged = mergeApprovedMovers(base.movers, directoryLocals, displayLimit);
-  const enriched = enrichMoversLocations(merged);
-  const directoryCount = directoryLocals.length;
+  const shown = assembleShownCountyMovers(base.county, base.movers, approved, canary);
   const onlyApproved =
-    directoryCount > 0 && merged.every((m) => m.listingSource === 'directory');
-  const sourceMode: MoverSourceMode = onlyApproved
-    ? 'db'
-    : directoryCount > 0
-      ? 'hybrid'
-      : 'seed';
+    shown.directoryCount > 0 && shown.movers.every((mover) => mover.listingSource === 'directory');
+  const sourceMode: MoverSourceMode = approvedFetchFailed && shown.directoryCount === 0
+    ? 'degraded'
+    : onlyApproved
+      ? 'db'
+      : shown.directoryCount > 0
+        ? 'hybrid'
+        : 'seed';
 
   return {
     ...base,
-    isRegionalFallback: base.isRegionalFallback && directoryCount === 0,
-    movers: segmentCountyMovers(enriched, base.county).ordered,
+    isRegionalFallback: base.isRegionalFallback && shown.directoryCount === 0,
+    movers: shown.movers,
     sourceMode,
-    approvedCount: directoryCount,
+    approvedCount: shown.directoryCount,
     catalogCount: base.movers.length,
   };
 }

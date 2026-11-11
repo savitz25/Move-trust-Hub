@@ -66,10 +66,14 @@ test('county sitemap and live county page share the async mover source', () => {
   const cityPage = readFileSync(join(root, 'lib/destinations/resolve-city-hub-page.ts'), 'utf8');
   const main = readFileSync(join(root, 'app/sitemap.ts'), 'utf8');
 
+  const published = readFileSync(join(root, 'lib/local-movers/county-indexability-async.ts'), 'utf8');
   assert.match(page, /getMoversForCountyAsync\(stateSlug, countySlug\)/);
-  assert.match(page, /evaluateCountyIndexabilityFromResult\(\s*stateSlug,\s*countySlug,\s*result/);
-  assert.match(local, /getMoversForCountyAsync\(id, county\.slug\)/);
-  assert.match(local, /evaluateCountyIndexabilityFromResult\(id, county\.slug, result\)/);
+  assert.match(page, /publishedCountyIndexDecision\(stateSlug, countySlug, result\)/);
+  assert.match(local, /evaluatePublishedStateCounties\(id\)/);
+  assert.match(published, /getMoversForCountyAsync\(stateSlug, county\.slug\)/);
+  assert.match(published, /publishedCountyIndexDecision\(stateSlug, county\.slug, result\)/);
+  assert.match(published, /evaluateCountyIndexabilityFromResult\(stateSlug, countySlug, result\)/);
+  assert.match(published, /getPublishedIndexableCounties/);
   assert.match(local, /entry\.decision\.tier === 'index'/);
   assert.match(local, /export const dynamic = 'force-dynamic'/);
   assert.doesNotMatch(local, /getIndexableCounties/);

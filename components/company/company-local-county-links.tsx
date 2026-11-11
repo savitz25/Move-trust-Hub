@@ -44,13 +44,14 @@ export function CompanyLocalCountyLinks({
       <CardHeader className="pb-2">
         <CardTitle className="text-base flex items-center gap-2">
           <MapPin className="h-4 w-4 text-primary" aria-hidden />
-          Local mover guides
+          Service area stated by the business
         </CardTitle>
       </CardHeader>
       <CardContent className="text-sm space-y-3">
         <p className="text-muted-foreground leading-relaxed">
-          Find {companyName} and other licensed movers on our county-level guides
-          (part of the Move Trust Hub local network).
+          Service area stated by the business. {companyName} supplied these counties.
+          They are not verified coverage, and a stated county is not evidence that
+          the company serves that county.
         </p>
         {shownCounties.length > 0 ? (
           <ul className="flex flex-wrap gap-2">

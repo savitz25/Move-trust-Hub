@@ -8,6 +8,8 @@ import {
   countQualifyingCountyMovers,
   listedCountyMovers,
 } from '@/lib/seo/unique-local-movers';
+// MIN_LOCAL_OR_LICENSED_MOVERS stays exported for older callers. Indexability
+// itself requires one qualifying mover, not three.
 import { hasAttributableCountyReviews } from '@/lib/trust/verified-reviews';
 import type { LocalCounty, LocalMover } from '@/lib/local-movers/types';
 
@@ -59,11 +61,24 @@ export function evaluateCountyIndexabilityFromResult(
   });
 
   const qualifyingMovers = countQualifyingCountyMovers(result.county, result.movers);
-  if (qualifyingMovers < MIN_LOCAL_OR_LICENSED_MOVERS) {
+  // Index when at least one evidenced, publishable, qualifying mover remains.
+  // Zero stays noindex. The old three-mover qualifying gate is not reapplied
+  // after seed fills are removed. Premium and Standard content scores are unchanged.
+  if (qualifyingMovers < 1) {
     return {
       tier: 'noindex',
-      reason: 'insufficient_local_or_licensed_movers',
+      reason: 'no_qualifying_publishable_movers',
       seoTier: 3,
+      qualityScore: quality.score,
+    };
+  }
+
+  // Hidden out-of-state and unconfirmed cards do not count as a listing.
+  if (listedCountyMovers(result.movers, result.county).length === 0) {
+    return {
+      tier: 'noindex',
+      reason: 'no_listed_movers',
+      seoTier: quality.tier,
       qualityScore: quality.score,
     };
   }
@@ -72,17 +87,6 @@ export function evaluateCountyIndexabilityFromResult(
     return {
       tier: 'noindex',
       reason: quality.reason,
-      seoTier: quality.tier,
-      qualityScore: quality.score,
-    };
-  }
-
-  // Kept by the 3-mover rule, but the county page lists nobody after the
-  // out-of-state filter. Those pages stay up and stay noindex.
-  if (listedCountyMovers(result.movers, result.county).length === 0) {
-    return {
-      tier: 'noindex',
-      reason: 'no_listed_movers',
       seoTier: quality.tier,
       qualityScore: quality.score,
     };

@@ -116,6 +116,7 @@ export function companyToLocalMover(company: CompanyMoverSource): LocalMover {
     city: hq.city,
     headquartersState: hq.stateCode,
     listingSource: 'directory',
+    profilePublished: true,
     isLocalOnly,
     entityType: company.entity_type ?? null,
     lastUpdated: lastUpdated || undefined,
