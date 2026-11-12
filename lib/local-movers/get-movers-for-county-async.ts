@@ -4,6 +4,7 @@ import {
   applyProfilePublicationMap,
   getApprovedMoversForCounty,
   loadProfileFacts,
+  type ProfileFacts,
 } from '@/lib/local-movers/approved-county-movers';
 import { getCanaryMoversForCounty } from '@/lib/local-movers/canary-county-movers';
 import { assembleShownCountyMovers } from '@/lib/local-movers/county-listing';
@@ -15,6 +16,8 @@ import { logger } from '@/lib/logging/logger';
 
 export type MoverSourceMode = 'db' | 'seed' | 'hybrid' | 'degraded';
 
+export type CountyLoadFailure = 'timeout' | 'error' | 'unavailable';
+
 export type CountyMoversResult = {
   county: LocalCounty;
   movers: LocalMover[];
@@ -23,6 +26,24 @@ export type CountyMoversResult = {
   sourceMode: MoverSourceMode;
   approvedCount: number;
   catalogCount: number;
+  /**
+   * `ok` includes a successful empty directory.
+   * `failed` means a timeout or error, which must not be cached as an empty county.
+   */
+  loadStatus: 'ok' | 'failed';
+  loadFailure?: CountyLoadFailure;
+};
+
+export type CountyLoadShare = {
+  approved?: LocalMover[];
+  /** Use `approved` and do not query this county again. */
+  skipApprovedFetch?: boolean;
+  /** The shared state load failed. Do not fan out another query for this county. */
+  approvedFailed?: boolean;
+  profileFacts?: Map<string, ProfileFacts>;
+  canary?: LocalMover[];
+  skipCanaryFetch?: boolean;
+  canaryFailed?: boolean;
 };
 
 /**
@@ -37,14 +58,15 @@ export type CountyMoversResult = {
  */
 export async function getMoversForCountyAsync(
   stateSlug: string,
-  countySlug: string
+  countySlug: string,
+  share?: CountyLoadShare
 ): Promise<CountyMoversResult | null> {
   const raw = getMoversForCounty(stateSlug, countySlug);
   if (!raw) return null;
   const profileSlugs = raw.movers
     .map((mover) => mover.profileSlug?.trim() ?? '')
     .filter(Boolean);
-  const profileFacts = await loadProfileFacts(profileSlugs);
+  const profileFacts = share?.profileFacts ?? (await loadProfileFacts(profileSlugs));
   const headquartersBySlug = new Map(
     [...profileFacts].map(([slug, facts]) => [slug, facts.headquarters])
   );
@@ -70,38 +92,58 @@ export async function getMoversForCountyAsync(
       sourceMode: 'seed',
       approvedCount: 0,
       catalogCount: base.movers.length,
+      loadStatus: 'ok',
     };
   }
 
   let approved: LocalMover[] = [];
-  let approvedFetchFailed = false;
-  try {
-    approved = await getApprovedMoversForCounty(stateSlug, countySlug);
-  } catch (err) {
-    approvedFetchFailed = true;
-    logger.error('county_movers.approved_fetch_failed', {
+  let approvedFetchFailed = share?.approvedFailed === true;
+  if (share?.skipApprovedFetch && !approvedFetchFailed) {
+    approved = share.approved ?? [];
+  } else if (!approvedFetchFailed) {
+    try {
+      approved = await getApprovedMoversForCounty(stateSlug, countySlug);
+    } catch (err) {
+      approvedFetchFailed = true;
+      logger.error('county_movers.approved_fetch_failed', {
+        stateSlug,
+        countySlug,
+        message: err instanceof Error ? err.message : String(err),
+        failure: 'timeout_or_error',
+      });
+    }
+  } else {
+    logger.warn('county_movers.approved_load_unavailable', {
       stateSlug,
       countySlug,
-      message: err instanceof Error ? err.message : String(err),
+      failure: 'unavailable',
     });
   }
 
   // Task 011D.3: exact local canary (PUBLISHABLE + home-county evidence), FL/WA only.
   let canary: LocalMover[] = [];
-  try {
-    canary = await getCanaryMoversForCounty(stateSlug, countySlug);
-  } catch (err) {
-    logger.warn('county_movers.canary_fetch_failed', {
-      stateSlug,
-      countySlug,
-      message: err instanceof Error ? err.message : String(err),
-    });
+  let canaryFailed = share?.canaryFailed === true;
+  if (share?.skipCanaryFetch && !canaryFailed) {
+    canary = share.canary ?? [];
+  } else if (!canaryFailed) {
+    try {
+      canary = await getCanaryMoversForCounty(stateSlug, countySlug);
+    } catch (err) {
+      canaryFailed = true;
+      logger.warn('county_movers.canary_fetch_failed', {
+        stateSlug,
+        countySlug,
+        message: err instanceof Error ? err.message : String(err),
+        failure: 'timeout_or_error',
+      });
+    }
   }
 
   const shown = assembleShownCountyMovers(base.county, base.movers, approved, canary);
   const onlyApproved =
     shown.directoryCount > 0 && shown.movers.every((mover) => mover.listingSource === 'directory');
-  const sourceMode: MoverSourceMode = approvedFetchFailed && shown.directoryCount === 0
+  const loadFailed = approvedFetchFailed || canaryFailed;
+  const sourceMode: MoverSourceMode = loadFailed
     ? 'degraded'
     : onlyApproved
       ? 'db'
@@ -116,5 +158,9 @@ export async function getMoversForCountyAsync(
     sourceMode,
     approvedCount: shown.directoryCount,
     catalogCount: base.movers.length,
+    loadStatus: loadFailed ? 'failed' : 'ok',
+    ...(loadFailed
+      ? { loadFailure: approvedFetchFailed ? ('unavailable' as const) : ('error' as const) }
+      : {}),
   };
 }

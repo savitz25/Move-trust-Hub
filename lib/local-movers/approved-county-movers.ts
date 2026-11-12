@@ -29,6 +29,7 @@ import { logger } from '@/lib/logging/logger';
 import type { Database } from '@/types/supabase';
 
 import { APPROVED_COUNTY_MOVERS_TAG } from '@/lib/local-movers/approved-county-movers-tag';
+import { dedupeInflight, settleWithin } from '@/lib/local-movers/bounded-concurrency';
 
 export { APPROVED_COUNTY_MOVERS_TAG };
 
@@ -689,37 +690,12 @@ async function loadIntrastateCoverageForCounty(
   stateSlug: string,
   countySlug: string
 ): Promise<Array<{ company: CompanyMoverRow }>> {
-  const out: Array<{ company: CompanyMoverRow }> = [];
-  const withScope = await client
-    .from('companies')
-    .select(COMPANY_MOVER_SELECT_FULL)
-    .eq('service_scope', 'intrastate')
-    .limit(500);
-
-  if (withScope.error) {
-    if (
-      withScope.error.code === 'PGRST204' ||
-      withScope.error.code === '42703' ||
-      /service_scope|coverage_counties|does not exist/i.test(withScope.error.message)
-    ) {
-      return out;
-    }
-    logger.warn('approved_movers.intrastate_county_scan_failed', {
-      message: withScope.error.message,
-    });
-    return out;
-  }
-
-  for (const company of (withScope.data ?? []) as unknown as CompanyMoverRow[]) {
-    const named = withPublicDisplayName(company);
-    // Publication gate: loadIntrastateCoverageForCounty.
-    if (!isPublishableCountyCompany(named.publication_state)) continue;
-    const counties = normalizeSelectedCounties(named.coverage_counties);
-    if (counties.some((c) => c.stateSlug === stateSlug && c.countySlug === countySlug)) {
-      out.push({ company: named });
-    }
-  }
-  return out;
+  // Publication gate: loadIntrastateCoverageForCounty.
+  // Same paged scan as the state load. Concurrent counties share one in-flight query.
+  const links = await loadIntrastateCoverageCounties(client);
+  return links
+    .filter((link) => link.stateSlug === stateSlug && link.countySlug === countySlug)
+    .map((link) => ({ company: link.company }));
 }
 
 /**
@@ -779,7 +755,22 @@ async function fetchApprovedMoversForCountyUncached(
  * Merge both sources so counts update even if one path lagged.
  * When service_scope column is missing, this path no-ops (assignments still work).
  */
+let intrastateCoverageInflight: Promise<
+  Array<{ company: CompanyMoverRow; stateSlug: string; countySlug: string }>
+> | null = null;
+
 async function loadIntrastateCoverageCounties(
+  client: SupabaseClient<Database>
+): Promise<Array<{ company: CompanyMoverRow; stateSlug: string; countySlug: string }>> {
+  if (intrastateCoverageInflight) return intrastateCoverageInflight;
+  const pending = scanIntrastateCoverageCounties(client).finally(() => {
+    if (intrastateCoverageInflight === pending) intrastateCoverageInflight = null;
+  });
+  intrastateCoverageInflight = pending;
+  return pending;
+}
+
+async function scanIntrastateCoverageCounties(
   client: SupabaseClient<Database>
 ): Promise<Array<{ company: CompanyMoverRow; stateSlug: string; countySlug: string }>> {
   const out: Array<{ company: CompanyMoverRow; stateSlug: string; countySlug: string }> = [];
@@ -802,8 +793,9 @@ async function loadIntrastateCoverageCounties(
       logger.warn('approved_movers.intrastate_scan_failed', {
         code: withScope.error.code,
         message: withScope.error.message,
+        failure: 'error',
       });
-      return out;
+      throw new Error(`approved_movers_intrastate_scan:${withScope.error.message}`);
     }
 
     const rows = (withScope.data ?? []) as unknown as CompanyMoverRow[];
@@ -831,32 +823,37 @@ async function loadIntrastateCoverageCounties(
 }
 
 async function loadAllApprovedMoversByCounty(
-  client: SupabaseClient<Database>
+  client: SupabaseClient<Database>,
+  onlyStateSlug?: string
 ): Promise<Record<string, LocalMover[]>> {
   try {
     const assignments: AssignmentRow[] = [];
 
     for (let from = 0; ; from += PAGE_SIZE) {
-      const { data, error } = await client
+      let assignmentQuery = client
         .from('company_destination_assignments')
         .select('company_id, company_slug, state_slug, county_slug, source')
-        .not('county_slug', 'is', null)
-        .range(from, from + PAGE_SIZE - 1);
+        .not('county_slug', 'is', null);
+      if (onlyStateSlug) assignmentQuery = assignmentQuery.eq('state_slug', onlyStateSlug);
+      const { data, error } = await assignmentQuery.range(from, from + PAGE_SIZE - 1);
 
       if (error) {
         // Older schemas may lack source column
         if (/source|does not exist|PGRST204|42703/i.test(error.message + (error.code || ''))) {
-          const bare = await client
+          let bareQuery = client
             .from('company_destination_assignments')
             .select('company_id, company_slug, state_slug, county_slug')
-            .not('county_slug', 'is', null)
-            .range(from, from + PAGE_SIZE - 1);
+            .not('county_slug', 'is', null);
+          if (onlyStateSlug) bareQuery = bareQuery.eq('state_slug', onlyStateSlug);
+          const bare = await bareQuery.range(from, from + PAGE_SIZE - 1);
           if (bare.error) {
             logger.error('approved_movers.assignments_failed', {
               code: bare.error.code,
               message: bare.error.message,
+              stateSlug: onlyStateSlug ?? null,
+              failure: 'error',
             });
-            return {};
+            throw new Error(`approved_movers_assignments:${bare.error.message}`);
           }
           if (!bare.data?.length) break;
           assignments.push(
@@ -868,8 +865,10 @@ async function loadAllApprovedMoversByCounty(
         logger.error('approved_movers.assignments_failed', {
           code: error.code,
           message: error.message,
+          stateSlug: onlyStateSlug ?? null,
+          failure: 'error',
         });
-        return {};
+        throw new Error(`approved_movers_assignments:${error.message}`);
       }
 
       if (!data?.length) break;
@@ -916,7 +915,9 @@ async function loadAllApprovedMoversByCounty(
     }
 
     // Coverage-counties path for intrastate (when columns exist).
-    const coverageLinks = await loadIntrastateCoverageCounties(client);
+    const coverageLinks = (await loadIntrastateCoverageCounties(client)).filter(
+      (link) => !onlyStateSlug || link.stateSlug === onlyStateSlug
+    );
     for (const link of coverageLinks) {
       if (!companiesById.has(link.company.id)) {
         companiesById.set(link.company.id, link.company);
@@ -1015,26 +1016,138 @@ async function loadAllApprovedMoversByCounty(
       companies: companiesById.size,
       localKeys: localKeys.size,
       admin: isSupabaseAdminConfigured(),
+      stateSlug: onlyStateSlug ?? null,
+      complete: true,
     });
 
     return byCounty;
   } catch (err) {
     logger.error('approved_movers.load_failed', {
       message: err instanceof Error ? err.message : String(err),
+      stateSlug: onlyStateSlug ?? null,
+      failure: 'error',
     });
-    return {};
+    throw err;
   }
 }
 
+const nationalApprovedInflight = new Map<string, Promise<Record<string, LocalMover[]>>>();
+let nationalApprovedFailure: { at: number; error: Error } | null = null;
+
 const getAllApprovedMoversByCountyCached = unstable_cache(
   fetchAllApprovedMoversByCounty,
-  // v10: publication gate and county-coverage evidence
-  ['approved-county-movers-all-v11-canonical-evidence'],
+  // v12: a failed or partial load throws and is not stored as an empty map
+  ['approved-county-movers-all-v12-complete'],
   { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
 );
 
 export async function getCachedApprovedMoversByCounty(): Promise<Record<string, LocalMover[]>> {
-  return getAllApprovedMoversByCountyCached();
+  if (nationalApprovedFailure && Date.now() - nationalApprovedFailure.at < 15_000) {
+    throw nationalApprovedFailure.error;
+  }
+  try {
+    const loaded = await dedupeInflight(nationalApprovedInflight, 'all', () =>
+      getAllApprovedMoversByCountyCached()
+    );
+    nationalApprovedFailure = null;
+    return loaded;
+  } catch (err) {
+    const error = err instanceof Error ? err : new Error(String(err));
+    nationalApprovedFailure = { at: Date.now(), error };
+    throw error;
+  }
+}
+
+const stateApprovedInflight = new Map<string, Promise<Record<string, LocalMover[]>>>();
+
+async function fetchApprovedMoversForState(stateSlug: string): Promise<Record<string, LocalMover[]>> {
+  const client = createPublicOrAdminClient();
+  if (!client) {
+    logger.error('approved_movers.no_supabase_client', {
+      stateSlug,
+      admin: isSupabaseAdminConfigured(),
+      anon: isSupabaseConfigured(),
+      failure: 'unavailable',
+    });
+    throw new Error('approved_movers_no_supabase_client');
+  }
+  const settled = await settleWithin(
+    loadAllApprovedMoversByCounty(client, stateSlug),
+    BULK_FETCH_TIMEOUT_MS
+  );
+  if (settled.status === 'failed') {
+    logger.warn('approved_movers.state_load_failed', {
+      stateSlug,
+      reason: settled.reason,
+      message: settled.message,
+      failure: settled.reason,
+    });
+    throw new Error(`approved_movers_state_${settled.reason}:${stateSlug}`);
+  }
+  return settled.value;
+}
+
+function getApprovedMoversForStateCached(stateSlug: string) {
+  return unstable_cache(
+    () => fetchApprovedMoversForState(stateSlug),
+    ['approved-county-movers-state-v12', stateSlug],
+    { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
+  )();
+}
+
+const stateApprovedFailures = new Map<string, { at: number; error: Error }>();
+
+/** One complete state load, shared by the sitemap, state links, and county pages. */
+export function getApprovedMoversForState(
+  stateSlug: string
+): Promise<Record<string, LocalMover[]>> {
+  const recent = stateApprovedFailures.get(stateSlug);
+  if (recent && Date.now() - recent.at < 15_000) return Promise.reject(recent.error);
+  return dedupeInflight(stateApprovedInflight, stateSlug, async () => {
+    try {
+      const loaded = await getApprovedMoversForStateCached(stateSlug);
+      stateApprovedFailures.delete(stateSlug);
+      return loaded;
+    } catch (err) {
+      const error = err instanceof Error ? err : new Error(String(err));
+      stateApprovedFailures.set(stateSlug, { at: Date.now(), error });
+      throw error;
+    }
+  });
+}
+
+/**
+ * Re-read publication before any snapshot mover is shown again.
+ * A query error fails the check. A slug that is missing or not publishable is omitted.
+ */
+export async function recheckPublishedCompanySlugs(
+  slugs: readonly string[]
+): Promise<{ status: 'ok'; publishedSlugs: Set<string> } | { status: 'failed' }> {
+  const unique = [...new Set(slugs.map((slug) => slug.trim()).filter(Boolean))];
+  const publishedSlugs = new Set<string>();
+  if (!unique.length) return { status: 'ok', publishedSlugs };
+  const client = createPublicOrAdminClient();
+  if (!client) return { status: 'failed' };
+  for (let i = 0; i < unique.length; i += IN_CHUNK) {
+    const chunk = unique.slice(i, i + IN_CHUNK);
+    const { data, error } = await client
+      .from('companies')
+      .select('slug, publication_state')
+      .in('slug', chunk);
+    if (error) {
+      logger.warn('approved_movers.publication_recheck_failed', {
+        message: error.message,
+        failure: 'error',
+      });
+      return { status: 'failed' };
+    }
+    for (const row of data ?? []) {
+      const slug = String((row as { slug?: string }).slug ?? '');
+      const state = (row as { publication_state?: string | null }).publication_state ?? null;
+      if (slug && isPublishableCountyCompany(state)) publishedSlugs.add(slug);
+    }
+  }
+  return { status: 'ok', publishedSlugs };
 }
 
 /** Drop seed cards whose profile would 404, and mark confirmed public profiles. */
@@ -1114,7 +1227,7 @@ function getApprovedMoversForCountyCached(stateSlug: string, countySlug: string)
   return unstable_cache(
     () => fetchApprovedMoversForCountyUncached(stateSlug, countySlug),
     // v10 per-county: publication gate and county-coverage evidence
-    ['approved-county-movers-one-v11', stateSlug, countySlug],
+    ['approved-county-movers-one-v12', stateSlug, countySlug],
     { tags: [APPROVED_COUNTY_MOVERS_TAG], revalidate: 60 }
   )();
 }
@@ -1129,28 +1242,17 @@ export async function getApprovedMoversForCounty(
   countySlug: string
 ): Promise<LocalMover[]> {
   try {
-    return await getApprovedMoversForCountyCached(stateSlug, countySlug);
-  } catch (err) {
-    logger.warn('approved_movers.county_cache_failed_try_bulk', {
+    const stateMap = await getApprovedMoversForState(stateSlug);
+    return stateMap[countyKey(stateSlug, countySlug)] ?? [];
+  } catch (stateErr) {
+    logger.warn('approved_movers.state_load_failed_try_county', {
       stateSlug,
       countySlug,
-      message: err instanceof Error ? err.message : String(err),
+      message: stateErr instanceof Error ? stateErr.message : String(stateErr),
+      failure: 'unavailable',
     });
-    try {
-      const all = await getAllApprovedMoversByCountyCached();
-      return all[countyKey(stateSlug, countySlug)] ?? [];
-    } catch (bulkErr) {
-      logger.error('approved_movers.county_and_bulk_failed', {
-        stateSlug,
-        countySlug,
-        county: err instanceof Error ? err.message : String(err),
-        bulk: bulkErr instanceof Error ? bulkErr.message : String(bulkErr),
-      });
-      // Propagate so getMoversForCountyAsync can set sourceMode=degraded.
-      throw bulkErr instanceof Error
-        ? bulkErr
-        : new Error(String(bulkErr ?? err));
-    }
+    // The per-county read throws on timeout. It does not turn that timeout into [].
+    return getApprovedMoversForCountyCached(stateSlug, countySlug);
   }
 }
 

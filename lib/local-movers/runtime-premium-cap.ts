@@ -44,8 +44,10 @@ async function computePremiumAllowance(): Promise<{ keys: string[]; premiumCount
   } catch (err) {
     logger.warn('premium_cap.approved_movers_unavailable', {
       message: err instanceof Error ? err.message : String(err),
+      failure: 'unavailable',
     });
-    approved = {};
+    // Do not cache a seed-only allowance as a complete Premium ranking.
+    throw err;
   }
 
   const params = getAllCountyParams();
@@ -108,7 +110,7 @@ async function computePremiumAllowance(): Promise<{ keys: string[]; premiumCount
 
 const loadPremiumAllowanceCached = unstable_cache(
   computePremiumAllowance,
-  ['premium-index-cap-v2-canary'],
+  ['premium-index-cap-v3-complete-load'],
   { revalidate: 60 }
 );
 

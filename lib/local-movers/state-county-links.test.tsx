@@ -37,7 +37,7 @@ test('state directory source uses the published sitemap evaluator', () => {
   assert.doesNotMatch(links, /getIndexableCounties/);
   assert.match(sitemap, /evaluatePublishedStateCounties/);
   assert.doesNotMatch(sitemap, /getIndexableCounties/);
-  assert.match(page, /publishedCountyIndexDecision/);
+  assert.match(page, /publishedCountyEvaluation/);
 });
 
 test('state index matches the sitemap route source and includes IA/KS/MO', () => {

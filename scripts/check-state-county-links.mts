@@ -8,7 +8,7 @@ const linkSource = readFileSync('components/local-movers/state-county-links.tsx'
 const pageSource = readFileSync('lib/local-movers/county-page-seo.ts', 'utf8');
 assert.match(sitemapSource, /evaluatePublishedStateCounties/);
 assert.match(linkSource, /getPublishedIndexableCounties/);
-assert.match(pageSource, /publishedCountyIndexDecision/);
+assert.match(pageSource, /publishedCountyEvaluation/);
 assert.doesNotMatch(sitemapSource, /getIndexableCounties/);
 assert.doesNotMatch(linkSource, /getIndexableCounties\(/);
 
