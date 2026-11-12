@@ -2,6 +2,7 @@ import 'server-only';
 
 import { cache } from 'react';
 import { unstable_noStore } from 'next/cache';
+import * as Sentry from '@sentry/nextjs';
 import {
   getApprovedMoversForState,
   loadProfileFacts,
@@ -9,6 +10,10 @@ import {
   type ProfileFacts,
 } from '@/lib/local-movers/approved-county-movers';
 import { mapWithConcurrency } from '@/lib/local-movers/bounded-concurrency';
+import {
+  deliverCountyLoadVisibility,
+  type CountyLoadVisibilityInput,
+} from '@/lib/local-movers/county-load-visibility';
 import {
   evaluateCountyIndexabilityFromResult,
   type CountyIndexDecision,
@@ -63,6 +68,20 @@ export async function publishedCountyIndexDecision(
 
 function countyKey(stateSlug: string, countySlug: string) {
   return `${stateSlug}::${countySlug}`;
+}
+
+function reportCountyLoadVisibility(input: CountyLoadVisibilityInput): void {
+  try {
+    deliverCountyLoadVisibility(input, (message, context) => {
+      Sentry.captureMessage(message, {
+        level: context.level,
+        tags: context.tags,
+        fingerprint: context.fingerprint,
+      });
+    });
+  } catch {
+    // Reporting must not change the county load.
+  }
 }
 
 async function loadFreshStateCounties(stateSlug: string): Promise<FreshCountyLoad[]> {
@@ -168,6 +187,12 @@ async function evaluateSettledState(
       failure: settled.failedCounties.length ? 'timeout_or_error' : 'fallback',
     });
   }
+  reportCountyLoadVisibility({
+    state: stateSlug,
+    freshComplete: settled.freshComplete,
+    usedFallback: settled.usedFallback,
+    failedCountyCount: fresh.filter((row) => row.loadStatus === 'failed').length,
+  });
 
   const evaluations: PublishedCountyEvaluation[] = [];
   for (const row of settled.settled) {
