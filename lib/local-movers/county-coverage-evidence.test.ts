@@ -235,8 +235,8 @@ test('county loader selects publication_state and does not select usdot_status',
     assert.match(match![1]!, /publication_state/);
     assert.equal(match![1]!.includes('usdot_status'), false);
   }
-  assert.match(src, /approved-county-movers-all-v11-canonical-evidence/);
-  assert.match(src, /approved-county-movers-one-v11/);
+  assert.match(src, /approved-county-movers-all-v12-complete/);
+  assert.match(src, /approved-county-movers-one-v12/);
   assert.match(src, /canonicalEvidenceCompanyIds/);
   assert.match(src, /Publication gate: moversFromAssignments/);
   assert.match(src, /Publication gate: loadIntrastateCoverageForCounty/);

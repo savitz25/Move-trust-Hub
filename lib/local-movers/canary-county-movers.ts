@@ -14,6 +14,7 @@ import {
   buildCountySlugToFips,
   loadFlWaCountyCentroids,
 } from '@/lib/state-hhg/calibration/counties';
+import { settleWithin } from '@/lib/local-movers/bounded-concurrency';
 import { logger } from '@/lib/logging/logger';
 
 const STATE_SLUG_TO_CODE: Record<string, 'FL' | 'WA'> = {
@@ -61,19 +62,35 @@ async function fetchCanaryMoversForCounty(
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
-  const { data, error } = await supabase.rpc('local_canary_movers_for_county', {
-    p_state_code: stateCode,
-    p_county_fips: fips,
-    p_limit: 24,
-  });
+  const settled = await settleWithin(
+    Promise.resolve(
+      supabase.rpc('local_canary_movers_for_county', {
+        p_state_code: stateCode,
+        p_county_fips: fips,
+        p_limit: 24,
+      })
+    ),
+    8_000
+  );
+  if (settled.status === 'failed') {
+    logger.warn('canary_county.rpc_failed', {
+      stateSlug,
+      countySlug,
+      reason: settled.reason,
+      message: settled.message,
+    });
+    throw new Error(`canary_county_${settled.reason}:${stateSlug}/${countySlug}`);
+  }
+  const { data, error } = settled.value;
 
   if (error) {
     logger.warn('canary_county.rpc_failed', {
       stateSlug,
       countySlug,
+      reason: 'error',
       message: error.message,
     });
-    return [];
+    throw new Error(`canary_county_error:${stateSlug}/${countySlug}:${error.message}`);
   }
 
   const rows = (data ?? []) as RpcRow[];

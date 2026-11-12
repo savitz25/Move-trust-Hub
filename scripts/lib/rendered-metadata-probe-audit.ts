@@ -3,6 +3,7 @@ import { buildCountyPageMetadata } from '../../lib/local-movers/seo-metadata';
 import { getMoversForCounty } from '../../lib/local-movers/index';
 import { getLocalState } from '../../lib/local-movers/states';
 import { evaluateCountyIndexability } from '../../lib/local-movers/county-indexability';
+import { getCountyIntelligencePack } from '../../lib/local-movers/county-intelligence/registry';
 import type { LiveCountyProbe } from './live-county-audit';
 
 export type RenderedMetadataProbeResult = {
@@ -48,13 +49,22 @@ export function auditRenderedMetadataProbes(
       indexDecision
     );
 
-    const title = typeof metadata.title === 'string' ? metadata.title : '';
+    const title =
+      typeof metadata.title === 'string'
+        ? metadata.title
+        : metadata.title &&
+            typeof metadata.title === 'object' &&
+            'absolute' in metadata.title &&
+            typeof metadata.title.absolute === 'string'
+          ? metadata.title.absolute
+          : '';
     const description = metadata.description ?? '';
 
     if ('keywords' in metadata && metadata.keywords !== undefined) {
       errors.push('metadata_contains_keywords');
     }
-    if (!title.includes('Movers Serving')) {
+    const intelligenceTitle = getCountyIntelligencePack(probe.stateSlug, probe.countySlug)?.h1;
+    if (!title.includes(intelligenceTitle || 'Movers Serving')) {
       errors.push('title_missing_movers_serving');
     }
     if (/\bloup river sherman\b/i.test(description)) {

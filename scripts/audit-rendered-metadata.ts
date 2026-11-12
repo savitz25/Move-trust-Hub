@@ -3,14 +3,24 @@
  * Run: npx tsx scripts/audit-rendered-metadata.ts
  */
 import { writeFileSync } from 'node:fs';
+import type { Metadata } from 'next';
 import { getCounty } from '../lib/local-movers/geography/index';
 import { buildCountyPageMetadata } from '../lib/local-movers/seo-metadata';
 import { getMoversForCounty } from '../lib/local-movers/index';
 import { getLocalState } from '../lib/local-movers/states';
 import { evaluateCountyIndexability } from '../lib/local-movers/county-indexability';
+import { getCountyIntelligencePack } from '../lib/local-movers/county-intelligence/registry';
 import { buildAllAuditProbes } from './lib/live-county-audit';
 
 let failures = 0;
+
+function renderedTitle(title: Metadata['title']): string {
+  if (typeof title === 'string') return title;
+  if (title && typeof title === 'object' && 'absolute' in title && typeof title.absolute === 'string') {
+    return title.absolute;
+  }
+  return '';
+}
 
 function auditCounty(stateSlug: string, countySlug: string, label: string) {
   const county = getCounty(stateSlug, countySlug);
@@ -32,13 +42,14 @@ function auditCounty(stateSlug: string, countySlug: string, label: string) {
   );
 
   const errors: string[] = [];
-  const title = typeof metadata.title === 'string' ? metadata.title : '';
+  const title = renderedTitle(metadata.title);
   const description = metadata.description ?? '';
 
   if ('keywords' in metadata && metadata.keywords !== undefined) {
     errors.push('metadata_contains_keywords');
   }
-  if (!title.includes('Movers Serving')) {
+  const intelligenceTitle = getCountyIntelligencePack(stateSlug, countySlug)?.h1;
+  if (!title.includes(intelligenceTitle || 'Movers Serving')) {
     errors.push('title_missing_movers_serving');
   }
   if (/\bloup river sherman\b/i.test(description)) {

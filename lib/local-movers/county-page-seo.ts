@@ -1,10 +1,9 @@
 import 'server-only';
 
 import { type CountyIndexDecision } from '@/lib/local-movers/county-indexability';
-import { publishedCountyIndexDecision } from '@/lib/local-movers/county-indexability-async';
+import { publishedCountyEvaluation } from '@/lib/local-movers/county-indexability-async';
 import { buildCountyPageMetadata } from '@/lib/local-movers/seo-metadata';
 import { getCountyPath } from '@/lib/local-movers/index';
-import { getMoversForCountyAsync } from '@/lib/local-movers/get-movers-for-county-async';
 import { getLocalState } from '@/lib/local-movers/states';
 import type { LocalCounty, LocalMover, LocalState } from '@/lib/local-movers/types';
 import type { Metadata } from 'next';
@@ -31,11 +30,12 @@ export async function resolveCountyPageSeo(
   countySlug: string
 ): Promise<CountyPageSeoContext | null> {
   const state = getLocalState(stateSlug);
-  const result = await getMoversForCountyAsync(stateSlug, countySlug);
-  if (!state || !result) return null;
+  const evaluated = await publishedCountyEvaluation(stateSlug, countySlug);
+  const result = evaluated?.result ?? null;
+  if (!state || !result || !evaluated) return null;
 
   const path = getCountyPath(stateSlug, countySlug);
-  const indexDecision = await publishedCountyIndexDecision(stateSlug, countySlug, result);
+  const indexDecision = evaluated.decision;
   const metadata = buildCountyPageMetadata(
     result.county,
     state.name,

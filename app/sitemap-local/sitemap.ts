@@ -598,8 +598,8 @@ export async function generateSitemaps() {
   return localStates.map((state) => ({ id: state.slug }));
 }
 
-// Build-time rendering calls this once per state. That fan-out times out
-// Supabase and the error pages exceed Vercel's build log limit.
+// Rendered per request. evaluatePublishedStateCounties loads each state once,
+// bounds the remaining county work, and refuses to cache a partial result.
 export const dynamic = 'force-dynamic';
 
 export default async function sitemap({

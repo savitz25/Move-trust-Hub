@@ -7,8 +7,19 @@ import {
   type StateHubDirectoryBadge,
 } from '@/lib/local-movers/county-guide-badge';
 import { getCountyGuideTierMeta } from '@/lib/local-movers/county-tier';
-import { getCountyPath } from '@/lib/local-movers/index';
-import { getMoversForCountyAsync } from '@/lib/local-movers/get-movers-for-county-async';
+import { getCountyPath, getMoversForCounty } from '@/lib/local-movers/index';
+import {
+  getApprovedMoversForState,
+  loadProfileFacts,
+  type ProfileFacts,
+} from '@/lib/local-movers/approved-county-movers';
+import { mapWithConcurrency } from '@/lib/local-movers/bounded-concurrency';
+import {
+  getMoversForCountyAsync,
+  type CountyLoadShare,
+} from '@/lib/local-movers/get-movers-for-county-async';
+import { logger } from '@/lib/logging/logger';
+import { STATE_COUNTY_LOAD_CONCURRENCY } from '@/lib/local-movers/state-county-fanout';
 import { getCountyMarketMoverCount } from '@/lib/local-movers/county-market-mover-counts';
 import type { LocalCounty } from '@/lib/local-movers/types';
 
@@ -52,9 +63,51 @@ export async function buildStateHubCountyRows(
   stateSlug: string,
   counties: LocalCounty[]
 ): Promise<StateHubCountyRow[]> {
-  const rows = await Promise.all(
-    counties.map(async (county) => {
-      const listed = await getMoversForCountyAsync(stateSlug, county.slug);
+  let approvedByCounty: Awaited<ReturnType<typeof getApprovedMoversForState>> | null = null;
+  let approvedFailed = false;
+  try {
+    approvedByCounty = await getApprovedMoversForState(stateSlug);
+  } catch (err) {
+    approvedFailed = true;
+    logger.warn('state_hub.approved_load_failed', {
+      stateSlug,
+      message: err instanceof Error ? err.message : String(err),
+      failure: 'unavailable',
+    });
+  }
+
+  const profileSlugs: string[] = [];
+  for (const county of counties) {
+    const raw = getMoversForCounty(stateSlug, county.slug);
+    if (!raw) continue;
+    for (const mover of raw.movers) {
+      const slug = mover.profileSlug?.trim();
+      if (slug) profileSlugs.push(slug);
+    }
+  }
+  let profileFacts = new Map<string, ProfileFacts>();
+  let profileFactsFailed = false;
+  try {
+    profileFacts = await loadProfileFacts(profileSlugs);
+  } catch (err) {
+    profileFactsFailed = true;
+    logger.warn('state_hub.profile_facts_failed', {
+      stateSlug,
+      message: err instanceof Error ? err.message : String(err),
+      failure: 'error',
+    });
+  }
+
+  const rows = await mapWithConcurrency(counties, STATE_COUNTY_LOAD_CONCURRENCY, async (county) => {
+      const share: CountyLoadShare = { profileFacts, profileFactsFailed };
+      if (approvedByCounty) {
+        share.skipApprovedFetch = true;
+        share.approved = approvedByCounty[`${stateSlug}::${county.slug}`] ?? [];
+      } else if (approvedFailed) {
+        share.skipApprovedFetch = true;
+        share.approvedFailed = true;
+      }
+      const listed = await getMoversForCountyAsync(stateSlug, county.slug, share);
       // Canonical live count — same set of movers rendered on the county page.
       // Prefer listed length always when the county exists (do not fall back to
       // static market maps that can drift from the rendered list).
@@ -95,8 +148,7 @@ export async function buildStateHubCountyRows(
         isDeepGuide,
         href: getCountyPath(stateSlug, county.slug),
       };
-    })
-  );
+  });
 
   return rows.sort(
     (a, b) =>
