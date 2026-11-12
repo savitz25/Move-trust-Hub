@@ -12,7 +12,6 @@ import {
 } from '@/lib/supabase/config';
 import { isCountyAdjacent } from '@/lib/local-movers/county-adjacency';
 import {
-  BLANKET_SELF_SELECTED_COUNTY_THRESHOLD,
   countyAssignmentCountsAsCoverage,
   isOwnerSelectedAssignmentSource,
 } from '@/lib/local-movers/county-coverage-evidence';
@@ -225,8 +224,12 @@ async function selectEvidenceRows(
     const chunk = companyIds.slice(i, i + IN_CHUNK);
     const { data, error } = await loose.from(table).select(columns).in('company_id', chunk);
     if (error) {
-      logger.warn('approved_movers.evidence_unavailable', { table, message: error.message });
-      return rows;
+      logger.warn('approved_movers.evidence_unavailable', {
+        table,
+        message: error.message,
+        failure: 'error',
+      });
+      throw new Error(`approved_movers_evidence:${table}:${error.message}`);
     }
     rows.push(...(data ?? []));
   }
@@ -453,12 +456,15 @@ async function loadCompaniesByIds(
 
     const bySlug = await client.from('companies').select(select).in('slug', chunk);
 
-    if (byId.error && bySlug.error) {
+    if (byId.error || bySlug.error) {
       logger.error('approved_movers.companies_failed', {
-        byId: byId.error?.message,
-        bySlug: bySlug.error?.message,
+        byId: byId.error?.message ?? null,
+        bySlug: bySlug.error?.message ?? null,
+        failure: 'error',
       });
-      continue;
+      throw new Error(
+        `approved_movers_companies:${byId.error?.message ?? bySlug.error?.message ?? 'company read failed'}`
+      );
     }
 
     for (const row of (byId.data ?? []) as unknown as CompanyMoverRow[]) indexCompany(row);
@@ -466,11 +472,18 @@ async function loadCompaniesByIds(
 
     for (const key of chunk) {
       if (companiesById.has(key)) continue;
-      const { data } = await client
+      const { data, error } = await client
         .from('companies')
         .select(select)
         .or(`id.eq.${key},slug.eq.${key}`)
         .maybeSingle();
+      if (error) {
+        logger.error('approved_movers.companies_failed', {
+          message: error.message,
+          failure: 'error',
+        });
+        throw new Error(`approved_movers_companies:${error.message}`);
+      }
       if (data) indexCompany(data as unknown as CompanyMoverRow);
     }
   }
@@ -541,13 +554,8 @@ async function evidenceForCounty(
   const byId = await pageAssignmentRows(client, stateSlug, 'company_id', companyIds);
   const bySlug = await pageAssignmentRows(client, stateSlug, 'company_slug', companyIds);
   if (byId.failed || bySlug.failed) {
-    logger.warn('approved_movers.owner_count_failed', { stateSlug });
-    for (const id of companyIds) {
-      addOwnerCounty(sets, id, stateSlug, 'blanket-fail-closed');
-      for (let n = 1; n < BLANKET_SELF_SELECTED_COUNTY_THRESHOLD; n += 1) {
-        addOwnerCounty(sets, id, stateSlug, `blanket-fail-closed-${n}`);
-      }
-    }
+    logger.warn('approved_movers.owner_count_failed', { stateSlug, failure: 'error' });
+    throw new Error(`approved_movers_owner_counts:${stateSlug}`);
   } else {
     for (const row of [...byId.rows, ...bySlug.rows]) {
       if (!isOwnerSelectedAssignmentSource(row.source)) continue;
@@ -1169,8 +1177,11 @@ export async function loadProfileFacts(slugs: string[]): Promise<Map<string, Pro
       .select('slug, publication_state, headquarters')
       .in('slug', chunk);
     if (error) {
-      logger.warn('approved_movers.profile_publication_unavailable', { message: error.message });
-      continue;
+      logger.warn('approved_movers.profile_publication_unavailable', {
+        message: error.message,
+        failure: 'error',
+      });
+      throw new Error(`approved_movers_profile_facts:${error.message}`);
     }
     for (const row of data ?? []) {
       const slug = String((row as { slug?: string }).slug ?? '');

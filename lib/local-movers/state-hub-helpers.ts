@@ -11,6 +11,7 @@ import { getCountyPath, getMoversForCounty } from '@/lib/local-movers/index';
 import {
   getApprovedMoversForState,
   loadProfileFacts,
+  type ProfileFacts,
 } from '@/lib/local-movers/approved-county-movers';
 import { mapWithConcurrency } from '@/lib/local-movers/bounded-concurrency';
 import {
@@ -84,10 +85,21 @@ export async function buildStateHubCountyRows(
       if (slug) profileSlugs.push(slug);
     }
   }
-  const profileFacts = await loadProfileFacts(profileSlugs);
+  let profileFacts = new Map<string, ProfileFacts>();
+  let profileFactsFailed = false;
+  try {
+    profileFacts = await loadProfileFacts(profileSlugs);
+  } catch (err) {
+    profileFactsFailed = true;
+    logger.warn('state_hub.profile_facts_failed', {
+      stateSlug,
+      message: err instanceof Error ? err.message : String(err),
+      failure: 'error',
+    });
+  }
 
   const rows = await mapWithConcurrency(counties, STATE_COUNTY_LOAD_CONCURRENCY, async (county) => {
-      const share: CountyLoadShare = { profileFacts };
+      const share: CountyLoadShare = { profileFacts, profileFactsFailed };
       if (approvedByCounty) {
         share.skipApprovedFetch = true;
         share.approved = approvedByCounty[`${stateSlug}::${county.slug}`] ?? [];

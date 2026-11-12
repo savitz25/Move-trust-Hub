@@ -44,6 +44,8 @@ export type CountyLoadShare = {
   canary?: LocalMover[];
   skipCanaryFetch?: boolean;
   canaryFailed?: boolean;
+  /** Profile publication could not be read. The county result is incomplete. */
+  profileFactsFailed?: boolean;
 };
 
 /**
@@ -63,6 +65,16 @@ export async function getMoversForCountyAsync(
 ): Promise<CountyMoversResult | null> {
   const raw = getMoversForCounty(stateSlug, countySlug);
   if (!raw) return null;
+  if (share?.profileFactsFailed) {
+    return {
+      ...raw,
+      sourceMode: 'degraded',
+      approvedCount: 0,
+      catalogCount: raw.movers.length,
+      loadStatus: 'failed',
+      loadFailure: 'error',
+    };
+  }
   const profileSlugs = raw.movers
     .map((mover) => mover.profileSlug?.trim() ?? '')
     .filter(Boolean);

@@ -191,6 +191,11 @@ test('one qualifying mover still indexes and the Premium cap stays 400', () => {
   assert.equal(loader.includes('usdot_status,'), false);
   assert.match(loader, /no usdot_status column/);
   assert.match(loader, /throw new Error\(`approved_movers_assignments:/);
+  assert.match(loader, /throw new Error\(\s*`approved_movers_companies:/);
+  assert.match(loader, /throw new Error\(`approved_movers_evidence:/);
+  assert.match(loader, /throw new Error\(`approved_movers_owner_counts:/);
+  assert.match(loader, /throw new Error\(`approved_movers_profile_facts:/);
+  assert.doesNotMatch(loader, /blanket-fail-closed/);
   assert.doesNotMatch(loader, /return \{\};/);
   const canary = readFileSync('lib/local-movers/canary-county-movers.ts', 'utf8');
   assert.match(canary, /throw new Error\(`canary_county_/);

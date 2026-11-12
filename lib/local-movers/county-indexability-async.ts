@@ -6,6 +6,7 @@ import {
   getApprovedMoversForState,
   loadProfileFacts,
   recheckPublishedCompanySlugs,
+  type ProfileFacts,
 } from '@/lib/local-movers/approved-county-movers';
 import { mapWithConcurrency } from '@/lib/local-movers/bounded-concurrency';
 import {
@@ -90,10 +91,21 @@ async function loadFreshStateCounties(stateSlug: string): Promise<FreshCountyLoa
       if (slug) profileSlugs.push(slug);
     }
   }
-  const profileFacts = await loadProfileFacts(profileSlugs);
+  let profileFacts = new Map<string, ProfileFacts>();
+  let profileFactsFailed = false;
+  try {
+    profileFacts = await loadProfileFacts(profileSlugs);
+  } catch (err) {
+    profileFactsFailed = true;
+    logger.warn('state_counties.profile_facts_failed', {
+      stateSlug,
+      message: err instanceof Error ? err.message : String(err),
+      failure: 'error',
+    });
+  }
 
   return mapWithConcurrency(counties, STATE_COUNTY_LOAD_CONCURRENCY, async (county) => {
-    const share: CountyLoadShare = { profileFacts };
+    const share: CountyLoadShare = { profileFacts, profileFactsFailed };
     if (approvedByCounty) {
       share.skipApprovedFetch = true;
       share.approved = approvedByCounty[countyKey(stateSlug, county.slug)] ?? [];
@@ -168,9 +180,14 @@ async function evaluateSettledState(
     evaluations.push({ county, result, decision });
   }
 
-  if (freshComplete) {
+  const snapshotComplete =
+    freshComplete &&
+    fresh.every((row) => !row.result || row.result.loadStatus === 'ok');
+  if (snapshotComplete) {
     const entries = fresh.flatMap((row) =>
-      row.result ? [{ countySlug: row.county.slug, result: row.result }] : []
+      row.result && row.result.loadStatus === 'ok'
+        ? [{ countySlug: row.county.slug, result: row.result }]
+        : []
     );
     try {
       await writeCompleteStateSnapshot({
