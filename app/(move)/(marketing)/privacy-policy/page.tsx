@@ -28,6 +28,7 @@ const sections = [
       'Save My Move (optional accounts): email address only, saved moving inventories, saved mover shortlists with private notes, saved comparisons, and email preference settings. Accounts are passwordless (Google sign-in or one-time email link).',
       'DOT verification searches: carrier number searched, timestamp, source page, and anonymized IP address for abuse prevention.',
       'Technical data: browser type, pages visited, and referral source via standard analytics (when enabled).',
+      'PostHog product analytics stays off unless an explicit activation switch is set to the exact value enabled and a reviewed consent grant is already present. A missing switch, a blank switch, any other value, or the absence of a consent banner does not enable it. Browser Do Not Track and Global Privacy Control also keep it off. While it is off, ordinary pages do not send PostHog requests or set PostHog cookies or local-storage identifiers. Autocapture, session replay, exception capture, heatmaps, automatic pageviews, and automatic identity collection are off in this version. This sentence describes those technical controls. It is not a certification under any privacy law.',
     ],
   },
   {
