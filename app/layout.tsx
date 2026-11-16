@@ -62,13 +62,15 @@ export default async function RootLayout({
       // Extensions often mutate <html>; suppress noise that becomes React #418
       suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: analyticsTransportBlockScript(posthogHost()) }} />
+      </head>
       <body
         className="font-sans antialiased"
         data-network-standard={ASK_NETWORK_STANDARD_VERSION}
         data-th-chassis={TH_CHASSIS_VERSION}
         suppressHydrationWarning
       >
-        <script dangerouslySetInnerHTML={{ __html: analyticsTransportBlockScript(posthogHost()) }} />
         {/* network-standard: {ASK_NETWORK_STANDARD_VERSION} */}
         <SchemaInjector data={rootSchema} />
         {/* ChunkLoadError recovery + client error reporting (ops visibility) */}
