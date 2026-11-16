@@ -9,6 +9,7 @@ import {
 } from '@/lib/analytics/ga-config';
 import { useDeferredLoad } from '@/lib/hooks/use-deferred-load';
 import { GTAG_LOAD_OPTIONS, GTAG_SCRIPT_ORIGIN } from '@/lib/performance/external-scripts';
+import { shouldEnableGoogleAnalytics } from '@/lib/analytics/ga-privacy';
 
 type Props = {
   interactionOnly?: boolean;
@@ -27,6 +28,7 @@ export function DeferredGtag({ interactionOnly = true }: Props) {
   });
 
   useEffect(() => {
+    if (!shouldEnableGoogleAnalytics()) return;
     // If root GA already initialized for this host, do nothing.
     if (typeof window !== 'undefined' && window.__MTH_GA_MEASUREMENT_ID) {
       return;
@@ -41,7 +43,7 @@ export function DeferredGtag({ interactionOnly = true }: Props) {
   }, []);
 
   useEffect(() => {
-    if (!ready || loadedRef.current) return;
+    if (!ready || loadedRef.current || !shouldEnableGoogleAnalytics()) return;
     if (typeof window !== 'undefined' && window.__MTH_GA_MEASUREMENT_ID) {
       return;
     }

@@ -21,6 +21,7 @@ import {
   GTAG_LOAD_OPTIONS,
   GTAG_SCRIPT_ORIGIN,
 } from '@/lib/performance/external-scripts';
+import { shouldEnableGoogleAnalytics } from '@/lib/analytics/ga-privacy';
 
 type Props = {
   measurementId: string;
@@ -45,6 +46,7 @@ declare global {
  */
 function injectGa4(measurementId: string, hub: GaHub) {
   if (typeof window === 'undefined' || window.__MTH_GA_INIT) return;
+  if (!shouldEnableGoogleAnalytics()) return;
   window.__MTH_GA_INIT = true;
 
   const baselineDate =
@@ -100,7 +102,7 @@ export function GoogleAnalytics({ measurementId, hub }: Props) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (!isGaConfigured(measurementId)) return;
+    if (!isGaConfigured(measurementId) || !shouldEnableGoogleAnalytics()) return;
     let cancelled = false;
     let idleId: number | undefined;
     let maxId: ReturnType<typeof setTimeout> | undefined;

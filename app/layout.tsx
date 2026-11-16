@@ -19,6 +19,8 @@ import { ClientRuntimeGuard } from '@/components/reliability/client-runtime-guar
 import { rootLayoutMetadata } from '@/lib/seo/site-metadata';
 import { ASK_NETWORK_STANDARD_VERSION } from '@/lib/network/standard-version';
 import { TH_CHASSIS_VERSION } from '@/lib/design/trusthub-visual-standard';
+import { analyticsTransportBlockScript } from '@/lib/analytics/posthog/early-transport';
+import { posthogHost } from '@/lib/analytics/posthog/environment';
 
 export const metadata = rootLayoutMetadata;
 
@@ -66,6 +68,7 @@ export default async function RootLayout({
         data-th-chassis={TH_CHASSIS_VERSION}
         suppressHydrationWarning
       >
+        <script dangerouslySetInnerHTML={{ __html: analyticsTransportBlockScript(posthogHost()) }} />
         {/* network-standard: {ASK_NETWORK_STANDARD_VERSION} */}
         <SchemaInjector data={rootSchema} />
         {/* ChunkLoadError recovery + client error reporting (ops visibility) */}
