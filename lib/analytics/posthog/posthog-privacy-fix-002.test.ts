@@ -48,12 +48,11 @@ test('malformed percent encoding is rejected before URL normalization', () => {
   const repeated = urlInputs.slice(0, 8).map((input) => sanitizeAnalyticsUrl(input));
   assert.equal(leaked(repeated), false);
   const same = sanitizeAnalyticsUrl(urlInputs[11]);
-  assert.match(same ?? '', /utm_source=newsletter/);
-  assert.match(same ?? '', /form=QBLH/);
-  assert.equal((same ?? '').split('utm_source=').length, 2);
+  assert.equal(same, 'https://qa.invalid/');
+  assert.equal(same?.includes('?'), false);
   const ambiguous = sanitizeAnalyticsUrl(urlInputs[10]);
-  assert.equal(ambiguous?.includes('utm_source'), false);
-  assert.match(ambiguous ?? '', /view=directory/);
+  assert.equal(ambiguous, 'https://qa.invalid/');
+  assert.equal(ambiguous?.includes('?'), false);
   assert.equal(privacyDiagnostics().malformed_url > 0, true);
 });
 

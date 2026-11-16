@@ -77,7 +77,7 @@ test('absolute public routes stay, and relative or dynamic paths cannot re-enter
   assert.equal(sanitizeAnalyticsUrl(`https://user:${marker}@qa.invalid/ask`), undefined);
   assert.equal(
     sanitizeAnalyticsUrl('https://www.movetrusthub.com/search?query=sensitive&utm_source=regression&view=directory'),
-    'https://www.movetrusthub.com/search?utm_source=regression&view=directory',
+    'https://www.movetrusthub.com/search',
   );
 
   const event = prepareOutboundCapture({
