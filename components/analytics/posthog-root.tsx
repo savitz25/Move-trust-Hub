@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { captureSanitizedPageview, identifyTrustHubUser, resetTrustHubUser } from '@/lib/analytics/posthog/capture';
 import { getPosthogBrowser } from '@/lib/analytics/posthog/posthog-browser';
-import { shouldEnablePosthog } from '@/lib/analytics/posthog/environment';
+import { AUTOMATIC_IDENTITY_COLLECTION, AUTOMATIC_PAGEVIEW_CAPTURE, shouldEnablePosthog } from '@/lib/analytics/posthog/environment';
 
 function PosthogPageviews() {
   const pathname = usePathname();
@@ -12,7 +12,7 @@ function PosthogPageviews() {
   const lastPath = useRef<string>('');
 
   useEffect(() => {
-    if (!shouldEnablePosthog()) return;
+    if (!AUTOMATIC_PAGEVIEW_CAPTURE || !shouldEnablePosthog()) return;
     const path = pathname || '/';
     void getPosthogBrowser()
       .then((posthog) => {
@@ -30,7 +30,7 @@ function PosthogPageviews() {
 function PosthogIdentity() {
   const identified = useRef(false);
   useEffect(() => {
-    if (!shouldEnablePosthog()) return;
+    if (!AUTOMATIC_IDENTITY_COLLECTION || !shouldEnablePosthog()) return;
     let cancelled = false;
     void fetch('/api/analytics/identity', { credentials: 'same-origin' })
       .then((res) => (res.ok ? res.json() : { distinctId: null }))

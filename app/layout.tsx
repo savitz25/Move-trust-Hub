@@ -19,6 +19,8 @@ import { ClientRuntimeGuard } from '@/components/reliability/client-runtime-guar
 import { rootLayoutMetadata } from '@/lib/seo/site-metadata';
 import { ASK_NETWORK_STANDARD_VERSION } from '@/lib/network/standard-version';
 import { TH_CHASSIS_VERSION } from '@/lib/design/trusthub-visual-standard';
+import { analyticsTransportBlockScript } from '@/lib/analytics/posthog/early-transport';
+import { posthogHost } from '@/lib/analytics/posthog/environment';
 
 export const metadata = rootLayoutMetadata;
 
@@ -60,6 +62,9 @@ export default async function RootLayout({
       // Extensions often mutate <html>; suppress noise that becomes React #418
       suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: analyticsTransportBlockScript(posthogHost()) }} />
+      </head>
       <body
         className="font-sans antialiased"
         data-network-standard={ASK_NETWORK_STANDARD_VERSION}
