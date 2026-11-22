@@ -226,6 +226,7 @@ import {
 
 import { shouldUseCuratedTestimonials } from '@/lib/local-movers/county-indexability';
 import { resolveCountyPageSeo } from '@/lib/local-movers/county-page-seo';
+import { attachCountyPageCacheTag } from '@/lib/local-movers/attach-county-page-cache-tag';
 import {
   buildCountyHeroIntro,
   buildMoversSectionHeading,
@@ -276,6 +277,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
   const { stateSlug, countySlug } = await params;
   const seo = await resolveCountyPageSeo(stateSlug, countySlug);
   if (!seo) notFound();
+  await attachCountyPageCacheTag(seo.path);
 
   const {
     state,

@@ -17,18 +17,3 @@ export function countyRevalidationPaths(body: unknown): string[] | null {
   if (!paths.every((path) => countyCacheTag(path) !== null)) return null;
   return [...new Set(paths as string[])];
 }
-
-/** Response headers only; no TTL, data-cache tag, or page-rendering change. */
-export function applyCountyCacheTags(
-  responseHeaders: Headers,
-  pathname: string,
-  request: Pick<Request, 'method' | 'headers'>,
-): void {
-  if (request.method !== 'GET' && request.method !== 'HEAD') return;
-  if (request.headers.get('rsc') === '1') return;
-  const tag = countyCacheTag(pathname);
-  if (!tag) return;
-  responseHeaders.set('Cache-Tag', tag);
-  // Vercel consumes this header at the CDN; Cache-Tag remains observable.
-  responseHeaders.set('Vercel-Cache-Tag', tag);
-}

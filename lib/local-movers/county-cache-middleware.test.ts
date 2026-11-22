@@ -8,13 +8,13 @@ mock.module('@/lib/supabase/middleware', {
 });
 const middlewareModule = import('@/middleware');
 
-test('county HTML receives scoped headers through actual middleware, with existing TTL', async () => {
+test('county HTML keeps the existing TTL and does not get a middleware cache tag', async () => {
   const { middleware } = await middlewareModule;
   const response = await middleware(new NextRequest('https://www.movetrusthub.com/local-movers/florida/miami-dade', {
     headers: { host: 'www.movetrusthub.com', accept: 'text/html' },
   }));
-  assert.equal(response.headers.get('Cache-Tag'), 'county-florida-miami-dade');
-  assert.equal(response.headers.get('Vercel-Cache-Tag'), 'county-florida-miami-dade');
+  assert.equal(response.headers.get('Cache-Tag'), null);
+  assert.equal(response.headers.get('Vercel-Cache-Tag'), null);
   assert.equal(response.headers.get('CDN-Cache-Control'), 'max-age=86400');
 });
 

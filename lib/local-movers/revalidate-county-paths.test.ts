@@ -4,9 +4,13 @@ import { mock, test } from 'node:test';
 
 const pathCalls: unknown[][] = [];
 const tagCalls: unknown[][] = [];
+let failPath: string | null = null;
 mock.module('next/cache', {
   namedExports: {
-    revalidatePath: (...args: unknown[]) => { pathCalls.push(args); },
+    revalidatePath: (...args: unknown[]) => {
+      pathCalls.push(args);
+      if (failPath && args[0] === failPath) throw new Error('simulated revalidate failure');
+    },
     revalidateTag: (...args: unknown[]) => { tagCalls.push(args); },
   },
 });
@@ -61,8 +65,30 @@ test('actual POST route authenticates and validates the whole batch before isola
   await t.test('success calls only exact county pages, never either shared tag', async () => {
     const response = await POST(request({ paths: [...good, good[0]] }, `Bearer ${secret}`));
     assert.equal(response.status, 200);
-    assert.deepEqual(await response.json(), { ok: true, paths: good });
+    assert.deepEqual(await response.json(), {
+      ok: true,
+      paths: good.map((path) => ({ path, ok: true })),
+    });
     assert.deepEqual(pathCalls, good.map((path) => [path, 'page']));
     assert.deepEqual(tagCalls, [], 'No tag calls, including approved-county-movers or companies-directory');
+  });
+  await t.test('a later throw reports every path and is not 2xx', async () => {
+    failPath = good[1];
+    pathCalls.length = 0;
+    try {
+      const response = await POST(request({ paths: good }, `Bearer ${secret}`));
+      assert.equal(response.status, 500);
+      assert.deepEqual(await response.json(), {
+        ok: false,
+        paths: [
+          { path: good[0], ok: true },
+          { path: good[1], ok: false, error: 'revalidate failed' },
+        ],
+      });
+      assert.deepEqual(pathCalls, good.map((path) => [path, 'page']));
+      assert.deepEqual(tagCalls, []);
+    } finally {
+      failPath = null;
+    }
   });
 });
