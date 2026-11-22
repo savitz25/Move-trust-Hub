@@ -20,6 +20,7 @@ import {
 } from '@/lib/cache/control';
 import { DEFAULT_PERFORMANCE_FLAGS } from '@/lib/edge-config/types';
 import { normalizedPublishedStatePath } from '@/lib/seo/published-state-path';
+import { applyCountyCacheTags } from '@/lib/local-movers/county-cache-tag';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
 
@@ -248,6 +249,7 @@ export async function middleware(request: NextRequest) {
         htmlCacheSecondsForPath(pathname, baseTtl)
       );
     }
+    applyCountyCacheTags(response.headers, pathname, request);
     return response;
   } catch (err) {
     console.error('[middleware] MIDDLEWARE_INVOCATION_FAILED', {
