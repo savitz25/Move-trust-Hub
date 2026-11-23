@@ -1,3 +1,4 @@
+import { captureStatementTimeout } from '@/lib/observability/pg-timeout-capture';
 import 'server-only';
 
 import { unstable_cache } from 'next/cache';
@@ -457,6 +458,8 @@ async function loadCompaniesByIds(
     const bySlug = await client.from('companies').select(select).in('slug', chunk);
 
     if (byId.error || bySlug.error) {
+      captureStatementTimeout(byId.error, 'companies');
+      captureStatementTimeout(bySlug.error, 'companies');
       logger.error('approved_movers.companies_failed', {
         byId: byId.error?.message ?? null,
         bySlug: bySlug.error?.message ?? null,
@@ -478,6 +481,7 @@ async function loadCompaniesByIds(
         .or(`id.eq.${key},slug.eq.${key}`)
         .maybeSingle();
       if (error) {
+        captureStatementTimeout(error, 'companies');
         logger.error('approved_movers.companies_failed', {
           message: error.message,
           failure: 'error',
@@ -507,7 +511,10 @@ async function pageAssignmentRows(
         .eq('state_slug', stateSlug)
         .in(column, chunk)
         .range(from, from + PAGE_SIZE - 1);
-      if (error) return { rows, failed: true };
+      if (error) {
+        captureStatementTimeout(error, 'company_destination_assignments');
+        return { rows, failed: true };
+      }
       const page = (data ?? []) as AssignmentRow[];
       rows.push(...page);
       if (page.length < PAGE_SIZE) break;
@@ -628,6 +635,7 @@ async function loadApprovedMoversForSingleCounty(
 
   let assignments: AssignmentRow[] = [];
   if (error) {
+    captureStatementTimeout(error, 'company_destination_assignments');
     if (/source|does not exist|PGRST204|42703/i.test(error.message + (error.code || ''))) {
       const bare = await client
         .from('company_destination_assignments')
@@ -635,6 +643,7 @@ async function loadApprovedMoversForSingleCounty(
         .eq('state_slug', stateSlug)
         .eq('county_slug', countySlug);
       if (bare.error) {
+        captureStatementTimeout(bare.error, 'company_destination_assignments');
         logger.error('approved_movers.county_assignments_failed', {
           stateSlug,
           countySlug,
@@ -791,6 +800,7 @@ async function scanIntrastateCoverageCounties(
       .range(from, from + PAGE_SIZE - 1);
 
     if (withScope.error) {
+      captureStatementTimeout(withScope.error, 'companies');
       if (
         withScope.error.code === 'PGRST204' ||
         withScope.error.code === '42703' ||
@@ -846,6 +856,7 @@ async function loadAllApprovedMoversByCounty(
       const { data, error } = await assignmentQuery.range(from, from + PAGE_SIZE - 1);
 
       if (error) {
+        captureStatementTimeout(error, 'company_destination_assignments');
         // Older schemas may lack source column
         if (/source|does not exist|PGRST204|42703/i.test(error.message + (error.code || ''))) {
           let bareQuery = client
@@ -855,6 +866,7 @@ async function loadAllApprovedMoversByCounty(
           if (onlyStateSlug) bareQuery = bareQuery.eq('state_slug', onlyStateSlug);
           const bare = await bareQuery.range(from, from + PAGE_SIZE - 1);
           if (bare.error) {
+            captureStatementTimeout(bare.error, 'company_destination_assignments');
             logger.error('approved_movers.assignments_failed', {
               code: bare.error.code,
               message: bare.error.message,
@@ -1143,6 +1155,7 @@ export async function recheckPublishedCompanySlugs(
       .select('slug, publication_state')
       .in('slug', chunk);
     if (error) {
+      captureStatementTimeout(error, 'companies');
       logger.warn('approved_movers.publication_recheck_failed', {
         message: error.message,
         failure: 'error',
@@ -1177,6 +1190,7 @@ export async function loadProfileFacts(slugs: string[]): Promise<Map<string, Pro
       .select('slug, publication_state, headquarters')
       .in('slug', chunk);
     if (error) {
+      captureStatementTimeout(error, 'companies');
       logger.warn('approved_movers.profile_publication_unavailable', {
         message: error.message,
         failure: 'error',
