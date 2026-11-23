@@ -204,9 +204,15 @@ function emptyEvidence(): CoverageEvidence {
 
 type LooseRow = Record<string, unknown>;
 
-async function selectEvidenceRows(
+export type EvidenceDataRoute =
+  | 'provider_service_area'
+  | 'provider_local_discovery_evidence'
+  | 'provider_state_authority';
+
+/** @internal Exported for the bounded PostgREST failure contract test. */
+export async function selectEvidenceRows(
   client: SupabaseClient<Database>,
-  table: string,
+  table: EvidenceDataRoute,
   columns: string,
   companyIds: string[]
 ): Promise<LooseRow[]> {
@@ -217,7 +223,10 @@ async function selectEvidenceRows(
         in: (
           column: string,
           values: string[]
-        ) => Promise<{ data: LooseRow[] | null; error: { message: string } | null }>;
+        ) => Promise<{
+          data: LooseRow[] | null;
+          error: { code?: string; message: string } | null;
+        }>;
       };
     };
   };
@@ -225,6 +234,7 @@ async function selectEvidenceRows(
     const chunk = companyIds.slice(i, i + IN_CHUNK);
     const { data, error } = await loose.from(table).select(columns).in('company_id', chunk);
     if (error) {
+      captureStatementTimeout(error, table);
       logger.warn('approved_movers.evidence_unavailable', {
         table,
         message: error.message,

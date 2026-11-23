@@ -1,6 +1,12 @@
 import * as Sentry from '@sentry/nextjs';
 
-type DataRoute = 'companies' | 'company_destination_assignments' | 'directory_query_page';
+type DataRoute =
+  | 'companies'
+  | 'company_destination_assignments'
+  | 'directory_query_page'
+  | 'provider_service_area'
+  | 'provider_local_discovery_evidence'
+  | 'provider_state_authority';
 
 let lastCaptureAt: number | undefined;
 

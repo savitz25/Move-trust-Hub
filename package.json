@@ -62,7 +62,7 @@
     "check:move-thin-pages-indexing": "tsx --test lib/seo/thin-pages-indexing.test.ts",
     "check:th-dpr-001": "tsx --require ./scripts/stub-server-only.cjs --test lib/fmcsa/refresh/th-dpr-001.test.ts",
     "check:th-dpr-001-pause": "tsx --experimental-test-module-mocks --require ./scripts/stub-server-only.cjs --test lib/fmcsa/refresh/pause.test.ts",
-    "test:pg-timeout-capture": "tsx --experimental-test-module-mocks --require ./scripts/stub-server-only.cjs --test lib/observability/pg-timeout-capture.test.ts lib/observability/pg-timeout-loaders.test.ts",
+    "test:pg-timeout-capture": "tsx --experimental-test-module-mocks --require ./scripts/stub-server-only.cjs --test lib/observability/pg-timeout-capture.test.ts lib/observability/pg-timeout-coverage.test.ts lib/observability/pg-timeout-loaders.test.ts",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "typecheck": "tsc --noEmit",

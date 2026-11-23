@@ -724,7 +724,8 @@ function holderFromProfileRow(row: Record<string, unknown>, placeId: string): Pl
  * A failed, ambiguous, or capped read is not treated as an empty claim.
  * This does not reserve the place id.
  */
-async function loadProfilePlaceAssociation(
+/** @internal Exported for the bounded PostgREST failure contract test. */
+export async function loadProfilePlaceAssociation(
   supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,
   row: Record<string, unknown>
 ): Promise<{ holders?: PlaceHolder[]; enumeration?: HolderEnumeration }> {
@@ -747,6 +748,10 @@ async function loadProfilePlaceAssociation(
         .limit(PLACE_HOLDER_READ_LIMIT),
     ]);
     if (fromSources.error || fromColumn.error) {
+      captureStatementTimeout(
+        [fromSources.error, fromColumn.error].find((error) => error?.code === '57014'),
+        'companies'
+      );
       return { holders: [], enumeration: 'failed' };
     }
     if (!Array.isArray(fromSources.data) || !Array.isArray(fromColumn.data)) {
@@ -826,6 +831,10 @@ export async function attributeDirectoryPageCompanies(companies: Company[]): Pro
         .limit(limit),
     ]);
     if (fromSources.error || fromColumn.error) {
+      captureStatementTimeout(
+        [fromSources.error, fromColumn.error].find((error) => error?.code === '57014'),
+        'companies'
+      );
       logger.warn('directory.place_holders.fetch_failed', {
         code: fromSources.error?.code ?? fromColumn.error?.code,
         message: fromSources.error?.message ?? fromColumn.error?.message,
