@@ -1,3 +1,4 @@
+import { captureStatementTimeout } from '@/lib/observability/pg-timeout-capture';
 import { associationIntegrity, projectCompanyAssociation } from '@/lib/fmcsa/association-integrity';
 import 'server-only';
 
@@ -450,7 +451,10 @@ async function selectCompanyList(
       .order('reputation_score', { ascending: false })
       .order('id', { ascending: true })
       .range(from, to);
-    if (page.error) return page;
+    if (page.error) {
+      captureStatementTimeout(page.error, 'companies');
+      return page;
+    }
     const data = page.data ?? [];
     rows.push(...data);
     if (data.length < COMPANIES_LIST_PAGE_SIZE) {
@@ -547,6 +551,7 @@ async function fetchCompaniesFromDatabase(): Promise<Company[]> {
       if (i === 0) return [...seedCompanies];
       continue;
     }
+    captureStatementTimeout(result.error, 'companies');
     noteProjectionOutcome(cols, result.error);
     if (result.error && isSchemaColumnError(result.error)) {
       logger.warn('companies.fetch_projection_retry', {
@@ -629,6 +634,7 @@ export async function getCompanySlugById(companyId: string): Promise<string | nu
   const supabase = createAnonSupabaseClient();
   if (!supabase) return fromSeed();
   const { data, error } = await supabase.from('companies').select('slug').eq('id', id).maybeSingle();
+  captureStatementTimeout(error, 'companies');
   if (!error && data?.slug) return data.slug;
   return null;
 }
@@ -659,6 +665,7 @@ async function fetchIndexableCompanySitemapEntries(): Promise<CompanySitemapEntr
       .select('slug, last_updated, publication_state, indexable')
       .order('id', { ascending: true })
       .range(from, to);
+    captureStatementTimeout(page.error, 'companies');
     if (page.error || !page.data) break;
     for (const row of page.data as Array<{
       slug: string;
@@ -717,7 +724,8 @@ function holderFromProfileRow(row: Record<string, unknown>, placeId: string): Pl
  * A failed, ambiguous, or capped read is not treated as an empty claim.
  * This does not reserve the place id.
  */
-async function loadProfilePlaceAssociation(
+/** @internal Exported for the bounded PostgREST failure contract test. */
+export async function loadProfilePlaceAssociation(
   supabase: NonNullable<ReturnType<typeof createAnonSupabaseClient>>,
   row: Record<string, unknown>
 ): Promise<{ holders?: PlaceHolder[]; enumeration?: HolderEnumeration }> {
@@ -740,6 +748,10 @@ async function loadProfilePlaceAssociation(
         .limit(PLACE_HOLDER_READ_LIMIT),
     ]);
     if (fromSources.error || fromColumn.error) {
+      captureStatementTimeout(
+        [fromSources.error, fromColumn.error].find((error) => error?.code === '57014'),
+        'companies'
+      );
       return { holders: [], enumeration: 'failed' };
     }
     if (!Array.isArray(fromSources.data) || !Array.isArray(fromColumn.data)) {
@@ -819,6 +831,10 @@ export async function attributeDirectoryPageCompanies(companies: Company[]): Pro
         .limit(limit),
     ]);
     if (fromSources.error || fromColumn.error) {
+      captureStatementTimeout(
+        [fromSources.error, fromColumn.error].find((error) => error?.code === '57014'),
+        'companies'
+      );
       logger.warn('directory.place_holders.fetch_failed', {
         code: fromSources.error?.code ?? fromColumn.error?.code,
         message: fromSources.error?.message ?? fromColumn.error?.message,
@@ -904,6 +920,7 @@ async function resolveCompanyBySlugOrUsdotInner(
       .select(cols)
       .or(`slug.eq.${input},id.eq.${input}`)
       .maybeSingle();
+    captureStatementTimeout(result.error, 'companies');
     noteProjectionOutcome(cols, result.error);
     if (result.error && isSchemaColumnError(result.error)) {
       slugError = result.error;
@@ -940,6 +957,7 @@ async function resolveCompanyBySlugOrUsdotInner(
   ): Promise<Record<string, unknown> | null> {
     for (const cols of projections) {
       const result = await apply(cols);
+      captureStatementTimeout(result.error, 'companies');
       noteProjectionOutcome(cols, result.error);
       if (result.error && isSchemaColumnError(result.error)) continue;
       if (!result.error && result.data) {
@@ -1006,6 +1024,7 @@ async function preferCanonicalUsdotPeer(
       .select(cols)
       .eq('usdot_number', usdot)
       .limit(20);
+    captureStatementTimeout(error, 'companies');
     if (error && isSchemaColumnError(error)) continue;
     if (error || !data?.length) return undefined;
 
@@ -1062,6 +1081,7 @@ async function queryCompanyByColumnVariants(
       .eq(column, variant)
       .maybeSingle();
 
+    captureStatementTimeout(error, 'companies');
     if (!error && data) {
       return mapCompanyRow(data as Record<string, unknown>);
     }
@@ -1123,6 +1143,7 @@ export async function getCompanyByCarrierFromDb(
       .ilike('name', hint)
       .limit(5);
 
+    captureStatementTimeout(nameError, 'companies');
     const nameRows = (byNameRows ?? []) as Record<string, unknown>[];
     if (!nameError && nameRows.length) {
       const exactName = nameRows.find(

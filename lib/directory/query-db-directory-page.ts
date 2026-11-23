@@ -1,3 +1,4 @@
+import { captureStatementTimeout } from '@/lib/observability/pg-timeout-capture';
 import 'server-only';
 
 import { createClient as createSupabaseClient } from '@supabase/supabase-js';
@@ -130,6 +131,7 @@ async function fetchSourceBackedAutoTransportCompanies(): Promise<Company[]> {
         .select(columns)
         .in('usdot_number', usdots);
       if (error) {
+        captureStatementTimeout(error, 'companies');
         if (error.code === '42703' || error.code === 'PGRST204' || /column/i.test(error.message)) {
           projectionUnavailable = true;
           break;
@@ -215,6 +217,7 @@ async function fetchCompaniesByIds(
       .select(columns)
       .in('id', ids);
     if (error) {
+      captureStatementTimeout(error, 'companies');
       if (
         error.code === '42703' ||
         error.code === 'PGRST204' ||
@@ -273,6 +276,7 @@ async function queryRecordedHqPage(options: {
 
   const { data, count, error } = await query;
   if (error) {
+    captureStatementTimeout(error, 'companies');
     logger.warn('directory.recorded_hq.fetch_failed', { state, code: error.code, message: error.message });
     throw new Error(`recorded-HQ query failed for ${state}`);
   }
@@ -480,6 +484,7 @@ async function queryViaRpc(options: {
   } as never);
 
   if (error) {
+    captureStatementTimeout(error, 'directory_query_page');
     logger.warn('directory.db_engine.rpc_failed', {
       message: error.message,
       code: error.code,
@@ -527,6 +532,7 @@ async function queryPlainReputationViaPostgrest(options: {
       .range(from, from + pageSize - 1);
 
     if (error) {
+      captureStatementTimeout(error, 'companies');
       logger.warn('directory.db_engine.plain_postgrest_failed', {
         message: error.message,
         code: error.code,
@@ -660,6 +666,7 @@ async function queryViaPostgrest(options: {
 
   const { data, error, count } = await query.range(rangeFrom, rangeTo);
   if (error) {
+    captureStatementTimeout(error, 'companies');
     logger.warn('directory.db_engine.postgrest_failed', {
       message: error.message,
       code: error.code,

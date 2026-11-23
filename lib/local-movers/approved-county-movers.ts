@@ -1,3 +1,4 @@
+import { captureStatementTimeout } from '@/lib/observability/pg-timeout-capture';
 import 'server-only';
 
 import { unstable_cache } from 'next/cache';
@@ -203,9 +204,15 @@ function emptyEvidence(): CoverageEvidence {
 
 type LooseRow = Record<string, unknown>;
 
-async function selectEvidenceRows(
+export type EvidenceDataRoute =
+  | 'provider_service_area'
+  | 'provider_local_discovery_evidence'
+  | 'provider_state_authority';
+
+/** @internal Exported for the bounded PostgREST failure contract test. */
+export async function selectEvidenceRows(
   client: SupabaseClient<Database>,
-  table: string,
+  table: EvidenceDataRoute,
   columns: string,
   companyIds: string[]
 ): Promise<LooseRow[]> {
@@ -216,7 +223,10 @@ async function selectEvidenceRows(
         in: (
           column: string,
           values: string[]
-        ) => Promise<{ data: LooseRow[] | null; error: { message: string } | null }>;
+        ) => Promise<{
+          data: LooseRow[] | null;
+          error: { code?: string; message: string } | null;
+        }>;
       };
     };
   };
@@ -224,6 +234,7 @@ async function selectEvidenceRows(
     const chunk = companyIds.slice(i, i + IN_CHUNK);
     const { data, error } = await loose.from(table).select(columns).in('company_id', chunk);
     if (error) {
+      captureStatementTimeout(error, table);
       logger.warn('approved_movers.evidence_unavailable', {
         table,
         message: error.message,
@@ -457,6 +468,8 @@ async function loadCompaniesByIds(
     const bySlug = await client.from('companies').select(select).in('slug', chunk);
 
     if (byId.error || bySlug.error) {
+      captureStatementTimeout(byId.error, 'companies');
+      captureStatementTimeout(bySlug.error, 'companies');
       logger.error('approved_movers.companies_failed', {
         byId: byId.error?.message ?? null,
         bySlug: bySlug.error?.message ?? null,
@@ -478,6 +491,7 @@ async function loadCompaniesByIds(
         .or(`id.eq.${key},slug.eq.${key}`)
         .maybeSingle();
       if (error) {
+        captureStatementTimeout(error, 'companies');
         logger.error('approved_movers.companies_failed', {
           message: error.message,
           failure: 'error',
@@ -507,7 +521,10 @@ async function pageAssignmentRows(
         .eq('state_slug', stateSlug)
         .in(column, chunk)
         .range(from, from + PAGE_SIZE - 1);
-      if (error) return { rows, failed: true };
+      if (error) {
+        captureStatementTimeout(error, 'company_destination_assignments');
+        return { rows, failed: true };
+      }
       const page = (data ?? []) as AssignmentRow[];
       rows.push(...page);
       if (page.length < PAGE_SIZE) break;
@@ -628,6 +645,7 @@ async function loadApprovedMoversForSingleCounty(
 
   let assignments: AssignmentRow[] = [];
   if (error) {
+    captureStatementTimeout(error, 'company_destination_assignments');
     if (/source|does not exist|PGRST204|42703/i.test(error.message + (error.code || ''))) {
       const bare = await client
         .from('company_destination_assignments')
@@ -635,6 +653,7 @@ async function loadApprovedMoversForSingleCounty(
         .eq('state_slug', stateSlug)
         .eq('county_slug', countySlug);
       if (bare.error) {
+        captureStatementTimeout(bare.error, 'company_destination_assignments');
         logger.error('approved_movers.county_assignments_failed', {
           stateSlug,
           countySlug,
@@ -791,6 +810,7 @@ async function scanIntrastateCoverageCounties(
       .range(from, from + PAGE_SIZE - 1);
 
     if (withScope.error) {
+      captureStatementTimeout(withScope.error, 'companies');
       if (
         withScope.error.code === 'PGRST204' ||
         withScope.error.code === '42703' ||
@@ -846,6 +866,7 @@ async function loadAllApprovedMoversByCounty(
       const { data, error } = await assignmentQuery.range(from, from + PAGE_SIZE - 1);
 
       if (error) {
+        captureStatementTimeout(error, 'company_destination_assignments');
         // Older schemas may lack source column
         if (/source|does not exist|PGRST204|42703/i.test(error.message + (error.code || ''))) {
           let bareQuery = client
@@ -855,6 +876,7 @@ async function loadAllApprovedMoversByCounty(
           if (onlyStateSlug) bareQuery = bareQuery.eq('state_slug', onlyStateSlug);
           const bare = await bareQuery.range(from, from + PAGE_SIZE - 1);
           if (bare.error) {
+            captureStatementTimeout(bare.error, 'company_destination_assignments');
             logger.error('approved_movers.assignments_failed', {
               code: bare.error.code,
               message: bare.error.message,
@@ -1143,6 +1165,7 @@ export async function recheckPublishedCompanySlugs(
       .select('slug, publication_state')
       .in('slug', chunk);
     if (error) {
+      captureStatementTimeout(error, 'companies');
       logger.warn('approved_movers.publication_recheck_failed', {
         message: error.message,
         failure: 'error',
@@ -1177,6 +1200,7 @@ export async function loadProfileFacts(slugs: string[]): Promise<Map<string, Pro
       .select('slug, publication_state, headquarters')
       .in('slug', chunk);
     if (error) {
+      captureStatementTimeout(error, 'companies');
       logger.warn('approved_movers.profile_publication_unavailable', {
         message: error.message,
         failure: 'error',
