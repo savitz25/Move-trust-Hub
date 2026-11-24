@@ -19,7 +19,10 @@ import {
   shouldApplyMiddlewareHtmlCache,
 } from '@/lib/cache/control';
 import { DEFAULT_PERFORMANCE_FLAGS } from '@/lib/edge-config/types';
-import { unresolvedCountyCacheHeaders } from '@/lib/local-movers/county-unknown-slug';
+import {
+  unresolvedCountyCacheHeaders,
+  unresolvedCountyNotFoundHtml,
+} from '@/lib/local-movers/county-unknown-slug';
 import { normalizedPublishedStatePath } from '@/lib/seo/published-state-path';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
@@ -243,10 +246,17 @@ export async function middleware(request: NextRequest) {
 
     const unresolvedCounty = unresolvedCountyCacheHeaders(pathname);
     if (unresolvedCounty) {
-      response.headers.set('Cache-Control', unresolvedCounty.cacheControl);
-      response.headers.set('CDN-Cache-Control', unresolvedCounty.cdnCacheControl);
-      response.headers.set('Vary', 'Accept-Encoding');
-      return response;
+      // Return before the force-static county route. A notFound() prerender
+      // on that route is served as HTTP 200 with the homepage canonical.
+      return new NextResponse(unresolvedCountyNotFoundHtml(), {
+        status: 404,
+        headers: {
+          'Content-Type': 'text/html; charset=utf-8',
+          'Cache-Control': unresolvedCounty.cacheControl,
+          'CDN-Cache-Control': unresolvedCounty.cdnCacheControl,
+          Vary: 'Accept-Encoding',
+        },
+      });
     }
 
     const baseTtl =
@@ -290,6 +300,9 @@ export const config = {
     '/manifest.json',
     // SSO: refresh session cookies before handoff start (otherwise /api/* is excluded)
     '/api/auth/network-handoff/:path*',
+    // County HTML, including prefetches. The catch-all skips prefetch, and a
+    // prefetch of an unknown slug would prerender a cached HTTP 200.
+    '/local-movers/:stateSlug/:countySlug',
     {
       // robots.txt stays excluded — app/robots.ts is host-aware.
       // Other *.xml stay excluded; sitemap paths listed explicitly above.

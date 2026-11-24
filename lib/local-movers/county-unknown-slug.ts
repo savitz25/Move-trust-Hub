@@ -26,3 +26,31 @@ export function unresolvedCountyCacheHeaders(
     cdnCacheControl: UNRESOLVED_COUNTY_CDN_CACHE_CONTROL,
   };
 }
+
+/**
+ * Document served by middleware for an unknown county slug.
+ * The county route is force-static. notFound() there is prerendered and
+ * next start serves that prerender as HTTP 200 with the root canonical.
+ * This document is the 404 itself: one robots directive, no canonical.
+ */
+export const UNRESOLVED_COUNTY_ROBOTS = 'noindex, nofollow';
+
+export function unresolvedCountyNotFoundHtml(): string {
+  return [
+    '<!DOCTYPE html>',
+    '<html lang="en">',
+    '<head>',
+    '<meta charset="utf-8">',
+    '<title>Page Not Found | Move Trust Hub</title>',
+    `<meta name="robots" content="${UNRESOLVED_COUNTY_ROBOTS}">`,
+    '<meta name="description" content="This county page could not be found on Move Trust Hub.">',
+    '</head>',
+    '<body>',
+    '<main>',
+    '<h1>Page not found</h1>',
+    '<p>This county page is not on Move Trust Hub.</p>',
+    '</main>',
+    '</body>',
+    '</html>',
+  ].join('');
+}
