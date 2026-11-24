@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   title: 'Page Not Found',
   description: 'This page could not be found on Move Trust Hub.',
   robots: { index: false, follow: false },
+  // Drop the root layout homepage canonical on the 404 document.
+  alternates: { canonical: null },
 };
 
 export default function NotFound() {

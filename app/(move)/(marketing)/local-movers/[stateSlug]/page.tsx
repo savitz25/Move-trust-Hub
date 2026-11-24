@@ -54,7 +54,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { stateSlug } = await params;
   const state = getLocalState(stateSlug);
-  if (!state) return {};
+  if (!state) notFound();
 
   const counties = getCountiesForState(stateSlug);
   const hubPack = getStateResourceHubPack(stateSlug);
