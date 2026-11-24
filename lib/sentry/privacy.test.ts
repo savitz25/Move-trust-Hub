@@ -37,7 +37,8 @@ test('ATH-REL-002A: beforeSend strips search query, auth headers, and bodies', (
     exception: { values: [{ type: 'Error', value: 'failed Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.aaa.bbb' }] },
   });
 
-  assert.equal(event.request?.url, 'https://www.movetrusthub.com/ask?utm_source=x');
+  assert.equal(event.request?.url, 'https://www.movetrusthub.com/ask');
+  assert.equal(String(event.request?.url).includes('?'), false);
   assert.doesNotMatch(String(event.request?.query_string), /who/);
   assert.equal(event.request?.headers?.Authorization, '[Filtered]');
   assert.equal(event.request?.headers?.cookie, '[Filtered]');
@@ -94,7 +95,7 @@ test('ATH-REL-002A: exact reviewed URL header cases follow analytics query polic
   assert.equal(event.request?.headers?.Referrer, 'https://www.movetrusthub.com/claim');
   assert.equal(
     event.request?.headers?.['x-callback-url'],
-    'https://www.movetrusthub.com/search?utm_source=regression&view=directory',
+    'https://www.movetrusthub.com/search',
   );
   assert.equal(event.request?.headers?.['x-request-label'], 'ordinary non-URL value');
 });
@@ -116,16 +117,16 @@ test('ATH-REL-002A: Referer/Referrer and URL-valued headers drop raw search para
 
   assert.equal(
     event.request?.headers?.Referer,
-    'https://www.google.com/search?utm_source=google',
+    'https://www.google.com/search',
   );
   assert.equal(
     event.request?.headers?.Referrer,
-    'https://www.movetrusthub.com/ask?utm_campaign=spring',
+    'https://www.movetrusthub.com/ask',
   );
-  assert.equal(event.request?.headers?.Origin, 'https://www.bing.com/search?form=QBLH');
+  assert.equal(event.request?.headers?.Origin, 'https://www.bing.com/search');
   assert.equal(
     event.request?.headers?.Location,
-    'https://www.movetrusthub.com/search?utm_medium=email',
+    'https://www.movetrusthub.com/search',
   );
   assert.doesNotMatch(JSON.stringify(event.request?.headers), /who\+owns|secret\+question|person@example|usdot\+123456|private\+notes/);
   assert.equal(event.request?.headers?.['x-forwarded-host'], 'www.movetrusthub.com');

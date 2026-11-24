@@ -1,9 +1,11 @@
 'use client';
 
-import { analyticsEnvironment, shouldEnablePosthog } from './environment';
+import { AUTOMATIC_IDENTITY_COLLECTION, AUTOMATIC_PAGEVIEW_CAPTURE, analyticsEnvironment, shouldEnablePosthog } from './environment';
 import { getPosthogBrowser } from './posthog-browser';
 import { isOpaqueTrustHubId, sanitizeAnalyticsUrl, stripForbiddenProperties } from './privacy';
-import { TRUSTHUB_HUB, type TrustHubEventName, type TrustHubEventProperties } from './events';
+import { TRUSTHUB_EVENTS, TRUSTHUB_HUB, type TrustHubEventName, type TrustHubEventProperties } from './events';
+
+const APPROVED_POSTHOG_EVENTS = new Set<string>(Object.values(TRUSTHUB_EVENTS));
 
 export function commonTrustHubProperties(
   extra?: Partial<TrustHubEventProperties>,
@@ -28,6 +30,7 @@ export function captureTrustEvent(
 ): void {
   try {
     if (!shouldEnablePosthog()) return;
+    if (!APPROVED_POSTHOG_EVENTS.has(event)) return;
     const payload = commonTrustHubProperties(properties);
     void getPosthogBrowser()
       .then((posthog) => {
@@ -46,6 +49,7 @@ export function captureTrustEvent(
 
 export function captureSanitizedPageview(pathname: string, href?: string): void {
   try {
+    if (!AUTOMATIC_PAGEVIEW_CAPTURE) return;
     const path = pathname.split('?')[0] || '/';
     if (lastPageviewPath === path) return;
     lastPageviewPath = path;
@@ -61,6 +65,7 @@ export function captureSanitizedPageview(pathname: string, href?: string): void 
 
 export function identifyTrustHubUser(distinctId: string | null | undefined): void {
   try {
+    if (!AUTOMATIC_IDENTITY_COLLECTION) return;
     if (!distinctId || !isOpaqueTrustHubId(distinctId)) return;
     if (!shouldEnablePosthog()) return;
     void getPosthogBrowser()

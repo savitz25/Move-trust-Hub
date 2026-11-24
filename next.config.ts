@@ -1,6 +1,7 @@
 import type { NextConfig } from 'next';
 import bundleAnalyzer from '@next/bundle-analyzer';
 import { withSentryConfig } from '@sentry/nextjs/config';
+import { enforcedDocumentContentSecurityPolicy } from './lib/analytics/posthog/network-policy';
 import { IMMUTABLE_ASSET, apiCacheControl } from './lib/cache/control';
 import { getAllHubRedirects } from './lib/migration/hub-redirects';
 import {
@@ -311,6 +312,7 @@ const nextConfig: NextConfig = {
         key: 'Permissions-Policy',
         value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
       },
+      { key: 'Content-Security-Policy', value: enforcedDocumentContentSecurityPolicy() },
     ];
 
     return [
