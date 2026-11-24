@@ -1,10 +1,10 @@
 /** Keys under the `performance` item in Vercel Edge Config. */
 export type PerformanceFlags = {
-  /** Defer gtag.js until first user interaction (recommended for PSI). */
+  /** Retired. The tag is not loaded. */
   enableGtag: boolean;
   /** Defer @vercel/analytics + speed-insights. */
   enableVercelAnalytics: boolean;
-  /** Defer hub-dimension GA page_view helper. */
+  /** Retired with the tag. Hub page views are not sent. */
   enableHubAnalytics: boolean;
   /** Show AI chatbot widget (heavy — off by default in Edge Config seed). */
   enableChatbot: boolean;
@@ -17,13 +17,13 @@ export type PerformanceFlags = {
 };
 
 export const DEFAULT_PERFORMANCE_FLAGS: PerformanceFlags = {
-  /** GA4 is always loaded from root layout (GoogleAnalyticsRoot) — flag unused for gating. */
-  enableGtag: true,
+  /** Retired. Nothing reads this flag to inject a tag. */
+  enableGtag: false,
   enableVercelAnalytics: true,
-  /** Hub page views are handled by GaPageViewTracker in root layout. */
-  enableHubAnalytics: true,
+  /** Retired with the tag. */
+  enableHubAnalytics: false,
   enableChatbot: false,
-  /** Applies to Vercel Analytics / chatbot only — not GA4. */
+  /** Applies to Vercel Analytics and the chatbot. */
   deferThirdPartyUntilInteraction: true,
   htmlCacheSeconds: 86_400,
   apiCacheSeconds: 3_600,

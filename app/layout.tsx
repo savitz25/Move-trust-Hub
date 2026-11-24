@@ -11,7 +11,6 @@ import {
 } from '@/lib/hub/schemas';
 import { isInsuranceStandaloneHost } from '@/lib/hub/domains';
 import { Suspense } from 'react';
-import { GoogleAnalyticsRoot } from '@/components/analytics/google-analytics-root';
 import { PosthogRoot } from '@/components/analytics/posthog-root';
 import { DeferredUiStyles } from '@/components/performance/deferred-ui-styles';
 import { ThirdPartyOrchestrator } from '@/components/performance/third-party-orchestrator';
@@ -74,8 +73,6 @@ export default async function RootLayout({
           <PosthogRoot />
         </Suspense>
         {children}
-        {/* GA deferred (idle) — must not compete with hero LCP */}
-        <GoogleAnalyticsRoot />
         <DeferredUiStyles />
         <ThirdPartyOrchestrator />
       </body>

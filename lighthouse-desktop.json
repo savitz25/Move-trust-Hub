@@ -395,7 +395,7 @@
             "scriptParseCompile": 43.422000000000004
           },
           {
-            "url": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+            "url": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
             "total": 93.7110000000001,
             "scripting": 63.6730000000001,
             "scriptParseCompile": 28.974999999999998
@@ -980,7 +980,7 @@
             "entity": "localhost"
           },
           {
-            "url": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+            "url": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
             "sessionTargetType": "page",
             "protocol": "h2",
             "cache": "none",
@@ -1722,7 +1722,7 @@
         ],
         "items": [
           {
-            "origin": "https://www.googletagmanager.com",
+            "origin": "https://www.removed-tag-host.com",
             "rtt": 25.828000000000003
           },
           {
@@ -1761,7 +1761,7 @@
         ],
         "items": [
           {
-            "origin": "https://www.googletagmanager.com",
+            "origin": "https://www.removed-tag-host.com",
             "serverResponseTime": 62.46300000000001
           },
           {
@@ -2105,7 +2105,7 @@
             "startTime": 1626.185500000001
           },
           {
-            "url": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+            "url": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
             "duration": 56,
             "startTime": 1532.522600000001
           }
@@ -2120,7 +2120,7 @@
           "type": "debugdata",
           "urls": [
             "http://localhost:3000/_next/static/chunks/3265-e68f6b0c96297ed3.js",
-            "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ"
+            "https://www.removed-tag-host.com/gtag/js?id=REMOVED"
           ],
           "tasks": [
             {
@@ -2816,7 +2816,7 @@
             "unusedBytes": 3006
           },
           {
-            "name": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+            "name": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
             "resourceBytes": 498877,
             "encodedBytes": 159560,
             "unusedBytes": 259563
@@ -2857,7 +2857,7 @@
             "totalBytes": 175917
           },
           {
-            "url": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+            "url": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
             "totalBytes": 167080
           },
           {
@@ -3036,7 +3036,7 @@
         ],
         "items": [
           {
-            "url": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+            "url": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
             "totalBytes": 159560,
             "wastedBytes": 83018,
             "wastedPercent": 52.02945816303417
@@ -3845,7 +3845,7 @@
               "type": "subitems",
               "items": [
                 {
-                  "url": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+                  "url": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
                   "mainThreadTime": 92.1539998948574,
                   "transferSize": 167080
                 }
@@ -4313,7 +4313,7 @@
       "name": "Google Tag Manager",
       "homepage": "https://marketingplatform.google.com/about/tag-manager/",
       "origins": [
-        "https://www.googletagmanager.com"
+        "https://www.removed-tag-host.com"
       ],
       "category": "tag-manager"
     }

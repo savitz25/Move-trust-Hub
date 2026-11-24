@@ -7,9 +7,8 @@ import { DeferredAnalytics } from '@/components/performance/deferred-analytics';
 import { DeferredWidgets } from '@/components/performance/deferred-widgets';
 
 /**
- * Non-GA third parties (Vercel Analytics, chatbot) stay deferred for PSI.
- * GA4 loads once via GoogleAnalyticsRoot (idle DOM inject) — never re-mount
- * DeferredGtag here (avoids double-loading).
+ * Vercel Analytics and the chatbot stay deferred for PSI.
+ * The removed tag is not mounted here.
  */
 export function ThirdPartyOrchestrator({
   flags: initialFlags,

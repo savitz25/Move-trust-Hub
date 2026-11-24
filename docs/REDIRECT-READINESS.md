@@ -1,7 +1,6 @@
 # Redirect Readiness — movetrusthub.com
 
 **Primary site:** `https://www.movetrusthub.com`  
-**GA4:** `G-433BDV8MJ` (see `lib/analytics/ga-config.ts`)  
 **Legacy domains (308 → subdirectories):** `lendertrusthub.com` only  
 **Standalone specialist:** `insurancetrusthub.com` (no 308 to Move — host rewrite; see `docs/INSURANCE-STANDALONE.md`)
 
@@ -17,9 +16,8 @@
 
 - [ ] `npm run build` passes locally
 - [ ] `vercel.json` **host redirects are first** in the `redirects` array (prevents `/lender/lender/...` double-prefix bug)
-- [ ] Host redirects include `?from=` query (welcome banner + GA4 attribution)
+- [ ] Host redirects include `?from=` query (welcome banner)
 - [ ] Vercel project domains include all four legacy hosts (see below)
-- [ ] GA4 Admin → Data Streams → Configure domains lists movetrusthub + legacy domains
 
 ---
 
@@ -39,9 +37,8 @@ Host-based 308 rules in `vercel.json` fire when legacy domains hit this deployme
 
 ```bash
 git add components/hub/legacy-welcome-banner.tsx components/hub/hub-chrome.tsx \
-  components/ga-events.tsx components/performance/deferred-gtag.tsx \
   lib/migration/legacy-sources.ts lib/migration/hub-redirects.ts vercel.json docs/REDIRECT-READINESS.md
-git commit -m "feat: legacy 308 welcome banner, GA4 cross-domain linker, ?from= redirects"
+git commit -m "feat: legacy 308 welcome banner and ?from= redirects"
 git push origin main
 ```
 
@@ -83,25 +80,9 @@ Path aliases on movetrusthub.com itself (no host change):
 
 ---
 
-## Verify GA4 Realtime
+## Tag
 
-1. Open [GA4 Realtime](https://analytics.google.com/) → property `G-433BDV8MJ`
-2. Visit `https://www.movetrusthub.com/`
-3. Confirm **1 active user** within ~30s
-4. Navigate to `/lender` → hub-dimensioned `page_view` (custom param `hub: lender`)
-5. Visit `/lender?from=lendertrusthub` → `legacy_redirect_arrival` event (register as custom event in GA4 if needed)
-6. After 308 cutover: hit `lendertrusthub.com` → confirm same session continues (cross-domain linker)
-
-**GA4 Admin → Configure tag settings → Configure your domains:**
-
-```
-movetrusthub.com
-www.movetrusthub.com
-lendertrusthub.com
-www.lendertrusthub.com
-insurancetrusthub.com
-www.insurancetrusthub.com
-```
+The hardcoded tag and its cross-domain linker, including lendertrusthub.com, have been removed. Do not configure a linker domain list for that tag.
 
 ---
 
@@ -125,7 +106,7 @@ Remove legacy domains from Vercel project or disable host redirects in `vercel.j
 
 | Item | Status |
 |------|--------|
-| GA4 `G-433BDV8MJ` + cross-domain linker | ✅ |
+| Hardcoded tag and cross-domain linker | removed |
 | Hub selector (Move \| Lender \| Insurance) | ✅ |
 | `/lender` + `/insurance` hub chrome | ✅ |
 | Legacy welcome banner (`?from=`) | ✅ |

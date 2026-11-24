@@ -414,7 +414,7 @@
             "scriptParseCompile": 0.628
           },
           {
-            "url": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+            "url": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
             "total": 184.6400000000003,
             "scripting": 117.5920000000003,
             "scriptParseCompile": 66.256
@@ -969,7 +969,7 @@
             "entity": "localhost"
           },
           {
-            "url": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+            "url": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
             "sessionTargetType": "page",
             "protocol": "h2",
             "cache": "none",
@@ -1579,7 +1579,7 @@
         ],
         "items": [
           {
-            "origin": "https://www.googletagmanager.com",
+            "origin": "https://www.removed-tag-host.com",
             "rtt": 26.21900000000005
           },
           {
@@ -1618,7 +1618,7 @@
         ],
         "items": [
           {
-            "origin": "https://www.googletagmanager.com",
+            "origin": "https://www.removed-tag-host.com",
             "serverResponseTime": 62.240999999999985
           },
           {
@@ -1940,7 +1940,7 @@
             "startTime": 2335.5084500000003
           },
           {
-            "url": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+            "url": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
             "duration": 128,
             "startTime": 6914.068900000002
           },
@@ -1960,7 +1960,7 @@
             "startTime": 5552.197650000001
           },
           {
-            "url": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+            "url": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
             "duration": 50,
             "startTime": 7042.068900000002
           }
@@ -1976,7 +1976,7 @@
           "urls": [
             "http://localhost:3000/_next/static/chunks/3265-e68f6b0c96297ed3.js",
             "http://localhost:3000/_next/static/chunks/webpack-2e188fee21395d74.js",
-            "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+            "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
             "http://localhost:3000/",
             "http://localhost:3000/_next/static/chunks/436.81fe3d72dc79bd55.js",
             "http://localhost:3000/_next/static/chunks/445-c079a55a3db4fac1.js"
@@ -2682,7 +2682,7 @@
             "unusedBytes": 3076
           },
           {
-            "name": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+            "name": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
             "resourceBytes": 498864,
             "encodedBytes": 164352,
             "unusedBytes": 266087
@@ -2723,7 +2723,7 @@
             "totalBytes": 175917
           },
           {
-            "url": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+            "url": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
             "totalBytes": 167080
           },
           {
@@ -2902,7 +2902,7 @@
         ],
         "items": [
           {
-            "url": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+            "url": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
             "totalBytes": 164352,
             "wastedBytes": 87663,
             "wastedPercent": 53.33858526572372
@@ -3720,7 +3720,7 @@
               "type": "subitems",
               "items": [
                 {
-                  "url": "https://www.googletagmanager.com/gtag/js?id=G-433BDVV8MJ",
+                  "url": "https://www.removed-tag-host.com/gtag/js?id=REMOVED",
                   "mainThreadTime": 45.705000042915344,
                   "transferSize": 167080
                 }
@@ -4188,7 +4188,7 @@
       "name": "Google Tag Manager",
       "homepage": "https://marketingplatform.google.com/about/tag-manager/",
       "origins": [
-        "https://www.googletagmanager.com"
+        "https://www.removed-tag-host.com"
       ],
       "category": "tag-manager"
     }

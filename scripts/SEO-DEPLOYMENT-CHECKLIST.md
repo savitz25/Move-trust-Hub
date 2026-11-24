@@ -42,10 +42,9 @@ git push origin main
 | `/local-movers/south-carolina/horry` | Destination hub backlink |
 | Navbar | Destinations mega-menu hover |
 
-## Analytics (GA4: G-433BDVV8MJ)
+## Analytics
 
-- [ ] Add custom event `destination_hub_view` (optional follow-up)
-- [ ] Monitor organic landing pages report for `/moving-to/*` growth over 14 days
+The hardcoded tag has been removed. Organic landing pages are observed in Search Console, not through that tag.
 
 ## Prioritized rollout phases
 

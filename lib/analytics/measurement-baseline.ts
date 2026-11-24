@@ -17,8 +17,8 @@ export const MEASUREMENT_BASELINE_NOTE =
   'Baseline: 2026-08-07 — Phase 5 priority research events + GSC tier-aware sitemaps live.';
 
 /**
- * Priority GA4 event names (Move stream G-433BDVV8MJ).
- * Register as custom events / conversions in GA4 Admin after deploy.
+ * Priority research event names from the Phase 5 program.
+ * They are not sent to a third-party tag.
  */
 export const PRIORITY_RESEARCH_EVENTS = [
   'verify_dot_lookup_complete',

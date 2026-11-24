@@ -1,36 +1,10 @@
 'use client';
 
-export {
-  GA_CROSS_DOMAIN_LINKS,
-  GA_CROSS_DOMAIN_LINKS_MOVE,
-  GA_MEASUREMENT_ID,
-  GA_MEASUREMENT_ID_MOVE_CANONICAL,
-} from '@/lib/analytics/ga-config';
-
 type GaEventParams = Record<string, string | number | boolean | undefined | null>;
 
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-    dataLayer?: unknown[];
-  }
-}
-
-function sanitizeParams(params: GaEventParams): Record<string, string | number | boolean> {
-  return Object.fromEntries(
-    Object.entries(params).filter(
-      ([, value]) => value !== undefined && value !== null && value !== ''
-    )
-  ) as Record<string, string | number | boolean>;
-}
-
-export function trackGaEvent(eventName: string, params: GaEventParams = {}) {
-  if (typeof window === 'undefined') return;
-
-  const gtag = window.gtag;
-  if (typeof gtag !== 'function') return;
-
-  gtag('event', eventName, sanitizeParams(params));
+/** Product events stay callable. The tag that received them has been removed. */
+export function trackGaEvent(_eventName: string, _params: GaEventParams = {}) {
+  return;
 }
 
 export function trackCalculatorStart(params: {

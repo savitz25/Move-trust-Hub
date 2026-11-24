@@ -7,11 +7,11 @@ import {
   trackOutboundSpecialistHub,
   trackResearchPathClick,
 } from '@/components/ga-events';
-import type { GaHub } from '@/lib/analytics/ga-config';
+type ResearchHub = 'move' | 'insurance' | 'lender';
 
 /**
- * Phase 5 — capture outbound verification + key internal research path clicks.
- * Mount for Move and Insurance hubs (host-aware GA). No PII.
+ * Phase 5 — classify outbound verification and research-path clicks.
+ * The tag that received these events has been removed. No PII.
  */
 
 function closestAnchor(target: EventTarget | null): HTMLAnchorElement | null {
@@ -72,7 +72,7 @@ function isInsurancePrimarySourceHost(host: string): boolean {
 
 function specialistHubKind(
   host: string,
-  currentHub: GaHub
+  currentHub: ResearchHub
 ): 'lender' | 'insurance' | 'ask' | 'move' | 'contractor' | null {
   if (host === 'www.lendertrusthub.com' || host === 'lendertrusthub.com') {
     return 'lender';
@@ -199,7 +199,7 @@ function classifyInsurancePath(
 }
 
 type Props = {
-  hub?: GaHub;
+  hub?: ResearchHub;
 };
 
 export function ResearchClickTracker({ hub = 'move' }: Props) {

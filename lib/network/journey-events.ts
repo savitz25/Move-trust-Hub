@@ -1,6 +1,6 @@
 /**
  * Network V2.1.1 — journey_handoff_click (Move).
- * Best-effort gtag. Never blocks navigation. Allowlisted fields only.
+ * Allowlisted fields only. Never blocks navigation. The handoff is not sent to a tag.
  */
 
 export type JourneyHubId =
@@ -66,12 +66,7 @@ export function trackJourneyHandoff(params: MoveJourneyHandoff): void {
   for (const key of Object.keys(payload)) {
     if (FORBIDDEN.has(key)) return;
   }
-  try {
-    const w = window as Window & { gtag?: (...args: unknown[]) => void };
-    w.gtag?.('event', 'journey_handoff_click', payload);
-  } catch {
-    /* non-fatal */
-  }
+  void payload;
 }
 
 export function isForbiddenAnalyticsKey(key: string): boolean {
