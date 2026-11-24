@@ -25,7 +25,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const route = getRouteGuide(slug);
-  if (!route) return {};
+  if (!route) notFound();
 
   const extended = getExtendedRouteGuide(slug);
 

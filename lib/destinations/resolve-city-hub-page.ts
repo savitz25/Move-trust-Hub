@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import {
   getCityHubContent,
 } from '@/lib/destinations/content';
@@ -70,7 +71,7 @@ export function resolveCityHubStandalone(slug: string): ResolvedCityHubPage | nu
 export function cityHubMetadataForSlug(slug: string): Metadata {
   const content = getCityHubContent(slug);
   const market = getMarketBySlug(slug);
-  if (!content || !market) return CITY_HUB_NOT_FOUND_METADATA;
+  if (!content || !market) notFound();
   const metadata = buildCityHubMetadata(content);
   if (market.isClusterParent) return metadata;
   if (evaluateCityHubIndexability(market).tier === 'index') return metadata;
