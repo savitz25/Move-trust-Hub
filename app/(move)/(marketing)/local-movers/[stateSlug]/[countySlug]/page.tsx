@@ -269,7 +269,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { stateSlug, countySlug } = await params;
   const seo = await resolveCountyPageSeo(stateSlug, countySlug);
-  return seo?.metadata ?? {};
+  // Empty metadata is a successful render. notFound() in the page is then
+  // caught inside the route and cached as HTTP 200 with root metadata.
+  if (!seo) notFound();
+  return seo.metadata;
 }
 
 export default async function LocalMoversCountyPage({ params }: Props) {
