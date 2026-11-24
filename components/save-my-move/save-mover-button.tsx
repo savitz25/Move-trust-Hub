@@ -24,6 +24,7 @@ import {
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 import { ONE_ACCOUNT_ENABLED, keepAllowedForSlug, useMyTrustHubHref } from '@/components/my-trusthub/my-trusthub-origin';
+import { MOVE_SIGNED_OUT_SAVE_COPY } from '@/lib/my-trusthub/move-trusthub-return';
 
 type SaveMoverButtonProps = {
   companySlug: string;
@@ -197,7 +198,7 @@ export function SaveMoverButton({
           return;
         }
         toast.success(`${companyName} saved on this device`, {
-          description: 'Sign in anytime to sync your shortlist across devices.',
+          description: MOVE_SIGNED_OUT_SAVE_COPY,
           action: {
             label: 'Sign in',
             onClick: () => openSaveModal({ context: 'mover', redirectPath: `/companies/${companySlug}` }),
