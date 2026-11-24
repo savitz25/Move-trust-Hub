@@ -19,6 +19,7 @@ import {
   shouldApplyMiddlewareHtmlCache,
 } from '@/lib/cache/control';
 import { DEFAULT_PERFORMANCE_FLAGS } from '@/lib/edge-config/types';
+import { unresolvedCountyCacheHeaders } from '@/lib/local-movers/county-unknown-slug';
 import { normalizedPublishedStatePath } from '@/lib/seo/published-state-path';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
@@ -239,6 +240,14 @@ export async function middleware(request: NextRequest) {
     const response = NextResponse.next({
       request: { headers: requestHeaders },
     });
+
+    const unresolvedCounty = unresolvedCountyCacheHeaders(pathname);
+    if (unresolvedCounty) {
+      response.headers.set('Cache-Control', unresolvedCounty.cacheControl);
+      response.headers.set('CDN-Cache-Control', unresolvedCounty.cdnCacheControl);
+      response.headers.set('Vary', 'Accept-Encoding');
+      return response;
+    }
 
     const baseTtl =
       DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds ?? 86400;
