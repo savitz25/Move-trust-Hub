@@ -131,63 +131,29 @@ export function collectDeviceToolSessions(input: {
   return snapshot;
 }
 
+/**
+ * The fa496106 tool-session handoff is closed.
+ * It no longer emits an unregistered schema key or the raw device blob.
+ * Inventory export goes through the move.inventory/v1 aggregate instead.
+ */
 export async function buildToolSessionHandoff(input: {
   enabled?: boolean;
   snapshot: ToolSessionSnapshot;
-}): Promise<{ outcome: 'disabled' } | ToolSessionBundle> {
-  if (input.enabled !== true) return { outcome: 'disabled' };
-  const sessions: ToolSessionHandoff[] = [];
-  const rejected: ToolSessionBundle['rejected'] = [];
-  for (const schema of TOOL_SESSION_SCHEMAS) {
-    const raw = input.snapshot[schema.deviceKey];
-    if (raw == null || raw === '') continue;
-    let payload: unknown;
-    try {
-      payload = JSON.parse(raw);
-    } catch {
-      rejected.push({ deviceKey: schema.deviceKey, reason: 'invalid_json' });
-      continue;
-    }
-    if (!shapeOk(schema, payload)) {
-      rejected.push({ deviceKey: schema.deviceKey, reason: 'invalid_shape' });
-      continue;
-    }
-    const canonical = canonicalToolJson(payload);
-    const requestKey = await toolSessionRequestKey(schema.schemaKey, canonical);
-    sessions.push({
-      version: TOOL_SESSION_VERSION,
-      hub: 'move',
-      schemaKey: schema.schemaKey,
-      deviceKey: schema.deviceKey,
-      storage: schema.storage,
-      legacyTable: schema.legacyTable,
-      requestKey,
-      resumeRef: requestKey,
-      payload,
-      raw: canonical,
-    });
-  }
-  return { outcome: 'ready', sessions, rejected };
+}): Promise<{ outcome: 'disabled' }> {
+  void input;
+  return { outcome: 'disabled' };
 }
 
 /**
- * Restore one tool from resume_ref. Writes only that device key.
- * Refuses the write when the ref does not match the payload digest.
+ * Resume does not write a raw device payload.
+ * A validated inventory resume is the aggregate href from the contract module.
  */
 export async function applyToolSessionResume(input: {
   enabled?: boolean;
   handoff: ToolSessionHandoff;
   local: ToolSessionStore;
   session: ToolSessionStore;
-}): Promise<{ restored: true; deviceKey: string } | { restored: false; reason: 'disabled' | 'digest_mismatch' | 'unknown_schema' }> {
-  if (input.enabled !== true) return { restored: false, reason: 'disabled' };
-  const schema = TOOL_SESSION_SCHEMAS.find((row) => row.schemaKey === input.handoff.schemaKey && row.deviceKey === input.handoff.deviceKey);
-  if (!schema) return { restored: false, reason: 'unknown_schema' };
-  const expected = await toolSessionRequestKey(schema.schemaKey, canonicalToolJson(input.handoff.payload));
-  if (input.handoff.resumeRef !== expected || input.handoff.requestKey !== expected) {
-    return { restored: false, reason: 'digest_mismatch' };
-  }
-  const store = schema.storage === 'session' ? input.session : input.local;
-  store.setItem(schema.deviceKey, input.handoff.raw);
-  return { restored: true, deviceKey: schema.deviceKey };
+}): Promise<{ restored: false; reason: 'raw_payload_refused' }> {
+  void input;
+  return { restored: false, reason: 'raw_payload_refused' };
 }

@@ -12,7 +12,6 @@ import {
   applyToolSessionResume,
   buildToolSessionHandoff,
   collectDeviceToolSessions,
-  type ToolSessionHandoff,
   type ToolSessionStore,
 } from '@/lib/my-trusthub/tool-session-export';
 
@@ -85,43 +84,22 @@ test('device keys stay the signed-out keys', () => {
   const shortlist = readFileSync(new URL('../save-my-move/local-shortlist.ts', import.meta.url), 'utf8');
   assert.match(calculator, /name: 'move-calculator-inventory'/);
   assert.match(shortlist, /mth-local-saved-movers/);
-  assert.deepEqual(
-    TOOL_SESSION_SCHEMAS.map((row) => row.schemaKey),
-    [
-      'move.tool.inventory.v1',
-      'move.tool.plan.v1',
-      'move.tool.plan-library.v1',
-      'move.tool.comparison.v1',
-      'move.tool.compare-storage.v1',
-      'move.tool.saved-movers.v1',
-    ]
-  );
+  assert.equal(TOOL_SESSION_SCHEMAS.some((row) => 'schemaKey' in row), false);
+  const schemaSource = readFileSync(new URL('./tool-session-schemas.ts', import.meta.url), 'utf8');
+  const exportSource = readFileSync(new URL('./tool-session-export.ts', import.meta.url), 'utf8');
+  assert.equal(schemaSource.includes('move.tool.'), false);
+  assert.equal(exportSource.includes('move.tool.'), false);
 });
 
-test('export is off unless a caller enables it, and a repeat export keeps the same request key', async () => {
+test('the superseded tool-session handoff stays closed and emits no schema key', async () => {
   const off = await buildToolSessionHandoff({ snapshot: fullSnapshot() });
+  const forced = await buildToolSessionHandoff({ enabled: true, snapshot: fullSnapshot() });
   assert.equal(off.outcome, 'disabled');
-  const first = await buildToolSessionHandoff({ enabled: true, snapshot: fullSnapshot() });
-  const second = await buildToolSessionHandoff({ enabled: true, snapshot: fullSnapshot() });
-  assert.equal(first.outcome, 'ready');
-  assert.equal(second.outcome, 'ready');
-  if (first.outcome !== 'ready' || second.outcome !== 'ready') return;
-  assert.equal(first.rejected.length, 0);
-  assert.equal(first.sessions.length, 6);
-  assert.deepEqual(
-    first.sessions.map((row) => row.requestKey),
-    second.sessions.map((row) => row.requestKey)
-  );
-  assert.equal(first.sessions.every((row) => row.resumeRef === row.requestKey), true);
-  const changed = await buildToolSessionHandoff({
-    enabled: true,
-    snapshot: { ...fullSnapshot(), [TOOL_SESSION_DEVICE_KEYS.savedMovers]: JSON.stringify([{ companySlug: 'other-mover' }]) },
-  });
-  assert.equal(changed.outcome, 'ready');
-  if (changed.outcome !== 'ready') return;
-  const before = first.sessions.find((row) => row.deviceKey === TOOL_SESSION_DEVICE_KEYS.savedMovers);
-  const after = changed.sessions.find((row) => row.deviceKey === TOOL_SESSION_DEVICE_KEYS.savedMovers);
-  assert.notEqual(before?.requestKey, after?.requestKey);
+  assert.equal(forced.outcome, 'disabled');
+  const serialized = JSON.stringify(forced);
+  assert.equal(serialized.includes('Book box'), false);
+  assert.equal(serialized.includes('move.tool.'), false);
+  assert.equal(serialized.includes('schemaKey'), false);
 });
 
 test('collect and resume do not delete device keys', async () => {
@@ -138,30 +116,31 @@ test('collect and resume do not delete device keys', async () => {
   assert.equal(local.removed.length, 0);
   assert.equal(session.removed.length, 0);
   assert.equal(snapshot[TOOL_SESSION_DEVICE_KEYS.inventory], inventoryRaw);
-  const built = await buildToolSessionHandoff({ enabled: true, snapshot });
-  assert.equal(built.outcome, 'ready');
-  if (built.outcome !== 'ready') return;
-  const plan = built.sessions.find((row) => row.deviceKey === TOOL_SESSION_DEVICE_KEYS.plan);
-  assert.ok(plan);
-  session.data.set(TOOL_SESSION_DEVICE_KEYS.plan, '{"step":"route"}');
-  const restored = await applyToolSessionResume({ enabled: true, handoff: plan as ToolSessionHandoff, local, session });
-  assert.deepEqual(restored, { restored: true, deviceKey: TOOL_SESSION_DEVICE_KEYS.plan });
-  assert.equal(session.data.get(TOOL_SESSION_DEVICE_KEYS.plan), plan?.raw);
+  const planBefore = session.data.get(TOOL_SESSION_DEVICE_KEYS.plan);
+  const restored = await applyToolSessionResume({
+    enabled: true,
+    handoff: {
+      version: 'move-tool-session/1',
+      hub: 'move',
+      schemaKey: 'move.inventory/v1',
+      deviceKey: TOOL_SESSION_DEVICE_KEYS.plan,
+      storage: 'session',
+      legacyTable: null,
+      requestKey: 'raw',
+      resumeRef: 'raw',
+      payload: { step: 'inventory', name: 'Book box' },
+      raw: '{"name":"Book box"}',
+    },
+    local,
+    session,
+  });
+  assert.deepEqual(restored, { restored: false, reason: 'raw_payload_refused' });
+  assert.equal(session.data.get(TOOL_SESSION_DEVICE_KEYS.plan), planBefore);
   assert.equal(session.data.get(TOOL_SESSION_DEVICE_KEYS.quoteCheck), quoteRaw);
   assert.equal(local.data.get('unrelated-report'), '{"ok":true}');
   assert.equal(local.data.get(TOOL_SESSION_DEVICE_KEYS.inventory), inventoryRaw);
   assert.equal(local.removed.length, 0);
   assert.equal(session.removed.length, 0);
-  const mismatch = await applyToolSessionResume({
-    enabled: true,
-    handoff: { ...(plan as ToolSessionHandoff), resumeRef: '0'.repeat(64) },
-    local,
-    session,
-  });
-  assert.deepEqual(mismatch, { restored: false, reason: 'digest_mismatch' });
-  assert.equal(session.data.get(TOOL_SESSION_DEVICE_KEYS.plan), plan?.raw);
-  const disabled = await applyToolSessionResume({ handoff: plan as ToolSessionHandoff, local, session });
-  assert.deepEqual(disabled, { restored: false, reason: 'disabled' });
 });
 
 test('signed-out saved movers still round-trip on the device key', () => {

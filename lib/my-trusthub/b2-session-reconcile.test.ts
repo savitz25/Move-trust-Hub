@@ -69,8 +69,14 @@ test('approved inventory saves through the mock and a second save replays', asyn
   assert.equal(built.request.summary.primary_value, 120);
   assert.equal(built.request.summary.unit, 'estimated cubic feet');
   assert.equal(built.request.summary.label, '2 rooms');
-  const serialized = JSON.stringify(built.request.payload);
+  assert.match(
+    built.request.idempotencyKey,
+    /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+  );
+  const serialized = JSON.stringify(built.request);
   assert.equal(serialized.includes('Book box'), false);
+  assert.equal(serialized.includes('Sofa'), false);
+  assert.equal(serialized.includes('move.tool.'), false);
   assert.equal(serialized.includes('deviceKey'), false);
   assert.equal(inventoryContractPayload({ deviceKey: 'move-calculator-inventory', body: {} }), false);
   const ask = createMockAsk();

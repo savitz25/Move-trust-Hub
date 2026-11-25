@@ -213,6 +213,17 @@ async function sha256Hex(value: string): Promise<string> {
   return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
 }
 
+/** Ask idempotency keys are UUIDs. The same payload keeps the same key. */
+export async function inventoryIdempotencyKey(schemaKey: string, payload: InventoryPayload): Promise<string> {
+  const hex = await sha256Hex(`${schemaKey}\n${canonical(payload)}`);
+  const chars = hex.slice(0, 32).split('');
+  chars[12] = '4';
+  const variant = (Number.parseInt(chars[16], 16) & 0x3) | 0x8;
+  chars[16] = variant.toString(16);
+  const body = chars.join('');
+  return `${body.slice(0, 8)}-${body.slice(8, 12)}-${body.slice(12, 16)}-${body.slice(16, 20)}-${body.slice(20, 32)}`;
+}
+
 export async function buildContractSaveRequest(
   deviceKey: string,
   raw: string | null,
@@ -250,7 +261,7 @@ export async function buildContractSaveRequest(
     schemaVersion: contract.schemaVersion,
     payload,
     summary,
-    idempotencyKey: await sha256Hex(`${contract.schemaKey}\n${canonical(payload)}`),
+    idempotencyKey: await inventoryIdempotencyKey(contract.schemaKey, payload),
     contractStatus: 'approved',
     localCopy: 'keep',
   };
@@ -309,11 +320,14 @@ export function createMockAsk() {
       if (!inventoryContractPayload(request.payload)) {
         return { outcome: 'refused', reason: 'payload_out_of_contract', localCopy: 'keep' };
       }
+      if (!RESUME_REF.test(request.idempotencyKey)) {
+        return { outcome: 'refused', reason: 'idempotency_key', localCopy: 'keep' };
+      }
       const body = canonical(request.payload);
       const prior = seen.get(request.idempotencyKey);
       if (prior && prior.body !== body) return { outcome: 'conflict', localCopy: 'keep' };
       if (prior) return { outcome: 'replayed', sessionRef: prior.sessionRef, localCopy: 'keep' };
-      const sessionRef = request.idempotencyKey.slice(0, 8) + '-0000-4000-8000-' + request.idempotencyKey.slice(8, 20);
+      const sessionRef = request.idempotencyKey;
       seen.set(request.idempotencyKey, { body, payload: request.payload, sessionRef });
       return { outcome: 'saved', sessionRef, localCopy: 'keep' };
     },
