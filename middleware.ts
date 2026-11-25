@@ -13,7 +13,8 @@ import { HUB_HEADER, PATHNAME_COOKIE, PATHNAME_HEADER } from '@/lib/hub/paths';
 import { needsAuthSession } from '@/lib/middleware/auth-paths';
 import {
   cdnCacheControl,
-  countyHtmlCdnCacheControl,
+  COUNTY_EDGE_CACHE_CONTROL,
+  COUNTY_EDGE_CDN_CACHE_CONTROL,
   htmlCacheControl,
   htmlCacheSecondsForPath,
   isCountyHtmlPath,
@@ -270,13 +271,13 @@ export async function middleware(request: NextRequest) {
 
     const baseTtl =
       DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds ?? 86400;
-    if (shouldApplyMiddlewareHtmlCache(pathname)) {
+    if (isCountyHtmlPath(pathname)) {
+      response.headers.set('Cache-Control', COUNTY_EDGE_CACHE_CONTROL);
+      response.headers.set('CDN-Cache-Control', COUNTY_EDGE_CDN_CACHE_CONTROL);
+      response.headers.set('Vary', 'Accept-Encoding');
+    } else if (shouldApplyMiddlewareHtmlCache(pathname)) {
       const seconds = htmlCacheSecondsForPath(pathname, baseTtl);
-      applyPublicCacheHeaders(
-        response,
-        seconds,
-        isCountyHtmlPath(pathname) ? countyHtmlCdnCacheControl() : undefined
-      );
+      applyPublicCacheHeaders(response, seconds);
     }
     return response;
   } catch (err) {

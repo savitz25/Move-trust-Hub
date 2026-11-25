@@ -52,6 +52,27 @@ export function countyHtmlCdnCacheControl(): string {
 }
 
 /**
+ * A degraded county load is an outage, not an empty county.
+ * Empty mover lists with any other source mode stay cacheable.
+ * Middleware cannot see this mode, and CDN-Cache-Control would store a 500,
+ * so the edge header for county HTML stays no-store until a status-aware cache exists.
+ */
+export function countyLoadIsCacheable(sourceMode: string): boolean {
+  return sourceMode !== 'degraded';
+}
+
+export function refuseCachedCountyOutage(sourceMode: string): void {
+  if (!countyLoadIsCacheable(sourceMode)) {
+    const error = new Error('county_load_failed');
+    error.name = 'CountyLoadFailed';
+    throw error;
+  }
+}
+
+export const COUNTY_EDGE_CACHE_CONTROL = 'private, no-store, max-age=0';
+export const COUNTY_EDGE_CDN_CACHE_CONTROL = 'no-store';
+
+/**
  * Path-specific HTML CDN TTL — must stay aligned with vercel.json.
  * Default is DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds (86400) for most public HTML.
  */

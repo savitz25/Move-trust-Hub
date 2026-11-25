@@ -7,8 +7,11 @@ import {
   COUNTY_HTML_CDN_SECONDS,
   FLORIDA_HTML_CDN_SECONDS,
   cdnCacheControl,
+  COUNTY_EDGE_CDN_CACHE_CONTROL,
   countyHtmlCdnCacheControl,
+  countyLoadIsCacheable,
   htmlCacheControl,
+  refuseCachedCountyOutage,
   htmlCacheSecondsForPath,
   isCountyHtmlPath,
   shouldApplyMiddlewareHtmlCache,
@@ -34,6 +37,16 @@ test('Florida HTML CDN TTL is 60s, not the 86400 default', () => {
 
 test('New Jersey HTML CDN TTL matches Florida force-dynamic snapshot pages', () => {
   assert.equal(htmlCacheSecondsForPath('/new-jersey', 86_400), 60);
+});
+
+test('a degraded county load is not cacheable and an empty county is', () => {
+  assert.equal(countyLoadIsCacheable('degraded'), false);
+  assert.throws(() => refuseCachedCountyOutage('degraded'), /county_load_failed/);
+  for (const mode of ['db', 'seed', 'hybrid']) {
+    assert.equal(countyLoadIsCacheable(mode), true);
+    refuseCachedCountyOutage(mode);
+  }
+  assert.equal(COUNTY_EDGE_CDN_CACHE_CONTROL, 'no-store');
 });
 
 test('homepage and other public HTML keep the default CDN TTL', () => {

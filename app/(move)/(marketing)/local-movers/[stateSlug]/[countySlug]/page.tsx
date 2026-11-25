@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { refuseCachedCountyOutage } from '@/lib/cache/control';
 import {
   CountyEditorialTrust,
   CALIFORNIA_COUNTY_CONTENT_UPDATED,
@@ -299,6 +300,7 @@ export default async function LocalMoversCountyPage({ params }: Props) {
     indexDecision,
     sourceMode,
   } = seo;
+  refuseCachedCountyOutage(sourceMode);
   const countyLabel = buildCountyLabel(county);
   const intelligence = getCountyIntelligencePack(stateSlug, countySlug);
   const countyResearch =
