@@ -1,6 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
+  "git": {
+    "deploymentEnabled": {
+      "c5/move-fl-county-cache-tags-001": false
+    }
+  },
   "regions": [
     "iad1"
   ],
