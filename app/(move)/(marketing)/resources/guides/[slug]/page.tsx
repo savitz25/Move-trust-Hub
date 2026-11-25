@@ -22,7 +22,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const guide = getDestinationGuide(slug);
-  if (!guide) return {};
+  if (!guide) notFound();
 
   const canonical = `${SITE_URL}/resources/guides/${guide.slug}`;
   const documentTitle = formatDocumentTitle(guide.title);

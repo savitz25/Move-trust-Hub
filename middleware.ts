@@ -27,6 +27,7 @@ import {
   unresolvedCountyNotFoundHtml,
 } from '@/lib/local-movers/county-unknown-slug';
 import { countyQaFixtureRequestAllowed } from '@/lib/local-movers/county-qa-fixture-gate';
+import { a2UnknownCacheHeaders, a2UnknownNotFoundHtml } from '@/lib/seo/a2-unknown-slug';
 import { normalizedPublishedStatePath } from '@/lib/seo/published-state-path';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
@@ -248,6 +249,19 @@ export async function middleware(request: NextRequest) {
       return response;
     }
 
+    const unresolvedA2 = a2UnknownCacheHeaders(pathname);
+    if (unresolvedA2) {
+      return new NextResponse(a2UnknownNotFoundHtml(), {
+        status: 404,
+        headers: {
+          'Content-Type': 'text/html; charset=utf-8',
+          'Cache-Control': unresolvedA2.cacheControl,
+          'CDN-Cache-Control': unresolvedA2.cdnCacheControl,
+          Vary: 'Accept-Encoding',
+        },
+      });
+    }
+
     const response = NextResponse.next({
       request: { headers: requestHeaders },
     });
@@ -315,6 +329,13 @@ export const config = {
     // County HTML, including prefetches. The catch-all skips prefetch, and a
     // prefetch of an unknown slug would prerender a cached HTTP 200.
     '/local-movers/:stateSlug/:countySlug',
+    // Catalog HTML, including prefetches. The catch-all skips prefetch.
+    '/local-movers/:stateSlug',
+    '/resources/guides/:slug',
+    '/resources/routes/:slug',
+    '/moving-to/:stateSlug/:citySlug',
+    '/moving-to/:slug',
+    '/auto-transport/:slug',
     {
       // robots.txt stays excluded — app/robots.ts is host-aware.
       // Other *.xml stay excluded; sitemap paths listed explicitly above.

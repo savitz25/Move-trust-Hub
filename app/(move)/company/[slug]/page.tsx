@@ -23,14 +23,7 @@ type Props = {
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const company = await getMovingCompanyBySlug(slug);
-  if (!company) {
-    return buildMovePageMetadata({
-      title: 'Carrier Not Found',
-      description: 'This community review profile could not be found on Move Trust Hub.',
-      path: `/company/${slug}`,
-      noIndex: true,
-    });
-  }
+  if (!company) notFound();
 
   // MOVE-PROFILE-V3-001E: no site-level aggregate star average in public SEO
   // metadata — review-count-only language, honest and count-accurate.
