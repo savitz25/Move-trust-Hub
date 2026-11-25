@@ -13,18 +13,21 @@ import {
  * Known pages return null so the existing cache policy stays in place.
  * The slug index is a projection of the catalog modules so this file can run
  * on the Edge without pulling city copy or route essays into middleware.
- * /company/[slug] is database-backed and is not decided here.
+ * Catalog membership is case-sensitive. Uppercase and mixed-case slugs are
+ * not the published routes, so they take the same HTTP 404.
+ * /company/[slug] is database-backed and is not decided here. Its CDN TTL
+ * stays 86400.
  */
 export const A2_UNKNOWN_CACHE_CONTROL = 'private, no-store, max-age=0';
 export const A2_UNKNOWN_CDN_CACHE_CONTROL = 'no-store';
 export const A2_UNKNOWN_ROBOTS = 'noindex, nofollow';
 
-const STATE_PATH = /^\/local-movers\/([a-z0-9-]+)$/;
-const GUIDE_PATH = /^\/resources\/guides\/([a-z0-9-]+)$/;
-const ROUTE_PATH = /^\/resources\/routes\/([a-z0-9-]+)$/;
-const CITY_PATH = /^\/moving-to\/([a-z0-9-]+)$/;
-const CITY_IN_STATE_PATH = /^\/moving-to\/([a-z0-9-]+)\/([a-z0-9-]+)$/;
-const AUTO_PATH = /^\/auto-transport\/([a-z0-9-]+)$/;
+const STATE_PATH = /^\/local-movers\/([A-Za-z0-9-]+)$/;
+const GUIDE_PATH = /^\/resources\/guides\/([A-Za-z0-9-]+)$/;
+const ROUTE_PATH = /^\/resources\/routes\/([A-Za-z0-9-]+)$/;
+const CITY_PATH = /^\/moving-to\/([A-Za-z0-9-]+)$/;
+const CITY_IN_STATE_PATH = /^\/moving-to\/([A-Za-z0-9-]+)\/([A-Za-z0-9-]+)$/;
+const AUTO_PATH = /^\/auto-transport\/([A-Za-z0-9-]+)$/;
 
 const NO_STORE = {
   cacheControl: A2_UNKNOWN_CACHE_CONTROL,

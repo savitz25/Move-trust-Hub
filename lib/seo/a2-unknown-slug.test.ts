@@ -1,6 +1,11 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
+import {
+  cdnCacheControl,
+  htmlCacheSecondsForPath,
+  shouldApplyMiddlewareHtmlCache,
+} from '@/lib/cache/control';
 import { seedAutoTransportCompanies } from '@/data/seed-auto-transport';
 import { CITY_HUB_SLUG_ALIASES } from '@/lib/destinations/city-hub-slug-aliases';
 import { getMarketBySlug, markets } from '@/lib/destinations/markets';
@@ -55,6 +60,52 @@ test('unknown catalog slugs are no-store and known pages keep their policy', () 
   ];
   for (const path of known) {
     assert.equal(a2UnknownCacheHeaders(path), null, path);
+  }
+});
+
+test('uppercase catalog slugs take the 404 headers and lowercase routes stay known', () => {
+  const upper = [
+    '/local-movers/Florida',
+    '/local-movers/FLORIDA',
+    '/resources/guides/Moving-To-Myrtle-Beach-2026',
+    '/resources/routes/California-To-Texas',
+    '/moving-to/Florida',
+    '/moving-to/Florida/miami',
+    '/moving-to/florida/Miami',
+    '/auto-transport/Montway-Auto-Transport',
+  ];
+  for (const path of upper) {
+    assert.deepEqual(
+      a2UnknownCacheHeaders(path),
+      {
+        cacheControl: A2_UNKNOWN_CACHE_CONTROL,
+        cdnCacheControl: A2_UNKNOWN_CDN_CACHE_CONTROL,
+      },
+      path
+    );
+  }
+  for (const path of [
+    '/local-movers/florida',
+    '/resources/guides/moving-to-myrtle-beach-2026',
+    '/resources/routes/california-to-texas',
+    '/moving-to/florida',
+    '/moving-to/florida/miami',
+    '/auto-transport/montway-auto-transport',
+  ]) {
+    assert.equal(a2UnknownCacheHeaders(path), null, path);
+  }
+});
+
+test('F2 company HTML keeps the 86400 CDN TTL and stays outside the A2 404', () => {
+  for (const path of [
+    '/company/dot-227698',
+    '/company/zz-not-a-company-b3',
+    '/company/DOT-227698',
+  ]) {
+    assert.equal(a2UnknownCacheHeaders(path), null, path);
+    assert.equal(htmlCacheSecondsForPath(path, 86_400), 86_400, path);
+    assert.equal(cdnCacheControl(htmlCacheSecondsForPath(path, 86_400)), 'max-age=86400', path);
+    assert.equal(shouldApplyMiddlewareHtmlCache(path), true, path);
   }
 });
 
