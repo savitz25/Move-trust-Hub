@@ -13,8 +13,10 @@ import { HUB_HEADER, PATHNAME_COOKIE, PATHNAME_HEADER } from '@/lib/hub/paths';
 import { needsAuthSession } from '@/lib/middleware/auth-paths';
 import {
   cdnCacheControl,
+  countyHtmlCdnCacheControl,
   htmlCacheControl,
   htmlCacheSecondsForPath,
+  isCountyHtmlPath,
   PRIVATE_NO_STORE,
   shouldApplyMiddlewareHtmlCache,
 } from '@/lib/cache/control';
@@ -23,14 +25,19 @@ import {
   unresolvedCountyCacheHeaders,
   unresolvedCountyNotFoundHtml,
 } from '@/lib/local-movers/county-unknown-slug';
+import { countyQaFixtureRequestAllowed } from '@/lib/local-movers/county-qa-fixture-gate';
 import { normalizedPublishedStatePath } from '@/lib/seo/published-state-path';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
 
-function applyPublicCacheHeaders(response: NextResponse, sMaxAge: number) {
+function applyPublicCacheHeaders(
+  response: NextResponse,
+  sMaxAge: number,
+  cdnHeader?: string
+) {
   const cache = htmlCacheControl(sMaxAge);
   response.headers.set('Cache-Control', cache);
-  response.headers.set('CDN-Cache-Control', cdnCacheControl(sMaxAge));
+  response.headers.set('CDN-Cache-Control', cdnHeader ?? cdnCacheControl(sMaxAge));
   response.headers.set('Vary', 'Accept-Encoding');
 }
 
@@ -245,9 +252,11 @@ export async function middleware(request: NextRequest) {
     });
 
     const unresolvedCounty = unresolvedCountyCacheHeaders(pathname);
-    if (unresolvedCounty) {
+    if (unresolvedCounty && !countyQaFixtureRequestAllowed(pathname)) {
       // Return before the force-static county route. A notFound() prerender
       // on that route is served as HTTP 200 with the homepage canonical.
+      // The QA fixture slugs are unresolved in geography. They stay on this
+      // 404 unless COUNTY_QA_FIXTURE is exactly on for a non-production project.
       return new NextResponse(unresolvedCountyNotFoundHtml(), {
         status: 404,
         headers: {
@@ -262,9 +271,11 @@ export async function middleware(request: NextRequest) {
     const baseTtl =
       DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds ?? 86400;
     if (shouldApplyMiddlewareHtmlCache(pathname)) {
+      const seconds = htmlCacheSecondsForPath(pathname, baseTtl);
       applyPublicCacheHeaders(
         response,
-        htmlCacheSecondsForPath(pathname, baseTtl)
+        seconds,
+        isCountyHtmlPath(pathname) ? countyHtmlCdnCacheControl() : undefined
       );
     }
     return response;

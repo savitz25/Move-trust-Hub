@@ -2,6 +2,7 @@ import 'server-only';
 
 import { type CountyIndexDecision } from '@/lib/local-movers/county-indexability';
 import { publishedCountyEvaluation } from '@/lib/local-movers/county-indexability-async';
+import { countyQaFixtureSeo } from '@/lib/local-movers/county-qa-fixture';
 import { buildCountyPageMetadata } from '@/lib/local-movers/seo-metadata';
 import { getCountyPath } from '@/lib/local-movers/index';
 import { getLocalState } from '@/lib/local-movers/states';
@@ -29,6 +30,9 @@ export async function resolveCountyPageSeo(
   stateSlug: string,
   countySlug: string
 ): Promise<CountyPageSeoContext | null> {
+  const fixture = countyQaFixtureSeo(stateSlug, countySlug);
+  if (fixture) return fixture;
+
   const state = getLocalState(stateSlug);
   const evaluated = await publishedCountyEvaluation(stateSlug, countySlug);
   const result = evaluated?.result ?? null;

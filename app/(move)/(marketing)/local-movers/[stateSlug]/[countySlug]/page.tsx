@@ -239,6 +239,10 @@ import { getFloridaCountyIntelligenceSnapshot } from '@/lib/intelligence/county-
 import { CountyZoneMoverFilter } from '@/components/local-movers/county-zone-mover-filter';
 import { ssgParams } from '@/lib/ssg/ssg-params';
 import {
+  countyGenerateStaticParams,
+  countyQaRenderMarker,
+} from '@/lib/local-movers/county-qa-fixture';
+import {
   buildCountyCostGuide,
   buildCountyFaqItems,
   buildCountyH1,
@@ -260,10 +264,14 @@ export const dynamicParams = true;
 export const revalidate = 60;
 
 export async function generateStaticParams() {
-  return ssgParams(getAllCountyParams().map(({ stateSlug, countySlug }) => ({
-    stateSlug,
-    countySlug,
-  })));
+  return countyGenerateStaticParams(() =>
+    ssgParams(
+      getAllCountyParams().map(({ stateSlug, countySlug }) => ({
+        stateSlug,
+        countySlug,
+      }))
+    )
+  );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -484,6 +492,8 @@ export default async function LocalMoversCountyPage({ params }: Props) {
                                                                                                           ? getWisconsinNearbyCounties(countySlug)
                                                                                                           : [];
 
+  const qaMarker = countyQaRenderMarker(stateSlug, countySlug);
+
   return (
     <>
       <LocalMoversSchema
@@ -502,7 +512,15 @@ export default async function LocalMoversCountyPage({ params }: Props) {
         faqItems={faqItems}
       />
 
-      <main className="container mx-auto px-4 py-10 max-w-3xl pb-24 sm:pb-10">
+      <main
+        className="container mx-auto px-4 py-10 max-w-3xl pb-24 sm:pb-10"
+        data-county-load={sourceMode === 'degraded' ? 'failed' : 'ok'}
+      >
+        {qaMarker ? (
+          <p data-qa-render-marker={qaMarker.marker} data-qa-cache-label={qaMarker.label}>
+            {qaMarker.label}
+          </p>
+        ) : null}
         <LocalMoversBreadcrumbs
           crumbs={[
             { label: 'Home', href: '/' },
