@@ -10,8 +10,8 @@ Ask head `245f626581c662f7380dadb71d1e22dcda7ee428`. The registry publishes one 
 | `mth-quote-check-compare-a-v1` | `move.comparison/v1` | proposed |
 | `im-compare-storage` | `move.comparison/v2` | proposed |
 
-The calculator page uses the inventory device key, which is the approved session. Saved movers stay on the device shortlist. They are not a session type in this contract.
+The calculator page uses the inventory device key. The registered payload is the aggregate `{ room_counts: { total }, estimated_cubic_feet }`. Room total is an integer from 1 to 20. Estimated cubic feet is an integer from 50 to 20000. Item names, item ids, and the device key stay out of that payload. A device inventory that cannot project into those bounds is refused and the device copy is kept. Plan, worksheet, and comparison keys stay proposed and are not sent.
 
-A save sets `localCopy: keep`. The mock refuses an unapproved key, replays the same idempotency key, and conflicts when the body changes. Import writes only the device keys the caller selected. An empty selection writes nothing. No module calls `fetch` or `removeItem`.
+A save sets `localCopy: keep`. The summary is title, primary value, unit `estimated cubic feet`, and a room label. Resume accepts a UUID resume ref, rechecks the aggregate payload, and returns `https://www.movetrusthub.com/my-move` with the ref left out of the href. Cross-hub resume stays unavailable. The mock replays the same idempotency key and conflicts when the aggregate changes. Import writes only the device keys the caller selected. An empty selection writes nothing. No module calls `fetch` or `removeItem`.
 
 `ADD_TO_MY_TRUSTHUB` must be exactly `1` on a non-production project. The production project id and name cannot turn it on. The page slots render nothing while it is off.

@@ -9,10 +9,13 @@ import { AddToMyTrustHubSlot } from '@/components/my-trusthub/add-to-my-trusthub
 import {
   APPROVED_SCHEMA_KEY,
   DEVICE_CONTRACTS,
+  MOVE_INVENTORY_RESUME_HREF,
   addToMyTrustHubActive,
   buildContractSaveRequest,
   createMockAsk,
   importSelectedDeviceCopies,
+  inventoryContractPayload,
+  validateInventoryResume,
   type ContractSaveRequest,
   type MemoryStore,
 } from '@/lib/my-trusthub/b2-session-reconcile';
@@ -21,7 +24,12 @@ import { TOOL_SESSION_DEVICE_KEYS } from '@/lib/my-trusthub/tool-session-schemas
 
 const qa = { flag: '1', projectId: 'prj_local_m4', projectName: 'move-m4-local' };
 const inventoryRaw = JSON.stringify({
-  state: { inventory: [{ id: 'box-1', name: 'Book box', volume: 1.5, quantity: 2 }] },
+  state: {
+    inventory: [
+      { id: 'box-1', name: 'Book box', volume: 1.5, quantity: 40, room: 'Living Room' },
+      { id: 'sofa', name: 'Sofa', volume: 60, quantity: 1, room: 'Bedroom' },
+    ],
+  },
   version: 2,
 });
 
@@ -57,20 +65,56 @@ test('approved inventory saves through the mock and a second save replays', asyn
   if (built.outcome !== 'ready') return;
   assert.equal(built.request.schemaKey, APPROVED_SCHEMA_KEY);
   assert.equal(built.request.localCopy, 'keep');
+  assert.deepEqual(built.request.payload, { room_counts: { total: 2 }, estimated_cubic_feet: 120 });
+  assert.equal(built.request.summary.primary_value, 120);
+  assert.equal(built.request.summary.unit, 'estimated cubic feet');
+  assert.equal(built.request.summary.label, '2 rooms');
+  const serialized = JSON.stringify(built.request.payload);
+  assert.equal(serialized.includes('Book box'), false);
+  assert.equal(serialized.includes('deviceKey'), false);
+  assert.equal(inventoryContractPayload({ deviceKey: 'move-calculator-inventory', body: {} }), false);
   const ask = createMockAsk();
   const first = await ask.save(built.request);
   const second = await ask.save(built.request);
   assert.equal(first.outcome, 'saved');
   assert.equal(second.outcome, 'replayed');
   assert.equal(second.sessionRef, first.sessionRef);
+  const resume = await ask.resume(first.sessionRef ?? '');
+  assert.equal(resume.outcome, 'valid');
+  if (resume.outcome === 'valid') {
+    assert.equal(resume.href, MOVE_INVENTORY_RESUME_HREF);
+    assert.equal(resume.href.includes(first.sessionRef ?? 'missing'), false);
+    assert.equal(resume.crossHub, 'unavailable');
+  }
+  assert.equal((await ask.resume('not-a-ref')).reason, 'resume_ref');
+  assert.equal(
+    validateInventoryResume({
+      resumeRef: first.sessionRef ?? '',
+      schemaKey: APPROVED_SCHEMA_KEY,
+      schemaVersion: 1,
+      payload: { ...built.request.payload, name: 'Book box' },
+    }).reason,
+    'payload'
+  );
   const changed: ContractSaveRequest = {
     ...built.request,
-    payload: { ...built.request.payload, body: { changed: true } },
+    payload: { room_counts: { total: 2 }, estimated_cubic_feet: 400 },
   };
   const conflict = await ask.save(changed);
   assert.equal(conflict.outcome, 'conflict');
   assert.deepEqual(store.removed, []);
   assert.equal(store.getItem(TOOL_SESSION_DEVICE_KEYS.inventory), inventoryRaw);
+});
+
+test('an inventory below the registered bounds stays on the device', async () => {
+  const tiny = JSON.stringify({
+    state: { inventory: [{ id: 'cup', name: 'Cup', volume: 1, quantity: 1, room: 'Kitchen' }] },
+    version: 2,
+  });
+  const refused = await buildContractSaveRequest(TOOL_SESSION_DEVICE_KEYS.inventory, tiny, qa);
+  assert.equal(refused.outcome, 'refused');
+  if (refused.outcome === 'refused') assert.equal(refused.reason, 'payload_out_of_contract');
+  assert.equal(refused.localCopy, 'keep');
 });
 
 test('proposed schemas are withheld and an empty import selection writes nothing', async () => {
