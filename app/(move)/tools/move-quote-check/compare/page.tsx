@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { AddToMyTrustHubSlot } from '@/components/my-trusthub/add-to-my-trusthub-slot';
+import { TOOL_SESSION_DEVICE_KEYS } from '@/lib/my-trusthub/tool-session-schemas';
 import { CompareTwoEstimatesClient } from '@/components/move-quote-check/compare-two-estimates-client';
 import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 import { JsonLd } from '@/lib/seo/json-ld';
@@ -55,6 +57,7 @@ export default function CompareTwoEstimatesPage() {
           </p>
         </div>
         <CompareTwoEstimatesClient />
+        <AddToMyTrustHubSlot deviceKey={TOOL_SESSION_DEVICE_KEYS.quoteCheck} />
       </div>
     </div>
   );

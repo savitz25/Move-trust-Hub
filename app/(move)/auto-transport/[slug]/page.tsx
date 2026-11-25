@@ -33,7 +33,7 @@ interface Props {
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const company = await getAutoTransportBySlugAsync(slug);
-  if (!company) return { title: 'Company Not Found' };
+  if (!company) notFound();
 
   const reviewMeta = companyProfileReviewMeta({
     companyId: company.id,

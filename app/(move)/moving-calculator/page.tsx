@@ -1,4 +1,6 @@
+import { AddToMyTrustHubSlot } from '@/components/my-trusthub/add-to-my-trusthub-slot';
 import { MovingCalculatorLoader } from '@/components/moving-calculator/moving-calculator-loader';
+import { TOOL_SESSION_DEVICE_KEYS } from '@/lib/my-trusthub/tool-session-schemas';
 import { CalculatorPageFooter } from '@/components/moving-calculator/calculator-page-footer';
 import { CalculatorPageShell } from '@/components/calculators/calculator-page-shell';
 import { calculatorFaqItems } from '@/lib/seo/schemas';
@@ -30,6 +32,7 @@ export default function MovingCalculatorPage() {
       ]}
     >
       <MovingCalculatorLoader />
+      <AddToMyTrustHubSlot deviceKey={TOOL_SESSION_DEVICE_KEYS.inventory} />
       <CalculatorPageFooter />
     </CalculatorPageShell>
   );

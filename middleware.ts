@@ -13,8 +13,11 @@ import { HUB_HEADER, PATHNAME_COOKIE, PATHNAME_HEADER } from '@/lib/hub/paths';
 import { needsAuthSession } from '@/lib/middleware/auth-paths';
 import {
   cdnCacheControl,
+  COUNTY_EDGE_CACHE_CONTROL,
+  COUNTY_EDGE_CDN_CACHE_CONTROL,
   htmlCacheControl,
   htmlCacheSecondsForPath,
+  isCountyHtmlPath,
   PRIVATE_NO_STORE,
   shouldApplyMiddlewareHtmlCache,
 } from '@/lib/cache/control';
@@ -23,14 +26,20 @@ import {
   unresolvedCountyCacheHeaders,
   unresolvedCountyNotFoundHtml,
 } from '@/lib/local-movers/county-unknown-slug';
+import { countyQaFixtureRequestAllowed } from '@/lib/local-movers/county-qa-fixture-gate';
+import { a2UnknownCacheHeaders, a2UnknownNotFoundHtml } from '@/lib/seo/a2-unknown-slug';
 import { normalizedPublishedStatePath } from '@/lib/seo/published-state-path';
 
 const IS_DEV = process.env.NODE_ENV === 'development';
 
-function applyPublicCacheHeaders(response: NextResponse, sMaxAge: number) {
+function applyPublicCacheHeaders(
+  response: NextResponse,
+  sMaxAge: number,
+  cdnHeader?: string
+) {
   const cache = htmlCacheControl(sMaxAge);
   response.headers.set('Cache-Control', cache);
-  response.headers.set('CDN-Cache-Control', cdnCacheControl(sMaxAge));
+  response.headers.set('CDN-Cache-Control', cdnHeader ?? cdnCacheControl(sMaxAge));
   response.headers.set('Vary', 'Accept-Encoding');
 }
 
@@ -240,14 +249,29 @@ export async function middleware(request: NextRequest) {
       return response;
     }
 
+    const unresolvedA2 = a2UnknownCacheHeaders(pathname);
+    if (unresolvedA2) {
+      return new NextResponse(a2UnknownNotFoundHtml(), {
+        status: 404,
+        headers: {
+          'Content-Type': 'text/html; charset=utf-8',
+          'Cache-Control': unresolvedA2.cacheControl,
+          'CDN-Cache-Control': unresolvedA2.cdnCacheControl,
+          Vary: 'Accept-Encoding',
+        },
+      });
+    }
+
     const response = NextResponse.next({
       request: { headers: requestHeaders },
     });
 
     const unresolvedCounty = unresolvedCountyCacheHeaders(pathname);
-    if (unresolvedCounty) {
+    if (unresolvedCounty && !countyQaFixtureRequestAllowed(pathname)) {
       // Return before the force-static county route. A notFound() prerender
       // on that route is served as HTTP 200 with the homepage canonical.
+      // The QA fixture slugs are unresolved in geography. They stay on this
+      // 404 unless COUNTY_QA_FIXTURE is exactly on for a non-production project.
       return new NextResponse(unresolvedCountyNotFoundHtml(), {
         status: 404,
         headers: {
@@ -261,11 +285,13 @@ export async function middleware(request: NextRequest) {
 
     const baseTtl =
       DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds ?? 86400;
-    if (shouldApplyMiddlewareHtmlCache(pathname)) {
-      applyPublicCacheHeaders(
-        response,
-        htmlCacheSecondsForPath(pathname, baseTtl)
-      );
+    if (isCountyHtmlPath(pathname)) {
+      response.headers.set('Cache-Control', COUNTY_EDGE_CACHE_CONTROL);
+      response.headers.set('CDN-Cache-Control', COUNTY_EDGE_CDN_CACHE_CONTROL);
+      response.headers.set('Vary', 'Accept-Encoding');
+    } else if (shouldApplyMiddlewareHtmlCache(pathname)) {
+      const seconds = htmlCacheSecondsForPath(pathname, baseTtl);
+      applyPublicCacheHeaders(response, seconds);
     }
     return response;
   } catch (err) {
@@ -303,6 +329,13 @@ export const config = {
     // County HTML, including prefetches. The catch-all skips prefetch, and a
     // prefetch of an unknown slug would prerender a cached HTTP 200.
     '/local-movers/:stateSlug/:countySlug',
+    // Catalog HTML, including prefetches. The catch-all skips prefetch.
+    '/local-movers/:stateSlug',
+    '/resources/guides/:slug',
+    '/resources/routes/:slug',
+    '/moving-to/:stateSlug/:citySlug',
+    '/moving-to/:slug',
+    '/auto-transport/:slug',
     {
       // robots.txt stays excluded — app/robots.ts is host-aware.
       // Other *.xml stay excluded; sitemap paths listed explicitly above.

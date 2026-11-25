@@ -30,6 +30,49 @@ export function cdnCacheControl(sMaxAge: number): string {
 export const FLORIDA_HTML_CDN_SECONDS = 60;
 
 /**
+ * Known two-segment county HTML (`/local-movers/:state/:county`).
+ * Middleware was stamping CDN-Cache-Control max-age=86400 over the
+ * vercel.json 60s rule. revalidatePath does not expire that CDN object.
+ * A 60s max-age plus a 60s stale window lets the next request replace a
+ * bad object without a purge. State indexes and other public HTML stay
+ * on the default TTL. Unknown counties are answered earlier as no-store.
+ */
+export const COUNTY_HTML_CDN_SECONDS = 60;
+export const COUNTY_HTML_CDN_SWR_SECONDS = 60;
+
+const COUNTY_HTML_PATH = /^\/local-movers\/[a-z0-9-]+\/[a-z0-9-]+$/;
+
+export function isCountyHtmlPath(pathname: string): boolean {
+  return COUNTY_HTML_PATH.test(pathname);
+}
+
+/** CDN-Cache-Control for a known county document. Not a browser Cache-Control. */
+export function countyHtmlCdnCacheControl(): string {
+  return `max-age=${COUNTY_HTML_CDN_SECONDS}, stale-while-revalidate=${COUNTY_HTML_CDN_SWR_SECONDS}`;
+}
+
+/**
+ * A degraded county load is an outage, not an empty county.
+ * Empty mover lists with any other source mode stay cacheable.
+ * Middleware cannot see this mode, and CDN-Cache-Control would store a 500,
+ * so the edge header for county HTML stays no-store until a status-aware cache exists.
+ */
+export function countyLoadIsCacheable(sourceMode: string): boolean {
+  return sourceMode !== 'degraded';
+}
+
+export function refuseCachedCountyOutage(sourceMode: string): void {
+  if (!countyLoadIsCacheable(sourceMode)) {
+    const error = new Error('county_load_failed');
+    error.name = 'CountyLoadFailed';
+    throw error;
+  }
+}
+
+export const COUNTY_EDGE_CACHE_CONTROL = 'private, no-store, max-age=0';
+export const COUNTY_EDGE_CDN_CACHE_CONTROL = 'no-store';
+
+/**
  * Path-specific HTML CDN TTL — must stay aligned with vercel.json.
  * Default is DEFAULT_PERFORMANCE_FLAGS.htmlCacheSeconds (86400) for most public HTML.
  */
@@ -37,6 +80,7 @@ export function htmlCacheSecondsForPath(pathname: string, defaultSeconds: number
   if (pathname.includes('/share-og')) return 3600;
   if (pathname === '/companies' || pathname.startsWith('/companies/')) return 300;
   if (pathname === '/florida' || pathname === '/new-jersey') return FLORIDA_HTML_CDN_SECONDS;
+  if (isCountyHtmlPath(pathname)) return COUNTY_HTML_CDN_SECONDS;
   return defaultSeconds;
 }
 
