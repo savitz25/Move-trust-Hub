@@ -6,7 +6,10 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { Menu, ShieldCheck, X } from 'lucide-react';
 import { MoveBrandLockup } from '@/components/move-brand-lockup';
 import { MoveMegaMenu } from '@/components/nav/move-mega-menu';
-import { useMyTrustHubHref } from '@/components/my-trusthub/my-trusthub-origin';
+import {
+  MOVE_INVITE_ONLY_TITLE,
+  moveTrustHubSignInHref,
+} from '@/lib/my-trusthub/move-trusthub-return';
 import { MyMoveNavLink } from '@/components/save-my-move/my-move-nav-link';
 import { SwitchHubMenu } from '@/components/switch-hub-menu';
 import { MOVE_HEADER_CTA } from '@/lib/design/move-design-system';
@@ -25,8 +28,9 @@ function MoveCanonicalAccountEntry({
   variant: 'desktop' | 'mobile-header' | 'drawer';
   onNavigate?: () => void;
 }) {
-  const href = useMyTrustHubHref('/my/sign-in');
-  const title = 'My TrustHub — sign in to your account';
+  const pathname = usePathname() || '/';
+  const href = moveTrustHubSignInHref(`https://www.movetrusthub.com${pathname}`);
+  const title = MOVE_INVITE_ONLY_TITLE;
 
   if (variant === 'mobile-header') {
     return (
@@ -103,9 +107,9 @@ export function MoveNetworkHeader() {
         </nav>
 
         <div className="th-header-actions">
-          <MoveCanonicalAccountEntry variant="desktop" />
           <MyMoveNavLink variant="desktop" className="th-btn-secondary !h-11 !text-sm" />
           <SwitchHubMenu currentHubId="move" />
+          <MoveCanonicalAccountEntry variant="desktop" />
         </div>
 
         <div className="th-header-mobile-actions">

@@ -12,9 +12,13 @@ const accountFn = header.slice(
 );
 
 test('header account entry is one Ask sign-in link on desktop, mobile, and the drawer', () => {
-  assert.equal(header.match(/useMyTrustHubHref\('\/my\/sign-in'\)/g)?.length, 1);
+  assert.equal(header.match(/moveTrustHubSignInHref\(/g)?.length, 1);
+  assert.equal(header.includes('MOVE_INVITE_ONLY_TITLE'), true);
   assert.equal(header.includes('MyTrustHubAccountLink'), false);
   assert.equal(header.includes("useMyTrustHubHref('/my')"), false);
+  const actions = header.slice(header.indexOf('th-header-actions'), header.indexOf('th-header-mobile-actions'));
+  assert.ok(actions.indexOf('MyMoveNavLink') < actions.indexOf('MoveCanonicalAccountEntry'));
+  assert.ok(actions.lastIndexOf('SwitchHubMenu') < actions.lastIndexOf('MoveCanonicalAccountEntry'));
   for (const variant of ['desktop', 'mobile-header', 'drawer']) {
     const hits = header.match(new RegExp(`<MoveCanonicalAccountEntry variant="${variant}"`, 'g')) || [];
     assert.equal(hits.length, 1, variant);
