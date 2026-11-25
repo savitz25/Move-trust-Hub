@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { AddToMyTrustHubSlot } from '@/components/my-trusthub/add-to-my-trusthub-slot';
+import { TOOL_SESSION_DEVICE_KEYS } from '@/lib/my-trusthub/tool-session-schemas';
 import Link from 'next/link';
 import { CompareLoader } from '@/components/compare/compare-loader';
 import {
@@ -56,6 +58,7 @@ export default async function ComparePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <AddToMyTrustHubSlot deviceKey={TOOL_SESSION_DEVICE_KEYS.compareStorage} />
       <h1 className="text-4xl font-semibold tracking-tight mb-1">Compare Movers</h1>
       <p className="text-muted-foreground mb-4 max-w-2xl">
         Select up to four companies from the{' '}

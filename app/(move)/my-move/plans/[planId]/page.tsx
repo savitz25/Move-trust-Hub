@@ -1,4 +1,6 @@
 import { Suspense } from 'react';
+import { AddToMyTrustHubSlot } from '@/components/my-trusthub/add-to-my-trusthub-slot';
+import { TOOL_SESSION_DEVICE_KEYS } from '@/lib/my-trusthub/tool-session-schemas';
 import { buildResourceMetadata } from '@/lib/seo/resource-metadata';
 import { PlanWorkspace } from '@/components/my-move-plan/plan-workspace';
 import type { MyMovePlanStep } from '@/lib/my-move-plan/types';
@@ -38,6 +40,8 @@ export default async function MyMovePlanWorkspacePage({ params, searchParams }: 
         }
       >
         <PlanWorkspace planId={planId} step={step} autoSend={autoSend} />
+        <AddToMyTrustHubSlot deviceKey={TOOL_SESSION_DEVICE_KEYS.plan} />
+        <AddToMyTrustHubSlot deviceKey={TOOL_SESSION_DEVICE_KEYS.planLibrary} />
       </Suspense>
     </div>
   );
