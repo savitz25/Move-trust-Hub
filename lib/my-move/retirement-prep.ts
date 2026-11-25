@@ -75,13 +75,19 @@ export type LegacyExportRow = {
   payload: unknown;
 };
 
+export type LegacyExportAccessWindow = 'inside' | 'outside';
+
+export type LegacyExportDocumentRow = LegacyExportRow & {
+  accessWindow: LegacyExportAccessWindow;
+};
+
 export type LegacyExportReady = {
   outcome: 'ready';
   format: 'json';
   windowDays: typeof LEGACY_EXPORT_WINDOW_DAYS;
   asOf: string;
   userInitiated: true;
-  rows: LegacyExportRow[];
+  rows: LegacyExportDocumentRow[];
   omitted: number;
   deleted: false;
 };
@@ -189,8 +195,10 @@ function isLegacyTable(value: string): value is LegacyTable {
 }
 
 /**
- * User-initiated JSON export of caller-supplied rows inside the 180-day window.
- * Rows outside the window are omitted from the document and are not deleted.
+ * User-initiated JSON export. 180 days is the access window.
+ * Older rows stay in the document with accessWindow "outside".
+ * Future rows, unknown tables, and unreadable dates are counted in omitted.
+ * Nothing is deleted.
  */
 export function buildLegacyExport(
   input: {
@@ -205,21 +213,28 @@ export function buildLegacyExport(
 
   const asOfMs = Date.parse(input.asOf);
   const windowMs = LEGACY_EXPORT_WINDOW_DAYS * DAY_MS;
-  const rows: LegacyExportRow[] = [];
+  const rows: LegacyExportDocumentRow[] = [];
   let omitted = 0;
   for (const row of input.rows) {
     const recordedMs = Date.parse(row.recordedAt);
-    const inside =
+    const placeable =
       isLegacyTable(row.table) &&
       Number.isFinite(asOfMs) &&
       Number.isFinite(recordedMs) &&
-      recordedMs <= asOfMs &&
-      asOfMs - recordedMs <= windowMs;
-    if (!inside) {
+      recordedMs <= asOfMs;
+    if (!placeable) {
       omitted += 1;
       continue;
     }
-    rows.push({ table: row.table, id: row.id, recordedAt: row.recordedAt, payload: row.payload });
+    const accessWindow: LegacyExportAccessWindow =
+      asOfMs - recordedMs <= windowMs ? 'inside' : 'outside';
+    rows.push({
+      table: row.table,
+      id: row.id,
+      recordedAt: row.recordedAt,
+      payload: row.payload,
+      accessWindow,
+    });
   }
 
   return {

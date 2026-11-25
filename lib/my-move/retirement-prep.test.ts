@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import { test } from 'node:test';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
+import { LegacyExportControl } from '@/components/my-move/legacy-export-control';
 import { LegacyPageBanner } from '@/components/my-move/legacy-page-banner';
 import {
   LEGACY_EXPORT_WINDOW_DAYS,
@@ -102,7 +103,7 @@ test('link-not-merge refuses a missing session, email identity, or missing conse
   );
 });
 
-test('legacy export keeps caller rows inside 180 days and deletes nothing', () => {
+test('legacy export keeps older research and labels the 180-day access window', () => {
   const asOf = '2026-11-25T00:00:00.000Z';
   const rows: LegacyExportRow[] = [
     { table: 'saved_movers', id: 'keep', recordedAt: '2026-06-01T00:00:00.000Z', payload: { slug: 'a' } },
@@ -120,8 +121,16 @@ test('legacy export keeps caller rows inside 180 days and deletes nothing', () =
   if (ready.outcome !== 'ready') return;
   assert.equal(ready.windowDays, LEGACY_EXPORT_WINDOW_DAYS);
   assert.equal(ready.deleted, false);
-  assert.deepEqual(ready.rows.map((row) => row.id), ['keep', 'edge']);
-  assert.equal(ready.omitted, 2);
+  assert.deepEqual(
+    ready.rows.map((row) => [row.id, row.accessWindow]),
+    [
+      ['keep', 'inside'],
+      ['edge', 'inside'],
+      ['old', 'outside'],
+    ]
+  );
+  assert.deepEqual(ready.rows.find((row) => row.id === 'old')?.payload, { items: [] });
+  assert.equal(ready.omitted, 1);
   assert.equal(JSON.stringify(rows), before);
 });
 
@@ -135,9 +144,16 @@ test('the banner renders only when prep is active and no page mounts it', () => 
   const files: string[] = [];
   walk(join(root, 'app'), files);
   walk(join(root, 'components'), files);
+  assert.equal(renderToStaticMarkup(React.createElement(LegacyExportControl, { env: off })), '');
+  const exportHtml = renderToStaticMarkup(React.createElement(LegacyExportControl, { env: qa }));
+  assert.match(exportHtml, /data-my-move-legacy-export="ready"/);
+  assert.equal(exportHtml.includes('fetch('), false);
+
   const importers = files.filter((path) => {
     if (path.endsWith('legacy-page-banner.tsx')) return false;
-    return readFileSync(path, 'utf8').includes('LegacyPageBanner');
+    if (path.endsWith('legacy-export-control.tsx')) return false;
+    const source = readFileSync(path, 'utf8');
+    return source.includes('LegacyPageBanner') || source.includes('LegacyExportControl');
   });
   assert.deepEqual(importers, []);
 });
@@ -145,7 +161,8 @@ test('the banner renders only when prep is active and no page mounts it', () => 
 test('retirement prep source does not fetch or touch a database client', () => {
   const source = readFileSync(join(__dirname, 'retirement-prep.ts'), 'utf8');
   const banner = readFileSync(join(__dirname, '..', '..', 'components', 'my-move', 'legacy-page-banner.tsx'), 'utf8');
-  for (const text of [source, banner]) {
+  const exportControl = readFileSync(join(__dirname, '..', '..', 'components', 'my-move', 'legacy-export-control.tsx'), 'utf8');
+  for (const text of [source, banner, exportControl]) {
     assert.equal(text.includes('fetch('), false);
     assert.equal(text.includes('supabase'), false);
     assert.equal(text.includes('.from('), false);
